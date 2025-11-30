@@ -1,0 +1,428 @@
+[
+  {
+    "id": 3360,
+    "name": "Baldachin's Blessing",
+    "caption": "Favor bestowed by a deathbed companion. Protection of a hidden temple in the guise of a bedchamber.\n\nThe favor allows one to forget any aches and pains. In Death, there is only peace, for in Death, there can be no sensation.",
+    "info": "While carried, reduce your <font color=\"#E0B985\">maximum HP</font> by 5%, then restore the missing HP once the blessing expires or leaves your inventory.\nOn use, reduce <font color=\"#F395C4\">physical damage</font> received by 35% and <font color=\"#E0B985\">poise damage received</font> by 34% for 15 seconds, preventing stagger from most light and medium hits without increasing maximum <font color=\"#E0B985\">poise</font>.\nCounts as a body buff and will not stack with other effects of that type."
+  },
+  {
+    "id": 3361,
+    "name": "Radiant Baldachin's Blessing",
+    "caption": "Protection of a hidden temple in the guise of a bedchamber. This blessing is of the utmost rarity.\n\nIt is said a deathbed companion will only produce a blessing of this kind for a champion but once in her entire life. The sole blessing which she imbues of her own volition.",
+    "info": "On use, reduce <font color=\"#F395C4\">physical damage</font> received by 35% and <font color=\"#E0B985\">poise damage received</font> by 45% for 70 seconds, preventing stagger from most light and medium hits without increasing maximum <font color=\"#E0B985\">poise</font>.\nCounts as a body buff, so it will not stack with other body-type buffs.\nUnlike the lesser blessing, it imposes no penalty to your <font color=\"#E0B985\">maximum HP</font> while carried."
+  },
+  {
+    "id": 2000300,
+    "name": "Hefty Fire Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\n\nA goodly amount of materials is sealed inside.",
+    "info": "Throw a capacious cracked pot that erupts in flame on impact, dealing heavy area damage and knocking most foes to the ground.\nDeal massive damage to Furnace Golems when hurled into the vents atop their armor.\n\n<font color=\"#F48C25\">Base fire damage</font>: 360"
+  },
+  {
+    "id": 2000310,
+    "name": "Hefty Rock Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\n\nFilled to the brim with crushed rocks—nothing clever about it.",
+    "info": "Throw a weighty pot that explodes into crushing force, dealing high strike damage in a small area and toppling most targets.\nDamage scales strongly with <font color=\"#E0B985\">Strength</font>, giving heavy builds a ranged option without consuming <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#F395C4\">Base physical damage</font>: 370\n<font color=\"#C0B194\">Stance damage</font>: 15"
+  },
+  {
+    "id": 2000320,
+    "name": "Hefty Lightning Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\n\nA goodly amount of materials is sealed inside.",
+    "info": "Throw a capacious pot that bursts into a violent lightning strike, dealing severe area damage and knocking most targets down.\nDamage scales primarily with <font color=\"#E0B985\">Dexterity</font>, letting agile builds deliver potent ranged bursts without expending <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#FFE033\">Base lightning damage</font>: 370\n<font color=\"#C0B194\">Stance damage</font>: 10"
+  },
+  {
+    "id": 2000330,
+    "name": "Hefty Fetid Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nA heaping mass of effluents is sealed inside. As the mixture ferments, toxins are produced alongside a putrid stench that seeps out once ripe.\n\nPush someone in a privy; expect to get dung on your hands.",
+    "info": "Throw to splatter enemies with <font color=\"#40BF40\">Deadly Poison</font> buildup while dealing strike impact.\nAlso inflict 200 <font color=\"#40BF40\">Deadly Poison</font> buildup on yourself.\n\n<font color=\"#F395C4\">Base physical damage</font>: 105\n<font color=\"#C0B194\">Stance damage</font>: 5\nStatus buildup: 500-727 <font color=\"#40BF40\">Deadly Poison</font> to targets (scales with <font color=\"#E0B985\">Arcane</font>)\nSelf-inflicted buildup: 200 <font color=\"#40BF40\">Deadly Poison</font>\n<font color=\"#40BF40\">Deadly Poison</font>: Deals 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 12 per second for 30 seconds (4.2% of <font color=\"#E0B985\">maximum HP</font> plus 360 total)."
+  },
+  {
+    "id": 2000340,
+    "name": "Hefty Fly Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nA heaping mass of effluents is sealed inside.\n\nThe maggots found in waste feed on blood and turn into vicious flies that are pitiably short-lived.",
+    "info": "Throw to strike and release a bloodfly swarm that pursues foes for up to 7 hits.\nThe first swarm hit applies negligible <font color=\"#C84343\">Hemorrhage</font> buildup before the remaining flies inflict heavy buildup.\n\n<font color=\"#F395C4\">Base physical damage</font> (impact): 105\n<font color=\"#C0B194\">Stance damage</font> (impact): 5\n<font color=\"#F395C4\">Base physical damage</font> (swarm hit): 116\nStatus buildup: minimal <font color=\"#C84343\">Hemorrhage</font> on first hit; 70-101 <font color=\"#C84343\">Hemorrhage</font> per hit on the next 6 hits (420-606 total), scales with <font color=\"#E0B985\">Arcane</font>"
+  },
+  {
+    "id": 2000360,
+    "name": "Hefty Freezing Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.",
+    "info": "Throw to knock foes down and inflict <font color=\"#9DD7FB\">Frostbite</font> in a wide area.\n\n<font color=\"#57DBCE\">Base magic damage</font>: 200\n<font color=\"#C0B194\">Stance damage</font>: 10\nStatus buildup: 400 <font color=\"#9DD7FB\">Frostbite</font>\n<font color=\"#9DD7FB\">Frostbite</font>: Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases all damage received by 20% for 30 seconds."
+  },
+  {
+    "id": 2000370,
+    "name": "Hefty Poison Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.",
+    "info": "Throw to deal strike impact while inflicting <font color=\"#40BF40\">Poison</font> buildup on targets.\n\n<font color=\"#F395C4\">Base physical damage</font>: 105\n<font color=\"#C0B194\">Stance damage</font>: 5\nStatus buildup: 400-582 <font color=\"#40BF40\">Poison</font> (scales with <font color=\"#E0B985\">Arcane</font>)\n<font color=\"#40BF40\">Poison</font>: Deals 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7 per second for 90 seconds (6.3% of <font color=\"#E0B985\">maximum HP</font> plus 630 total)."
+  },
+  {
+    "id": 2000380,
+    "name": "Hefty Oil Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.",
+    "info": "Soak targets in oil for 30 seconds, causing the next single instance of <font color=\"#F48C25\">fire damage</font> they take to deal 65% more damage.\nDoes not stack with Oil Pot."
+  },
+  {
+    "id": 2000600,
+    "name": "Hefty Volcano Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.",
+    "info": "Throw to create a searing cloud that damages enemies inside for up to 10 hits over 5 seconds.\n\n<font color=\"#F48C25\">Base fire damage</font> (per hit): 105\n<font color=\"#C0B194\">Stance damage</font> (per hit): 5\nHits: Up to 10"
+  },
+  {
+    "id": 2000620,
+    "name": "Hefty Frenzied Flame Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.\n\nThe flame of frenzy burns the eyes, but tranquility follows in its wake. May this pot bring salvation to those it strikes.",
+    "info": "Throw to deal <font color=\"#F48C25\">fire damage</font> and <font color=\"#C0B194\">stance damage</font> while causing <font color=\"#EEAA2B\">Madness</font> buildup that scales with <font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>, <font color=\"#E0B985\">Intelligence</font>, and <font color=\"#E0B985\">Faith</font>.\n\n<font color=\"#F48C25\">Base fire damage</font>: 326\n<font color=\"#C0B194\">Stance damage</font>: 10\nStatus buildup: 130 <font color=\"#EEAA2B\">Madness</font>\n<font color=\"#EEAA2B\">Madness</font>: Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces <font color=\"#E0B985\">FP</font> equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30 when it triggers against Tarnished."
+  },
+  {
+    "id": 2000650,
+    "name": "Hefty Rancor Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nEnchanted by the ancient death hex.\n\nIn times of old, the dead were burned with ghostflame, and from those cinders arose vengeful spirits.",
+    "info": "Consume <font color=\"#E0B985\">FP</font> to summon eight homing spirit skulls after the throw.\nGame data currently lists them as dealing <font color=\"#FFE033\">lightning damage</font>.\n\nBase damage: 310 lightning (current game data)\n<font color=\"#C0B194\">Stance damage</font>: 10"
+  },
+  {
+    "id": 2000660,
+    "name": "Hefty Magic Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.",
+    "info": "Consume <font color=\"#E0B985\">FP</font> to hurl a blast that knocks targets down.\n\n<font color=\"#57DBCE\">Base magic damage</font>: 360\n<font color=\"#C0B194\">Stance damage</font>: 10\nScaling: <font color=\"#E0B985\">Intelligence</font>"
+  },
+  {
+    "id": 2000670,
+    "name": "Hefty Rot Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.\n\nRot is one of the divine elements of the outer gods, and eats away at life like a vicious plague.",
+    "info": "Throw to deal strike impact while applying <font color=\"#EF7676\">Scarlet Rot</font> buildup.\n\n<font color=\"#F395C4\">Base physical damage</font>: 105\n<font color=\"#C0B194\">Stance damage</font>: 5\nStatus buildup: 400 <font color=\"#EF7676\">Scarlet Rot</font>\n<font color=\"#EF7676\">Scarlet Rot</font>: Deals 0.33% of <font color=\"#E0B985\">maximum HP</font> plus 13 per second for 90 seconds (29.7% of <font color=\"#E0B985\">maximum HP</font> plus 1,170 total)."
+  },
+  {
+    "id": 2000680,
+    "name": "Hefty Furnace Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nImbued with a hex of the furnace.\n\nThe furnace's flame burns away both body and soul.\nWhen impurity is thus expunged, one calls it cleansing.",
+    "info": "Throw to generate a whirlwind that launches foes into the air.\nCan be hurled into a Furnace Golem's brazier to deal massive damage and awaken inert golems.\n\n<font color=\"#F48C25\">Base fire damage</font>: 370\n<font color=\"#C0B194\">Stance damage</font>: 10"
+  },
+  {
+    "id": 2000690,
+    "name": "Hefty Red Lightning Pot",
+    "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.\n\nThe ancient dragons who betrayed their lord to side with a tyrant were known for wielding branching red lightning.",
+    "info": "Throw to deal red <font color=\"#FFE033\">lightning damage</font> and create an electric field that links lightning to nearby enemies.\n\n<font color=\"#FFE033\">Base lightning damage</font>: 310\n<font color=\"#C0B194\">Stance damage</font>: 10"
+  },
+  {
+    "id": 2000700,
+    "name": "Red Lightning Pot",
+    "caption": "Craftable item prepared using a ritual pot.\nA cocktail of materials is sealed inside.\n\nThe ancient dragons who betrayed their lord to side with a tyrant were known for wielding branching red lightning.",
+    "info": "Throw to deal red <font color=\"#FFE033\">lightning damage</font> and create an electric field that chains lightning to surrounding enemies.\n\n<font color=\"#FFE033\">Base lightning damage</font>: 260\n<font color=\"#C0B194\">Stance damage</font>: 3"
+  },
+  {
+    "id": 2000710,
+    "name": "Frenzied Flame Pot",
+    "caption": "Craftable item prepared using a cracked pot.\nA cocktail of materials is sealed inside.\n\nThe flame of frenzy burns the eyes, but tranquility follows in its wake. May this pot bring salvation to those it strikes.",
+    "info": "Throw to deal <font color=\"#F48C25\">fire damage</font> while causing <font color=\"#EEAA2B\">Madness</font> buildup that scales with <font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>, <font color=\"#E0B985\">Intelligence</font>, and <font color=\"#E0B985\">Faith</font>.\n\n<font color=\"#F48C25\">Base fire damage</font>: 240\n<font color=\"#C0B194\">Stance damage</font>: 3\nStatus buildup: 90 <font color=\"#EEAA2B\">Madness</font>\n<font color=\"#EEAA2B\">Madness</font>: Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces <font color=\"#E0B985\">FP</font> equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30 when it triggers against Tarnished."
+  },
+  {
+    "id": 2000740,
+    "name": "Eternal Sleep Pot",
+    "caption": "Craftable item prepared using a ritual pot.\nEnchanted by the incantations of St. Trina.\n\nThe weak are powerless to resist this velvety sleep, and will never be roused again.",
+    "info": "Consume <font color=\"#E0B985\">FP</font> to create a sleep mist that applies 15 ticks of <font color=\"#A698F4\">Sleep</font> buildup over 3 seconds, scaling with <font color=\"#E0B985\">Arcane</font>.\n\nStatus buildup per tick: 29 <font color=\"#A698F4\">Sleep</font> baseline (435 total); 30 at 10 <font color=\"#E0B985\">Arcane</font> (450 total); 38 at 30 <font color=\"#E0B985\">Arcane</font> (570 total); 40 at 60 <font color=\"#E0B985\">Arcane</font> (600 total); 42 at 99 <font color=\"#E0B985\">Arcane</font> (630 total)"
+  },
+  {
+    "id": 2000760,
+    "name": "Roped Frenzied Flame Pot",
+    "caption": "Craftable item prepared using a cracked pot.\nA cocktail of materials is sealed inside, and a short rope that aids throwing has been secured around the pot.\n\nThe flame of frenzy burns the eyes, but tranquility follows in its wake. May this pot bring salvation to those it strikes.",
+    "info": "Hurl the pot behind you, detonating in frenzied flame that deals <font color=\"#F48C25\">fire damage</font> in a small area, inflicts <font color=\"#EEAA2B\">Madness</font> buildup, and deals <font color=\"#C0B194\">stance damage</font>.\n\n<font color=\"#F48C25\">Base fire damage</font>: 240\n<font color=\"#C0B194\">Stance damage</font>: 3\nStatus buildup: 90 <font color=\"#EEAA2B\">Madness</font>\n<font color=\"#EEAA2B\">Madness</font>: Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces <font color=\"#E0B985\">FP</font> equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30 when it triggers against Tarnished."
+  },
+  {
+    "id": 2000900,
+    "name": "Blessing of Marika",
+    "caption": "A special physick blessed by Marika, the queen of the Erdtree.\n\nMarika once created several of these physicks for Messmer's sake.\nBut never again.",
+    "info": "Fully restores HP and cures all status ailments."
+  },
+  {
+    "id": 2000910,
+    "name": "Lulling Branch",
+    "caption": "Tree branch blessed with a velvety purple incantation.\nCraftable item.\n\nIn the midst of drowsiness, there is the will to awaken.\nFeelings that rise from the depths of one's heart.",
+    "info": "Restore 5 <font color=\"#E0B985\">FP</font> every 2 seconds for 60 seconds (150 total) while gradually inducing <font color=\"#A698F4\">Sleep</font>.\nBuild 20 <font color=\"#A698F4\">Sleep</font> buildup every 2 seconds across the duration (up to 315 total); if the induced drowsiness causes temporary fogginess, no <font color=\"#E0B985\">FP</font> is lost when the effect ends."
+  },
+  {
+    "id": 2001100,
+    "name": "Dragon Communion Flesh",
+    "caption": "A lump of animal flesh with a heat that never cools.\nCraftable item.\n\nAn imitation of dragonscale flesh created by human hands, used to sate the hunger of drake warriors—if only briefly.",
+    "info": "Raise <font color=\"#E0B985\">vigor</font>, <font color=\"#E0B985\">endurance</font>, <font color=\"#E0B985\">strength</font>, and <font color=\"#E0B985\">dexterity</font> by 6 for 90 seconds.\nDrain 4 HP per second for 90 seconds."
+  },
+  {
+    "id": 2001105,
+    "name": "Dragonscale Flesh",
+    "caption": "A lump of hot flesh carved from beneath the inverted scales said to grow on aged dragons.\n\nTo the drake warriors, there is no more intoxicating liquor than the heat of dragons.",
+    "info": "Raise <font color=\"#E0B985\">vigor</font>, <font color=\"#E0B985\">endurance</font>, <font color=\"#E0B985\">strength</font>, and <font color=\"#E0B985\">dexterity</font> by 8 for 90 seconds.\nDrain 4 HP per second for 90 seconds."
+  },
+  {
+    "id": 2001110,
+    "name": "Fingerprint Nostrum",
+    "caption": "Bolus engraved with whorl-like lines.\nCraftable item.\n\nA secret medicine of those who attempt to turn their human bodies into fingers. Ingesting causes something to wriggle within.",
+    "info": "Raises <font color=\"#E0B985\">mind</font>, <font color=\"#E0B985\">intelligence</font>, <font color=\"#E0B985\">faith</font>, and <font color=\"#E0B985\">arcane</font> by 6 for 90 seconds while draining 3 HP per second.\n\nDoes not stack with other Body Buffs."
+  },
+  {
+    "id": 2001120,
+    "name": "Spellproof Pickled Liver",
+    "caption": "Animal liver pickled in a blue medicinal solution.\nCraftable item.\n\nThe effects of the forager brood's pickled delights are enhanced by the fermentation, or rotting, of the ingredients. Though this results in a pungent odor, some come to find the aroma irresistible.",
+    "info": "Boosts <font color=\"#57DBCE\">magic damage negation</font> by 25% for 120 seconds.\n\nDoes not stack with other Body Buffs."
+  },
+  {
+    "id": 2001130,
+    "name": "Fireproof Pickled Liver",
+    "caption": "Animal liver pickled in a red medicinal solution.\nCraftable item.\n\nThe effects of the forager brood's pickled delights are enhanced by the fermentation, or rotting, of the ingredients. Though this results in a pungent odor, some come to find the aroma irresistible.",
+    "info": "Boosts <font color=\"#F48C25\">fire damage negation</font> by 25% for 120 seconds.\n\nDoes not stack with other Body Buffs."
+  },
+  {
+    "id": 2001140,
+    "name": "Lightningproof Pickled Liver",
+    "caption": "Animal liver pickled in a yellow medicinal solution.\nCraftable item.\n\nThe effects of the forager brood's pickled delights are enhanced by the fermentation, or rotting, of the ingredients. Though this results in a pungent odor, some come to find the aroma irresistible.",
+    "info": "Boosts <font color=\"#FFE033\">lightning damage negation</font> by 25% for 120 seconds.\n\nDoes not stack with other Body Buffs."
+  },
+  {
+    "id": 2001150,
+    "name": "Holyproof Pickled Liver",
+    "caption": "Animal liver pickled in a gold medicinal solution.\nCraftable item.\n\nThe effects of the forager brood's pickled delights are enhanced by the fermentation, or rotting, of the ingredients. Though this results in a pungent odor, some come to find the aroma irresistible.",
+    "info": "Boosts <font color=\"#F5EB89\">holy damage negation</font> by 25% for 120 seconds.\n\nDoes not stack with other Body Buffs."
+  },
+  {
+    "id": 2001160,
+    "name": "Opaline Pickled Liver",
+    "caption": "Animal liver pickled in an opaline medicinal solution.\nCraftable item.\n\nThe effects of the forager brood's pickled delights are enhanced by the fermentation, or rotting, of the ingredients. Though this results in a pungent odor, some come to find the aroma irresistible.",
+    "info": "Boosts magic, fire, lightning, and <font color=\"#F5EB89\">holy damage negation</font> by 18% for 120 seconds.\n\nDoes not stack with other Body Buffs."
+  },
+  {
+    "id": 2001170,
+    "name": "Well-Pickled Turtle Neck",
+    "caption": "Turtle neck meat that has been thoroughly pickled in a bitter solution.\n\nThe effects of the forager brood's pickled delights are enhanced by the fermentation, or rotting, of the ingredients. Though this results in a pungent odor, some come to find the aroma irresistible.",
+    "info": "Raises <font color=\"#E0B985\">stamina regeneration</font> by 12 for 60 seconds."
+  },
+  {
+    "id": 2001200,
+    "name": "Scorpion Stew",
+    "caption": "Scorpion simmered in a black soup.\nTraditional meal of the hornsent.\n\nOnce made with love by a certain elderly woman for the family table.\nHaving long gone cold, this soup gives off a rank, sour smell.",
+    "info": "Boosts <font color=\"#F395C4\">physical damage negation</font> by 10% and restores 8 HP per second for 60 seconds (480 total).\n\nCounts as both a Body Buff and a health regen buff and does not stack with others of those types."
+  },
+  {
+    "id": 2001201,
+    "name": "Gourmet Scorpion Stew",
+    "caption": "Scorpion simmered in a black soup.\nAn exquisite dish chock-full of mouth-watering scorpion claws.\n\nThe thoughts and feelings of the cook melt and blend into the stew, but those who can distinguish the taste of love are few and far between.\n\"Partake, partake, until thou art sated.\"",
+    "info": "Boosts <font color=\"#F395C4\">physical damage negation</font> by 10% and restores 12 HP per second for 60 seconds (720 total).\n\nCounts as both a Body Buff and a health regen buff and does not stack with others of those types."
+  },
+  {
+    "id": 2001202,
+    "name": "Scorpion Stew",
+    "caption": "Scorpion simmered in a black soup.\nTraditional meal of the hornsent.\n\nHaving long gone cold, this soup gives off a rank, sour smell.",
+    "info": "Boosts <font color=\"#F395C4\">physical damage negation</font> by 10% and restores 8 HP per second for 60 seconds (480 total).\n\nCounts as both a Body Buff and a health regen buff and does not stack with others of those types."
+  },
+  {
+    "id": 2001203,
+    "name": "Gourmet Scorpion Stew",
+    "caption": "Scorpion simmered in a black soup.\nAn exquisite dish chock-full of mouth-watering scorpion claws.\n\nThe thoughts and feelings of the cook melt and blend into the stew, but those who can distinguish the taste of love are few and far between.",
+    "info": "Boosts <font color=\"#F395C4\">physical damage negation</font> by 10% (8% in PvP) and restores 12 HP per second for 60 seconds (720 total).\n\nCounts as both a Body Buff and a health regen buff and does not stack with others of those types."
+  },
+  {
+    "id": 2001210,
+    "name": "Sacred Bloody Flesh",
+    "caption": "Raw meat soaked with blood.\nA delicacy of the bloodfiends.\n\nThe blood is said to have fallen from the Formless Mother's wound. Never will it dry, never will it rot.",
+    "info": "Increases physical <font color=\"#E0B985\">attack power</font> by 7% and <font color=\"#E0B985\">Arcane</font> by 10 for 30 seconds. While this buff is active, nearby blood loss grants an additional 18% <font color=\"#F395C4\">physical damage</font> for 30 seconds, and further blood loss while the initial buff remains resets that timer.\n\nDoes not stack with other Body Buffs."
+  },
+  {
+    "id": 2001220,
+    "name": "Silver Horn Tender",
+    "caption": "Old currency used by hornsent made by coating spiral horns with silver.\n\nThese trinkets were once symbolic of society's upper echelons.",
+    "info": "Increases Discovery by 60 for 3 minutes.\n\nCannot stack with Silver-Pickled Fowl Foot; stacks with Silver Scarab for up to +135 Discovery."
+  },
+  {
+    "id": 2001230,
+    "name": "Golden Horn Tender",
+    "caption": "Old currency used by hornsent made by coating spiral horns with gold.\n\nOnce bestowed upon inquisitors as an honor.",
+    "info": "Increases rune acquisition by 40% for 3 minutes.\n\nCannot stack with Gold-Pickled Fowl Foot; stacks with Golden Scarab for up to a 68% rune acquisition increase."
+  },
+  {
+    "id": 2001400,
+    "name": "Messmerfire Grease",
+    "caption": "Solidified knotgrease made from a mixture of incendiary materials.\n\nFire was a symbol of the crusade, and even Messmer's rank-and-file soldiers would wield it.",
+    "info": "Coats the right-hand armament to add 120 flat <font color=\"#F48C25\">Fire damage</font> for 60 seconds."
+  },
+  {
+    "id": 2001410,
+    "name": "Dragonbolt Grease",
+    "caption": "Solidified knotgrease made from a mixture of fulminating materials.\n\nSaid to have been a favored tool of the dragon-cult knights who once served the prince of gold.",
+    "info": "Coats the right-hand armament to add 120 flat <font color=\"#FFE033\">Lightning damage</font> for 60 seconds."
+  },
+  {
+    "id": 2001420,
+    "name": "Royal Magic Grease",
+    "caption": "Solidified knotgrease made from a mixture of magically resonant materials.\n\nBelieved to have once been bestowed upon low-ranking Carian knights in lieu of the fellowship's characteristic swords.",
+    "info": "Coats the right-hand armament to add 120 flat <font color=\"#57DBCE\">Magic damage</font> for 60 seconds."
+  },
+  {
+    "id": 2001430,
+    "name": "Golden Grease",
+    "caption": "Solidified knotgrease made from a mixture of holy resonant materials.\n\nEnchanted with an ancient Erdtree incantation.\nSuch ministrations are all but a lost art in the realm of shadow.",
+    "info": "Coats the right-hand armament to add 120 flat <font color=\"#F5EB89\">Holy damage</font> for 60 seconds."
+  },
+  {
+    "id": 2001450,
+    "name": "Eternal Sleep Grease",
+    "caption": "Solidified knotgrease made from a mixture of deep-purple materials.\n\nThe weak are powerless to resist this velvety sleep, and will never be roused again.",
+    "info": "Coats the right-hand armament to inflict <font color=\"#A698F4\">Eternal Sleep</font> for 60 seconds."
+  },
+  {
+    "id": 2001480,
+    "name": "Dragon Communion Grease",
+    "caption": "Solidified knotgrease made from a sharp gravel-stone mixture.\n\nA tool of the old Dragon Communion warriors, who were the agents of the ancient dragons' hatred for their lowborn descendants.",
+    "info": "Coats the right-hand armament to increase damage against Ancient Dragons by 28% and against Normal Dragons by 38% for a short time."
+  },
+  {
+    "id": 2001500,
+    "name": "Drawstring Messmerfire Grease",
+    "caption": "Solidified knotgrease made from a mixture of incendiary materials.\nA short string is attached to this lump.\n\nFire was a symbol of the crusade, and even Messmer's rank-and-file soldiers would wield it.",
+    "info": "Coats the right-hand armament to add 135 flat <font color=\"#F48C25\">Fire damage</font> for 25 seconds."
+  },
+  {
+    "id": 2001510,
+    "name": "Drawstring Dragonbolt Grease",
+    "caption": "Solidified knotgrease made from a mixture of fulminating materials.\nA short string is attached to this lump.\n\nSaid to have been a favored tool of the dragon-cult knights who once served the prince of gold.",
+    "info": "Coats the right-hand armament to add 135 flat <font color=\"#FFE033\">Lightning damage</font> for 25 seconds."
+  },
+  {
+    "id": 2001520,
+    "name": "Drawstring Royal Magic Grease",
+    "caption": "Solidified knotgrease made from a mixture of magically resonant materials.\nA short string is attached to this lump.\n\nBelieved to have once been bestowed upon low-ranking Carian knights in lieu of the fellowship's characteristic swords.",
+    "info": "Coats the right-hand armament to add 135 flat <font color=\"#57DBCE\">Magic damage</font> for 25 seconds."
+  },
+  {
+    "id": 2001530,
+    "name": "Drawstring Golden Grease",
+    "caption": "Solidified knotgrease made from a mixture of holy resonant materials.\nA short string is attached to this lump.\n\nEnchanted with an ancient Erdtree incantation.\nSuch ministrations are all but a lost art in the realm of shadow.",
+    "info": "Coats the right-hand armament to add 135 flat <font color=\"#F5EB89\">Holy damage</font> for 25 seconds."
+  },
+  {
+    "id": 2001550,
+    "name": "Drawstring Eternal Sleep Grease",
+    "caption": "Solidified knotgrease made from a mixture of deep-purple materials.\nA short string is attached to this lump.\n\nThe weak are powerless to resist this velvety sleep, and will never be roused again.",
+    "info": "Coats the right-hand armament to inflict 37 <font color=\"#A698F4\">Eternal Sleep</font> buildup for 25 seconds."
+  },
+  {
+    "id": 2001600,
+    "name": "Festive Grease",
+    "caption": "Solidified knotgrease made from a mixture of bone shards.\n\nThe delightful festival is an old tradition; one old enough for the Erdtree to tacitly tolerate its endurance.",
+    "info": "Coats armament in a festive incantation that adds 100 <font color=\"#F5EB89\">Holy damage</font> and grants 25 runes per hit for 60 seconds."
+  },
+  {
+    "id": 2001700,
+    "name": "Innard Meat",
+    "caption": "Scraps of flesh for filling great jars.\nRancorous spirits cling to the pinkish-red, twitching meat.\n\nThis is what becomes of the condemned, who get sliced up and stuffed into jars to become saints instead.",
+    "info": "Throw to deal damage that scales with <font color=\"#E0B985\">strength</font>, <font color=\"#E0B985\">dexterity</font>, <font color=\"#E0B985\">intelligence</font>, and <font color=\"#E0B985\">arcane</font> at D rank."
+  },
+  {
+    "id": 2001710,
+    "name": "Dragon Communion Harpoon",
+    "caption": "Harpoon bristling with sharp gravel stones.\n\nA tool of the old Dragon Communion warriors, who were the agents of the ancient dragons' hatred for their lowborn descendants.",
+    "info": "Throw to inflict piercing damage with an anti-dragon effect, dealing +30% damage to Normal Dragons and +15% to Ancient Dragons, and charge by holding Use Tool to extend range and damage.\n\nBenefits from the Axe Talisman and Smithing Talisman."
+  },
+  {
+    "id": 2002010,
+    "name": "Rock Heart",
+    "caption": "Heart consumed in the ancient, original form of Dragon Communion.\n\nThe last thing the partaker saw with human eyes was a sunset, its colors faded and tarnished—a remote thing from eternity.",
+    "info": "Transform into an Ancient Dragon, boosting Dragon Communion incantations by 20% for 60 seconds while granting +10% to all damage negations and +50 to each of the four status resistances."
+  },
+  {
+    "id": 2002020,
+    "name": "Priestess Heart",
+    "caption": "The stone heart of a Dragon Communion priestess.\n\nThe priestess was once an ancient dragon herself, but sacrificed that form for feeble flesh to aid in the destruction of Bayle the Dread.",
+    "info": "Transform into an Ancient Dragon while disrobed; a second use activates a 20% boost to Dragon Cult incantations for 60 seconds. This form grants +7% damage negation, +70 to all resistances, and forbids wearing armor."
+  },
+  {
+    "id": 2002030,
+    "name": "Lamenter's Mask",
+    "caption": "A stone mask twisted into an expression of rapturous grief.\n\nThis transformation tallies with the state of a denizen of paradise, but the people of the tower denied and hid it from the world. In their foolishness, they viewed true bliss with deep fear.",
+    "info": "Transform into a lamenter while disrobed, dealing strike damage to nearby foes until death ends the form; using the item again causes the head to swell. This form increases <font color=\"#E0B985\">arcane</font> by 8 and raises damage negation by 5% for all types (20% for holy)."
+  },
+  {
+    "id": 2002100,
+    "name": "Ancient Dragon's Blessing",
+    "caption": "Favor bestowed by the Dragon Communion priestess in the name of the dragon lord Placidusax.\n\nEach night, the priestess offers her own sleep to her lord, and in turn receives the power of His favor.",
+    "info": "Consume <font color=\"#E0B985\">FP</font> to increase all damage negation by 10% and guarding damage negation by 20% for 70 seconds.\n\nThis aura buff does not stack with other aura buffs."
+  },
+  {
+    "id": 2002120,
+    "name": "Iris of Grace",
+    "caption": "An iris blessed with an incantation of the Erdtree.\n\nIn the realm of shadow, this artifice was employed by the priests of the Erdtree to quell the fears of their flock to magnificent effect.",
+    "info": "Place on another's eye to grant them the light of grace as a fleeting blessing or use it yourself to receive the blessing of an equipped Great Rune as a consumable substitute for a Rune Arc."
+  },
+  {
+    "id": 2002130,
+    "name": "Iris of Occultation",
+    "caption": "An iris that is as dark as night.\n\nIn the realm of shadow, this artifice was employed by the priests of the Erdtree to intensify the fears of their flock to magnificent effect.",
+    "info": "Place on another's eye to deny them light in all its forms or use it yourself to receive the blessing of an equipped Great Rune at the cost of all runes currently held; consumed upon use."
+  },
+  {
+    "id": 2003001,
+    "name": "Spritestone",
+    "caption": "A Rauh Burrow inhabited by a sprite.\nAccording to the records left by hornsent scholars, there were also contrivances known as \"bondstones\" that could manipulate the moment that the sprite vanishes.",
+    "info": "Use <font color=\"#E0B985\">FP</font> to release a sprite that slowly homes in on a locked target before detonating in a spiritual explosion of glittering light.\nWithout a lock-on, it travels straight ahead until it detonates when near an enemy, reaches maximum range, collides with a surface, or is shattered early with a bondstone.\nScales with <font color=\"#E0B985\">arcane</font> most and with <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">faith</font> at lower rates."
+  },
+  {
+    "id": 2003130,
+    "name": "Horned Bairn",
+    "caption": "Doll of a tanglehorn bairn.\nTangled horns are a symbol of spirituality, but most young born bearing the oversized horns meet a frightfully early demise. These fetishes are made to memorialize them.",
+    "info": "Use <font color=\"#E0B985\">FP</font> to summon six vengeful spirits that orbit the caster before autonomously chasing foes and detonating for <font color=\"#F5EB89\">holy damage</font>.\nScales with <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">faith</font>."
+  },
+  {
+    "id": 2003140,
+    "name": "Perfumed Oil of Ranah",
+    "caption": "A small bottle wrapped in a bright-red cloth.\nFilled with flammable perfume oil.\nThe dancers of Ranah keep these concealed as they dance, marking the height of their passion with an explosion of searing flame and sweet, enticing scents.",
+    "info": "Spout flames forward, bathing the area ahead in searing perfume and lingering <font color=\"#F48C25\">fire damage</font>; benefits from <font color=\"#F48C25\">fire damage</font> boosts but gains nothing from the Perfumer's Talisman."
+  },
+  {
+    "id": 2003160,
+    "name": "Surging Frenzied Flame",
+    "caption": "Spiritgrave stone burned by frenzied flame.\nSpirits are eternal, and yet frenzied flame melts them away regardless. No wonder the hornsent forbid the flame's use.",
+    "info": "Place a spiritgrave stone that spews a continuous torrent of frenzied flame until it expires, rapidly inflicting <font color=\"#EEAA2B\">Madness</font> buildup alongside <font color=\"#F48C25\">fire damage</font> on anything caught within its reach."
+  },
+  {
+    "id": 2003170,
+    "name": "Golden Vow",
+    "caption": "Remains that turned into light after being blessed with an incantation of the Erdtree.\nThe incantation serves as a rite that honors the comrades who placed their faith in the distant Erdtree and gave their lives in the crusade.",
+    "info": "Raise <font color=\"#E0B985\">attack power</font> and damage negation for the caster and nearby allies for 45 seconds; counts as an aura buff and will not stack with others of the same type.\n\n<font color=\"#E0B985\">Attack power</font>: +11.5% for 45 seconds (+2.5% in PvP)\nDamage negation: +7.5% for 45 seconds (+1.5% in PvP)"
+  },
+  {
+    "id": 2003180,
+    "name": "Fire Coil",
+    "caption": "A device of fire used by Messmer's soldiers.\nLingering embers, bundled into a coil.\nFire was a symbol of the crusade, and even Messmer's rank-and-file soldiers would wield it.",
+    "info": "Conjure tiny fire snakes from the point of impact, sending them slithering after foes to bite for <font color=\"#F48C25\">fire damage</font>.\n\nAttack rating: 125 base; 230 at 20 <font color=\"#E0B985\">Faith</font>, 335 at 50, 374 at 80"
+  },
+  {
+    "id": 2003190,
+    "name": "Fire Spritestone",
+    "caption": "A Rauh Burrow inhabited by a fire sprite.\nOf all the sprites, the fire sprites are said to be the most boisterous in nature.",
+    "info": "Release a fire sprite that bounces along the ground, piercing through enemies and scorching them as it keeps rolling until it dissipates naturally regardless of how many targets it hits; unaffected by bondstones."
+  },
+  {
+    "id": 2003200,
+    "name": "Glinting Nail",
+    "caption": "Nailstone with shining fingerprints floating above.\nThe lampreys that guard the finger ruins resemble fingers far more than they do humans, and so the finger-weavers imitated their sorcery.",
+    "info": "Fling a glinting magic nail that crumbles during flight, scattering shards that strike for <font color=\"#57DBCE\">magic damage</font> even if intercepted, letting its fragments curve around shields and obstacles."
+  },
+  {
+    "id": 2003310,
+    "name": "Sunwarmth Stone",
+    "caption": "Spiritgrave stone blessed with an Erdtree incantation.\nSunlight feels all the warmer in darkened lands.",
+    "info": "Generate sunwarmth that continually heals all nearby creatures, including enemies, for 30 HP per second for 30 seconds; stacks with Frenzyflame Stones for a combined 65 HP per second while both zones overlap."
+  },
+  {
+    "id": 2003350,
+    "name": "Charming Branch",
+    "caption": "Branch blessed with an incantation of unalloyed gold.\nThose who would otherwise be at each other's throats are united in service to Miquella, as long as the charm that binds them remains intact.",
+    "info": "Stab an enemy to charm the struck foe and nearby targets so they fight as allies for 30 seconds; the charm radiates outward on impact, letting a single thrust capture an entire cluster."
+  },
+  {
+    "id": 2008000,
+    "name": "Miquella's Great Rune",
+    "caption": "A Great Rune relinquished by Miquella.\n\nMiquella set off for the tower enshrouded by shadow, abandoning everything—his golden flesh, his blinding strength, even his fate.\n\nAll in an effort to bury the original sin. To embrace the whole of it, and be reborn as a new god.",
+    "info": "Permanently negate all charm and enthrallment effects placed upon the Tarnished while within the realm of shadow, rendering every compulsion, seduction, or obedience spell powerless without needing to equip or activate the rune."
+  },
+  {
+    "id": 2020027,
+    "name": "Roundrock",
+    "caption": "Round piece of rock shaped by the water's current.\n\nFound on the ground at places like river banks.\n\nIt breaks easily, owing to extensive cracking.",
+    "info": "Use as crafting material, or throw to deal strike damage with very poor tracking.\nIts strike property lets it stagger miners, undead, and crystalians more easily despite its sluggish flight."
+  }
+]

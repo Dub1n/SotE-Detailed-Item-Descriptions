@@ -1,0 +1,38 @@
+[
+  {
+    "id": 8152,
+    "name": "Mohg's Great Rune",
+    "caption": "The Great Rune of the shardbearer Mohg, devoid of any benediction.",
+    "info": "This inert Great Rune must have its benediction restored at its Divine Tower before it grants Mohg's blessing.\nAfter restoration, it can be equipped and activated with a Rune Arc like any other Great Rune."
+  },
+  {
+    "id": 8153,
+    "name": "Malenia's Great Rune",
+    "caption": "The Great Rune of the shardbearer Malenia, devoid of any benediction.",
+    "info": "This inert Great Rune must have its benediction restored at its Divine Tower before it grants Malenia's blessing.\nAfter restoration, it can be equipped and activated with a Rune Arc like any other Great Rune."
+  },
+  {
+    "id": 2008003,
+    "name": "Igon's Furled Finger",
+    "caption": "Furled finger of Igon, the broken drake warrior.\nGnarled and knotty, and deeply discolored on the inside.\n\n\"My soul yet lies on the mountain.\"",
+    "info": "Summon Drake Warrior Igon from his summon sign inside Bayle the Dread's arena, calling forth his greatbow barrages to distract the dragon; Igon cannot be harmed yet still draws Bayle's aggression for the duration of the duel."
+  },
+  {
+    "id": 2008008,
+    "name": "Hole-Laden Necklace",
+    "caption": "A pale-blue necklace made from a thin, elongated stone hollowed out from the inside.\n\nIt was a teaching of Count Ymir. The fate of the one who sounds the hanging bell will be guided by the stars.",
+    "info": "Use at any hallowed ruin to ring the suspended bell, dispelling the wards placed there by Count Ymir and advancing his ritual teachings."
+  },
+  {
+    "id": 2008011,
+    "name": "Heart of Bayle",
+    "caption": "The biatrial heart of Bayle the Dread.\nDotted with horn-like gravel stones and glistening with deep-red liquor.\n\nThe purest form of Communion, in the words of its priestess.",
+    "info": "Offer at the Grand Altar of Dragon Communion to receive either Bayle's Flame Lightning or Bayle's Tyranny, consuming the heart in the process."
+  },
+  {
+    "id": 2008033,
+    "name": "Larval Tear",
+    "caption": "An exceptionally rare creature that burgeons from spiritgraves and lives only a fleeting existence.\nNeither flesh nor spirit, but something in between.\n\nMaterial required by the amber egg cradled by Rennala, Queen of the Full Moon, to birth people anew.",
+    "info": "Present to Rennala, Queen of the Full Moon, to be born anew and fully redistribute every attribute gained from leveling; each rebirth consumes one tear.\nCannot be dropped for other players and carries over into New Game Plus."
+  }
+]

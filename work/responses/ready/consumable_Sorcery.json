@@ -1,0 +1,104 @@
+[
+  {
+    "id": 4130,
+    "name": "Terra Magica",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nOnce, the sigil would be cast from the highest belfry of the academy, covering the entire institution's grounds. This spell allows such vivid experience of spell-casting success, it turns many a fledgling into a true sorcerer in a flash of newfound understanding.",
+    "info": "Draw an academy sigil that amplifies the magic of anyone standing within.\nEmpower yourself and allies who deal damage while inside the sphere.\n\n<font color=\"#57DBCE\">Base magic damage</font> increase (sigil): 22% for 30 seconds\nCategory: Glintstone"
+  },
+  {
+    "id": 4300,
+    "name": "Glintblade Phalanx",
+    "caption": "One of the sorceries of the Carian royal family.\n\nBestowed upon the enchanted Carian knights, who combined this art with their swordsmanship to maintain pressure upon their foes, striking in waves of steel and sorcery.",
+    "info": "Summon an arc of tracking glintblades overhead that automatically fire at nearby targets.\nCreate five spectral blades that hover overhead and shatter if they strike walls or ceilings.\n\n<font color=\"#57DBCE\">Base magic damage</font> (each blade): 60\nCategory: Carian, Glintblade"
+  },
+  {
+    "id": 4630,
+    "name": "Thops's Barrier",
+    "caption": "The lifelong pursuit of Thops the Bluntstone.\n\nFuture generations will learn. They will know the foolishness of the sneering sorcerers who ridiculed this theory, little realizing that it was in fact a discovery worthy of a new conspectus of the academy.",
+    "info": "Conjure a glintstone barrier that swats away hostile spells.\nProduce a brief parry window that deflects sorceries and incantations, and hold to repeat the barrier.\n\nCategory: Glintstone"
+  },
+  {
+    "id": 2004300,
+    "name": "Miriam's Vanishing",
+    "caption": "Sorcery of a preceptor who served the Carian royal family.\nThe curator of the study hall was such a master of this sorcery that it now bears her name.",
+    "info": "Conceal yourself in a glintstone haze before reappearing a few steps away; directional inputs set the exit point.\n\nCategory: Carian Support Sorcery"
+  },
+  {
+    "id": 2004310,
+    "name": "Glintblade Trio",
+    "caption": "An old sorcery of the Carian royal family.\nThe prototypical form of sword-phalanx sorceries saw a different subsequent refinement in the realm of shadow.",
+    "info": "Create a sigil overhead that releases three enemy-seeking glintblades after a short delay; charging lengthens the delay and increases potency, and a charged cast can be followed immediately by an uncharged volley so both strike together.\n\n<font color=\"#57DBCE\">Base magic damage</font> (per glintblade): 109% of sorcery scaling uncharged / 127% when fully charged\n<font color=\"#C0B194\">Stance damage</font> (per glintblade): 4 uncharged / 6 charged\nCategory: Carian Glintblade Sorcery"
+  },
+  {
+    "id": 2004320,
+    "name": "Rellana's Twin Moons",
+    "caption": "Sorcery of Rellana, the Twin Moon Knight.\nAssociated with a Carian princess.\nIn her childhood, she and her elder sister Rennala met these moons. Overlapping, as though nestled against one another.",
+    "info": "Incarnate overlapping twin moons that crash into the ground in succession, unleashing moonlight shockwaves that shake the earth; requires 72 <font color=\"#E0B985\">intelligence</font>, leaves the caster stationary while channeling, and grants immunity to grab attacks while transformed into a moon.\n\nCategory: Moon Sorcery"
+  },
+  {
+    "id": 2004500,
+    "name": "Glintstone Nail",
+    "caption": "Glintstone sorcery of Count Ymir, High Priest.\nOne of the finger sorceries said to have been discovered in a hallowed ruin.\nCount Ymir boasts that this is mere child's play, an echo of a greater truth.",
+    "info": "Fire a heavy glintstone nail that crumbles in flight, striking foes with the projectile before bursting into shards for lingering <font color=\"#57DBCE\">magic damage</font>; it travels slower than common glintstone projectiles but has superior tracking and range, and charging increases damage and stance pressure.\n\n<font color=\"#57DBCE\">Base magic damage</font> (projectile): 216% of sorcery scaling uncharged / 269% when fully charged\n<font color=\"#C0B194\">Stance damage</font> (projectile): 3 uncharged / 5 charged\nCategory: Finger Sorcery"
+  },
+  {
+    "id": 2004510,
+    "name": "Glintstone Nails",
+    "caption": "Glintstone sorcery of Count Ymir, High Priest.\nOne of the finger sorceries said to have been discovered in a hallowed ruin.\n\nCount Ymir boasts that this is mere child's play, an echo of a greater truth.",
+    "info": "Launch six tracking magic nails that crumble on impact after a medium flight, traveling slightly slower so the projectiles can home in on distant targets.\n\n<font color=\"#57DBCE\">Base magic damage</font> (each nail): Sorcery Scaling x 0.66 uncharged / Sorcery Scaling x 0.75 charged\n<font color=\"#C0B194\">Stance damage</font> (each nail): 2 uncharged / 4 charged\nCategory: Sorcery"
+  },
+  {
+    "id": 2004700,
+    "name": "Blades of Stone",
+    "caption": "Gravity-manipulating sorcery of Commander Gaius.\n\nGaius and Radahn were good rivals in their youth, and this sorcery is a product of their friendly competition.",
+    "info": "Rip blade-like clumps of rock from the earth, creating eruptions beneath foes that can extend farther and split into multiple blasts when charged.\n\nBase standard damage (uncharged): Sorcery Scaling x 2.61\nBase standard damage (charged): Sorcery Scaling x 3.02\nAdditional eruptions (charged): Sorcery Scaling x 1.85 each\n<font color=\"#C0B194\">Stance damage</font> (per eruption): 8 (24 total when fully charged)\nCategory: Sorcery"
+  },
+  {
+    "id": 2004710,
+    "name": "Gravitational Missile",
+    "caption": "One of the glintstone sorceries that manipulates gravitational forces.\n\nSaid to have originated in the lightless dark far beyond-the home of the fallingstar beasts.",
+    "info": "Fire a gravitational orb that tugs enemies twice toward it before exploding; pulses have moderate stagger with a delay that weakens them versus high-<font color=\"#E0B985\">poise</font> or evasive foes, and charging extends range and adds another pulse.\n\n<font color=\"#57DBCE\">Base magic damage</font> (explosion): Sorcery Scaling x 2.79 uncharged / Sorcery Scaling x 3.38 charged\n<font color=\"#57DBCE\">Base magic damage</font> (pulse): Sorcery Scaling x 0.30 uncharged / Sorcery Scaling x 0.40 charged\n<font color=\"#C0B194\">Stance damage</font>: pulses 3 each (additional 3 when charged); explosion 10\nPulse radius: 5 meters (5.5 meters when charged); explosion radius: 6 meters\nCategory: Sorcery"
+  },
+  {
+    "id": 2004900,
+    "name": "Mantle of Thorns",
+    "caption": "Sorcery of those who abandoned the practice of incantations after devout faith rewarded them with only despair.\n\nThe image of the misshapen Scadutree is an edict:\nSpurn all that exists. Wound all that exists.\nFor we have been abandoned.",
+    "info": "Spend 50 HP and apply 25 <font color=\"#C84343\">Hemorrhage</font> buildup to coat the body in Scadutree thorns that add 87 <font color=\"#F395C4\">physical damage</font> to dodge rolls for 30 seconds and wound foes that touch them.\n\nCategory: Sorcery"
+  },
+  {
+    "id": 2004910,
+    "name": "Impenetrable Thorns",
+    "caption": "Sorcery of those who abandoned the practice of incantations after devout faith rewarded them with only despair.\n\nThe image of the twisted Scadutree is an edict:\nDenounce their ways. Do them harm.\nFor they have abandoned us.",
+    "info": "Spend 50 HP and 25 <font color=\"#C84343\">Hemorrhage</font> buildup to unleash three thorn trails from the earth that track enemies at medium-to-long range.\n\n<font color=\"#57DBCE\">Magic damage</font> (per hit): Sorcery Scaling x 0.63\n<font color=\"#C0B194\">Stance damage</font> (per hit): 1.67\n<font color=\"#C84343\">Hemorrhage</font> buildup (per hit): 17 (up to 153 per cast)\nCategory: Sorcery"
+  },
+  {
+    "id": 2005000,
+    "name": "Rings of Spectral Light",
+    "caption": "Sorcery practiced by the keepers of the spiritgraves, where all death ultimately drifts.",
+    "info": "Conjure six lemniscate rings that fire together after a short delay, dealing ghostflame magic over very long distance while inflicting frost buildup without any stagger.\n\n<font color=\"#57DBCE\">Base magic damage</font> (ring): Sorcery Scaling x 0.53 uncharged / Sorcery Scaling x 0.63 charged\n<font color=\"#C0B194\">Stance damage</font> (ring): 1 uncharged / 1.5 charged\n<font color=\"#9DD7FB\">Frostbite</font> buildup: 19 per hit (up to 114)\nCategory: Death Sorcery"
+  },
+  {
+    "id": 2006200,
+    "name": "Vortex of Putrescence",
+    "caption": "Sorcery used by the Putrescent Knight.\n\nIn an age long past, Death was burned by ghostflame. Even the remains of tainted flesh were given equal treatment in death.",
+    "info": "Shoot a whirl of putrescent jets that combust upon impact and send ghostflame trails back toward the caster, delivering a single strike that knocks enemies down with short stagger; not boosted by the Prince of Death's Staff.\n\n<font color=\"#57DBCE\">Base magic damage</font> (impact): Sorcery Scaling x 3.28\n<font color=\"#9DD7FB\">Frostbite</font> buildup: 170\n<font color=\"#C0B194\">Stance damage</font>: 5\nCategory: Death Sorcery"
+  },
+  {
+    "id": 2006210,
+    "name": "Mass of Putrescence",
+    "caption": "Sorcery originating from the putrid liquor of the stone coffins.\n\nIn an age long past, Death was burned by ghostflame. Even the remains of tainted flesh were given equal treatment in death.",
+    "info": "Heave a putrescent mass that pierces foes before exploding in ghostflame, best aimed at a surface because the projectile passes through enemies; charging increases the AoE and the spell shares a long casting animation (about 1.8 seconds uncharged, 3 seconds charged) with Cannon of Haima.\n\n<font color=\"#57DBCE\">Base magic damage</font> (mass): Sorcery Scaling x 0.80 uncharged / Sorcery Scaling x 1.00 charged\n<font color=\"#57DBCE\">Base magic damage</font> (ghostflame): Sorcery Scaling x 2.00 uncharged / Sorcery Scaling x 3.00 charged\n<font color=\"#9DD7FB\">Frostbite</font> buildup: direct hits inflict 40 buildup (50 charged) and the ghostflame adds 120 buildup (150 charged)\n<font color=\"#C0B194\">Stance damage</font>: mass 5; ghostflame 7 (13 when charged)\nCategory: Death Sorcery"
+  },
+  {
+    "id": 2007410,
+    "name": "Fleeting Microcosm",
+    "caption": "A finger sorcery of Count Ymir, High Priest.\nOne of the secret hallowed rites.\n\nThe broken and discarded are fully willing to cling to fleeting simulacra, earning them some modicum of sympathy.",
+    "info": "Conjure a microcosm at a foe's feet that pulses once before bursting to knock enemies down; it has moderate range and cannot bypass walls even when cast below the target.\n\nCategory: Finger Sorceries"
+  },
+  {
+    "id": 2007420,
+    "name": "Cherishing Fingers",
+    "caption": "A finger sorcery of Count Ymir, aspiring mother of fingers.\n\nThe dear fingers look after their mother, or perhaps that is merely what the mother wishes to believe.",
+    "info": "Surround the caster with a circle of hefty fingers that repel projectiles, erupting in a 2.8 meter radius (3.2 when charged) to stagger or knock foes away even if the caster is interrupted before they burst.\n\nBase strike damage: Sorcery Scaling x 2.53 uncharged / Sorcery Scaling x 3.47 charged\nBase <font color=\"#C0B194\">stance damage</font>: 11 uncharged / 15 charged\nCategory: Finger Sorceries"
+  }
+]

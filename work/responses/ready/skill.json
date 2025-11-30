@@ -116,14 +116,16 @@
     "name": "Bubble Shower",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bubble Shower</font>",
-    "info": "Blow the horn to launch a slow-moving spray of bubbles that drift forward before raining down in front of you.\n\nDeals pure <font color=\"#F5EB89\">holy damage</font> and 72 <font color=\"#C0B194\">stance damage</font>, 92 if all bubbles hit."
+    "info": "Blow the horn to launch a slow-moving spray of bubbles that drift forward before raining down in front of you.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 65\n\nDeals pure <font color=\"#F5EB89\">holy damage</font> and 72 <font color=\"#C0B194\">stance damage</font>, 92 if all bubbles hit.",
+    "note": "Restores mod's base holy damage 65 and adds stance totals (72/92) that mod lacked."
   },
   {
     "id": 1008,
     "name": "Moonlight Greatsword",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moonlight Greatsword</font>",
-    "info": "Raise the sword aloft to wreathe it in the dark moon's light for 60 seconds, adding 65 <font color=\"#57DBCE\">magic damage</font> and 15 <font color=\"#9DD7FB\">frostbite accumulation</font> to every attack.\n\nHeavy attacks launch moonlight projectiles that deal 120% of the weapon's frost buildup and 15 <font color=\"#C0B194\">stance damage</font>, or 150% buildup and 24 <font color=\"#C0B194\">stance damage</font> when charged, while the weapon swings during the buff deal their full status and stance but 50% of their normal damage (65% when the projectile is charged).\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds."
+    "info": "Raise the sword aloft to wreathe it in the dark moon's light for 60 seconds, adding 65 <font color=\"#57DBCE\">magic damage</font> and 15 <font color=\"#9DD7FB\">frostbite accumulation</font> to every attack.\n\nHeavy attacks launch moonlight projectiles that deal 120% of the weapon's frost buildup and 15 <font color=\"#C0B194\">stance damage</font>, or 150% buildup and 24 <font color=\"#C0B194\">stance damage</font> when charged, while the weapon swings during the buff deal their full status and stance but 50% of their normal damage (65% when the projectile is charged).\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.",
+    "note": "Buff values differ: mod gives +85 magic/+100 frost while ours gives +65/+15 but adds projectile/stance details."
   },
   {
     "id": 1011,
@@ -158,7 +160,8 @@
     "name": "Cursed-Blood Slice",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Cursed-Blood Slice</font>",
-    "info": "Brace, then leap into a diagonal slash that paints a cursed trail which detonates moments later; repeat the skill for a horizontal follow-up that leaves a second delayed explosion.\n\nBoth strikes deal pure <font color=\"#F48C25\">fire damage</font> and inflict a combined 14 <font color=\"#C0B194\">stance damage</font>.\n\nCannot be parried while consuming <font color=\"#E0B985\">FP</font>."
+    "info": "Brace, then leap into a diagonal slash that paints a cursed trail which detonates moments later; repeat the skill for a horizontal follow-up that leaves a second delayed explosion.\n\nBoth strikes deal pure <font color=\"#F48C25\">fire damage</font> and inflict a combined 14 <font color=\"#C0B194\">stance damage</font>.\n\n<font color=\"#F48C25\">Base fire damage (explosions):</font> 80\n\nCannot be parried while consuming <font color=\"#E0B985\">FP</font>.",
+    "note": "Restores mod's base fire damage 80; retains added stance total and parry immunity details absent from mod."
   },
   {
     "id": 1030,
@@ -172,7 +175,8 @@
     "name": "Bloodboon Ritual",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bloodboon Ritual</font>",
-    "info": "Raise the sacred spear and pierce the Formless Mother up to three times, each thrust spawning an explosion of bloodflame that rains droplets around you before coating the weapon.\n\nEach detonation deals pure <font color=\"#F48C25\">fire damage</font>, totals 21 <font color=\"#C0B194\">stance damage</font> if all three inputs connect, and leaves the armament imbued for 20 seconds with 30 additional <font color=\"#F48C25\">fire damage</font> and steady blood-loss buildup on every hit.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100."
+    "info": "Raise the sacred spear and pierce the Formless Mother up to three times, each thrust spawning an explosion of bloodflame that rains droplets around you before coating the weapon.\n\nEach detonation deals pure <font color=\"#F48C25\">fire damage</font>, totals 21 <font color=\"#C0B194\">stance damage</font> if all three inputs connect, and leaves the armament imbued for 20 seconds with 30 additional <font color=\"#F48C25\">fire damage</font> and steady blood-loss buildup on every hit.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.",
+    "note": "Mod lists base fire 100 explosion/65 drips and 60 bleed buildup; our text omits those numbers but adds stance total and imbue timing."
   },
   {
     "id": 1049,
@@ -221,7 +225,8 @@
     "name": "Contagious Fury",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Contagious Fury</font>",
-    "info": "Raise the jellyfish shield to channel its rage for 30 seconds, draping yourself in red energy.\n\nIncreases <font color=\"#E0B985\">all damage inflicted</font> by 13% for the duration, counts as a unique buff, and ends immediately if you swap the shield."
+    "info": "Raise the jellyfish shield to channel its rage for 30 seconds, draping yourself in red energy.\n\nIncreases <font color=\"#E0B985\">all damage inflicted</font> by 13% for the duration, counts as a unique buff, and ends immediately if you swap the shield.",
+    "note": "Mod says +20% all damage; our text says +13% and notes unique-buff behavior, so values conflict."
   },
   {
     "id": 2000,
@@ -508,7 +513,7 @@
     "name": "Moon-and-Fire Stance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moon-and-Fire Stance</font>",
-    "info": "Cast glintstone light waves from the ready stance with normal attacks—each light attack can be followed by up to two additional light-wave casts—and finish with a strong attack to spin into a flaming tornado that drenches the area in flame."
+    "info": "Cast glintstone light waves from the ready stance with normal attacks\u2014each light attack can be followed by up to two additional light-wave casts\u2014and finish with a strong attack to spin into a flaming tornado that drenches the area in flame."
   },
   {
     "id": 5180,

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 11025,
+    "name": "Cerulean Hidden Tear",
+    "caption": "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+    "info": "Mix into the Flask of Wondrous Physick to remove all <font color=\"#E0B985\">FP</font> costs for 10 seconds when the draught is consumed.\nPerform actions that normally exceed your available <font color=\"#E0B985\">FP</font>, but the effect ends immediately after the duration expires."
+  },
+  {
+    "id": 2011000,
+    "name": "Viridian Hidden Tear",
+    "caption": "A crystal tear formed slowly over the ages, where the scattered sap of the Scadutree pools deep within the furnace golems.",
+    "info": "Mix into the Flask of Wondrous Physick to eliminate all <font color=\"#E0B985\">stamina</font> consumption for 15 seconds before the tear's power dissipates."
+  },
+  {
+    "id": 2011010,
+    "name": "Crimsonburst Dried Tear",
+    "caption": "A crystal tear formed slowly over the ages, where the scattered sap of the Scadutree pools deep within the furnace golems.",
+    "info": "Create a radiant aura for 3 minutes that steadily restores HP of nearby allies by 7 per second.\nAffects allied players, friendly NPCs, and Spirit Ashes only, and the aura emits a faint guiding light."
+  },
+  {
+    "id": 2011020,
+    "name": "Crimson-Sapping Cracked Tear",
+    "caption": "A crystal tear formed slowly over the ages, where the scattered sap of the Scadutree pools deep within the furnace golems.",
+    "info": "Restore 0.75% of your <font color=\"#E0B985\">maximum HP</font> each time an attack lands for 45 seconds.\nThe healing amount per hit is unaffected by damage dealt, enemy count, or attack type."
+  },
+  {
+    "id": 2011030,
+    "name": "Cerulean-Sapping Cracked Tear",
+    "caption": "A crystal tear formed slowly over the ages, where the scattered sap of the Scadutree pools deep within the furnace golems.",
+    "info": "Restore 5 <font color=\"#E0B985\">FP</font> per hit from melee attacks for 45 seconds.\nOnly attacks that count as weapon strikes, such as Carian Slicer, trigger the restoration; spell projectiles do not."
+  },
+  {
+    "id": 2011040,
+    "name": "Oil-Soaked Tear",
+    "caption": "A crystal tear formed slowly over the ages, where the scattered sap of the Scadutree pools deep within the furnace golems.",
+    "info": "Cause oil to drip from your body for 30 seconds, soaking nearby enemies you brush against.\nOil-soaked targets take 20% increased <font color=\"#F48C25\">fire damage</font> and this effect does not stack with Oil Pots or Hefty Oil Pots."
+  },
+  {
+    "id": 2011050,
+    "name": "Bloodsucking Cracked Tear",
+    "caption": "A crystal tear formed slowly over the ages, where the scattered sap of the Scadutree pools deep within the furnace golems.",
+    "info": "Increase all <font color=\"#E0B985\">attack power</font> by 20% for 3 minutes (12.5% in PvP).\nDrain 0.2% of your <font color=\"#E0B985\">maximum HP</font> plus 20 HP every second while active."
+  },
+  {
+    "id": 2011060,
+    "name": "Glovewort Crystal Tear",
+    "caption": "A crystal tear formed slowly over the ages, where the scattered sap of the Scadutree pools deep within the furnace golems.",
+    "info": "Increase Spirit Ash and other summoned ally <font color=\"#E0B985\">attack power</font> by 7.5% for 3 minutes."
+  },
+  {
+    "id": 2011070,
+    "name": "Deflecting Hardtear",
+    "caption": "A crystal tear formed slowly over the ages, where the scattered sap of the Scadutree pools deep within the furnace golems.",
+    "info": "Enhance spontaneous guards for 5 minutes, granting 100% <font color=\"#F395C4\">physical damage negation</font>, 75% elemental damage negation, and increased guard boost whenever you deflect at the moment of impact.\nEach successful spontaneous guard adds a stack that increases guard counter damage and <font color=\"#C0B194\">stance damage</font> by 20% for roughly 5 seconds, stacking up to 4 times (80%); heavier stance-breaking attacks grant 2 stacks at once.\nOnly true spontaneous guards trigger these bonuses, and they also nullify any status buildup that the deflected strike would have inflicted."
+  }
+]
