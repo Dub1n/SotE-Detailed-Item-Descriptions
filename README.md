@@ -1,4 +1,4 @@
-# SotE Better Item Descriptions
+# SotE Detailed Item Descriptions
 
 This workspace automates updating Elden Ring item descriptions (DLC1 + selected base-game items) into the "Detailed Item Descriptions" style. It handles scraping wiki effects, batching LLM rewrites, salvaging outputs, and applying them into FMG XMLs.
 
