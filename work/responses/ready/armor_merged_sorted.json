@@ -1,0 +1,135 @@
+[
+  {
+    "id": 5000100,
+    "name": "Leda's Armor",
+    "category": "armor",
+    "caption": "Chest armor of Needle Knight Leda.\n\nEmbroidered with a golden crossed-tree motif, the chalk white cloak and surcoat symbolize the honor of the Needle Knights.\n\n\"Kindly Miquella fashioned us as his needles to quell all, to ward away all.",
+    "info": "Strengthens attacks following a dodge roll or backstep, as well as dash attacks, by 10%."
+  },
+  {
+    "id": 5062100,
+    "name": "Finger Robe",
+    "category": "armor",
+    "caption": "Robe of Count Ymir, High Priest.\nThe front is open, exposing the squirming fingers beneath.\n\nThis robe is the image of his fervent desire having broken free, laying bare his greatest wish.\n\n\"I will be the true mother.\nMy fingers will grant us redemption!",
+    "info": "Enhances Finger Sorceries by 8%."
+  },
+  {
+    "id": 5070100,
+    "name": "Braided Cord Robe",
+    "category": "armor",
+    "caption": "Ragged black cloth overlaid with braided cord. Attire of a vengeance-seeking hornsent.\n\nThe braided cord ties together the vow of the revenger with the victims' grudges. It must never come undone.",
+    "info": "Enhances watchful and vengeful spirits summoned by Horned Bairn by 15%.\nBoosts the damage of the Watchful Spirit incantation by 15%."
+  },
+  {
+    "id": 5080300,
+    "name": "Dancer's Trousers",
+    "category": "armor",
+    "caption": "Long, black trousers worn underneath the deep crimson dress of the Ranah dancers.",
+    "info": "Enhances the power of dancing attacks by 2.5%."
+  },
+  {
+    "id": 5110000,
+    "name": "Wise Man's Mask",
+    "category": "armor",
+    "caption": "The iron mask of Sir Ansbach, giving the appearance of a quiet, wise, old bearded man.\n\nBut an old fear lurks beneath, together with the cold, unflinching discipline that once honed his blade.",
+    "info": "Increases the power of Blood Oath and dynastic skills by 4%, stacking multiplicatively. Wearing the full Ansbach's set increases this bonus to 14%."
+  },
+  {
+    "id": 5110100,
+    "name": "Ansbach's Attire",
+    "category": "armor",
+    "caption": "Attire of Sir Ansbach. The embroidered crest of the Pureblood Knights has now all but faded away.\n\nAnsbach understood that keeping his oath to his old master was not an act of logic, nor would it bear any justice, but it was for these very reasons he was unable to let go.",
+    "info": "Increases the power of Blood Oath and dynastic skills by 3%, stacking multiplicatively. Wearing the full Ansbach's set increases this bonus to 14%."
+  },
+  {
+    "id": 5110200,
+    "name": "Ansbach's Manchettes",
+    "category": "armor",
+    "caption": "Manchettes of Sir Ansbach. Black leather adorned with gold embroidery.",
+    "info": "Increases the power of Blood Oath and dynastic skills by 3%, stacking multiplicatively. Wearing the full Ansbach's set increases this bonus to 14%."
+  },
+  {
+    "id": 5110300,
+    "name": "Ansbach's Boots",
+    "category": "armor",
+    "caption": "Boots of Sir Ansbach. Black leather adorned with gold embroidery.",
+    "info": "Increases the power of Blood Oath and dynastic skills by 3%, stacking multiplicatively. Wearing the full Ansbach's set increases this bonus to 14%."
+  },
+  {
+    "id": 5111100,
+    "name": "Ansbach's Attire (Altered)",
+    "category": "armor",
+    "caption": "Attire of Sir Ansbach. Black cloth adorned with gold embroidery.",
+    "info": "Increases the power of dynasty and Blood Oath skills by 3%, stacking multiplicatively. Wearing the full Ansbach's set increases this bonus to 14%."
+  },
+  {
+    "id": 5180100,
+    "name": "Fire Knight Armor",
+    "category": "armor",
+    "caption": "Armor of the Fire Knights under Messmer the Impaler's personal command.\n\nThese were the only ones who truly knew Messmer. His flames, like serpents. The painful fate that accompanied his accursed form.",
+    "info": "Enhances Messmer's Flame Incantations by 5%. This bonus only applies while the armor is unaltered."
+  },
+  {
+    "id": 5181100,
+    "name": "Fire Knight Armor (Altered)",
+    "category": "armor",
+    "caption": "Armor of the Fire Knights under Messmer the Impaler's personal command.\n\nEach and every knight hailed from a renowned family of the Erdtree's upper echelons, but were shunned and chased from their homes after pledging allegiance to Messmer as their master.",
+    "info": "Does not boost Messmer's Flame Incantations."
+  },
+  {
+    "id": 5183000,
+    "name": "Winged Serpent Helm",
+    "category": "armor",
+    "caption": "Helm of Kood, captain of the Fire Knights. A winged serpent perches atop it.\n\nThe winged serpent is the token creature of Messmer's military forces. It is a wise friend which keeps the base serpent at bay and holds its power in check.",
+    "info": "Enhances Fire Knight skills by 10%, including Flame Skewer, Flame Spear, Flare, O Serpent, and Messmer's Assault."
+  },
+  {
+    "id": 5200300,
+    "name": "Death Knight Greaves",
+    "category": "armor",
+    "caption": "Golden greaves of the Death Knights, adorned with an antiquated depiction of the Erdtree.\n\nThese knights, once Godwyn's personal guard, quested to find their transfigured master's cadaver surrogate-for the coming age of the Duskborn.",
+    "info": "Enhances skills and incantations of the ancient dragon cult by 2%."
+  },
+  {
+    "id": 5250000,
+    "name": "Horned Warrior Helm",
+    "category": "armor",
+    "caption": "Helm featuring a crown of sturdy tangled horns, allowing the wearer to invoke divinity. Attire of the horned warriors, keepers of the tower.",
+    "info": "Increases <font color=\"#E0B985\">Strength</font> by 5, but decreases <font color=\"#E0B985\">Focus</font> by 30 and reduces healing from Flask of Crimson Tears by 7%."
+  },
+  {
+    "id": 5253300,
+    "name": "Divine Bird Warrior Greaves",
+    "category": "armor",
+    "caption": "Greaves of divine bird warriors, the very first of all horned warriors, made from a golden metal.\n\nThe great, sharp talons increase the force generated by kicks.",
+    "info": "Increases the damage of kicks by 4%. Stacks with Shattered Stone Talisman and applies to Dane's Footwork, Dryleaf Arts, and other kick-based attacks."
+  },
+  {
+    "id": 5272000,
+    "name": "Circlet of Light",
+    "category": "armor",
+    "caption": "The circlet of light which adorned Miquella's head as he returned in divine aspect. It has begun to fade into nothingness.\n\nThis circle was to be the very foundation upon which Miquella's age of compassion would be built, should it have ever come to pass.",
+    "info": "Increases <font color=\"#E0B985\">intelligence</font>, <font color=\"#E0B985\">faith</font>, and <font color=\"#E0B985\">arcane</font> by 1.\nBoosts the power of the <font color=\"#F395C4\">Light of Miquella</font> incantation by 10%."
+  },
+  {
+    "id": 5290000,
+    "name": "Divine Beast Head",
+    "category": "armor",
+    "caption": "Ritual headwear in the form of a divine beast's head, used to perform the lion dance. Worn by the very finest of the sculpted keepers. Alas, it no longer responds to the old woman's earnest prayer.\n\nFocus is also troubled by wearing this headwear.",
+    "info": "Increases <font color=\"#E0B985\">strength</font> and <font color=\"#E0B985\">dexterity</font> by 4, increases damage of spells, skills, and items with the word \"Storm\" in their names by 7%, but reduces the restorative effect of sacred tear flasks by 11%."
+  },
+  {
+    "id": 5320000,
+    "name": "Greatjar",
+    "category": "armor",
+    "caption": "A greatjar which fits comfortably over the head when upturned. Attire of the shamans who perform their worship at gaols.\n\nThey offer their prayers to the innards of the greatjars, such that they might be reborn one day into sainthood. This is the cycle of death and rebirth, taken into the hands of mortal men.",
+    "info": "Increases the power of thrown pots by 16%, including Hefty pots."
+  },
+  {
+    "id": 5330000,
+    "name": "Imp Head (Lion)",
+    "category": "armor",
+    "caption": "Head covering made from the largely unaltered head of an impish golem.\n\nResembling a lion in appearance, life force faintly clings to it.",
+    "info": "Increases <font color=\"#E0B985\">vigor</font> by 2."
+  }
+]

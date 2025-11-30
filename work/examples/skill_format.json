@@ -1,0 +1,121 @@
+[
+    {
+        "id": 103,
+        "name": "Spinning Slash",
+        "category": "skill",
+        "caption": "Skill favored by dexterous warriors.",
+        "info": "<font color=\"#C0B194\">      Skill: Spinning Slash</font>\n\nSpin in place to carve every foe around you, then repeat the input to hurl yourself forward into another whirling slash that continues the assault.\n\nDeals stance damage when used on throwing blades at 13, 20 on daggers, 26 on halberds, reapers, and spears, 29 on greatswords, curved greatswords, greataxes, and great spears, 33 on straight swords, curved swords, backhand blades, katanas, and axes, and 36 on light greatswords.\nWhen equipped on the Dragon Halberd, the follow-up strike releases ice lightning that adds Lightning damage, Frostbite buildup, and 10 extra stance damage to every hit.\nCannot be parried when consuming FP."
+    },
+    {
+        "id": 118,
+        "name": "Loretta's Slash",
+        "category": "skill",
+        "caption": "Skill of Loretta the Royal Knight.",
+        "info": "<font color=\"#C0B194\">      Skill: Loretta's Slash</font>\n\nLeap forward while cloaking the blade in glintstone, then dive into a sweeping slash as you land to catch distant foes.\n\nThe leaping strike deals 12 stance damage and the finishing slash adds 10 more for 22 total, and each follow-up inherits any weapon buffs already on the armament.\nCannot be parried."
+    },
+    {
+        "id": 122,
+        "name": "Storm Assault",
+        "category": "skill",
+        "caption": "One of the skills that channel the tempests of Stormveil.",
+        "info": "<font color=\"#C0B194\">      Skill: Storm Assault</font>\n\nWrap yourself in a cyclone, leap forward, and drive the armament into the ground to detonate another spiral of storm winds at the point of impact. The takeoff gust damages foes around you before the diving thrust lands, and the swirling winds linger briefly to pin targets in place."
+    },
+    {
+        "id": 123,
+        "name": "Stormcaller",
+        "category": "skill",
+        "caption": "One of the skills that channel the tempests of Stormveil.",
+        "info": "<font color=\"#C0B194\">      Skill: Stormcaller</font>\n\nSpin the armament to surround yourself with storm winds, then repeat the input up to two times to step forward and unfold wider cyclones.\n\nThe initial sweep deals 24 stance damage and each of the two follow-up whirlwinds adds 12 more each.\nCannot be parried when consuming FP."
+    },
+    {
+        "id": 200,
+        "name": "Glintblade Phalanx",
+        "category": "skill",
+        "caption": "Skill used by the enchanted knights who served the Carian royal family.",
+        "info": "<font color=\"#C0B194\">      Skill: Glintblade Phalanx</font>\n\nConjure four magical dagger projectiles overhead; they hover defensively before automatically launching at the nearest enemy once they enter range. Following up with a strong attack chains the skill into a lunging thrust, and the glintblades can even track invisible foes so long as they have a clear path. Each blade shatters the instant it touches any geometry, so casting in tight quarters can waste the shots.<font color=\"#57DBCE\">Base magic damage (projectiles):</font> 47"
+    },
+    {
+        "id": 214,
+        "name": "Flaming Strike",
+        "category": "skill",
+        "caption": "",
+        "info": "<font color=\"#C0B194\">      Skill: Flaming Strike</font>\n\nSweep your off-hand to send out a short arc of flame, then follow up with a lunging slash that cuts through the blaze and coats the armament in fire. The follow-up buff adds 90 <font color=\"#F48C25\">fire damage</font> to the weapon for 40 seconds regardless of its affinity.\n\nThe lunging slash can be parried even though the ignition wave cannot.\nDeals 15 total stance damage across both hits, and attempting it with no FP produces no flame, fails to apply the buff, and greatly weakens the follow-up.<font color=\"#F48C25\">Base fire damage (projectile):</font> 138"
+    },
+    {
+        "id": 302,
+        "name": "Parry",
+        "category": "skill",
+        "caption": "",
+        "info": "<font color=\"#C0B194\">      Skill: Parry</font>\n\nSwing your armament with precise timing to deflect an incoming melee attack, breaking the enemy stance and usually opening them to a critical hit. Only certain melee attacks can be parried, and the timing window changes with the armament performing the skill.\n\nOn small shields Parry has 4 start-up frames and 5 parry frames at 30 FPS (double at 60 FPS). On daggers it has 4 start-up frames and 4 parry frames, while medium shields, thrusting swords, curved swords, fists, and claws have 4 start-up frames and 2 parry frames at 30 FPS, demanding stricter timing."
+    },
+    {
+        "id": 303,
+        "name": "Buckler Parry",
+        "category": "skill",
+        "caption": "",
+        "info": "<font color=\"#C0B194\">      Skill: Buckler Parry</font>\n\nTake a braced stance with the buckler and flick it out just before impact to deflect the attack, breaking the enemy stance and typically allowing a critical hit. Buckler Parry keeps the same 4 start-up frames and 5 active parry frames at 30 FPS (double at 60 FPS) as a small-shield parry but its deflection point occurs slightly earlier, letting you answer fast swings more reliably. Only parryable melee attacks can be turned aside, so spacing and timing still matter."
+    },
+    {
+        "id": 304,
+        "name": "Parry",
+        "category": "skill",
+        "caption": "",
+        "info": "<font color=\"#C0B194\">      Skill: Parry</font>\n\nUse precise timing to swat aside a melee attack and stagger the foe, setting up a critical riposte if you are close enough. The parry window varies with the armament you are using: small shields share 4 frames of start-up and 5 active parry frames at 30 FPS, daggers share 4 frames of start-up and 4 active frames, and medium shields, thrusting swords, curved swords, fists, and claws only give 2 active parry frames after the same 4-frame start-up. Only parryable melee strings can be deflected, so recognizing an opponent's moveset is key."
+    },
+    {
+        "id": 306,
+        "name": "Storm Wall",
+        "category": "skill",
+        "caption": "",
+        "info": "<font color=\"#C0B194\">      Skill: Storm Wall</font>\n\nSwing the shield to raise a short wall of storm winds that flicks away small physical projectiles and can also parry melee attacks to break an enemy stance. When used as a melee parry it has 4 start-up frames and 5 active parry frames at 30 FPS (double at 60 FPS), while the projectile deflection activates instantly and grants 10 active frames. Storm Wall always consumes FP even if nothing is deflected, and it only reflects lighter physical shots - great arrows and other heavy projectiles will still break through."
+    },
+    {
+        "id": 309,
+        "name": "Thops's Barrier",
+        "category": "skill",
+        "caption": "",
+        "info": "<font color=\"#C0B194\">      Skill: Thops's Barrier</font>\n\nSwing the shield through a conjured sigil to nullify an incoming sorcery or incantation, or parry a melee attack to break an enemy stance. The barrier appears after 3 start-up frames and grants 5 active parry frames at 30 FPS (double at 60 FPS), giving it a slightly later but tighter window than a small-shield parry while remaining identical regardless of the armament using it. Only parryable melee strings and hostile spells can be reflected, but the barrier's timing stays consistent on every shield."
+    },
+    {
+        "id": 404,
+        "name": "Enchanted Shot",
+        "category": "skill",
+        "caption": "",
+        "info": "<font color=\"#C0B194\">      Skill: Enchanted Shot</font>\n\nHold the bow in a steady stance to infuse the next arrow with guiding essence, causing it to fly faster than normal, curve toward its target, and reach farther. While this stance is active each shot deals 50% more damage, builds 50% more status with every hit, and costs 50% more stamina than a regular arrow, but it still cannot pierce shields the way Mighty Shot does. Used without FP, the arrow loses its tracking, speed boost, and damage bonus, only 5% increase over a normal shot."
+    },
+    {
+        "id": 405,
+        "name": "Sky Shot",
+        "category": "skill",
+        "caption": "",
+        "info": "<font color=\"#C0B194\">      Skill: Sky Shot</font>\n\nCrouch in a low stance to fire an arrow almost straight upward so it rains down on the spot where the target stood when released, often registering as a headshot and clearing low cover along the way. Shots fired this way deal 33% more damage than a normal arrow, can outperform Mighty Shot when they strike a weak point, and still cost 4 less FP than Mighty Shot. Holding the stance slows stamina regeneration by roughly 80% and ends immediately if you move, and because the arrow locks on to the original location it is far easier to use against unaware or stationary foes - shots against a target back tend to hit the neck for reduced damage."
+    },
+    {
+        "id": 406,
+        "name": "Rain of Arrows",
+        "category": "skill",
+        "caption": "",
+        "info": "<font color=\"#C0B194\">      Skill: Rain of Arrows</font>\n\nHold to crouch in a low archery stance, firing each shot nearly straight up so it splits into a rain that lands where the target stood. Each barrage deals 50% of the arrow's normal damage and status buildup per projectile but can strike targets multiple times before the effect ends, and the skill can be activated as long as you have at least 1 FP remaining."
+    },
+    {
+        "id": 502,
+        "name": "Storm Stomp",
+        "category": "skill",
+        "caption": "",
+        "info": "<font color=\"#C0B194\">      Skill: Storm Stomp</font>\n\nStomp to summon a tight cyclone that hits around you, keeping foes locked in hitstun and setting up follow-up attacks with the bound armament.\n\nDeals 50 base physical damage and 6 stance damage.\nCannot be parried."
+    },
+    {
+        "id": 503,
+        "name": "Kick",
+        "category": "skill",
+        "caption": "Sometimes a simple tool is the most effective.",
+        "info": "<font color=\"#C0B194\">      Skill: Kick</font>\n\nDeliver a fast, high kick that instantly staggers guarding enemies, opening them to a guard break. Available when you are bare-handed in either hand.\n\nDeals 6 stance damage.\nCannot be parried."
+    },
+    {
+        "id": 1004,
+        "name": "Bubble Shower",
+        "category": "skill",
+        "caption": "",
+        "info": "<font color=\"#C0B194\">      Unique Skill: Bubble Shower</font>\n\nBlow the horn to launch a slow-moving spray of bubbles that drift forward before raining down in front of you./n/nDeals pure <font color=\"#F5EB89\">holy damage</font> and 72 stance damage, 92 if all bubbles hit."
+    }
+]

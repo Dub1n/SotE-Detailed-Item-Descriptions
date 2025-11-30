@@ -1,0 +1,289 @@
+[
+  {
+    "id": 10300,
+    "name": "Ash of War: Spinning Slash",
+    "category": "ash",
+    "caption": "Skill favored by dexterous warriors.",
+    "info": "Spin in place to carve every foe around you, then repeat the input to hurl yourself forward into another whirling slash that continues the assault.\n\nDeals <font color=\"#C0B194\">stance damage</font> when used on throwing blades at 13, 20 on daggers, 26 on halberds, reapers, and spears, 29 on greatswords, curved greatswords, greataxes, and great spears, 33 on straight swords, curved swords, backhand blades, katanas, and axes, and 36 on light greatswords.\n\nWhen equipped on the Dragon Halberd, the follow-up strike releases ice lightning that adds <font color=\"#FFE033\">Lightning damage</font>, <font color=\"#9DD7FB\">Frostbite</font> buildup, and 10 extra <font color=\"#C0B194\">stance damage</font> to every hit.\n\nCannot be parried when consuming <font color=\"#E0B985\">FP</font>."
+  },
+  {
+    "id": 11800,
+    "name": "Ash of War: Loretta's Slash",
+    "category": "ash",
+    "caption": "Skill of Loretta the Royal Knight.",
+    "info": "Leap forward while cloaking the blade in glintstone, then dive into a sweeping slash as you land to catch distant foes.\n\nThe leaping strike deals 12 <font color=\"#C0B194\">stance damage</font> and the finishing slash adds 10 more for 22 total, and each follow-up inherits any weapon buffs already on the armament.\n\nCannot be parried."
+  },
+  {
+    "id": 12200,
+    "name": "Ash of War: Storm Assault",
+    "category": "ash",
+    "caption": "One of the skills that channel the tempests of Stormveil.",
+    "info": "Wrap yourself in a cyclone, leap forward, and drive the armament into the ground to detonate another spiral of storm winds at the point of impact. The takeoff gust damages foes around you before the diving thrust lands, and the swirling winds linger briefly to pin targets in place."
+  },
+  {
+    "id": 12300,
+    "name": "Ash of War: Stormcaller",
+    "category": "ash",
+    "caption": "One of the skills that channel the tempests of Stormveil.",
+    "info": "Spin the armament to surround yourself with storm winds, then repeat the input up to two times to step forward and unfold wider cyclones.\n\nThe initial sweep deals 24 <font color=\"#C0B194\">stance damage</font> and each of the two follow-up whirlwinds adds 12 more each.\n\nCannot be parried when consuming <font color=\"#E0B985\">FP</font>."
+  },
+  {
+    "id": 20000,
+    "name": "Ash of War: Glintblade Phalanx",
+    "category": "ash",
+    "caption": "Skill used by the enchanted knights who served the Carian royal family.",
+    "info": "Conjure four magical dagger projectiles overhead; they hover defensively before automatically launching at the nearest enemy once they enter range. Following up with a strong attack chains the skill into a lunging thrust, and the glintblades can even track invisible foes so long as they have a clear path. Each blade shatters the instant it touches any geometry, so casting in tight quarters can waste the shots.\n\n<font color=\"#57DBCE\">Base magic damage (projectiles):</font> 47"
+  },
+  {
+    "id": 21400,
+    "name": "Ash of War: Flaming Strike",
+    "category": "ash",
+    "caption": "A blazing knight's art forged amid battlefields wreathed in flame.",
+    "info": "Sweep your off-hand to send out a short arc of flame, then follow up with a lunging slash that cuts through the blaze and coats the armament in fire. The follow-up buff adds 90 <font color=\"#F48C25\">fire damage</font> to the weapon for 40 seconds regardless of its affinity.\n\nDeals 15 total <font color=\"#C0B194\">stance damage</font> across both hits, and attempting it with no <font color=\"#E0B985\">FP</font> produces no flame, fails to apply the buff, and greatly weakens the follow-up.\n\n<font color=\"#F48C25\">Base fire damage (projectile):</font> 138\n\nThe lunging slash can be parried even though the ignition wave cannot."
+  },
+  {
+    "id": 30200,
+    "name": "Ash of War: Parry",
+    "category": "ash",
+    "caption": "A foundational deflection art shared by warriors across the Lands Between.",
+    "info": "Use precise timing to swat aside a melee attack and stagger the foe, setting up a critical riposte if you are close enough. The parry window varies with the armament you are using: small shields share 4 frames of start-up and 5 active parry frames at 30 FPS, daggers share 4 frames of start-up and 4 active frames, and medium shields, thrusting swords, curved swords, fists, and claws only give 2 active parry frames after the same 4-frame start-up. Only parryable melee strings can be deflected, so recognizing an opponent's moveset is key."
+  },
+  {
+    "id": 30300,
+    "name": "Ash of War: Buckler Parry",
+    "category": "ash",
+    "caption": "",
+    "info": "Take a braced stance with the buckler and flick it out just before impact to deflect the attack, breaking the enemy stance and typically allowing a critical hit. Buckler Parry keeps the same 4 start-up frames and 5 active parry frames at 30 FPS (double at 60 FPS) as a small-shield parry but its deflection point occurs slightly earlier, letting you answer fast swings more reliably. Only parryable melee attacks can be turned aside, so spacing and timing still matter."
+  },
+  {
+    "id": 30400,
+    "name": "Ash of War: Parry",
+    "category": "ash",
+    "caption": "",
+    "info": "Use precise timing to swat aside a melee attack and stagger the foe, setting up a critical riposte if you are close enough. The parry window varies with the armament you are using: small shields share 4 frames of start-up and 5 active parry frames at 30 FPS, daggers share 4 frames of start-up and 4 active frames, and medium shields, thrusting swords, curved swords, fists, and claws only give 2 active parry frames after the same 4-frame start-up. Only parryable melee strings can be deflected, so recognizing an opponent's moveset is key."
+  },
+  {
+    "id": 30600,
+    "name": "Ash of War: Storm Wall",
+    "category": "ash",
+    "caption": "Tempest-born shield art of Stormveil's sentries.",
+    "info": "Swing the shield to raise a short wall of storm winds that flicks away small physical projectiles and can also parry melee attacks to break an enemy stance. When used as a melee parry it has 4 start-up frames and 5 active parry frames at 30 FPS (double at 60 FPS), while the projectile deflection activates instantly and grants 10 active frames.\nAlways consumes <font color=\"#E0B985\">FP</font> even if nothing is deflected, and it only reflects lighter physical shots - great arrows and other heavy projectiles will still break through."
+  },
+  {
+    "id": 31000,
+    "name": "Ash of War: Thops's Barrier",
+    "category": "ash",
+    "caption": "A protective sigil devised by Thops for his earnest pupils.",
+    "info": "Swing the shield through a conjured sigil to nullify an incoming sorcery or incantation, or parry a melee attack to break an enemy stance. The barrier appears after 3 start-up frames and grants 5 active parry frames at 30 FPS (double at 60 FPS), giving it a slightly later but tighter window than a small-shield parry while remaining identical regardless of the armament using it.\nOnly parryable melee strings and hostile spells can be reflected, but the barrier's timing stays consistent on every shield."
+  },
+  {
+    "id": 40400,
+    "name": "Ash of War: Enchanted Shot",
+    "category": "ash",
+    "caption": "Archery technique of enchanted knights.",
+    "info": "Hold the bow in a steady stance to infuse the next arrow with guiding essence, causing it to fly faster than normal, curve toward its target, and reach farther. While this stance is active each shot deals 50% more damage, builds 50% more status with every hit, and costs 50% more <font color=\"#E0B985\">stamina</font> than a regular arrow, but it still cannot pierce shields the way Mighty Shot does.\n\nUsed without <font color=\"#E0B985\">FP</font>, the arrow loses its tracking, speed boost, and damage bonus, only 5% increase over a normal shot."
+  },
+  {
+    "id": 40500,
+    "name": "Ash of War: Sky Shot",
+    "category": "ash",
+    "caption": "An archery trick for hunters who stalk from cover.",
+    "info": "Crouch in a low stance to fire an arrow almost straight upward so it rains down on the spot where the target stood when released, often registering as a headshot and clearing low cover along the way. Shots fired this way deal 33% more damage than a normal arrow.\n\nHolding the stance slows <font color=\"#E0B985\">stamina regeneration</font> by roughly 80% and ends immediately if you move, and because the arrow locks on to the original location it is far easier to use against unaware or stationary foes - shots against a target back tend to hit the neck for reduced damage."
+  },
+  {
+    "id": 40600,
+    "name": "Ash of War: Rain of Arrows",
+    "category": "ash",
+    "caption": "A volley method taught to skirmishing bowmen.",
+    "info": "Hold to crouch in a low archery stance, firing each shot nearly straight up so it splits into a rain that lands where the target stood. Each barrage deals 50% of the arrow's normal damage and status buildup per projectile but can strike targets multiple times before the effect ends, and the skill can be activated as long as you have at least 1 <font color=\"#E0B985\">FP</font> remaining."
+  },
+  {
+    "id": 50200,
+    "name": "Ash of War: Storm Stomp",
+    "category": "ash",
+    "caption": "One of the skills that channel the tempests of Stormveil.",
+    "info": "Stomp to summon a tight cyclone that hits around you, keeping foes locked in hitstun and setting up follow-up attacks with the bound armament.\n\nDeals 50 <font color=\"#F395C4\">base physical damage</font> and 6 <font color=\"#C0B194\">stance damage</font>.\n\nCannot be parried."
+  },
+  {
+    "id": 50300,
+    "name": "Ash of War: Kick",
+    "category": "ash",
+    "caption": "A blunt, no-frills tactic favored by roughneck fighters.",
+    "info": "Deliver a fast, high kick that instantly staggers guarding enemies, opening them to a guard break. Available when you are bare-handed in either hand.\n\nDeals 6 <font color=\"#C0B194\">stance damage</font>.\n\nCannot be parried."
+  },
+  {
+    "id": 200000,
+    "name": "Ash of War: Dryleaf Whirlwind",
+    "category": "ash",
+    "caption": "This skill represents the pinnacle of Dane's footwork-based martial artistry.",
+    "info": "Leap upward in a cyclone of four rapid kicks before driving a final heel drop into the ground, extending the reach of all kicking attacks with <font color=\"#E0B985\">arcane</font> force.\n\nThe full <font color=\"#E0B985\">FP</font> combo deals 28 <font color=\"#C0B194\">stance damage</font>, or 16 when performed without <font color=\"#E0B985\">FP</font>; triggers multi-hit effects."
+  },
+  {
+    "id": 200100,
+    "name": "Ash of War: Aspects of the Crucible: Wings",
+    "category": "ash",
+    "caption": "Aspects of the Crucible (Wings): This skill originates from the lifeforms of the Crucible.",
+    "info": "Manifest Crucible wings, take flight, and dive weapon-first into the target; twinblades replace the thrust with an eight-spin charge.\n\n[TODO]<font color=\"#C0B194\">stance damage</font> depends on the armament: 24 for colossal swords, 22 for greatswords, light greatswords, heavy thrusting swords, great spears, and great katanas, 20 for twinblades, straight swords, katanas, spears, and halberds, 16 for thrusting swords, 12 for daggers, and 8 for throwing daggers."
+  },
+  {
+    "id": 400000,
+    "name": "Ash of War: Spinning Gravity Thrust",
+    "category": "ash",
+    "caption": "A gravity skill honed by the disciples of an Alabaster Lord.",
+    "info": "Use gravity to hover in place, rotate, and drive forward with a piercing thrust, then input again to crash down in another spinning strike that knocks foes back.\n\nGreatswords, curved greatswords, heavy thrusting swords, and great katanas deal 21 <font color=\"#C0B194\">stance damage</font> on the first thrust and 25 on the follow-up, while colossal swords deal 23 and 26.\n\nTriggers multi-hit effects."
+  },
+  {
+    "id": 401000,
+    "name": "Ash of War: Palm Blast",
+    "category": "ash",
+    "caption": "Skill of the spiritual seekers known as the Dryleaf Sect.",
+    "info": "Gather energy in your palm before unleashing an explosive strike that travels slightly past your reach.\n\nCan be charged to create a wider blast that knocks enemies away, inflicts weapon status buildup across the area, and raises your <font color=\"#E0B985\">poise</font> dramatically while charging.\n\nDeals 20 <font color=\"#C0B194\">stance damage</font> uncharged and 36 when fully charged."
+  },
+  {
+    "id": 402000,
+    "name": "Ash of War: Piercing Throw",
+    "category": "ash",
+    "caption": "A duelist's signature toss refined to answer distant challengers.",
+    "info": "Hurl the armament with a powerful spin to extend its range and let it tunnel through every foe in its path.\n\nEach throw deals 3 <font color=\"#C0B194\">stance damage</font>, pierces targets without losing damage, and reaches roughly double the normal range, though blocking still prevents damage even as the projectile keeps traveling.\n\nUsed without <font color=\"#E0B985\">FP</font>, damage is reduced and piercing is removed."
+  },
+  {
+    "id": 403000,
+    "name": "Ash of War: Scattershot Throw",
+    "category": "ash",
+    "caption": "A smithing boast that claims a dagger can be mirrored at will.",
+    "info": "Conjure mirrored copies of the dagger in both hands and fling a cloud of 28 projectiles that can strike large foes up to four times each, then repeat with a second input.\n\nDeals 11 <font color=\"#C0B194\">stance damage</font> per volley, counts as pierce damage for counter bonuses such as Spear Talisman, and gains about 50% more range than normal throws along with an extra close-range hitbox.\n\nUsing it without <font color=\"#E0B985\">FP</font> throws only two daggers but retains the extended range."
+  },
+  {
+    "id": 404000,
+    "name": "Ash of War: Wall of Sparks",
+    "category": "ash",
+    "caption": "Perfumer art born from experiments with volatile powder.",
+    "info": "Scatter perfumed powder around you that ignites after a short delay into a wall of intense sparks, with the element determined by the perfume bottle.\n\nCan be charged to widen the wall and increase damage.\n\nEach explosion inflicts 3 <font color=\"#C0B194\">stance damage</font>.\n\nThe sparks cannot be parried."
+  },
+  {
+    "id": 405000,
+    "name": "Ash of War: Rolling Sparks",
+    "category": "ash",
+    "caption": "Perfumer technique that lets volatile incense wander on its own.",
+    "info": "Spread perfumed powder in a rolling line that erupts into successive explosions of sparks, inheriting the bottle's properties.\n\nEach explosion deals 3 <font color=\"#C0B194\">stance damage</font>, large targets can be struck multiple times along the trail, and the line stops releasing hits if it collides with terrain."
+  },
+  {
+    "id": 406000,
+    "name": "Ash of War: Raging Beast",
+    "category": "ash",
+    "caption": "Beastlike footwork born of feral hunts.",
+    "info": "Dash in any direction with beastlike speed, vault upward, and rake the enemy with an aerial slash before diving into a follow-up strike with a strong-attack input.\n\nThe evasive step grants 6 invulnerability frames.\n\nThe opening slash deals 6 <font color=\"#C0B194\">stance damage</font>, and the follow-up plunge adds 11 <font color=\"#C0B194\">stance damage</font>."
+  },
+  {
+    "id": 407000,
+    "name": "Ash of War: Savage Claws",
+    "category": "ash",
+    "caption": "A feral claw style taught to hunters who emulate beasts.",
+    "info": "Pounce on the target and rake it with six alternating claw swipes in rapid succession.\n\nThe combo totals 22 <font color=\"#C0B194\">stance damage</font>, and each swipe applies 60% of the weapon's status buildup."
+  },
+  {
+    "id": 409000,
+    "name": "Ash of War: Blind Spot",
+    "category": "ash",
+    "caption": "A duelist's feint that exploits an enemy's blind side.",
+    "info": "Dash to either side of a target before executing a piercing stab that slips beneath their guard, with the input determining which flank you strike from.\n\nThe dash grants 6 invulnerability frames.\n\nThe stab deals Pierce damage with 10 <font color=\"#C0B194\">stance damage</font> that ignores blocking."
+  },
+  {
+    "id": 410000,
+    "name": "Ash of War: Swift Slash",
+    "category": "ash",
+    "caption": "A skill passed down amongst hornsent swordsmen.",
+    "info": "Step forward with a razor-quick cut that slices through foes and fires a shearing vacuum, gaining power and lunge distance when charged.\n\nUncharged slashes deal 10 <font color=\"#C0B194\">stance damage</font>, fully charged slashes deal 20 <font color=\"#C0B194\">stance damage</font>, and the vacuum's repeated hits rapidly build status."
+  },
+  {
+    "id": 411000,
+    "name": "Ash of War: Overhead Stance",
+    "category": "ash",
+    "caption": "A disciplined guard preserved by swordsmen who seek a single telling strike.",
+    "info": "Enter a high guard, then perform a stepping downward slash with a light attack or unleash a series of plunging blows with a strong attack.\n\nThe light follow-up deals 11 <font color=\"#C0B194\">stance damage</font>, the heavy series deals 22 <font color=\"#C0B194\">stance damage</font>.\n\nCounts as a stance skill."
+  },
+  {
+    "id": 412000,
+    "name": "Ash of War: Wing Stance",
+    "category": "ash",
+    "caption": "A poised form that spreads like a wing before the strike.",
+    "info": "Hold a <font color=\"#E0B985\">poise</font>d right-sided guard before releasing a rapid three-slash light combo or a leaping heavy thrust.\n\nThe light chain deals 17 <font color=\"#C0B194\">stance damage</font> and can loop with minimal delay if the button is held, the heavy thrust deals 30 <font color=\"#C0B194\">stance damage</font> while hopping over low attacks without counting as a jumping attack.\n\nCan be parried."
+  },
+  {
+    "id": 413000,
+    "name": "Ash of War: Blinkbolt",
+    "category": "ash",
+    "caption": "Skill used by the golden knights who served Godwyn.",
+    "info": "Transform into a bolt of lightning from a low stance and rush straight ahead even when locked onto a target.\n\nDeals minimal <font color=\"#FFE033\">lightning damage</font> that inflicts just 1 <font color=\"#C0B194\">stance damage</font> on impact.\n\nAfter 14 frames of startup, grants 16 invulnerability frames that let you ignore incoming attacks while surging forward."
+  },
+  {
+    "id": 414000,
+    "name": "Ash of War: Flame Skewer",
+    "category": "ash",
+    "caption": "Skill of Queelign of the Fire Knights.",
+    "info": "Enwreathe the armament in fire, dip into a low stance, and skewer the target in one thrust, with a strong-attack follow-up that fans flames across the front.\n\nThe initial thrust deals 24 <font color=\"#C0B194\">stance damage</font> with colossal swords, 22 with greatswords, greatspears, great katanas, heavy thrusting swords, and thrusting shields, 20 with straight swords, halberds, spears, twinblades, and katanas, and 16 with thrusting swords, while the follow-up flames always deal 15 <font color=\"#C0B194\">stance damage</font>.\n\nThe buff adds 95 fire attack rating for 15 seconds.\n\nThe first thrust can be parried."
+  },
+  {
+    "id": 415000,
+    "name": "Ash of War: Savage Lion's Claw",
+    "category": "ash",
+    "caption": "Skill of the particularly brave, even among the Redmanes.",
+    "info": "Somersault forward, landing a weaker Lion's Claw slash, a regular attack during the flip, and a finishing Lion's Claw slam, with an additional input enabling the final strike.\n\nTotal <font color=\"#C0B194\">stance damage</font> reaches 64 with colossal weapons, 60 with great hammers, 55 with hammers, 51 with colossal swords and flails, 47 with greatswords, light greatswords, greataxes, great katanas, and curved greatswords, and 43 with straight swords, axes, twinblades, katanas, and curved swords as each hit inherits your weapon's damage type."
+  },
+  {
+    "id": 416000,
+    "name": "Ash of War: Divine Beast Frost Stomp",
+    "category": "ash",
+    "caption": "A skill which imitates the wrath of the divine beast's dance.",
+    "info": "Raise a leg high before stomping to send a ground-hugging wave of frost forward, creating spikes and ice explosions along its path when it detonates.\n\nThe stomp deals <font color=\"#57DBCE\">magic damage</font>, inflicts 70 frost buildup on both the initial spikes and each explosion, deals 5 <font color=\"#C0B194\">stance damage</font> uncharged or 10 when charged, and charging increases the wave's range and power."
+  },
+  {
+    "id": 417000,
+    "name": "Ash of War: Flame Spear",
+    "category": "ash",
+    "caption": "Skill of Kood, captain of the Fire Knights.",
+    "info": "Ready a thrust imbued with flame before unleashing a fiery spear straight ahead, gaining damage and travel distance when you charge the attack.\n\nFully charged thrusts deal 38 <font color=\"#C0B194\">stance damage</font> with colossal swords, 36 with greatswords, greatspears, great katanas, heavy thrusting swords, and thrusting shields, 33 with straight swords, halberds, spears, twinblades, and katanas, 28 with thrusting swords, and 22 with daggers.\n\nThe skill adds 95 fire attack rating for 40 seconds and sends the flame projectile as soon as the thrust fires.\n\nThe weapon hit can be parried."
+  },
+  {
+    "id": 418000,
+    "name": "Ash of War: Carian Sovereignty",
+    "category": "ash",
+    "caption": "Skill passed down the Carian royal family.",
+    "info": "Transform the blade into a massive magical greatsword and slam it down, with an additional input producing a horizontal sweep, and either attack can be charged for greater force.\n\nA fully charged slam deals 48 <font color=\"#C0B194\">stance damage</font> and releases a ground shockwave that fires two bursts in a line for about 40% of the initial damage each (a single foe cannot be hit by both the slam and the bursts), while the follow-up sweep deals 45 <font color=\"#C0B194\">stance damage</font> and matches the initial cast in raw damage.\n\nAll hits deal pure <font color=\"#57DBCE\">magic damage</font> that scales with <font color=\"#E0B985\">Intelligence</font>, weapon upgrade level, and infusion (weapon choice otherwise does not affect damage).\n\nThe skill grants significant hyper armor ranging from 118 <font color=\"#E0B985\">poise</font> on greatswords to 22 on daggers while casting."
+  },
+  {
+    "id": 419000,
+    "name": "Ash of War: Shriek of Sorrow",
+    "category": "ash",
+    "caption": "Skill utilized by the downtrodden.",
+    "info": "Unleash a harrowing scream that makes nearby foes flinch before channeling resentment into your weapon for 40 seconds based on your remaining HP.\n\nThe buff increases <font color=\"#F395C4\">physical damage</font> by 10% at 100% HP, 15% at 85% HP, 20% at 55% HP, and 25% at 30% HP or lower (reduced to 7.5%, 10%, 15%, and 20% in PvP), adds +5 <font color=\"#E0B985\">Strength</font> scaling to the weapon, and locks in according to your HP at the moment of casting until you recast.\n\nCannot be parried. Counts as a weapon buff so will not stack with other buffs such as greases."
+  },
+  {
+    "id": 422000,
+    "name": "Ash of War: Ghostflame Call",
+    "category": "ash",
+    "caption": "",
+    "info": "Drive the armament forward to manifest a <font color=\"#57DBCE\">Magic Damage</font> ghostflame, applying 20 <font color=\"#9DD7FB\">Frostbite</font>.\nFollowing up with a light attack adds a burning trail that inflicts 20 per tick, and a strong attack increases the explosion size to 80.\n\nDeals 4 <font color=\"#C0B194\">stance damage</font> for the no-input explosion, 5 for the light attack, and 11 for the heavy attack, and all apply the weapon hit <font color=\"#E0B985\">poise damage</font> on the opening thrust."
+  },
+  {
+    "id": 505000,
+    "name": "Ash of War: The Poison Flower Blooms Twice",
+    "category": "ash",
+    "caption": "",
+    "info": "Conjure a stinger underfoot to stab the enemy.\n\nThe stab inflicts 160 <font color=\"#EF7676\">Scarlet Rot</font> and 150 Piercing Damage while creating a 70 Standard Damage shockwave on impact.\n\nIf the stung enemy is already inflicted with any poison or rot, deal an extra 5% Max HP + 250 damage to them and purge the ailment."
+  },
+  {
+    "id": 548000,
+    "name": "Ash of War: Igon's Drake Hunt",
+    "category": "ash",
+    "caption": "Skill of Igon, drake warrior.",
+    "info": "Draw the bow with a guttural bellow that prepares either a light or heavy shot, then release to fire a twisted arrow as soon as you press the corresponding attack.\n\nShots from this stance consume <font color=\"#E0B985\">FP</font>, deal roughly 75% more damage than normal arrows, and receive no benefit from increased roar damage."
+  },
+  {
+    "id": 800000,
+    "name": "Ash of War: Shield Strike",
+    "category": "ash",
+    "caption": "A battle-hardened guard art for fighters who trust their shields more than blades.",
+    "info": "Bash forward with the equipped shield and input repeatedly to chain up to three additional shield strikes.\n\nWhen assigned off-hand it gives the shield its own light attack string so you can keep the main-hand skill."
+  }
+]

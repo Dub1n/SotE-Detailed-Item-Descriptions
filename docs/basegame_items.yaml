@@ -1,0 +1,147 @@
+# base game items/spells/skills whose mechanics changed AFTER patch 1.09.0
+# and therefore may need their detailed descriptions refreshed
+# (derived from official 1.09.1 and 1.12 patch notes)
+
+since_1_09_0:
+  patch_1_09_1:
+    # gameplay changes + bugfixes with named skills
+    # src: Bandai 1.09.1 notes – gameplay changes and bug fixes 
+    definitely_check:
+      - Cursed-Blood Slice # Skill (Cursed-Blood Slice / Cursed-Blood Slash)
+    maybe_check:
+      - Contagious Fury # Jellyfish Shield skill; stacking bug fixed, buff values likely unchanged
+
+  patch_1_10:
+    # only global crit/poise/system changes, no individual items named with numeric tweaks
+    # src: 1.10 notes (PvP-only poise / crit changes etc.) 
+    notes:
+      - "global crit damage / poise / guard changes (no per-item stat lines in notes)"
+      - "no specific items appear to require description changes based solely on 1.10 text"
+
+  patch_1_10_1:
+    # anti-cheat update only 
+    notes:
+      - "no balance changes"
+
+  # 1.11 is just DLC/infra in practice; no official base-game numerical item changes in real notes
+
+  patch_1_12:
+    # this is the big one; lots of named armaments, skills, and a few items
+    # src: Bandai 1.12 notes – PvP balance, general balance, armament adjustments, skill adjustments, bug fixes 
+
+    items_and_buffs:
+      # PvP-only tuning, but you probably want descriptions not to imply outdated poise/negation
+      - Baldachin's Blessing
+      - Radiant Baldachin's Blessing
+
+      # general balance adjustments (affects PvE+PvP)
+      - Mohg's Great Rune
+      - Malenia's Great Rune
+      - Cerulean Hidden Tear
+      - Terra Magica
+
+      # category-level change:
+      - all_craftable_arrows_and_bolts:
+          note: "attack power of craftable Arrows, Greatarrows, Bolts, and Greatbolts increased; update any descriptions that quote explicit damage numbers for these categories"
+
+    armaments:
+      # "Armament Adjustments" section – explicit damage/scaling changes
+      - Troll Knight's Sword
+      - Zamor Curved Sword
+      - Forked Hatchet
+      - Ripple Blade
+      - Serpent-Hunter
+      - Ripple Crescent Halberd
+      - Albinauric Staff
+      - Gelmir Glintstone Staff
+      - Prince of Death's Staff
+      - Golden Order Seal
+      - Clawmark Seal
+      - Dragon Communion Seal
+
+    skills:
+      # PvP-only section (still worth syncing if your descriptions quote damage/poise)
+      - Spinning Slash
+      - Flaming Strike
+      - Rain of Arrows
+      - Cursed-Blood Slash   # same move family as Cursed-Blood Slice
+      - Transient Moonlight
+      - Lightning Storm
+      - Spearcall Ritual
+      - Ancient Lightning Spear
+      - Radahn's Rain
+      - Spinning Weapon
+
+      # incantation-specific adjustments (poise/block rate)
+      - Black Flame's Protection
+      - Bestial Sling
+
+      # skill adjustments (Armament Adjustments -> Skill adjustments block)
+      - Kick
+      - Storm Assault
+      - Stormcaller
+      - Storm Stomp
+      - Glintblade Phalanx
+      - Loretta's Slash
+      - Bloody Slash
+      - Strong Shot
+      - Sky Shot
+      - Enchanted Shot
+      - Parry
+      - Storm Wall
+      - Thops's Barrier
+      - Buckler Parry
+      - Taker's Flames
+      - Moonlight Greatsword   # the weapon art / skill attached to Dark Moon Greatsword
+      - Thundercloud Form
+      - Magma Shower
+      - Thunderstorm
+      - Bubble Shower
+      - I Command Thee, Kneel!
+      - Bloodboon Ritual
+      - Bear Witness!
+      - Contagious Fury        # buff magnitude reduced in 1.12 general balance notes
+
+    # things mentioned only in bug-fix context (usually no text change needed,
+    # but include here in case you want to add clarification)
+    bugfix_related_maybe:
+      - Last Rites           # bug with damage under specific conditions
+      - various_bloodflame_interactions:
+          examples:
+            - Spinning Strikes + Bloodflame Blade
+      - Queen's Black Flame  # poise application bug
+      - Thrusting Swords (left-hand poise bug)
+      - "some weapons vs mounted enemies (generic category, not specific items)"
+
+  patch_1_12_2:
+    # Scadutree Blessing curve only; DLC expansion mechanic 
+    notes:
+      - "no base-game item entries in notes; only Realm of Shadow blessing scaling"
+
+  patch_1_12_3:
+    # almost all changes are to DLC weapons, DLC skills, or DLC perfumers
+    # src: 1.12.3 notes – Swift Slash, Carian Sorcery Sword, Smithscript weapons, etc. 
+    definitely_dlcs_only:
+      - Swift Slash (Skill)          # attached to DLC weapons
+      - Carian Sorcery Sword         # explicitly tagged as SOTE weapon in wikis
+      - Smithscript Dagger
+      - Smithscript Cirque
+      - Smithscript Axe
+      - Smithscript Greathammer
+      - Smithscript Spear
+      - Smithscript Shield
+      - Lightning Perfume Bottle
+      - Frenzyflame Perfume Bottle
+      - Bloodfiend's Arm
+      - Gazing Finger
+      - Fire Knight's Greatsword
+      - Feeble Lord's Frenzied Flame (Skill)
+      - Discus Hurl (Skill)
+      - Rolling Sparks (Skill)
+      - Wall of Sparks (Skill)
+    base_game_bugfix_only:
+      - Black Knife Tiche  # fix to HP reduction/heal interaction; description likely still accurate
+      - Thrusting Shield weapon type  # stamina guard bug fix only
+      - Golem Fist          # now SOTE-classified fist; if you treat it as DLC, skip
+    note:
+      - "no explicit base-game numeric nerfs/buffs that would obviously invalidate Dziggy's pre-DLC descriptions"

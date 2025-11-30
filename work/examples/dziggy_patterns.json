@@ -1,0 +1,116 @@
+{
+  "armor_stat_bonus": {
+    "vanilla_text": "Mask worn by Tanith, Lady of the Volcano Manor, in the image of a foreign queen.\nIncreases dexterity.\n\nLong ago, when Rykard first set eyes on Tanith, she was working as a dancer in a foreign land. Soon, he made her his consort.\nShe was the only human to remain by his side when he became the serpent of blasphemy.\n\nIn that moment, Tanith was truly charmed by him.",
+    "dziggy_text": "Mask worn by Tanith, Lady of the Volcano Manor, in the image of a foreign queen. Long ago, when Rykard first set eyes on Tanith, she was working as a dancer in a foreign land. Soon, he made her his consort. She was the only human to remain by his side when he became the serpent of blasphemy. In that moment, Tanith was truly charmed by him.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">dexterity</font> by 1.",
+    "extracted_numbers": {
+      "stat": "Dexterity",
+      "value": 1
+    },
+    "formatting": {
+      "header": "<font color=\"#C0B194\">Passive Effect:</font>",
+      "stat_color": "#E0B985",
+      "layout": "lore paragraph, blank line, header, effect line",
+      "effect_line": "Increases <font color=\"#E0B985\">dexterity</font> by 1."
+    }
+  },
+  "talisman_multi_stat": {
+    "vanilla_text": "An eye engraved with an Elden Rune.\nSaid to be the seal of King Consort Radagon.\n\nRaises vigor, endurance, strength, and dexterity, but also increases damage taken.\n\nThese seals represent the lifelong duty of those chosen by the gods.\n\nRaises attributes, but also increases damage taken",
+    "dziggy_text": "An eye engraved with an Elden Rune.\nSaid to be the seal of King Consort Radagon.\n\nThese seals represent the lifelong duty of those chosen by the gods.\n\nIncreases <font color=\"#E0B985\">vigor</font>, <font color=\"#E0B985\">endurance</font>, <font color=\"#E0B985\">strength</font>, and <font color=\"#E0B985\">dexterity</font> by 3, but increases <font color=\"#E0B985\">all damage received</font> by 10%.",
+    "extracted_numbers": {
+      "vigor_bonus": 3,
+      "endurance_bonus": 3,
+      "strength_bonus": 3,
+      "dexterity_bonus": 3,
+      "damage_taken_increase_pct": 10
+    },
+    "formatting": {
+      "mechanics_location": "AccessoryInfo only",
+      "stat_color": "#E0B985",
+      "penalty_phrasing": "but increases all damage received by 10%",
+      "no_passive_header": true
+    }
+  },
+  "spell_multicomponent": {
+    "vanilla_text": "Sorcery of Adula, the Glintstone Dragon.\n\nConjures a cold magic greatsword, then delivers a sweeping blow that launches a blade-like projectile of frost.\nThis sorcery can be cast repeatedly.\n\nAdula, a devourer of sorcerers, was bested by Ranni and subsequently swore a knightly oath to her Dark Moon.\n\nSweeping slash followed by cold blade projectile",
+    "dziggy_text": "Sorcery of Adula, the Glintstone Dragon.\n\nAdula, a devourer of sorcerers, was bested by Ranni and subsequently swore a knightly oath to her Dark Moon.\n\nConjure a large, magical, icy greatsword and swing it horizontally, which launches a large horizontal arc of icy magic. Can be cast repeatedly and on horseback.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage (greatsword):</font> 243\n<font color=\"#57DBCE\">Base magic damage (projectile):</font> 235\n<font color=\"#9DD7FB\">Base frostbite accumulation (greatsword):</font> 120\n<font color=\"#9DD7FB\">Base frostbite accumulation (projectile):</font> 35\n<font color=\"#E0B985\">Category:</font> Cold, Carian Sword",
+    "extracted_numbers": {
+      "frostbite_proc_pct_max_hp": 10,
+      "frostbite_proc_flat": 30,
+      "frostbite_debuff_damage_taken_pct": 20,
+      "frostbite_debuff_duration_s": 30,
+      "base_magic_damage_greatsword": 243,
+      "base_magic_damage_projectile": 235,
+      "base_frostbite_greatsword": 120,
+      "base_frostbite_projectile": 35
+    },
+    "formatting": {
+      "section_colors": {
+        "frostbite_header": "#9DD7FB",
+        "damage_headers": "#57DBCE",
+        "category": "#E0B985"
+      },
+      "line_style": "Label line per component, no bullets, colon after label",
+      "lore_first": true
+    }
+  },
+  "ash_of_war_attack_buff": {
+    "vanilla_text": "Skill: Determination\n\nA knightly skill.\nHold the flat of the armament to your face and pledge your resolve, powering up your next attack.",
+    "dziggy_text": "<font color=\"#C0B194\">      Skill: Determination</font>\n\nImbue your armament with energy, increasing <font color=\"#E0B985\">all attack power</font> for your next single attack with that armament within 10 seconds by 60%. This effect works for critical attacks as well.",
+    "extracted_numbers": {
+      "attack_power_buff_pct": 60,
+      "duration_s": 10,
+      "applies_to": "next single attack",
+      "affects_criticals": true
+    },
+    "formatting": {
+      "header_color": "#C0B194",
+      "stat_color": "#E0B985",
+      "layout": "Skill header line, blank line, effect sentence",
+      "tense": "present"
+    }
+  },
+  "consumable_buff": {
+    "vanilla_text": "A lump of animal flesh pickled in a medicinal solution mixed with fiery spices.\nCraftable item.\n\nTemporarily boosts physical attack.\n\nConsidered a delicacy in the badlands, this invigorating repast was for the exclusive benefit of those who they deem heroes.\n\nTemporarily boosts physical attack",
+    "dziggy_text": "A lump of animal flesh pickled in a medicinal solution mixed with fiery spices.\n\nConsidered a delicacy in the badlands, this invigorating repast was for the exclusive benefit of those who they deem heroes.\n\nIncreases <font color=\"#F395C4\">physical damage</font> by 20% for 30 seconds.\n\nCraftable item.",
+    "extracted_numbers": {
+      "physical_damage_bonus_pct": 20,
+      "duration_s": 30,
+      "craftable": true
+    },
+    "formatting": {
+      "stat_color": "#F395C4",
+      "duration_style": "appended to effect sentence",
+      "trailing_note": "Craftable item."
+    }
+  },
+  "consumable_damage": {
+    "vanilla_text": "Craftable item prepared using a cracked pot.\nA cocktail of incendiary materials is sealed inside.\n\nThrow at enemies to inflict fire damage.\n\nThrow at enemies to inflict fire damage",
+    "dziggy_text": "A cocktail of incendiary materials is sealed inside.\n\nThrow at an enemy to inflict <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 230\n\nCraftable item using a Cracked Pot.",
+    "extracted_numbers": {
+      "base_fire_damage": 230,
+      "craftable": true
+    },
+    "formatting": {
+      "damage_header_color": "#F48C25",
+      "line_breaks": "effect line, blank line, base damage line, blank line, craftable note",
+      "voice": "imperative (Throw at an enemy...)"
+    }
+  },
+  "weapon_skill_lifesteal": {
+    "vanilla_text": "Skill: Blood Tax\n\nBlood Oath skill granted by the Lord of Blood.\nTwist to build power, then unleash a flurry of thrusts that rob the target of both their blood and their HP.",
+    "dziggy_text": "<font color=\"#C0B194\">      Skill: Blood Tax</font>\n\nSpin around in a circle then rapidly thrust your armament forward 4 times. Each of the first 3 thrusts that hit an enemy will restore 2% of your <font color=\"#E0B985\">maximum HP</font> plus 25, and the final thrust will restore 4% of your <font color=\"#E0B985\">maximum HP</font> plus 45 if it hits an enemy.",
+    "extracted_numbers": {
+      "thrust_count": 4,
+      "heal_first_three_pct_max_hp": 2,
+      "heal_first_three_flat": 25,
+      "heal_final_pct_max_hp": 4,
+      "heal_final_flat": 45
+    },
+    "formatting": {
+      "header_color": "#C0B194",
+      "stat_color": "#E0B985",
+      "single_paragraph": true,
+      "healing_phrasing": "Each of the first 3 thrusts... final thrust..."
+    }
+  }
+}

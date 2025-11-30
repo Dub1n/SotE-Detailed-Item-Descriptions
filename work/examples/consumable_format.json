@@ -1,0 +1,53 @@
+{
+  "notes": [
+    "Edit only the info block; captions are displayed separately and should never be repeated in info.",
+    "Keep description/effect text in one block with single line breaks. After that block, insert exactly one blank line (\n\n) before stats/other lines. Inside the stats/other block, use single line breaks between items.",
+    "Start with the core effect in direct voice (e.g., \"Fire a gravitational orb...\" not \"Fires a gravitational orb...\"), follow with usage nuances, then list base values/status lines at the end on their own lines.",
+    "Leave color styling to the existing script—write plain text labels such as Base damage, Stance damage, Category, Status buildup.",
+    "Omit broad scaling blurbs like \"Scales primarily with Intelligence\" unless a specific stat interaction is required to explain numbers already present.",
+    "Omit lists of items that buff/ignore the consumable (e.g., \"strengthened by Maternal Staff\") unless the interaction is unexpected or contrary to the norm—verify against work/fex_cache_filtered or fex_cache HTML, and fall back to a quick web check if needed.",
+    "Skip simple cast/charge/riding allowance notes (\"can be cast while riding,\" \"cannot be charged\") unless distinct charged or mounted versions change the effect or values.",
+    "Always include the Category line for spells; if missing, pull it from work/fex_cache_filtered/*.json or the matching file in work/fex_cache/.",
+    "If numbers or wording are missing/uncertain, source them from fex_cache_filtered first, then fex_cache HTML.",
+    "If there are no stats/other lines, do not add a trailing blank line—end after the description/effect block.",
+    "Keep status formula headings (e.g., Frostbite:, Madness:) on their own lines before any Category line, and keep the Category line last in the stats/other block.",
+    "When multiple stats apply, keep each label on its own line in logical order (base damage, stance damage, status buildup, then category), preserving all provided numbers and wording."
+  ],
+  "examples": [
+    {
+      "id": "EX-001",
+      "name": "Example Great Rune",
+      "category": "consumable",
+      "caption": "Shown separately; do not restate here.",
+      "info": "Blesses your summoned allies so their kills restore 10% of your maximum HP.\nBlessed allies gain 20% increased attack power for 20 seconds whenever they inflict blood loss.\n\nActivate the rune at a site of grace and consume a Rune Arc to sustain the blessing until death."
+    },
+    {
+      "id": "EX-002",
+      "name": "Example Crystal Tear",
+      "category": "consumable",
+      "caption": "Shown separately; do not restate here.",
+      "info": "Mix into the Flask of Wondrous Physick to nullify FP costs for 10 seconds after drinking.\nAllows skills and spells to be cast even if they would exceed current FP during the effect window."
+    },
+    {
+      "id": "EX-003",
+      "name": "Example Hefty Fire Pot",
+      "category": "consumable",
+      "caption": "Shown separately; do not restate here.",
+      "info": "Throw to detonate a wide burst of flame that knocks most foes down.\nEspecially effective against Furnace Golems when tossed into their armor vents.\n\nBase fire damage: 360\nStance damage: 10"
+    },
+    {
+      "id": "EX-004",
+      "name": "Example Crafting Material",
+      "category": "consumable",
+      "caption": "Shown separately; do not restate here.",
+      "info": "Material used for crafting items.\n\nCan also be thrown for minor strike damage if needed."
+    },
+    {
+      "id": "EX-005",
+      "name": "Example Gravity Sorcery",
+      "category": "consumable",
+      "caption": "Shown separately; do not restate here.",
+      "info": "Fire a gravitational orb that tugs enemies toward it before exploding; charging extends its range and adds an extra pull.\n\nBase magic damage (explosion): Sorcery Scaling x 2.79 uncharged / Sorcery Scaling x 3.38 charged\nBase magic damage (pulse): Sorcery Scaling x 0.30 uncharged / Sorcery Scaling x 0.40 charged\nCategory: Sorcery"
+    }
+  ]
+}

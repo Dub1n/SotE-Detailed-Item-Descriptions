@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Split Stance",
+    "info": "Deals <font color=\"#C0B194\">stance</font> damage on hit."
+  },
+  {
+    "id": 2,
+    "name": "Split Poise",
+    "info": "Reduces <font color=\"#E0B985\">poise</font> damage received."
+  },
+  {
+    "id": 3,
+    "name": "Uncolored Stance",
+    "info": "Deals stance damage on hit."
+  },
+  {
+    "id": 4,
+    "name": "Uncolored Poise",
+    "info": "Reduces poise damage received."
+  },
+  {
+    "id": 5,
+    "name": "Colored Stance Damage",
+    "info": "Deals <font color=\"#C0B194\">stance damage</font> on hit."
+  },
+  {
+    "id": 6,
+    "name": "Colored Poise Damage",
+    "info": "Reduces <font color=\"#E0B985\">poise damage</font> received."
+  },
+  {
+    "id": 7,
+    "name": "Physical Negation",
+    "info": "Boosts physical damage negation."
+  },
+  {
+    "id": 8,
+    "name": "Magic Negation",
+    "info": "Boosts magic damage negation."
+  },
+  {
+    "id": 9,
+    "name": "Plain Sleep",
+    "info": "Causes sleep buildup."
+  },
+  {
+    "id": 10,
+    "name": "Colored Sleep",
+    "info": "Causes <font color=\"#A698F4\">Sleep</font> buildup."
+  },
+  {
+    "id": 11,
+    "name": "Strengthens Word",
+    "info": "Greatly strengthens attack power."
+  },
+  {
+    "id": 12,
+    "name": "Distance Word",
+    "info": "Extends travel distance to target."
+  },
+  {
+    "id": 13,
+    "name": "Plain Stance",
+    "info": "Raises stance but does not cause extra damage."
+  },
+  {
+    "id": 14,
+    "name": "Lowercase Stamina",
+    "info": "Greatly increases stamina recovery speed."
+  },
+  {
+    "id": 15,
+    "name": "Capitalized Stamina",
+    "info": "Greatly increases Stamina recovery speed."
+  },
+  {
+    "id": 16,
+    "name": "Stamina Regeneration",
+    "info": "Slightly boosts stamina regeneration."
+  },
+  {
+    "id": 17,
+    "name": "Lowercase Stamina Only",
+    "info": "Slowly restores stamina."
+  },
+  {
+    "id": 18,
+    "name": "Plain FP",
+    "info": "Restores FP when certain conditions are met."
+  }
+]
