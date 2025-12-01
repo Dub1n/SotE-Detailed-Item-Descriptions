@@ -15,61 +15,61 @@
     "id": 2000300,
     "name": "Hefty Fire Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\n\nA goodly amount of materials is sealed inside.",
-    "info": "Throw at an enemy to hurl a capacious cracked pot that erupts in flame on impact, dealing heavy area <font color=\"#F48C25\">fire damage</font> and knocking most foes down. It can be thrown into the vents atop a Furnace Golem for massive damage.\n\n<font color=\"#F48C25\">Base fire damage:</font> 360 (<font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>)\n<font color=\"#C0B194\">Base stance damage:</font> 10\n\nCraftable item prepared using a capacious cracked pot."
+    "info": "Throw at an enemy to hurl a capacious cracked pot that erupts in flame on impact, dealing heavy area <font color=\"#F48C25\">fire damage</font> and knocking most foes down. It can be thrown into the vents atop a Furnace Golem for massive damage.\n\n<font color=\"#F48C25\">Base fire damage:</font> 360 (<font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>)\n<font color=\"#C0B194\">Stance damage:</font> 10\n\nCraftable item prepared using a capacious cracked pot."
   },
   {
     "id": 2000310,
     "name": "Hefty Rock Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\n\nFilled to the brim with crushed rocks—nothing clever about it.",
-    "info": "Throw at an enemy to shatter a weighty pot that erupts with crushing force, dealing heavy strike damage in a tight area and toppling most targets. It is the only Hefty Pot that deals pure physical damage, tying for the highest base strike damage while also delivering the largest stance damage of 15, which gives Strength builds a ranged option without spending <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#F395C4\">Base physical damage:</font> 370 (<font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>)\n<font color=\"#C0B194\">Base stance damage:</font> 15\n\nCraftable item prepared using a capacious cracked pot."
+    "info": "Throw at an enemy to shatter a weighty pot that erupts with crushing force, dealing heavy strike damage in a tight area and toppling most targets.\n\n<font color=\"#F395C4\">Base Strike damage:</font> 370 (<font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>)\n<font color=\"#C0B194\">Stance damage:</font> 15"
   },
   {
     "id": 2000320,
     "name": "Hefty Lightning Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\n\nA goodly amount of materials is sealed inside.",
-    "info": "Throw at an enemy to send a capacious pot bursting into violent lightning, dealing severe area damage and knocking most targets down without expending <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 370 (<font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>)\n<font color=\"#C0B194\">Base stance damage:</font> 10\n\nCraftable item prepared using a capacious cracked pot."
+    "info": "Throw at an enemy to send a capacious pot bursting into violent lightning, dealing severe area damage and knocking most targets down without expending <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 370 (<font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>)\n<font color=\"#C0B194\">Stance damage:</font> 10"
   },
   {
     "id": 2000330,
     "name": "Hefty Fetid Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\nA heaping mass of effluents is sealed inside. As the mixture ferments, toxins are produced alongside a putrid stench that seeps out once ripe.\n\nPush someone in a privy; expect to get dung on your hands.",
-    "info": "Throw to splatter enemies with <font color=\"#40BF40\">Deadly Poison</font> buildup while dealing strike impact.\nAlso inflict 200 <font color=\"#40BF40\">Deadly Poison</font> accumulation on yourself.\n\n<font color=\"#40BF40\">Deadly Poison:</font> Deals 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 12 per second for 30 seconds (4.2% of <font color=\"#E0B985\">maximum HP</font> plus 360 total).\n\n<font color=\"#F395C4\">Base physical damage</font>: 105\n<font color=\"#C0B194\">Stance damage</font>: 5\n<font color=\"#40BF40\">Base Deadly Poison accumulation</font>: 500 (<font color=\"#E0B985\">Arcane</font>)"
+    "info": "Throw to splatter enemies with <font color=\"#40BF40\">Deadly Poison</font> buildup while dealing strike impact.\nAlso inflict 200 <font color=\"#40BF40\">Deadly Poison</font> accumulation on yourself.\n\n<font color=\"#40BF40\">Deadly Poison:</font> Deals 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 12 per second for 30 seconds (4.2% of <font color=\"#E0B985\">maximum HP</font> plus 360 total).\n\n<font color=\"#F395C4\">Base physical damage</font>: 105 (<font color=\"#E0B985\">Strength</font>)\n<font color=\"#C0B194\">Stance damage</font>: 5\n<font color=\"#40BF40\">Base Deadly Poison accumulation</font>: 500 (<font color=\"#E0B985\">Arcane</font>)"
   },
   {
     "id": 2000340,
     "name": "Hefty Fly Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\nA heaping mass of effluents is sealed inside.\n\nThe maggots found in waste feed on blood and turn into vicious flies that are pitiably short-lived.",
-    "info": "Throw to strike a target and unleash a bloodfly swarm that pursues foes for up to seven hits; the impact deals a quick physical blow before the flies swarm, the first swarm hit applying negligible <font color=\"#C84343\">Blood Loss</font> while the following six each deliver 70 buildup for 420 total.\n\n<font color=\"#C84343\">Blood Loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage (impact):</font> 105\n<font color=\"#C0B194\">Base stance damage (impact):</font> 5\n<font color=\"#F395C4\">Base physical damage (swarm hit):</font> 116\n<font color=\"#C84343\">Blood Loss accumulation (impact):</font> minimal\n<font color=\"#C84343\">Base Blood Loss accumulation (swarm hit):</font> 70 (420 total; <font color=\"#E0B985\">Arcane</font>)\n\nCraftable item prepared using a capacious cracked pot."
+    "info": "Throw to strike a target and unleash a bloodfly swarm that pursues foes for up to seven hits.\n\n<font color=\"#C84343\">Blood Loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage (impact):</font> 105 (<font color=\"#E0B985\">Strength</font>)\n<font color=\"#F395C4\">Base physical damage (swarm hit):</font> 116 (<font color=\"#E0B985\">Strength</font>)\n<font color=\"#C0B194\">Stance damage (impact):</font> 5\n<font color=\"#C84343\">Blood Loss accumulation (impact):</font> minimal\n<font color=\"#C84343\">Base Blood Loss accumulation (swarm hit):</font> 70 (420 total; <font color=\"#E0B985\">Arcane</font>)"
   },
   {
     "id": 2000360,
     "name": "Hefty Freezing Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.",
-    "info": "Throw to knock foes down and inflict <font color=\"#9DD7FB\">Frostbite</font> in a wide area.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 200\n<font color=\"#C0B194\">Base stance damage:</font> 10\n<font color=\"#9DD7FB\">Frostbite accumulation:</font> 400\n\nCraftable item prepared using a capacious cracked pot."
+    "info": "Throw to knock foes down and inflict <font color=\"#9DD7FB\">Frostbite</font> in a wide area.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Magic damage:</font> 200\n<font color=\"#C0B194\">Stance damage:</font> 10\n<font color=\"#9DD7FB\">Frostbite accumulation:</font> 400"
   },
   {
     "id": 2000370,
     "name": "Hefty Poison Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.",
-    "info": "Throw to deal strike impact while inflicting <font color=\"#40BF40\">Poison</font> buildup on targets, with accumulation rising to 582 as <font color=\"#E0B985\">Arcane</font> increases.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7 every second for 90 seconds, dealing 6.3% of <font color=\"#E0B985\">maximum HP</font> plus 630 total.\n\n<font color=\"#F395C4\">Base physical damage:</font> 105\n<font color=\"#C0B194\">Base stance damage:</font> 5\n<font color=\"#40BF40\">Base Poison accumulation:</font> 400 (<font color=\"#E0B985\">Arcane</font> scaling, up to 582)\n\nCraftable item using a Hefty Cracked Pot."
+    "info": "Throw to while inflict targets with <font color=\"#40BF40\">Poison</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7 every second for 90 seconds, dealing 6.3% of <font color=\"#E0B985\">maximum HP</font> plus 630 total.\n\n<font color=\"#F395C4\">Base physical damage:</font> 105 (<font color=\"#E0B985\">Strength</font>)\n<font color=\"#C0B194\">Stance damage:</font> 5\n<font color=\"#40BF40\">Base Poison accumulation:</font> 400 (<font color=\"#E0B985\">Arcane</font>)"
   },
   {
     "id": 2000380,
     "name": "Hefty Oil Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.",
-    "info": "Soak targets in oil for 30 seconds, causing the next single instance of <font color=\"#F48C25\">fire damage</font> they take to deal 65% more damage.\nDoes not stack with Oil Pot.\n\nCraftable item using a Hefty Cracked Pot."
+    "info": "Soak targets in oil for 30 seconds, causing the next single instance of <font color=\"#F48C25\">fire damage</font> they take to deal 65% more damage.\nDoes not stack with Oil Pot."
   },
   {
     "id": 2000600,
     "name": "Hefty Volcano Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.",
-    "info": "Throw to create a searing cloud that damages enemies inside for 5 seconds, hitting up to 10 times.\n\n<font color=\"#F48C25\">Base fire damage (per hit):</font> 105\n<font color=\"#C0B194\">Base stance damage (per hit):</font> 5\nHits: Up to 10\n\nCraftable item using a Hefty Cracked Pot."
+    "info": "Throw to create a searing cloud that damages enemies inside for 5 seconds, hitting up to 10 times.\n\n<font color=\"#F48C25\">Base fire damage per hit:</font> 105 (<font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>)\n<font color=\"#C0B194\">Stance damage per hit:</font> 5"
   },
   {
     "id": 2000620,
     "name": "Hefty Frenzied Flame Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.\n\nThe flame of frenzy burns the eyes, but tranquility follows in its wake. May this pot bring salvation to those it strikes.",
-    "info": "Throw the hefty pot to explode in a large frenzied flame.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#F48C25\">Base fire damage</font>: 326 (all stats <font color=\"#E0B985\">Arcane</font>)\n<font color=\"#C0B194\">Stance damage</font>: 10\n<font color=\"#EEAA2B\">Madness accumulation</font>: 130"
+    "info": "Throw the hefty pot to explode in a large frenzied flame.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#F48C25\">Base fire damage</font>: 326 (all stats except <font color=\"#E0B985\">Arcane</font>)\n<font color=\"#C0B194\">Stance damage</font>: 10\n<font color=\"#EEAA2B\">Madness accumulation</font>: 130"
   },
   {
     "id": 2000650,
@@ -94,19 +94,19 @@
     "id": 2000680,
     "name": "Hefty Furnace Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\nImbued with a hex of the furnace.\n\nThe furnace's flame burns away both body and soul.\nWhen impurity is thus expunged, one calls it cleansing.",
-    "info": "Throw to generate a whirlwind that launches foes into the air.\nCan be hurled into a Furnace Golem's brazier to deal massive damage and awaken inert golems.\n\n<font color=\"#F48C25\">Base fire damage:</font> 370\n<font color=\"#C0B194\">Base stance damage:</font> 10\n\nCraftable item using a Hefty Cracked Pot."
+    "info": "Throw to generate a whirlwind that launches foes into the air.\nCan be hurled into a Furnace Golem's brazier to deal massive damage.\n\n<font color=\"#F48C25\">Base fire damage:</font> 370 (<font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>, <font color=\"#E0B985\">Faith</font>)\n<font color=\"#C0B194\">Stance damage:</font> 10"
   },
   {
     "id": 2000690,
     "name": "Hefty Red Lightning Pot",
     "caption": "Craftable item prepared using a capacious cracked pot.\nA goodly amount of materials is sealed inside.\n\nThe ancient dragons who betrayed their lord to side with a tyrant were known for wielding branching red lightning.",
-    "info": "Throw to deal red <font color=\"#FFE033\">lightning damage</font> and create an electric field that links lightning to nearby enemies.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 310\n<font color=\"#C0B194\">Base stance damage:</font> 10\n\nCraftable item using a Hefty Cracked Pot."
+    "info": "Throw to deal red <font color=\"#FFE033\">lightning damage</font> and create an electric field that links lightning to nearby enemies.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 310 (<font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>)\n<font color=\"#C0B194\">Stance damage:</font> 10"
   },
   {
     "id": 2000700,
     "name": "Red Lightning Pot",
     "caption": "Craftable item prepared using a ritual pot.\nA cocktail of materials is sealed inside.\n\nThe ancient dragons who betrayed their lord to side with a tyrant were known for wielding branching red lightning.",
-    "info": "Throw at an enemy to deal red <font color=\"#FFE033\">lightning damage</font> that chains between nearby targets and creates a spherical electric field linking the struck foes.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 260\n<font color=\"#C0B194\">Base stance damage:</font> 3\n\nCraftable item using a Ritual Pot."
+    "info": "Throw at an enemy to strike them with red lightning, chaining between nearby targets creates a spherical electric field linking the struck foes.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 260 (<font color=\"#E0B985\">Strength</font>, <font color=\"#E0B985\">Dexterity</font>)\n<font color=\"#C0B194\">Stance damage:</font> 3"
   },
   {
     "id": 2000710,
@@ -124,7 +124,7 @@
     "id": 2000760,
     "name": "Roped Frenzied Flame Pot",
     "caption": "Craftable item prepared using a cracked pot.\nA cocktail of materials is sealed inside, and a short rope that aids throwing has been secured around the pot.\n\nThe flame of frenzy burns the eyes, but tranquility follows in its wake. May this pot bring salvation to those it strikes.",
-    "info": "Hurl the pot behind you, detonating in frenzied flame.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#F48C25\">Base fire damage</font>: 240 (all stats <font color=\"#E0B985\">Arcane</font>)\n<font color=\"#C0B194\">Stance damage</font>: 3\n<font color=\"#EEAA2B\">Base Madness accumulation</font>: 90"
+    "info": "Hurl the pot behind you, detonating in frenzied flame.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#F48C25\">Base fire damage</font>: 240 (all stats <font color=\"#E0B985\">Arcane</font>)\n<font color=\"#C0B194\">Stance damage</font>: 3\n<font color=\"#EEAA2B\">Madness accumulation</font>: 90"
   },
   {
     "id": 2000900,
