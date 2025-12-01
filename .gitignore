@@ -16,3 +16,5 @@ data/
 bk_*/
 __pycache__/
 mod/
+*.fmg
+tools/

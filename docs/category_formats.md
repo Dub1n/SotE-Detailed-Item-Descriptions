@@ -9,6 +9,8 @@ Notes from reviewing the modded source files in `descriptions-mod/` to help refo
 - `Category:` is always gold, capitalized, and on its own line at the end of the block.
 - Colons live **inside** the `<font>` tag; numbers stay uncoloured after the tag.
 - Ordering is consistent: uncharged → charged, primary damage → secondary damage, then buildup, then category.
+- **Do NOT create “Base … damage negation” lines.** Damage-negation buffs stay as sentences in the behaviour block: `Increase <font color="#F395C4">physical damage negation</font> by 35% for 70 seconds.`
+- **Buff phrasing stays in prose** (e.g., Terra Magica: “increasing the magic damage inflicted … by 35%”) rather than Base-label lines for buffs.
 - When in doubt, open the matching `descriptions-mod/*.json` for the category and mirror nearby entries.
 
 ## Global Style (from mod author’s wiki notes)

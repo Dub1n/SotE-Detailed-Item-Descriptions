@@ -19,6 +19,12 @@ BUNDLES = [
 
 VANILLA_JSON = Path('data/msg/engus/item.msgbnd.dcx.json')
 BASEGAME_LIST = Path('basegame_items.yaml')
+if not BASEGAME_LIST.exists():
+    alt_list = Path('docs/basegame_items.yaml')
+    if alt_list.exists():
+        BASEGAME_LIST = alt_list
+    else:
+        raise FileNotFoundError("basegame_items.yaml not found (checked ./ and ./docs/)")
 OUT_INDEX = Path('work/items_index.json')
 OUT_TODO = Path('work/items_todo.json')
 

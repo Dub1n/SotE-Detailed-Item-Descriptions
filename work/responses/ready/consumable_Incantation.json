@@ -3,180 +3,180 @@
     "id": 6260,
     "name": "Black Flame's Protection",
     "caption": "A black flame incantation of the Godskin Apostles.\n\nThe Apostles were all embraced by the Gloam-Eyed Queen, and the black flame was their armor within.",
-    "info": "Draw black flame within to harden the body while blunting restorative power.\nIncrease <font color=\"#F395C4\">physical damage negation</font> by 35% but reduce all healing by 20% for 70 seconds; this counts as a body buff that cannot stack with similar effects.\n\nCategory: Godskin, Godslayer"
+    "info": "Draw black flame within to harden the body while blunting restorative power.\n\nIncrease <font color=\"#F395C4\">physical damage negation</font> by 35% for 70 seconds but reduces all healing by 20%; counts as a body buff that cannot stack with similar effects.\n\n<font color=\"#E0B985\">Category:</font> Godskin, Godslayer"
   },
   {
     "id": 6800,
     "name": "Bestial Sling",
     "caption": "Incantation taught by Gurranq, the Beast Clergyman.\n\nIt is said that in the time before the Erdtree, stones were the first weapons of the beasts who had gained intelligence.",
-    "info": "Unleash a rapid spray of stone shards in a forward cone.\nFire immediately after other actions, making it ideal for flinching low-<font color=\"#E0B985\">poise</font> foes.\n\n<font color=\"#F395C4\">Base physical damage</font> (per shard): 87\nCategory: Bestial"
+    "info": "Unleash a rapid spray of stone shards in a forward cone, firing immediately after other actions to flinch low-<font color=\"#E0B985\">poise</font> foes.\n\n<font color=\"#F395C4\">Base physical damage (per shard):</font> 87\n<font color=\"#E0B985\">Category:</font> Bestial"
   },
   {
     "id": 2006300,
     "name": "Furious Blade of Ansbach",
     "caption": "Incantation of Ansbach, Pureblood Knight.\n\nMarkedly different from the finessed swordplay of the dynast, this is an aggressive last resort of an incantation that gave rise to Ansbach's fearsome reputation.",
-    "info": "Summon a bloodflame blade from the hand and lunge through foes with successive slashes, each applying a stacking Bloodflame bleed; charging attempts a fourth slash, [the extra hit rarely connects due to a known 1.13 bug].\n\n<font color=\"#F48C25\">Base fire damage</font>: Incant Scaling x 0.97 per slash and Incant Scaling x 1.54 for the final flame hit (charged: Incant Scaling x 0.98 per slash and Incant Scaling x 1.63 final hit)\n<font color=\"#C84343\">Hemorrhage</font> buildup from 3 hits: 180 total, 3 per tick, 10 times per second for 2 seconds, per hit\n<font color=\"#C0B194\">Stance damage</font>: 4+4+2 (10 total)\nCategory: Blood Oath Incantation"
+    "info": "Summon a bloodflame blade from the hand and lunge through foes with successive slashes, each applying a stacking Bloodflame bleed; charging attempts a fourth slash, though the extra hit rarely connects due to a known 1.13 bug.\n\n<font color=\"#F48C25\">Base fire damage:</font> Incant Scaling x 0.97 per slash; Incant Scaling x 1.54 final flame hit\n<font color=\"#F48C25\">Base fire damage (charged):</font> Incant Scaling x 0.98 per slash; Incant Scaling x 1.63 final hit\n<font color=\"#C84343\">Base blood loss accumulation:</font> 180 total from 3 hits; 3 per tick, 10 times per second for 2 seconds per hit\n<font color=\"#C0B194\">Base stance damage:</font> 4 + 4 + 2 (10 total)\n<font color=\"#E0B985\">Category:</font> Blood Oath"
   },
   {
     "id": 2006400,
     "name": "Heal from Afar",
     "caption": "An Erdtree incantation discovered in the realm of shadow.\n\nEven when far beyond, far out of sight, the Erdtree will surely give us its blessing.",
-    "info": "Fire a glowing projectile that heals allies on contact and can be aimed at the ground for instant effect, also damaging Wraiths and Revenants while breaking their stance without drawing aggression.\n\nSelf heal: 4.2x <font color=\"#E0B985\">Faith</font> scaling HP\nAlly heal: 3.36x <font color=\"#E0B985\">Faith</font> scaling HP within 6 meters\nDamage vs Wraiths/Revenants: (0.5% <font color=\"#E0B985\">maximum HP</font>) + 300\nCategory: Ancient Erdtree Incantation"
+    "info": "Fire a glowing projectile that heals allies on contact and can be aimed at the ground for instant effect, also damaging Wraiths and Revenants while breaking their stance without drawing aggression.\n\n<font color=\"#E0B985\">Self heal:</font> 4.2x Faith scaling HP\n<font color=\"#E0B985\">Ally heal:</font> 3.36x Faith scaling HP within 6 meters\n<font color=\"#E0B985\">Damage vs Wraiths/Revenants:</font> (0.5% <font color=\"#E0B985\">maximum HP</font>) + 300\n<font color=\"#E0B985\">Category:</font> Ancient Erdtree"
   },
   {
     "id": 2006650,
     "name": "Aspects of the Crucible: Thorns",
     "caption": "Aspect of the Crucible that manifested in golden hippopotami.\n\nIn an age long past, before this land was enshrouded in shadow, the vitality of the Crucible flourished. Remains of this can be seen in the ancient ruins.",
-    "info": "Create a bristling mass of thorn-like fur on the caster's back before rolling across the ground to scour the area, dealing pierce damage while charging increases potency and duration.\n\n<font color=\"#C0B194\">Stance damage</font>: 0.6 per hit (five hits when charged)\nCategory: Ancient Erdtree Incantation"
+    "info": "Create a bristling mass of thorn-like fur on the caster's back before rolling across the ground to scour the area, dealing pierce damage; charging increases potency and duration.\n\n<font color=\"#F395C4\">Base physical damage (per hit):</font> 45 uncharged / 120 charged\n<font color=\"#C0B194\">Base stance damage (per hit):</font> 0.6 (five hits when charged)\n<font color=\"#E0B985\">Category:</font> Ancient Erdtree"
   },
   {
     "id": 2006660,
     "name": "Aspects of the Crucible: Bloom",
     "caption": "Aspect of the Crucible discovered in the ancient ruins.\n\nIn an age long past, before this land was enshrouded in shadow, the vitality of the Crucible flourished.",
-    "info": "Plant a miranda flower on the chest before calling down a rain of golden pillars after roughly 2.2 seconds (2.55 charged); charging increases damage by 25%.\n\n<font color=\"#C0B194\">Stance damage</font> (per projectile): 2\nCategory: Ancient Erdtree Incantation"
+    "info": "Plant a miranda flower on the chest before calling down a rain of golden pillars after roughly 2.2 seconds (2.55 charged); charging increases damage by 25%.\n\n<font color=\"#F5EB89\">Base holy damage (per pillar):</font> 80 uncharged / 100 charged\n<font color=\"#C0B194\">Base stance damage (per projectile):</font> 2\n<font color=\"#E0B985\">Category:</font> Ancient Erdtree"
   },
   {
     "id": 2006670,
     "name": "Minor Erdtree",
     "caption": "Secret incantation of Queen Marika.\nOnly the kindness of gold, without Order.\n\nMarika bathed the village of her home in gold, knowing full well that there was no one to heal.",
-    "info": "Summon an illusory Minor Erdtree that heals allies every 0.25 seconds for 30 seconds over a radius that grows from 0.3 to 3 meters, draws enemy attention, damages Wraiths and Revenants, and does not heal enemies standing beside the caster; stacks with other healing zones.\n\nHealing: 9 HP per tick for 30 seconds (1080 total)\nDamage vs Wraiths/Revenants: (3% <font color=\"#E0B985\">maximum HP</font>) + 10\nCategory: Ancient Erdtree Incantation"
+    "info": "Summon an illusory Minor Erdtree that heals allies over time within an expanding radius, draws enemy attention, damages Wraiths and Revenants, does not heal enemies standing beside the caster, and stacks with other healing zones.\n\n<font color=\"#E0B985\">Healing per tick:</font> 9 HP every 0.25 seconds for 30 seconds (1080 total)\n<font color=\"#E0B985\">Radius:</font> Expands from 0.3 to 3 meters\n<font color=\"#E0B985\">Damage vs Wraiths/Revenants:</font> (3% <font color=\"#E0B985\">maximum HP</font>) + 10\n<font color=\"#E0B985\">Category:</font> Ancient Erdtree"
   },
   {
     "id": 2006680,
     "name": "Land of Shadow",
     "caption": "Incantation originating from Scadutree avatars.\n\nThis incantation channels the force of the Scadutree's power, and its gold is accompanied by shadow.",
-    "info": "Call down a hail of golden projectiles after a brief delay, letting the Scadutree's shadowed power rain down across foes.\n\nCategory: Ancient Erdtree Incantation"
+    "info": "Call down a hail of golden projectiles after a brief delay, letting the Scadutree's shadowed power rain down across foes.\n\n<font color=\"#E0B985\">Category:</font> Ancient Erdtree"
   },
   {
     "id": 2006690,
     "name": "Wrath from Afar",
     "caption": "An Erdtree incantation discovered in the realm of shadow.\n\nWhen the Elden Ring was shattered, the people of the realm of shadow felt it too-and feared it as a sign of the Erdtree's wrath.",
-    "info": "Release a golden shockwave that knocks foes down while dealing <font color=\"#F5EB89\">holy damage</font>; charging increases its reach and stagger.\n\nRadius: 2 meters uncharged / 3 meters charged\n<font color=\"#C0B194\">Stance damage</font>: 10 uncharged / 15 charged\nNote: Counts as a charged spell but is not affected by Godfrey Icon\nCategory: Ancient Erdtree Incantation"
+    "info": "Release a golden shockwave that knocks foes down while dealing <font color=\"#F5EB89\">holy damage</font>; charging increases its reach and stagger and it counts as a charged spell but is not affected by Godfrey Icon.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 100 uncharged / 120 charged\n<font color=\"#E0B985\">Radius:</font> 2 meters uncharged / 3 meters charged\n<font color=\"#C0B194\">Base stance damage:</font> 10 uncharged / 15 charged\n<font color=\"#E0B985\">Category:</font> Ancient Erdtree"
   },
   {
     "id": 2006700,
     "name": "Light of Miquella",
     "caption": "The strength of Miquella upon his deific return, wielded as an incantation.\n\nMiquella sought to accept all that was and would be, but found one that refused to be embraced.\n\nNo wonder, as one god, and one king consort, is all the world needs.",
-    "info": "Annihilate foes with a pillar of light that erupts roughly 2.5 seconds after casting, the main burst knocking down targets in a 6 meter radius while lesser pillars stagger enemies in 1 meter pockets even if the aura is interrupted.\n\n<font color=\"#F5EB89\">Base holy damage</font> (main pillar): Incant Scaling x 3.75\n<font color=\"#F5EB89\">Base holy damage</font> (lesser pillars): Incant Scaling x 0.70\n<font color=\"#C0B194\">Stance damage</font>: 20 (main pillar) / 2 (lesser pillars)\nCategory: Miquellan Incantation"
+    "info": "Annihilate foes with a pillar of light that erupts roughly 2.5 seconds after casting, the main burst knocking down targets in a 6 meter radius while lesser pillars stagger enemies in 1 meter pockets even if the aura is interrupted.\n\n<font color=\"#F5EB89\">Base holy damage (main pillar):</font> Incant Scaling x 3.75\n<font color=\"#F5EB89\">Base holy damage (lesser pillars):</font> Incant Scaling x 0.70\n<font color=\"#C0B194\">Base stance damage:</font> 20 (main pillar) / 2 (lesser pillars)\n<font color=\"#E0B985\">Category:</font> Miquellan"
   },
   {
     "id": 2006710,
     "name": "Multilayered Ring of Light",
     "caption": "Incantation of those who served Miquella.\n\nThis light-ring incantation was cultivated by a tradition separate from Golden Order fundamentalism.",
-    "info": "Fire a multilayered ring of golden light that glides forward, dealing pure <font color=\"#F5EB89\">holy damage</font>; charging increases potency but each cast replaces any existing ring, a limit shared across all players.\n\n<font color=\"#C0B194\">Stance damage</font>: 8 (10 charged) on the initial hit; 1.5 on follow-up hits\nCategory: Miquellan Incantation"
+    "info": "Fire a multilayered ring of golden light that glides forward, dealing pure <font color=\"#F5EB89\">holy damage</font>; charging increases its power but only one ring can exist at a time across all players.\n\n<font color=\"#F5EB89\">Base holy damage (per hit):</font> 200 uncharged / 250 charged\n<font color=\"#C0B194\">Base stance damage (initial hit):</font> 8 (10 charged)\n<font color=\"#C0B194\">Base stance damage (follow-up hit):</font> 1.5\n<font color=\"#E0B985\">Category:</font> Miquellan"
   },
   {
     "id": 2006800,
     "name": "Roar of Rugalea",
     "caption": "An incantation of what is jokingly called \"the bear communion.\"\nChannels the power of Rugalea, the great red bear.\n\nAn incantation that is more akin to the divine invocation of the hornsent than it is to the Dragon Communion. Only through desperate battle with the feral wild can one discover a god unique to oneself.",
-    "info": "Transform into a great red bear and emit a furious roar; the uncharged version delivers a single impact, while the charged roar unleashes twelve lighter thrusts plus a final heavy strike, and headshots can stagger even when cast on horseback.\n\nBase standard damage (uncharged roar): Incant Scaling x 1.10\nBase standard damage (charged roar): 12 hits at Incant Scaling x 0.45 plus 1 hit at Incant Scaling x 1.62\n<font color=\"#C0B194\">Stance damage</font>: 14 uncharged / 42 charged\nCategory: Spiral Tower Incantation"
+    "info": "Transform into a great red bear and emit a furious roar; the uncharged version delivers a single impact, while a charged roar unleashes twelve lighter thrusts then a final heavy strike, and headshots can stagger even when cast on horseback.\n\n<font color=\"#F395C4\">Base physical damage (uncharged roar):</font> Incant Scaling x 1.10\n<font color=\"#F395C4\">Base physical damage (charged roar):</font> 12 hits at Incant Scaling x 0.45 plus 1 hit at Incant Scaling x 1.62\n<font color=\"#C0B194\">Base stance damage:</font> 14 uncharged / 42 charged\n<font color=\"#E0B985\">Category:</font> Spiral Tower"
   },
   {
     "id": 2006900,
     "name": "Knight's Lightning Spear",
     "caption": "One of the incantations of the capital's ancient dragon cult.\n\nAn incantation that was taught only to the most accomplished knights, and now a lost art in the Lands Between.",
-    "info": "Hurl a lightning spear while sigils erupt to fire two more shortly after, with follow-up bolts tracing the aim set by the first spear even if casting is interrupted; the water shockwave can trigger twice for extra <font color=\"#FFE033\">lightning damage</font> and 2 stance, and the initial spear has +40% <font color=\"#E0B985\">attack power</font> while the trailing bolts are -20%.\n\n<font color=\"#FFE033\">Base lightning damage</font> (per projectile): Incant Scaling x 1.38 uncharged / Incant Scaling x 1.64 charged\n<font color=\"#C0B194\">Stance damage</font> (per projectile): 5 (9 charged)\n<font color=\"#FFE033\">Lightning damage</font> (water AoE): Incant Scaling x 0.50\nCategory: Dragon Cult Incantation"
+    "info": "Hurl a lightning spear while sigils erupt to fire two more shortly after, with follow-up bolts tracing the aim set by the first spear even if the cast is interrupted; water shockwaves can trigger twice to add extra <font color=\"#FFE033\">lightning damage</font> and 2 <font color=\"#C0B194\">stance</font>, and the initial spear hits with +40% <font color=\"#E0B985\">attack power</font> while the trailing bolts deal -20%.\n\n<font color=\"#FFE033\">Base lightning damage (per projectile):</font> Incant Scaling x 1.38 uncharged / Incant Scaling x 1.64 charged\n<font color=\"#C0B194\">Base stance damage (per projectile):</font> 5 (9 charged)\n<font color=\"#FFE033\">Base lightning damage (water shockwave):</font> Incant Scaling x 0.50\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
   },
   {
     "id": 2006910,
     "name": "Dragonbolt of Florissax",
     "caption": "Special incantation of the ancient dragon Florissax.\n\nThere was a time when the priestess never knew love, and thus never used this incantation herself.",
-    "info": "Call down red lightning to surround the caster and nearby allies with a 7 meter aura for 70 seconds, raising all damage negation and boosting guard damage negation after other shields; functions as an aura buff that cannot be charged or stacked with other aura-type buffs.\n\nDamage negation buff: +10% to all damage negation for self and allies within 7 meters for 70 seconds (+5% in PvP)\nGuard buff: +20% guard damage negation after the base shield reduction\nCategory: Dragon Cult Incantation"
+    "info": "Call down red lightning to surround the caster and nearby allies with a 7 meter aura for 70 seconds, increasing all damage negation and boosting guard damage negation after other shields; this is an aura buff that cannot be charged or stacked with other aura-type buffs.\nIncrease all damage negation by 10% for allies within the aura (5% in PvP) and increase guard damage negation by 20% after the base shield reduction.\n\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
   },
   {
     "id": 2006920,
     "name": "Electrocharge",
     "caption": "One of the incantations of the capital's ancient dragon cult.\n\nThe origin of incantations that bolster the body with lightning, and now a lost art in the Lands Between.",
-    "info": "Call down lightning to charge the caster's body, the strike dealing <font color=\"#FFE033\">lightning damage</font> before a Body Buff pulses <font color=\"#FFE033\">lightning damage</font> every 0.2 seconds in a 2.5 meter radius for 45 seconds, bypassing guarding and doing no stance or <font color=\"#E0B985\">poise damage</font>; charging raises the strike by 23% and the lingering pulses by 30% while charging also increases stance.\n\nInitial strike: <font color=\"#FFE033\">Lightning damage</font> and 7 stance (10 charged) in a 3 meter radius\nBody buff: Pulses <font color=\"#FFE033\">lightning damage</font> every 0.2 seconds in a 2.5 meter radius for 45 seconds\nCategory: Dragon Cult Incantation"
+    "info": "Call down lightning to charge the caster's body, the strike dealing <font color=\"#FFE033\">lightning damage</font> before a body buff pulses <font color=\"#FFE033\">lightning damage</font> every 0.2 seconds in a 2.5 meter radius for 45 seconds while bypassing guarding and inflicting no <font color=\"#C0B194\">stance</font> or <font color=\"#E0B985\">poise</font> damage; charging increases the strike by 23%, the lingering pulses by 30%, and the stance of the initial hit.\n\n<font color=\"#FFE033\">Base lightning damage (initial strike):</font> 213 uncharged / 262 charged\n<font color=\"#FFE033\">Base lightning damage (pulse):</font> 45 uncharged / 59 charged\n<font color=\"#C0B194\">Base stance damage (initial strike):</font> 7 (10 charged)\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
   },
   {
     "id": 2007000,
     "name": "Bayle's Tyranny",
     "caption": "One of the greatest Dragon Communion incantations.\nHarnesses the fearsome power of Bayle the Dread.\n\nEven after being consumed, the throbbing heart of Bayle continues to resist its subjugation, never weakening. One day, the fire within will consume the very body and soul of its Communion devourer. One day.",
-    "info": "Channel the dread dragon to roar with a heatwave burst that deals mostly fire and partly <font color=\"#FFE033\">lightning damage</font>, the start-up bolt delivering light stagger before the explosion knocks foes down; cannot be charged or cast on horseback.\n\n<font color=\"#C0B194\">Stance damage</font>: 2 start-up lightning / 25 explosion\nCategory: Dragon Communion Incantation"
+    "info": "Channel the dread dragon to roar with a heatwave burst of mostly <font color=\"#F48C25\">fire damage</font> and some <font color=\"#FFE033\">lightning damage</font>; the start-up bolt causes light stagger before the explosion knocks foes down, and it cannot be charged or cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage (start-up bolt):</font> 50\n<font color=\"#FFE033\">Base lightning damage (start-up bolt):</font> 20\n<font color=\"#F48C25\">Base fire damage (explosion):</font> 325\n<font color=\"#FFE033\">Base lightning damage (explosion):</font> 210\n<font color=\"#C0B194\">Base stance damage:</font> 2 start-up lightning / 25 explosion\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
   },
   {
     "id": 2007010,
     "name": "Bayle's Flame Lightning",
     "caption": "One of the greatest Dragon Communion incantations.\nHarnesses the fearsome power of Bayle the Dread.\n\nEven after being consumed, the throbbing heart of Bayle continues to resist its subjugation, never weakening. One day, the fire within will consume the very body and soul of its Communion devourer. One day.",
-    "info": "Channel the dread dragon to strike with a flame-lightning talon bone, direct hits dealing mostly <font color=\"#F395C4\">physical</font> and <font color=\"#FFE033\">lightning damage</font> with 30 stance and a knockdown, partial hits halving the damage and stance, and lingering flames dealing minor flame <font color=\"#FFE033\">lightning damage</font> and 2 stance while adding 16 accumulation toward multi-hit boosts; cannot be charged or cast on horseback.\n\n<font color=\"#C0B194\">Stance damage</font>: 30 direct hit / 15 partial hit / 2 lingering flames\nCategory: Dragon Communion Incantation"
+    "info": "Channel the dread dragon to strike with a flame-lightning talon bone; direct hits deal mostly <font color=\"#F395C4\">physical damage</font> and <font color=\"#FFE033\">lightning damage</font> that knock foes down, partial hits halve the damage and stance, and lingering flames deal minor flame <font color=\"#FFE033\">lightning damage</font> while adding 16 accumulation toward multi-hit boosts; cannot be charged or cast on horseback.\n\n<font color=\"#F395C4\">Base physical damage (direct hit):</font> 280\n<font color=\"#F48C25\">Base fire damage (direct hit):</font> 220\n<font color=\"#FFE033\">Base lightning damage (direct hit):</font> 280\n<font color=\"#F48C25\">Base fire damage (lingering flames):</font> 150\n<font color=\"#FFE033\">Base lightning damage (lingering flames):</font> 200\n<font color=\"#C0B194\">Base stance damage:</font> 30 direct hit / 15 partial hit / 2 lingering flames\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
   },
   {
     "id": 2007020,
     "name": "Ghostflame Breath",
     "caption": "One of the incantations of Dragon Communion.\n\nThe land of spiritgraves is home to all manner of dead, and even the corpses of fallen dragons found their way there. Several of them were endowed with such vivacity that even in death, they could not fully die.",
-    "info": "Spew ghostflame breath from above after a two second wind-up, dealing <font color=\"#57DBCE\">magic damage</font> while applying <font color=\"#9DD7FB\">frostbite</font> buildup and 4 stance per hit; the breath can be extended to breathe again, swivelled mid-cast, and used while jumping but not while riding in a roughly five second cast sequence.\n\n<font color=\"#9DD7FB\">Frostbite</font>: Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases all damage received by 20% for 30 seconds\n<font color=\"#C0B194\">Stance damage</font> per hit: 4\n<font color=\"#9DD7FB\">Frostbite</font> buildup per hit: 55\nCategory: Dragon Communion Incantation"
+    "info": "Spew ghostflame breath from above after a two second wind-up, dealing <font color=\"#57DBCE\">magic damage</font> while inflicting <font color=\"#9DD7FB\">frostbite</font> accumulation; the breath can be extended to breathe again, swivelled mid-cast, and used while jumping but not on horseback in a roughly five second sequence.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage (per hit):</font> 168\n<font color=\"#C0B194\">Base stance damage (per hit):</font> 4\n<font color=\"#9DD7FB\">Base frostbite accumulation (per hit):</font> 55\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
   },
   {
     "id": 2007200,
     "name": "Rotten Butterflies",
     "caption": "Incantation used by Romina, Saint of the Bud.\n\nThe scarlet butterflies are as the Goddess of Rot's wings. Bereft of a master, they were soothed by Romina, who reached out to them.",
-    "info": "Summon countless butterflies that break apart on contact, scattering rot in overlapping explosions that trigger quickly and build rot on anyone standing in the cloud while briefly granting immunity to grab attacks.\n\n<font color=\"#F395C4\">Base physical damage</font>: 100 start-up / 100 per explosion\nBase <font color=\"#C0B194\">stance damage</font>: 5 start-up / 3 per explosion\nStatus buildup: <font color=\"#EF7676\">Scarlet Rot</font> 80 per explosion\n<font color=\"#EF7676\">Scarlet Rot</font>: Inflicts 0.33% of <font color=\"#E0B985\">maximum HP</font> + 13 per second for 90 seconds (29.7% + 1170 total).\nCategory: Servants of Rot Incantation"
+    "info": "Summon countless butterflies that break apart on contact, overlapping explosions that detonate quickly and spread <font color=\"#EF7676\">scarlet rot</font>, building rot on anyone standing in the cloud while briefly granting immunity to grab attacks.\n\n<font color=\"#EF7676\">Scarlet Rot:</font> Inflicts 0.33% of <font color=\"#E0B985\">maximum HP</font> + 13 per second for 90 seconds (29.7% + 1170 total).\n\n<font color=\"#F395C4\">Base physical damage:</font> 100 start-up / 100 per explosion\n<font color=\"#C0B194\">Base stance damage:</font> 5 start-up / 3 per explosion\n<font color=\"#EF7676\">Base scarlet rot accumulation:</font> 80 per explosion\n<font color=\"#E0B985\">Category:</font> Servants of Rot"
   },
   {
     "id": 2007210,
     "name": "Pest-Thread Spears",
     "caption": "Skill of the pests known as the Kindred of Rot, now wielded as an incantation.\n\nThe pests are abandoned servants, and it is for this reason that they found a mother in the Saint of the Bud.",
-    "info": "Secrete sticky threads and twist them into two flying spears that pierce forward; charging increases their power, they hit every piece of geometry they pass through to punish large foes, draw no enemy attention, and do not trigger multi-hit bonuses.\n\nBase standard damage: Incant Scaling x 1.80 uncharged / Incant Scaling x 2.30 charged\nBase <font color=\"#C0B194\">stance damage</font> (per hit): 3 (4 charged)\nCategory: Servants of Rot Incantation"
+    "info": "Secrete sticky threads and twist them into two flying spears that pierce forward; charging increases their power, they hit every piece of geometry they pass through to punish large foes, draw no enemy attention, and do not trigger multi-hit bonuses.\n\n<font color=\"#F395C4\">Base physical damage:</font> Incant Scaling x 1.80 uncharged / Incant Scaling x 2.30 charged\n<font color=\"#C0B194\">Base stance damage (per hit):</font> 3 (4 charged)\n<font color=\"#E0B985\">Category:</font> Servants of Rot"
   },
   {
     "id": 2007300,
     "name": "Midra's Flame of Frenzy",
     "caption": "Incantation in praise of Midra, Lord of Frenzied Flame.\n\nThe Lord of Frenzied Flame shall take their torment, despair. Their affliction. Every sin, every curse. All melted away.\nYet Midra, like others before him, was too weak to become a Lord.",
-    "info": "Summon Midra's head to spew frenzied flame while the input is held, dealing <font color=\"#F48C25\">fire damage</font> in about a 5 meter radius and stacking <font color=\"#EEAA2B\">Madness</font> buildup on foes and on the caster until the user runs out of <font color=\"#E0B985\">FP</font> or goes mad.\n\nInflicts 10 <font color=\"#EEAA2B\">Madness</font> on enemies, and 7 on self, at 2.5/s for 1 second in a 5 meter radius. Each projectile inflicts 30 <font color=\"#EEAA2B\">Madness</font> on hit.\nCategory: Frenzied Flame Incantation"
+    "info": "Summon Midra's head to spew frenzied flame in roughly a 5 meter radius while the input is held, dealing <font color=\"#F48C25\">fire damage</font> and building <font color=\"#EEAA2B\">Madness</font> on foes and on the caster until <font color=\"#E0B985\">FP</font> is depleted or madness triggers.\n\n<font color=\"#F48C25\">Base fire damage (per hit):</font> 75\n<font color=\"#EEAA2B\">Base madness accumulation (aura on enemies):</font> 10 at 2.5/s for 1 second (5 meter radius)\n<font color=\"#EEAA2B\">Base madness accumulation (aura on self):</font> 7 at 2.5/s for 1 second\n<font color=\"#EEAA2B\">Base madness accumulation (per projectile):</font> 30\n<font color=\"#E0B985\">Category:</font> Frenzied Flame"
   },
   {
     "id": 2007600,
     "name": "Watchful Spirit",
     "caption": "An entreaty received from the Empyrean grandam.\n\n\"Take vengeance upon Messmer and his lot.\nThey who betrayed us, aye, they who burned us...\nLet them face in thy wrath their just deserts.\"",
-    "info": "Summon a guardian Skull Spirit above the caster; after roughly six seconds it begins firing four projectiles every few seconds, each dealing <font color=\"#F5EB89\">Holy damage</font> and 5 stance, while the caster slows then stops during the cast.\n\n<font color=\"#F5EB89\">Base holy damage</font> (projectile): Incant Scaling x 1.0\nBase <font color=\"#C0B194\">stance damage</font> (projectile): 5\nCategory: Spiral Tower Incantation"
+    "info": "Summon a guardian Skull Spirit above the caster; after roughly six seconds it slows to a halt then fires volleys of four projectiles every few seconds while the caster first slows and then stops during the cast.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> Incant Scaling x 1.0\n<font color=\"#C0B194\">Base stance damage (projectile):</font> 5\n<font color=\"#E0B985\">Category:</font> Spiral Tower Incantation"
   },
   {
     "id": 2007700,
     "name": "Golden Arcs",
-    "caption": "Sorcery of the inquisitors of the tower, wielded as an incantation of the spiral.\nThe arcs resemble barbs, a known symbol of coercive questioning.",
-    "info": "Swing the arm to release a procession of three golden arcs that race forward; charging extends their reach and power, and they can be fired in quick succession.\n\n<font color=\"#F5EB89\">Base holy damage</font> (per arc): 80% of Incant Scaling uncharged / 95% when fully charged\n<font color=\"#C0B194\">Stance damage</font> (per arc): 5 (15 total)\nCategory: Spiral Tower Incantation"
+    "caption": "Sorcery of the inquisitors of the tower, wielded as an incantation of the spiral.\n\nThe arcs resemble barbs, a known symbol of coercive questioning.",
+    "info": "Swing the arm to release a procession of three golden arcs that race forward; charging extends their reach and power, and they can be fired in quick succession.\n\n<font color=\"#F5EB89\">Base holy damage (per arc):</font> 80% of Incant Scaling uncharged / 95% when fully charged\n<font color=\"#C0B194\">Base stance damage (per arc):</font> 5 (15 total)\n<font color=\"#E0B985\">Category:</font> Spiral Tower"
   },
   {
     "id": 2007710,
     "name": "Giant Golden Arc",
     "caption": "Sorcery of the inquisitors of the tower, wielded as an incantation of the spiral.\n\nThe arc resembles the barb, a known symbol of coercive questioning.",
-    "info": "Swing the arm to release a giant golden arc that tracks targets, pierces every enemy it touches, and keeps traveling through cramped corridors; charging increases its force and it can be cast in quick succession.\n\n<font color=\"#F5EB89\">Base holy damage</font>: Incant Scaling x 2.15 uncharged / Incant Scaling x 2.65 charged\nBase <font color=\"#C0B194\">stance damage</font>: 8 (12 charged)\nCategory: Spiral Tower Incantation"
+    "info": "Swing the arm to release a giant golden arc that tracks targets, pierces every enemy it touches, and keeps traveling through cramped corridors; charging increases its force and it can be cast in quick succession.\n\n<font color=\"#F5EB89\">Base holy damage:</font> Incant Scaling x 2.15 uncharged / Incant Scaling x 2.65 charged\n<font color=\"#C0B194\">Base stance damage:</font> 8 (12 charged)\n<font color=\"#E0B985\">Category:</font> Spiral Tower"
   },
   {
     "id": 2007720,
     "name": "Spira",
     "caption": "Superior sorcery of the tower priests, wielded as an incantation of the spiral.\n\nThe spiral is a normalized Crucible current that, one day, will form a column that stretches to the gods.",
-    "info": "Wrap both arms together to draw a spiral of light beneath the target, maintaining the stance as each burst erupts at the enemy's feet, retargeting between bursts despite being rooted, and holding the input to keep conjuring until <font color=\"#E0B985\">FP</font> or <font color=\"#E0B985\">stamina</font> runs dry; walls block the columns.\n\n<font color=\"#F5EB89\">Base holy damage</font> (per spiral): Incant Scaling x 1.60\nBase <font color=\"#C0B194\">stance damage</font> (per spiral): 3\nCategory: Spiral Tower Incantation"
+    "info": "Wrap both arms together to draw a spiral of light beneath the target, rooting the caster while each burst erupts at the enemy's feet and retargets between bursts; hold the input to keep conjuring until <font color=\"#E0B985\">FP</font> or <font color=\"#E0B985\">stamina</font> runs dry, and walls block the columns.\n\n<font color=\"#F5EB89\">Base holy damage (per spiral):</font> Incant Scaling x 1.60\n<font color=\"#C0B194\">Base stance damage (per spiral):</font> 3\n<font color=\"#E0B985\">Category:</font> Spiral Tower"
   },
   {
     "id": 2007730,
     "name": "Divine Beast Tornado",
     "caption": "The tempest of the Dancing Lion, wielded as an incantation.\n\nThe majority of divine beasts were gored and hung upon Messmer's spears, then burned in his flame. Those who witnessed the deed likened it to a funeral pyre for the tower itself.",
-    "info": "Twist the body like a whirlwind to call a storm around the caster, stunning nearby foes with the initial gust before launching a tornado forward; charging boosts damage by 25% and launches enemies upward, Torrent halts if cast on horseback, and the incantation is not boosted by the Spiraltree Seal.\n\n<font color=\"#F395C4\">Base physical damage</font> (tornado): 220 (275 charged)\n<font color=\"#C0B194\">Stance damage</font>: 8 tornado / 3 start-up gust\nCategory: Spiral Tower Incantation"
+    "info": "Twist the body like a whirlwind to call a storm around the caster, staggering nearby foes with the opening gust before driving a tornado forward; charging increases damage and launches targets upward, casting on horseback halts Torrent, and the incantation is not boosted by the Spiraltree Seal.\n\n<font color=\"#F395C4\">Base physical damage (tornado):</font> 220\n<font color=\"#F395C4\">Base physical damage (tornado, charged):</font> 275\n<font color=\"#C0B194\">Base stance damage (start-up gust):</font> 3\n<font color=\"#C0B194\">Base stance damage (tornado):</font> 8\n<font color=\"#E0B985\">Category:</font> Spiral Tower"
   },
   {
     "id": 2007740,
     "name": "Divine Bird Feathers",
     "caption": "A technique of the divine bird warriors, the very first of all horned warriors, wielded as an incantation.\n\nThe divine bird warriors, and indeed this technique, are said to bear resemblance to the golden Crucible.",
-    "info": "Spread both arms like wings to scatter razor feathers while moving, allowing directional control on foot or horseback; holding the input releases continuous volleys while draining resources and the incantation is not boosted by the Spiraltree Seal.\n\nBase <font color=\"#C0B194\">stance damage</font> (per feather): 1\nCategory: Spiral Tower Incantation"
+    "info": "Spread both arms like wings to scatter razor feathers while moving, steering the volley on foot or horseback; holding the input releases continuous volleys. Not boosted by the Spiraltree Seal.\n\n<font color=\"#F395C4\">Base physical damage (per feather):</font> 42\n<font color=\"#C0B194\">Base stance damage (per feather):</font> 1\n<font color=\"#E0B985\">Category:</font> Spiral Tower"
   },
   {
     "id": 2007800,
     "name": "Fire Serpent",
     "caption": "Incantation of the Fire Knights under Messmer the Impaler's personal command.\n\nWhen the flame they received from Messmer would not find purchase within them, the Fire Knights relied on fire incantations to honor their bond.",
-    "info": "Launch a serpentine flame that briefly lingers before curling toward the nearest foe, bursting instantly at point-blank range and favoring short-range duels; without a lock-on it fires at the nearest onscreen enemy or, if none, toward the ground to the left.\n\n<font color=\"#F48C25\">Base fire damage</font>: Incant Scaling x 1.68 uncharged / Incant Scaling x 2.10 charged\nBase <font color=\"#C0B194\">stance damage</font>: 6 (8 charged)\nCategory: Messmer's Flame Incantation"
+    "info": "Launch a serpentine flame that lingers briefly before curling toward the nearest foe, bursting instantly at point-blank range and favoring short-range duels; without a lock-on it fires at the nearest onscreen enemy or, if none, toward the ground to the left.\n\n<font color=\"#F48C25\">Base fire damage:</font> Incant Scaling x 1.68\n<font color=\"#F48C25\">Base fire damage (charged):</font> Incant Scaling x 2.10\n<font color=\"#C0B194\">Base stance damage:</font> 6\n<font color=\"#C0B194\">Base stance damage (charged):</font> 8\n<font color=\"#E0B985\">Category:</font> Messmer's Flame"
   },
   {
     "id": 2007810,
     "name": "Rain of Fire",
     "caption": "Incantation of Salza, sage of the Fire Knights.\n\nSalza's disdain for barbarism never waned, even as he burned more villages and scorched more land than any other.",
-    "info": "Summon a cloud of flame overhead that pelts foes for roughly four seconds, landing 10-20 hits across a medium-long area; charging amplifies the storm, it shares its stance with Fire's Deadly Sin, and it manifests directly above the caster if no lock-on exists.\n\n<font color=\"#F48C25\">Base fire damage</font> (per projectile): Incant Scaling x 0.52 uncharged / Incant Scaling x 0.63 charged\nBase <font color=\"#C0B194\">stance damage</font> (per hit): 1.5\nCategory: Messmer's Flame Incantation"
+    "info": "Summon a cloud of flame overhead that pelts foes for roughly four seconds, landing 10-20 hits across a medium-long area; charging amplifies the storm, it shares its stance with Fire's Deadly Sin, and it manifests directly above the caster if no lock-on exists.\n\n<font color=\"#F48C25\">Base fire damage (per projectile):</font> Incant Scaling x 0.52\n<font color=\"#F48C25\">Base fire damage (per projectile, charged):</font> Incant Scaling x 0.63\n<font color=\"#C0B194\">Base stance damage (per hit):</font> 1.5\n<font color=\"#E0B985\">Category:</font> Messmer's Flame"
   },
   {
     "id": 2007820,
     "name": "Messmer's Orb",
     "caption": "An incantation of Messmer the Impaler.\n\nMessmer despised his own fire. Time and time again he hoped to rid himself of it, but ever did it burn.",
-    "info": "Shape Messmer's flame into a floating orb that hurtles forward, dealing a contact hit before burrowing for a delayed explosion that knocks foes down; the cast has no hyper armor, the explosion spans 4 meters uncharged or 6 meters charged, and charging extends its travel distance and power.\n\n<font color=\"#F48C25\">Base fire damage</font>: Incant Scaling x 0.50 contact + Incant Scaling x 3.08 explosion (uncharged) / Incant Scaling x 0.70 contact + Incant Scaling x 4.11 explosion (charged)\nBase <font color=\"#C0B194\">stance damage</font>: 4+4 contact + 25 explosion (uncharged) / 4+4 contact + 35 explosion (charged)\nCategory: Messmer's Flame Incantation"
+    "info": "Shape Messmer's flame into a floating orb that hurtles forward, dealing a contact hit before burrowing for a delayed explosion that knocks foes down; the cast has no hyper armor, the explosion spans about 4 meters uncharged or 6 meters charged, and charging extends its travel distance and power.\n\n<font color=\"#F48C25\">Base fire damage (contact):</font> Incant Scaling x 0.50\n<font color=\"#F48C25\">Base fire damage (explosion):</font> Incant Scaling x 3.08\n<font color=\"#F48C25\">Base fire damage (contact, charged):</font> Incant Scaling x 0.70\n<font color=\"#F48C25\">Base fire damage (explosion, charged):</font> Incant Scaling x 4.11\n<font color=\"#C0B194\">Base stance damage (contact):</font> 4+4\n<font color=\"#C0B194\">Base stance damage (explosion):</font> 25\n<font color=\"#C0B194\">Base stance damage (contact, charged):</font> 4+4\n<font color=\"#C0B194\">Base stance damage (explosion, charged):</font> 35\n<font color=\"#E0B985\">Category:</font> Messmer's Flame"
   }
 ]

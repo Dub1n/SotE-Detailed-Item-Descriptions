@@ -1,0 +1,102 @@
+{
+  "consumable_Incantation": [
+    {
+      "id": 6260,
+      "name": "Black Flame's Protection",
+      "caption": "A black flame incantation of the Godskin Apostles.\n\nThe Apostles were all embraced by the Gloam-Eyed Queen, and the black flame was their armor within.",
+      "info": "Increase <font color=\"#F395C4\">physical damage negation</font> by 35%, but reduce all healing by 20% for 70 seconds. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Godskin, Godslayer"
+    },
+    {
+      "id": 6800,
+      "name": "Bestial Sling",
+      "caption": "Incantation taught by Gurranq, the Beast Clergyman.\n\nIt is said that in the time before the Erdtree, stones were the first weapons of the beasts who had gained intelligence.",
+      "info": "Quickly shoot a barrage of rocks in a cone-shaped pattern. Can be cast without delay after performing another action. Can be cast on horseback.\n\n<font color=\"#F395C4\">Base physical damage (per shard):</font> 87\n<font color=\"#E0B985\">Category:</font> Bestial"
+    }
+  ],
+  "consumable_Sorcery": [
+    {
+      "id": 4130,
+      "name": "Terra Magica",
+      "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nOnce, the sigil would be cast from the highest belfry of the academy, covering the entire institution's grounds. This spell allows such vivid experience of spell-casting success, it turns many a fledgling into a true sorcerer in a flash of newfound understanding.",
+      "info": "Draw an academy sigil upon the ground for 30 seconds, increasing the <font color=\"#57DBCE\">magic damage inflicted</font> by you and allies standing within it by 35%. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Glintstone"
+    },
+    {
+      "id": 4300,
+      "name": "Glintblade Phalanx",
+      "caption": "One of the sorceries of the Carian royal family.\n\nBestowed upon the enchanted Carian knights, who combined this art with their swordsmanship to maintain pressure upon their foes, striking in waves of steel and sorcery.",
+      "info": "Conjure 5 magical dagger projectiles which float above you and automatically shoot into an enemy when they are within range. Can be cast while in motion and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 60\n<font color=\"#E0B985\">Category:</font> Carian, Glintblade"
+    }
+  ],
+  "consumable_Physick_Tear": [
+    {
+      "id": 11025,
+      "name": "Cerulean Hidden Tear",
+      "caption": "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+      "info": "Needs to be mixed in the Flask of Wondrous Physick to use.\n\nRemoves all <font color=\"#E0B985\">FP</font> consumption for 10 seconds when the draught is consumed."
+    },
+    {
+      "id": 2011000,
+      "name": "Viridian Hidden Tear",
+      "caption": "A crystal tear formed slowly over the ages, where the scattered sap of the Scadutree pools deep within the furnace golems.",
+      "info": "Needs to be mixed in the Flask of Wondrous Physick to use.\n\nEliminates all <font color=\"#E0B985\">stamina</font> consumption for 15 seconds when the draught is consumed."
+    }
+  ],
+  "consumable_Key_Item": [
+    {
+      "id": 8152,
+      "name": "Mohg's Great Rune",
+      "caption": "The Great Rune of the shardbearer Mohg, devoid of any benediction.",
+      "info": "This inert Great Rune must have its benediction restored at its Divine Tower before it grants Mohg's blessing.\n\nAfter restoration, it can be equipped and activated with a Rune Arc like any other Great Rune."
+    },
+    {
+      "id": 8153,
+      "name": "Malenia's Great Rune",
+      "caption": "The Great Rune of the shardbearer Malenia, devoid of any benediction.",
+      "info": "This inert Great Rune must have its benediction restored at its Divine Tower before it grants Malenia's blessing.\n\nAfter restoration, it can be equipped and activated with a Rune Arc like any other Great Rune."
+    }
+  ],
+  "consumable_Tool_Multiplayer": [
+    {
+      "id": 3360,
+      "name": "Baldachin's Blessing",
+      "caption": "Favor bestowed by a deathbed companion. Protection of a hidden temple in the guise of a bedchamber.\n\nThe favor allows one to forget any aches and pains. In Death, there is only peace, for in Death, there can be no sensation.",
+      "info": "Possessing this item reduces your <font color=\"#E0B985\">maximum HP</font> by 5%.\n\nUsing this item reduces <font color=\"#F395C4\">physical damage received</font> by 35% and reduces <font color=\"#E0B985\">poise damage received</font> by about 34% for 15 seconds.\n\nAlthough this item shows your poise stat increase by about 52%, this item doesn't actually increase your maximum poise. It only reduces the amount of poise damage that you receive from each attack.\n\nThis effect can be combined with the effects of Bull-Goat's Talisman to reduce <font color=\"#E0B985\">poise damage received</font> by about 51%."
+    },
+    {
+      "id": 3361,
+      "name": "Radiant Baldachin's Blessing",
+      "caption": "Protection of a hidden temple in the guise of a bedchamber. This blessing is of the utmost rarity.\n\nIt is said a deathbed companion will only produce a blessing of this kind for a champion but once in her entire life. The sole blessing which she imbues of her own volition.",
+      "info": "Using this item reduces <font color=\"#F395C4\">physical damage received</font> by 35% and reduces <font color=\"#E0B985\">poise damage received</font> by about 45% for 70 seconds.\n\nAlthough this item shows your poise stat increase by about 82%, this item doesn't actually increase your maximum poise. It only reduces the amount of poise damage that you receive from each attack.\n\nThis effect can be combined with the effects of Bull-Goat's Talisman to reduce <font color=\"#E0B985\">poise damage received</font> by about 59%."
+    }
+  ],
+  "skill": [
+    {
+      "id": 103,
+      "name": "Spinning Slash",
+      "category": "skill",
+      "caption": "<font color=\"#C0B194\">      Skill: Spinning Slash</font>",
+      "info": "Spin in place to carve every foe around you, then repeat the input to hurl yourself forward into another whirling slash that continues the assault. When equipped on the Dragon Halberd, the follow-up strike releases ice lightning that adds <font color=\"#FFE033\">lightning damage</font>, <font color=\"#9DD7FB\">frostbite accumulation</font>, and 10 extra <font color=\"#C0B194\">stance damage</font> to every hit. Cannot be parried when consuming <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#C0B194\">Base stance damage (throwing blades):</font> 13\n<font color=\"#C0B194\">Base stance damage (daggers):</font> 20\n<font color=\"#C0B194\">Base stance damage (halberds, reapers, spears):</font> 26\n<font color=\"#C0B194\">Base stance damage (greatswords, curved greatswords, greataxes, great spears):</font> 29\n<font color=\"#C0B194\">Base stance damage (straight/curved/backhand/katanas/axes):</font> 33\n<font color=\"#C0B194\">Base stance damage (light greatswords):</font> 36"
+    },
+    {
+      "id": 118,
+      "name": "Loretta's Slash",
+      "category": "skill",
+      "caption": "<font color=\"#C0B194\">      Skill: Loretta's Slash</font>",
+      "info": "Leap forward while cloaking the blade in glintstone, then dive into a sweeping slash as you land to catch distant foes. Cannot be parried.\n\n<font color=\"#C0B194\">Base stance damage (leap):</font> 12\n<font color=\"#C0B194\">Base stance damage (finisher):</font> 10"
+    }
+  ],
+  "talisman": [
+    {
+      "id": 2220,
+      "name": "Perfumer's Talisman",
+      "caption": "A talisman depicting a set of perfume bottles.\n\nThere are gardens known only to the perfumers. Whether hidden on the fringes of the highlands, or obscured by shadows inside caves, the flowers blossom in secret, waiting to impart their scent.",
+      "info": "Increases damage of Perfume Arts, Perfumer's Bolt, and perfume bottle weapon attacks by 20%. Does not enhance supportive perfume buffs."
+    },
+    {
+      "id": 7030,
+      "name": "Two-Headed Turtle Talisman",
+      "caption": "A talisman in the shape of a two-headed green turtle.\n\nTurtles are known as a nutritious ingredient, symbolic of inexhaustible power.\n\nTwo-headed turtles are a favorite subject in the land of the tower, due to the spiral shape of their intertwined necks.",
+      "info": "Increases <font color=\"#E0B985\">stamina recovery speed</font> by 10."
+    }
+  ]
+}

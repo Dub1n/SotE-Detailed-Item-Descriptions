@@ -4,279 +4,279 @@
     "name": "Perfumer's Talisman",
     "category": "talisman",
     "caption": "A talisman depicting a set of perfume bottles.\n\nThere are gardens known only to the perfumers. Whether hidden on the fringes of the highlands, or obscured by shadows inside caves, the flowers blossom in secret, waiting to impart their scent.",
-    "info": "Raises damage of Perfume Arts, Perfumer's Bolt, and perfume bottle weapon attacks by 20%.\nDoes not enhance supportive perfume buffs."
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of Perfume Arts, Perfumer's Bolt, and perfume bottle weapon attacks by 20% but does not enhance supportive perfume buffs."
   },
   {
     "id": 7000,
     "name": "Crimson Amber Medallion +3",
     "category": "talisman",
     "caption": "A medallion with crimson amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nThese medallions, of the largest variety, were conferred to Godwyn's inner circle of distinguished golden knights.",
-    "info": "Raises <font color=\"#E0B985\">maximum HP</font> by 10%."
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 10%."
   },
   {
     "id": 7010,
     "name": "Cerulean Amber Medallion +3",
     "category": "talisman",
     "caption": "A medallion with cerulean amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nThese medallions, of the largest variety, were conferred to Godwyn's inner circle of distinguished golden knights.",
-    "info": "Raises <font color=\"#E0B985\">maximum FP</font> by 12.5%."
+    "info": "Increases <font color=\"#E0B985\">maximum FP</font> by 12.5%."
   },
   {
     "id": 7020,
     "name": "Viridian Amber Medallion +3",
     "category": "talisman",
     "caption": "A medallion with viridian amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nThese medallions, of the largest variety, were conferred to Godwyn's inner circle of distinguished golden knights.",
-    "info": "Raises <font color=\"#E0B985\">maximum stamina</font> by 17%."
+    "info": "Increases <font color=\"#E0B985\">maximum stamina</font> by 17%."
   },
   {
     "id": 7030,
     "name": "Two-Headed Turtle Talisman",
     "category": "talisman",
     "caption": "A talisman in the shape of a two-headed green turtle.\n\nTurtles are known as a nutritious ingredient, symbolic of inexhaustible power.\n\nTwo-headed turtles are a favorite subject in the land of the tower, due to the spiral shape of their intertwined necks.",
-    "info": "Raises <font color=\"#E0B985\">stamina regeneration</font> by 10."
+    "info": "Increases <font color=\"#E0B985\">stamina regeneration</font> by 10 per second."
   },
   {
     "id": 7040,
     "name": "Stalwart Horn Charm +2",
     "category": "talisman",
     "caption": "Ceremonial accoutrement worn by hornsent.\n\nHorns are sublime artifacts to hornsent, and their presence confirms the belief that they are a chosen people.\n\nOnly the repeated sprouting of fresh horns can create a tangled horn, which is viewed as an irrefutable symbol of primacy.",
-    "info": "Raises <font color=\"#E0B985\">robustness</font> by 180."
+    "info": "Increases <font color=\"#E0B985\">robustness</font> by 180.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>."
   },
   {
     "id": 7050,
     "name": "Immunizing Horn Charm +2",
     "category": "talisman",
     "caption": "Ceremonial accoutrement worn by hornsent.\n\nHorns are sublime artifacts to hornsent, and their presence confirms the belief that they are a chosen people.\n\nOnly the repeated sprouting of fresh horns can create a tangled horn, which is viewed as an irrefutable symbol of primacy.",
-    "info": "Raises <font color=\"#E0B985\">immunity</font> by 180."
+    "info": "Increases <font color=\"#E0B985\">immunity</font> by 180.\n\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>."
   },
   {
     "id": 7060,
     "name": "Clarifying Horn Charm +2",
     "category": "talisman",
     "caption": "Ceremonial accoutrement worn by hornsent.\n\nHorns are sublime artifacts to hornsent, and their presence confirms the belief that they are a chosen people.\n\nOnly the repeated sprouting of fresh horns can create a tangled horn, which is viewed as an irrefutable symbol of primacy.",
-    "info": "Raises <font color=\"#E0B985\">focus</font> by 180."
+    "info": "Increases <font color=\"#E0B985\">focus</font> by 180.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
   },
   {
     "id": 7080,
     "name": "Mottled Necklace +2",
     "category": "talisman",
     "caption": "Vividly-colored ceremonial accoutrement worn by hornsent.\n\nHorns are sublime artifacts to hornsent, and their presence confirms the belief that they are a chosen people.\n\nOnly the repeated sprouting of fresh horns can create a tangled horn, which is viewed as an irrefutable symbol of primacy.",
-    "info": "Raises <font color=\"#E0B985\">immunity</font>, <font color=\"#E0B985\">robustness</font>, and <font color=\"#E0B985\">focus</font> by 100."
+    "info": "Increases <font color=\"#E0B985\">robustness</font>, <font color=\"#E0B985\">immunity</font>, and <font color=\"#E0B985\">focus</font> by 100.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
   },
   {
     "id": 7090,
     "name": "Spelldrake Talisman +3",
     "category": "talisman",
     "caption": "Talisman with a large depiction of a blue ancient dragon.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
-    "info": "Raises <font color=\"#57DBCE\">magic damage negation</font> by 22% (7% in PvP)."
+    "info": "Increases <font color=\"#57DBCE\">magic damage negation</font> by 22% (7% in PvP)."
   },
   {
     "id": 7100,
     "name": "Flamedrake Talisman +3",
     "category": "talisman",
     "caption": "Talisman with a large depiction of a red ancient dragon.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
-    "info": "Raises <font color=\"#F48C25\">fire damage negation</font> by 22% (7% in PvP)."
+    "info": "Increases <font color=\"#F48C25\">fire damage negation</font> by 22% (7% in PvP)."
   },
   {
     "id": 7110,
     "name": "Boltdrake Talisman +3",
     "category": "talisman",
     "caption": "Talisman with a large depiction of a yellow ancient dragon.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
-    "info": "Raises <font color=\"#FFE033\">lightning damage negation</font> by 22% (7% in PvP)."
+    "info": "Increases <font color=\"#FFE033\">lightning damage negation</font> by 22% (7% in PvP)."
   },
   {
     "id": 7120,
     "name": "Golden Braid",
     "category": "talisman",
     "caption": "A braid of golden hair, cut loose.\nQueen Marika's offering to the Grandmother.\n\nWhat was her prayer? Her wish, her confession?\nThere is no one left to answer, and Marika never returned home again.",
-    "info": "Raises <font color=\"#F5EB89\">holy damage negation</font> by 22% (7% in PvP)."
+    "info": "Increases <font color=\"#F5EB89\">holy damage negation</font> by 22% (7% in PvP)."
   },
   {
     "id": 7130,
     "name": "Pearldrake Talisman +3",
     "category": "talisman",
     "caption": "Talisman with a large depiction of a pearlescent ancient dragon.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
-    "info": "Raises <font color=\"#57DBCE\">magic damage negation</font>, <font color=\"#F48C25\">fire damage negation</font>, <font color=\"#FFE033\">lightning damage negation</font>, and <font color=\"#F5EB89\">holy damage negation</font> by 11%."
+    "info": "Increases <font color=\"#57DBCE\">magic damage negation</font>, <font color=\"#F48C25\">fire damage negation</font>, <font color=\"#FFE033\">lightning damage negation</font>, and <font color=\"#F5EB89\">holy damage negation</font> by 11%."
   },
   {
     "id": 7140,
     "name": "Crimson Seed Talisman +1",
     "category": "talisman",
     "caption": "A crimson-colored talisman patterned after an Erdtree seed.\n\nThe Erdtree seed of this talisman was presumed to be an object of myth. This age-old artifact also depicts the Two Fingers, perhaps harking back to the birth of the Erdtree.",
-    "info": "Raises <font color=\"#E0B985\">HP</font> restoration from the Flask of Crimson Tears by 30%."
+    "info": "Increases <font color=\"#E0B985\">HP</font> restoration from the Flask of Crimson Tears by 30%."
   },
   {
     "id": 7150,
     "name": "Cerulean Seed Talisman +1",
     "category": "talisman",
     "caption": "A cerulean-colored talisman patterned after an Erdtree seed.\n\nThe Erdtree seed of this talisman was presumed to be an object of myth. This age-old artifact also depicts the Two Fingers, perhaps harking back to the birth of the Erdtree.",
-    "info": "Boosts <font color=\"#E0B985\">FP</font> restoration from the Flask of Cerulean Tears by 30%."
+    "info": "Increases <font color=\"#E0B985\">FP</font> restoration from the Flask of Cerulean Tears by 30%."
   },
   {
     "id": 8000,
     "name": "Blessed Blue Dew Talisman",
     "category": "talisman",
     "caption": "Talisman depicting the blessed boon that is a droplet of the blue, luminescent sap of the Erdtree.\n\nIt was once thought that the blessed sap of the Erdtree would drip from its boughs forever\u2014but that age of plenty swiftly came to a close, and with time, the Erdtree became more an object of faith.",
-    "info": "Restores 1 point of <font color=\"#E0B985\">FP</font> every 2 seconds when equipped."
+    "info": "Restores 1 point of <font color=\"#E0B985\">FP</font> every 2 seconds while equipped."
   },
   {
     "id": 8010,
     "name": "Fine Crucible Feather Talisman",
     "category": "talisman",
     "caption": "A talisman fashioned from thin feathers that embody the aspects of various creatures.\nSaid to have grown on the human body long ago.\n\nHornsent view the Crucible as sacred for the refinement wrought through its evolutionary gifts. Most prominently, their tangled horns.",
-    "info": "Improves backstep attacks but increases all damage received by 15%."
+    "info": "Grants 7 i-frames to backsteps (8 when holding an over-the-shoulder weapon) and sets backstep recovery to 12/10/21 frames at light/medium/heavy load while equipped, but increases <font color=\"#E0B985\">all damage received</font> by 15%."
   },
   {
     "id": 8020,
     "name": "Outer God Heirloom",
     "category": "talisman",
     "caption": "A talisman engraved with the lore of an outer god.\n\nThe clan, who lost everything in the great fires, peered upon the corpse of their ancestor, normally an act of sanctity, and saw in its shadow a twisted deity.\n\nThe clan had suffered such torment that the horrible thing was taken as an object of worship.",
-    "info": "Raises <font color=\"#E0B985\">arcane</font> by 5."
+    "info": "Increases <font color=\"#E0B985\">arcane</font> by 5."
   },
   {
     "id": 8030,
     "name": "Shattered Stone Talisman",
     "category": "talisman",
     "caption": "Shattered linchpin stone.\n\nLinchpin stones are spiritual anchors said to hold the ground in place and quell the fury of earthquakes\u2014when this one shattered, the surrounding town fell into the broken earth. One account claimed that the moon itself had come tumbling down.",
-    "info": "Raises the potency of kicking and stomping attacks by 10%.\n\nAffects: Dryleaf Whirlwind, Dryleaf Arts kicking attacks, Dane's Footwork kicking attacks, Deadly Dance's final kick, The <font color=\"#40BF40\">Poison</font> Flower Blooms Twice, Hoarfrost Stomp, Divine Beast Frost Stomp, Regal Roar altered heavy attacks of Axe of Godfrey. Does not affect Storm Kick"
+    "info": "Increases the potency of kicking and stomping attacks by 10%, affecting Dryleaf Whirlwind, Dryleaf Arts kicking attacks, Dane's Footwork kicking attacks, Deadly Dance's final kick, The <font color=\"#40BF40\">Poison</font> Flower Blooms Twice, Hoarfrost Stomp, Divine Beast Frost Stomp, and Regal Roar altered heavy attacks of Axe of Godfrey, but does not affect Storm Kick."
   },
   {
     "id": 8040,
     "name": "Two-Handed Sword Talisman",
     "category": "talisman",
     "caption": "A talisman depicting a warrior two-handing a sword.\n\nThe horned warriors were fitting figureheads for the military might of the tower they kept watch over, their deft attacks slashing through any and all foes.",
-    "info": "Raises <font color=\"#E0B985\">attack power</font> of all weapon attacks while two-handing a weapon by 15%."
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of weapon attacks by 15% while two-handing a weapon."
   },
   {
     "id": 8050,
     "name": "Crusade Insignia",
     "category": "talisman",
     "caption": "A talisman depicting a raised spear on a backdrop of flames, in remembrance of the lives lost in the sacred crusade led by Messmer.\n\nThe warriors who fought in the crusade set aside both honor and mercy to wantonly impale and scorch those deemed impure.\n\nThose who felt invigorated by each cry of death were the same men who were certain of the sanctity of the campaign.",
-    "info": "Raises <font color=\"#E0B985\">attack power</font> by 15% for 20 seconds after defeating an enemy."
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> by 15% for 20 seconds after defeating an enemy."
   },
   {
     "id": 8060,
     "name": "Aged One's Exultation",
     "category": "talisman",
     "caption": "A talisman depicting the exultation of the aging untouchable, whose head resembles a sprig of ripe grapes.\n\n\"Gift your madness to our Lord.\nBless our brethren with grapes.\nTake care that they fully ripen.\"",
-    "info": "Raises <font color=\"#E0B985\">attack power</font> by 20% for 30 seconds when <font color=\"#E0B985\">madness</font> is triggered in the vicinity."
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> by 20% for 30 seconds when <font color=\"#EEAA2B\">madness</font> is triggered nearby."
   },
   {
     "id": 8070,
     "name": "Arrow's Soaring Sting Talisman",
     "category": "talisman",
     "caption": "A talisman composed of fletched and iron arrows.",
-    "info": "Raises <font color=\"#E0B985\">attack power</font> of arrows and bolts by 8% and increases the effective range of bows by 50%."
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of arrows and bolts by 8% and increases the effective range of bows by 50%."
   },
   {
     "id": 8090,
     "name": "Pearl Shield Talisman",
     "category": "talisman",
     "caption": "Talisman depicting a knight bearing a pearlescent greatshield.\n\nThe nature and the potential of impurity surpassed the understanding of the knights, and so they were forced to prepare for all threats known or unknown.",
-    "info": "Boosts <font color=\"#57DBCE\">magic</font>, <font color=\"#F48C25\">fire</font>, <font color=\"#FFE033\">lightning</font>, and <font color=\"#F5EB89\">holy</font> damage negation by 20% while guarding."
+    "info": "Increases <font color=\"#57DBCE\">magic damage negation</font>, <font color=\"#F48C25\">fire damage negation</font>, <font color=\"#FFE033\">lightning damage negation</font>, and <font color=\"#F5EB89\">holy damage negation</font> by 20% while guarding."
   },
   {
     "id": 8100,
     "name": "Dried Bouquet",
     "category": "talisman",
     "caption": "A quaint bouquet of dried flowers, offered to a small grave.\n\nThe sorrow that flows from the untimely demise of a loved one is a tenderness shared by all, regardless of birthplace.",
-    "info": "Raises <font color=\"#E0B985\">attack power</font> by 20% for 30 seconds after a summoned spirit dies."
+    "info": "Increases <font color=\"#E0B985\">attack power</font> by 20% for 30 seconds after a summoned spirit dies."
   },
   {
     "id": 8110,
     "name": "Smithing Talisman",
     "category": "talisman",
     "caption": "A talisman depicting an ancient smithing hammer.\nInscribed with a smithscript.\n\nIn ancient times, smithing was a divine act, and blacksmiths interpreted the script they perceived in the wrinkles of molten steel to imbue weapons with souls.",
-    "info": "Raises <font color=\"#E0B985\">weapon-throwing attack damage</font> by 10%."
+    "info": "Increases <font color=\"#E0B985\">weapon-throwing attack damage</font> by 10%."
   },
   {
     "id": 8120,
     "name": "Ailment Talisman",
     "category": "talisman",
     "caption": "A talisman depicting a soul taken by sickness.\n\nWhen the weak were infected with the dreaded fly sickness, they perished well before the metamorphosis could take hold. Oddly, those who cared for the infected and made certain they were given a proper burial were never afflicted themselves.",
-    "info": "Raises resistance to the most recently applied status effect by about 350. The bonus lasts 120 seconds for <font color=\"#40BF40\">Poison</font> and <font color=\"#EF7676\">Scarlet Rot</font>, 45 seconds for <font color=\"#9DD7FB\">Frostbite</font>, and 30 seconds for <font color=\"#C84343\">Hemorrhage</font>, <font color=\"#A698F4\">Sleep</font>, and <font color=\"#EEAA2B\">Madness</font>, and it does not affect <font color=\"#A17945\">Death Blight</font>."
+    "info": "Increases resistance to the most recently applied status effect by 350 for 120 seconds for <font color=\"#40BF40\">Poison</font> and <font color=\"#EF7676\">Scarlet Rot</font>, 45 seconds for <font color=\"#9DD7FB\">Frostbite</font>, and 30 seconds for <font color=\"#C84343\">Hemorrhage</font>, <font color=\"#A698F4\">Sleep</font>, and <font color=\"#EEAA2B\">Madness</font>; does not affect <font color=\"#A17945\">Death Blight</font>."
   },
   {
     "id": 8130,
     "name": "Retaliatory Crossed-Tree",
     "category": "talisman",
     "caption": "Handicraft depicting a golden crossed-tree.\nOne of the items conferred to the Needle Knights.\n\nLong ago, the Needle Knights were in service of Miquella, but now they are no more. Save for one.",
-    "info": "Raises <font color=\"#E0B985\">attack power</font> of roll and backstep attacks by 17% (12% in PvP) but does not apply to skill damage."
+    "info": "Increases <font color=\"#E0B985\">attack power</font> of rolling and backstepping attacks by 17% (12% in PvP) but does not affect skill damage."
   },
   {
     "id": 8140,
     "name": "Lacerating Crossed-Tree",
     "category": "talisman",
     "caption": "Handicraft depicting a golden crossed-tree.\nOne of the items conferred to the Needle Knights.\n\nLong ago, the Needle Knights were in service of Miquella, but now they are no more. Save for one.",
-    "info": "Raises <font color=\"#E0B985\">attack power</font> of dash (running light and heavy) attacks by 15% (7.5% in PvP); does not apply to skill damage."
+    "info": "Increases <font color=\"#E0B985\">attack power</font> of dash (running light and heavy) attacks by 15% (7.5% in PvP) but does not affect skill damage."
   },
   {
     "id": 8150,
     "name": "Sharpshot Talisman",
     "category": "talisman",
     "caption": "A talisman depicting an archer wielding a longbow.\n\nThe Albinauric archers were in a class of their own, and their deadly long-range specialists struck fear into the hearts of men.",
-    "info": "Raises <font color=\"#E0B985\">attack power</font> of arrows and bolts by 12% while aiming with the crosshair in first-person view, and boosts <font color=\"#E0B985\">attack power</font> of precision-aimed shots by 12%."
+    "info": "Increases <font color=\"#E0B985\">attack power</font> of arrows and bolts by 12% while aiming with the crosshair in first-person view, and increases <font color=\"#E0B985\">attack power</font> of precision-aimed shots by 12%."
   },
   {
     "id": 8160,
     "name": "St. Trina's Smile",
     "category": "talisman",
     "caption": "A talisman depicting a smiling St. Trina,\na vision conjured deep within a certain man's heart.\n\nEngraved as a reminder of the unparalleled devotion of those who left their homelands to serve Rellana.\n\n\"By your leave, we will accompany you wherever your lunar vessel takes you.\"",
-    "info": "<font color=\"#A698F4\">Sleep</font> in the vicinity raises <font color=\"#E0B985\">attack power</font> by 20% for 30 seconds (12% in PvP)."
+    "info": "Increases <font color=\"#E0B985\">attack power</font> by 20% for 30 seconds when <font color=\"#A698F4\">sleep</font> occurs in the vicinity (12% in PvP)."
   },
   {
     "id": 8170,
     "name": "Talisman of the Dread",
     "category": "talisman",
     "caption": "Talisman depicting the dread dragon of the jagged peak, whose roars cause the peak's molten fury to boil and churn.\n\nBayle was the foul dragon's name\u2014a terrible harbinger of destruction whose challenge to the ancient Dragonlord ended in grievous mutual injury.",
-    "info": "Raises the potency of magma sorceries, incantations, and skills by 15%."
+    "info": "Increases <font color=\"#E0B985\">damage inflicted</font> by magma sorceries, incantations, and skills by 15%."
   },
   {
     "id": 8180,
     "name": "Enraged Divine Beast",
     "category": "talisman",
     "caption": "A charm depicting the crazed, cavorting dance of the divine beast conducted at the tower festival.\n\nDivine beasts are messengers of the heavens, and their rage mirrors the tumult of the skies, of which storms are the pinnacle.",
-    "info": "Raises the potency of storm sorceries, incantations, and skills by 10%.\n\nAffects: Divine Beast Tornado, Zamor Ice Storm, Storm Blade, Storm Assult, Storm Stomp, Stormcaller, Thunderstorm, Storm Kick, Horn Calling: Storm, Stormwing Bone Arrow."
+    "info": "Increases <font color=\"#E0B985\">damage inflicted</font> by storm sorceries, incantations, and skills by 10%, affecting Divine Beast Tornado, Zamor Ice Storm, Storm Blade, Storm Assault, Storm Stomp, Stormcaller, Thunderstorm, Storm Kick, Horn Calling: Storm, and Stormwing Bone Arrow."
   },
   {
     "id": 8190,
     "name": "Beloved Stardust",
     "category": "talisman",
     "caption": "A talisman depicting a wizened hand gently gripping a glintstone.\n\nCount Ymir was known for his recitations.\n\n\"One need only envision the romance of the stars above with adoration for stardust in one's heart to become a great sorcerer. Do so, and you will know love.\"",
-    "info": "Shortens casting speed for sorceries and incantations, increasing casting speed by 99 but also damage taken by 30%."
+    "info": "Shortens the casting time of sorceries and incantations by increasing <font color=\"#E0B985\">casting speed</font> by 99, but increases <font color=\"#E0B985\">all damage received</font> by 30%."
   },
   {
     "id": 8200,
     "name": "Talisman of Lord's Bestowal",
     "category": "talisman",
     "caption": "A talisman depicting Godfrey, first Elden lord, receiving the precious sap.\n\nThe Lord accepted the sap stoically, without any sign of wavering. No wonder Lord of the Erdtree casts a long shadow over the lands.",
-    "info": "Raises <font color=\"#E0B985\">poise</font> by 54% for 2 seconds after using a Flask of Tears."
+    "info": "Increases <font color=\"#E0B985\">poise</font> by 54% for 2 seconds after using a Flask of Tears."
   },
   {
     "id": 8210,
     "name": "Verdigris Discus",
     "category": "talisman",
     "caption": "A discus made of verdigris, the corroded metal known for its heft.\n\nGreat weight makes for great strength. The strength to protect others.",
-    "info": "Reduces damage taken by 10% while at heavy load and by 20% while overloaded (7.5% and 15% in PvP), remaining inactive at medium or light load."
+    "info": "Reduces damage taken by 10% while at heavy load and by 20% while overloaded (7.5% and 15% in PvP) but remains inactive at medium or light load."
   },
   {
     "id": 8220,
     "name": "Rellana's Cameo",
     "category": "talisman",
     "caption": "Talisman featuring a gallant portrait of Rellana, the Twin Moon Knight.\n\nEngraved as a reminder of the unparalleled devotion of those who left their homelands to serve Rellana.\n\n\"By your leave, we will accompany you wherever your lunar vessel takes you.\"",
-    "info": "Enhances attacks executed after maintaining the same stance for a while."
+    "info": "Increases <font color=\"#E0B985\">attack power</font> of stance weapon skills by 45% after holding the stance input for 1 second (red-glow activation), applying to Square Off, Overhead Stance, Wing Stance, Moon-and-Fire Stance, Night-and-Flame Stance, Unsheathe, and Transient Moonlight but not to bow skills."
   },
   {
     "id": 8230,
     "name": "Blade of Mercy",
     "category": "talisman",
     "caption": "A thin, blood-stained dagger. No longer fit for use.\n\nHornsent employed this to honorably end the suffering of a compatriot. After claiming numerous lives, the dagger is now broken, but has acquired a spectral aura.",
-    "info": "Raises <font color=\"#E0B985\">attack power</font> by 20% for 20 seconds after landing a critical hit."
+    "info": "Increases <font color=\"#E0B985\">attack power</font> by 20% for 20 seconds after landing a critical hit."
   },
   {
     "id": 8240,
     "name": "Talisman of All Crucibles",
     "category": "talisman",
     "caption": "A giant mass of intermingling Crucible attributes.\n\nRumored to have sprouted upon giants and is known as the \"mother of Crucibles\" in ancient tower lore.",
-    "info": "Grants the combined effects of all Crucible talismans.\nNullifies headshot bonus damage and prevents the headshot stagger animation.\nRaises damage negations by 30% against critical attacks.\nAdds 3 i-frames to rolls and backsteps (does not stack with the Windy Crystal Tear).\nIncreases all damage received by 45% at all times."
+    "info": "Grants the combined effects of all Crucible talismans, nullifies headshot bonus damage and prevents the headshot stagger animation, raises damage negations by 30% against critical attacks, and adds 3 i-frames to rolls and backsteps (does not stack with the Windy Crystal Tear) but increases all damage received by 45% at all times."
   }
 ]
