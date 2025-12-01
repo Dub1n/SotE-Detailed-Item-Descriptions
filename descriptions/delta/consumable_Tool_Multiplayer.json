@@ -1,0 +1,971 @@
+[
+  {
+    "id": 106,
+    "name": "Tarnished's Wizened Finger",
+    "info": "Online multiplayer item.\n\nUse to write messages."
+  },
+  {
+    "id": 130,
+    "name": "Spectral Steed Whistle",
+    "info": "Dismounts and expels steed when used while on horseback."
+  },
+  {
+    "id": 135,
+    "name": "Phantom Great Rune",
+    "info": "Online multiplayer item.\n\nEnemies inside the invaded world receive a blessing of blood, which boosts their <font color=\"#E0B985\">attack power</font> when <font color=\"#C84343\">blood loss</font> occurs nearby."
+  },
+  {
+    "id": 174,
+    "name": "White Cipher Ring",
+    "info": "Online multiplayer item.\n\nAllows you to automatically request for a hunter from another world to come to your rescue when your world is invaded. Summoning is not always possible."
+  },
+  {
+    "id": 190,
+    "name": "Rune Arc",
+    "info": "Increases your <font color=\"#E0B985\">maximum HP</font> by 10%. If you have equipped a Great Rune at a site of grace then it will also activate the benefits of that Great Rune. These benefits will last until your next death."
+  },
+  {
+    "id": 300,
+    "name": "Fire Pot",
+    "info": "Throw at an enemy to inflict <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 230\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 301,
+    "name": "Redmane Fire Pot",
+    "info": "Throw at an enemy to inflict <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 326\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 302,
+    "name": "Giantsflame Fire Pot",
+    "info": "Throw at an enemy to inflict <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 344\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 320,
+    "name": "Lightning Pot",
+    "info": "Throw at an enemy to inflict <font color=\"#FFE033\">lightning damage</font>.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 260\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 321,
+    "name": "Ancient Dragonbolt Pot",
+    "info": "Throw at an enemy to inflict <font color=\"#FFE033\">lightning damage</font>.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 340\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 330,
+    "name": "Fetid Pot",
+    "info": "Throw at an enemy to cause <font color=\"#40BF40\">poison accumulation</font> on target, but also causes 200 <font color=\"#40BF40\">poison accumulation</font> on yourself.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 12, every second for 30 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#40BF40\">Base poison accumulation:</font> 250\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 340,
+    "name": "Swarm Pot",
+    "info": "Throw at an enemy to release a swarm of bloodflies which linger in the air where the pot breaks and attack the target up to 3 times.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage (pot and bloodflies):</font> 116\n<font color=\"#C84343\">Base blood loss accumulation (bloodflies):</font> 70\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 350,
+    "name": "Holy Water Pot",
+    "info": "Throw at an enemy to inflict <font color=\"#F5EB89\">holy damage</font>.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 167\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 351,
+    "name": "Sacred Order Pot",
+    "info": "Throw at an enemy to inflict <font color=\"#F5EB89\">holy damage</font>.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 312\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 360,
+    "name": "Freezing Pot",
+    "info": "Throw at an enemy to inflict <font color=\"#57DBCE\">magic damage</font> and cause <font color=\"#9DD7FB\">frostbite accumulation</font>.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 119\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 380\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 370,
+    "name": "Poison Pot",
+    "info": "Throw at an enemy to cause <font color=\"#40BF40\">poison accumulation</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#40BF40\">Base poison accumulation:</font> 200\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 380,
+    "name": "Oil Pot",
+    "caption": "Throw at an enemy to soak them in oil for 30 seconds, increasing the fire damage of the next fire-based attack by 50%. Oil is removed when enemy is hit with fire damage.",
+    "info": "Throw at an enemy to soak them in oil, increasing the <font color=\"#F48C25\">fire damage</font> of the next single fire-based attack by 50%. Oil is removed when the enemy is hit with <font color=\"#F48C25\">fire damage</font> or after 30 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 390,
+    "name": "Alluring Pot",
+    "info": "Throw to create a pale shadow illusion which will lure human enemies outside of combat to attack it. Demi-humans will be lured in even during combat.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 391,
+    "name": "Beastlure Pot",
+    "info": "Throw to create a red shadow illusion which lures beasts into attacking it, even during combat.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 400,
+    "name": "Roped Fire Pot",
+    "info": "Throw at an enemy behind you to inflict <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 230\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 420,
+    "name": "Roped Lightning Pot",
+    "info": "Throw at an enemy behind you to inflict <font color=\"#FFE033\">lightning damage</font>.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 260\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 430,
+    "name": "Roped Fetid Pot",
+    "caption": "Throw at rearward enemies to cause accumulation of deadly poison, but also causes 200 accumulation of deadly poison on thrower.\n\nBase deadly poison accumulation: 250",
+    "info": "Throw at an enemy behind you to cause <font color=\"#40BF40\">poison accumulation</font> on target, but also causes 200 <font color=\"#40BF40\">poison accumulation</font> on yourself.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 12, every second for 30 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#40BF40\">Base poison accumulation:</font> 250\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 440,
+    "name": "Roped Poison Pot",
+    "info": "Throw at an enemy behind you to cause <font color=\"#40BF40\">poison accumulation</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#40BF40\">Base poison accumulation:</font> 200\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 450,
+    "name": "Roped Oil Pot",
+    "info": "Throw at an enemy behind you to soak them in oil, increasing the <font color=\"#F48C25\">fire damage</font> of the next single fire-based attack by 50%. Oil is removed when the enemy is hit with <font color=\"#F48C25\">fire damage</font> or after 30 seconds.\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 460,
+    "name": "Roped Magic Pot",
+    "info": "Throw at an enemy behind you to inflict <font color=\"#57DBCE\">magic damage</font>.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 322\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 470,
+    "name": "Roped Fly Pot",
+    "caption": "The cacophony of their wings assails the sanity of berserkers.",
+    "info": "Throw at an enemy behind you to release a swarm of bloodflies which linger in the air where the pot breaks and attack the target up to 3 times.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage (pot and bloodflies):</font> 116\n<font color=\"#C84343\">Base blood loss accumulation (bloodflies):</font> 70\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 480,
+    "name": "Roped Freezing Pot",
+    "info": "Throw at an enemy behind you to inflict <font color=\"#57DBCE\">magic damage</font> and cause <font color=\"#9DD7FB\">frostbite accumulation</font>.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 119\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 380\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 490,
+    "name": "Roped Volcano Pot",
+    "info": "Throw at an enemy behind you to inflict continuous <font color=\"#F48C25\">fire damage</font> in an area for 3 seconds.\n\n<font color=\"#F48C25\">Base fire damage:</font> 82\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 510,
+    "name": "Roped Holy Water Pot",
+    "info": "Throw at an enemy behind you to inflict <font color=\"#F5EB89\">holy damage</font>.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 167\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 600,
+    "name": "Volcano Pot",
+    "info": "Throw at an enemy to disperse a cloud of heat for 3 seconds, which inflicts <font color=\"#F48C25\">fire damage</font> up to 11 times.\n\n<font color=\"#F48C25\">Base fire damage</font>: 82\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 610,
+    "name": "Albinauric Pot",
+    "info": "Throw at an enemy to prevent them from using a Flask of Crimson Tears for 25 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 630,
+    "name": "Cursed-Blood Pot",
+    "info": "Throw at an enemy to douse them with accursed blood, causing any summoned spirits to prioritize them as a target.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 640,
+    "name": "Sleep Pot",
+    "info": "Throw at an enemy to disperse a cloud of purple mist for 3 seconds, which causes <font color=\"#A698F4\">sleep accumulation</font> 5 times per second.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#A698F4\">Base sleep accumulation:</font> 29\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 650,
+    "name": "Rancor Pot",
+    "info": "Throw at an enemy to spawn 4 vengeful spirits, which will chase down an enemy and inflict <font color=\"#57DBCE\">magic damage</font> on impact. Vengeful spirits will disappear on impact or after 4 seconds if they fail to reach a target.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 139\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 660,
+    "name": "Magic Pot",
+    "info": "Throw at an enemy to inflict <font color=\"#57DBCE\">magic damage</font>.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 322\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 661,
+    "name": "Academy Magic Pot",
+    "info": "Throw at an enemy to inflict <font color=\"#57DBCE\">magic damage</font>.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 405\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 670,
+    "name": "Rot Pot",
+    "info": "Throw at an enemy to cause <font color=\"#EF7676\">scarlet rot accumulation</font>.\n\n<font color=\"#EF7676\">Scarlet rot:</font> Inflicts damage equal to 0.18% of <font color=\"#E0B985\">maximum HP</font> plus 15, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#EF7676\">Base scarlet rot accumulation:</font> 300\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 810,
+    "name": "Rowa Raisin",
+    "info": "Feed to Torrent to restore 15% of <font color=\"#E0B985\">maximum HP</font> plus 300."
+  },
+  {
+    "id": 811,
+    "name": "Sweet Raisin",
+    "info": "Feed to Torrent to restore 23% of <font color=\"#E0B985\">maximum HP</font> plus 450."
+  },
+  {
+    "id": 812,
+    "name": "Frozen Raisin",
+    "info": "Feed to Torrent to restore 30% of <font color=\"#E0B985\">maximum HP</font> plus 600."
+  },
+  {
+    "id": 820,
+    "name": "Boiled Crab",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 20% for 60 seconds."
+  },
+  {
+    "id": 830,
+    "name": "Boiled Prawn",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 15% for 60 seconds."
+  },
+  {
+    "id": 900,
+    "name": "Neutralizing Boluses",
+    "info": "Cures <font color=\"#40BF40\">poison</font> and alleviates all <font color=\"#40BF40\">poison accumulation</font>."
+  },
+  {
+    "id": 910,
+    "name": "Stanching Boluses",
+    "info": "Alleviates all <font color=\"#C84343\">blood loss accumulation</font>."
+  },
+  {
+    "id": 920,
+    "name": "Thawfrost Boluses",
+    "info": "Alleviates all <font color=\"#9DD7FB\">frostbite accumulation</font>."
+  },
+  {
+    "id": 930,
+    "name": "Stimulating Boluses",
+    "info": "Alleviates all <font color=\"#A698F4\">sleep accumulation</font>."
+  },
+  {
+    "id": 940,
+    "name": "Preserving Boluses",
+    "info": "Cures <font color=\"#EF7676\">scarlet rot</font> and alleviates all <font color=\"#EF7676\">scarlet rot accumulation</font>."
+  },
+  {
+    "id": 950,
+    "name": "Rejuvenating Boluses",
+    "info": "Alleviates all <font color=\"#A17945\">death blight accumulation</font>."
+  },
+  {
+    "id": 960,
+    "name": "Clarifying Boluses",
+    "info": "Alleviates all <font color=\"#EEAA2B\">madness accumulation</font>."
+  },
+  {
+    "id": 1000,
+    "name": "Flask of Crimson Tears",
+    "info": "Restores 250 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1001,
+    "name": "Flask of Crimson Tears",
+    "info": "Restores 250 HP."
+  },
+  {
+    "id": 1002,
+    "name": "Flask of Crimson Tears +1",
+    "info": "Restores 345 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1003,
+    "name": "Flask of Crimson Tears +1",
+    "info": "Restores 345 HP."
+  },
+  {
+    "id": 1004,
+    "name": "Flask of Crimson Tears +2",
+    "info": "Restores 430 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1005,
+    "name": "Flask of Crimson Tears +2",
+    "info": "Restores 430 HP."
+  },
+  {
+    "id": 1006,
+    "name": "Flask of Crimson Tears +3",
+    "info": "Restores 505 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1007,
+    "name": "Flask of Crimson Tears +3",
+    "info": "Restores 505 HP."
+  },
+  {
+    "id": 1008,
+    "name": "Flask of Crimson Tears +4",
+    "info": "Restores 570 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1009,
+    "name": "Flask of Crimson Tears +4",
+    "info": "Restores 570 HP."
+  },
+  {
+    "id": 1010,
+    "name": "Flask of Crimson Tears +5",
+    "info": "Restores 625 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1011,
+    "name": "Flask of Crimson Tears +5",
+    "info": "Restores 625 HP."
+  },
+  {
+    "id": 1012,
+    "name": "Flask of Crimson Tears +6",
+    "info": "Restores 670 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1013,
+    "name": "Flask of Crimson Tears +6",
+    "info": "Restores 670 HP."
+  },
+  {
+    "id": 1014,
+    "name": "Flask of Crimson Tears +7",
+    "info": "Restores 700 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1015,
+    "name": "Flask of Crimson Tears +7",
+    "info": "Restores 700 HP."
+  },
+  {
+    "id": 1016,
+    "name": "Flask of Crimson Tears +8",
+    "info": "Restores 730 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1017,
+    "name": "Flask of Crimson Tears +8",
+    "info": "Restores 730 HP."
+  },
+  {
+    "id": 1018,
+    "name": "Flask of Crimson Tears +9",
+    "info": "Restores 755 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1019,
+    "name": "Flask of Crimson Tears +9",
+    "info": "Restores 755 HP."
+  },
+  {
+    "id": 1020,
+    "name": "Flask of Crimson Tears +10",
+    "info": "Restores 780 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1021,
+    "name": "Flask of Crimson Tears +10",
+    "info": "Restores 780 HP."
+  },
+  {
+    "id": 1022,
+    "name": "Flask of Crimson Tears +11",
+    "info": "Restores 795 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1023,
+    "name": "Flask of Crimson Tears +11",
+    "info": "Restores 795 HP."
+  },
+  {
+    "id": 1024,
+    "name": "Flask of Crimson Tears +12",
+    "info": "Restores 810 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1025,
+    "name": "Flask of Crimson Tears +12",
+    "info": "Restores 810 HP."
+  },
+  {
+    "id": 1050,
+    "name": "Flask of Cerulean Tears",
+    "info": "Restores 80 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1051,
+    "name": "Flask of Cerulean Tears",
+    "info": "Restores 80 FP."
+  },
+  {
+    "id": 1052,
+    "name": "Flask of Cerulean Tears +1",
+    "info": "Restores 95 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1053,
+    "name": "Flask of Cerulean Tears +1",
+    "info": "Restores 95 FP."
+  },
+  {
+    "id": 1054,
+    "name": "Flask of Cerulean Tears +2",
+    "info": "Restores 110 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1055,
+    "name": "Flask of Cerulean Tears +2",
+    "info": "Restores 110 FP."
+  },
+  {
+    "id": 1056,
+    "name": "Flask of Cerulean Tears +3",
+    "info": "Restores 125 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1057,
+    "name": "Flask of Cerulean Tears +3",
+    "info": "Restores 125 FP."
+  },
+  {
+    "id": 1058,
+    "name": "Flask of Cerulean Tears +4",
+    "info": "Restores 140 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1059,
+    "name": "Flask of Cerulean Tears +4",
+    "info": "Restores 140 FP."
+  },
+  {
+    "id": 1060,
+    "name": "Flask of Cerulean Tears +5",
+    "info": "Restores 150 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1061,
+    "name": "Flask of Cerulean Tears +5",
+    "info": "Restores 150 FP."
+  },
+  {
+    "id": 1062,
+    "name": "Flask of Cerulean Tears +6",
+    "info": "Restores 160 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1063,
+    "name": "Flask of Cerulean Tears +6",
+    "info": "Restores 160 FP."
+  },
+  {
+    "id": 1064,
+    "name": "Flask of Cerulean Tears +7",
+    "info": "Restores 170 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1065,
+    "name": "Flask of Cerulean Tears +7",
+    "info": "Restores 170 FP."
+  },
+  {
+    "id": 1066,
+    "name": "Flask of Cerulean Tears +8",
+    "info": "Restores 180 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1067,
+    "name": "Flask of Cerulean Tears +8",
+    "info": "Restores 180 FP."
+  },
+  {
+    "id": 1068,
+    "name": "Flask of Cerulean Tears +9",
+    "info": "Restores 190 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1069,
+    "name": "Flask of Cerulean Tears +9",
+    "info": "Restores 190 FP."
+  },
+  {
+    "id": 1070,
+    "name": "Flask of Cerulean Tears +10",
+    "info": "Restores 200 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1071,
+    "name": "Flask of Cerulean Tears +10",
+    "info": "Restores 200 FP."
+  },
+  {
+    "id": 1072,
+    "name": "Flask of Cerulean Tears +11",
+    "info": "Restores 210 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1073,
+    "name": "Flask of Cerulean Tears +11",
+    "info": "Restores 210 FP."
+  },
+  {
+    "id": 1074,
+    "name": "Flask of Cerulean Tears +12",
+    "info": "Restores 220 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1075,
+    "name": "Flask of Cerulean Tears +12",
+    "info": "Restores 220 FP."
+  },
+  {
+    "id": 1100,
+    "name": "Pickled Turtle Neck",
+    "info": "Increases <font color=\"#E0B985\">stamina regeneration</font> by 10 per second for 60 seconds."
+  },
+  {
+    "id": 1110,
+    "name": "Immunizing Cured Meat",
+    "info": "Increases <font color=\"#E0B985\">immunity</font> by 100 for 60 seconds.\n\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>."
+  },
+  {
+    "id": 1120,
+    "name": "Invigorating Cured Meat",
+    "info": "Increases <font color=\"#E0B985\">robustness</font> by 100 for 60 seconds.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>."
+  },
+  {
+    "id": 1130,
+    "name": "Clarifying Cured Meat",
+    "info": "Increases <font color=\"#E0B985\">focus</font> by 100 for 60 seconds.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
+  },
+  {
+    "id": 1140,
+    "name": "Dappled Cured Meat",
+    "info": "Increases <font color=\"#E0B985\">robustness</font>, <font color=\"#E0B985\">immunity</font>, and <font color=\"#E0B985\">focus</font> by 100 for 60 seconds.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
+  },
+  {
+    "id": 1150,
+    "name": "Spellproof Dried Liver",
+    "info": "Increases <font color=\"#57DBCE\">magic damage negation</font> by 15% for 120 seconds."
+  },
+  {
+    "id": 1160,
+    "name": "Fireproof Dried Liver",
+    "info": "Increases <font color=\"#F48C25\">fire damage negation</font> by 15% for 120 seconds."
+  },
+  {
+    "id": 1170,
+    "name": "Lightningproof Dried Liver",
+    "info": "Increases <font color=\"#FFE033\">lightning damage negation</font> by 15% for 120 seconds."
+  },
+  {
+    "id": 1180,
+    "name": "Holyproof Dried Liver",
+    "info": "Increases <font color=\"#F5EB89\">holy damage negation</font> by 15% for 120 seconds."
+  },
+  {
+    "id": 1190,
+    "name": "Silver-Pickled Fowl Foot",
+    "info": "Increases <font color=\"#E0B985\">item discovery</font> by 50 for 180 seconds."
+  },
+  {
+    "id": 1200,
+    "name": "Gold-Pickled Fowl Foot",
+    "info": "Increases runes obtained from defeated enemies by 30% for 180 seconds."
+  },
+  {
+    "id": 1210,
+    "name": "Exalted Flesh",
+    "info": "Increases <font color=\"#F395C4\">physical damage</font> by 20% for 30 seconds."
+  },
+  {
+    "id": 1220,
+    "name": "Deathsbane Jerky",
+    "info": "Increases <font color=\"#E0B985\">vitality</font> by 90 for 60 seconds.\n\n<font color=\"#E0B985\">Vitality:</font> Resistance to <font color=\"#A17945\">death blight</font>."
+  },
+  {
+    "id": 1235,
+    "name": "Raw Meat Dumpling",
+    "info": "Restores HP by 50% but inflicts <font color=\"#40BF40\">poison</font> on yourself.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds."
+  },
+  {
+    "id": 1290,
+    "name": "Starlight Shards",
+    "info": "Restores 2 FP per second for 60 seconds."
+  },
+  {
+    "id": 1310,
+    "name": "Immunizing White Cured Meat",
+    "info": "Increases <font color=\"#E0B985\">immunity</font> by 75 for 120 seconds.\n\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>."
+  },
+  {
+    "id": 1320,
+    "name": "Invigorating White Cured Meat",
+    "info": "Increases <font color=\"#E0B985\">robustness</font> by 75 for 120 seconds.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>."
+  },
+  {
+    "id": 1330,
+    "name": "Clarifying White Cured Meat",
+    "info": "Increases <font color=\"#E0B985\">focus</font> by 75 for 120 seconds.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
+  },
+  {
+    "id": 1340,
+    "name": "Dappled White Cured Meat",
+    "info": "Increases <font color=\"#E0B985\">robustness</font>, <font color=\"#E0B985\">immunity</font>, and <font color=\"#E0B985\">focus</font> by 75 for 120 seconds.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
+  },
+  {
+    "id": 1350,
+    "name": "Deathsbane White Jerky",
+    "info": "Increases <font color=\"#E0B985\">vitality</font> by 150 for 120 seconds.\n\n<font color=\"#E0B985\">Vitality:</font> Resistance to <font color=\"#A17945\">death blight</font>."
+  },
+  {
+    "id": 1400,
+    "name": "Fire Grease",
+    "info": "Coats right-hand armament. Adds 85 <font color=\"#F48C25\">fire damage</font> for 60 seconds."
+  },
+  {
+    "id": 1410,
+    "name": "Lightning Grease",
+    "info": "Coats right-hand armament. Adds 85 <font color=\"#FFE033\">lightning damage</font> for 60 seconds."
+  },
+  {
+    "id": 1420,
+    "name": "Magic Grease",
+    "info": "Coats right-hand armament. Adds 85 <font color=\"#57DBCE\">magic damage</font> for 60 seconds."
+  },
+  {
+    "id": 1430,
+    "name": "Holy Grease",
+    "info": "Coats right-hand armament. Adds 85 <font color=\"#F5EB89\">holy damage</font> for 60 seconds."
+  },
+  {
+    "id": 1440,
+    "name": "Blood Grease",
+    "info": "Coats right-hand armament. Causes 30 <font color=\"#C84343\">blood loss accumulation</font> per attack for 60 seconds.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100."
+  },
+  {
+    "id": 1450,
+    "name": "Soporific Grease",
+    "info": "Coats right-hand armament. Causes 33 <font color=\"#A698F4\">sleep accumulation</font> per attack for 60 seconds.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack."
+  },
+  {
+    "id": 1460,
+    "name": "Poison Grease",
+    "info": "Coats right-hand armament. Causes 63 <font color=\"#40BF40\">poison accumulation</font> per attack for 60 seconds.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds."
+  },
+  {
+    "id": 1470,
+    "name": "Freezing Grease",
+    "info": "Coats right-hand armament. Causes 63 <font color=\"#9DD7FB\">frostbite accumulation</font> per attack for 60 seconds.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds."
+  },
+  {
+    "id": 1480,
+    "name": "Dragonwound Grease",
+    "caption": "Solidified grease made from a mixture of Gravel Stones.",
+    "info": "Coats right-hand armament. Increases <font color=\"#E0B985\">all damage inflicted</font> against ancient dragons by 20% and <font color=\"#E0B985\">all damage inflicted</font> against other dragons and wyrms by 30% for 60 seconds."
+  },
+  {
+    "id": 1490,
+    "name": "Rot Grease",
+    "info": "Coats right-hand armament. Causes 63 <font color=\"#EF7676\">scarlet rot accumulation</font> per attack for 60 seconds.\n\n<font color=\"#EF7676\">Scarlet rot:</font> Inflicts damage equal to 0.18% of <font color=\"#E0B985\">maximum HP</font> plus 15, every second for 90 seconds."
+  },
+  {
+    "id": 1500,
+    "name": "Drawstring Fire Grease",
+    "info": "Quickly coats right-hand armament. Adds 110 <font color=\"#F48C25\">fire damage</font> for 11 seconds."
+  },
+  {
+    "id": 1510,
+    "name": "Drawstring Lightning Grease",
+    "info": "Quickly coats right-hand armament. Adds 110 <font color=\"#FFE033\">lightning damage</font> for 11 seconds."
+  },
+  {
+    "id": 1520,
+    "name": "Drawstring Magic Grease",
+    "info": "Quickly coats right-hand armament. Adds 110 <font color=\"#57DBCE\">magic damage</font> for 11 seconds."
+  },
+  {
+    "id": 1530,
+    "name": "Drawstring Holy Grease",
+    "info": "Quickly coats right-hand armament. Adds 110 <font color=\"#F5EB89\">holy damage</font> for 11 seconds."
+  },
+  {
+    "id": 1540,
+    "name": "Drawstring Blood Grease",
+    "info": "Quickly coats right-hand armament. Causes 38 <font color=\"#C84343\">blood loss accumulation</font> per attack for 15 seconds.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100."
+  },
+  {
+    "id": 1550,
+    "name": "Drawstring Soporific Grease",
+    "info": "Quickly coats right-hand armament. Causes 42 <font color=\"#A698F4\">sleep accumulation</font> per attack for 15 seconds.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack."
+  },
+  {
+    "id": 1560,
+    "name": "Drawstring Poison Grease",
+    "info": "Quickly coats right-hand armament. Causes 80 <font color=\"#40BF40\">poison accumulation</font> per attack for 15 seconds.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds."
+  },
+  {
+    "id": 1570,
+    "name": "Drawstring Freezing Grease",
+    "info": "Quickly coats right-hand armament. Causes 80 <font color=\"#9DD7FB\">frostbite accumulation</font> per attack for 15 seconds.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds."
+  },
+  {
+    "id": 1590,
+    "name": "Drawstring Rot Grease",
+    "info": "Quickly coats right-hand armament. Causes 80 <font color=\"#EF7676\">scarlet rot accumulation</font> per attack for 11 seconds.\n\n<font color=\"#EF7676\">Scarlet rot:</font> Inflicts damage equal to 0.18% of <font color=\"#E0B985\">maximum HP</font> plus 15, every second for 90 seconds."
+  },
+  {
+    "id": 1690,
+    "name": "Shield Grease",
+    "info": "Coats left-hand armament. Increases <font color=\"#E0B985\">guard boost</font> by 13%, and reduces <font color=\"#E0B985\">all damage received</font> from blocked attacks by 20% for 60 seconds. The amount that <font color=\"#E0B985\">guard boost</font> is increased by depends on the shield's base guard boost. Shields with a lower base value will get a bigger increase, while shields with a higher base value will get a smaller increase."
+  },
+  {
+    "id": 1700,
+    "name": "Throwing Dagger",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font>.\n\n<font color=\"#F395C4\">Base physical damage:</font> 67"
+  },
+  {
+    "id": 1710,
+    "name": "Bone Dart",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font>.\n\n<font color=\"#F395C4\">Base physical damage:</font> 57"
+  },
+  {
+    "id": 1720,
+    "name": "Poisonbone Dart",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font> and cause <font color=\"#40BF40\">poison accumulation</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 50\n<font color=\"#40BF40\">Base poison accumulation:</font> 58"
+  },
+  {
+    "id": 1730,
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font> and cause <font color=\"#C84343\">blood loss accumulation</font>.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage:</font> 87\n<font color=\"#C84343\">Base blood loss accumulation:</font> 70"
+  },
+  {
+    "id": 1740,
+    "name": "Crystal Dart",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font> and <font color=\"#57DBCE\">magic damage</font>.\n\n<font color=\"#F395C4\">Base physical damage:</font> 66\n<font color=\"#57DBCE\">Base magic damage:</font> 44"
+  },
+  {
+    "id": 1750,
+    "name": "Fan Daggers",
+    "info": "Throw 5 knives in a horizontal arc at an enemy to inflict <font color=\"#F395C4\">physical damage</font>.\n\n<font color=\"#F395C4\">Base physical damage:</font> 37"
+  },
+  {
+    "id": 1760,
+    "name": "Ruin Fragment",
+    "info": "but can also be thrown.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1"
+  },
+  {
+    "id": 1830,
+    "name": "Explosive Stone",
+    "info": "Explodes when thrown, inflicting <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 108"
+  },
+  {
+    "id": 1831,
+    "name": "Explosive Stone Clump",
+    "info": "Explodes when thrown together, inflicting <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 54"
+  },
+  {
+    "id": 1840,
+    "name": "Poisoned Stone",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font> and cause <font color=\"#40BF40\">poison accumulation</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 50\n<font color=\"#40BF40\">Base poison accumulation:</font> 100"
+  },
+  {
+    "id": 1841,
+    "name": "Poisoned Stone Clump",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font> and cause <font color=\"#40BF40\">poison accumulation</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds\n\n<font color=\"#F395C4\">Base physical damage:</font> 32\n<font color=\"#40BF40\">Base poison accumulation:</font> 45"
+  },
+  {
+    "id": 2020,
+    "name": "Rainbow Stone",
+    "info": ".\n\nIf the stone shatters when dropped from a high place then it is not a survivable fall."
+  },
+  {
+    "id": 2030,
+    "info": "Emits a faint light to increase visibility in dark areas for 120 seconds from the location it is placed."
+  },
+  {
+    "id": 2040,
+    "info": "Allows you to see faraway things."
+  },
+  {
+    "id": 2050,
+    "name": "Grace Mimic",
+    "info": "Light shows the suggested path for 30 seconds, but without particular order."
+  },
+  {
+    "id": 2070,
+    "info": "Use to attach it to your waist. Increases visibility in dark areas while keeping both hands free."
+  },
+  {
+    "id": 2100,
+    "name": "Soft Cotton",
+    "info": "Completely negates fall damage and sound made during movement for 20 seconds.\n\nThe height at which a fall is fatal remains the same even while under the effects of this item."
+  },
+  {
+    "id": 2120,
+    "info": "Cleans blood and filth from the body and alleviates 100 <font color=\"#40BF40\">poison accumulation</font>."
+  },
+  {
+    "id": 2140,
+    "name": "Margit's Shackle",
+    "info": "Binds Margit or Morgott in place for 5 seconds.\n\nCan be used twice per fight, but must be used early."
+  },
+  {
+    "id": 2150,
+    "name": "Mohg's Shackle",
+    "info": "Binds Mohg in place for 5 seconds.\n\nCan be used twice per fight, but must be used early."
+  },
+  {
+    "id": 2190,
+    "name": "Miquella's Needle",
+    "info": "Use to subdue the flame of frenzy if inherited, allowing one to cheat fate and avoid becoming Lord of Frenzied Flame."
+  },
+  {
+    "id": 2910,
+    "name": "Golden Rune [6200]",
+    "info": "Use to gain 6200 runes."
+  },
+  {
+    "id": 2912,
+    "name": "Golden Rune [10,000]",
+    "info": "Use to gain 10,000 runes."
+  },
+  {
+    "id": 2913,
+    "name": "Numen's Rune [12,500]",
+    "info": "Use to gain 12,500 runes."
+  },
+  {
+    "id": 2914,
+    "name": "Hero's Rune [15,000]",
+    "info": "Use to gain 15,000 runes."
+  },
+  {
+    "id": 2915,
+    "name": "Hero's Rune [20,000]",
+    "info": "Use to gain 20,000 runes."
+  },
+  {
+    "id": 2916,
+    "name": "Hero's Rune [25,000]",
+    "info": "Use to gain 25,000 runes."
+  },
+  {
+    "id": 2917,
+    "name": "Hero's Rune [30,000]",
+    "info": "Use to gain 30,000 runes."
+  },
+  {
+    "id": 2918,
+    "name": "Hero's Rune [35,000]",
+    "info": "Use to gain 35,000 runes."
+  },
+  {
+    "id": 2919,
+    "name": "Lord's Rune [50,000]",
+    "info": "Use to gain 50,000 runes."
+  },
+  {
+    "id": 3000,
+    "name": "Ancestral Infant's Head",
+    "info": "Spray an arc of spirit vapor in front of you, which will remain on the ground for 4 seconds after they land and do continuous damage to enemies in the area of effect.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 55"
+  },
+  {
+    "id": 3010,
+    "name": "Omen Bairn",
+    "info": "Produce an explosion of <font color=\"#F5EB89\">holy damage</font> which releases several wraiths that chase down foes.\n\n<font color=\"#F5EB89\">Base holy damage (explosion):</font> 105\n<font color=\"#F5EB89\">Base holy damage (wraith):</font> 70"
+  },
+  {
+    "id": 3011,
+    "name": "Regal Omen Bairn",
+    "info": "Produce an explosion of <font color=\"#F5EB89\">holy damage</font> which releases a large number of wraiths that chase down foes.\n\n<font color=\"#F5EB89\">Base holy damage (explosion):</font> 115\n<font color=\"#F5EB89\">Base holy damage (wraith):</font> 60"
+  },
+  {
+    "id": 3020,
+    "name": "Miranda's Prayer",
+    "info": "Call down a large number of light strikes randomly in an area around the target for 7 seconds.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 95"
+  },
+  {
+    "id": 3030,
+    "name": "Cuckoo Glintstone",
+    "info": "Throw at or near an enemy to produce 3 homing magic projectiles where it lands.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 92"
+  },
+  {
+    "id": 3040,
+    "name": "Mimic's Veil",
+    "info": "Transform yourself into an object from the area you are in. You can still move around while transformed, but performing any other action will revert the transformation. Non-aggressive enemies will ignore you as long as they don't see you moving."
+  },
+  {
+    "id": 3050,
+    "name": "Glintstone Scrap",
+    "info": "Produce 3 magic projectiles which will sporadically shoot straight forward.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 82"
+  },
+  {
+    "id": 3051,
+    "name": "Large Glintstone Scrap",
+    "info": "Produce 7 magic projectiles which will sporadically shoot straight forward.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 65"
+  },
+  {
+    "id": 3060,
+    "name": "Gravity Stone Fan",
+    "info": "Emit a gravitational shockwave in an outward triangle shape in front of you.\n\n<font color=\"#F395C4\">Base physical damage:</font> 160\n<font color=\"#57DBCE\">Base magic damage:</font> 50"
+  },
+  {
+    "id": 3070,
+    "name": "Gravity Stone Chunk",
+    "info": "Throw at an enemy to cause a gravitational explosion underneath them.\n\n<font color=\"#F395C4\">Base physical damage:</font> 247\n<font color=\"#57DBCE\">Base magic damage:</font> 50"
+  },
+  {
+    "id": 3080,
+    "name": "Wraith Calling Bell",
+    "info": "Ring bell to call a single prowling wraith. Can be used repeatedly to call multiple in quick succession.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 120"
+  },
+  {
+    "id": 3300,
+    "name": "Holy Water Grease",
+    "info": "Coats right-hand armament. Adds 95 <font color=\"#F5EB89\">holy damage</font> for 60 seconds."
+  },
+  {
+    "id": 3310,
+    "name": "Warming Stone",
+    "info": "Drop at your feet to restore 25 HP per second for anyone, including enemies, in a small area of effect for 30 seconds."
+  },
+  {
+    "id": 3311,
+    "name": "Frenzyflame Stone",
+    "info": "Drop at your feet to restore 35 HP per second for anyone, including enemies, in a small area of effect for 30 seconds.\n\nOnly work on those who host the frenzied flame."
+  },
+  {
+    "id": 3350,
+    "name": "Bewitching Branch",
+    "info": "Spray a pink smoke directly in front of you that will charm enemies inside of it, which will cause them to be your ally for 180 seconds."
+  },
+  {
+    "id": 3360,
+    "name": "Baldachin's Blessing",
+    "info": "Possessing this item reduces your <font color=\"#E0B985\">maximum HP</font> by 5%. Using this item reduces <font color=\"#F395C4\">physical damage received</font> by 35% and reduces <font color=\"#E0B985\">poise damage received</font> by about 34.2% for 15 seconds.\n\nAlthough this item shows your poise stat increase by about 52%, this item doesn't actually increase your maximum poise. It only reduces the amount of poise damage that you receive from each attack.\n\nThis effect can be combined with the effects of Bull-Goat's Talisman to reduce <font color=\"#E0B985\">poise damage received</font> by about 50.65%."
+  },
+  {
+    "id": 3361,
+    "name": "Radiant Baldachin's Blessing",
+    "info": "Using this item reduces <font color=\"#F395C4\">physical damage received</font> by 35% and reduces <font color=\"#E0B985\">poise damage received</font> by about 45% for 70 seconds.\n\nAlthough this item shows your poise stat increase by about 82%, this item doesn't actually increase your maximum poise. It only reduces the amount of poise damage that you receive from each attack.\n\nThis effect can be combined with the effects of Bull-Goat's Talisman to reduce <font color=\"#E0B985\">poise damage received</font> by about 58.75%."
+  },
+  {
+    "id": 3500,
+    "name": "Uplifting Aromatic",
+    "info": "Increases <font color=\"#E0B985\">all damage negation</font> by 90% for the next single attack received wihtin 40 seconds and increases <font color=\"#F395C4\">physical damage inflicted</font> by 10% for 40 seconds. These buffs are applied to the player and all nearby allies.\n\nCraftable item using a Perfume Bottle."
+  },
+  {
+    "id": 3510,
+    "name": "Spark Aromatic",
+    "info": "Scatter sparks in a wide arc straight ahead, which will ignite to inflict <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 352\n\nCraftable item using a Perfume Bottle."
+  },
+  {
+    "id": 3520,
+    "name": "Ironjar Aromatic",
+    "info": "Drink to turn your body and armor to steel for 40 seconds, which reduces <font color=\"#F395C4\">physical damage received</font> by 40%, increases <font color=\"#FFE033\">lightning damage received</font> by 60%, increases <font color=\"#E0B985\">all resistances</font> by 45, and causes you to be very heavy and slow.\n\nWhile under the effects of this lighter physical attacks from enemies may cause the enemy to briefly stagger backwards after hitting you.\n\nCraftable item using a Perfume Bottle."
+  },
+  {
+    "id": 3550,
+    "name": "Bloodboil Aromatic",
+    "info": "Drink to enter a temporary state of fervor for 60 seconds, which increases <font color=\"#E0B985\">maximum stamina</font> by 20% and <font color=\"#F395C4\">physical damage inflicted</font> by 30%, but increases <font color=\"#E0B985\">all damage received</font> by 25%.\n\nCraftable item using a Perfume Bottle."
+  },
+  {
+    "id": 3580,
+    "name": "Poison Spraymist",
+    "info": "Spray a poison mist from your mouth and leave a lingering cloud of poison in the area for 7 seconds, which will cause 26 <font color=\"#40BF40\">poison accumulation</font> 5 times per second to enemies within the area of effect.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.21% of <font color=\"#E0B985\">maximum HP</font> plus 21, every second for 30 seconds.\n\nCraftable item using a Perfume Bottle."
+  },
+  {
+    "id": 3610,
+    "name": "Acid Spraymist",
+    "info": "Spray acid mist from your mouth and leave a lingering cloud of acid in the area for 7 seconds, which will instantly inflict the <font color=\"#C18B8B\">acid debuff</font> on any enemy within the area of effect.\n\n<font color=\"#C18B8B\">Acid debuff:</font> Reduces <font color=\"#F395C4\">physical damage inflicted</font> by 15% for 60 seconds.\n\nCraftable item using a Perfume Bottle."
+  }
+]

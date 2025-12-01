@@ -1,0 +1,567 @@
+[
+  {
+    "id": 1000,
+    "name": "Crimson Amber Medallion",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 6%."
+  },
+  {
+    "id": 1001,
+    "name": "Crimson Amber Medallion +1",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 7%."
+  },
+  {
+    "id": 1002,
+    "name": "Crimson Amber Medallion +2",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 8%."
+  },
+  {
+    "id": 1010,
+    "name": "Cerulean Amber Medallion",
+    "info": "Increases <font color=\"#E0B985\">maximum FP</font> by 7%."
+  },
+  {
+    "id": 1011,
+    "name": "Cerulean Amber Medallion +1",
+    "info": "Increases <font color=\"#E0B985\">maximum FP</font> by 9%."
+  },
+  {
+    "id": 1012,
+    "name": "Cerulean Amber Medallion +2",
+    "info": "Increases <font color=\"#E0B985\">maximum FP</font> by 11%."
+  },
+  {
+    "id": 1020,
+    "name": "Viridian Amber Medallion",
+    "info": "Increases <font color=\"#E0B985\">maximum stamina</font> by 11%."
+  },
+  {
+    "id": 1021,
+    "name": "Viridian Amber Medallion +1",
+    "info": "Increases <font color=\"#E0B985\">maximum stamina</font> by 13%."
+  },
+  {
+    "id": 1022,
+    "name": "Viridian Amber Medallion +2",
+    "info": "Increases <font color=\"#E0B985\">maximum stamina</font> by 15%."
+  },
+  {
+    "id": 1030,
+    "name": "Arsenal Charm",
+    "info": "Increases <font color=\"#E0B985\">maximum equip load</font> by 15%."
+  },
+  {
+    "id": 1031,
+    "name": "Arsenal Charm +1",
+    "info": "Increases <font color=\"#E0B985\">maximum equip load</font> by 17%."
+  },
+  {
+    "id": 1032,
+    "name": "Great-Jar's Arsenal",
+    "info": "Increases <font color=\"#E0B985\">maximum equip load</font> by 19%."
+  },
+  {
+    "id": 1040,
+    "name": "Erdtree's Favor",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 3%, <font color=\"#E0B985\">maximum stamina</font> by 7%, and <font color=\"#E0B985\">maximum equip load</font> by 5%."
+  },
+  {
+    "id": 1041,
+    "name": "Erdtree's Favor +1",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 3.5%, <font color=\"#E0B985\">maximum stamina</font> by 8.5%, and <font color=\"#E0B985\">maximum equip load</font> by 6.5%."
+  },
+  {
+    "id": 1042,
+    "name": "Erdtree's Favor +2",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 4%, <font color=\"#E0B985\">maximum stamina</font> by 10%, and <font color=\"#E0B985\">maximum equip load</font> by 8%."
+  },
+  {
+    "id": 1050,
+    "name": "Radagon's Scarseal",
+    "info": "Increases <font color=\"#E0B985\">vigor</font>, <font color=\"#E0B985\">endurance</font>, <font color=\"#E0B985\">strength</font>, and <font color=\"#E0B985\">dexterity</font> by 3, but increases <font color=\"#E0B985\">all damage received</font> by 10%."
+  },
+  {
+    "id": 1051,
+    "name": "Radagon's Soreseal",
+    "info": "Increases <font color=\"#E0B985\">vigor</font>, <font color=\"#E0B985\">endurance</font>, <font color=\"#E0B985\">strength</font>, and <font color=\"#E0B985\">dexterity</font> by 5, but increases <font color=\"#E0B985\">all damage received</font> by 15%."
+  },
+  {
+    "id": 1060,
+    "name": "Starscourge Heirloom",
+    "info": "Increases <font color=\"#E0B985\">strength</font> by 5."
+  },
+  {
+    "id": 1070,
+    "name": "Prosthesis-Wearer Heirloom",
+    "info": "Increases <font color=\"#E0B985\">dexterity</font> by 5."
+  },
+  {
+    "id": 1080,
+    "name": "Stargazer Heirloom",
+    "info": "Increases <font color=\"#E0B985\">intelligence</font> by 5."
+  },
+  {
+    "id": 1090,
+    "name": "Two Fingers Heirloom",
+    "info": "Increases <font color=\"#E0B985\">faith</font> by 5."
+  },
+  {
+    "id": 1100,
+    "name": "Silver Scarab",
+    "info": "Increases <font color=\"#E0B985\">item discovery</font> by 75."
+  },
+  {
+    "id": 1110,
+    "name": "Gold Scarab",
+    "info": "by 20%."
+  },
+  {
+    "id": 1140,
+    "name": "Moon of Nokstella",
+    "info": "Increases <font color=\"#E0B985\">memory slots</font> by 2, allowing more spells to be memorized."
+  },
+  {
+    "id": 1150,
+    "name": "Green Turtle Talisman",
+    "info": "Increases <font color=\"#E0B985\">stamina regeneration</font> by 8 per second."
+  },
+  {
+    "id": 1160,
+    "name": "Stalwart Horn Charm",
+    "info": "Increases <font color=\"#E0B985\">robustness</font> by 90.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>."
+  },
+  {
+    "id": 1161,
+    "name": "Stalwart Horn Charm +1",
+    "info": "Increases <font color=\"#E0B985\">robustness</font> by 140.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>."
+  },
+  {
+    "id": 1170,
+    "name": "Immunizing Horn Charm",
+    "info": "Increases <font color=\"#E0B985\">immunity</font> by 90.\n\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>."
+  },
+  {
+    "id": 1171,
+    "name": "Immunizing Horn Charm +1",
+    "info": "Increases <font color=\"#E0B985\">immunity</font> by 140.\n\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>."
+  },
+  {
+    "id": 1180,
+    "name": "Clarifying Horn Charm",
+    "info": "Increases <font color=\"#E0B985\">focus</font> by 90.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
+  },
+  {
+    "id": 1181,
+    "name": "Clarifying Horn Charm +1",
+    "info": "Increases <font color=\"#E0B985\">focus</font> by 140.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
+  },
+  {
+    "id": 1190,
+    "name": "Prince of Death's Pustule",
+    "info": "Increases <font color=\"#E0B985\">vitality</font> by 90.\n\n<font color=\"#E0B985\">Vitality:</font> Resistance to <font color=\"#A17945\">death blight</font>."
+  },
+  {
+    "id": 1191,
+    "name": "Prince of Death's Cyst",
+    "info": "Increases <font color=\"#E0B985\">vitality</font> by 140.\n\n<font color=\"#E0B985\">Vitality:</font> Resistance to <font color=\"#A17945\">death blight</font>."
+  },
+  {
+    "id": 1200,
+    "name": "Mottled Necklace",
+    "info": "Increases <font color=\"#E0B985\">robustness</font>, <font color=\"#E0B985\">immunity</font>, and <font color=\"#E0B985\">focus</font> by 40.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
+  },
+  {
+    "id": 1201,
+    "name": "Mottled Necklace +1",
+    "info": "Increases <font color=\"#E0B985\">robustness</font>, <font color=\"#E0B985\">immunity</font>, and <font color=\"#E0B985\">focus</font> by 60.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
+  },
+  {
+    "id": 1210,
+    "name": "Bull-Goat's Talisman",
+    "info": "Reduces <font color=\"#E0B985\">poise damage received</font> by about 25%.\n\nAlthough this item shows your poise stat increase by about 34%, this item doesn't actually increase your maximum poise. It only reduces the amount of poise damage that you receive from each attack.\n\nThis effect can be combined with the effects of Baldachin's Blessing to reduce <font color=\"#E0B985\">poise damage received</font> by about 50.65%, or it can be combined with the effects of Radiant Baldachin's Blessing to reduce <font color=\"#E0B985\">poise damage received</font> by about 58.75%."
+  },
+  {
+    "id": 1220,
+    "name": "Marika's Scarseal",
+    "info": "Increases <font color=\"#E0B985\">mind</font>, <font color=\"#E0B985\">intelligence</font>, <font color=\"#E0B985\">faith</font>, and <font color=\"#E0B985\">arcane</font> by 3, but increases <font color=\"#E0B985\">all damage received</font> by 10%."
+  },
+  {
+    "id": 1221,
+    "name": "Marika's Soreseal",
+    "info": "Increases <font color=\"#E0B985\">mind</font>, <font color=\"#E0B985\">intelligence</font>, <font color=\"#E0B985\">faith</font>, and <font color=\"#E0B985\">arcane</font> by 5, but increases <font color=\"#E0B985\">all damage received</font> by 15%."
+  },
+  {
+    "id": 1230,
+    "name": "Warrior Jar Shard",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of skills by 10%."
+  },
+  {
+    "id": 1231,
+    "name": "Shard of Alexander",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of skills by 15%."
+  },
+  {
+    "id": 1250,
+    "name": "Millicent's Prosthesis",
+    "info": "Increases <font color=\"#E0B985\">dexterity</font> by 5 and increases <font color=\"#E0B985\">all damage inflicted</font> after multiple attacks within a short time. There are 3 tiers of damage increase: 4%, 6%, and 11%.\n\nThe number of attacks required to trigger this effect varies per weapon, and is not based on damage or weapon speed. It generally requires 3-4 attacks to trigger the first tier, 5-8 attacks for the second, and 8-11 attacks for the third. Some weapons are too slow to trigger all tiers."
+  },
+  {
+    "id": 2000,
+    "name": "Magic Scorpion Charm",
+    "info": "Increases <font color=\"#57DBCE\">magic damage inflicted</font> by 12%, but reduces <font color=\"#F395C4\">physical damage negation</font> by 10%."
+  },
+  {
+    "id": 2010,
+    "name": "Lightning Scorpion Charm",
+    "info": "Increases <font color=\"#FFE033\">lightning damage inflicted</font> by 12%, but reduces <font color=\"#F395C4\">physical damage negation</font> by 10%."
+  },
+  {
+    "id": 2020,
+    "name": "Fire Scorpion Charm",
+    "info": "Increases <font color=\"#F48C25\">fire damage inflicted</font> by 12%, but reduces <font color=\"#F395C4\">physical damage negation</font> by 10%."
+  },
+  {
+    "id": 2030,
+    "name": "Sacred Scorpion Charm",
+    "info": "Increases <font color=\"#F5EB89\">holy damage inflicted</font> by 12%, but reduces <font color=\"#F395C4\">physical damage negation</font> by 10%."
+  },
+  {
+    "id": 2040,
+    "name": "Red-Feathered Branchsword",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> by 20% while HP is below 20%."
+  },
+  {
+    "id": 2050,
+    "name": "Ritual Sword Talisman",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> by 10% while HP is at maximum."
+  },
+  {
+    "id": 2060,
+    "name": "Spear Talisman",
+    "info": "Increases <font color=\"#F395C4\">physical attack power</font> of thrusting weapon counter-attacks by 15%.\n\nA counter-attack is performed by hitting an enemy with a thrust attack at a precise time as they are in the process of doing an attack, just before they actually hit you. Not all enemy attacks allow for a counter-attack to be performed."
+  },
+  {
+    "id": 2070,
+    "name": "Hammer Talisman",
+    "info": "Increases the amount of stamina removed with each attack from enemies who are guarding by 20%, making it easier to break their stance."
+  },
+  {
+    "id": 2080,
+    "name": "Winged Sword Insignia",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> after multiple attacks within a short time. There are 3 tiers of damage increase: 3%, 5%, and 10%.\n\nThe number of attacks required to trigger this effect varies per weapon, and is not based on damage or weapon speed. It generally requires 3-4 attacks to trigger the first tier, 5-8 attacks for the second, and 8-11 attacks for the third. Some weapons are too slow to trigger all tiers. Damage bonus resets if no attacks are performed within a short amount of time."
+  },
+  {
+    "id": 2081,
+    "name": "Rotten Winged Sword Insignia",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> after multiple attacks within a short time. There are 3 tiers of damage increase: 6%, 8%, and 13%.\n\nThe number of attacks required to trigger this effect varies per weapon, and is not based on damage or weapon speed. It generally requires 3-4 attacks to trigger the first tier, 5-8 attacks for the second, and 8-11 attacks for the third. Some weapons are too slow to trigger all tiers. Damage bonus resets if no attacks are performed within a short amount of time."
+  },
+  {
+    "id": 2090,
+    "name": "Dagger Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> for critical attacks by 17%."
+  },
+  {
+    "id": 2100,
+    "name": "Arrow's Reach Talisman",
+    "info": "Increases the range of arrows, bolts, and some spell projectiles by 65%."
+  },
+  {
+    "id": 2110,
+    "name": "Blue Dancer Charm",
+    "info": "Increases <font color=\"#F395C4\">physical attack power</font> by up to 15% based on how low your <font color=\"#E0B985\">equip load</font> is.\n\nThis is based on your total equip load, not the percentage compared to your maximum equip load. Increasing your maximum equip load will not improve the effect of this item."
+  },
+  {
+    "id": 2120,
+    "name": "Twinblade Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> for final attack of a chain of regular melee attacks by 45%."
+  },
+  {
+    "id": 2130,
+    "name": "Axe Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of charged melee attacks by 10%.\n\nThis effect does not work for charged sorceries, incantations, or weapon skills."
+  },
+  {
+    "id": 2140,
+    "name": "Lance Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> by 15% while on horseback."
+  },
+  {
+    "id": 2150,
+    "name": "Arrow's Sting Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of arrows and bolts by 10%."
+  },
+  {
+    "id": 2160,
+    "name": "Lord of Blood's Exultation",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> by 20% for 20 seconds when <font color=\"#C84343\">blood loss</font> occurs nearby."
+  },
+  {
+    "id": 2170,
+    "name": "Kindred of Rot's Exultation",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> by 20% for 20 seconds when <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">scarlet rot</font> occurs nearby."
+  },
+  {
+    "id": 2180,
+    "name": "Claw Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> for jump attacks by 15%."
+  },
+  {
+    "id": 2190,
+    "name": "Roar Medallion",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> for attacks caused or altered by roar and breath skills by 15%."
+  },
+  {
+    "id": 2200,
+    "name": "Curved Sword Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> for guard counters by 20%.\n\nA guard counter is performed by doing a strong attack immediately after blocking an enemy's attack."
+  },
+  {
+    "id": 2210,
+    "name": "Companion Jar",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of thrown pots by 20%."
+  },
+  {
+    "id": 2220,
+    "name": "Perfumer's Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of perfumes by 20%."
+  },
+  {
+    "id": 3000,
+    "name": "Graven-School Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of sorceries by 4%."
+  },
+  {
+    "id": 3001,
+    "name": "Graven-Mass Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of sorceries by 8%."
+  },
+  {
+    "id": 3040,
+    "name": "Faithful's Canvas Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of incantations by 4%."
+  },
+  {
+    "id": 3050,
+    "name": "Flock's Canvas Talisman",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of incantations by 8%."
+  },
+  {
+    "id": 3060,
+    "name": "Old Lord's Talisman",
+    "info": "Extends the duration of sorcery and incantation effects by 30%."
+  },
+  {
+    "id": 3070,
+    "name": "Radagon Icon",
+    "info": "Shortens the casting time of sorceries and incantations by the same amount as 30 levels in dexterity.\n\nThe shortest casting time is achieved at level 70 dexterity, so this will have no effect after that point."
+  },
+  {
+    "id": 3080,
+    "name": "Primal Glintstone Blade",
+    "info": "Reduces FP cost of sorceries and incantations by 25% but reduces <font color=\"#E0B985\">maximum HP</font> by 15%."
+  },
+  {
+    "id": 3090,
+    "name": "Godfrey Icon",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of charged sorceries, incantations, and skills by 15%."
+  },
+  {
+    "id": 4000,
+    "name": "Dragoncrest Shield Talisman",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 10%."
+  },
+  {
+    "id": 4001,
+    "name": "Dragoncrest Shield Talisman +1",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 13%."
+  },
+  {
+    "id": 4002,
+    "name": "Dragoncrest Shield Talisman +2",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 17%."
+  },
+  {
+    "id": 4003,
+    "name": "Dragoncrest Greatshield Talisman",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 20%."
+  },
+  {
+    "id": 4010,
+    "name": "Spelldrake Talisman",
+    "info": "Increases <font color=\"#57DBCE\">magical damage negation</font> by 13%."
+  },
+  {
+    "id": 4011,
+    "name": "Spelldrake Talisman +1",
+    "info": "Increases <font color=\"#57DBCE\">magical damage negation</font> by 17%."
+  },
+  {
+    "id": 4012,
+    "name": "Spelldrake Talisman +2",
+    "info": "Increases <font color=\"#57DBCE\">magical damage negation</font> by 20%."
+  },
+  {
+    "id": 4020,
+    "name": "Flamedrake Talisman",
+    "info": "Increases <font color=\"#F48C25\">fire damage negation</font> by 13%."
+  },
+  {
+    "id": 4021,
+    "name": "Flamedrake Talisman +1",
+    "info": "Increases <font color=\"#F48C25\">fire damage negation</font> by 17%."
+  },
+  {
+    "id": 4022,
+    "name": "Flamedrake Talisman +2",
+    "info": "Increases <font color=\"#F48C25\">fire damage negation</font> by 20%."
+  },
+  {
+    "id": 4030,
+    "name": "Boltdrake Talisman",
+    "info": "Increases <font color=\"#FFE033\">lightning damage negation</font> by 13%."
+  },
+  {
+    "id": 4031,
+    "name": "Boltdrake Talisman +1",
+    "info": "Increases <font color=\"#FFE033\">lightning damage negation</font> by 17%."
+  },
+  {
+    "id": 4032,
+    "name": "Boltdrake Talisman +2",
+    "info": "Increases <font color=\"#FFE033\">lightning damage negation</font> by 20%."
+  },
+  {
+    "id": 4040,
+    "name": "Haligdrake Talisman",
+    "info": "Increases <font color=\"#F5EB89\">holy damage negation</font> by 13%."
+  },
+  {
+    "id": 4041,
+    "name": "Haligdrake Talisman +1",
+    "info": "Increases <font color=\"#F5EB89\">holy damage negation</font> by 17%."
+  },
+  {
+    "id": 4042,
+    "name": "Haligdrake Talisman +2",
+    "info": "Increases <font color=\"#F5EB89\">holy damage negation</font> by 20%."
+  },
+  {
+    "id": 4050,
+    "name": "Pearldrake Talisman",
+    "info": "Increases <font color=\"#57DBCE\">magic damage negation</font>, <font color=\"#F48C25\">fire damage negation</font>, <font color=\"#FFE033\">lightning damage negation</font>, and <font color=\"#F5EB89\">holy damage negation</font> by 5%."
+  },
+  {
+    "id": 4051,
+    "name": "Pearldrake Talisman +1",
+    "info": "Increases <font color=\"#57DBCE\">magic damage negation</font>, <font color=\"#F48C25\">fire damage negation</font>, <font color=\"#FFE033\">lightning damage negation</font>, and <font color=\"#F5EB89\">holy damage negation</font> by 7%."
+  },
+  {
+    "id": 4052,
+    "name": "Pearldrake Talisman +2",
+    "info": "Increases <font color=\"#57DBCE\">magic damage negation</font>, <font color=\"#F48C25\">fire damage negation</font>, <font color=\"#FFE033\">lightning damage negation</font>, and <font color=\"#F5EB89\">holy damage negation</font> by 9%."
+  },
+  {
+    "id": 4060,
+    "name": "Crucible Scale Talisman",
+    "info": "Reduces damage taken from critical attacks by 30%."
+  },
+  {
+    "id": 4070,
+    "name": "Crucible Feather Talisman",
+    "info": "Increases invulnerability duration for dodge rolls but increases <font color=\"#E0B985\">all damage received</font> by 30%.\n\nThis effect doesn't stack with the Windy Crystal Tear."
+  },
+  {
+    "id": 4080,
+    "name": "Blue-Feathered Branchsword",
+    "info": "Increases <font color=\"#E0B985\">all damage negation</font> by 50% while HP is below 20%."
+  },
+  {
+    "id": 4090,
+    "name": "Ritual Shield Talisman",
+    "info": "Increases <font color=\"#E0B985\">all damage negation</font> by 30% while HP is at maximum."
+  },
+  {
+    "id": 4100,
+    "name": "Greatshield Talisman",
+    "info": "Increases <font color=\"#E0B985\">guard boost</font> by 10%."
+  },
+  {
+    "id": 5000,
+    "name": "Crimson Seed Talisman",
+    "info": "Increases HP restoration from Flask of Crimson Tears by 20%."
+  },
+  {
+    "id": 5010,
+    "name": "Cerulean Seed Talisman",
+    "info": "Increases FP restoration from Flask of Cerulean Tears by 20%."
+  },
+  {
+    "id": 5020,
+    "name": "Blessed Dew Talisman",
+    "info": "Restores 2 HP per second."
+  },
+  {
+    "id": 5030,
+    "name": "Taker's Cameo",
+    "info": "Restores 3% of <font color=\"#E0B985\">maximum HP</font> plus 30 when an enemy dies."
+  },
+  {
+    "id": 5040,
+    "name": "Godskin Swaddling Cloth",
+    "info": "Restores 3% of <font color=\"#E0B985\">maximum HP</font> plus 30 after multiple melee attacks within a short time.\n\nThe number of attacks required to trigger this effect varies per weapon, but it generally requires 5-7 regular attacks. Heavy attacks, charged attacks, and some weapon skills are also capable of triggering it."
+  },
+  {
+    "id": 5050,
+    "name": "Assassin's Crimson Dagger",
+    "info": "Restores 10% of <font color=\"#E0B985\">maximum HP</font> plus 85 after performing a critical attack."
+  },
+  {
+    "id": 5060,
+    "name": "Assassin's Cerulean Dagger",
+    "info": "Restores 15 FP after a performing a critical attack."
+  },
+  {
+    "id": 6000,
+    "name": "Crepus's Vial",
+    "info": "Negates all movement sounds made by the wearer."
+  },
+  {
+    "id": 6020,
+    "name": "Carian Filigreed Crest",
+    "info": "Reduces FP consumed by skills by 25%."
+  },
+  {
+    "id": 6040,
+    "name": "Longtail Cat Talisman",
+    "info": "Negates all fall damage.\n\nThe height at which a fall is fatal remains the same even while under the effects of this item."
+  },
+  {
+    "id": 6050,
+    "name": "Shabriri's Woe",
+    "info": "Online multiplayer item.\n\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player."
+  },
+  {
+    "id": 6060,
+    "name": "Daedicar's Woe",
+    "info": "Increases <font color=\"#E0B985\">all damage received</font> by 100%."
+  },
+  {
+    "id": 6080,
+    "name": "Furled Finger's Trick-Mirror",
+    "info": "Online multiplayer item.\n\nMakes you take on the appearance of a Host of Fingers."
+  },
+  {
+    "id": 6090,
+    "name": "Host's Trick-Mirror",
+    "info": "Online multiplayer item.\n\nMakes you take on the appearance of a summoned cooperator."
+  },
+  {
+    "id": 6100,
+    "name": "Entwining Umbilical Cord",
+    "info": "Changes demeanour of your actions. Masculine characters wearing this will use feminine animations, and feminine characters wearing this will use masculine animations."
+  },
+  {
+    "id": 6110,
+    "name": "Ancestral Spirit's Horn",
+    "info": "Restores 3 FP when an enemy dies."
+  }
+]

@@ -1,0 +1,1631 @@
+[
+  {
+    "id": 100,
+    "name": "Lion's Claw",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Lion's Claw</font>",
+    "mod_info": "Jump into a frontward flip then slam your armament down in front of you as you land.",
+    "vanilla_caption": "Skill: Lion's Claw",
+    "vanilla_info": "Skill of the Redmanes, who fought alongside General Radahn.\nSomersault forwards, striking foes with armament."
+  },
+  {
+    "id": 101,
+    "name": "Impaling Thrust",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Impaling Thrust</font>",
+    "mod_info": "Thrust armament forward with enough force to pierce an enemy's guard.",
+    "vanilla_caption": "Skill: Impaling Thrust",
+    "vanilla_info": "Skill that lets piercing armaments overcome enemy shields. Build power, then lunge forward for a strong thrust that pierces an enemy's guard."
+  },
+  {
+    "id": 102,
+    "name": "Piercing Fang",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Piercing Fang</font>",
+    "mod_info": "Starting with the blade held horizontally over your head, thrust armament forward with enough force to pierce an enemy's guard.",
+    "vanilla_caption": "Skill: Piercing Fang",
+    "vanilla_info": "Skill used by Yura, the Bloody Finger Hunter.\nStarting with the blade held horizontally, make a powerful thrust that cannot be blocked."
+  },
+  {
+    "id": 103,
+    "name": "Spinning Slash",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Spinning Slash</font>",
+    "mod_info": "Spin around in a circle then slash your armament in front of you. Follow up by using the skill a second time to perform two more spins, each with their own forward slash.",
+    "vanilla_caption": "Skill: Spinning Slash",
+    "vanilla_info": "Skill favored by dexterous warriors.\nSlash foes as your body spins. Additional input allows for a follow-up attack."
+  },
+  {
+    "id": 105,
+    "name": "Charge Forth",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Charge Forth</font>",
+    "mod_info": "Charge forward with the armament held out in front of you, then thrust the armament forward with force. Hold to charge farther.",
+    "vanilla_caption": "Skill: Charge Forth",
+    "vanilla_info": "Quickly charge forward with the armament at the hip, carrying the momentum into a thrust.\nHold to cover a greater distance."
+  },
+  {
+    "id": 106,
+    "name": "Stamp (Upward Cut)",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Stamp (Upward Cut)</font>",
+    "mod_info": "Stomp forward and briefly brace for an incoming attack. While in this stance <font color=\"#E0B985\">all damage received</font> is reduced by 50% and you are much less likely to stagger from getting hit. Follow up with a strong attack to do an upward strike, which may knock some enemies into the air.",
+    "vanilla_caption": "Skill: Stamp (Upward Cut)",
+    "vanilla_info": "Brace armament and step into a low stance that prevents recoil from most enemy attacks.\nFollow up with a strong attack for an upward strike."
+  },
+  {
+    "id": 107,
+    "name": "Stamp (Sweep)",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Stamp (Sweep)</font>",
+    "mod_info": "Stomp forward and briefly brace for an incoming attack. While in this stance <font color=\"#E0B985\">all damage received</font> is reduced by 50% and you are much less likely to stagger from getting hit. Follow up with a strong attack to do a horizontal slash in a full circle around you.",
+    "vanilla_caption": "Skill: Stamp (Sweep)",
+    "vanilla_info": "Brace armament and step into a low stance that prevents recoil from most enemy attacks.\nFollow up with a strong attack for a sweeping strike."
+  },
+  {
+    "id": 108,
+    "name": "Blood Tax",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Blood Tax</font>",
+    "mod_info": "Spin around in a circle then rapidly thrust your armament forward 4 times. Each of the first 3 thrusts that hit an enemy will restore 2% of your <font color=\"#E0B985\">maximum HP</font> plus 25, and the final thrust will restore 4% of your <font color=\"#E0B985\">maximum HP</font> plus 45 if it hits an enemy.",
+    "vanilla_caption": "Skill: Blood Tax",
+    "vanilla_info": "Blood Oath skill granted by the Lord of Blood.\nTwist to build power, then unleash a flurry of thrusts that rob the target of both their blood and their HP."
+  },
+  {
+    "id": 109,
+    "name": "Repeating Thrust",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Repeating Thrust</font>",
+    "mod_info": "Spin around in a circle then rapidly thrust your armament forward 4 times.",
+    "vanilla_caption": "Skill: Repeating Thrust",
+    "vanilla_info": "Twist to build power, then unleash a flurry of thrusts."
+  },
+  {
+    "id": 110,
+    "name": "Wild Strikes",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Wild Strikes</font>",
+    "mod_info": "Swing armament in an X-shaped pattern. Hold to coninue swinging. Can be used while moving. Follow up with a normal attack to do a horizontal slash in a full circle around you. Alternatively, follow up with a strong attack to raise your armament and do a downward vertical slash.",
+    "vanilla_caption": "Skill: Wild Strikes",
+    "vanilla_info": "Swing armament with wild abandon.\nHold to continue swinging. Can be followed up with a normal or strong attack."
+  },
+  {
+    "id": 111,
+    "name": "Spinning Strikes",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Spinning Strikes</font>",
+    "mod_info": "Raise armament above your head and spin it in a circle horizontally, which can deflect small physical projectiles. Hold to continue spinning it. Can be used while moving and camera can be used to control angle. Follow with a normal attack to do a horizontal slash in a full circle around you, ending with a second slash forward. Alternatively, follow with a strong attack to leap forward and slam the armament downward in front of you.",
+    "vanilla_caption": "Skill: Spinning Strikes",
+    "vanilla_info": "Polearm skill that performs continuous spinning attacks. Hold to continue the attack. Can be followed up with a normal or strong attack. Nullifies projectiles such as arrows while spinning."
+  },
+  {
+    "id": 112,
+    "name": "Double Slash",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Double Slash</font>",
+    "mod_info": "Step forward and slash your armament forward twice in an X-shaped pattern. Follow up by using the skill a second time to perform three more slashes. Follow that up by using the skill a third time to do a powerful downward slash.",
+    "vanilla_caption": "Skill: Double Slash",
+    "vanilla_info": "Skill of superior swordsmen.\nPerform a crossing slash attack from a low stance.\nRepeated inputs allow for up to two follow-up attacks."
+  },
+  {
+    "id": 113,
+    "name": "Prelate's Charge",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Prelate's Charge</font>",
+    "mod_info": "Raise and ignite armament before slamming it into the ground and charging forward, leaving behind a trail of flames which will linger for a short time. At the end of the charge, rip the armament out of the ground with enough force to knock some enemies into the air. Hold to continue charging.",
+    "vanilla_caption": "Skill: Prelate's Charge",
+    "vanilla_info": "Slam armament into the ground to create a surge of flames, then charge in.\nHold to continue the charge."
+  },
+  {
+    "id": 114,
+    "name": "Unsheathe",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Unsheathe</font>",
+    "mod_info": "Sheathe armament in preparation for an attack. Hold to keep weapon sheathed. Can be used while moving. Follow up with a normal attack to quickly step forward while doing a horizontal slash. Alternatively, follow up with a strong attack to do a small hop forward while doing a downward vertical slash.",
+    "vanilla_caption": "Skill: Unsheathe",
+    "vanilla_info": "Skill of swordsmen from the Land of Reeds.\nSheathe blade, holding it at the hip in a composed stance.\nFollow up with a normal or strong attack to perform a swift slash attack."
+  },
+  {
+    "id": 115,
+    "name": "Square Off",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Square Off</font>",
+    "mod_info": "Hold armament in a raised position in preparation for an attack. Follow up with a normal attack to do an upward vertical slash through an enemy's guard. Alternatively, follow up with a strong attack to run forward a few steps and thrust the armament forward.",
+    "vanilla_caption": "Skill: Square Off",
+    "vanilla_info": "This skill starts with the sword held level.\nFollow up with a normal attack to slash upwards through enemy's guard, or a strong attack to perform a running thrust."
+  },
+  {
+    "id": 116,
+    "name": "Giant Hunt",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Giant Hunt</font>",
+    "mod_info": "Step forward and do a powerful upward thrust, which may knock some enemies into the air.",
+    "vanilla_caption": "Skill: Giant Hunt",
+    "vanilla_info": "Skill developed for confronting gigantic foes.\nStep forward from a low stance, carrying the momentum into a sudden upward thrust."
+  },
+  {
+    "id": 117,
+    "name": "Torch Attack",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Special Skill: Torch Attack</font>",
+    "mod_info": "Thrust armament forward. Follow up by using the skill a second time to do a horizontal slash.",
+    "vanilla_caption": "Skill: Torch Attack",
+    "vanilla_info": "Thrust torch forward to set foes ablaze.\nThis skill is especially effective against foes who are weak to fire."
+  },
+  {
+    "id": 118,
+    "name": "Loretta's Slash",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Loretta's Slash</font>",
+    "mod_info": "Imbue the armament with glintstone magic and do an upward slash as you jump into the air, then do a horizontal slash as you return to the ground.",
+    "vanilla_caption": "Skill: Loretta's Slash",
+    "vanilla_info": "Skill of Loretta the Royal Knight.\nLeap forward, imbuing the blade with glintstone, then descend, accelerating into a sweeping slash."
+  },
+  {
+    "id": 119,
+    "name": "Poison Moth Flight",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Poison Moth Flight</font>",
+    "mod_info": "Imbue the armament with poison then leap foward and do a horizontal slash. If an enemy hit by this skill is already poisoned then this will inflict additional damage equal to 5% of the enemy's <font color=\"#E0B985\">maximum HP</font> plus 250, but the poison ailment will then be removed from the enemy.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds.\n\n<font color=\"#40BF40\">Base poison accumulation:</font> 250",
+    "vanilla_caption": "Skill: Poison Moth Flight",
+    "vanilla_info": "Slash with a poison-infused blade.\nIf the follow-up strike lands on a poisoned foe, it will deal significant damage."
+  },
+  {
+    "id": 120,
+    "name": "Spinning Weapon",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Spinning Weapon</font>",
+    "mod_info": "Telekinetically lift armament in front of you and spin it vertically several times. Can be used while moving.",
+    "vanilla_caption": "Skill: Spinning Weapon",
+    "vanilla_info": "Defensive skill employed by Carian princesses.\nLifts armament into mid-air, then makes it spin violently. Those it touches will suffer successive attacks."
+  },
+  {
+    "id": 122,
+    "name": "Storm Assault",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Storm Assault</font>",
+    "mod_info": "Produce a swirl of harmful wind around you as you leap into the air then slam your armament into the ground, producing another swirl of wind where you land.",
+    "vanilla_caption": "Skill: Storm Assault",
+    "vanilla_info": "One of the skills that channel the tempests of Stormveil.\nLeap forward through surrounding storm winds and thrust armament downward. The attack will produce more storm winds at the point of impact."
+  },
+  {
+    "id": 123,
+    "name": "Stormcaller",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Stormcaller</font>",
+    "mod_info": "Spin armament in circles above your head to produce 3 successive swirls of harmful wind around you. Follow up by using the skill a second time to step forward and do 2 additional spins. Follow that up by using the skill a third time to step forward again and do another 2 additional spins.",
+    "vanilla_caption": "Skill: Stormcaller",
+    "vanilla_info": "One of the skills that channel the tempests of Stormveil. Spin armament to create surrounding storm winds. Repeated inputs allow for up to two follow-up attacks."
+  },
+  {
+    "id": 124,
+    "name": "Sword Dance",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Sword Dance</font>",
+    "mod_info": "Leap forward and quickly do 2 diagonal slashes. Follow up by using the skill a second time to do a downward vertical slash.",
+    "vanilla_caption": "Skill: Sword Dance",
+    "vanilla_info": "Quickly close in to perform a series of spinning upward slashes.\nFollow up with an additional input to finish with a downward slash."
+  },
+  {
+    "id": 125,
+    "name": "Spinning Chain",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Special Skill: Spinning Chain</font>",
+    "mod_info": "Hold the flail out in front of you and spin the ball vertically. Hold to continue spinning. Can be used while moving. Follow up with a normal attack to lift the flail up and slam it to the ground in front of you. Follow up with a strong attack to do a horizontal swipe then lift the flail up and slam it to the ground in front of you.",
+    "vanilla_caption": "Skill: Spinning Chain",
+    "vanilla_info": "Spins the striking part of a flail at high speed to attack.\nFollow up with a normal or strong attack to link the momentum of this skill into a successive attack."
+  },
+  {
+    "id": 200,
+    "name": "Glintblade Phalanx",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Glintblade Phalanx</font>",
+    "mod_info": "Conjure 4 magical dagger projectiles which float above you and automatically shoot into an enemy when they are within range. Follow up with a strong attack to thrust the armamant forward.\n\n<font color=\"#57DBCE\">Base magic damage (projectiles):</font> 47",
+    "vanilla_caption": "Skill: Glintblade Phalanx",
+    "vanilla_info": "Skill used by the enchanted knights who served the Carian royal family. Form an arch of magic glintblades overhead, which will attack foes automatically. Follow up with a strong attack to chain this skill into a lunging thrust."
+  },
+  {
+    "id": 201,
+    "name": "Sacred Blade",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Sacred Blade</font>",
+    "mod_info": "Imbue the armament with holy essence then swing it horizontally to shoot a golden arc projectile. The armament retains its holy essence for 40 seconds, adding 90 <font color=\"#F5EB89\">holy damage</font>.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 180",
+    "vanilla_caption": "Skill: Sacred Blade",
+    "vanilla_info": "Grants armament's attacks holy essence and fires off a golden blade projectile.\nThe armament retains its holy essence for a while."
+  },
+  {
+    "id": 202,
+    "name": "Ice Spear",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Ice Spear</font>",
+    "mod_info": "Imbue the armament with cold magic then thrust it forward to cast the cold magic as a projectile.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage (projectile):</font> 230\n<font color=\"#9DD7FB\">Base frostbite accumulation (projectile):</font> 160",
+    "vanilla_caption": "Skill: Ice Spear",
+    "vanilla_info": "Skill of the warriors who served Lunar Princess Ranni.\nSpin armament to release cold magic, then channel it into a piercing spear of ice."
+  },
+  {
+    "id": 203,
+    "name": "Glintstone Pebble",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Glintstone Pebble</font>",
+    "mod_info": "Shoot a single magic glintstone projectile. Follow up with a strong attack to thrust the armamant forward while it's still imbued with glintstone magic.\n\n<font color=\"#57DBCE\">Base magic damage (projectile):</font> 137\n<font color=\"#57DBCE\">Base magic damage (thrust):</font> 45",
+    "vanilla_caption": "Skill: Glintstone Pebble",
+    "vanilla_info": "Skill that employs the glintstone sorcery of the same name.\nFollow up with a strong attack to chain this skill into a lunging thrust, performed while the armament is still imbued with glintstone."
+  },
+  {
+    "id": 204,
+    "name": "Bloody Slash",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Bloody Slash</font>",
+    "mod_info": "Inflict damage on yourself equal to 5% of your <font color=\"#E0B985\">maximum HP</font> plus 50, then do an upward slash with your armament. The upward slash will produce a large arc of blood, extending the range of the attack.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#C84343\">Base blood loss accumulation:</font> 60",
+    "vanilla_caption": "Skill: Bloody Slash",
+    "vanilla_info": "Blood Oath skill granted by the Lord of Blood.\nFrom a low stance, coat the blade in your own blood to unleash a rending blood slash in a wide arc."
+  },
+  {
+    "id": 205,
+    "name": "Lifesteal Fist",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Lifesteal Fist</font>",
+    "mod_info": "Crouch and build up power then thrust armament forward. If an enemy of human build is caught by this attack you will siphon health from the enemy and continuously deal damage to them for a short time. While siphoning you will restore 5% of your <font color=\"#E0B985\">maximum HP</font> 3 times, then 15% of your <font color=\"#E0B985\">maximum HP</font> once, for a total of 30%. If an enemy of non-human build is hit by this you will only do a slight amount of damage once and not be healed at all.",
+    "vanilla_caption": "Skill: Lifesteal Fist",
+    "vanilla_info": "Skill that demonstrates mastery of the art of controlling vital energies.\nA slow, controlled punch with an energy-infused fist that renders foes unconscious and steals their HP. Only effective against foes of human build."
+  },
+  {
+    "id": 207,
+    "name": "Eruption",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Eruption</font>",
+    "mod_info": "Imbue the armament with fire then slam it into the ground and rip it back out, leaving behind a small pool of magma for a few seconds.\n\n<font color=\"#F48C25\">Base fire damage (magma):</font> 40",
+    "vanilla_caption": "Skill: Eruption",
+    "vanilla_info": "Skill of the knights who serve at Volcano Manor.\nSlam armament into the ground, spawning roiling lava which spouts up upon release."
+  },
+  {
+    "id": 208,
+    "name": "Prayerful Strike",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Prayerful Strike</font>",
+    "mod_info": "Raise armament and slam it into the ground in front of you. If it hits an enemy it will restore 30% of your <font color=\"#E0B985\">maximum HP</font> and nearby allies will also have 30% of their <font color=\"#E0B985\">maximum HP</font> restored.\n\nDespite its name and appearance, this skill only inflicts <font color=\"#F395C4\">physical damage</font>, not <font color=\"#F5EB89\">holy damage</font>.",
+    "vanilla_caption": "Skill: Prayerful Strike",
+    "vanilla_info": "Raise armament aloft in prayer, then slam it into the ground.\nThis inspired blow restores HP to the self and nearby allies if it successfully hits."
+  },
+  {
+    "id": 209,
+    "name": "Gravitas",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Gravitas</font>",
+    "mod_info": "Plunge the armament into the ground and create a gravity well in a large area around yourself, which can pull some enemies towards you slightly and stagger them.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 60",
+    "vanilla_caption": "Skill: Gravitas",
+    "vanilla_info": "Skill originating from the Alabaster Lords, who had skin of stone.\nThrust the armament into the ground to create a gravity well.\nIn addition to dealing damage, this attack pulls enemies in."
+  },
+  {
+    "id": 210,
+    "name": "Storm Blade",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Storm Blade</font>",
+    "mod_info": "Imbue armament with a swirl of wind then slash it forward to cast it forward as a projectile. Can be used repeatedly to continue casting projectiles.\n\n<font color=\"#F395C4\">Base physical damage (projectile):</font> 150",
+    "vanilla_caption": "Skill: Storm Blade",
+    "vanilla_info": "Lost skill of Stormveil.\nSurround armament with shearing storm winds that can be fired forward.\nCan be fired in rapid succession."
+  },
+  {
+    "id": 212,
+    "name": "Earthshaker",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Earthshaker</font>",
+    "mod_info": "Slam armament into the ground to create a shockwave in a large area around you. Follow up with a strong attack to spin armament in a full circle horizontal slash around you.\n\n<font color=\"#F395C4\">Base physical damage (shockwave):</font> 120",
+    "vanilla_caption": "Skill: Earthshaker",
+    "vanilla_info": "Thrust armament into the ground, then gather strength to unleash an earth-shaking shockwave.\nFollow up with a strong attack to swing the armament in a sweeping strike."
+  },
+  {
+    "id": 213,
+    "name": "Golden Land",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Golden Land</font>",
+    "mod_info": "Slam armament into the ground to create a shockwave of sacred energy in a large area around you, which also produces 6 golden darts that will shoot out at an enemy. Follow up with a strong attack to spin armament in a full circle horizontal slash around you.\n\n<font color=\"#F5EB89\">Base holy damage (shockwave):</font> 160\n<font color=\"#F5EB89\">Base holy damage (projectiles):</font> 75",
+    "vanilla_caption": "Skill: Golden Land",
+    "vanilla_info": "Thrust armament into the ground, then gather strength to unleash a blast of sacred energy that coalesces into golden darts. Follow up with a strong attack to swing the armament in a sweeping strike."
+  },
+  {
+    "id": 214,
+    "name": "Flaming Strike",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Flaming Strike</font>",
+    "mod_info": "Throw out an arc of flame in front of you. Follow up with a strong attack to do a horizontal slash through the arc of fire, which will imbue the armament with 90 <font color=\"#F48C25\">fire damage</font> for 40 seconds.\n\n<font color=\"#F48C25\">Base fire damage (projectile):</font> 138",
+    "vanilla_caption": "Skill: Flaming Strike",
+    "vanilla_info": "Skill that emits flame in a wide frontward arc.\nFollow up with a strong attack to perform a lunging, sweeping strike.\nThis will also coat the armament in fire."
+  },
+  {
+    "id": 216,
+    "name": "Thunderbolt",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Thunderbolt</font>",
+    "mod_info": "Raise armament to conjure a bolt of lightning from the sky. Can be used repeatedly to continue conjuring bolts of lightning.\n\n<font color=\"#FFE033\">Base lightning damage (bolt):</font> 120",
+    "vanilla_caption": "Skill: Thunderbolt",
+    "vanilla_info": "Skill used by the capital's ancient dragon cult.\nRaise armament aloft to call down a bolt of lightning.\nCan be fired in rapid succession."
+  },
+  {
+    "id": 217,
+    "name": "Lightning Slash",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Lightning Slash</font>",
+    "mod_info": "Stomp on the ground to conjure a bolt of lightning into your armament, which adds 85 <font color=\"#FFE033\">lightning damage</font> for 40 seconds, then slash it downward to conjure another bolt of lightning in front of you. The second lightning bolt produces a small explosion of lightning where it lands.\n\n<font color=\"#FFE033\">Base lightning damage (bolt):</font> 120\n<font color=\"#FFE033\">Base lightning damage (explosion):</font> 60",
+    "vanilla_caption": "Skill: Lightning Slash",
+    "vanilla_info": "Call down a bolt of lightning into armament, then swing it down to create an explosive shock.\nThe armament retains the lightning enchantment for a while."
+  },
+  {
+    "id": 218,
+    "name": "Carian Grandeur",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Carian Grandeur</font>",
+    "mod_info": "Raise your armament above your head and transform armament into a large magical greatsword, then slam it to the ground in front of you. Can be charged to increase damage and distance.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 220\n<font color=\"#57DBCE\">Base magic damage (partially charged):</font> 315\n<font color=\"#57DBCE\">Base magic damage (fully charged):</font> 400",
+    "vanilla_caption": "Skill: Carian Grandeur",
+    "vanilla_info": "Carian royal prestige embodied in a skill.\nTransform blade into a magical greatsword and swing it down.\nCan be charged to increase its power by up to two levels."
+  },
+  {
+    "id": 219,
+    "name": "Carian Greatsword",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Carian Greatsword</font>",
+    "mod_info": "Raise your armament above your head and transform armament into a large magical greatsword, then slam it to the ground in front of you. Can be charged to increase damage and distance.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 220\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 340",
+    "vanilla_caption": "Skill: Carian Greatsword",
+    "vanilla_info": "Carian royal prestige embodied in a skill.\nTransform blade into a magical greatsword and swing it down.\nCan be charged to increase its power."
+  },
+  {
+    "id": 220,
+    "name": "Vacuum Slice",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Vacuum Slice</font>",
+    "mod_info": "Raise the armament above your head and imbue it with wind, then slam it to the ground in front of you to cast it off as a vertical arc projectile.\n\n<font color=\"#F395C4\">Base physical damage (projectile):</font> 200",
+    "vanilla_caption": "Skill: Vacuum Slice",
+    "vanilla_info": "Lost skill of ancient heroes.\nHold the armament aloft to surround it with a shearing vacuum, then launch it forwards as a blade-like projectile."
+  },
+  {
+    "id": 221,
+    "name": "Black Flame Tornado",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Black Flame Tornado</font>",
+    "mod_info": "Spin the armament above your head while imbuing it with black flame, then slam it to the ground to create a large swirl of black flame around you. Hold to spin armament over your head longer, creating a large swirl of black flame around you before slamming it to the ground, creating another large swirl of black flame around you. In addition to the damage from the attack, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> plus 1 per second for 2 seconds each time they are hit by the black flame.\n\n<font color=\"#F48C25\">Base fire damage (slam swirl):</font> 170\n<font color=\"#F48C25\">Base fire damage (overhead swirl):</font> 65",
+    "vanilla_caption": "Skill: Black Flame Tornado",
+    "vanilla_info": "Spin armament overhead and then plunge it into the ground to summon a raging vortex of black flames.\nHold to create an initial flame tornado while spinning the armament."
+  },
+  {
+    "id": 222,
+    "name": "Sacred Ring of Light",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Sacred Ring of Light</font>",
+    "mod_info": "Slash weapon forward to conjure a ring of light which will fly toward an enemy. Can be used repeatedly to continue shooting projectiles.\n\nThe horizontal slash performed during this skill's animation doesn't do any damage.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 125",
+    "vanilla_caption": "Skill: Sacred Ring of Light",
+    "vanilla_info": "Skill used by the commanders of the Cleanrot Knights. Gather a sacred ring of light in the armament, then fire it forwards.\nCan be fired in rapid succession."
+  },
+  {
+    "id": 223,
+    "name": "Firebreather",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Special Skill: Firebreather</font>",
+    "mod_info": "Blow the torch's flame in a wide arc in front of you. If the flames touch the ground it will continue to burn on the ground for a short time.",
+    "vanilla_caption": "Skill: Firebreather",
+    "vanilla_info": "Blow into torch flame, spreading flames in a wide frontward arc. The flames on the ground will continue to burn for a short time."
+  },
+  {
+    "id": 224,
+    "name": "Blood Blade",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Blood Blade</font>",
+    "mod_info": "Inflict damage to yourself equal to 4% of your <font color=\"#E0B985\">maximum HP</font> to imbue the armament with blood then swipe it horizontally to cast it as a projectile. Can be used repeatedly to cast mutliple projectiles without taking any additional damage.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage (projectile):</font> 115\n<font color=\"#C84343\">Base blood loss accumulation (projectile):</font> 60",
+    "vanilla_caption": "Skill: Blood Blade",
+    "vanilla_info": "Wound self to coat the armament with blood, then unleash an airborne blood blade that causes hemorrhaging.\nCan be fired in rapid succession."
+  },
+  {
+    "id": 225,
+    "name": "Phantom Slash",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Phantom Slash</font>",
+    "mod_info": "Summon an apparition next to you who will lunge forward and do an upward vertical slash, followed by you doing the same thing. Follow up by using the skill a second time to re-summon the apparition to do a downward vertical slash, followed by you doing the same thing.\n\n<font color=\"#F395C4\">Base physical damage (apparition, upward):</font> 160\n<font color=\"#F395C4\">Base physical damage (apparition, downward):</font> 165",
+    "vanilla_caption": "Skill: Phantom Slash",
+    "vanilla_info": "Skill inspired by the fond remembrances of the Night's Cavalry. Creates an apparition of the knights' former instructor who guides a joint lunging upward swing. Additional input allows for a follow-up attack."
+  },
+  {
+    "id": 226,
+    "name": "Spectral Lance",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Spectral Lance</font>",
+    "mod_info": "Transform armament into an apparition spear and hurl it forward.\n\n<font color=\"#F395C4\">Base physical damage:</font> 132",
+    "vanilla_caption": "Skill: Spectral Lance",
+    "vanilla_info": "Skill of the headless Mausoleum Knights.\nHurl a phantasmic spear at foes."
+  },
+  {
+    "id": 227,
+    "name": "Chilling Mist",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Chilling Mist</font>",
+    "mod_info": "Imbue the armament with frost and do a hortizontal slash to produce a cloud of cold mist for 4 seconds, which will cause <font color=\"#9DD7FB\">frostbite accumulation</font> up to 6 times. The armament remains imbued with frost for 40 seconds, causing 30 <font color=\"#9DD7FB\">frostbite accumulation</font> per attack.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of maximum HP plus 30, then increases all damage received by 20% for 30 seconds.\n\n<font color=\"#9DD7FB\">Base frostbite accumulation (slash):</font> 60\n<font color=\"#9DD7FB\">Base frostbite accumulation (mist):</font> 120",
+    "vanilla_caption": "Skill: Chilling Mist",
+    "vanilla_info": "Coat armament in frost, and then slash, spreading frigid mist forwards.\nThe armament retains its frost for a while."
+  },
+  {
+    "id": 228,
+    "name": "Poisonous Mist",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Poisonous Mist</font>",
+    "mod_info": "Imbue the armament with poison and do a hortizontal slash to produce a cloud of poison for 4 seconds, which will cause <font color=\"#40BF40\">poison accumulation</font> up to 6 times. The armament remains imbued with poison for 40 seconds, causing 30 <font color=\"#40BF40\">poison accumulation</font> per attack.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.1% of <font color=\"#E0B985\">maximum HP</font> plus 8, every second for 40 seconds.\n\n<font color=\"#40BF40\">Base poison accumulation (mist):</font>  60\n<font color=\"#40BF40\">Base poison accumulation (mist):</font>  120",
+    "vanilla_caption": "Skill: Poisonous Mist",
+    "vanilla_info": "Bathe armament in poison, and then slash, spreading toxic mist forwards.\nThe armament retains its poison for a while."
+  },
+  {
+    "id": 300,
+    "name": "Shield Bash",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Shield Bash</font>",
+    "mod_info": "Lift shield to guard stance and ram it forward while maintaining guard. Some enemies may be knocked down or staggered.",
+    "vanilla_caption": "Skill: Shield Bash",
+    "vanilla_info": "Brace behind shield before using bodyweight to ram foes while maintaining guarding stance.\nWeaker enemies will be shoved backwards, and can even be staggered."
+  },
+  {
+    "id": 301,
+    "name": "Barricade Shield",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Barricade Shield</font>",
+    "mod_info": "Lift shield to guard stance and imbue it with energy for 10 seconds, increasing <font color=\"#E0B985\">guard boost</font> and increasing its ability to repel enemy attacks. The amount that <font color=\"#E0B985\">guard boost</font> is increased by depends on the shield's base guard boost. Shields with a lower base value will get a bigger increase, while shields with a higher base value will get a smaller increase.",
+    "vanilla_caption": "Skill: Barricade Shield",
+    "vanilla_info": "Skill made famous by Sir Neidhardt.\nFocus your energy into the shield, temporarily hardening it to deflect greater blows."
+  },
+  {
+    "id": 302,
+    "name": "Parry",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Parry</font>",
+    "mod_info": "Swing armament with precise timing to deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected.\n\nThis skill is not consistent on all armaments. The window of time to deflect is the earliest and longest on small shields and is slightly later and shorter on daggers. Compared to daggers, the window for most other armaments, including medium shields, begins at the same time but is half the duration, so it will require much more precise timing.",
+    "vanilla_caption": "Skill: Parry",
+    "vanilla_info": "Use this skill in time with a foe's melee attack to deflect it and break that foe's stance.\nThis provides an opening to perform a critical hit."
+  },
+  {
+    "id": 303,
+    "name": "Buckler Parry",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Special Skill: Buckler Parry</font>",
+    "mod_info": "Swing armament with precise timing to deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly earlier but is the same duration.",
+    "vanilla_caption": "Skill: Buckler Parry",
+    "vanilla_info": "Use this skill in time with a foe's melee attack to deflect it and break that foe's stance.\nThis is faster than a regular parry."
+  },
+  {
+    "id": 305,
+    "name": "Carian Retaliation",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Carian Retaliation</font>",
+    "mod_info": "Swing armament with precise timing to transform an incoming spell into 3 magical daggers which float above you and automatically shoot into an enemy when they are within range. Can also deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly earlier, is slightly longer, and is consistent for all armaments.\n\n<font color=\"#57DBCE\">Base magic damage (projectiles):</font> 270",
+    "vanilla_caption": "Skill: Carian Retaliation",
+    "vanilla_info": "Swing the shield to dispel incoming sorceries and incantations, transforming the magic into retaliatory glintblades.\nCan also be used in the same way as a regular parry."
+  },
+  {
+    "id": 306,
+    "name": "Storm Wall",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Storm Wall</font>",
+    "mod_info": "Swing armament with precise timing to deflect small physical projectiles. Can also deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect is the same but it is consistent for all armaments.",
+    "vanilla_caption": "Skill: Storm Wall",
+    "vanilla_info": "Swing the shield to create a wall of storm winds in front of you, deflecting arrows and other such physical projectiles.\nCan also be used in the same way as a regular parry."
+  },
+  {
+    "id": 307,
+    "name": "Golden Parry",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Golden Parry</font>",
+    "mod_info": "Swing armament with to project a large golden arc in front of you which, with precise timing, can deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly earlier, is slightly longer, and is consistent for all armaments.\n\nEffective even at a slight distance.",
+    "vanilla_caption": "Skill: Golden Parry",
+    "vanilla_info": "Perform an Erdtree incantation and swing the shield to deflect enemy attacks and break their stance.\nEffective even at a slight distance."
+  },
+  {
+    "id": 308,
+    "name": "Shield Crash",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Shield Crash</font>",
+    "mod_info": "Lift shield to guard stance and charge forward while maintaining guard then ram the shield forward. Some enemies may be knocked down or staggered. Hold to charge forward longer.\n\n<font color=\"#F395C4\">Base physical damage:</font> 132",
+    "vanilla_caption": "Skill: Shield Crash",
+    "vanilla_info": "Two-hand the shield and charge forwards while maintaining guard. Weaker enemies will be shoved backwards and can even be staggered.\nHold to extend the duration of the charge forwards."
+  },
+  {
+    "id": 309,
+    "name": "Thops's Barrier",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Thops's Barrier</font>",
+    "mod_info": "Swing armament with precise timing to deflect an incoming spell. Can also deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly later, is slightly shorter, and is consistent for all armaments.",
+    "vanilla_caption": "Skill: Thops's Barrier",
+    "vanilla_info": "Erect a magical forcefield while swinging the shield to deflect sorceries and incantations.\nCan also be used in the same way as a regular parry."
+  },
+  {
+    "id": 400,
+    "name": "Through and Through",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Through and Through</font>",
+    "mod_info": "Hold to stand in a prepared stance. Arrows shot while in this stance will pierce through enemies who aren't guarding, allowing multiple enemies in a straight line to be hit. Arrows will not pierce through shields.",
+    "vanilla_caption": "Skill: Through and Through",
+    "vanilla_info": "Powerful archery skill using a greatbow held in an oblique stance.\nReady the greatbow, then twist the bowstring to fire a mighty greatarrow that can penetrate through enemies."
+  },
+  {
+    "id": 401,
+    "name": "Barrage",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Barrage</font>",
+    "mod_info": "Hold to stand in a prepared stance. While in this stance you are able to shoot arrows without the usual delay of pulling back the string, allowing arrows to be shot in quick succession.",
+    "vanilla_caption": "Skill: Barrage",
+    "vanilla_info": "Archery skill using a bow held horizontally.\nReady the bow, then fire off a rapid succession of shots faster than the eye can see."
+  },
+  {
+    "id": 402,
+    "name": "Mighty Shot",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Mighty Shot</font>",
+    "mod_info": "Hold to stand in a prepared stance. Arrows shot while in this stance will have enough force to pierce an enemy's guard.",
+    "vanilla_caption": "Skill: Mighty Shot",
+    "vanilla_info": "Archery skill performed from an oblique stance.\nReady the bow, then pull the bowstring to its limit to enhance the power of the shot, penetrating the enemy's guard."
+  },
+  {
+    "id": 404,
+    "name": "Enchanted Shot",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Enchanted Shot</font>",
+    "mod_info": "Hold to stand in a prepared stance. Arrows shot while in this stance will change their trajectory to follow the target.",
+    "vanilla_caption": "Skill: Enchanted Shot",
+    "vanilla_info": "Archery skill that enlivens the arrow with spiritual essence.\nThe resulting shot will fly faster than regular shots and change its trajectory to follow the target."
+  },
+  {
+    "id": 405,
+    "name": "Sky Shot",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Sky Shot</font>",
+    "mod_info": "Hold to crouch in a prepared stance. Arrows shot while in this stance will be shot nearly straight up and arc to land where the target was standing when the arrow was shot, typically resulting in increased damage as a headshot.\n\nIt is very difficult to hit a moving enemy with this so it is much more useful to be used in stealth.",
+    "vanilla_caption": "Skill: Sky Shot",
+    "vanilla_info": "Archery skill performed from a low stance.\nReady the bow, then fire an arrow high up into the air, arcing so as to strike the enemy from above when it comes down."
+  },
+  {
+    "id": 406,
+    "name": "Rain of Arrows",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Rain of Arrows</font>",
+    "mod_info": "Hold to crouch in a prepared stance. Arrows shot while in this stance will be shot nearly straight up and split into a barrage of arrows which will arc to land around the area where the target was standing when the arrow was shot.",
+    "vanilla_caption": "Skill: Rain of Arrows",
+    "vanilla_info": "Archery skill performed from a low stance.\nReady the bow, then fire a burst of arrows into the sky to shower the enemy with projectiles."
+  },
+  {
+    "id": 501,
+    "name": "Hoarfrost Stomp",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Hoarfrost Stomp</font>",
+    "mod_info": "Stomp on the ground to produce a large cone of icicles along the ground, which briefly spray up a cold mist.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 40\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 70",
+    "vanilla_caption": "Skill: Hoarfrost Stomp",
+    "vanilla_info": "Stomp hard to spread a trail of freezing mist on the ground.\nThe mist applies the frost status effect."
+  },
+  {
+    "id": 502,
+    "name": "Storm Stomp",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Storm Stomp</font>",
+    "mod_info": "Stomp on the ground to produce a swirl of wind around you.\n\n<font color=\"#F395C4\">Base physical damage (wind):</font> 50",
+    "vanilla_caption": "Skill: Storm Stomp",
+    "vanilla_info": "One of the skills that channel the tempests of Stormveil.\nStomp hard on the ground to kick up a momentary storm."
+  },
+  {
+    "id": 503,
+    "name": "Kick",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Kick</font>",
+    "mod_info": "Kick forward with force. Effective at breaking a guarding enemy's stance.",
+    "vanilla_caption": "Skill: Kick",
+    "vanilla_info": "Push an enemy back with a high kick.\nEffective against enemies who are guarding, and can break a foe's stance.\nSometimes a simple tool is the most effective."
+  },
+  {
+    "id": 504,
+    "name": "Lightning Ram",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Lightning Ram</font>",
+    "mod_info": "Imbue your body with lightning and roll forward on the ground. Can be used repeatedly to continue rolling.\n\n<font color=\"#F395C4\">Base physical damage:</font> 40\n<font color=\"#FFE033\">Base lightning damage:</font> 95",
+    "vanilla_caption": "Skill: Lightning Ram",
+    "vanilla_info": "Skill inspired by tumbling rams.\nLet out a bleat, then tumble forwards, clad in lightning.\nTumbles can be repeated in rapid succession."
+  },
+  {
+    "id": 505,
+    "name": "Flame of the Redmanes",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Flame of the Redmanes</font>",
+    "mod_info": "Conjure a wide arc of fire in front of you and push it outward.\n\n<font color=\"#F48C25\">Base fire damage:</font> 180",
+    "vanilla_caption": "Skill: Flame of the Redmanes",
+    "vanilla_info": "Skill of the Redmanes, who fought alongside General Radahn.\nProduce a powerful burst of flames in a wide frontward arc."
+  },
+  {
+    "id": 506,
+    "name": "Ground Slam",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Ground Slam</font>",
+    "mod_info": "Jump up into the air and slam back to the ground on your butt to create a large shockwave around you which may knock down nearby enemies.\n\n<font color=\"#F395C4\">Base physical damage:</font> 264",
+    "vanilla_caption": "Skill: Ground Slam",
+    "vanilla_info": "Jump up high into the air and crash down on the ground ahead.\nThe resulting pratfall sends a powerful shockwave in all directions."
+  },
+  {
+    "id": 507,
+    "name": "Golden Slam",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Golden Slam</font>",
+    "mod_info": "Jump up into the air and slam back to the ground on your butt to create a large shockwave of sacred energy around you which may knock down nearby enemies.\n\n<font color=\"#F395C4\">Base physical damage:</font> 308\n<font color=\"#F5EB89\">Base holy damage:</font> 225",
+    "vanilla_caption": "Skill: Golden Slam",
+    "vanilla_info": "Skill of the avatars who protect Minor Erdtrees.\nJump up high into the air and crash down on the ground ahead.\nThe resulting pratfall sends golden shockwaves in all directions."
+  },
+  {
+    "id": 508,
+    "name": "Waves of Darkness",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Waves of Darkness</font>",
+    "mod_info": "Imbue armament with dark energy then slam it into the ground to release it as 3 shockwaves around you, each shockwave bigger than the last. Follow up with a strong attack to do a horizontal slash in a full circle around you.\n\n<font color=\"#57DBCE\">Base magic damage (shockwaves):</font> 120",
+    "vanilla_caption": "Skill: Waves of Darkness",
+    "vanilla_info": "Plunge armament into the ground to release three waves of darkness.\nFollow up with a strong attack to swing the armament in a sweeping strike."
+  },
+  {
+    "id": 509,
+    "name": "Hoarah Loux's Earthshaker",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Hoarah Loux's Earthshaker</font>",
+    "mod_info": "Let out a loud scream which may stagger some enemies in a small area around you, then slam your hands to the ground to produce a shockwave around you. Follow up by using the skill a second time to slam the ground again.\n\n<font color=\"#F395C4\">Base physical damage (first shockwave):</font> 220\n<font color=\"#F395C4\">Base physical damage (second shockwave):</font> 250",
+    "vanilla_caption": "Skill: Hoarah Loux's Earthshaker",
+    "vanilla_info": "Slam both hands onto the ground to violently shake the earth and unleash a shockwave.\nFollow up with an additional input to slam the ground again."
+  },
+  {
+    "id": 600,
+    "name": "Determination",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Determination</font>",
+    "mod_info": "Imbue your armament with energy, increasing <font color=\"#E0B985\">all attack power</font> for your next single attack with that armament within 10 seconds by 60%. This effect works for critical attacks as well.",
+    "vanilla_caption": "Skill: Determination",
+    "vanilla_info": "A knightly skill.\nHold the flat of the armament to your face and pledge your resolve, powering up your next attack."
+  },
+  {
+    "id": 601,
+    "name": "Royal Knight's Resolve",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Royal Knight's Resolve</font>",
+    "mod_info": "Imbue your armament with energy, increasing <font color=\"#E0B985\">all attack power</font> for your next single attack with that armament within 10 seconds by 80%. This effect works for critical attacks as well.",
+    "vanilla_caption": "Skill: Royal Knight's Resolve",
+    "vanilla_info": "Skill of the knights who once served the Elden Lord.\nHold the flat of the armament to your face and pledge your resolve, greatly powering up your next attack."
+  },
+  {
+    "id": 602,
+    "name": "Assassin's Gambit",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Assassin's Gambit</font>",
+    "mod_info": "Become semi-invisible for 30 seconds, which reduces the range at which non-aggressive enemies will notice you by 60% and completely negates sound made during movement.",
+    "vanilla_caption": "Skill: Assassin's Gambit",
+    "vanilla_info": "Skill that masks the user's presence at the cost of a self-inflicted wound.\nGrants near-invisibility and silences footsteps."
+  },
+  {
+    "id": 603,
+    "name": "Golden Vow",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Golden Vow</font>",
+    "mod_info": "Imbue yourself and nearby allies with sacred energy for 45 seconds, which increases <font color=\"#E0B985\">all damage inflicted</font> by 11.5% and <font color=\"#E0B985\">all damage negation</font> by 7.5%.",
+    "vanilla_caption": "Skill: Golden Vow",
+    "vanilla_info": "Skill passed down from antiquity among the knights of the capital. Raise armament aloft and pledge to honor the Erdtree in battle, granting self and nearby allies increased attack power and defense."
+  },
+  {
+    "id": 604,
+    "name": "Sacred Order",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Sacred Order</font>",
+    "mod_info": "Imbue armament with holy essence for 60 seconds, which increases <font color=\"#E0B985\">all damage inflicted</font> by 10%. Attacks against Those Who Live in Death will inflict 100% more damage and prevent them from reviving.",
+    "vanilla_caption": "Skill: Sacred Order",
+    "vanilla_info": "Skill of the Golden Order fundamentalist knights.\nPerform a salute and grant the armament holy essence.\nHighly effective against Those Who Live in Death."
+  },
+  {
+    "id": 605,
+    "name": "Shared Order",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Shared Order</font>",
+    "mod_info": "Imbue yourself and nearby allies with holy essence for 60 seconds, which increases <font color=\"#E0B985\">all damage inflicted</font> by 10% for you and 7.5% for nearby allies. Attacks against Those Who Live in Death will inflict 50% more damage and prevent them from reviving.",
+    "vanilla_caption": "Skill: Shared Order",
+    "vanilla_info": "Skill of the Golden Order fundamentalist knights.\nGrant the armament and those of nearby allies holy essence.\nHighly effective against Those Who Live in Death."
+  },
+  {
+    "id": 606,
+    "name": "Seppuku",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Seppuku</font>",
+    "mod_info": "Plunge armament into your stomach, inflicting damage to yourself equal to 15% of your <font color=\"#E0B985\">maximum HP</font> plus 100 and clearing all <font color=\"#C84343\">blood loss accumulation</font>. This imbues it with blood for 60 seconds, which adds 30 <font color=\"#F395C4\">physical damage</font> and 30 <font color=\"#C84343\">blood loss accumulation</font> to each attack.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.",
+    "vanilla_caption": "Skill: Seppuku",
+    "vanilla_info": "A forbidden technique used by swordsmen from the Land of Reeds. Plunge the blade into your stomach to stain it with blood. Increases attack power and improves ability to inflict blood loss."
+  },
+  {
+    "id": 607,
+    "name": "Cragblade",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Cragblade</font>",
+    "mod_info": "Plunge armament into the ground to reinforce it with rocks for 60 seconds, which increases <font color=\"#F395C4\">physical damage</font> by 10%. It also increases the amount of stamina removed with each attack from enemies who are guarding by 20%, making it easier to break their stance.",
+    "vanilla_caption": "Skill: Cragblade",
+    "vanilla_info": "Skill that manipulates gravity.\nBury the armament in the ground, pulling rocks from the earth to reinforce it. Increases attack power and makes it easier to break enemy stance."
+  },
+  {
+    "id": 650,
+    "name": "Barbaric Roar",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Barbaric Roar</font>",
+    "mod_info": "Let out a loud scream which will increase your <font color=\"#F395C4\">physical attack power</font> by 7.5% and your <font color=\"#E0B985\">strength</font> by 5 for 40 seconds. It also changes your strong attack to be a 3-attack combination.",
+    "vanilla_caption": "Skill: Barbaric Roar",
+    "vanilla_info": "Let loose a bestial roar to rally the spirit and increase attack power.\nWhile active, strong attacks change to savage combo attacks."
+  },
+  {
+    "id": 651,
+    "name": "War Cry",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: War Cry</font>",
+    "mod_info": "Let out a loud scream which will increase your <font color=\"#F395C4\">physical attack power</font> by 7.5% and your <font color=\"#E0B985\">strength</font> by 5 for 40 seconds. It also changes your strong attack to be a downward vertical slash, and changes your charged strong attack to be a short run forward followed by a downward vertical slash.",
+    "vanilla_caption": "Skill: War Cry",
+    "vanilla_info": "Give a war cry to rally the spirit and increase attack power.\nWhile active, strong attacks change to charging attacks."
+  },
+  {
+    "id": 652,
+    "name": "Beast's Roar",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Beast's Roar</font>",
+    "mod_info": "Let out a loud scream which will produce a projectile of wind that will fly forward.",
+    "vanilla_caption": "Skill: Beast's Roar",
+    "vanilla_info": "Unleash a beastly roar, rending the air as a forward-travelling projectile."
+  },
+  {
+    "id": 653,
+    "name": "Troll's Roar",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Troll's Roar</font>",
+    "mod_info": "Stomp and let out a loud scream which will produce a large shockwave around you. Follow up with a strong attack to raise the armament above your head and slam it to the ground with force.",
+    "vanilla_caption": "Skill: Troll's Roar",
+    "vanilla_info": "Look into the distance and let out an intense roar, generating a powerful shockwave that blows back surrounding foes.\nFollow up with a strong attack to slam the armament down."
+  },
+  {
+    "id": 654,
+    "name": "Braggart's Roar",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Braggart's Roar</font>",
+    "mod_info": "Let out a loud scream which will increase your <font color=\"#F395C4\">physical attack power</font> by 10%, <font color=\"#E0B985\">all damage negation</font> by 10%, and increase <font color=\"#E0B985\">stamina regeneration</font> by 10 per second for 60 seconds.",
+    "vanilla_caption": "Skill: Braggart's Roar",
+    "vanilla_info": "Declare your presence with a boastful roar.\nRaises attack power, defense, and stamina recovery speed."
+  },
+  {
+    "id": 700,
+    "name": "Endure",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Endure</font>",
+    "mod_info": "Imbue your body with energy to brace for an incoming attack for 3.5 seconds, which increases <font color=\"#E0B985\">all damage negation</font> by 45%. Lighter physical attacks from enemies may cause the enemy to briefly stagger backwards after hitting you.",
+    "vanilla_caption": "Skill: Endure",
+    "vanilla_info": "Assume an anchored stance to brace for incoming attacks, briefly boosting poise.\nDamage taken while using this skill is reduced."
+  },
+  {
+    "id": 701,
+    "name": "Vow of the Indomitable",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Vow of the Indomitable</font>",
+    "mod_info": "Raise shield and imbue yourself with golden energy which makes you completely invincible for a brief moment.",
+    "vanilla_caption": "Skill: Vow of the Indomitable",
+    "vanilla_info": "Skill of the ancient warriors of the Erdtree.\nHold shield aloft to imbue yourself with golden power, granting momentary invincibility."
+  },
+  {
+    "id": 702,
+    "name": "Holy Ground",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Holy Ground</font>",
+    "mod_info": "Raise shield and conjure a golden sigil on the ground for 35 seconds, which will reduce <font color=\"#E0B985\">all damage received</font> by 20% and restore 5 HP every 0.3 seconds while standing in it. The effects also apply to allies that are standing within the sigil.",
+    "vanilla_caption": "Skill: Holy Ground",
+    "vanilla_info": "Raise shield to create an Erdtree-consecrated area that continuously restores HP and boosts defense for self and allies inside it."
+  },
+  {
+    "id": 800,
+    "name": "Quickstep",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Quickstep</font>",
+    "mod_info": "Perform a quick dodging maneuver. Lock-on to an enemy and hold left or right while using this skill to quickly circle around to the backside of them if you are standing close enough.\n\nHaving a light equipment load will allow you to get the farthest distance when using this skill. Using this skill repeatedly will reduce its effectiveness.",
+    "vanilla_caption": "Skill: Quickstep",
+    "vanilla_info": "Skill prized by the crafty and fleet of foot.\nPerform a quickstep maneuver that allows for circling around lock-on targets."
+  },
+  {
+    "id": 801,
+    "name": "Bloodhound's Step",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Bloodhound's Step</font>",
+    "mod_info": "Become completely invisible while performing a quick dodging maneuver. Lock-on to an enemy and hold left or right while using this skill to quickly circle around to the backside of them if you are standing close enough. Compared to the regular quickstep skill, this skill is faster and you travel farther.\n\nHaving a light equipment load will allow you to get the farthest distance when using this skill. Using this skill repeatedly will reduce its effectiveness.",
+    "vanilla_caption": "Skill: Bloodhound's Step",
+    "vanilla_info": "Skill that allows the user to become temporarily invisible while dodging at high speed. Moves faster and travels farther than a regular quickstep.\nThis skill can be used to circle around lock-on targets."
+  },
+  {
+    "id": 802,
+    "name": "Raptor of the Mists",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: Raptor of the Mists</font>",
+    "mod_info": "Crouch to briefly brace for an incoming attack. If you are hit by an attack while in this stance <font color=\"#E0B985\">all damage</font> is completely negated and you will automatically leap into the air, allowing you to easily retaliate with a jump attack.",
+    "vanilla_caption": "Skill: Raptor of the Mists",
+    "vanilla_info": "Duck into a low stance, momentarily vanishing.\nIf an enemy attack connects, avian wings will allow for a quick escape into the air."
+  },
+  {
+    "id": 850,
+    "name": "White Shadow's Lure",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Skill: White Shadow's Lure</font>",
+    "mod_info": "Cast a pale shadow illusion which will lure human enemies outside of combat to attack it. Demi-humans will be lured in even during combat.",
+    "vanilla_caption": "Skill: White Shadow's Lure",
+    "vanilla_info": "Hold armament in a brief, silent prayer to create a white shadow.\nThe apparition lures in foes of human build who are not in combat, drawing their aggression. Effective on demi-humans even if they are already in a combat state."
+  },
+  {
+    "id": 1000,
+    "name": "Surge of Faith",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Surge of Faith</font>",
+    "mod_info": "Raise armament and produce an explosion followed by a barrage of fireballs from the top which will rain down all around you. Can be used repeatedly to continue causing explosions and raining fireballs.\n\n<font color=\"#F48C25\">Base fire damage (explosion):</font> 230\n<font color=\"#F48C25\">Base fire damage (fireballs):</font> 55",
+    "vanilla_caption": "Unique Skill: Surge of Faith",
+    "vanilla_info": "Set the flames of Birac's faith ablaze in the cranial vessel, then raise it aloft to rain down fireballs in all directions.\nRepeated inputs will continue to raise the armament aloft, continuing the attack."
+  },
+  {
+    "id": 1001,
+    "name": "Flame Spit",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Flame Spit</font>",
+    "mod_info": "Convert the shield into a ballista and shoot a large fireball which explodes on impact.\n\n<font color=\"#F48C25\">Base fire damage:</font> 385",
+    "vanilla_caption": "Unique Skill: Flame Spit",
+    "vanilla_info": "Ready the shield, then launch a fireball from the barrel.\nThe fireball explodes on impact."
+  },
+  {
+    "id": 1002,
+    "name": "Tongues of Fire",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Tongues of Fire</font>",
+    "mod_info": "Hold to brace shield with both hands and spew a stream of fire forward. Can be used while moving.\n\n<font color=\"#F48C25\">Base fire damage:</font> 150",
+    "vanilla_caption": "Unique Skill: Tongues of Fire",
+    "vanilla_info": "Ready the shield, then spray violent jets of fire from the tongues protruding from its maw.\nHold to continue spraying fire. This skill can be used while walking."
+  },
+  {
+    "id": 1003,
+    "name": "Oracular Bubble",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Oracular Bubble</font>",
+    "mod_info": "Blow the horn to produce a bubble which will float forward. Can be used repeatedly to continue casting bubbles.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 110",
+    "vanilla_caption": "Unique Skill: Oracular Bubble",
+    "vanilla_info": "Blow on the horn to release a magic bubble.\nThe bubble floats gently through the air towards its target."
+  },
+  {
+    "id": 1004,
+    "name": "Bubble Shower",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Bubble Shower</font>",
+    "mod_info": "Blow the horn to produce a barrage of bubbles which will float down in front of you.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 65",
+    "vanilla_caption": "Unique Skill: Bubble Shower",
+    "vanilla_info": "Blow on the horn to release a spume of magic bubbles.\nThe bubbles float gently before raining down on the target."
+  },
+  {
+    "id": 1005,
+    "name": "Great Oracular Bubble",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Great Oracular Bubble</font>",
+    "mod_info": "Blow the horn to produce a large bubble which will float forward and explode on impact.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 315",
+    "vanilla_caption": "Unique Skill: Great Oracular Bubble",
+    "vanilla_info": "Blow on the horn to release a massive magic bubble.\nThe bubble floats gently through the air towards its target."
+  },
+  {
+    "id": 1006,
+    "name": "Sea of Magma",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Sea of Magma</font>",
+    "mod_info": "Spin the whip in a circle over your head to spread pools of magma in every direction around you. Hold to continue spinning the whip.\n\n<font color=\"#F48C25\">Base fire damage (magma):</font> 66",
+    "vanilla_caption": "Unique Skill: Sea of Magma",
+    "vanilla_info": "Swing a molten whip overhead to temporarily cover the surrounding area in a sea of magma.\nHold to continue swinging the lava whip."
+  },
+  {
+    "id": 1007,
+    "name": "Viper Bite",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Viper Bite</font>",
+    "mod_info": "Uncoil the snake on the shield so it can lunge forward with a poisonous bite.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds.\n\n<font color=\"#40BF40\">Base poison accumulation:</font> 250",
+    "vanilla_caption": "Unique Skill: Viper Bite",
+    "vanilla_info": "Give the shield a quick shake to temporarily bring the bronze viper to life, inciting it to lash out and bite foes."
+  },
+  {
+    "id": 1008,
+    "name": "Moonlight Greatsword",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Moonlight Greatsword</font>",
+    "mod_info": "Raise the armament and imbue it with the light of the dark moon for 60 seconds, which adds 85 <font color=\"#57DBCE\">magic damage</font> and 100 <font color=\"#9DD7FB\">frostbite accumulation</font> to each attack.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.",
+    "vanilla_caption": "Unique Skill: Moonlight Greatsword",
+    "vanilla_info": "Raise the sword aloft, bathing it in the light of the dark moon.\nTemporarily increases magic attack power and imbues blade with frost.\nCharged attacks release blasts of moonlight."
+  },
+  {
+    "id": 1009,
+    "name": "Siluria's Woe",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Siluria's Woe</font>",
+    "mod_info": "Imbue the armament with energy then slam it into the ground in front of you to create an explosion. Charge to have a large projectile shoot out forward from the explosion, which can knock down some enemies. The projectile is capable of piercing through enemies and some objects.",
+    "vanilla_caption": "Unique Skill: Siluria's Woe",
+    "vanilla_info": "Thrust the weapon in a spiraling motion, surrounding it in a vortex of wind.\nCharged attacks have the power to blow away enemies and can fire the tornado forwards."
+  },
+  {
+    "id": 1010,
+    "name": "Rallying Standard",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Rallying Standard</font>",
+    "mod_info": "Wave the banner to increase <font color=\"#E0B985\">all damage</font> and <font color=\"#E0B985\">all damage negation</font> by 20% for 30 seconds for yourself and nearby allies.",
+    "vanilla_caption": "Unique Skill: Rallying Standard",
+    "vanilla_info": "Hoist the war banner aloft and give a rallying command.\nRaises attack power and defense for self and nearby allies."
+  },
+  {
+    "id": 1011,
+    "name": "Bear Witness!",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Bear Witness!</font>",
+    "mod_info": "Drag the armament along the ground into a fire-infused uppercut, then spew a barrage of fireballs into the air.",
+    "vanilla_caption": "Unique Skill: Bear Witness!",
+    "vanilla_info": "Grant the small dragon a fleeting glimpse of life and thrust it skyward, spewing flames over a wide frontward area."
+  },
+  {
+    "id": 1012,
+    "name": "Eochaid's Dancing Blade",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Eochaid's Dancing Blade</font>",
+    "mod_info": "Imbue the armament with red energy and throw it forward to spin in the air like a drill for a short time before returning to you, then do a horizontal swipe. Charging increases damage, reach, and duration.",
+    "vanilla_caption": "Unique Skill: Eochaid's Dancing Blade",
+    "vanilla_info": "Infuse the sword with energy, then fling it forwards in a corkscrew attack. The sword continuously deals damage while violently spinning.\nCharge the attack to increase reach and duration of the spin."
+  },
+  {
+    "id": 1013,
+    "name": "Soul Stifler",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Soul Stifler</font>",
+    "mod_info": "Raise the armament to conjure a soul-sapping miasma which will reduce <font color=\"#E0B985\">all damage negation</font> by 30% for 60 seconds for any enemy who touches it.",
+    "vanilla_caption": "Unique Skill: Soul Stifler",
+    "vanilla_info": "Raise the greathorn's wings to summon a soul-sapping miasma.\nEnemies in the affected area will temporarily suffer from reduced defense."
+  },
+  {
+    "id": 1014,
+    "name": "Taker's Flames",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Taker's Flames</font>",
+    "mod_info": "Raise the armament and imbue it with fire then slam it to the ground to cause a chain of fiery eruptions along the ground in a straight line. Each enemy hit by the fire will restore 10% of your <font color=\"#E0B985\">maximum HP</font> plus 150.",
+    "vanilla_caption": "Unique Skill: Taker's Flames",
+    "vanilla_info": "Raise the sacred sword aloft to set it ablaze with blasphemous flames, then bring it down to fire off a forward blast.\nThe flames steal HP from those they touch."
+  },
+  {
+    "id": 1015,
+    "name": "Shriek of Milos",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Shriek of Milos</font>",
+    "mod_info": "Let out a loud scream along with a burst of golden energy all around you. This will increase your <font color=\"#F395C4\">physical damage inflicted</font> by 7.5% for 20 seconds and also changes your strong attack to be a 3-attack combination during this time. Any enemy hit by the burst of golden energy will have <font color=\"#E0B985\">all damage negation</font> reduced by 15% for 30 seconds.",
+    "vanilla_caption": "Unique Skill: Shriek of Milos",
+    "vanilla_info": "Lets out a horrific cursed scream that reduces all damage negation and status resistances for nearby foes.\nWhile active, strong attacks will change to a combo attack."
+  },
+  {
+    "id": 1016,
+    "name": "Reduvia Blood Blade",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Reduvia Blood Blade</font>",
+    "mod_info": "Do a horizontal slash to produce an arc of blood which will shoot forward. Can be used repeatedly to continue shooting arcs of blood.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#C84343\">Base blood loss accumulation:</font> 90",
+    "vanilla_caption": "Unique Skill: Reduvia Blood Blade",
+    "vanilla_info": "Slash with the wicked dagger, transforming its never-drying bloodstains into airborne blades that cause blood loss.\nCan be fired in rapid succession."
+  },
+  {
+    "id": 1017,
+    "name": "Glintstone Dart",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Glintstone Dart</font>",
+    "mod_info": "Imbue the armament with glinstone magic then cast it forward as a projectile. The projectile is capable of piercing through some enemies. Charging increases damage. Follow up with a strong attack to thrust the armamant forward while it's still imbued with glintstone magic.\n\n<font color=\"#57DBCE\">Base magic damage (projectile):</font> 155\n<font color=\"#57DBCE\">Base magic damage (projectile, charged):</font> 190",
+    "vanilla_caption": "Unique Skill: Glintstone Dart",
+    "vanilla_info": "Skill that builds from the Glintstone Pebble sorcery.\nCharge the skill to upgrade it to Glintstone Dart.\nFollow up with a strong attack to chain this skill into a lunging thrust."
+  },
+  {
+    "id": 1018,
+    "name": "Flowing Form",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Flowing Form</font>",
+    "mod_info": "Convert the armament into a whip then do a very wide horizontal slash before returning it to its original form.",
+    "vanilla_caption": "Unique Skill: Flowing Form",
+    "vanilla_info": "Temporarily transforms armament into its liquid form.\nSwing the armament like a whip to perform a sweeping slice over a wide area."
+  },
+  {
+    "id": 1019,
+    "name": "Night-and-Flame Stance",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Night-and-Flame Stance</font>",
+    "mod_info": "Hold armament in a raised position in preparation for an attack. Follow up with a normal attack to cast out a large beam of glintstone magic. Alternatively, follow up with a strong attack to imbue the armament with fire then do a horizontal slash to cast it out as a very wide arc of fire.",
+    "vanilla_caption": "Unique Skill: Night-and-Flame Stance",
+    "vanilla_info": "Hold the sword level and prepare to cast a sorcery.\nFollow up with a normal attack to cast the Night Comet sorcery, or a strong attack to sweep forward with a burst of flames."
+  },
+  {
+    "id": 1020,
+    "name": "Wave of Gold",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Wave of Gold</font>",
+    "mod_info": "Imbue the armament with golden energy then slash it down towards your feet to produce a large golden arc on the ground which continues to grow significantly wider as it shoots forward. After the arc has traveled a certain distance away the damage is increased.\n\n<font color=\"#F5EB89\">Base holy damage (short range):</font> 230\n<font color=\"#F5EB89\">Base holy damage (long range):</font> 250",
+    "vanilla_caption": "Unique Skill: Wave of Gold",
+    "vanilla_info": "Imbue the sword with bygone golden glory, then fire it at foes.\nA wide, golden wave fans out forwards, sweeping through all enemies caught in its path."
+  },
+  {
+    "id": 1021,
+    "name": "Ruinous Ghostflame",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Ruinous Ghostflame</font>",
+    "mod_info": "Slash the armament in front of you to imbue it with ghostflame for 60 seconds, which adds 110 <font color=\"#57DBCE\">magic damage</font> and 80 <font color=\"#9DD7FB\">frostbite accumulation</font> per attack.",
+    "vanilla_caption": "Unique Skill: Ruinous Ghostflame",
+    "vanilla_info": "Swing the sword to bathe its blade in ghostflame.\nThe ghostflame adds magic damage to attacks, and also has a bitterly cold bite."
+  },
+  {
+    "id": 1022,
+    "name": "Establish Order",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Establish Order</font>",
+    "mod_info": "Raise armament and briefly imbue it with golden energy then release a large explosion of golden energy around you. Follow up by using the skill a second time to channel more golden energy into the armament before doing 2 quick horizontal slashes to cast the energy out as a wide arc projectile.",
+    "vanilla_caption": "Unique Skill: Establish Order",
+    "vanilla_info": "Raise the armament in a salute, releasing a golden explosion.\nRepeated inputs send out waves of golden light."
+  },
+  {
+    "id": 1023,
+    "name": "Mists of Slumber",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Mists of Slumber</font>",
+    "mod_info": "Imbue the armament with purple energy before doing a horizontal slash to briefly produce a wide arc of purple mist. The armament retains its imbuement for 30 seconds, which adds 20 <font color=\"#A698F4\">sleep accumulation</font> per attack.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack.\n\n<font color=\"#A698F4\">Base sleep accumulation (mist):</font> 70",
+    "vanilla_caption": "Unique Skill: Mists of Slumber",
+    "vanilla_info": "Releases a faint purple mist that spreads across a wide frontwards area.\nThis mist inflicts the sleep ailment upon foes."
+  },
+  {
+    "id": 1024,
+    "name": "Spearcall Ritual",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Spearcall Ritual</font>",
+    "mod_info": "Raise armament to conjure a barrage of phantom Death Ritual Spears above the target to rain down on them.",
+    "vanilla_caption": "Unique Skill: Spearcall Ritual",
+    "vanilla_info": "Thrust the spear high, bearing prayers into the sky to summon a downpour of spectral spears."
+  },
+  {
+    "id": 1025,
+    "name": "Wolf's Assault",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Wolf's Assault</font>",
+    "mod_info": "Imbue the armament with magic frost then do a flip forward and plunge the armament into the ground to release an explosion of magic frost around you.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage (plunge and explosion):</font> 50\n<font color=\"#9DD7FB\">Base frostbite accumulation (plunge):</font> 100\n<font color=\"#9DD7FB\">Base frostbite accumulation (explosion):</font> 60",
+    "vanilla_caption": "Unique Skill: Wolf's Assault",
+    "vanilla_info": "Infuse the greatsword with frost, then perform a forward somersault to plunge it into the ground. Then, pull it out to release a cold blast."
+  },
+  {
+    "id": 1026,
+    "name": "Thundercloud Form",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Thundercloud Form</font>",
+    "mod_info": "Briefly transform into a cloud of red lightning then emerge from the cloud with your armament imbued with the red lightning and plunge it into the ground, creating a small explosion of red lightning. Hold to glide through the in the cloud of red lightning form for a short distance.",
+    "vanilla_caption": "Unique Skill: Thundercloud Form",
+    "vanilla_info": "Temporarily transform into a red thundercloud and fly through the air, then plunge down with a lightning-infused blade.\nHold to increase the reach of the thundercloud form."
+  },
+  {
+    "id": 1027,
+    "name": "Cursed-Blood Slice",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Cursed-Blood Slice</font>",
+    "mod_info": "Imbue the armament with fire then leap forward and do a diagonal slash. A red streak will form along the path of the slash, which will will then explode after a short delay. Follow up by using the skill a second time to do a horizontal slash while the armament is still imbued with flame, forming another exploding red streak.\n\n<font color=\"#F48C25\">Base fire damage (explosions):</font> 80",
+    "vanilla_caption": "Unique Skill: Cursed-Blood Slice",
+    "vanilla_info": "Brace, then charge forward to deliver a downward diagonal slice.\nThe bloody trail of the blade is followed by a burst of flame.\nAdditional input allows for a follow-up attack."
+  },
+  {
+    "id": 1028,
+    "name": "Waterfowl Dance",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Waterfowl Dance</font>",
+    "mod_info": "Float into the air briefly then leap forward and do 3 sets of extremely quick slashes all round you. Follow up by using the skill a second time to do 2 more sets of slashes. Follow that up by using the skill a third time to do 4 more sets of slashes.",
+    "vanilla_caption": "Unique Skill: Waterfowl Dance",
+    "vanilla_info": "Perform a series of one-footed leaps in the manner of a waterfowl to unleash a swift yet graceful slashing combo.\nRepeated inputs allow for up to two follow-up attacks."
+  },
+  {
+    "id": 1029,
+    "name": "Gold Breaker",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Gold Breaker</font>",
+    "mod_info": "Float into the air as you imbue the armament with light then smash it to the ground to create a large explosion of light. The explosion might throw some enemies into the air and knock them down.",
+    "vanilla_caption": "Unique Skill: Gold Breaker",
+    "vanilla_info": "Leap up high and, while suspended in midair, imbue the rune shard with light before smashing it down hard onto the ground.\nThe heroic Radagon's signature attack."
+  },
+  {
+    "id": 1030,
+    "name": "I Command Thee, Kneel!",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: I Command Thee, Kneel!</font>",
+    "mod_info": "Smash armament into the ground 2 times, each time creating a large shockwave around you. Follow up by using the skill a second time to slam the armament into the ground again, creating a larger shockwave.",
+    "vanilla_caption": "Unique Skill: I Command Thee, Kneel!",
+    "vanilla_info": "Repeatedly smash the Axe of Godrick into the ground, unleashing two earth-shaking shockwaves.\nFollow up with an additional input to produce a third shockwave."
+  },
+  {
+    "id": 1031,
+    "name": "Regal Roar",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Regal Roar</font>",
+    "mod_info": "Let out a loud scream then build up power for a short time to stomp on the ground and release a large shockwave around you. The shockwave might throw some enemies into the air and knock them down. This also increases your <font color=\"#F395C4\">physical attack power</font> by 7.5% for 40 seconds.",
+    "vanilla_caption": "Unique Skill: Regal Roar",
+    "vanilla_info": "Let loose a mighty war cry, raising attack power, while sending out a shockwave that cannot be guarded against by stomping the ground. While active, strong attack becomes a lunging slash."
+  },
+  {
+    "id": 1032,
+    "name": "Starcaller Cry",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Starcaller Cry</font>",
+    "mod_info": "Let out a loud scream while briefly imbuing both swords with gravitational energy, which may pull in and stagger some enemies near you. Follow up by using the skill a second time to slam both swords to the ground while still imbued with gravitational energy, creating a large explosion of the energy.",
+    "vanilla_caption": "Unique Skill: Starcaller Cry",
+    "vanilla_info": "Bring the two swords together and roar into the skies, pulling in enemies with a gravitational wave.\nFollow up with an additional input to slam down with gravity-infused swords."
+  },
+  {
+    "id": 1033,
+    "name": "Wave of Destruction",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Wave of Destruction</font>",
+    "mod_info": "Raise the armament and imbue it with gravitational energy then slam it to the ground to cause a chain of large explosions of gravitational energy along the ground in a straight line.",
+    "vanilla_caption": "Unique Skill: Wave of Destruction",
+    "vanilla_info": "Raise the sword up high, then strike it against the ground to fire off a wave of gravitational force."
+  },
+  {
+    "id": 1034,
+    "name": "Bloodboon Ritual",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Bloodboon Ritual</font>",
+    "mod_info": "Conjure an explosion of bloodflame energy above you which will then drip bloodflame down around you as you raise the armament into it to imbue it. Follow up by using the skill up to two more times to continue creating explosions. The armament will retain its bloodflame imbuement for 20 seconds, adding 30 <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F48C25\">Base fire damage (explosion):</font> 100\n<font color=\"#F48C25\">Base fire damage (drips):</font> 65\n<font color=\"#C84343\">Base blood loss accumulation (explosion and drips):</font> 60",
+    "vanilla_caption": "Unique Skill: Bloodboon Ritual",
+    "vanilla_info": "Raise the sacred spear and pierce the body of the Formless Mother. Stab up to three times, creating explosions of blood with each thrust.\nThis skill will coat the armament with bloodflame for a while."
+  },
+  {
+    "id": 1035,
+    "name": "Flowing Form",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Flowing Form</font>",
+    "mod_info": "Convert the armament into a whip then do a very wide horizontal slash followed by a downward slam in front of you before returning it to its original form.",
+    "vanilla_caption": "Unique Skill: Flowing Form",
+    "vanilla_info": "Temporarily transforms armament into its liquid form. Swing the armament like a whip to strike surroundings before slamming its teardrop-shaped head down."
+  },
+  {
+    "id": 1036,
+    "name": "Blade of Death",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Blade of Death</font>",
+    "mod_info": "Imbue the armament with dark flame as you twirl in the air to do a downward horizontal slash, which also shoots a projectile outward from you. In addition to the damage from the attack, the enemy's <font color=\"#E0B985\">maximum HP</font> is reduced by 10% for 45 seconds, then they take damage equal to 0.45% of their <font color=\"#E0B985\">maximum HP</font> per second for 5 seconds.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 180",
+    "vanilla_caption": "Unique Skill: Blade of Death",
+    "vanilla_info": "Unleash the power of the Rune of Death to fire off a blade-like projectile.\nIn addition to dealing immediate damage, the blade reduces the enemy's maximum HP and continues to wear down HP for a while."
+  },
+  {
+    "id": 1037,
+    "name": "Blade of Gold",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Blade of Gold</font>",
+    "mod_info": "Imbue the armament with golden energy as you twirl in the air to do a downward horizontal slash. As you slash in the air you will cast the golden energy off as a projectile with enough force to knock down some enemies.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 145",
+    "vanilla_caption": "Unique Skill: Blade of Gold",
+    "vanilla_info": "Leap into the air, charging the armament with golden flames that are then shot at the enemy as a single, blade-like projectile.\nInflicts holy damage."
+  },
+  {
+    "id": 1038,
+    "name": "Destined Death",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Destined Death</font>",
+    "mod_info": "Imbue the armament with dark flame, then do a horizontal slash, followed by plunging the armament into the ground to release the dark flame as a flurry of slashes all around you. The flurry of slashes may knock down some enemies. In addition to the damage from the attack, the enemy's <font color=\"#E0B985\">maximum HP</font> is reduced by 10% for 45 seconds, then they take damage equal to 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds.",
+    "vanilla_caption": "Unique Skill: Destined Death",
+    "vanilla_info": "Set free the remnants of Destined Death, plunging the greatsword into the ground to summon a myriad of blades. In addition to dealing immediate damage, this attack reduces the enemy's maximum HP and continues to wear down HP for a short time."
+  },
+  {
+    "id": 1039,
+    "name": "Spinning Wheel",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Spinning Wheel</font>",
+    "mod_info": "Push the wheel against the ground to cause it to start spinning then hold it out in front of you like a chainsaw. Hold to keep the wheel spinning. Can be used while moving.",
+    "vanilla_caption": "Unique Skill: Spinning Wheel",
+    "vanilla_info": "Strike the wheel against the ground to set it spinning at top speed. Hold to keep the wheel spinning. Can be used while walking to push the armament into enemies."
+  },
+  {
+    "id": 1040,
+    "name": "Alabaster Lords' Pull",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Alabaster Lord's Pull</font>",
+    "mod_info": "Plunge the armament into the ground and create a gravity well in a large area around yourself, which can pull some enemies towards you and stagger them.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 184",
+    "vanilla_caption": "Unique Skill: Alabaster Lord's Pull",
+    "vanilla_info": "Thrust the armament into the ground to create a gravity well. In addition to dealing damage, this attack pulls enemies in.\nHas a greater area of effect than Gravitas."
+  },
+  {
+    "id": 1041,
+    "name": "Onyx Lords' Repulsion",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Onyx Lord's Repulsion</font>",
+    "mod_info": "Plunge the armament into the ground and create a gravity well in a large area around yourself, which can push some enemies away from you and knock them down.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 200",
+    "vanilla_caption": "Unique Skill: Onyx Lord's Repulsion",
+    "vanilla_info": "Thrust the armament into the ground to create a gravity well. In addition to dealing damage, this attack sends enemies flying away."
+  },
+  {
+    "id": 1042,
+    "name": "Oath of Vengeance",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Oath of Vengeance</font>",
+    "mod_info": "Channel an energy within you for 60 seconds. This increases your <font color=\"#E0B985\">vigor</font>, <font color=\"#E0B985\">mind</font>, <font color=\"#E0B985\">endurance</font>, <font color=\"#E0B985\">vitality</font>, <font color=\"#E0B985\">strength</font>, <font color=\"#E0B985\">dexterity</font>, <font color=\"#E0B985\">intelligence</font>, <font color=\"#E0B985\">faith</font>, and <font color=\"#E0B985\">arcane</font> by 5. It also increases <font color=\"#E0B985\">all damage negation</font> by 45% and lighter physical attacks from enemies may cause the enemy to briefly stagger backwards after hitting you.",
+    "vanilla_caption": "Unique Skill: Oath of Vengeance",
+    "vanilla_info": "Swear an oath upon the greatsword to avenge the clan, temporarily raising all attributes for a certain duration. While the oath's effects are active, poise will also be increased."
+  },
+  {
+    "id": 1043,
+    "name": "Ice Lightning Sword",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Ice Lightning Sword</font>",
+    "mod_info": "Stomp as you raise the armament to imbue it with icy lightning, then slam it to the ground to conjure a bolt of icy lightning directly in front of you and a brief shockwave of lightning around you. The armament retains its imbuement for 45 seconds, which adds 160 <font color=\"#FFE033\">lightning damage</font> and 80 <font color=\"#9DD7FB\">frostbite accumulation</font>.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#FFE033\">Base lightning damage (bolt):</font> 149\n<font color=\"#FFE033\">Base lightning damage (shockwave):</font> 69\n<font color=\"#9DD7FB\">Base frostbite accumulation (bolt and shockwave):</font> 70",
+    "vanilla_caption": "Unique Skill: Ice Lightning Sword",
+    "vanilla_info": "Call down a bolt of ice lightning into the blade and bring it down upon a foe.\nThe ice lightning effect will persist for a while."
+  },
+  {
+    "id": 1044,
+    "name": "Regal Beastclaw",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Regal Beastclaw</font>",
+    "mod_info": "Slam the armament into the ground to shoot 5 claws along the ground in a cone-shaped pattern.\n\n<font color=\"#F395C4\">Base physical damage (claws):</font> 186",
+    "vanilla_caption": "Unique Skill: Regal Beastclaw",
+    "vanilla_info": "Slam the hammer into the ground, rending the land asunder with the armament's five bestial claws."
+  },
+  {
+    "id": 1045,
+    "name": "Flame Dance",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Flame Dance</font>",
+    "mod_info": "Imbue the armament with fire and do 5 very wide horizontal slash with it.",
+    "vanilla_caption": "Unique Skill: Flame Dance",
+    "vanilla_info": "Imbue the red braid with the Giants' Flame and lash out in a wide range with a series of agile swings."
+  },
+  {
+    "id": 1046,
+    "name": "Claw Flick",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Claw Flick</font>",
+    "mod_info": "Inflate the armament to be much larger then flick it outward with enough force to knock down some enemies.",
+    "vanilla_caption": "Unique Skill: Claw Flick",
+    "vanilla_info": "Cause the finger to swell, then flex to build up strength before giving enemies an almighty flick."
+  },
+  {
+    "id": 1047,
+    "name": "Nebula",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Nebula</font>",
+    "mod_info": "Twirl in the air as you imbue the armament with cosmic energy, then do a very wide horizontal slash which will leave a trail of dark clouds along its path. The dark clouds will explode after a short delay.\n\n<font color=\"#57DBCE\">Base magic damage (explosions):</font> 121",
+    "vanilla_caption": "Unique Skill: Nebula",
+    "vanilla_info": "Imbue the Naturalborn's stars with magic to perform a sweeping strike.\nThis attack leaves a dark cloud of stars in its wake that lingers briefly before exploding."
+  },
+  {
+    "id": 1048,
+    "name": "Ghostflame Ignition",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Ghostflame Ignition</font>",
+    "mod_info": "Thrust the armament forward while you conjure a ball of ghostflame at the tip of it, which will then explode. Follow up with a normal attack to cause the explosion to produce a long trail of ghostflame. Alternatively, follow up with a strong attack to cause the explosion to be much larger.\n\n<font color=\"#F48C25\">Base fire damage (explosion):</font> 140\t        <font color=\"#9DD7FB\">Base frostbite accum.:</font> 55\n<font color=\"#F48C25\">Base fire damage (trail):</font> 60\t\t        <font color=\"#9DD7FB\">Base frostbite accum.:</font> 65\n<font color=\"#F48C25\">Base fire damage (big explosion):</font> 200      <font size=\"9\"> </font><font color=\"#9DD7FB\">Base frostbite accum.:</font> 80",
+    "vanilla_caption": "Unique Skill: Ghostflame Ignition",
+    "vanilla_info": "Thrust out the barbed rod and set its tip alight with ghostflame.\nFollow up with a normal attack to set the ground ablaze with ghostflame, or a strong attack to trigger a massive explosion."
+  },
+  {
+    "id": 1049,
+    "name": "Ancient Lightning Spear",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Ancient Lightning Spear</font>",
+    "mod_info": "Transform the armament into a bolt of red lightning and throw it forward. Charging increases damage.",
+    "vanilla_caption": "Unique Skill: Ancient Lightning Spear",
+    "vanilla_info": "Imbue the armament with the ancient dragons' red lightning, then throw it as a spear.\nCan be charged to increase its power."
+  },
+  {
+    "id": 1050,
+    "name": "Frenzyflame Thrust",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Frenzyflame Thrust</font>",
+    "mod_info": "Imbue the armament with the flame of frenzy then jump up and plunge it into the ground, which will create an explosion and 3 trails of frenzy flame in front of you. Using this skill causes <font color=\"#EEAA2B\">madness accumulation</font> on yourself.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.",
+    "vanilla_caption": "Unique Skill: Frenzyflame Thrust",
+    "vanilla_info": "Imbue the spear with the flame of frenzy and leap forwards, plunging it into the ground and setting off a maddening explosion.\nThe skill inflicts both the enemy and the user with madness."
+  },
+  {
+    "id": 1051,
+    "name": "Miquella's Ring of Light",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Miquella's Ring of Light</font>",
+    "mod_info": "Imbue armament with golden energy then do a diagonal slash to cast it as a large ring of light projectile. Can be used repeatedly to continue casting rings of light.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 170",
+    "vanilla_caption": "Unique Skill: Miquella's Ring of Light",
+    "vanilla_info": "Summon Miquella's shining halo and fire it forwards.\nCan be fired in rapid succession."
+  },
+  {
+    "id": 1052,
+    "name": "Golden Tempering",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Golden Tempering</font>",
+    "mod_info": "Imbue the armament with holy essence for 60 seconds, which adds 100 <font color=\"#F5EB89\">holy damage</font>. During this time your charged strong attack is changed to a flurry of quick thrusts with both swords.",
+    "vanilla_caption": "Unique Skill: Golden Tempering",
+    "vanilla_info": "Cross the two swords to grant their attacks holy essence.\nWhile in effect, strong attack performs a dual-wielding combo attack."
+  },
+  {
+    "id": 1053,
+    "name": "Last Rites",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Last Rites</font>",
+    "mod_info": "Imbue yourself and nearby allies with holy essence for 60 seconds, which adds 25 <font color=\"#F5EB89\">holy damage</font> to your armaments and increases <font color=\"#E0B985\">all damage inflicted</font> by 10%. Attacks against Those Who Live in Death will inflict 100% more damage and prevent them from reviving.",
+    "vanilla_caption": "Unique Skill: Last Rites",
+    "vanilla_info": "Raise the epitaph to grant the effect of Sacred Order to yourself and allies in the vicinity.\nParticularly effective at laying to rest Those Who Live in Death."
+  },
+  {
+    "id": 1054,
+    "name": "Unblockable Blade",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Unblockable Blade</font>",
+    "mod_info": "Significantly extend the length of the blade and do a horizontal slash. This attack cannot be blocked.",
+    "vanilla_caption": "Unique Skill: Unblockable Blade",
+    "vanilla_info": "Imbue the cipher blade with light, extending its length, then strike with a sudden sweeping attack.\nThis attack cannot be blocked."
+  },
+  {
+    "id": 1055,
+    "name": "Eochaid's Dancing Blade",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Eochaid's Dancing Blade</font>",
+    "mod_info": "Imbue the armament with red energy and throw it forward to spin in the air like a drill for a short time before returning to you, then do a horizontal swipe. Charging increases damage, reach, and duration.",
+    "vanilla_caption": "Unique Skill: Eochaid's Dancing Blade",
+    "vanilla_info": "Infuse the sword with energy, then fling it forwards in a corkscrew attack. The sword continuously deals damage while violently spinning.\nCharge the attack to increase reach and duration of the spin."
+  },
+  {
+    "id": 1167,
+    "name": "Corpse Wax Cutter",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Corpse Wax Cutter</font>",
+    "mod_info": "Imbue the armament with red energy then do a downward vertical slash to cast it as a projectile. In addition to the damage from the attack, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 270",
+    "vanilla_caption": "Unique Skill: Corpse Wax Cutter",
+    "vanilla_info": "Lost skill of ancient heroes.\nLift the sword up high to release the power of corpse wax and launch it forwards as a blade-like projectile."
+  },
+  {
+    "id": 1168,
+    "name": "Zamor Ice Storm",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Zamor Ice Storm</font>",
+    "mod_info": "Plunge the armament into the ground to produce a swirl of frost around you.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 110\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 80",
+    "vanilla_caption": "Unique Skill: Zamor Ice Storm",
+    "vanilla_info": "Plunge the curved sword into the ground, building power before unleashing a freezing storm that batters the surroundings."
+  },
+  {
+    "id": 1169,
+    "name": "Radahn's Rain",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Radahn's Rain</font>",
+    "mod_info": "Hold to crouch in a prepared stance. Arrows shot while in this stance will be shot nearly straight up and split into a barrage of arrows which will arc to land around the area where the target was standing when the arrow was shot.",
+    "vanilla_caption": "Unique Skill: Radahn's Rain",
+    "vanilla_info": "Archery skill performed from a low stance.\nReady the bow and fire a sudden flurry of arrows up into the sky. The arrows will pour on foes like rain."
+  },
+  {
+    "id": 1170,
+    "name": "The Queen's Black Flame",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: The Queen's Black Flame</font>",
+    "mod_info": "Imbue the armament with a black flame and do a diagonal slash. In addition to the damage from the attack, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds. Follow up by using the skill a second time to do another diagonal slash while the armament is still imbued with black flame.",
+    "vanilla_caption": "Unique Skill: The Queen's Black Flame",
+    "vanilla_info": "Set the blade ablaze with the god-slaying black flame before delivering a sweeping slash. Additional input allows for a follow-up attack. The black flames will continue to wear down HP for a while."
+  },
+  {
+    "id": 1171,
+    "name": "Dynast's Finesse",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Dynast's Finesse</font>",
+    "mod_info": "Do a horizontal slash in a full circle around you as you back away from where you were standing. Follow up with a strong attack to lunge forward with a thrust attack. Follow that up by using another strong attack to step forward while doing a thrust then a horizontal slash.",
+    "vanilla_caption": "Unique Skill: Dynast's Finesse",
+    "vanilla_info": "Nimbly avoid an attack, securing some distance from foes. Follow up with strong attack to perform a sudden lunge, and press strong attack again to perform a sweeping slice."
+  },
+  {
+    "id": 1172,
+    "name": "Magma Shower",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Magma Shower</font>",
+    "mod_info": "Do a horizontal slash in a full circle around you as you scatter small pools of magma in a small area around you. Follow up by using the skill a second time to quickly do another spin, spreading more magma.\n\n<font color=\"#F48C25\">Base fire damage (magma):</font> 30",
+    "vanilla_caption": "Unique Skill: Magma Shower",
+    "vanilla_info": "Slash at foes in a twirling motion while scattering magma all around.\nAdditional input allows for a follow-up attack."
+  },
+  {
+    "id": 1173,
+    "name": "Nebula",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Nebula</font>",
+    "mod_info": "Conjure a wide arc of cosmic clouds in front of you, which will explode after a short delay.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 100",
+    "vanilla_caption": "Unique Skill: Nebula",
+    "vanilla_info": "Imbue the Naturalborn's wings with magic to send forth a dark cloud of stars that lingers briefly before exploding."
+  },
+  {
+    "id": 1174,
+    "name": "Death Flare",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Death Flare</font>",
+    "mod_info": "Imbue the armament with golden flames for 45 seconds, adding 65 <font color=\"#F5EB89\">holy damage</font> and 30 <font color=\"#A17945\">death blight accumulation</font> per attack. Follow up by using the skill a second time to do a downward vertical slash, which will create an explosion in front of you.\n\n<font color=\"#A17945\">Death blight:</font> Instant death. Only effective against Tarnished.\n\n<font color=\"#A17945\">Death blight accumulation (explosion):</font> 70",
+    "vanilla_caption": "Unique Skill: Death Flare",
+    "vanilla_info": "Set the lusterless sun ablaze with the Prince of Death's flames, inflicting the death ailment upon foes.\nFollow up with an additional input to bring down the armament, triggering an explosion."
+  },
+  {
+    "id": 1175,
+    "name": "Bloodhound's Finesse",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Bloodhound's Finesse</font>",
+    "mod_info": "Do a vertical slash in a full circle then jump back away from where you were standing. Follow up by using a strong attack to briefly turn invisible as you dash forward and do an upward slash.",
+    "vanilla_caption": "Unique Skill: Bloodhound's Finesse",
+    "vanilla_info": "Slash upwards with the Bloodhound's Fang, using the momentum of the strike to perform a backwards somersault and gain some distance from foes. Follow up with a strong attack to perform the Bloodhound's Step attack."
+  },
+  {
+    "id": 1176,
+    "name": "Magma Guillotine",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Magma Guillotine</font>",
+    "mod_info": "Leap forward and slam the armament into the ground to create a large pool of magma all around you. Follow up by using the skill a second time to reach forward and do a vertical slash, then drag the armament on the ground back to you.\n\n<font color=\"#F48C25\">Base fire damage (magma)</font> 35",
+    "vanilla_caption": "Unique Skill: Magma Guillotine",
+    "vanilla_info": "Grab the scalesword with both hands, as a wyrm would hold it in its mouth, and leap forwards, smashing it into the ground and triggering a blast of magma. Follow up with an additional input to perform a chopping attack."
+  },
+  {
+    "id": 1177,
+    "name": "Corpse Piler",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Corpse Piler</font>",
+    "mod_info": "Do 2 quick diagonal slashes. A trail of blood will follow along in front of your slashes, extending the reach of the attack. Follow up by using the skill a second time to do 3 more quick diagonal slashes. Follow that up by using another strong attack to do a downward vertical slash.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#C84343\">Blood loss accumulation (diagonal slashes):</font> 45\n<font color=\"#C84343\">Blood loss accumulation (downward slash):</font> 50",
+    "vanilla_caption": "Unique Skill: Corpse Piler",
+    "vanilla_info": "Forms a blade of cursed blood for repeated, interweaving successive attacks. Follow up with an additional input for further successive attacks."
+  },
+  {
+    "id": 1178,
+    "name": "Transient Moonlight",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Transient Moonlight</font>",
+    "mod_info": "Sheathe armament in preparation for an attack. Hold to keep weapon sheathed. Can be used while moving. Follow up with a normal attack to quickly step forward while doing a horizontal slash. Alternatively, follow up with a strong attack to do a small hop forward while doing a downward vertical slash. Both follow up attacks cast a wave of blue energy forward.\n\n<font color=\"#57DBCE\">Base magic damage (normal projectile):</font> 140\n<font color=\"#57DBCE\">Base magic damage (strong projectile):</font> 155",
+    "vanilla_caption": "Unique Skill: Transient Moonlight",
+    "vanilla_info": "Sheathe blade, holding it at the hip in a composed stance.\nFollow up with either a normal or a strong attack to draw the blade at great speed for an instant slash attack. Both attacks fire off a wave of light."
+  },
+  {
+    "id": 1179,
+    "name": "Bloodblade Dance",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Bloodblade Dance</font>",
+    "mod_info": "Imbue the armament with blood then leap forward and do a flurry of quick slashes. Follow up by using the skill a second time to do another slash all around you as you back away.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#C84343\">Base blood loss accumulation:</font> 55",
+    "vanilla_caption": "Unique Skill: Bloodblade Dance",
+    "vanilla_info": "Leap at foe to perform a flurry of tornado-like attacks.\nFollow up with an additional input to perform an attack that ends in an evasive maneuver."
+  },
+  {
+    "id": 1182,
+    "name": "Knowledge Above All",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Knowledge Above All</font>",
+    "mod_info": "Raise the armament to imbue yourself and nearby enemies with a cursed energy for 60 seconds which reduces <font color=\"#57DBCE\">magic damage negation</font> and <font color=\"#F5EB89\">holy damage negation</font> by 10%.",
+    "vanilla_caption": "Unique Skill: Knowledge Above All",
+    "vanilla_info": "Raise the scepter to manifest the realm of the All-Knowing. Enemy magic and holy damage negation will be reduced for all within the area, including the caster."
+  },
+  {
+    "id": 1183,
+    "name": "Devourer of Worlds",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Devourer of Worlds</font>",
+    "mod_info": "Plant the armament in the ground and release a wave of red energy in a very large area around you. Each enemy hit by this will restore 15% of your <font color=\"#E0B985\">maximum HP</font>.",
+    "vanilla_caption": "Unique Skill: Devourer of Worlds",
+    "vanilla_info": "Charge the scepter with magic and strike it against the ground to steal the HP of all nearby enemies."
+  },
+  {
+    "id": 1184,
+    "name": "Familial Rancor",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Familial Rancor</font>",
+    "mod_info": "Raise the armament to release 7 spirits which will seek out enemies.",
+    "vanilla_caption": "Unique Skill: Familial Rancor",
+    "vanilla_info": "Gently rattle the copper heads to summon vengeful spirits that chase down foes.\nThe anguish of a spouse and children invites accursed wrath."
+  },
+  {
+    "id": 1185,
+    "name": "Rosus's Summons",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Rosus's Summons</font>",
+    "mod_info": "Summon 3 skeletons near you which will each do a single vertical swing of their sword, as you do as well, before disappearing. Together, the four of you will attack one fixed point in front of you from different angles.",
+    "vanilla_caption": "Unique Skill: Rosus's Summons",
+    "vanilla_info": "Raise the axe aloft to summon those lost in death.\nThree skeletons will appear at a distance and attack in tandem before vanishing."
+  },
+  {
+    "id": 1186,
+    "name": "Thunderstorm",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Thunderstorm</font>",
+    "mod_info": "Imbue the armament with lightning then swing it in circles around you to produce a swirl of wind and lightning around you. Follow up by using the skill up to two additional times to continue creating swirls of wind and lightning. The armament will retain its imbuement for 40 seconds, which adds 120 <font color=\"#FFE033\">lightning damage</font>.\n\n<font color=\"#FFE033\">Base lightning damage (swirl):</font> 95",
+    "vanilla_caption": "Unique Skill: Thunderstorm",
+    "vanilla_info": "Imbue the armament's wing-blade with lightning and swing it around to create a tempestuous lightning storm. Follow up with an additional input to perform up to two spinning attacks.\nThe lightning will stay on the blade for a while."
+  },
+  {
+    "id": 1187,
+    "name": "Sacred Phalanx",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Sacred Phalanx</font>",
+    "mod_info": "Imbue the armament with golden energy then do an upward vertical slash. Shortly after this a long, horizontal line of golden spears will emerge from the ground in front of you.",
+    "vanilla_caption": "Unique Skill: Sacred Phalanx",
+    "vanilla_info": "Release the power of a hidden incantation to erect a palisade of golden spears frontwards."
+  },
+  {
+    "id": 1188,
+    "name": "Great-Serpent Hunt",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Great-Serpent Hunt</font>",
+    "mod_info": "Take a moment to build up power then thrust the weapon forward. Follow up by using the skill a second time to do a strong upward vertical slash. While fighting a great serpent, a long blade of light will greatly extend the reach of this skill.",
+    "vanilla_caption": "Unique Skill: Great-Serpent Hunt",
+    "vanilla_info": "Perform a powerful forward lunge and follow up with an upward thrust via additional input. When fighting a great serpent, a long blade of light will appear, revealing the armament's true power."
+  },
+  {
+    "id": 1189,
+    "name": "Angel's Wings",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Angel's Wings</font>",
+    "mod_info": "Imbue the armament with light and do an upward slash as you jump into the air, then do a horizontal slash as you return to the ground. Enemies hit by this attack will be unable to use a Flask of Crimson Tears or Flask of Cerulean Tears for 20 seconds.",
+    "vanilla_caption": "Unique Skill: Angel's Wings",
+    "vanilla_info": "Jump and imbue the wing-blade of the armament with light, then deliver a slashing attack on the enemy.\nThe white wings impede recovery actions using a flask of tears."
+  },
+  {
+    "id": 1190,
+    "name": "Storm Kick",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Storm Kick</font>",
+    "mod_info": "Plunge the armament into the ground to produce a swirl of wind around you. Follow up with a strong attack to leap forward while imbuing the armament with lightning, then slam the armament into the ground to create a small explosion of lightning.",
+    "vanilla_caption": "Unique Skill: Storm Kick",
+    "vanilla_info": "Thrust the prosthetic leg blade into the ground, creating a storm.\nFollow up with a strong attack to perform a lightning-infused jumping attack."
+  },
+  {
+    "id": 1191,
+    "name": "Unblockable Blade",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Unblockable Blade</font>",
+    "mod_info": "Imbue the armament with light then thrust it forward. This attack cannot be blocked.",
+    "vanilla_caption": "Unique Skill: Unblockable Blade",
+    "vanilla_info": "Imbue the cipher blade with light, then lunge forward with a sudden piercing attack.\nThis attack cannot be blocked."
+  },
+  {
+    "id": 1192,
+    "name": "Sorcery of the Crozier",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Sorcery of the Crozier</font>",
+    "mod_info": "Raise armament to conjure 8 small projectiles of glintstone magic around you which will seek out nearby enemies.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 60",
+    "vanilla_caption": "Unique Skill: Sorcery of the Crozier",
+    "vanilla_info": "Channel magic into the glintstone to activate an ancient sorcery, producing floating magic projectiles that chase enemies automatically."
+  },
+  {
+    "id": 1193,
+    "name": "Erdtree Slam",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Erdtree Slam</font>",
+    "mod_info": "Jump up into the air and slam back to the ground on your butt to create a large shockwave of sacred energy around you which may knock down nearby enemies.",
+    "vanilla_caption": "Unique Skill: Erdtree Slam",
+    "vanilla_info": "Jump up high into the air and crash down on the ground ahead. The resulting pratfall sends golden shockwaves in all directions.\nThis is the most powerful of all the Ground Slam skills."
+  },
+  {
+    "id": 1194,
+    "name": "Gravity Bolt",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Gravity Bolt</font>",
+    "mod_info": "Imbue the armament with gravitational lightning then raise the armament up to cast it at a target. Large rocks will emerge from the ground where it strikes. This attack may knock down some enemies. Can be used repeatedly.",
+    "vanilla_caption": "Unique Skill: Gravity Bolt",
+    "vanilla_info": "Imbue the jaw of the fallingstar beast with gravitational lightning, sending a bolt crashing down a short distance away.\nCan be fired in rapid succession."
+  },
+  {
+    "id": 1195,
+    "name": "Fires of Slumber",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Fires of Slumber</font>",
+    "mod_info": "Blow the torch's flame in a wide arc in front of you. If the flames touch the ground it will continue to burn on the ground for a short time.",
+    "vanilla_caption": "Unique Skill: Fires of Slumber",
+    "vanilla_info": "Blow into the candlestick's flame, creating a stream of hazy purple fire to cover the ground ahead.\nThe intoxicating flames inflict the sleep ailment upon foes."
+  },
+  {
+    "id": 1196,
+    "name": "Golden Retaliation",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Golden Retaliation</font>",
+    "mod_info": "Block with precise timing to absorb an incoming spell, convert it into golden energy, then cast it back at the target.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 150",
+    "vanilla_caption": "Unique Skill: Golden Retaliation",
+    "vanilla_info": "Ready the shield to unleash its protective incantation.\nThis will dispel sorceries and incantations, retaliating with golden power."
+  },
+  {
+    "id": 1197,
+    "name": "Contagious Fury",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Contagious Fury</font>",
+    "mod_info": "Raise the armament to imbue yourself with red energy for 30 seconds, which increases <font color=\"#E0B985\">all damage inflicted</font> by 20%.",
+    "vanilla_caption": "Unique Skill: Contagious Fury",
+    "vanilla_info": "Incite the jellyfish's wrath and allow its fury to flow through you.\nRaises attack power for a certain duration."
+  },
+  {
+    "id": 1198,
+    "name": "Ordovis's Vortex",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Ordovis's Vortex</font>",
+    "mod_info": "Spin the armament vertically in the air behind you for a short time before slamming into the ground in front of you to produce a large shockwave. Charging increases damage.",
+    "vanilla_caption": "Unique Skill: Ordovis's Vortex",
+    "vanilla_info": "Channel the power of the crucible to spin the entire sword in midair, building momentum before slamming the blade down onto the ground.\nThis skill can be charged to increase its power."
+  },
+  {
+    "id": 1199,
+    "name": "Spinning Weapon",
+    "category": "skill",
+    "mod_caption": "<font color=\"#C0B194\">      Unique Skill: Spinning Weapon</font>",
+    "mod_info": "Imbue armament with glintstone magic then telekinetically lift it in front of you and spin it vertically several times. Can be used while moving.",
+    "vanilla_caption": "Unique Skill: Spinning Weapon",
+    "vanilla_info": "Channel magic into the glintstone to suspend the scepter in mid air and cause it to spin violently.\nThose it touches will suffer successive magic attacks."
+  }
+]

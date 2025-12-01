@@ -1,0 +1,138 @@
+[
+  {
+    "id": 2090,
+    "info": "Give to the Beast Clergyman, found at Bestial Sanctum in the distant east, who collects and devours these roots."
+  },
+  {
+    "id": 2130,
+    "name": "Celestial Dew",
+    "info": "Allows you to carry out an Absolution at the Church of Vows.\n\nAbsolution causes anyone who was previously friendly towards you to forgive your violent transgressions towards them, if they're still alive."
+  },
+  {
+    "id": 8000,
+    "name": "Stonesword Key",
+    "info": "Breaks the seal on imp statues. Remains embedded in the statue after use, meaning it can only be used once.\n\nSome imp statues require 2 keys to break the seal."
+  },
+  {
+    "id": 8109,
+    "name": "Academy Glintstone Key",
+    "info": "Allows access to the Academy of Raya Lucaria."
+  },
+  {
+    "id": 8111,
+    "name": "Carian Inverted Statue",
+    "info": "Reveals the hidden form of the Carian Study Hall."
+  },
+  {
+    "id": 8131,
+    "name": "Irina's Letter",
+    "info": "Irina requested this be given to her father, the commander of Castle Morne."
+  },
+  {
+    "id": 8134,
+    "name": "Drawing-Room Key",
+    "info": "Allows access some of the rooms in Volcano Manor, including the drawing room."
+  },
+  {
+    "id": 8142,
+    "name": "Amber Starlight",
+    "info": "Ingredient used in a special draught."
+  },
+  {
+    "id": 8158,
+    "name": "Spirit Calling Bell",
+    "info": "Possessing this allows you to summon spirits from ashen remains.\n\n \n\nOnly one type of spirit may be summoned at once."
+  },
+  {
+    "id": 8159,
+    "name": "Fingerslayer Blade",
+    "caption": "The hidden treasure of the Eternal City of Nokron and symbolizes its downfall; a blood-drenched blade said to have been born of a corpse.",
+    "info": "Proof of the high treason committed by the Eternal City."
+  },
+  {
+    "id": 8161,
+    "name": "Sewing Needle",
+    "info": "Enables garb alterations from Boc."
+  },
+  {
+    "id": 8162,
+    "name": "Gold Sewing Needle",
+    "info": "Allows demigod garb alterations from Boc."
+  },
+  {
+    "id": 8163,
+    "name": "Tailoring Tools",
+    "info": "Enables garb alterations at sites of grace."
+  },
+  {
+    "id": 8164,
+    "name": "Seluvis's Potion",
+    "info": "- Seluvis"
+  },
+  {
+    "id": 8166,
+    "name": "Amber Draught",
+    "info": "- Seluvis"
+  },
+  {
+    "id": 8174,
+    "name": "Academy Glintstone Key",
+    "caption": "A glintstone key will remember its user, meaning once used it can never be passed on to another. The academy does not welcome the indolent.",
+    "info": "Allows access to the Academy of Raya Lucaria."
+  },
+  {
+    "id": 8188,
+    "name": "Golden Tailoring Tools",
+    "info": "Allows demigod garb alterations at sites of grace."
+  },
+  {
+    "id": 8199,
+    "name": "Discarded Palace Key",
+    "info": "Opens a treasure chest passed down to Carian Princesses, found in the Grand Library of Raya Lucaria."
+  },
+  {
+    "id": 8970,
+    "name": "Iron Whetblade",
+    "info": "When applying an affinity using ashes of war, additional affinities can be chosen:\n\n- <font color=\"#F395C4\">Heavy</font>\n- <font color=\"#F395C4\">Keen</font>\n- <font color=\"#F395C4\">Quality</font>"
+  },
+  {
+    "id": 8971,
+    "name": "Red-Hot Whetblade",
+    "info": "When applying an affinity using physical or flame-type ashes of war, additional affinities can be chosen:\n\n- <font color=\"#F48C25\">Fire</font>\n- <font color=\"#F48C25\">Flame art</font>"
+  },
+  {
+    "id": 8972,
+    "name": "Sanctified Whetblade",
+    "info": "When applying an affinity using physical or golden-type ashes of war, additional affinities can be chosen:\n\n- <font color=\"#F5EB89\">Sacred</font>\n- <font color=\"#FFE033\">Lightning</font>"
+  },
+  {
+    "id": 8973,
+    "name": "Glintstone Whetblade",
+    "info": "When applying an affinity using physical or magic-type ashes of war, additional affinities can be chosen:\n\n- <font color=\"#57DBCE\">Magic</font>\n- <font color=\"#9DD7FB\">Frost</font>"
+  },
+  {
+    "id": 8974,
+    "name": "Black Whetblade",
+    "info": "When applying an affinity using physical or occult-type ashes of war, additional affinities can be chosen:\n\n- <font color=\"#40BF40\">Poison</font>\n- <font color=\"#C84343\">Blood</font>\n- <font color=\"#E0B985\">Occult</font>"
+  },
+  {
+    "id": 8979,
+    "name": "Beast Eye",
+    "info": "Trembles when near Deathroot."
+  },
+  {
+    "id": 8980,
+    "name": "Weathered Dagger",
+    "info": "Fia wishes for it to be returned to its rightful owner."
+  },
+  {
+    "id": 10030,
+    "name": "Memory Stone",
+    "info": "Possessing this increases the number of available <font color=\"#E0B985\">memory slots</font> by 1, allowing more spells to be memorized."
+  },
+  {
+    "id": 10040,
+    "name": "Talisman Pouch",
+    "info": "Possessing this increases the number of available <font color=\"#E0B985\">talisman slots</font> by 1, allowing another talisman to be equipped."
+  }
+]

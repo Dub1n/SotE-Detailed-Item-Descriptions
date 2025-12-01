@@ -1,0 +1,484 @@
+[
+  {
+    "id": 120000,
+    "name": "Alberich's Pointed Hat",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for thorn sorceries by 6%."
+  },
+  {
+    "id": 120100,
+    "name": "Alberich's Robe",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for thorn sorceries by 6%."
+  },
+  {
+    "id": 120200,
+    "name": "Alberich's Bracers",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for thorn sorceries by 6%."
+  },
+  {
+    "id": 121000,
+    "name": "Alberich's Pointed Hat (Altered)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for thorn sorceries by 6%."
+  },
+  {
+    "id": 130000,
+    "name": "Spellblade's Pointed Hat",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for glintstone sorceries by 2%."
+  },
+  {
+    "id": 130100,
+    "name": "Spellblade's Traveling Attire",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for glintstone sorceries by 2%."
+  },
+  {
+    "id": 130200,
+    "name": "Spellblade's Gloves",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for glintstone sorceries by 2%."
+  },
+  {
+    "id": 130300,
+    "name": "Spellblade's Trousers",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for glintstone sorceries by 2%."
+  },
+  {
+    "id": 131100,
+    "name": "Spellblade's Traveling Attire (Altered)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for glintstone sorceries by 2%."
+  },
+  {
+    "id": 180100,
+    "name": "Black Knife Armor",
+    "caption": "Traces of power yet remain in its concealing veil. \n\n<font color=\"#C0B194\">Passive Effect:</font>\nNegates all movement sounds made by the wearer."
+  },
+  {
+    "id": 210000,
+    "name": "Briar Helm",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nInflicts 18 <font color=\"#F395C4\">physical damage</font> to any enemy in the path of your dodge roll."
+  },
+  {
+    "id": 210100,
+    "name": "Briar Armor",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nInflicts 25 <font color=\"#F395C4\">physical damage</font> to any enemy in the path of your dodge roll."
+  },
+  {
+    "id": 210200,
+    "name": "Briar Gauntlets",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nInflicts 18 <font color=\"#F395C4\">physical damage</font> to any enemy in the path of your dodge roll."
+  },
+  {
+    "id": 210300,
+    "name": "Briar Greaves",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nInflicts 18 <font color=\"#F395C4\">physical damage</font> to any enemy in the path of your dodge roll."
+  },
+  {
+    "id": 211100,
+    "name": "Briar Armor (Altered)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nInflicts 25 <font color=\"#F395C4\">physical damage</font> to any enemy in the path of your dodge roll."
+  },
+  {
+    "id": 301000,
+    "name": "Shining Horned Headband",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of Ancestral Infant's Head by 20%."
+  },
+  {
+    "id": 310000,
+    "name": "Duelist Helm",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player."
+  },
+  {
+    "id": 310300,
+    "name": "Duelist Greaves",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player."
+  },
+  {
+    "id": 311100,
+    "name": "Gravekeeper Cloak (Altered)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player."
+  },
+  {
+    "id": 330100,
+    "name": "Guardian Garb (Full Bloom)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases HP restoration from Flask of Crimson Tears by 10%."
+  },
+  {
+    "id": 440000,
+    "name": "Pumpkin Helm",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nReduces damage and impact of headshots."
+  },
+  {
+    "id": 510000,
+    "name": "Queen's Crescent Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> by 3."
+  },
+  {
+    "id": 530100,
+    "name": "Godskin Noble Robe",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of the Noble Presence incantation by 20%."
+  },
+  {
+    "id": 570000,
+    "name": "Crucible Axe Helm",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%."
+  },
+  {
+    "id": 570100,
+    "name": "Crucible Axe Armor",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%."
+  },
+  {
+    "id": 570200,
+    "name": "Crucible Gauntlets",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%."
+  },
+  {
+    "id": 570300,
+    "name": "Crucible Greaves",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%."
+  },
+  {
+    "id": 571000,
+    "name": "Crucible Tree Helm",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%."
+  },
+  {
+    "id": 571100,
+    "name": "Crucible Tree Armor",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%."
+  },
+  {
+    "id": 572100,
+    "name": "Crucible Axe Armor (Altered)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%."
+  },
+  {
+    "id": 573100,
+    "name": "Crucible Tree Armor (Altered)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%."
+  },
+  {
+    "id": 580000,
+    "name": "Lusat's Glintstone Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for primeval current sorceries by 10-15%, but increases FP consumption for sorceries by 15%."
+  },
+  {
+    "id": 581000,
+    "name": "Azur's Glintstone Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for primeval current sorceries by 10-15%, but increases FP consumption for sorceries by 15%."
+  },
+  {
+    "id": 680000,
+    "name": "White Mask",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all damage inflicted</font> by 10% for 20 seconds when <font color=\"#C84343\">blood loss</font> occurs nearby."
+  },
+  {
+    "id": 690000,
+    "name": "Royal Remains Helm",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nRestores 2 HP per second while HP is below 18%."
+  },
+  {
+    "id": 690100,
+    "name": "Royal Remains Armor",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nRestores 2 HP per second while HP is below 18%."
+  },
+  {
+    "id": 690200,
+    "name": "Royal Remains Gauntlets",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nRestores 2 HP per second while HP is below 18%."
+  },
+  {
+    "id": 690300,
+    "name": "Royal Remains Greaves",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nRestores 2 HP per second while HP is below 18%."
+  },
+  {
+    "id": 740000,
+    "name": "Crimson Hood",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">vigor</font> by 1."
+  },
+  {
+    "id": 741000,
+    "name": "Navy Hood",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">mind</font> by 1."
+  },
+  {
+    "id": 810100,
+    "name": "Commoner's Garb",
+    "caption": "This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree.\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1."
+  },
+  {
+    "id": 811100,
+    "name": "Commoner's Garb (Altered)",
+    "caption": "This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree.\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1."
+  },
+  {
+    "id": 812000,
+    "name": "Commoner's Simple Garb",
+    "caption": "This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree.\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1."
+  },
+  {
+    "id": 812100,
+    "name": "Commoner's Simple Garb (Altered)",
+    "caption": "This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree.\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1."
+  },
+  {
+    "id": 820000,
+    "name": "Envoy Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of bubble-based skills by 15%. This effect does not work for bubble-based sorceries."
+  },
+  {
+    "id": 830000,
+    "name": "Twinsage Glintstone Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> by 6, but reduces <font color=\"#E0B985\">maximum HP</font> and <font color=\"#E0B985\">maximum stamina</font> by 9%."
+  },
+  {
+    "id": 831000,
+    "name": "Olivinus Glintstone Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> by 3, but reduces <font color=\"#E0B985\">maximum HP</font> by 9%."
+  },
+  {
+    "id": 832000,
+    "name": "Lazuli Glintstone Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">dexterity</font> by 3, but reduces <font color=\"#E0B985\">maximum HP</font> by 18%."
+  },
+  {
+    "id": 833000,
+    "name": "Karolos Glintstone Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> by 3, but reduces <font color=\"#E0B985\">maximum stamina</font> by 9%."
+  },
+  {
+    "id": 834000,
+    "name": "Witch's Glintstone Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">arcane</font> by 3, but reduces <font color=\"#E0B985\">maximum stamina</font> by 18%."
+  },
+  {
+    "id": 872000,
+    "name": "Okina Mask",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">dexterity</font> by 3, but reduces <font color=\"#E0B985\">focus</font> by 50.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
+  },
+  {
+    "id": 910000,
+    "name": "Preceptor's Big Hat",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">mind</font> by 3, but reduces <font color=\"#E0B985\">maximum stamina</font> by 9%."
+  },
+  {
+    "id": 911000,
+    "name": "Mask of Confidence",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">arcane</font> by 3."
+  },
+  {
+    "id": 930100,
+    "name": "Raptor's Black Feathers",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for jump attacks by 10%."
+  },
+  {
+    "id": 960000,
+    "name": "Consort's Mask",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">dexterity</font> by 1."
+  },
+  {
+    "id": 961000,
+    "name": "Ruler's Mask",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1."
+  },
+  {
+    "id": 963000,
+    "name": "Marais Mask",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">arcane</font> by 1."
+  },
+  {
+    "id": 970000,
+    "name": "Omen Helm",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of Omen Bairn and Regal Omen Bairn by 5%."
+  },
+  {
+    "id": 970100,
+    "name": "Omen Armor",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of Omen Bairn and Regal Omen Bairn by 5%."
+  },
+  {
+    "id": 970200,
+    "name": "Omen Gauntlets",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of Omen Bairn and Regal Omen Bairn by 5%."
+  },
+  {
+    "id": 970300,
+    "name": "Omen Greaves",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of Omen Bairn and Regal Omen Bairn by 5%."
+  },
+  {
+    "id": 990000,
+    "name": "Hierodas Glintstone Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">endurance</font> by 2, but reduces <font color=\"#E0B985\">maximum FP</font> by 9%."
+  },
+  {
+    "id": 1000000,
+    "name": "Haima Glintstone Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">strength</font> by 2, but reduces <font color=\"#E0B985\">maximum FP</font> by 9%."
+  },
+  {
+    "id": 1010000,
+    "name": "Snow Witch Hat",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for cold sorceries by 10%."
+  },
+  {
+    "id": 1040000,
+    "name": "Radiant Gold Mask",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Golden Order incantations by 10%."
+  },
+  {
+    "id": 1060000,
+    "name": "Albinauric Mask",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">arcane</font> by 4, but reduces the HP restoration from Flask of Crimson Tears by 10%."
+  },
+  {
+    "id": 1080000,
+    "name": "Imp Head (Cat)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> by 2."
+  },
+  {
+    "id": 1081000,
+    "name": "Imp Head (Fanged)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">strength</font> by 2."
+  },
+  {
+    "id": 1082000,
+    "name": "Imp Head (Long-Tongued)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">dexterity</font> by 2."
+  },
+  {
+    "id": 1083000,
+    "name": "Imp Head (Corpse)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 2."
+  },
+  {
+    "id": 1084000,
+    "name": "Imp Head (Wolf)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">endurance</font> by 2."
+  },
+  {
+    "id": 1085000,
+    "name": "Imp Head (Elder)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">arcane</font> by 2."
+  },
+  {
+    "id": 1090000,
+    "name": "Silver Tear Mask",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">arcane</font> by 8, but reduces <font color=\"#F395C4\">physical attack power</font> by 5%."
+  },
+  {
+    "id": 1120000,
+    "name": "Jar",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for throwing pot items by 15%."
+  },
+  {
+    "id": 1300000,
+    "name": "Nox Mirrorhelm",
+    "caption": "Weak against striking attacks."
+  },
+  {
+    "id": 1301000,
+    "name": "Iji's Mirrorhelm",
+    "caption": "Weak against striking attacks."
+  },
+  {
+    "id": 1600000,
+    "name": "Greathood",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">faith</font> by 2, but reduces <font color=\"#E0B985\">maximum HP</font> by 9%."
+  },
+  {
+    "id": 1750000,
+    "name": "Haligtree Helm",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1."
+  },
+  {
+    "id": 1820000,
+    "name": "Haligtree Knight Helm",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 2."
+  },
+  {
+    "id": 1880000,
+    "name": "Sacred Crown Helm",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1."
+  },
+  {
+    "id": 1890000,
+    "name": "Omensmirk Mask",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">strength</font> by 2."
+  },
+  {
+    "id": 1900000,
+    "name": "Ash-of-War Scarab",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nReduces the FP consumption of skills by 15%, but increases <font color=\"#E0B985\">all damage received</font> by 10%."
+  },
+  {
+    "id": 1901000,
+    "name": "Incantation Scarab",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nReduces the FP consumption of incantations by 15%, but increases <font color=\"#E0B985\">all damage received</font> by 10%."
+  },
+  {
+    "id": 1902000,
+    "name": "Glintstone Scarab",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nReduces the FP consumption of sorceries by 15%, but increases <font color=\"#E0B985\">all damage received</font> by 10%."
+  },
+  {
+    "id": 1910000,
+    "name": "Crimson Tear Scarab",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases HP restoration from Flask of Crimson Tears by 10%, but increases <font color=\"#E0B985\">all damage received</font> by 10%."
+  },
+  {
+    "id": 1920000,
+    "name": "Cerulean Tear Scarab",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases FP restoration from Flask of Cerulean Tears by 10%, but increases <font color=\"#E0B985\">all damage received</font> by 10%."
+  },
+  {
+    "id": 1930100,
+    "name": "Deathbed Dress",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nRestores 2 HP per second for nearby allies, but not for the wearer.",
+    "info": "Dress worn by Fia, the Deathbed Companion."
+  },
+  {
+    "id": 1930300,
+    "name": "Deathbed Smalls",
+    "caption": "Undergarment worn by Fia, the Deathbed Companion.",
+    "info": "Undergarment worn by Fia, the Deathbed Companion."
+  },
+  {
+    "id": 1940000,
+    "name": "Fia's Hood",
+    "info": "Hood worn by Fia, the Deathbed Companion."
+  },
+  {
+    "id": 1940100,
+    "name": "Fia's Robe",
+    "info": "Robe worn by Fia, the Deathbed Companion."
+  },
+  {
+    "id": 1941100,
+    "name": "Fia's Robe (Altered)",
+    "info": "Gown worn by Fia, the Deathbed Companion."
+  },
+  {
+    "id": 2000000,
+    "name": "Rotten Duelist Helm",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player."
+  },
+  {
+    "id": 2000300,
+    "name": "Rotten Duelist Greaves",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player."
+  },
+  {
+    "id": 2001100,
+    "name": "Rotten Gravekeeper Cloak (Altered)",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player."
+  },
+  {
+    "id": 2010000,
+    "name": "Mushroom Crown",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all damage inflicted</font> by 10% for 20 seconds when <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">scarlet rot</font> occurs nearby."
+  },
+  {
+    "id": 2020000,
+    "name": "Black Dumpling",
+    "caption": "<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all damage inflicted</font> by 10% for 60 seconds when the wearer suffers from <font color=\"#EEAA2B\">madness</font>."
+  }
+]

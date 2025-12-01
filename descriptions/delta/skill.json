@@ -1,0 +1,907 @@
+[
+  {
+    "id": 100,
+    "name": "Lion's Claw",
+    "info": "Jump into a frontward flip then slam your armament down in front of you as you land."
+  },
+  {
+    "id": 101,
+    "name": "Impaling Thrust",
+    "info": "Thrust armament forward with enough force to pierce an enemy's guard."
+  },
+  {
+    "id": 102,
+    "name": "Piercing Fang",
+    "info": "Starting with the blade held horizontally over your head, thrust armament forward with enough force to pierce an enemy's guard."
+  },
+  {
+    "id": 103,
+    "name": "Spinning Slash",
+    "info": "Spin around in a circle then slash your armament in front of you. Follow up by using the skill a second time to perform two more spins, each with their own forward slash."
+  },
+  {
+    "id": 105,
+    "name": "Charge Forth",
+    "info": "Charge forward with the armament held out in front of you, then thrust the armament forward with force. Hold to charge farther."
+  },
+  {
+    "id": 106,
+    "name": "Stamp (Upward Cut)",
+    "info": "Stomp forward and briefly brace for an incoming attack. While in this stance <font color=\"#E0B985\">all damage received</font> is reduced by 50% and you are much less likely to stagger from getting hit. Follow up with a strong attack to do an upward strike, which may knock some enemies into the air."
+  },
+  {
+    "id": 107,
+    "name": "Stamp (Sweep)",
+    "info": "Stomp forward and briefly brace for an incoming attack. While in this stance <font color=\"#E0B985\">all damage received</font> is reduced by 50% and you are much less likely to stagger from getting hit. Follow up with a strong attack to do a horizontal slash in a full circle around you."
+  },
+  {
+    "id": 108,
+    "name": "Blood Tax",
+    "info": "Spin around in a circle then rapidly thrust your armament forward 4 times. Each of the first 3 thrusts that hit an enemy will restore 2% of your <font color=\"#E0B985\">maximum HP</font> plus 25, and the final thrust will restore 4% of your <font color=\"#E0B985\">maximum HP</font> plus 45 if it hits an enemy."
+  },
+  {
+    "id": 109,
+    "name": "Repeating Thrust",
+    "info": "Spin around in a circle then rapidly thrust your armament forward 4 times."
+  },
+  {
+    "id": 110,
+    "name": "Wild Strikes",
+    "info": "Swing armament in an X-shaped pattern. Hold to coninue swinging. Can be used while moving. Follow up with a normal attack to do a horizontal slash in a full circle around you. Alternatively, follow up with a strong attack to raise your armament and do a downward vertical slash."
+  },
+  {
+    "id": 111,
+    "name": "Spinning Strikes",
+    "info": "Raise armament above your head and spin it in a circle horizontally, which can deflect small physical projectiles. Hold to continue spinning it. Can be used while moving and camera can be used to control angle. Follow with a normal attack to do a horizontal slash in a full circle around you, ending with a second slash forward. Alternatively, follow with a strong attack to leap forward and slam the armament downward in front of you."
+  },
+  {
+    "id": 112,
+    "name": "Double Slash",
+    "info": "Step forward and slash your armament forward twice in an X-shaped pattern. Follow up by using the skill a second time to perform three more slashes. Follow that up by using the skill a third time to do a powerful downward slash."
+  },
+  {
+    "id": 113,
+    "name": "Prelate's Charge",
+    "info": "Raise and ignite armament before slamming it into the ground and charging forward, leaving behind a trail of flames which will linger for a short time. At the end of the charge, rip the armament out of the ground with enough force to knock some enemies into the air. Hold to continue charging."
+  },
+  {
+    "id": 114,
+    "name": "Unsheathe",
+    "info": "Sheathe armament in preparation for an attack. Hold to keep weapon sheathed. Can be used while moving. Follow up with a normal attack to quickly step forward while doing a horizontal slash. Alternatively, follow up with a strong attack to do a small hop forward while doing a downward vertical slash."
+  },
+  {
+    "id": 115,
+    "name": "Square Off",
+    "info": "Hold armament in a raised position in preparation for an attack. Follow up with a normal attack to do an upward vertical slash through an enemy's guard. Alternatively, follow up with a strong attack to run forward a few steps and thrust the armament forward."
+  },
+  {
+    "id": 116,
+    "name": "Giant Hunt",
+    "info": "Step forward and do a powerful upward thrust, which may knock some enemies into the air."
+  },
+  {
+    "id": 117,
+    "name": "Torch Attack",
+    "info": "Thrust armament forward. Follow up by using the skill a second time to do a horizontal slash."
+  },
+  {
+    "id": 118,
+    "name": "Loretta's Slash",
+    "info": "Imbue the armament with glintstone magic and do an upward slash as you jump into the air, then do a horizontal slash as you return to the ground."
+  },
+  {
+    "id": 119,
+    "name": "Poison Moth Flight",
+    "info": "Imbue the armament with poison then leap foward and do a horizontal slash. If an enemy hit by this skill is already poisoned then this will inflict additional damage equal to 5% of the enemy's <font color=\"#E0B985\">maximum HP</font> plus 250, but the poison ailment will then be removed from the enemy.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds.\n\n<font color=\"#40BF40\">Base poison accumulation:</font> 250"
+  },
+  {
+    "id": 120,
+    "name": "Spinning Weapon",
+    "info": "Telekinetically lift armament in front of you and spin it vertically several times. Can be used while moving."
+  },
+  {
+    "id": 122,
+    "name": "Storm Assault",
+    "info": "Produce a swirl of harmful wind around you as you leap into the air then slam your armament into the ground, producing another swirl of wind where you land."
+  },
+  {
+    "id": 123,
+    "name": "Stormcaller",
+    "info": "Spin armament in circles above your head to produce 3 successive swirls of harmful wind around you. Follow up by using the skill a second time to step forward and do 2 additional spins. Follow that up by using the skill a third time to step forward again and do another 2 additional spins."
+  },
+  {
+    "id": 124,
+    "name": "Sword Dance",
+    "info": "Leap forward and quickly do 2 diagonal slashes. Follow up by using the skill a second time to do a downward vertical slash."
+  },
+  {
+    "id": 125,
+    "name": "Spinning Chain",
+    "info": "Hold the flail out in front of you and spin the ball vertically. Hold to continue spinning. Can be used while moving. Follow up with a normal attack to lift the flail up and slam it to the ground in front of you. Follow up with a strong attack to do a horizontal swipe then lift the flail up and slam it to the ground in front of you."
+  },
+  {
+    "id": 200,
+    "name": "Glintblade Phalanx",
+    "info": "Conjure 4 magical dagger projectiles which float above you and automatically shoot into an enemy when they are within range. Follow up with a strong attack to thrust the armamant forward.\n\n<font color=\"#57DBCE\">Base magic damage (projectiles):</font> 47"
+  },
+  {
+    "id": 201,
+    "name": "Sacred Blade",
+    "info": "Imbue the armament with holy essence then swing it horizontally to shoot a golden arc projectile. The armament retains its holy essence for 40 seconds, adding 90 <font color=\"#F5EB89\">holy damage</font>.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 180"
+  },
+  {
+    "id": 202,
+    "name": "Ice Spear",
+    "info": "Imbue the armament with cold magic then thrust it forward to cast the cold magic as a projectile.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage (projectile):</font> 230\n<font color=\"#9DD7FB\">Base frostbite accumulation (projectile):</font> 160"
+  },
+  {
+    "id": 203,
+    "name": "Glintstone Pebble",
+    "info": "Shoot a single magic glintstone projectile. Follow up with a strong attack to thrust the armamant forward while it's still imbued with glintstone magic.\n\n<font color=\"#57DBCE\">Base magic damage (projectile):</font> 137\n<font color=\"#57DBCE\">Base magic damage (thrust):</font> 45"
+  },
+  {
+    "id": 204,
+    "name": "Bloody Slash",
+    "info": "Inflict damage on yourself equal to 5% of your <font color=\"#E0B985\">maximum HP</font> plus 50, then do an upward slash with your armament. The upward slash will produce a large arc of blood, extending the range of the attack.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#C84343\">Base blood loss accumulation:</font> 60"
+  },
+  {
+    "id": 205,
+    "name": "Lifesteal Fist",
+    "info": "Crouch and build up power then thrust armament forward. If an enemy of human build is caught by this attack you will siphon health from the enemy and continuously deal damage to them for a short time. While siphoning you will restore 5% of your <font color=\"#E0B985\">maximum HP</font> 3 times, then 15% of your <font color=\"#E0B985\">maximum HP</font> once, for a total of 30%. If an enemy of non-human build is hit by this you will only do a slight amount of damage once and not be healed at all."
+  },
+  {
+    "id": 207,
+    "name": "Eruption",
+    "info": "Imbue the armament with fire then slam it into the ground and rip it back out, leaving behind a small pool of magma for a few seconds.\n\n<font color=\"#F48C25\">Base fire damage (magma):</font> 40"
+  },
+  {
+    "id": 208,
+    "name": "Prayerful Strike",
+    "info": "Raise armament and slam it into the ground in front of you. If it hits an enemy it will restore 30% of your <font color=\"#E0B985\">maximum HP</font> and nearby allies will also have 30% of their <font color=\"#E0B985\">maximum HP</font> restored.\n\nDespite its name and appearance, this skill only inflicts <font color=\"#F395C4\">physical damage</font>, not <font color=\"#F5EB89\">holy damage</font>."
+  },
+  {
+    "id": 209,
+    "name": "Gravitas",
+    "info": "Plunge the armament into the ground and create a gravity well in a large area around yourself, which can pull some enemies towards you slightly and stagger them.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 60"
+  },
+  {
+    "id": 210,
+    "name": "Storm Blade",
+    "info": "Imbue armament with a swirl of wind then slash it forward to cast it forward as a projectile. Can be used repeatedly to continue casting projectiles.\n\n<font color=\"#F395C4\">Base physical damage (projectile):</font> 150"
+  },
+  {
+    "id": 212,
+    "name": "Earthshaker",
+    "info": "Slam armament into the ground to create a shockwave in a large area around you. Follow up with a strong attack to spin armament in a full circle horizontal slash around you.\n\n<font color=\"#F395C4\">Base physical damage (shockwave):</font> 120"
+  },
+  {
+    "id": 213,
+    "name": "Golden Land",
+    "info": "Slam armament into the ground to create a shockwave of sacred energy in a large area around you, which also produces 6 golden darts that will shoot out at an enemy. Follow up with a strong attack to spin armament in a full circle horizontal slash around you.\n\n<font color=\"#F5EB89\">Base holy damage (shockwave):</font> 160\n<font color=\"#F5EB89\">Base holy damage (projectiles):</font> 75"
+  },
+  {
+    "id": 214,
+    "name": "Flaming Strike",
+    "info": "Throw out an arc of flame in front of you. Follow up with a strong attack to do a horizontal slash through the arc of fire, which will imbue the armament with 90 <font color=\"#F48C25\">fire damage</font> for 40 seconds.\n\n<font color=\"#F48C25\">Base fire damage (projectile):</font> 138"
+  },
+  {
+    "id": 216,
+    "name": "Thunderbolt",
+    "info": "Raise armament to conjure a bolt of lightning from the sky. Can be used repeatedly to continue conjuring bolts of lightning.\n\n<font color=\"#FFE033\">Base lightning damage (bolt):</font> 120"
+  },
+  {
+    "id": 217,
+    "name": "Lightning Slash",
+    "info": "Stomp on the ground to conjure a bolt of lightning into your armament, which adds 85 <font color=\"#FFE033\">lightning damage</font> for 40 seconds, then slash it downward to conjure another bolt of lightning in front of you. The second lightning bolt produces a small explosion of lightning where it lands.\n\n<font color=\"#FFE033\">Base lightning damage (bolt):</font> 120\n<font color=\"#FFE033\">Base lightning damage (explosion):</font> 60"
+  },
+  {
+    "id": 218,
+    "name": "Carian Grandeur",
+    "info": "Raise your armament above your head and transform armament into a large magical greatsword, then slam it to the ground in front of you. Can be charged to increase damage and distance.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 220\n<font color=\"#57DBCE\">Base magic damage (partially charged):</font> 315\n<font color=\"#57DBCE\">Base magic damage (fully charged):</font> 400"
+  },
+  {
+    "id": 219,
+    "name": "Carian Greatsword",
+    "info": "Raise your armament above your head and transform armament into a large magical greatsword, then slam it to the ground in front of you. Can be charged to increase damage and distance.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 220\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 340"
+  },
+  {
+    "id": 220,
+    "name": "Vacuum Slice",
+    "info": "Raise the armament above your head and imbue it with wind, then slam it to the ground in front of you to cast it off as a vertical arc projectile.\n\n<font color=\"#F395C4\">Base physical damage (projectile):</font> 200"
+  },
+  {
+    "id": 221,
+    "name": "Black Flame Tornado",
+    "info": "Spin the armament above your head while imbuing it with black flame, then slam it to the ground to create a large swirl of black flame around you. Hold to spin armament over your head longer, creating a large swirl of black flame around you before slamming it to the ground, creating another large swirl of black flame around you. In addition to the damage from the attack, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> plus 1 per second for 2 seconds each time they are hit by the black flame.\n\n<font color=\"#F48C25\">Base fire damage (slam swirl):</font> 170\n<font color=\"#F48C25\">Base fire damage (overhead swirl):</font> 65"
+  },
+  {
+    "id": 222,
+    "name": "Sacred Ring of Light",
+    "info": "Slash weapon forward to conjure a ring of light which will fly toward an enemy. Can be used repeatedly to continue shooting projectiles.\n\nThe horizontal slash performed during this skill's animation doesn't do any damage.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 125"
+  },
+  {
+    "id": 223,
+    "name": "Firebreather",
+    "info": "Blow the torch's flame in a wide arc in front of you. If the flames touch the ground it will continue to burn on the ground for a short time."
+  },
+  {
+    "id": 224,
+    "name": "Blood Blade",
+    "info": "Inflict damage to yourself equal to 4% of your <font color=\"#E0B985\">maximum HP</font> to imbue the armament with blood then swipe it horizontally to cast it as a projectile. Can be used repeatedly to cast mutliple projectiles without taking any additional damage.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage (projectile):</font> 115\n<font color=\"#C84343\">Base blood loss accumulation (projectile):</font> 60"
+  },
+  {
+    "id": 225,
+    "name": "Phantom Slash",
+    "info": "Summon an apparition next to you who will lunge forward and do an upward vertical slash, followed by you doing the same thing. Follow up by using the skill a second time to re-summon the apparition to do a downward vertical slash, followed by you doing the same thing.\n\n<font color=\"#F395C4\">Base physical damage (apparition, upward):</font> 160\n<font color=\"#F395C4\">Base physical damage (apparition, downward):</font> 165"
+  },
+  {
+    "id": 226,
+    "name": "Spectral Lance",
+    "info": "Transform armament into an apparition spear and hurl it forward.\n\n<font color=\"#F395C4\">Base physical damage:</font> 132"
+  },
+  {
+    "id": 227,
+    "name": "Chilling Mist",
+    "info": "Imbue the armament with frost and do a hortizontal slash to produce a cloud of cold mist for 4 seconds, which will cause <font color=\"#9DD7FB\">frostbite accumulation</font> up to 6 times. The armament remains imbued with frost for 40 seconds, causing 30 <font color=\"#9DD7FB\">frostbite accumulation</font> per attack.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of maximum HP plus 30, then increases all damage received by 20% for 30 seconds.\n\n<font color=\"#9DD7FB\">Base frostbite accumulation (slash):</font> 60\n<font color=\"#9DD7FB\">Base frostbite accumulation (mist):</font> 120"
+  },
+  {
+    "id": 228,
+    "name": "Poisonous Mist",
+    "info": "Imbue the armament with poison and do a hortizontal slash to produce a cloud of poison for 4 seconds, which will cause <font color=\"#40BF40\">poison accumulation</font> up to 6 times. The armament remains imbued with poison for 40 seconds, causing 30 <font color=\"#40BF40\">poison accumulation</font> per attack.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.1% of <font color=\"#E0B985\">maximum HP</font> plus 8, every second for 40 seconds.\n\n<font color=\"#40BF40\">Base poison accumulation (mist):</font>  60\n<font color=\"#40BF40\">Base poison accumulation (mist):</font>  120"
+  },
+  {
+    "id": 300,
+    "name": "Shield Bash",
+    "info": "Lift shield to guard stance and ram it forward while maintaining guard. Some enemies may be knocked down or staggered."
+  },
+  {
+    "id": 301,
+    "name": "Barricade Shield",
+    "info": "Lift shield to guard stance and imbue it with energy for 10 seconds, increasing <font color=\"#E0B985\">guard boost</font> and increasing its ability to repel enemy attacks. The amount that <font color=\"#E0B985\">guard boost</font> is increased by depends on the shield's base guard boost. Shields with a lower base value will get a bigger increase, while shields with a higher base value will get a smaller increase."
+  },
+  {
+    "id": 302,
+    "name": "Parry",
+    "info": "Swing armament with precise timing to deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected.\n\nThis skill is not consistent on all armaments. The window of time to deflect is the earliest and longest on small shields and is slightly later and shorter on daggers. Compared to daggers, the window for most other armaments, including medium shields, begins at the same time but is half the duration, so it will require much more precise timing."
+  },
+  {
+    "id": 303,
+    "name": "Buckler Parry",
+    "info": "Swing armament with precise timing to deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly earlier but is the same duration."
+  },
+  {
+    "id": 305,
+    "name": "Carian Retaliation",
+    "info": "Swing armament with precise timing to transform an incoming spell into 3 magical daggers which float above you and automatically shoot into an enemy when they are within range. Can also deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly earlier, is slightly longer, and is consistent for all armaments.\n\n<font color=\"#57DBCE\">Base magic damage (projectiles):</font> 270"
+  },
+  {
+    "id": 306,
+    "name": "Storm Wall",
+    "info": "Swing armament with precise timing to deflect small physical projectiles. Can also deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect is the same but it is consistent for all armaments."
+  },
+  {
+    "id": 307,
+    "name": "Golden Parry",
+    "info": "Swing armament with to project a large golden arc in front of you which, with precise timing, can deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly earlier, is slightly longer, and is consistent for all armaments."
+  },
+  {
+    "id": 308,
+    "name": "Shield Crash",
+    "info": "Lift shield to guard stance and charge forward while maintaining guard then ram the shield forward. Some enemies may be knocked down or staggered. Hold to charge forward longer.\n\n<font color=\"#F395C4\">Base physical damage:</font> 132"
+  },
+  {
+    "id": 309,
+    "name": "Thops's Barrier",
+    "info": "Swing armament with precise timing to deflect an incoming spell. Can also deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly later, is slightly shorter, and is consistent for all armaments."
+  },
+  {
+    "id": 400,
+    "name": "Through and Through",
+    "info": "Hold to stand in a prepared stance. Arrows shot while in this stance will pierce through enemies who aren't guarding, allowing multiple enemies in a straight line to be hit. Arrows will not pierce through shields."
+  },
+  {
+    "id": 401,
+    "name": "Barrage",
+    "info": "Hold to stand in a prepared stance. While in this stance you are able to shoot arrows without the usual delay of pulling back the string, allowing arrows to be shot in quick succession."
+  },
+  {
+    "id": 402,
+    "name": "Mighty Shot",
+    "info": "Hold to stand in a prepared stance. Arrows shot while in this stance will have enough force to pierce an enemy's guard."
+  },
+  {
+    "id": 404,
+    "name": "Enchanted Shot",
+    "info": "Hold to stand in a prepared stance. Arrows shot while in this stance will change their trajectory to follow the target."
+  },
+  {
+    "id": 405,
+    "name": "Sky Shot",
+    "info": "Hold to crouch in a prepared stance. Arrows shot while in this stance will be shot nearly straight up and arc to land where the target was standing when the arrow was shot, typically resulting in increased damage as a headshot.\n\nIt is very difficult to hit a moving enemy with this so it is much more useful to be used in stealth."
+  },
+  {
+    "id": 406,
+    "name": "Rain of Arrows",
+    "info": "Hold to crouch in a prepared stance. Arrows shot while in this stance will be shot nearly straight up and split into a barrage of arrows which will arc to land around the area where the target was standing when the arrow was shot."
+  },
+  {
+    "id": 501,
+    "name": "Hoarfrost Stomp",
+    "info": "Stomp on the ground to produce a large cone of icicles along the ground, which briefly spray up a cold mist.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 40\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 70"
+  },
+  {
+    "id": 502,
+    "name": "Storm Stomp",
+    "info": "Stomp on the ground to produce a swirl of wind around you.\n\n<font color=\"#F395C4\">Base physical damage (wind):</font> 50"
+  },
+  {
+    "id": 503,
+    "name": "Kick",
+    "info": "Kick forward with force. Effective at breaking a guarding enemy's stance."
+  },
+  {
+    "id": 504,
+    "name": "Lightning Ram",
+    "info": "Imbue your body with lightning and roll forward on the ground. Can be used repeatedly to continue rolling.\n\n<font color=\"#F395C4\">Base physical damage:</font> 40\n<font color=\"#FFE033\">Base lightning damage:</font> 95"
+  },
+  {
+    "id": 505,
+    "name": "Flame of the Redmanes",
+    "info": "Conjure a wide arc of fire in front of you and push it outward.\n\n<font color=\"#F48C25\">Base fire damage:</font> 180"
+  },
+  {
+    "id": 506,
+    "name": "Ground Slam",
+    "info": "Jump up into the air and slam back to the ground on your butt to create a large shockwave around you which may knock down nearby enemies.\n\n<font color=\"#F395C4\">Base physical damage:</font> 264"
+  },
+  {
+    "id": 507,
+    "name": "Golden Slam",
+    "info": "Jump up into the air and slam back to the ground on your butt to create a large shockwave of sacred energy around you which may knock down nearby enemies.\n\n<font color=\"#F395C4\">Base physical damage:</font> 308\n<font color=\"#F5EB89\">Base holy damage:</font> 225"
+  },
+  {
+    "id": 508,
+    "name": "Waves of Darkness",
+    "info": "Imbue armament with dark energy then slam it into the ground to release it as 3 shockwaves around you, each shockwave bigger than the last. Follow up with a strong attack to do a horizontal slash in a full circle around you.\n\n<font color=\"#57DBCE\">Base magic damage (shockwaves):</font> 120"
+  },
+  {
+    "id": 509,
+    "name": "Hoarah Loux's Earthshaker",
+    "info": "Let out a loud scream which may stagger some enemies in a small area around you, then slam your hands to the ground to produce a shockwave around you. Follow up by using the skill a second time to slam the ground again.\n\n<font color=\"#F395C4\">Base physical damage (first shockwave):</font> 220\n<font color=\"#F395C4\">Base physical damage (second shockwave):</font> 250"
+  },
+  {
+    "id": 600,
+    "name": "Determination",
+    "info": "Imbue your armament with energy, increasing <font color=\"#E0B985\">all attack power</font> for your next single attack with that armament within 10 seconds by 60%. This effect works for critical attacks as well."
+  },
+  {
+    "id": 601,
+    "name": "Royal Knight's Resolve",
+    "info": "Imbue your armament with energy, increasing <font color=\"#E0B985\">all attack power</font> for your next single attack with that armament within 10 seconds by 80%. This effect works for critical attacks as well."
+  },
+  {
+    "id": 602,
+    "name": "Assassin's Gambit",
+    "info": "Become semi-invisible for 30 seconds, which reduces the range at which non-aggressive enemies will notice you by 60% and completely negates sound made during movement."
+  },
+  {
+    "id": 603,
+    "name": "Golden Vow",
+    "info": "Imbue yourself and nearby allies with sacred energy for 45 seconds, which increases <font color=\"#E0B985\">all damage inflicted</font> by 11.5% and <font color=\"#E0B985\">all damage negation</font> by 7.5%."
+  },
+  {
+    "id": 604,
+    "name": "Sacred Order",
+    "info": "Imbue armament with holy essence for 60 seconds, which increases <font color=\"#E0B985\">all damage inflicted</font> by 10%. Attacks against Those Who Live in Death will inflict 100% more damage and prevent them from reviving."
+  },
+  {
+    "id": 605,
+    "name": "Shared Order",
+    "info": "Imbue yourself and nearby allies with holy essence for 60 seconds, which increases <font color=\"#E0B985\">all damage inflicted</font> by 10% for you and 7.5% for nearby allies. Attacks against Those Who Live in Death will inflict 50% more damage and prevent them from reviving."
+  },
+  {
+    "id": 606,
+    "name": "Seppuku",
+    "info": "Plunge armament into your stomach, inflicting damage to yourself equal to 15% of your <font color=\"#E0B985\">maximum HP</font> plus 100 and clearing all <font color=\"#C84343\">blood loss accumulation</font>. This imbues it with blood for 60 seconds, which adds 30 <font color=\"#F395C4\">physical damage</font> and 30 <font color=\"#C84343\">blood loss accumulation</font> to each attack.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100."
+  },
+  {
+    "id": 607,
+    "name": "Cragblade",
+    "info": "Plunge armament into the ground to reinforce it with rocks for 60 seconds, which increases <font color=\"#F395C4\">physical damage</font> by 10%. It also increases the amount of stamina removed with each attack from enemies who are guarding by 20%, making it easier to break their stance."
+  },
+  {
+    "id": 650,
+    "name": "Barbaric Roar",
+    "info": "Let out a loud scream which will increase your <font color=\"#F395C4\">physical attack power</font> by 7.5% and your <font color=\"#E0B985\">strength</font> by 5 for 40 seconds. It also changes your strong attack to be a 3-attack combination."
+  },
+  {
+    "id": 651,
+    "name": "War Cry",
+    "info": "Let out a loud scream which will increase your <font color=\"#F395C4\">physical attack power</font> by 7.5% and your <font color=\"#E0B985\">strength</font> by 5 for 40 seconds. It also changes your strong attack to be a downward vertical slash, and changes your charged strong attack to be a short run forward followed by a downward vertical slash."
+  },
+  {
+    "id": 652,
+    "name": "Beast's Roar",
+    "info": "Let out a loud scream which will produce a projectile of wind that will fly forward."
+  },
+  {
+    "id": 653,
+    "name": "Troll's Roar",
+    "info": "Stomp and let out a loud scream which will produce a large shockwave around you. Follow up with a strong attack to raise the armament above your head and slam it to the ground with force."
+  },
+  {
+    "id": 654,
+    "name": "Braggart's Roar",
+    "info": "Let out a loud scream which will increase your <font color=\"#F395C4\">physical attack power</font> by 10%, <font color=\"#E0B985\">all damage negation</font> by 10%, and increase <font color=\"#E0B985\">stamina regeneration</font> by 10 per second for 60 seconds."
+  },
+  {
+    "id": 700,
+    "name": "Endure",
+    "info": "Imbue your body with energy to brace for an incoming attack for 3.5 seconds, which increases <font color=\"#E0B985\">all damage negation</font> by 45%. Lighter physical attacks from enemies may cause the enemy to briefly stagger backwards after hitting you."
+  },
+  {
+    "id": 701,
+    "name": "Vow of the Indomitable",
+    "info": "Raise shield and imbue yourself with golden energy which makes you completely invincible for a brief moment."
+  },
+  {
+    "id": 702,
+    "name": "Holy Ground",
+    "info": "Raise shield and conjure a golden sigil on the ground for 35 seconds, which will reduce <font color=\"#E0B985\">all damage received</font> by 20% and restore 5 HP every 0.3 seconds while standing in it. The effects also apply to allies that are standing within the sigil."
+  },
+  {
+    "id": 800,
+    "name": "Quickstep",
+    "info": "Perform a quick dodging maneuver. Lock-on to an enemy and hold left or right while using this skill to quickly circle around to the backside of them if you are standing close enough.\n\nHaving a light equipment load will allow you to get the farthest distance when using this skill. Using this skill repeatedly will reduce its effectiveness."
+  },
+  {
+    "id": 801,
+    "name": "Bloodhound's Step",
+    "info": "Become completely invisible while performing a quick dodging maneuver. Lock-on to an enemy and hold left or right while using this skill to quickly circle around to the backside of them if you are standing close enough. Compared to the regular quickstep skill, this skill is faster and you travel farther.\n\nHaving a light equipment load will allow you to get the farthest distance when using this skill. Using this skill repeatedly will reduce its effectiveness."
+  },
+  {
+    "id": 802,
+    "name": "Raptor of the Mists",
+    "info": "Crouch to briefly brace for an incoming attack. If you are hit by an attack while in this stance <font color=\"#E0B985\">all damage</font> is completely negated and you will automatically leap into the air, allowing you to easily retaliate with a jump attack."
+  },
+  {
+    "id": 850,
+    "name": "White Shadow's Lure",
+    "info": "Cast a pale shadow illusion which will lure human enemies outside of combat to attack it. Demi-humans will be lured in even during combat."
+  },
+  {
+    "id": 1000,
+    "name": "Surge of Faith",
+    "info": "Raise armament and produce an explosion followed by a barrage of fireballs from the top which will rain down all around you. Can be used repeatedly to continue causing explosions and raining fireballs.\n\n<font color=\"#F48C25\">Base fire damage (explosion):</font> 230\n<font color=\"#F48C25\">Base fire damage (fireballs):</font> 55"
+  },
+  {
+    "id": 1001,
+    "name": "Flame Spit",
+    "info": "Convert the shield into a ballista and shoot a large fireball which explodes on impact.\n\n<font color=\"#F48C25\">Base fire damage:</font> 385"
+  },
+  {
+    "id": 1002,
+    "name": "Tongues of Fire",
+    "info": "Hold to brace shield with both hands and spew a stream of fire forward. Can be used while moving.\n\n<font color=\"#F48C25\">Base fire damage:</font> 150"
+  },
+  {
+    "id": 1003,
+    "name": "Oracular Bubble",
+    "info": "Blow the horn to produce a bubble which will float forward. Can be used repeatedly to continue casting bubbles.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 110"
+  },
+  {
+    "id": 1004,
+    "name": "Bubble Shower",
+    "info": "Blow the horn to produce a barrage of bubbles which will float down in front of you.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 65"
+  },
+  {
+    "id": 1005,
+    "name": "Great Oracular Bubble",
+    "info": "Blow the horn to produce a large bubble which will float forward and explode on impact.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 315"
+  },
+  {
+    "id": 1006,
+    "name": "Sea of Magma",
+    "info": "Spin the whip in a circle over your head to spread pools of magma in every direction around you. Hold to continue spinning the whip.\n\n<font color=\"#F48C25\">Base fire damage (magma):</font> 66"
+  },
+  {
+    "id": 1007,
+    "name": "Viper Bite",
+    "info": "Uncoil the snake on the shield so it can lunge forward with a poisonous bite.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds.\n\n<font color=\"#40BF40\">Base poison accumulation:</font> 250"
+  },
+  {
+    "id": 1008,
+    "name": "Moonlight Greatsword",
+    "info": "Raise the armament and imbue it with the light of the dark moon for 60 seconds, which adds 85 <font color=\"#57DBCE\">magic damage</font> and 100 <font color=\"#9DD7FB\">frostbite accumulation</font> to each attack.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds."
+  },
+  {
+    "id": 1009,
+    "name": "Siluria's Woe",
+    "info": "Imbue the armament with energy then slam it into the ground in front of you to create an explosion. Charge to have a large projectile shoot out forward from the explosion, which can knock down some enemies. The projectile is capable of piercing through enemies and some objects."
+  },
+  {
+    "id": 1010,
+    "name": "Rallying Standard",
+    "info": "Wave the banner to increase <font color=\"#E0B985\">all damage</font> and <font color=\"#E0B985\">all damage negation</font> by 20% for 30 seconds for yourself and nearby allies."
+  },
+  {
+    "id": 1011,
+    "name": "Bear Witness!",
+    "info": "Drag the armament along the ground into a fire-infused uppercut, then spew a barrage of fireballs into the air."
+  },
+  {
+    "id": 1012,
+    "name": "Eochaid's Dancing Blade",
+    "info": "Imbue the armament with red energy and throw it forward to spin in the air like a drill for a short time before returning to you, then do a horizontal swipe. Charging increases damage, reach, and duration."
+  },
+  {
+    "id": 1013,
+    "name": "Soul Stifler",
+    "info": "Raise the armament to conjure a soul-sapping miasma which will reduce <font color=\"#E0B985\">all damage negation</font> by 30% for 60 seconds for any enemy who touches it."
+  },
+  {
+    "id": 1014,
+    "name": "Taker's Flames",
+    "info": "Raise the armament and imbue it with fire then slam it to the ground to cause a chain of fiery eruptions along the ground in a straight line. Each enemy hit by the fire will restore 10% of your <font color=\"#E0B985\">maximum HP</font> plus 150."
+  },
+  {
+    "id": 1015,
+    "name": "Shriek of Milos",
+    "info": "Let out a loud scream along with a burst of golden energy all around you. This will increase your <font color=\"#F395C4\">physical damage inflicted</font> by 7.5% for 20 seconds and also changes your strong attack to be a 3-attack combination during this time. Any enemy hit by the burst of golden energy will have <font color=\"#E0B985\">all damage negation</font> reduced by 15% for 30 seconds."
+  },
+  {
+    "id": 1016,
+    "name": "Reduvia Blood Blade",
+    "info": "Do a horizontal slash to produce an arc of blood which will shoot forward. Can be used repeatedly to continue shooting arcs of blood.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#C84343\">Base blood loss accumulation:</font> 90"
+  },
+  {
+    "id": 1017,
+    "name": "Glintstone Dart",
+    "info": "Imbue the armament with glinstone magic then cast it forward as a projectile. The projectile is capable of piercing through some enemies. Charging increases damage. Follow up with a strong attack to thrust the armamant forward while it's still imbued with glintstone magic.\n\n<font color=\"#57DBCE\">Base magic damage (projectile):</font> 155\n<font color=\"#57DBCE\">Base magic damage (projectile, charged):</font> 190"
+  },
+  {
+    "id": 1018,
+    "name": "Flowing Form",
+    "info": "Convert the armament into a whip then do a very wide horizontal slash before returning it to its original form."
+  },
+  {
+    "id": 1019,
+    "name": "Night-and-Flame Stance",
+    "info": "Hold armament in a raised position in preparation for an attack. Follow up with a normal attack to cast out a large beam of glintstone magic. Alternatively, follow up with a strong attack to imbue the armament with fire then do a horizontal slash to cast it out as a very wide arc of fire."
+  },
+  {
+    "id": 1020,
+    "name": "Wave of Gold",
+    "info": "Imbue the armament with golden energy then slash it down towards your feet to produce a large golden arc on the ground which continues to grow significantly wider as it shoots forward. After the arc has traveled a certain distance away the damage is increased.\n\n<font color=\"#F5EB89\">Base holy damage (short range):</font> 230\n<font color=\"#F5EB89\">Base holy damage (long range):</font> 250"
+  },
+  {
+    "id": 1021,
+    "name": "Ruinous Ghostflame",
+    "info": "Slash the armament in front of you to imbue it with ghostflame for 60 seconds, which adds 110 <font color=\"#57DBCE\">magic damage</font> and 80 <font color=\"#9DD7FB\">frostbite accumulation</font> per attack."
+  },
+  {
+    "id": 1022,
+    "name": "Establish Order",
+    "info": "Raise armament and briefly imbue it with golden energy then release a large explosion of golden energy around you. Follow up by using the skill a second time to channel more golden energy into the armament before doing 2 quick horizontal slashes to cast the energy out as a wide arc projectile."
+  },
+  {
+    "id": 1023,
+    "name": "Mists of Slumber",
+    "info": "Imbue the armament with purple energy before doing a horizontal slash to briefly produce a wide arc of purple mist. The armament retains its imbuement for 30 seconds, which adds 20 <font color=\"#A698F4\">sleep accumulation</font> per attack.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack.\n\n<font color=\"#A698F4\">Base sleep accumulation (mist):</font> 70"
+  },
+  {
+    "id": 1024,
+    "name": "Spearcall Ritual",
+    "info": "Raise armament to conjure a barrage of phantom Death Ritual Spears above the target to rain down on them."
+  },
+  {
+    "id": 1025,
+    "name": "Wolf's Assault",
+    "info": "Imbue the armament with magic frost then do a flip forward and plunge the armament into the ground to release an explosion of magic frost around you.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage (plunge and explosion):</font> 50\n<font color=\"#9DD7FB\">Base frostbite accumulation (plunge):</font> 100\n<font color=\"#9DD7FB\">Base frostbite accumulation (explosion):</font> 60"
+  },
+  {
+    "id": 1026,
+    "name": "Thundercloud Form",
+    "info": "Briefly transform into a cloud of red lightning then emerge from the cloud with your armament imbued with the red lightning and plunge it into the ground, creating a small explosion of red lightning. Hold to glide through the in the cloud of red lightning form for a short distance."
+  },
+  {
+    "id": 1027,
+    "name": "Cursed-Blood Slice",
+    "info": "Imbue the armament with fire then leap forward and do a diagonal slash. A red streak will form along the path of the slash, which will will then explode after a short delay. Follow up by using the skill a second time to do a horizontal slash while the armament is still imbued with flame, forming another exploding red streak.\n\n<font color=\"#F48C25\">Base fire damage (explosions):</font> 80"
+  },
+  {
+    "id": 1028,
+    "name": "Waterfowl Dance",
+    "info": "Float into the air briefly then leap forward and do 3 sets of extremely quick slashes all round you. Follow up by using the skill a second time to do 2 more sets of slashes. Follow that up by using the skill a third time to do 4 more sets of slashes."
+  },
+  {
+    "id": 1029,
+    "name": "Gold Breaker",
+    "info": "Float into the air as you imbue the armament with light then smash it to the ground to create a large explosion of light. The explosion might throw some enemies into the air and knock them down."
+  },
+  {
+    "id": 1030,
+    "name": "I Command Thee, Kneel!",
+    "info": "Smash armament into the ground 2 times, each time creating a large shockwave around you. Follow up by using the skill a second time to slam the armament into the ground again, creating a larger shockwave."
+  },
+  {
+    "id": 1031,
+    "name": "Regal Roar",
+    "info": "Let out a loud scream then build up power for a short time to stomp on the ground and release a large shockwave around you. The shockwave might throw some enemies into the air and knock them down. This also increases your <font color=\"#F395C4\">physical attack power</font> by 7.5% for 40 seconds."
+  },
+  {
+    "id": 1032,
+    "name": "Starcaller Cry",
+    "info": "Let out a loud scream while briefly imbuing both swords with gravitational energy, which may pull in and stagger some enemies near you. Follow up by using the skill a second time to slam both swords to the ground while still imbued with gravitational energy, creating a large explosion of the energy."
+  },
+  {
+    "id": 1033,
+    "name": "Wave of Destruction",
+    "info": "Raise the armament and imbue it with gravitational energy then slam it to the ground to cause a chain of large explosions of gravitational energy along the ground in a straight line."
+  },
+  {
+    "id": 1034,
+    "name": "Bloodboon Ritual",
+    "info": "Conjure an explosion of bloodflame energy above you which will then drip bloodflame down around you as you raise the armament into it to imbue it. Follow up by using the skill up to two more times to continue creating explosions. The armament will retain its bloodflame imbuement for 20 seconds, adding 30 <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F48C25\">Base fire damage (explosion):</font> 100\n<font color=\"#F48C25\">Base fire damage (drips):</font> 65\n<font color=\"#C84343\">Base blood loss accumulation (explosion and drips):</font> 60"
+  },
+  {
+    "id": 1035,
+    "name": "Flowing Form",
+    "info": "Convert the armament into a whip then do a very wide horizontal slash followed by a downward slam in front of you before returning it to its original form."
+  },
+  {
+    "id": 1036,
+    "name": "Blade of Death",
+    "info": "Imbue the armament with dark flame as you twirl in the air to do a downward horizontal slash, which also shoots a projectile outward from you. In addition to the damage from the attack, the enemy's <font color=\"#E0B985\">maximum HP</font> is reduced by 10% for 45 seconds, then they take damage equal to 0.45% of their <font color=\"#E0B985\">maximum HP</font> per second for 5 seconds.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 180"
+  },
+  {
+    "id": 1037,
+    "name": "Blade of Gold",
+    "info": "Imbue the armament with golden energy as you twirl in the air to do a downward horizontal slash. As you slash in the air you will cast the golden energy off as a projectile with enough force to knock down some enemies.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 145"
+  },
+  {
+    "id": 1038,
+    "name": "Destined Death",
+    "info": "Imbue the armament with dark flame, then do a horizontal slash, followed by plunging the armament into the ground to release the dark flame as a flurry of slashes all around you. The flurry of slashes may knock down some enemies. In addition to the damage from the attack, the enemy's <font color=\"#E0B985\">maximum HP</font> is reduced by 10% for 45 seconds, then they take damage equal to 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds."
+  },
+  {
+    "id": 1039,
+    "name": "Spinning Wheel",
+    "info": "Push the wheel against the ground to cause it to start spinning then hold it out in front of you like a chainsaw.  Can be used while moving."
+  },
+  {
+    "id": 1040,
+    "name": "Alabaster Lords' Pull",
+    "info": "Plunge the armament into the ground and create a gravity well in a large area around yourself, which can pull some enemies towards you and stagger them.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 184"
+  },
+  {
+    "id": 1041,
+    "name": "Onyx Lords' Repulsion",
+    "info": "Plunge the armament into the ground and create a gravity well in a large area around yourself, which can push some enemies away from you and knock them down.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 200"
+  },
+  {
+    "id": 1042,
+    "name": "Oath of Vengeance",
+    "info": "Channel an energy within you for 60 seconds. This increases your <font color=\"#E0B985\">vigor</font>, <font color=\"#E0B985\">mind</font>, <font color=\"#E0B985\">endurance</font>, <font color=\"#E0B985\">vitality</font>, <font color=\"#E0B985\">strength</font>, <font color=\"#E0B985\">dexterity</font>, <font color=\"#E0B985\">intelligence</font>, <font color=\"#E0B985\">faith</font>, and <font color=\"#E0B985\">arcane</font> by 5. It also increases <font color=\"#E0B985\">all damage negation</font> by 45% and lighter physical attacks from enemies may cause the enemy to briefly stagger backwards after hitting you."
+  },
+  {
+    "id": 1043,
+    "name": "Ice Lightning Sword",
+    "info": "Stomp as you raise the armament to imbue it with icy lightning, then slam it to the ground to conjure a bolt of icy lightning directly in front of you and a brief shockwave of lightning around you. The armament retains its imbuement for 45 seconds, which adds 160 <font color=\"#FFE033\">lightning damage</font> and 80 <font color=\"#9DD7FB\">frostbite accumulation</font>.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#FFE033\">Base lightning damage (bolt):</font> 149\n<font color=\"#FFE033\">Base lightning damage (shockwave):</font> 69\n<font color=\"#9DD7FB\">Base frostbite accumulation (bolt and shockwave):</font> 70"
+  },
+  {
+    "id": 1044,
+    "name": "Regal Beastclaw",
+    "info": "Slam the armament into the ground to shoot 5 claws along the ground in a cone-shaped pattern.\n\n<font color=\"#F395C4\">Base physical damage (claws):</font> 186"
+  },
+  {
+    "id": 1045,
+    "name": "Flame Dance",
+    "info": "Imbue the armament with fire and do 5 very wide horizontal slash with it."
+  },
+  {
+    "id": 1046,
+    "name": "Claw Flick",
+    "info": "Inflate the armament to be much larger then flick it outward with enough force to knock down some enemies."
+  },
+  {
+    "id": 1047,
+    "name": "Nebula",
+    "info": "Twirl in the air as you imbue the armament with cosmic energy, then do a very wide horizontal slash which will leave a trail of dark clouds along its path. The dark clouds will explode after a short delay.\n\n<font color=\"#57DBCE\">Base magic damage (explosions):</font> 121"
+  },
+  {
+    "id": 1048,
+    "name": "Ghostflame Ignition",
+    "info": "Thrust the armament forward while you conjure a ball of ghostflame at the tip of it, which will then explode. Follow up with a normal attack to cause the explosion to produce a long trail of ghostflame. Alternatively, follow up with a strong attack to cause the explosion to be much larger.\n\n<font color=\"#F48C25\">Base fire damage (explosion):</font> 140\t        <font color=\"#9DD7FB\">Base frostbite accum.:</font> 55\n<font color=\"#F48C25\">Base fire damage (trail):</font> 60\t\t        <font color=\"#9DD7FB\">Base frostbite accum.:</font> 65\n<font color=\"#F48C25\">Base fire damage (big explosion):</font> 200      <font size=\"9\"> </font><font color=\"#9DD7FB\">Base frostbite accum.:</font> 80"
+  },
+  {
+    "id": 1049,
+    "name": "Ancient Lightning Spear",
+    "info": "Transform the armament into a bolt of red lightning and throw it forward. Charging increases damage."
+  },
+  {
+    "id": 1050,
+    "name": "Frenzyflame Thrust",
+    "info": "Imbue the armament with the flame of frenzy then jump up and plunge it into the ground, which will create an explosion and 3 trails of frenzy flame in front of you. Using this skill causes <font color=\"#EEAA2B\">madness accumulation</font> on yourself.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished."
+  },
+  {
+    "id": 1051,
+    "name": "Miquella's Ring of Light",
+    "info": "Imbue armament with golden energy then do a diagonal slash to cast it as a large ring of light projectile. Can be used repeatedly to continue casting rings of light.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 170"
+  },
+  {
+    "id": 1052,
+    "name": "Golden Tempering",
+    "info": "Imbue the armament with holy essence for 60 seconds, which adds 100 <font color=\"#F5EB89\">holy damage</font>. During this time your charged strong attack is changed to a flurry of quick thrusts with both swords."
+  },
+  {
+    "id": 1053,
+    "name": "Last Rites",
+    "info": "Imbue yourself and nearby allies with holy essence for 60 seconds, which adds 25 <font color=\"#F5EB89\">holy damage</font> to your armaments and increases <font color=\"#E0B985\">all damage inflicted</font> by 10%. Attacks against Those Who Live in Death will inflict 100% more damage and prevent them from reviving."
+  },
+  {
+    "id": 1054,
+    "name": "Unblockable Blade",
+    "info": "Significantly extend the length of the blade and do a horizontal slash."
+  },
+  {
+    "id": 1055,
+    "name": "Eochaid's Dancing Blade",
+    "info": "Imbue the armament with red energy and throw it forward to spin in the air like a drill for a short time before returning to you, then do a horizontal swipe. Charging increases damage, reach, and duration."
+  },
+  {
+    "id": 1167,
+    "name": "Corpse Wax Cutter",
+    "info": "Imbue the armament with red energy then do a downward vertical slash to cast it as a projectile. In addition to the damage from the attack, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 270"
+  },
+  {
+    "id": 1168,
+    "name": "Zamor Ice Storm",
+    "info": "Plunge the armament into the ground to produce a swirl of frost around you.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 110\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 80"
+  },
+  {
+    "id": 1169,
+    "name": "Radahn's Rain",
+    "info": "Hold to crouch in a prepared stance. Arrows shot while in this stance will be shot nearly straight up and split into a barrage of arrows which will arc to land around the area where the target was standing when the arrow was shot."
+  },
+  {
+    "id": 1170,
+    "name": "The Queen's Black Flame",
+    "info": "Imbue the armament with a black flame and do a diagonal slash. In addition to the damage from the attack, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds. Follow up by using the skill a second time to do another diagonal slash while the armament is still imbued with black flame."
+  },
+  {
+    "id": 1171,
+    "name": "Dynast's Finesse",
+    "info": "Do a horizontal slash in a full circle around you as you back away from where you were standing. Follow up with a strong attack to lunge forward with a thrust attack. Follow that up by using another strong attack to step forward while doing a thrust then a horizontal slash."
+  },
+  {
+    "id": 1172,
+    "name": "Magma Shower",
+    "info": "Do a horizontal slash in a full circle around you as you scatter small pools of magma in a small area around you. Follow up by using the skill a second time to quickly do another spin, spreading more magma.\n\n<font color=\"#F48C25\">Base fire damage (magma):</font> 30"
+  },
+  {
+    "id": 1173,
+    "name": "Nebula",
+    "info": "Conjure a wide arc of cosmic clouds in front of you, which will explode after a short delay.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 100"
+  },
+  {
+    "id": 1174,
+    "name": "Death Flare",
+    "info": "Imbue the armament with golden flames for 45 seconds, adding 65 <font color=\"#F5EB89\">holy damage</font> and 30 <font color=\"#A17945\">death blight accumulation</font> per attack. Follow up by using the skill a second time to do a downward vertical slash, which will create an explosion in front of you.\n\n<font color=\"#A17945\">Death blight:</font> Instant death. Only effective against Tarnished.\n\n<font color=\"#A17945\">Death blight accumulation (explosion):</font> 70"
+  },
+  {
+    "id": 1175,
+    "name": "Bloodhound's Finesse",
+    "info": "Do a vertical slash in a full circle then jump back away from where you were standing. Follow up by using a strong attack to briefly turn invisible as you dash forward and do an upward slash."
+  },
+  {
+    "id": 1176,
+    "name": "Magma Guillotine",
+    "info": "Leap forward and slam the armament into the ground to create a large pool of magma all around you. Follow up by using the skill a second time to reach forward and do a vertical slash, then drag the armament on the ground back to you.\n\n<font color=\"#F48C25\">Base fire damage (magma)</font> 35"
+  },
+  {
+    "id": 1177,
+    "name": "Corpse Piler",
+    "info": "Do 2 quick diagonal slashes. A trail of blood will follow along in front of your slashes, extending the reach of the attack. Follow up by using the skill a second time to do 3 more quick diagonal slashes. Follow that up by using another strong attack to do a downward vertical slash.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#C84343\">Blood loss accumulation (diagonal slashes):</font> 45\n<font color=\"#C84343\">Blood loss accumulation (downward slash):</font> 50"
+  },
+  {
+    "id": 1178,
+    "name": "Transient Moonlight",
+    "info": "Sheathe armament in preparation for an attack. Hold to keep weapon sheathed. Can be used while moving. Follow up with a normal attack to quickly step forward while doing a horizontal slash. Alternatively, follow up with a strong attack to do a small hop forward while doing a downward vertical slash. Both follow up attacks cast a wave of blue energy forward.\n\n<font color=\"#57DBCE\">Base magic damage (normal projectile):</font> 140\n<font color=\"#57DBCE\">Base magic damage (strong projectile):</font> 155"
+  },
+  {
+    "id": 1179,
+    "name": "Bloodblade Dance",
+    "info": "Imbue the armament with blood then leap forward and do a flurry of quick slashes. Follow up by using the skill a second time to do another slash all around you as you back away.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#C84343\">Base blood loss accumulation:</font> 55"
+  },
+  {
+    "id": 1182,
+    "name": "Knowledge Above All",
+    "info": "Raise the armament to imbue yourself and nearby enemies with a cursed energy for 60 seconds which reduces <font color=\"#57DBCE\">magic damage negation</font> and <font color=\"#F5EB89\">holy damage negation</font> by 10%."
+  },
+  {
+    "id": 1183,
+    "name": "Devourer of Worlds",
+    "info": "Plant the armament in the ground and release a wave of red energy in a very large area around you. Each enemy hit by this will restore 15% of your <font color=\"#E0B985\">maximum HP</font>."
+  },
+  {
+    "id": 1184,
+    "name": "Familial Rancor",
+    "info": "Raise the armament to release 7 spirits which will seek out enemies."
+  },
+  {
+    "id": 1185,
+    "name": "Rosus's Summons",
+    "info": "Summon 3 skeletons near you which will each do a single vertical swing of their sword, as you do as well, before disappearing. Together, the four of you will attack one fixed point in front of you from different angles."
+  },
+  {
+    "id": 1186,
+    "name": "Thunderstorm",
+    "info": "Imbue the armament with lightning then swing it in circles around you to produce a swirl of wind and lightning around you. Follow up by using the skill up to two additional times to continue creating swirls of wind and lightning. The armament will retain its imbuement for 40 seconds, which adds 120 <font color=\"#FFE033\">lightning damage</font>.\n\n<font color=\"#FFE033\">Base lightning damage (swirl):</font> 95"
+  },
+  {
+    "id": 1187,
+    "name": "Sacred Phalanx",
+    "info": "Imbue the armament with golden energy then do an upward vertical slash. Shortly after this a long, horizontal line of golden spears will emerge from the ground in front of you."
+  },
+  {
+    "id": 1188,
+    "name": "Great-Serpent Hunt",
+    "info": "Take a moment to build up power then thrust the weapon forward. Follow up by using the skill a second time to do a strong upward vertical slash. While fighting a great serpent, a long blade of light will greatly extend the reach of this skill."
+  },
+  {
+    "id": 1189,
+    "name": "Angel's Wings",
+    "info": "Imbue the armament with light and do an upward slash as you jump into the air, then do a horizontal slash as you return to the ground. Enemies hit by this attack will be unable to use a Flask of Crimson Tears or Flask of Cerulean Tears for 20 seconds."
+  },
+  {
+    "id": 1190,
+    "name": "Storm Kick",
+    "info": "Plunge the armament into the ground to produce a swirl of wind around you. Follow up with a strong attack to leap forward while imbuing the armament with lightning, then slam the armament into the ground to create a small explosion of lightning."
+  },
+  {
+    "id": 1191,
+    "name": "Unblockable Blade",
+    "info": "Imbue the armament with light then thrust it forward."
+  },
+  {
+    "id": 1192,
+    "name": "Sorcery of the Crozier",
+    "info": "Raise armament to conjure 8 small projectiles of glintstone magic around you which will seek out nearby enemies.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 60"
+  },
+  {
+    "id": 1193,
+    "name": "Erdtree Slam",
+    "info": "Jump up into the air and slam back to the ground on your butt to create a large shockwave of sacred energy around you which may knock down nearby enemies."
+  },
+  {
+    "id": 1194,
+    "name": "Gravity Bolt",
+    "info": "Imbue the armament with gravitational lightning then raise the armament up to cast it at a target. Large rocks will emerge from the ground where it strikes. This attack may knock down some enemies. Can be used repeatedly."
+  },
+  {
+    "id": 1195,
+    "name": "Fires of Slumber",
+    "info": "Blow the torch's flame in a wide arc in front of you. If the flames touch the ground it will continue to burn on the ground for a short time."
+  },
+  {
+    "id": 1196,
+    "name": "Golden Retaliation",
+    "info": "Block with precise timing to absorb an incoming spell, convert it into golden energy, then cast it back at the target.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 150"
+  },
+  {
+    "id": 1197,
+    "name": "Contagious Fury",
+    "info": "Raise the armament to imbue yourself with red energy for 30 seconds, which increases <font color=\"#E0B985\">all damage inflicted</font> by 20%."
+  },
+  {
+    "id": 1198,
+    "name": "Ordovis's Vortex",
+    "info": "Spin the armament vertically in the air behind you for a short time before slamming into the ground in front of you to produce a large shockwave. Charging increases damage."
+  },
+  {
+    "id": 1199,
+    "name": "Spinning Weapon",
+    "info": "Imbue armament with glintstone magic then telekinetically lift it in front of you and spin it vertically several times. Can be used while moving."
+  }
+]

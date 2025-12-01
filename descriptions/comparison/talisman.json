@@ -1,0 +1,1019 @@
+[
+  {
+    "id": 1000,
+    "name": "Crimson Amber Medallion",
+    "category": "talisman",
+    "caption": "A medallion with crimson amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 6%.",
+    "vanilla_caption": "A medallion with crimson amber inlaid.\nBoosts maximum HP.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "vanilla_info": "Raises maximum HP"
+  },
+  {
+    "id": 1001,
+    "name": "Crimson Amber Medallion +1",
+    "category": "talisman",
+    "caption": "A medallion with crimson amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 7%.",
+    "vanilla_caption": "A medallion with crimson amber inlaid.\nGreatly boosts maximum HP.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "vanilla_info": "Greatly raises maximum HP"
+  },
+  {
+    "id": 1002,
+    "name": "Crimson Amber Medallion +2",
+    "category": "talisman",
+    "caption": "A medallion with crimson amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 8%.",
+    "vanilla_caption": "A medallion with crimson amber inlaid.\nVastly boosts maximum HP.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "vanilla_info": "Vastly raises maximum HP"
+  },
+  {
+    "id": 1010,
+    "name": "Cerulean Amber Medallion",
+    "category": "talisman",
+    "caption": "A medallion with cerulean amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "info": "Increases <font color=\"#E0B985\">maximum FP</font> by 7%.",
+    "vanilla_caption": "A medallion with cerulean amber inlaid.\nBoosts maximum FP.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "vanilla_info": "Raises maximum FP"
+  },
+  {
+    "id": 1011,
+    "name": "Cerulean Amber Medallion +1",
+    "category": "talisman",
+    "caption": "A medallion with cerulean amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "info": "Increases <font color=\"#E0B985\">maximum FP</font> by 9%.",
+    "vanilla_caption": "A medallion with cerulean amber inlaid.\nGreatly boosts maximum FP.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "vanilla_info": "Greatly raises maximum FP"
+  },
+  {
+    "id": 1012,
+    "name": "Cerulean Amber Medallion +2",
+    "category": "talisman",
+    "caption": "A medallion with cerulean amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "info": "Increases <font color=\"#E0B985\">maximum FP</font> by 11%.",
+    "vanilla_caption": "A medallion with cerulean amber inlaid.\nVastly boosts maximum FP.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "vanilla_info": "Vastly raises maximum FP"
+  },
+  {
+    "id": 1020,
+    "name": "Viridian Amber Medallion",
+    "category": "talisman",
+    "caption": "A medallion with viridian amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "info": "Increases <font color=\"#E0B985\">maximum stamina</font> by 11%.",
+    "vanilla_caption": "A medallion with viridian amber inlaid.\nBoosts maximum stamina.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "vanilla_info": "Raises maximum stamina"
+  },
+  {
+    "id": 1021,
+    "name": "Viridian Amber Medallion +1",
+    "category": "talisman",
+    "caption": "A medallion with viridian amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "info": "Increases <font color=\"#E0B985\">maximum stamina</font> by 13%.",
+    "vanilla_caption": "A medallion with viridian amber inlaid.\nGreatly boosts maximum stamina.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "vanilla_info": "Greatly raises maximum stamina"
+  },
+  {
+    "id": 1022,
+    "name": "Viridian Amber Medallion +2",
+    "category": "talisman",
+    "caption": "A medallion with viridian amber inlaid.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "info": "Increases <font color=\"#E0B985\">maximum stamina</font> by 15%.",
+    "vanilla_caption": "A medallion with viridian amber inlaid.\nVastly boosts maximum stamina.\n\nThe Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.\n\nA primordial life energy resides inside.",
+    "vanilla_info": "Vastly raises maximum stamina"
+  },
+  {
+    "id": 1030,
+    "name": "Arsenal Charm",
+    "category": "talisman",
+    "caption": "An iron charm that resembles a mass of weaponry.\n\nThis talisman was derived from an unusual greatsword once wielded by a hero hungry for vengeance.",
+    "info": "Increases <font color=\"#E0B985\">maximum equip load</font> by 15%.",
+    "vanilla_caption": "An iron charm that resembles a mass of weaponry.\nBoosts maximum equipment load.\n\nThis talisman was derived from an unusual greatsword once wielded by a hero hungry for vengeance.",
+    "vanilla_info": "Raises maximum equipment load"
+  },
+  {
+    "id": 1031,
+    "name": "Arsenal Charm +1",
+    "category": "talisman",
+    "caption": "An iron charm that resembles a mass of weaponry.\n\nThis talisman was derived from an unusual greatsword once wielded by a hero hungry for vengeance.",
+    "info": "Increases <font color=\"#E0B985\">maximum equip load</font> by 17%.",
+    "vanilla_caption": "An iron charm that resembles a mass of weaponry.\nGreatly boosts maximum equipment load.\n\nThis talisman was derived from an unusual greatsword once wielded by a hero hungry for vengeance.",
+    "vanilla_info": "Greatly raises maximum equip load"
+  },
+  {
+    "id": 1032,
+    "name": "Great-Jar's Arsenal",
+    "category": "talisman",
+    "caption": "A charm that resembles a great jar overflowing with weaponry.\n\nThe great jar grants this talisman to their warriors. Carry as much as you can—grow big and strong.",
+    "info": "Increases <font color=\"#E0B985\">maximum equip load</font> by 19%.",
+    "vanilla_caption": "A charm that resembles a great jar overflowing with weaponry.\nVastly boosts maximum equipment load.\n\nThe great jar grants this talisman to their warriors.\nCarry as much as you can—grow big and strong.",
+    "vanilla_info": "Vastly raises maximum equip load"
+  },
+  {
+    "id": 1040,
+    "name": "Erdtree's Favor",
+    "category": "talisman",
+    "caption": "A talisman depicting a special blessing of the Erdtree.\n\nIt is said that when the Age of the Erdtree began, such blessings were personally bestowed upon their recipients by Queen Marika herself.",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 3%, <font color=\"#E0B985\">maximum stamina</font> by 7%, and <font color=\"#E0B985\">maximum equip load</font> by 5%.",
+    "vanilla_caption": "A talisman depicting a special blessing of the Erdtree.\nSlightly raises maximum HP, stamina, and equip load.\n\nIt is said that when the Age of the Erdtree began, such blessings were personally bestowed upon their recipients by Queen Marika herself.",
+    "vanilla_info": "Raises maximum HP, stamina and equip load"
+  },
+  {
+    "id": 1041,
+    "name": "Erdtree's Favor +1",
+    "category": "talisman",
+    "caption": "A talisman depicting a special blessing of the Erdtree.\n\nIt is said that when the Age of the Erdtree began, such blessings were personally bestowed upon their recipients by Queen Marika herself.",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 3.5%, <font color=\"#E0B985\">maximum stamina</font> by 8.5%, and <font color=\"#E0B985\">maximum equip load</font> by 6.5%.",
+    "vanilla_caption": "A talisman depicting a special blessing of the Erdtree.\nRaises maximum HP, stamina, and equip load.\n\nIt is said that when the Age of the Erdtree began, such blessings were personally bestowed upon their recipients by Queen Marika herself.",
+    "vanilla_info": "Raises maximum HP, stamina and equip load"
+  },
+  {
+    "id": 1042,
+    "name": "Erdtree's Favor +2",
+    "category": "talisman",
+    "caption": "A legendary talisman depicting a special blessing of the Erdtree.\n\nIt is said that when the Age of the Erdtree began, such blessings were personally bestowed upon their recipients by Queen Marika herself.",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 4%, <font color=\"#E0B985\">maximum stamina</font> by 10%, and <font color=\"#E0B985\">maximum equip load</font> by 8%.",
+    "vanilla_caption": "A legendary talisman depicting a special blessing of the Erdtree.\n\nGreatly raises maximum HP, stamina, and equip load.\n\nIt is said that when the Age of the Erdtree began, such blessings were personally bestowed upon their recipients by Queen Marika herself.",
+    "vanilla_info": "Raises maximum HP, stamina and equip load"
+  },
+  {
+    "id": 1050,
+    "name": "Radagon's Scarseal",
+    "category": "talisman",
+    "caption": "An eye engraved with an Elden Rune.\nSaid to be the seal of King Consort Radagon.\n\nThese seals represent the lifelong duty of those chosen by the gods.",
+    "info": "Increases <font color=\"#E0B985\">vigor</font>, <font color=\"#E0B985\">endurance</font>, <font color=\"#E0B985\">strength</font>, and <font color=\"#E0B985\">dexterity</font> by 3, but increases <font color=\"#E0B985\">all damage received</font> by 10%.",
+    "vanilla_caption": "An eye engraved with an Elden Rune.\nSaid to be the seal of King Consort Radagon.\n\nRaises vigor, endurance, strength, and dexterity, but also increases damage taken.\n\nThese seals represent the lifelong duty of those chosen by the gods.",
+    "vanilla_info": "Raises attributes, but also increases damage taken"
+  },
+  {
+    "id": 1051,
+    "name": "Radagon's Soreseal",
+    "category": "talisman",
+    "caption": "This legendary talisman is an eye engraved with an Elden Rune, said to be the seal of King Consort Radagon.\n\nSolemn duty weighs upon the one beholden; not unlike a gnawing curse from which there is no deliverance.",
+    "info": "Increases <font color=\"#E0B985\">vigor</font>, <font color=\"#E0B985\">endurance</font>, <font color=\"#E0B985\">strength</font>, and <font color=\"#E0B985\">dexterity</font> by 5, but increases <font color=\"#E0B985\">all damage received</font> by 15%.",
+    "vanilla_caption": "This legendary talisman is an eye engraved with an Elden Rune, said to be the seal of King Consort Radagon.\n\nGreatly raises vigor, endurance, strength, and dexterity, but also increases damage taken by a similar measure.\n\nSolemn duty weighs upon the one beholden; not unlike a gnawing curse from which there is no deliverance.",
+    "vanilla_info": "Greatly raises attributes, but also increases damage taken"
+  },
+  {
+    "id": 1060,
+    "name": "Starscourge Heirloom",
+    "category": "talisman",
+    "caption": "A talisman engraved with a scene from a heroic tale.\n\nThe mightiest hero of the demigods confronted the falling stars alone—and thus did he crush them, his conquest sealing the very fate of the stars.",
+    "info": "Increases <font color=\"#E0B985\">strength</font> by 5.",
+    "vanilla_caption": "A talisman engraved with a scene from a heroic tale.\nRaises strength.\n\nThe mightiest hero of the demigods confronted the falling stars alone—and thus did he crush them, his conquest sealing the very fate of the stars.",
+    "vanilla_info": "Raises strength"
+  },
+  {
+    "id": 1070,
+    "name": "Prosthesis-Wearer Heirloom",
+    "category": "talisman",
+    "caption": "A talisman engraved with a scene from a heroic tale.\n\nThough born into the accursed rot, when the young girl encountered her mentor and his flowing blade, she gained wings of unparalleled strength.",
+    "info": "Increases <font color=\"#E0B985\">dexterity</font> by 5.",
+    "vanilla_caption": "A talisman engraved with a scene from a heroic tale.\nRaises dexterity.\n\nThough born into the accursed rot, when the young girl encountered her mentor and his flowing blade, she gained wings of unparalleled strength.",
+    "vanilla_info": "Raises dexterity"
+  },
+  {
+    "id": 1080,
+    "name": "Stargazer Heirloom",
+    "category": "talisman",
+    "caption": "A talisman engraved with the legend of a queen.\n\nThe young astrologer gazed at the night sky as she walked. She had always chased the stars every step of her journey. Then she met the full moon—and, in time, the astrologer became a queen.",
+    "info": "Increases <font color=\"#E0B985\">intelligence</font> by 5.",
+    "vanilla_caption": "A talisman engraved with the legend of a queen.\nRaises intelligence.\n\nThe young astrologer gazed at the night sky as she walked. She had always chased the stars every step of her journey. Then she met the full moon—and, in time, the astrologer became a queen.",
+    "vanilla_info": "Raises intelligence"
+  },
+  {
+    "id": 1090,
+    "name": "Two Fingers Heirloom",
+    "category": "talisman",
+    "caption": "A talisman engraved with the legend of the Two Fingers.\n\nFingers cannot speak, yet these were eloquent. Persistently did they wriggle, spelling out mysteries in the air. Thus did we gain the words. The words of our faith.",
+    "info": "Increases <font color=\"#E0B985\">faith</font> by 5.",
+    "vanilla_caption": "A talisman engraved with the legend of the Two Fingers.\nRaises faith.\n\nFingers cannot speak, yet these were eloquent.\nPersistently did they wriggle, spelling out mysteries in the air.\nThus did we gain the words. The words of our faith.",
+    "vanilla_info": "Raises faith"
+  },
+  {
+    "id": 1100,
+    "name": "Silver Scarab",
+    "category": "talisman",
+    "caption": "A talisman facsimile of a scarab, the carrier of treasures and precious things.",
+    "info": "Increases <font color=\"#E0B985\">item discovery</font> by 75.",
+    "vanilla_caption": "A talisman facsimile of a scarab, the carrier of treasures and precious things.\n\nThis silver scarab enhances item discovery.",
+    "vanilla_info": "Raises item discovery"
+  },
+  {
+    "id": 1110,
+    "name": "Gold Scarab",
+    "category": "talisman",
+    "caption": "A talisman facsimile of a scarab, the carrier of treasures and precious things.",
+    "info": "Increases runes obtained from defeated enemies by 20%.",
+    "vanilla_caption": "A talisman facsimile of a scarab, the carrier of treasures and precious things.\n\nThis golden scarab increases the amount of runes obtained from defeating enemies.",
+    "vanilla_info": "Increases runes obtained from defeated enemies"
+  },
+  {
+    "id": 1140,
+    "name": "Moon of Nokstella",
+    "category": "talisman",
+    "caption": "This legendary talisman is a treasure of Nokstella, the Eternal City.\n\nThis talisman represents the lost black moon. The moon of Nokstella was the guide of countless stars.",
+    "info": "Increases <font color=\"#E0B985\">memory slots</font> by 2, allowing more spells to be memorized.",
+    "vanilla_caption": "This legendary talisman is a treasure of Nokstella, the Eternal City.\n\nIncreases memory slots.\n\nThis talisman represents the lost black moon.\nThe moon of Nokstella was the guide of countless stars.",
+    "vanilla_info": "Increases memory slots"
+  },
+  {
+    "id": 1150,
+    "name": "Green Turtle Talisman",
+    "category": "talisman",
+    "caption": "A talisman in the shape of a green turtle.\n\nTurtles are known as a nutritious ingredient, symbolic of inexhaustible power. However, those who hold turtles to be wise creatures consider the practice of eating their meat to be barbarous.",
+    "info": "Increases <font color=\"#E0B985\">stamina regeneration</font> by 8 per second.",
+    "vanilla_caption": "A talisman in the shape of a green turtle.\nRaises stamina recovery speed.\n\nTurtles are known as a nutritious ingredient, symbolic of inexhaustible power.\n\nHowever, those who hold turtles to be wise creatures consider the practice of eating their meat to be barbarous.",
+    "vanilla_info": "Raises stamina recovery speed"
+  },
+  {
+    "id": 1160,
+    "name": "Stalwart Horn Charm",
+    "category": "talisman",
+    "caption": "An accoutrement worn by the ancestral followers.\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "info": "Increases <font color=\"#E0B985\">robustness</font> by 90.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.",
+    "vanilla_caption": "An accoutrement worn by the ancestral followers.\nRaises robustness.\n(Robustness governs resistance to blood loss and frost.)\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "vanilla_info": "Raises robustness"
+  },
+  {
+    "id": 1161,
+    "name": "Stalwart Horn Charm +1",
+    "category": "talisman",
+    "caption": "An accoutrement worn by the ancestral followers.\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "info": "Increases <font color=\"#E0B985\">robustness</font> by 140.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.",
+    "vanilla_caption": "An accoutrement worn by the ancestral followers.\nGreatly raises robustness.\n(Robustness governs resistance to blood loss and frost.)\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "vanilla_info": "Greatly raises robustness"
+  },
+  {
+    "id": 1170,
+    "name": "Immunizing Horn Charm",
+    "category": "talisman",
+    "caption": "An accoutrement worn by the ancestral followers.\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "info": "Increases <font color=\"#E0B985\">immunity</font> by 90.\n\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.",
+    "vanilla_caption": "An accoutrement worn by the ancestral followers.\nRaises immunity.\n(Immunity governs resistance to poison and rot.)\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "vanilla_info": "Raises immunity"
+  },
+  {
+    "id": 1171,
+    "name": "Immunizing Horn Charm +1",
+    "category": "talisman",
+    "caption": "An accoutrement worn by the ancestral followers.\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "info": "Increases <font color=\"#E0B985\">immunity</font> by 140.\n\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.",
+    "vanilla_caption": "An accoutrement worn by the ancestral followers.\nGreatly raises immunity.\n(Immunity governs resistance to poison and rot.)\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "vanilla_info": "Greatly raises immunity"
+  },
+  {
+    "id": 1180,
+    "name": "Clarifying Horn Charm",
+    "category": "talisman",
+    "caption": "An accoutrement worn by the ancestral followers.\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "info": "Increases <font color=\"#E0B985\">focus</font> by 90.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>.",
+    "vanilla_caption": "An accoutrement worn by the ancestral followers.\nRaises focus.\n(Focus governs resistance to sleep and madness.)\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "vanilla_info": "Raises focus"
+  },
+  {
+    "id": 1181,
+    "name": "Clarifying Horn Charm +1",
+    "category": "talisman",
+    "caption": "An accoutrement worn by the ancestral followers.\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "info": "Increases <font color=\"#E0B985\">focus</font> by 140.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>.",
+    "vanilla_caption": "An accoutrement worn by the ancestral followers.\nGreatly raises focus.\n(Focus governs resistance to sleep and madness.)\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "vanilla_info": "Greatly raises focus"
+  },
+  {
+    "id": 1190,
+    "name": "Prince of Death's Pustule",
+    "category": "talisman",
+    "caption": "A fetid pustule taken from facial flesh.\n\nIt is said that this pustule came from the visage of the Prince of Death, he who used to be called Godwyn. As First Dead of the demigods, it's said he's buried deep under the capital, at the Erdtree's roots.",
+    "info": "Increases <font color=\"#E0B985\">vitality</font> by 90.\n\n<font color=\"#E0B985\">Vitality:</font> Resistance to <font color=\"#A17945\">death blight</font>.",
+    "vanilla_caption": "A fetid pustule taken from facial flesh.\nRaises vitality.\n(Vitality governs resistance to the effects of Death.)\n\nIt is said that this pustule came from the visage of the Prince of Death, he who used to be called Godwyn. As First Dead of the demigods, it's said he's buried deep under the capital, at the Erdtree's roots.",
+    "vanilla_info": "Raises vitality"
+  },
+  {
+    "id": 1191,
+    "name": "Prince of Death's Cyst",
+    "category": "talisman",
+    "caption": "A fetid, overgrown cyst taken from facial flesh.\n\nIt is said that this cyst came from the corrupted visage of one unable to die a true Death. Indeed, it comes from the Prince of Death, scion of the golden bough and First of the Dead among the demigods.",
+    "info": "Increases <font color=\"#E0B985\">vitality</font> by 140.\n\n<font color=\"#E0B985\">Vitality:</font> Resistance to <font color=\"#A17945\">death blight</font>.",
+    "vanilla_caption": "A fetid, overgrown cyst taken from facial flesh.\nGreatly raises vitality.\n(Vitality governs resistance to the effects of Death.)\n\nIt is said that this cyst came from the corrupted visage of one unable to die a true Death. Indeed, it comes from the Prince of Death, scion of the golden bough and First of the Dead among the demigods.",
+    "vanilla_info": "Greatly raises vitality"
+  },
+  {
+    "id": 1200,
+    "name": "Mottled Necklace",
+    "category": "talisman",
+    "caption": "A vividly-colored accoutrement precious to the ancestral followers.\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "info": "Increases <font color=\"#E0B985\">robustness</font>, <font color=\"#E0B985\">immunity</font>, and <font color=\"#E0B985\">focus</font> by 40.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>.",
+    "vanilla_caption": "A vividly-colored accoutrement precious to the ancestral followers.\n\nRaises immunity, robustness, and focus.\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "vanilla_info": "Raises robustness, immunity, and focus"
+  },
+  {
+    "id": 1201,
+    "name": "Mottled Necklace +1",
+    "category": "talisman",
+    "caption": "A vividly-colored accoutrement precious to the ancestral followers.\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "info": "Increases <font color=\"#E0B985\">robustness</font>, <font color=\"#E0B985\">immunity</font>, and <font color=\"#E0B985\">focus</font> by 60.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>.",
+    "vanilla_caption": "A vividly-colored accoutrement precious to the ancestral followers.\n\nGreatly raises immunity, robustness, and focus.\n\nSaid to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit.",
+    "vanilla_info": "Greatly raises robustness, immunity, and focus"
+  },
+  {
+    "id": 1210,
+    "name": "Bull-Goat's Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting the horns of a bull-goat.\n\nBull-goats are associated with the stout and mighty Tragoth, said to be unflinching in combat—now a silent comrade to those who fight.",
+    "info": "Reduces <font color=\"#E0B985\">poise damage received</font> by about 25%.\n\nAlthough this item shows your poise stat increase by about 34%, this item doesn't actually increase your maximum poise. It only reduces the amount of poise damage that you receive from each attack.\n\nThis effect can be combined with the effects of Baldachin's Blessing to reduce <font color=\"#E0B985\">poise damage received</font> by about 50.65%, or it can be combined with the effects of Radiant Baldachin's Blessing to reduce <font color=\"#E0B985\">poise damage received</font> by about 58.75%.",
+    "vanilla_caption": "A talisman depicting the horns of a bull-goat.\nRaises poise.\n\nBull-goats are associated with the stout and mighty Tragoth, said to be unflinching in combat—now a silent comrade to those who fight.",
+    "vanilla_info": "Raises poise"
+  },
+  {
+    "id": 1220,
+    "name": "Marika's Scarseal",
+    "category": "talisman",
+    "caption": "An eye engraved with an Elden Rune.\nSaid to be the seal of Queen Marika.\n\nThese seals represent the lifelong duty of those chosen by the gods.",
+    "info": "Increases <font color=\"#E0B985\">mind</font>, <font color=\"#E0B985\">intelligence</font>, <font color=\"#E0B985\">faith</font>, and <font color=\"#E0B985\">arcane</font> by 3, but increases <font color=\"#E0B985\">all damage received</font> by 10%.",
+    "vanilla_caption": "An eye engraved with an Elden Rune.\nSaid to be the seal of Queen Marika.\n\nRaises mind, intelligence, faith, and arcane, but also increases damage taken.\n\nThese seals represent the lifelong duty of those chosen by the gods.",
+    "vanilla_info": "Raises attributes, but also increases damage taken"
+  },
+  {
+    "id": 1221,
+    "name": "Marika's Soreseal",
+    "category": "talisman",
+    "caption": "This legendary talisman is an eye engraved with an Elden Rune, said to be the seal of Queen Marika.\n\nSolemn duty weighs upon the one beholden; not unlike a gnawing curse from which there is no deliverance.",
+    "info": "Increases <font color=\"#E0B985\">mind</font>, <font color=\"#E0B985\">intelligence</font>, <font color=\"#E0B985\">faith</font>, and <font color=\"#E0B985\">arcane</font> by 5, but increases <font color=\"#E0B985\">all damage received</font> by 15%.",
+    "vanilla_caption": "This legendary talisman is an eye engraved with an Elden Rune, said to be the seal of Queen Marika.\n\nGreatly raises mind, intelligence, faith, and arcane, but also increases damage taken by a similar measure.\n\nSolemn duty weighs upon the one beholden; not unlike a gnawing curse from which there is no deliverance.",
+    "vanilla_info": "Greatly raises attributes, but also increases damage taken"
+  },
+  {
+    "id": 1230,
+    "name": "Warrior Jar Shard",
+    "category": "talisman",
+    "caption": "Shard of a shattered warrior jar.\n\nScraps of stewed flesh cling to the shard, and tatters of ornaments can be seen mingled within the slime. Relics of ancient royal warriors, perhaps.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of skills by 10%.",
+    "vanilla_caption": "Shard of a shattered warrior jar.\n\nBoosts the attack power of skills.\n\nScraps of stewed flesh cling to the shard, and tatters of ornaments can be seen mingled within the slime. Relics of ancient royal warriors, perhaps.",
+    "vanilla_info": "Boosts the attack power of skills"
+  },
+  {
+    "id": 1231,
+    "name": "Shard of Alexander",
+    "category": "talisman",
+    "caption": "Shard of the late Alexander, a shattered warrior jar.\n\nScraps of stewed flesh cling to the shard, and tatters of ornaments can be seen mingled within the slime. Relics of a red-haired champion, it would seem.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of skills by 15%.",
+    "vanilla_caption": "Shard of the late Alexander, a shattered warrior jar.\n\nGreatly boosts the attack power of skills.\n\nScraps of stewed flesh cling to the shard, and tatters of ornaments can be seen mingled within the slime. Relics of a red-haired champion, it would seem.",
+    "vanilla_info": "Greatly boosts the attack power of skills"
+  },
+  {
+    "id": 1250,
+    "name": "Millicent's Prosthesis",
+    "category": "talisman",
+    "caption": "Part of the golden prosthesis used by Millicent. The hand is locked into a fist that once raised a sword aloft.\n\nThe despair of sweet betrayal transformed Millicent from a mere bud into a magnificent flower. And one day, she will be reborn—as a beautiful scarlet valkyrie.",
+    "info": "Increases <font color=\"#E0B985\">dexterity</font> by 5 and increases <font color=\"#E0B985\">all damage inflicted</font> after multiple attacks within a short time. There are 3 tiers of damage increase: 4%, 6%, and 11%.\n\nThe number of attacks required to trigger this effect varies per weapon, and is not based on damage or weapon speed. It generally requires 3-4 attacks to trigger the first tier, 5-8 attacks for the second, and 8-11 attacks for the third. Some weapons are too slow to trigger all tiers.",
+    "vanilla_caption": "Part of the golden prosthesis used by Millicent.\nThe hand is locked into a fist that once raised a sword aloft.\n\nBoosts dexterity and raises attack power with successive attacks.\n\nThe despair of sweet betrayal transformed Millicent from a mere bud into a magnificent flower. And one day, she will be reborn—as a beautiful scarlet valkyrie.",
+    "vanilla_info": "Boosts dexterity, raises attack power with successive attacks"
+  },
+  {
+    "id": 2000,
+    "name": "Magic Scorpion Charm",
+    "category": "talisman",
+    "caption": "A talisman carried by assassins who strike unseen. Patterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart that shimmers with magic.",
+    "info": "Increases <font color=\"#57DBCE\">magic damage inflicted</font> by 12%, but reduces <font color=\"#F395C4\">physical damage negation</font> by 10%.",
+    "vanilla_caption": "A talisman carried by assassins who strike unseen.\nPatterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart that shimmers with magic.\n\nRaises magic attack power, but lowers damage negation.",
+    "vanilla_info": "Raises magic attack, but lowers damage negation"
+  },
+  {
+    "id": 2010,
+    "name": "Lightning Scorpion Charm",
+    "category": "talisman",
+    "caption": "A talisman carried by assassins who strike unseen. Patterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart that sparks with lightning.",
+    "info": "Increases <font color=\"#FFE033\">lightning damage inflicted</font> by 12%, but reduces <font color=\"#F395C4\">physical damage negation</font> by 10%.",
+    "vanilla_caption": "A talisman carried by assassins who strike unseen.\nPatterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart that sparks with lightning.\n\nRaises lightning attack power, but lowers damage negation.",
+    "vanilla_info": "Raises lightning attack, but lowers damage negation"
+  },
+  {
+    "id": 2020,
+    "name": "Fire Scorpion Charm",
+    "category": "talisman",
+    "caption": "A talisman carried by assassins who strike unseen. Patterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart that burns with fire.",
+    "info": "Increases <font color=\"#F48C25\">fire damage inflicted</font> by 12%, but reduces <font color=\"#F395C4\">physical damage negation</font> by 10%.",
+    "vanilla_caption": "A talisman carried by assassins who strike unseen.\nPatterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart that burns with fire.\n\nRaises fire attack power, but lowers damage negation.",
+    "vanilla_info": "Raises fire attack, but lowers damage negation"
+  },
+  {
+    "id": 2030,
+    "name": "Sacred Scorpion Charm",
+    "category": "talisman",
+    "caption": "A talisman carried by assassins who strike unseen. Patterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart with a blessed glow.",
+    "info": "Increases <font color=\"#F5EB89\">holy damage inflicted</font> by 12%, but reduces <font color=\"#F395C4\">physical damage negation</font> by 10%.",
+    "vanilla_caption": "A talisman carried by assassins who strike unseen.\nPatterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart with a blessed glow.\n\nRaises holy attack power, but lowers damage negation.",
+    "vanilla_info": "Raises holy attack, but lowers damage negation"
+  },
+  {
+    "id": 2040,
+    "name": "Red-Feathered Branchsword",
+    "category": "talisman",
+    "caption": "A talisman adorned with red feathers, once used in ancient death rituals.\n\nThe heart sings when one draws close to death, and a glorious end awaits those who cling so tenaciously to life.",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> by 20% while HP is below 20%.",
+    "vanilla_caption": "A talisman adorned with red feathers, once used in ancient death rituals.\nRaises attack power when HP is low.\n\nThe heart sings when one draws close to death, and a glorious end awaits those who cling so tenaciously to life.",
+    "vanilla_info": "Raises attack power when HP is low"
+  },
+  {
+    "id": 2050,
+    "name": "Ritual Sword Talisman",
+    "category": "talisman",
+    "caption": "A talisman patterned after swords used in ritual combat held to honor the Erdtree.\n\nThe practice had died out by the age of King Consort Radagon, but remains of the arenas where ritual combat took place can still be found in every land.",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> by 10% while HP is at maximum.",
+    "vanilla_caption": "A talisman patterned after swords used in ritual combat held to honor the Erdtree.\n\nRaises attack power when HP is at maximum.\n\nThe practice had died out by the age of King Consort Radagon, but remains of the arenas where ritual combat took place can still be found in every land.",
+    "vanilla_info": "Raises attack power when HP is at maximum"
+  },
+  {
+    "id": 2060,
+    "name": "Spear Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting a spear and a soldier.\n\nSpears are standard weapons for soldiers in the Lands Between. They made it possible to respond to a ferocious foe with an equally ferocious counterattack.",
+    "info": "Increases <font color=\"#F395C4\">physical attack power</font> of thrusting weapon counter-attacks by 15%.\n\nA counter-attack is performed by hitting an enemy with a thrust attack at a precise time as they are in the process of doing an attack, just before they actually hit you. Not all enemy attacks allow for a counter-attack to be performed.",
+    "vanilla_caption": "A talisman depicting a spear and a soldier.\nEnhances the counterattacks that are unique to thrusting weapons.\n\nSpears are standard weapons for soldiers in the Lands Between. They made it possible to respond to a ferocious foe with an equally ferocious counterattack.",
+    "vanilla_info": "Enhances counterattacks unique to thrusting weapons"
+  },
+  {
+    "id": 2070,
+    "name": "Hammer Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting a hammer and a knight.\n\nHammers are highly effective against shield-bearing foes, so much so that they are known as \"knight-killers.\"",
+    "info": "Increases the amount of stamina removed with each attack from enemies who are guarding by 20%, making it easier to break their stance.",
+    "vanilla_caption": "A talisman depicting a hammer and a knight.\nEnhances stamina-reducing attacks against a blocking opponent.\n\nHammers are highly effective against shield-bearing foes, so much so that they are known as \"knight-killers.\"",
+    "vanilla_info": "Enhances stamina-reducing attacks against blockers"
+  },
+  {
+    "id": 2080,
+    "name": "Winged Sword Insignia",
+    "category": "talisman",
+    "caption": "A talisman depicting a raised prosthetic blade. An honor bestowed upon the knights who fought alongside Malenia the Severed.\n\nThe wings symbolize Malenia and her undefeated prowess. Though she never knew relief from the accursed rot she was born into, her blade was forever beautiful—and relentless.",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> after multiple attacks within a short time. There are 3 tiers of damage increase: 3%, 5%, and 10%.\n\nThe number of attacks required to trigger this effect varies per weapon, and is not based on damage or weapon speed. It generally requires 3-4 attacks to trigger the first tier, 5-8 attacks for the second, and 8-11 attacks for the third. Some weapons are too slow to trigger all tiers. Damage bonus resets if no attacks are performed within a short amount of time.",
+    "vanilla_caption": "A talisman depicting a raised prosthetic blade.\nAn honor bestowed upon the knights who fought alongside Malenia the Severed.\n\nRaises attack power with successive attacks.\n\nThe wings symbolize Malenia and her undefeated prowess. Though she never knew relief from the accursed rot she was born into, her blade was forever beautiful—and relentless.",
+    "vanilla_info": "Raises attack power with successive attacks"
+  },
+  {
+    "id": 2081,
+    "name": "Rotten Winged Sword Insignia",
+    "category": "talisman",
+    "caption": "A talisman depicting a raised prosthetic blade.\nAn honor bestowed upon the valkyries who serve the Goddess of Rot.\n\nThe four sisters were born in the Swamp of Aeonia, and came to the Haligtree under the aegis of Gowry. And yet, those buds were doomed to never blossom.",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> after multiple attacks within a short time. There are 3 tiers of damage increase: 6%, 8%, and 13%.\n\nThe number of attacks required to trigger this effect varies per weapon, and is not based on damage or weapon speed. It generally requires 3-4 attacks to trigger the first tier, 5-8 attacks for the second, and 8-11 attacks for the third. Some weapons are too slow to trigger all tiers. Damage bonus resets if no attacks are performed within a short amount of time.",
+    "vanilla_caption": "A talisman depicting a raised prosthetic blade.\nAn honor bestowed upon the valkyries who serve the Goddess of Rot.\n\nGreatly raises attack power with successive attacks.\n\nThe four sisters were born in the Swamp of Aeonia, and came to the Haligtree under the aegis of Gowry. And yet, those buds were doomed to never blossom.",
+    "vanilla_info": "Greatly raises attack power with successive attacks"
+  },
+  {
+    "id": 2090,
+    "name": "Dagger Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting a dagger and a surgeon.\n\nThe white-garbed field surgeons come to the aid of friend and foe alike by dealing a final deadly thrust to spare them from the prolonged agony of a mortal wound. A sense of mercy is a catalyst for bloodlust.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> for critical attacks by 17%.",
+    "vanilla_caption": "A talisman depicting a dagger and a surgeon.\nEnhances critical hits.\n\nThe white-garbed field surgeons come to the aid of friend and foe alike by dealing a final deadly thrust to spare them from the prolonged agony of a mortal wound. A sense of mercy is a catalyst for bloodlust.",
+    "vanilla_info": "Enhances critical hits"
+  },
+  {
+    "id": 2100,
+    "name": "Arrow's Reach Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting three arrows. Carried by hunters of beasts.",
+    "info": "Increases the range of arrows, bolts, and some spell projectiles by 65%.",
+    "vanilla_caption": "A talisman depicting three arrows.\nCarried by hunters of beasts.\n\nIncreases the effective range of bows.",
+    "vanilla_info": "Increases bow effective range"
+  },
+  {
+    "id": 2110,
+    "name": "Blue Dancer Charm",
+    "category": "talisman",
+    "caption": "A cloth doll depicting a dancer garbed in blue. An ancient heirloom of some sort.\n\nThe dancer in blue represents a fairy, who in legend bestowed a flowing sword upon a blind swordsman. Blade in hand, the swordsman sealed away an ancient god—a god that was Rot itself.",
+    "info": "Increases <font color=\"#F395C4\">physical attack power</font> by up to 15% based on how low your <font color=\"#E0B985\">equip load</font> is.\n\nThis is based on your total equip load, not the percentage compared to your maximum equip load. Increasing your maximum equip load will not improve the effect of this item.",
+    "vanilla_caption": "A cloth doll depicting a dancer garbed in blue.\nAn ancient heirloom of some sort.\n\nRaises attack power with lower equipment load.\n\nThe dancer in blue represents a fairy, who in legend bestowed a flowing sword upon a blind swordsman. Blade in hand, the swordsman sealed away an ancient god—a god that was Rot itself.",
+    "vanilla_info": "Raises attack power with lower equipment load"
+  },
+  {
+    "id": 2120,
+    "name": "Twinblade Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting a twinblade and a confessor.\n\nThe twinblade technique is a tradition of the confessors, who closely guard the secret of how they preserve the momentum of their attacks. Thus is the final strike of their onslaught all the more deadly.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> for final attack of a chain of regular melee attacks by 45%.",
+    "vanilla_caption": "A talisman depicting a twinblade and a confessor.\nEnhances the final hit ending a chain of attacks.\n\nThe twinblade technique is a tradition of the confessors, who closely guard the secret of how they preserve the momentum of their attacks. Thus is the final strike of their onslaught all the more deadly.",
+    "vanilla_info": "Enhances final hit of chain attacks"
+  },
+  {
+    "id": 2130,
+    "name": "Axe Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting an axe and a warrior.\n\nThe Lord who led the Long March bore an axe, and his loyal warriors honored him by wielding axes of their own, making them very effective at dealing decisive blows.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of charged melee attacks by 10%.\n\nThis effect does not work for charged sorceries, incantations, or weapon skills.",
+    "vanilla_caption": "A talisman depicting an axe and a warrior.\nEnhances charge attacks.\n\nThe Lord who led the Long March bore an axe, and his loyal warriors honored him by wielding axes of their own, making them very effective at dealing decisive blows.",
+    "vanilla_info": "Enhances charge attacks"
+  },
+  {
+    "id": 2140,
+    "name": "Lance Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting a lance and a knight.\n\nKnights on horseback are deadly foes. They see all below from their lofty position, meeting little meaningful resistance as they charge ahead.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> by 15% while on horseback.",
+    "vanilla_caption": "A talisman depicting a lance and a knight.\nEnhances attacks while on horseback.\n\nKnights on horseback are deadly foes. They see all below from their lofty position, meeting little meaningful resistance as they charge ahead.",
+    "vanilla_info": "Enhances attacks on horseback"
+  },
+  {
+    "id": 2150,
+    "name": "Arrow's Sting Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting three iron arrows. Carried by soldiers long ago.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of arrows and bolts by 10%.",
+    "vanilla_caption": "A talisman depicting three iron arrows.\nCarried by soldiers long ago.\n\nRaises attack power of arrows and bolts.",
+    "vanilla_info": "Raises attack power of arrows and bolts"
+  },
+  {
+    "id": 2160,
+    "name": "Lord of Blood's Exultation",
+    "category": "talisman",
+    "caption": "A talisman depicting the exultation of the Lord of Blood.\n\n\"Render up your offerings of blood to your Lord. Drench my consort's chamber. Slake his cocoon's thirst. His awakening shall herald the dawn of our dynasty.\"",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> by 20% for 20 seconds when <font color=\"#C84343\">blood loss</font> occurs nearby.",
+    "vanilla_caption": "A talisman depicting the exultation of the Lord of Blood.\n\nRaises attack power when blood loss occurs in the vicinity.\n\n\"Render up your offerings of blood to your Lord. Drench my consort's chamber. Slake his cocoon's thirst. His awakening shall herald the dawn of our dynasty.\"",
+    "vanilla_info": "Blood loss in vicinity increases attack power"
+  },
+  {
+    "id": 2170,
+    "name": "Kindred of Rot's Exultation",
+    "category": "talisman",
+    "caption": "A talisman depicting the exultation of pests.\n\n\"Rot for the scarlet goddess. O scarlet blossoms, flourish in distant lands, and return to us, the unwanted children.\"",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> by 20% for 20 seconds when <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">scarlet rot</font> occurs nearby.",
+    "vanilla_caption": "A talisman depicting the exultation of pests.\n\nRaises attack power when poisoning or rot occurs in the vicinity.\n\n\"Rot for the scarlet goddess. O scarlet blossoms, flourish in distant lands, and return to us, the unwanted children.\"",
+    "vanilla_info": "Poisoning or rot in vicinity increases attack power"
+  },
+  {
+    "id": 2180,
+    "name": "Claw Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting a claw and an assassin.\n\nThe assassins of Ravenmount are killers by trade. They assail their victims while dressed as birds of prey.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> for jump attacks by 15%.",
+    "vanilla_caption": "A talisman depicting a claw and an assassin.\nEnhances jump attacks.\n\nThe assassins of Ravenmount are killers by trade. They assail their victims while dressed as birds of prey.",
+    "vanilla_info": "Enhances jump attacks"
+  },
+  {
+    "id": 2190,
+    "name": "Roar Medallion",
+    "category": "talisman",
+    "caption": "A bronze medallion depicting a roaring giant.\n\nIn ancient times, the giants were mortal enemies of the Erdtree. Their bellowing roars desolated nature, triggered avalanches, and whipped up storms of flame.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> for attacks caused or altered by roar and breath skills by 15%.",
+    "vanilla_caption": "A bronze medallion depicting a roaring giant.\nEnhances roars and breath attacks.\n\nIn ancient times, the giants were mortal enemies of the Erdtree. Their bellowing roars desolated nature, triggered avalanches, and whipped up storms of flame.",
+    "vanilla_info": "Enhances roars and breath attacks"
+  },
+  {
+    "id": 2200,
+    "name": "Curved Sword Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting a curved sword and a swordsman.\n\nIt is said that a blind swordsman was the originator of this technique—the art of allowing one's opponent to strike so as to leave them vulnerable to a well-timed reply.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> for guard counters by 20%.\n\nA guard counter is performed by doing a strong attack immediately after blocking an enemy's attack.",
+    "vanilla_caption": "A talisman depicting a curved sword and a swordsman.\nEnhances guard counters.\n\nIt is said that a blind swordsman was the originator of this technique—the art of allowing one's opponent to strike so as to leave them vulnerable to a well-timed reply.",
+    "vanilla_info": "Enhances guard counters"
+  },
+  {
+    "id": 2210,
+    "name": "Companion Jar",
+    "category": "talisman",
+    "caption": "A talisman given by the jars to their friends.\n\nThough the jars are brought to life by human flesh and blood, they are all rather kindly folk. Perhaps they were made to be better than their innards.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of thrown pots by 20%.",
+    "vanilla_caption": "A talisman given by the jars to their friends.\nRaises potency of thrown jars.\n\nThough the jars are brought to life by human flesh and blood, they are all rather kindly folk. Perhaps they were made to be better than their innards.",
+    "vanilla_info": "Raises potency of throwing pots"
+  },
+  {
+    "id": 2220,
+    "name": "Perfumer's Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting a set of perfume bottles.\n\nThere are gardens known only to the perfumers. Whether hidden on the fringes of the highlands, or obscured by shadows inside caves, the flowers blossom in secret, waiting to impart their scent.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of perfumes by 20%.",
+    "vanilla_caption": "A talisman depicting a set of perfume bottles.\nRaises potency of arts employing perfume.\n\nThere are gardens known only to the perfumers. Whether hidden on the fringes of the highlands, or obscured by shadows inside caves, the flowers blossom in secret, waiting to impart their scent.",
+    "vanilla_info": "Raises potency of arts employing perfume"
+  },
+  {
+    "id": 3000,
+    "name": "Graven-School Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting a school of graven mages, the nightmare of the academy.\n\nThe primeval current is a forbidden tradition of glintstone sorcery. To those who cleave to its teachings, the act of collecting sorcerers to fashion them into the seeds of stars is but another path of scientific inquiry.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of sorceries by 4%.",
+    "vanilla_caption": "A talisman depicting a school of graven mages, the nightmare of the academy.\n\nRaises potency of sorceries.\n\nThe primeval current is a forbidden tradition of glintstone sorcery. To those who cleave to its teachings, the act of collecting sorcerers to fashion them into the seeds of stars is but another path of scientific inquiry.",
+    "vanilla_info": "Raises potency of sorceries"
+  },
+  {
+    "id": 3001,
+    "name": "Graven-Mass Talisman",
+    "category": "talisman",
+    "caption": "A talisman depicting the first school of graven mages—a nightmare that would continue to haunt the academy.\n\nThe primeval current is a forbidden tradition of glintstone sorcery. To those who cleave to its teachings, the act of collecting sorcerers to fashion them into the seeds of stars is but another path of scientific inquiry.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of sorceries by 8%.",
+    "vanilla_caption": "A talisman depicting the first school of graven mages—a nightmare that would continue to haunt the academy.\n\nGreatly raises potency of sorceries.\n\nThe primeval current is a forbidden tradition of glintstone sorcery. To those who cleave to its teachings, the act of collecting sorcerers to fashion them into the seeds of stars is but another path of scientific inquiry.",
+    "vanilla_info": "Greatly raises potency of sorceries"
+  },
+  {
+    "id": 3040,
+    "name": "Faithful's Canvas Talisman",
+    "category": "talisman",
+    "caption": "A talisman bearing an icon that depicts a group of masked figures.\n\nThe figures represent the flock at prayer, their firm belief in the intangible inspiring even the solitary founder of their religion.\n\nWhat is faith if not an affirmation?",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of incantations by 4%.",
+    "vanilla_caption": "A talisman bearing an icon that depicts a group of masked figures.\nRaises potency of incantations.\n\nThe figures represent the flock at prayer, their firm belief in the intangible inspiring even the solitary founder of their religion.\n\nWhat is faith if not an affirmation?",
+    "vanilla_info": "Raises potency of incantations"
+  },
+  {
+    "id": 3050,
+    "name": "Flock's Canvas Talisman",
+    "category": "talisman",
+    "caption": "A talisman bearing an icon that depicts a mass of masked figures.\n\nThe figures represent the flock at prayer, their firm belief in the intangible inspiring even the solitary founder of their religion.\n\nWhat is faith if not an affirmation?",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of incantations by 8%.",
+    "vanilla_caption": "A talisman bearing an icon that depicts a mass of masked figures.\nGreatly raises potency of incantations.\n\nThe figures represent the flock at prayer, their firm belief in the intangible inspiring even the solitary founder of their religion.\n\nWhat is faith if not an affirmation?",
+    "vanilla_info": "Greatly raises potency of incantations"
+  },
+  {
+    "id": 3060,
+    "name": "Old Lord's Talisman",
+    "category": "talisman",
+    "caption": "A legendary talisman depicting the ancient king whose seat lies at the heart of the storm beyond time.\n\nIt is said that the ancient royal city of Farum Azula has been slowly crumbling since time immemorial.",
+    "info": "Extends the duration of sorcery and incantation effects by 30%.",
+    "vanilla_caption": "A legendary talisman depicting the ancient king whose seat lies at the heart of the storm beyond time.\n\nExtends the duration of sorceries and incantations.\n\nIt is said that the ancient royal city of Farum Azula has been slowly crumbling since time immemorial.",
+    "vanilla_info": "Extends spell effect duration"
+  },
+  {
+    "id": 3070,
+    "name": "Radagon Icon",
+    "category": "talisman",
+    "caption": "A legendary talisman depicting the Elden Lord Radagon.\n\nAs the husband of Rennala of Caria, the red-haired Radagon studied sorcery, and as the husband of Queen Marika, he studied incantations. Thus did the hero aspire to be complete.",
+    "info": "Shortens the casting time of sorceries and incantations by the same amount as 30 levels in dexterity.\n\nThe shortest casting time is achieved at level 70 dexterity, so this will have no effect after that point.",
+    "vanilla_caption": "A legendary talisman depicting the Elden Lord Radagon.\nShortens the casting time of sorceries and incantations.\n\nAs the husband of Rennala of Caria, the red-haired Radagon studied sorcery, and as the husband of Queen Marika, he studied incantations. Thus did the hero aspire to be complete.",
+    "vanilla_info": "Shortens spell casting time"
+  },
+  {
+    "id": 3080,
+    "name": "Primal Glintstone Blade",
+    "category": "talisman",
+    "caption": "An old glintstone blade that has been stained with blood.\n\nThe old sorcerers would slice open their hearts with these blades to imbue a primal glintstone with their soul, and thus did they die.",
+    "info": "Reduces FP cost of sorceries and incantations by 25% but reduces <font color=\"#E0B985\">maximum HP</font> by 15%.",
+    "vanilla_caption": "An old glintstone blade that has been stained with blood.\n\nReduces FP consumption of sorceries and incantations at the cost of maximum HP.\n\nThe old sorcerers would slice open their hearts with these blades to imbue a primal glintstone with their soul, and thus did they die.",
+    "vanilla_info": "Spells consume less FP, but maximum HP is reduced"
+  },
+  {
+    "id": 3090,
+    "name": "Godfrey Icon",
+    "category": "talisman",
+    "caption": "A legendary talisman depicting the Elden Lord Godfrey.\n\nGodfrey was a ferocious warrior. When he vowed to become a lord, he took the Beast Regent Serosh upon his back to suppress the ceaseless lust for battle that raged within.",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of charged sorceries, incantations, and skills by 15%.",
+    "vanilla_caption": "A legendary talisman depicting the Elden Lord Godfrey.\nRaises charge attack power of sorceries, incantations, and skills.\n\nGodfrey was a ferocious warrior. When he vowed to become a lord, he took the Beast Regent Serosh upon his back to suppress the ceaseless lust for battle that raged within.",
+    "vanilla_info": "Enhances charged spells and skills"
+  },
+  {
+    "id": 4000,
+    "name": "Dragoncrest Shield Talisman",
+    "category": "talisman",
+    "caption": "Wrought iron talisman depicting an ancient dragon.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 10%.",
+    "vanilla_caption": "Wrought iron talisman depicting an ancient dragon.\nBoosts physical damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Boosts physical damage negation"
+  },
+  {
+    "id": 4001,
+    "name": "Dragoncrest Shield Talisman +1",
+    "category": "talisman",
+    "caption": "Wrought iron talisman depicting a duo of ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 13%.",
+    "vanilla_caption": "Wrought iron talisman depicting a duo of ancient dragons.\nGreatly boosts physical damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Greatly boosts physical damage negation"
+  },
+  {
+    "id": 4002,
+    "name": "Dragoncrest Shield Talisman +2",
+    "category": "talisman",
+    "caption": "Wrought iron talisman depicting a trio of ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 17%.",
+    "vanilla_caption": "Wrought iron talisman depicting a trio of ancient dragons.\nVastly boosts physical damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Vastly boosts physical damage negation"
+  },
+  {
+    "id": 4003,
+    "name": "Dragoncrest Greatshield Talisman",
+    "category": "talisman",
+    "caption": "Legendary talisman of wrought iron depicting a massive ancient dragon.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 20%.",
+    "vanilla_caption": "Legendary talisman of wrought iron depicting a massive ancient dragon.\nEnormously boosts physical damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Enormously boosts physical damage negation"
+  },
+  {
+    "id": 4010,
+    "name": "Spelldrake Talisman",
+    "category": "talisman",
+    "caption": "Talisman depicting a blue ancient dragon.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#57DBCE\">magical damage negation</font> by 13%.",
+    "vanilla_caption": "Talisman depicting a blue ancient dragon.\nBoosts magic damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Boosts magical damage negation"
+  },
+  {
+    "id": 4011,
+    "name": "Spelldrake Talisman +1",
+    "category": "talisman",
+    "caption": "Talisman depicting a duo of blue ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#57DBCE\">magical damage negation</font> by 17%.",
+    "vanilla_caption": "Talisman depicting a duo of blue ancient dragons.\nGreatly boosts magic damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Greatly boosts magical damage negation"
+  },
+  {
+    "id": 4012,
+    "name": "Spelldrake Talisman +2",
+    "category": "talisman",
+    "caption": "Talisman depicting a trio of blue ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#57DBCE\">magical damage negation</font> by 20%.",
+    "vanilla_caption": "Talisman depicting a trio of blue ancient dragons.\nVastly boosts magic damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Vastly boosts magical damage negation"
+  },
+  {
+    "id": 4020,
+    "name": "Flamedrake Talisman",
+    "category": "talisman",
+    "caption": "Talisman depicting a red ancient dragon.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#F48C25\">fire damage negation</font> by 13%.",
+    "vanilla_caption": "Talisman depicting a red ancient dragon.\nBoosts fire damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Boosts fire damage negation"
+  },
+  {
+    "id": 4021,
+    "name": "Flamedrake Talisman +1",
+    "category": "talisman",
+    "caption": "Talisman depicting a duo of red ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#F48C25\">fire damage negation</font> by 17%.",
+    "vanilla_caption": "Talisman depicting a duo of red ancient dragons.\nGreatly boosts fire damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Greatly boosts fire damage negation"
+  },
+  {
+    "id": 4022,
+    "name": "Flamedrake Talisman +2",
+    "category": "talisman",
+    "caption": "Talisman depicting a trio of red ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#F48C25\">fire damage negation</font> by 20%.",
+    "vanilla_caption": "Talisman depicting a trio of red ancient dragons.\nVastly boosts fire damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Vastly boosts fire damage negation"
+  },
+  {
+    "id": 4030,
+    "name": "Boltdrake Talisman",
+    "category": "talisman",
+    "caption": "Talisman depicting a yellow ancient dragon.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#FFE033\">lightning damage negation</font> by 13%.",
+    "vanilla_caption": "Talisman depicting a yellow ancient dragon.\nBoosts lightning damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Boosts lightning damage negation"
+  },
+  {
+    "id": 4031,
+    "name": "Boltdrake Talisman +1",
+    "category": "talisman",
+    "caption": "Talisman depicting a duo of yellow ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#FFE033\">lightning damage negation</font> by 17%.",
+    "vanilla_caption": "Talisman depicting a duo of yellow ancient dragons.\nGreatly boosts lightning damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Greatly boosts lightning damage negation"
+  },
+  {
+    "id": 4032,
+    "name": "Boltdrake Talisman +2",
+    "category": "talisman",
+    "caption": "Talisman depicting a trio of yellow ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#FFE033\">lightning damage negation</font> by 20%.",
+    "vanilla_caption": "Talisman depicting a trio of yellow ancient dragons.\nVastly boosts lightning damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Vastly boosts lightning damage negation"
+  },
+  {
+    "id": 4040,
+    "name": "Haligdrake Talisman",
+    "category": "talisman",
+    "caption": "Talisman depicting a golden ancient dragon.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#F5EB89\">holy damage negation</font> by 13%.",
+    "vanilla_caption": "Talisman depicting a golden ancient dragon.\nBoosts holy damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Boosts holy damage negation"
+  },
+  {
+    "id": 4041,
+    "name": "Haligdrake Talisman +1",
+    "category": "talisman",
+    "caption": "Talisman depicting a duo of golden ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#F5EB89\">holy damage negation</font> by 17%.",
+    "vanilla_caption": "Talisman depicting a duo of golden ancient dragons.\nGreatly boosts holy damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Greatly boosts holy damage negation"
+  },
+  {
+    "id": 4042,
+    "name": "Haligdrake Talisman +2",
+    "category": "talisman",
+    "caption": "Talisman depicting a trio of golden ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#F5EB89\">holy damage negation</font> by 20%.",
+    "vanilla_caption": "Talisman depicting a trio of golden ancient dragons.\nVastly boosts holy damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Vastly boosts holy damage negation"
+  },
+  {
+    "id": 4050,
+    "name": "Pearldrake Talisman",
+    "category": "talisman",
+    "caption": "Talisman depicting a pearlescent ancient dragon.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#57DBCE\">magic damage negation</font>, <font color=\"#F48C25\">fire damage negation</font>, <font color=\"#FFE033\">lightning damage negation</font>, and <font color=\"#F5EB89\">holy damage negation</font> by 5%.",
+    "vanilla_caption": "Talisman depicting a pearlescent ancient dragon.\nBoosts non-physical damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Boosts non-physical damage negation"
+  },
+  {
+    "id": 4051,
+    "name": "Pearldrake Talisman +1",
+    "category": "talisman",
+    "caption": "Talisman depicting a duo of pearlescent ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#57DBCE\">magic damage negation</font>, <font color=\"#F48C25\">fire damage negation</font>, <font color=\"#FFE033\">lightning damage negation</font>, and <font color=\"#F5EB89\">holy damage negation</font> by 7%.",
+    "vanilla_caption": "Talisman depicting a duo of pearlescent ancient dragons.\nGreatly boosts non-physical damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Greatly boosts non-physical damage negation"
+  },
+  {
+    "id": 4052,
+    "name": "Pearldrake Talisman +2",
+    "category": "talisman",
+    "caption": "Talisman depicting a trio of pearlescent ancient dragons.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock. And so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "info": "Increases <font color=\"#57DBCE\">magic damage negation</font>, <font color=\"#F48C25\">fire damage negation</font>, <font color=\"#FFE033\">lightning damage negation</font>, and <font color=\"#F5EB89\">holy damage negation</font> by 9%.",
+    "vanilla_caption": "Talisman depicting a trio of pearlescent ancient dragons.\nVastly boosts non-physical damage negation.\n\nThe ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.\nAnd so it is that the shape of the dragon has become symbolic of all manner of protections.",
+    "vanilla_info": "Vastly boosts non-physical damage negation"
+  },
+  {
+    "id": 4060,
+    "name": "Crucible Scale Talisman",
+    "category": "talisman",
+    "caption": "A talisman fashioned from a scale that embodies the aspects of various creatures. Said to have grown on the human body long ago.\n\nA vestige of the crucible of primordial life. Born partially of devolution, it was considered a signifier of the divine in ancient times, but is now increasingly disdained as an impurity as civilization has advanced.",
+    "info": "Reduces damage taken from critical attacks by 30%.",
+    "vanilla_caption": "A talisman fashioned from a scale that embodies the aspects of various creatures.\nSaid to have grown on the human body long ago.\n\nReduces damage taken from critical hits.\n\nA vestige of the crucible of primordial life. Born partially of devolution, it was considered a signifier of the divine in ancient times, but is now increasingly disdained as an impurity as civilization has advanced.",
+    "vanilla_info": "Reduces damage taken from critical hits"
+  },
+  {
+    "id": 4070,
+    "name": "Crucible Feather Talisman",
+    "category": "talisman",
+    "caption": "A talisman fashioned from feathers that embody the aspects of various creatures. Said to have grown on the human body long ago.\n\nA vestige of the crucible of primordial life. Born partially of devolution, it was considered a signifier of the divine in ancient times, but is now increasingly disdained as an impurity as civilization has advanced.",
+    "info": "Increases invulnerability duration for dodge rolls but increases <font color=\"#E0B985\">all damage received</font> by 30%.\n\nThis effect doesn't stack with the Windy Crystal Tear.",
+    "vanilla_caption": "A talisman fashioned from feathers that embody the aspects of various creatures.\nSaid to have grown on the human body long ago.\n\nImproves the effectiveness of dodge rolls, but increases damage taken at all times.\n\nA vestige of the crucible of primordial life. Born partially of devolution, it was considered a signifier of the divine in ancient times, but is now increasingly disdained as an impurity as civilization has advanced.",
+    "vanilla_info": "Improves dodge rolling but increases damage taken"
+  },
+  {
+    "id": 4080,
+    "name": "Blue-Feathered Branchsword",
+    "category": "talisman",
+    "caption": "A talisman adorned with blue feathers, once used in ancient death rituals.\n\nThe heart sings when one draws close to death, and thus does one cling so tenaciously to life—to render up a death worth offering.",
+    "info": "Increases <font color=\"#E0B985\">all damage negation</font> by 50% while HP is below 20%.",
+    "vanilla_caption": "A talisman adorned with blue feathers, once used in ancient death rituals.\nRaises defense when HP is low.\n\nThe heart sings when one draws close to death, and thus does one cling so tenaciously to life—to render up a death worth offering.",
+    "vanilla_info": "Raises defense when HP is low"
+  },
+  {
+    "id": 4090,
+    "name": "Ritual Shield Talisman",
+    "category": "talisman",
+    "caption": "A talisman patterned after shields used in ritual combat held to honor the Erdtree.\n\nThe practice had died out by the age of King Consort Radagon, but remains of the arenas where ritual combat took place can still be found in every land.",
+    "info": "Increases <font color=\"#E0B985\">all damage negation</font> by 30% while HP is at maximum.",
+    "vanilla_caption": "A talisman patterned after shields used in ritual combat held to honor the Erdtree.\n\nRaises defense when HP is at maximum.\n\nThe practice had died out by the age of King Consort Radagon, but remains of the arenas where ritual combat took place can still be found in every land.",
+    "vanilla_info": "Raises defense when HP is at maximum"
+  },
+  {
+    "id": 4100,
+    "name": "Greatshield Talisman",
+    "category": "talisman",
+    "caption": "Talisman depicting a knight holding a greatshield.\n\nThe knights of Leyndell once modelled themselves after the Tree Sentinels. Their purpose is to protect that which deserves protection, and thus the shield always comes before the sword.",
+    "info": "Increases <font color=\"#E0B985\">guard boost</font> by 10%.",
+    "vanilla_caption": "Talisman depicting a knight holding a greatshield.\nBoosts guarding ability.\n\nThe knights of Leyndell once modelled themselves after the Tree Sentinels. Their purpose is to protect that which deserves protection, and thus the shield always comes before the sword.",
+    "vanilla_info": "Boosts guarding ability"
+  },
+  {
+    "id": 5000,
+    "name": "Crimson Seed Talisman",
+    "category": "talisman",
+    "caption": "A crimson-colored talisman patterned after an Erdtree seed.\n\nThe Erdtree was once perfect and eternal, and thus was it believed that Erdtree seeds could not exist.",
+    "info": "Increases HP restoration from Flask of Crimson Tears by 20%.",
+    "vanilla_caption": "A crimson-colored talisman patterned after an Erdtree seed.\nBoosts HP restoration from the Flask of Crimson Tears.\n\nThe Erdtree was once perfect and eternal, and thus was it believed that Erdtree seeds could not exist.",
+    "vanilla_info": "Boosts HP restoration from Flask of Crimson Tears"
+  },
+  {
+    "id": 5010,
+    "name": "Cerulean Seed Talisman",
+    "category": "talisman",
+    "caption": "A cerulean-colored talisman patterned after an Erdtree seed.\n\nThe Erdtree was once perfect and eternal, and thus was it believed that Erdtree seeds could not exist.",
+    "info": "Increases FP restoration from Flask of Cerulean Tears by 20%.",
+    "vanilla_caption": "A cerulean-colored talisman patterned after an Erdtree seed.\nBoosts FP restoration from the Flask of Cerulean Tears.\n\nThe Erdtree was once perfect and eternal, and thus was it believed that Erdtree seeds could not exist.",
+    "vanilla_info": "Boosts FP restoration from Flask of Cerulean Tears"
+  },
+  {
+    "id": 5020,
+    "name": "Blessed Dew Talisman",
+    "category": "talisman",
+    "caption": "Talisman depicting a drop of the Erdtree's sap, a blessed boon.\n\nIt was once thought that the blessed sap of the Erdtree would drip from its boughs forever—but that age of plenty swiftly came to a close, and with time, the Erdtree became more an object of faith.",
+    "info": "Restores 2 HP per second.",
+    "vanilla_caption": "Talisman depicting a drop of the Erdtree's sap, a blessed boon.\n\nGradually restores HP.\n\nIt was once thought that the blessed sap of the Erdtree would drip from its boughs forever—but that age of plenty swiftly came to a close, and with time, the Erdtree became more an object of faith.",
+    "vanilla_info": "Slowly restores HP"
+  },
+  {
+    "id": 5030,
+    "name": "Taker's Cameo",
+    "category": "talisman",
+    "caption": "A talisman engraved with a stern likeness of Praetor Rykard, master of Volcano Manor.\n\nWhen Rykard turned to heresy, taking by force became the rule. The gods themselves were no different, after all.",
+    "info": "Restores 3% of <font color=\"#E0B985\">maximum HP</font> plus 30 when an enemy dies.",
+    "vanilla_caption": "A talisman engraved with a stern likeness of Praetor Rykard, master of Volcano Manor.\n\nRestores HP upon defeating enemies.\n\nWhen Rykard turned to heresy, taking by force became the rule. The gods themselves were no different, after all.",
+    "vanilla_info": "Restores HP upon defeating enemies"
+  },
+  {
+    "id": 5040,
+    "name": "Godskin Swaddling Cloth",
+    "category": "talisman",
+    "caption": "Sacred cloth of the Godskin Apostles, made from supple skin sewn together.\n\nThe Gloam-Eyed Queen cradles newborn apostles swaddled in this cloth. Soon they will grow to become the death of the gods.",
+    "info": "Restores 3% of <font color=\"#E0B985\">maximum HP</font> plus 30 after multiple melee attacks within a short time.\n\nThe number of attacks required to trigger this effect varies per weapon, but it generally requires 5-7 regular attacks. Heavy attacks, charged attacks, and some weapon skills are also capable of triggering it.",
+    "vanilla_caption": "Sacred cloth of the Godskin Apostles, made from supple skin sewn together.\n\nSuccessive attacks restore HP.\n\nThe Gloam-Eyed Queen cradles newborn apostles swaddled in this cloth. Soon they will grow to become the death of the gods.",
+    "vanilla_info": "Successive attacks restore HP"
+  },
+  {
+    "id": 5050,
+    "name": "Assassin's Crimson Dagger",
+    "category": "talisman",
+    "caption": "An assassin's dagger, misshapen and stained in crimson.\n\nThis charm is modelled after the darkly gleaming blades used in the Night of Black Knives. Those which gave the demigods their first taste of Death.",
+    "info": "Restores 10% of <font color=\"#E0B985\">maximum HP</font> plus 85 after performing a critical attack.",
+    "vanilla_caption": "An assassin's dagger, misshapen and stained in crimson.\nCritical hits restore HP.\n\nThis charm is modelled after the darkly gleaming blades used in the Night of Black Knives. Those which gave the demigods their first taste of Death.",
+    "vanilla_info": "Critical hits restore HP"
+  },
+  {
+    "id": 5060,
+    "name": "Assassin's Cerulean Dagger",
+    "category": "talisman",
+    "caption": "An assassin's dagger, misshapen and stained in cerulean.\n\nThis charm is modelled after the darkly gleaming blades used in the Night of Black Knives. Those which gave the demigods their first taste of Death.",
+    "info": "Restores 15 FP after a performing a critical attack.",
+    "vanilla_caption": "An assassin's dagger, misshapen and stained in cerulean.\nCritical hits restore FP.\n\nThis charm is modelled after the darkly gleaming blades used in the Night of Black Knives. Those which gave the demigods their first taste of Death.",
+    "vanilla_info": "Critical hits restore FP"
+  },
+  {
+    "id": 6000,
+    "name": "Crepus's Vial",
+    "category": "talisman",
+    "caption": "Small mysterious bottle with a dark mist sealed within.\n\nA ritual implement used by Roundtable Hold assassins. There was a time when Tarnished who had strayed from guidance feared nothing more than utter silence.",
+    "info": "Negates all movement sounds made by the wearer.",
+    "vanilla_caption": "Small mysterious bottle with a dark mist sealed within.\n\nEliminates all sound made by the wearer during movement.\n\nA ritual implement used by Roundtable Hold assassins. There was a time when Tarnished who had strayed from guidance feared nothing more than utter silence.",
+    "vanilla_info": "Eliminates all sound made by the wearer during movement"
+  },
+  {
+    "id": 6020,
+    "name": "Carian Filigreed Crest",
+    "category": "talisman",
+    "caption": "A talisman adorned with the royal crest.\n\nAn honor said to have once been awarded to Carian knights who served as direct retainers to the kingdom's princesses. Now there is only one princess: Ranni, daughter of Rennala.",
+    "info": "Reduces FP consumed by skills by 25%.",
+    "vanilla_caption": "A talisman adorned with the royal crest.\n\nLowers FP consumed by skills.\n\nAn honor said to have once been awarded to Carian knights who served as direct retainers to the kingdom's princesses. Now there is only one princess: Ranni, daughter of Rennala.",
+    "vanilla_info": "Lowers FP consumed by skills"
+  },
+  {
+    "id": 6040,
+    "name": "Longtail Cat Talisman",
+    "category": "talisman",
+    "caption": "A brooch depicting Lacrima, the long-tailed cat.\n\nLacrima features in the fables of Raya Lucaria, in which she is described as a faerie cat who was fond of playing in the great bell tower.",
+    "info": "Negates all fall damage.\n\nThe height at which a fall is fatal remains the same even while under the effects of this item.",
+    "vanilla_caption": "A brooch depicting Lacrima, the long-tailed cat.\n\nGrants immunity to fall damage, but does not prevent death from a high fall.\n\nLacrima features in the fables of Raya Lucaria, in which she is described as a faerie cat who was fond of playing in the great bell tower.",
+    "vanilla_info": "Grants immunity to fall damage, but does not prevent death from a high fall"
+  },
+  {
+    "id": 6050,
+    "name": "Shabriri's Woe",
+    "category": "talisman",
+    "caption": "Disturbing likeness of a man whose eyes have been gouged out. The corners of his mouth are upturned in an almost flirtatious manner.\n\nIt is said that the man, named Shabriri, had his eyes gouged out as punishment for the crime of slander, and, with time, the blight of the flame of frenzy came to dwell in the empty sockets.",
+    "info": "Online multiplayer item.\n\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player.",
+    "vanilla_caption": "Disturbing likeness of a man whose eyes have been gouged out.\nThe corners of his mouth are upturned in an almost flirtatious manner.\n\nConstantly attracts enemies' aggression.\n\nIt is said that the man, named Shabriri, had his eyes gouged out as punishment for the crime of slander, and, with time, the blight of the flame of frenzy came to dwell in the empty sockets.",
+    "vanilla_info": "Constantly attracts enemies' aggression"
+  },
+  {
+    "id": 6060,
+    "name": "Daedicar's Woe",
+    "category": "talisman",
+    "caption": "Disturbing likeness of a woman whose skin was flayed. She smiles with a serene tenderness.\n\nIt is said that this woman, named Daedicar, indulged in every form of adultery and wicked pleasure imaginable, giving birth to a myriad of grotesque children.",
+    "info": "Increases <font color=\"#E0B985\">all damage received</font> by 100%.",
+    "vanilla_caption": "Disturbing likeness of a woman whose skin was flayed.\nShe smiles with a serene tenderness.\n\nIncreases damage taken.\n\nIt is said that this woman, named Daedicar, indulged in every form of adultery and wicked pleasure imaginable, giving birth to a myriad of grotesque children.",
+    "vanilla_info": "Increases damage taken"
+  },
+  {
+    "id": 6080,
+    "name": "Furled Finger's Trick-Mirror",
+    "category": "talisman",
+    "caption": "A small, clouded mirror that reflects an image of a golden figure.\n\nOne of the ritual implements created by the Tarnished to deceive invaders.",
+    "info": "Online multiplayer item.\n\nMakes you take on the appearance of a Host of Fingers.",
+    "vanilla_caption": "A small, clouded mirror that reflects an image of a golden figure.\n\nMakes the bearer take on the appearance of a Host of Fingers.\n\nOne of the ritual implements created by the Tarnished to deceive invaders.",
+    "vanilla_info": "Take on appearance of a Host of Fingers"
+  },
+  {
+    "id": 6090,
+    "name": "Host's Trick-Mirror",
+    "category": "talisman",
+    "caption": "A small, clouded mirror that reflects a flesh-and-blood figure.\n\nOne of the ritual implements created by the Tarnished to deceive invaders.",
+    "info": "Online multiplayer item.\n\nMakes you take on the appearance of a summoned cooperator.",
+    "vanilla_caption": "A small, clouded mirror that reflects a flesh-and-blood figure.\n\nMakes the bearer take on the appearance of a summoned cooperator.\n\nOne of the ritual implements created by the Tarnished to deceive invaders.",
+    "vanilla_info": "Take on appearance of a cooperator"
+  },
+  {
+    "id": 6100,
+    "name": "Entwining Umbilical Cord",
+    "category": "talisman",
+    "caption": "Mysterious circular object that's oddly warped.",
+    "info": "Changes demeanour of your actions. Masculine characters wearing this will use feminine animations, and feminine characters wearing this will use masculine animations.",
+    "vanilla_caption": "Mysterious circular object that's oddly warped.\nChanges the demeanour of the wearer's actions.",
+    "vanilla_info": "Changes demeanour of wearer's actions"
+  },
+  {
+    "id": 6110,
+    "name": "Ancestral Spirit's Horn",
+    "category": "talisman",
+    "caption": "Item cut from the horns of the Regal Ancestor Spirit.\n\nA number of new growths bud from the antler-like horns of the fallen king, each glowing with light. Thus does new life grow from death, and from death, one obtains power.",
+    "info": "Restores 3 FP when an enemy dies.",
+    "vanilla_caption": "Item cut from the horns of the Regal Ancestor Spirit.\n\nRestore FP upon defeating enemies.\n\nA number of new growths bud from the antler-like horns of the fallen king, each glowing with light. Thus does new life grow from death, and from death, one obtains power.",
+    "vanilla_info": "Restores FP upon defeating enemies"
+  }
+]

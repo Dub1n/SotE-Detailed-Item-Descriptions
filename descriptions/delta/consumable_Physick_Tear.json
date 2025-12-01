@@ -1,0 +1,162 @@
+[
+  {
+    "id": 11000,
+    "name": "Crimsonspill Crystal Tear",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 10% for 180 seconds."
+  },
+  {
+    "id": 11001,
+    "name": "Greenspill Crystal Tear",
+    "info": "Increases <font color=\"#E0B985\">maximum stamina</font> by 15% for 180 seconds."
+  },
+  {
+    "id": 11002,
+    "name": "Crimson Crystal Tear",
+    "info": "Restores 50% of <font color=\"#E0B985\">maximum HP</font>."
+  },
+  {
+    "id": 11003,
+    "name": "Crimson Crystal Tear",
+    "info": "Restores 50% of <font color=\"#E0B985\">maximum HP</font>."
+  },
+  {
+    "id": 11004,
+    "name": "Cerulean Crystal Tear",
+    "info": "Restores 50% of <font color=\"#E0B985\">maximum FP</font>."
+  },
+  {
+    "id": 11005,
+    "name": "Cerulean Crystal Tear",
+    "info": "Restores 50% of <font color=\"#E0B985\">maximum FP</font>."
+  },
+  {
+    "id": 11006,
+    "name": "Speckled Hardtear",
+    "info": "Cures <font color=\"#E0B985\">all status ailments</font>, then increases <font color=\"#E0B985\">all resistances</font> by 90 for 180 seconds."
+  },
+  {
+    "id": 11007,
+    "name": "Crimson Bubbletear",
+    "info": "Restores 30% of <font color=\"#E0B985\">maximum HP</font> if HP falls below 20% within 180 seconds. This effect can only be triggered once.\n\nThis will not prevent death if HP reaches 0% before the healing effect is triggered."
+  },
+  {
+    "id": 11008,
+    "name": "Opaline Bubbletear",
+    "info": "Reduces <font color=\"#E0B985\">all damage received</font> by 90% for the next single attack received within 180 seconds."
+  },
+  {
+    "id": 11009,
+    "name": "Crimsonburst Crystal Tear",
+    "info": "Restores 7 HP per second for 180 seconds."
+  },
+  {
+    "id": 11010,
+    "name": "Greenburst Crystal Tear",
+    "info": "Increases <font color=\"#E0B985\">stamina regeneration</font> by 15 per second for 180 seconds."
+  },
+  {
+    "id": 11011,
+    "name": "Opaline Hardtear",
+    "info": "Increases <font color=\"#E0B985\">all damage negation</font> by 15% for 180 seconds."
+  },
+  {
+    "id": 11012,
+    "name": "Winged Crystal Tear",
+    "info": "Increases <font color=\"#E0B985\">maximum equip load</font> by 350% for 180 seconds."
+  },
+  {
+    "id": 11013,
+    "name": "Thorny Cracked Tear",
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> after multiple attacks within a short time. There are 3 tiers of damage increase: 9%, 13%, and 20%. The tear's effect lasts for 180 seconds, although the damage bonus resets if no attacks are performed within a short amount of time.\n\nThe number of attacks required to trigger this effect varies per weapon, and is not based on damage or weapon speed. It generally requires 3-4 attacks to trigger the first tier, 5-8 attacks for the second, and 8-11 attacks for the third. Some weapons are too slow to trigger all tiers."
+  },
+  {
+    "id": 11014,
+    "name": "Spiked Cracked Tear",
+    "info": "Increases <font color=\"#E0B985\">all attack power</font> of charged melee attacks by 15% for 180 seconds.\n\nThis effect does not work for charged sorceries, incantations, or weapon skills."
+  },
+  {
+    "id": 11015,
+    "name": "Windy Crystal Tear",
+    "info": "Increases invulnerability duration for dodge rolls but increases <font color=\"#E0B985\">all damage received</font> by 15% for 180 seconds.\n\nThis effect doesn't stack with the Crucible Feather Talisman."
+  },
+  {
+    "id": 11016,
+    "name": "Ruptured Crystal Tear",
+    "info": "Creates an explosion of <font color=\"#F5EB89\">holy damage</font> 3 seconds after consuming, but inflicts 300 damage on yourself. Having 2 Ruptured Crystal Tears in the Flask of Wondrous Physick increases the damage and doubles the size of the explosion, but also increases the damage to yourself to 700.\n\n<font color=\"#F5EB89\">Base holy damage (1 tear):</font> 800\n<font color=\"#F5EB89\">Base holy damage (2 tears):</font> 1750"
+  },
+  {
+    "id": 11017,
+    "name": "Ruptured Crystal Tear",
+    "info": "Creates an explosion of <font color=\"#F5EB89\">holy damage</font> 3 seconds after consuming, but inflicts 300 damage on yourself. Having 2 Ruptured Crystal Tears in the Flask of Wondrous Physick increases the damage and doubles the size of the explosion, but also increases the damage to yourself to 700.\n\n<font color=\"#F5EB89\">Base holy damage (1 tear):</font> 800\n<font color=\"#F5EB89\">Base holy damage (2 tears):</font> 1750"
+  },
+  {
+    "id": 11018,
+    "name": "Leaden Hardtear",
+    "info": "Prevents being staggered by lighter attacks for 10 seconds."
+  },
+  {
+    "id": 11019,
+    "name": "Twiggy Cracked Tear",
+    "info": "Prevents rune loss on death for 180 seconds."
+  },
+  {
+    "id": 11020,
+    "name": "Crimsonwhorl Bubbletear",
+    "info": "Completely negates all <font color=\"#E0B985\">non-physical damage</font> and heals 5% of <font color=\"#E0B985\">maximum HP</font> for each <font color=\"#E0B985\">non-physical attack</font> received within 15 seconds."
+  },
+  {
+    "id": 11021,
+    "name": "Strength-knot Crystal Tear",
+    "info": "Increases <font color=\"#E0B985\">strength</font> by 10 for 180 seconds."
+  },
+  {
+    "id": 11022,
+    "name": "Dexterity-knot Crystal Tear",
+    "info": "Increases <font color=\"#E0B985\">dexterity</font> by 10 for 180 seconds."
+  },
+  {
+    "id": 11023,
+    "name": "Intelligence-knot Crystal Tear",
+    "info": "Increases <font color=\"#E0B985\">intelligence</font> by 10 for 180 seconds."
+  },
+  {
+    "id": 11024,
+    "name": "Faith-knot Crystal Tear",
+    "info": "Increases <font color=\"#E0B985\">faith</font> by 10 for 180 seconds."
+  },
+  {
+    "id": 11025,
+    "name": "Cerulean Hidden Tear",
+    "info": "Removes all FP consumption for 15 seconds."
+  },
+  {
+    "id": 11026,
+    "name": "Stonebarb Cracked Tear",
+    "info": "Increases stamina reduction for attacks against enemies by 30% for 30 seconds."
+  },
+  {
+    "id": 11027,
+    "name": "Purifying Crystal Tear",
+    "info": "Purifies Mohg's rite of blood curse."
+  },
+  {
+    "id": 11028,
+    "name": "Flame-Shrouding Cracked Tear",
+    "info": "Increases <font color=\"#F48C25\">fire damage inflicted</font> by 20% for 180 seconds."
+  },
+  {
+    "id": 11029,
+    "name": "Magic-Shrouding Cracked Tear",
+    "info": "Increases <font color=\"#57DBCE\">magic damage inflicted</font> by 20% for 180 seconds."
+  },
+  {
+    "id": 11030,
+    "name": "Lightning-Shrouding Cracked Tear",
+    "info": "Increases <font color=\"#FFE033\">lightning damage inflicted</font> by 20% for 180 seconds."
+  },
+  {
+    "id": 11031,
+    "name": "Holy-Shrouding Cracked Tear",
+    "info": "Increases <font color=\"#F5EB89\">holy damage inflicted</font> by 20% for 180 seconds."
+  }
+]
