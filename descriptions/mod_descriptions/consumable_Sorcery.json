@@ -1,0 +1,422 @@
+[
+  {
+    "id": 4000,
+    "name": "Glintstone Pebble",
+    "caption": "The most basic glintstone sorcery of the Academy of Raya Lucaria.\n\nThis is a universal first step on the journey to true knowledge of sorcery.",
+    "info": "Shoot a single magic glintstone projectile. Can be cast repeatedly, while in motion, and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 152\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4001,
+    "name": "Great Glintstone Shard",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nThose unworthy of the stone crown typically end their brief journey into sorcery here.",
+    "info": "Shoot a single magic glintstone projectile. Can be cast repeatedly, while in motion, and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 202\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4010,
+    "name": "Swift Glintstone Shard",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nThose unworthy of the stone crown typically end their brief journey into sorcery here.",
+    "info": "Quickly shoot a single magic glintstone projectile. Can be cast without delay after performing another action and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 114\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4020,
+    "name": "Glintstone Cometshard",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nA sorcery of the Karolos Conspectus, the most venerable of the academy.",
+    "info": "Shoot a magical comet with a trailing tail. Charging increases damage. Can be cast repeatedly, while in motion, and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 259\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 324\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4021,
+    "name": "Comet",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nThe greatest of the Karolos Conspectus's sorceries, that only a very few sorcerers have ever mastered.",
+    "info": "Shoot a great magical comet. Charging increases damage. Can be cast repeatedly, while in motion, and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 292\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 365\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4030,
+    "name": "Shard Spiral",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nA sorcery of the Karolos Conspectus, the most venerable of the academy. This was the product of a failed attempt to create a new comet.",
+    "info": "Shoot twin projectiles that form a spiral as they travel. Charging increases damage. Can be cast repeatedly, while in motion, and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 92\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 110\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4040,
+    "name": "Glintstone Stars",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nA sorcery of the Olivinus Conspectus, which attracts sorcerers from Sellia, Town of Sorcery.",
+    "info": "Shoot 3 magic shooting stars of varying power which pursue the target. Charging increases damage. Can be cast while in motion and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 68, 78, 87\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 80, 90, 99\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4050,
+    "name": "Star Shower",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\n\n\nThe most difficult to master of the Olivinus Conspectus sorceries.",
+    "info": "Shoot 6 magic shooting stars of varying power which pursue the target. Charging increases damage. Can be cast while in motion and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 44, 49, 59, 69, 69, 79\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 53, 58, 63, 68, 78, 88\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4060,
+    "name": "Crystal Barrage",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nA sorcery of the Crystal Cadre, a group of sorcerers who pursue the wisdom of stone—the secrets locked in the faint cogitation of the Crystalians.",
+    "info": "Shoot a volley of glintstone crystal shards. Charging vastly increases quantity of projectiles. Can be cast on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 36\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4070,
+    "name": "Glintstone Arc",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nGranted to sorcerers who depart from the academy to embark on journeys, in order to fend off large groups of would-be adversaries. Fools often roam in packs.",
+    "info": "Shoot a horizontal arc of magic which spreads outward and can pass through multiple enemies. Can be cast repeatedly, while in motion, and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 148\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4080,
+    "name": "Cannon of Haima",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nDrawn from the conspectus of Haima, the adjudicator of the academy, this sorcery employs might as a means to quell conflict.",
+    "info": "Lob a magic projectile which flies in an arc and explodes on impact. Charging increases damage and size of the explosion. Can be cast on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 285\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 332\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4090,
+    "name": "Crystal Burst",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nA sorcery of the Crystal Cadre, a group of sorcerers who pursued the wisdom of stone—the secrets locked in the faint cogitation of the Crystalians.",
+    "info": "Shoot a burst of glintstone crystal shards. Charging increases damage and speed of projectiles. Can be cast repeatedly, while in motion, and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 40\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 45\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4100,
+    "name": "Shatter Earth",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nA Stonedigger sorcery used by the glintstone miners of the crystal tunnel. At the academy, use of this sorcery was a stigma that marked out failed scholars.",
+    "info": "Imbue the staff with magic, then thrust it into the ground to create a magical shockwave. Allows one follow-up cast, which will be another quick thrust into the ground to create a larger, more powerful shockwave.\n\n<font color=\"#57DBCE\">Base magic damage (thrust):</font> 52\n<font color=\"#57DBCE\">Base magic damage (shockwave):</font> 182\n<font color=\"#57DBCE\">Base magic damage (second thrust):</font> 68\n<font color=\"#57DBCE\">Base magic damage (second shockwave):</font> 205\n<font color=\"#E0B985\">Category:</font> Glintstone, Stonedigger"
+  },
+  {
+    "id": 4110,
+    "name": "Rock Blaster",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nAn enhanced version of the glintstone miners' Stonedigger sorcery.",
+    "info": "Imbue the staff with magic. Hold to create a magical drill which you can walk into enemies to inflict continuous magical damage. Release to thrust it into the ground and create a large magical shockwave.\n\n<font color=\"#57DBCE\">Base magic damage (drill):</font> 64\n<font color=\"#57DBCE\">Base magic damage (shockwave):</font> 212\n<font color=\"#E0B985\">Category:</font> Glintstone, Stonedigger"
+  },
+  {
+    "id": 4120,
+    "name": "Gavel of Haima",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nDrawn from the scholarly conspectus of Haima, the adjudicator of the academy, this sorcery employs might as a means to quell conflict.",
+    "info": "Conjure a magical greathammer and slam it down, creating a massive shockwave. Allows one follow-up cast, which will be the same as the first.\n\n<font color=\"#57DBCE\">Base magic damage (hammer):</font> 297\n<font color=\"#57DBCE\">Base magic damage (shockwave):</font> 242\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4130,
+    "name": "Terra Magica",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nOnce, the sigil would be cast from the highest belfry of the academy, covering the entire institution's grounds. This spell allows such vivid experience of spell-casting success, it turns many a fledgling into a true sorcerer in a flash of newfound understanding.",
+    "info": "Draw an academy sigil upon the ground for 30 seconds, increasing the <font color=\"#57DBCE\">magic damage inflicted</font> by you and allies standing within it by 35%. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4140,
+    "name": "Starlight",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nGranted to sorcerers who depart from the academy to embark on journeys. Even during the blackest nights, sojourns underground, or imprisonment in gaol, the stars are never far from a sorcerer's side.",
+    "info": "Conjure a small, floating star of light which follows you and increases visibility in dark areas for 180 seconds. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4200,
+    "name": "Comet Azur",
+    "caption": "Legendary sorcery devised by Azur, primeval sorcerer.\n\nA tremendous comet in a torrent akin to the distant starry expanse, the place said to be the origin of glintstone.\n\nWhen Azur glimpsed into the primeval current, he saw darkness. He was left both bewitched and fearful of the abyss.",
+    "info": "Shoot a large beam that inflicts continuous, fluctuating damage. Hold to continue casting. Can be cast on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 55-100\n<font color=\"#E0B985\">Category:</font> Primeval Current"
+  },
+  {
+    "id": 4210,
+    "name": "Founding Rain of Stars",
+    "caption": "The eldest primeval sorcery, said to have been discovered by an ancient astrologer. A sorcery of legendary status.\n\nThought to be the founding glintstone sorcery. The glimpse of the primeval current that the astrologer saw became real, and the stars' amber rained down on this land.",
+    "info": "Conjure cosmic clouds above you which rapidly rain down a barrage of magical projectiles in the area for 5 seconds. Charging increases damage. Can be cast while in motion and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 49\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 54\n<font color=\"#E0B985\">Category:</font> Primeval Current"
+  },
+  {
+    "id": 4220,
+    "name": "Stars of Ruin",
+    "caption": "Legendary sorcery devised by Lusat, primeval sorcerer.\n\nWhen Lusat glimpsed into the primeval current, he beheld the final moments of a great star cluster, and upon seeing it, he too was broken.",
+    "info": "Shoot 12 dark stars which pursue the target and inflict varying amounts of damage. Charging increases damage. Can be cast while in motion and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 43, 45, 49, or 52\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 54, 57, 60, or 65\n<font color=\"#E0B985\">Category:</font> Primeval Current"
+  },
+  {
+    "id": 4300,
+    "name": "Glintblade Phalanx",
+    "caption": "One of the sorceries of the Carian royal family.\n\nBestowed upon the enchanted Carian knights, who combined this art with their swordsmanship to maintain pressure upon their foes, striking in waves of steel and sorcery.",
+    "info": "Conjure 5 magical dagger projectiles which float above you and automatically shoot into an enemy when they are within range. Can be cast while in motion and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 60\n<font color=\"#E0B985\">Category:</font> Carian, Glintblade"
+  },
+  {
+    "id": 4301,
+    "name": "Carian Phalanx",
+    "caption": "One of the sorceries of the Carian royal family.\n\nAn enhanced version of the glintblade sorcery used by enchanted knights.",
+    "info": "Conjure 9 magical dagger projectiles which float above you and automatically shoot into an enemy when they are within range. Can be cast while in motion and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 48\n<font color=\"#E0B985\">Category:</font> Carian, Glintblade"
+  },
+  {
+    "id": 4302,
+    "name": "Greatblade Phalanx",
+    "caption": "One of the sorceries of the Carian royal family.\n\nUsed by the enchanted troll knights. They were the comrades of the young Rennala, bound by oath.",
+    "info": "Conjure 3 magical sword projectiles which float above you and automatically shoot into an enemy when they are within range. Can be cast while in motion and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 100\n<font color=\"#E0B985\">Category:</font> Carian, Glintblade"
+  },
+  {
+    "id": 4360,
+    "name": "Rennala's Full Moon",
+    "caption": "Sorcery symbolic of the Carian queen.\n\nQueen Rennala encountered this enchanting moon when she was young, and later, it would bewitch the academy.",
+    "info": "Incarnate a moon, then send it floating forward to explode after 3.5 seconds or on impact. Reduces <font color=\"#57DBCE\">magic damage negation</font> of any target hit by the spell by 20% for 60 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 360\n<font color=\"#E0B985\">Category:</font> Moon"
+  },
+  {
+    "id": 4361,
+    "name": "Ranni's Dark Moon",
+    "caption": "Legendary sorcery symbolic of the Carian queen.\n\nThis moon was encountered by a young Ranni, led by the hand of her mother, Rennala. What she beheld was cold, dark, and veiled in occult mystery.",
+    "info": "Incarnate a cold moon, then send it floating forward to explode after 3.5 seconds or on impact. Causes <font color=\"#9DD7FB\">frostbite accumulation</font> and reduces <font color=\"#57DBCE\">magic damage negation</font> of any target hit by the spell by 20% for 60 seconds.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 330\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 270\n<font color=\"#E0B985\">Category:</font> Moon"
+  },
+  {
+    "id": 4370,
+    "name": "Magic Downpour",
+    "caption": "One of the sorceries of the Carian royal family.\n\nSaid to have been taught by the Crystalians to mark the swearing of the old concord.",
+    "info": "Conjure a mass of magic which shoots 5 sets of 5 small magic projectiles. Charging increases it to 9 sets of 5 small magic projectiles. Can be cast while in motion and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 58\n<font color=\"#E0B985\">Category:</font> Carian"
+  },
+  {
+    "id": 4380,
+    "name": "Loretta's Greatbow",
+    "caption": "Sorcery used by Royal Knight Loretta.\n\nIt is said that the bow was Loretta's favored weapon.",
+    "info": "Conjure a magic greatbow and use it to shoot a magic great arrow which explodes on impact. Hold to keep the magic great arrow nocked. Charging increases damage and size of explosion. Can be cast on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 270\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 330\n<font color=\"#E0B985\">Category:</font> Loretta"
+  },
+  {
+    "id": 4381,
+    "name": "Loretta's Mastery",
+    "caption": "Sorcery used by Loretta, Knight of the Haligtree.\n\nDeveloped by Loretta after her long, bloody journey to seek out a place where the Albinaurics could live in peace.",
+    "info": "Conjure a magic greatbow and use it to shoot 4 magic great arrows simultaneously which explode on impact. Hold to keep the magic great arrows nocked. Charging increases damage and size of explosion. Can be cast on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 108\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 127\n<font color=\"#E0B985\">Category:</font> Loretta"
+  },
+  {
+    "id": 4390,
+    "name": "Magic Glintblade",
+    "caption": "An old sorcery of the Carian royal family.\n\nSaid to be the prototype of the sword-phalanx sorceries wielded by royal enchanted knights.",
+    "info": "Conjure a sigil overhead, from which a magical dagger projectile appears after a 3 second delay, which then shoots itself at an enemy. Charging increases the delay to 5 seconds and increases the damage. Can be cast repeatedly, while in motion, and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 182\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 230\n<font color=\"#E0B985\">Category:</font> Carian, Glintblade"
+  },
+  {
+    "id": 4400,
+    "name": "Glintstone Icecrag",
+    "caption": "Sorcery said to have been used by the old snow witch.\n\nThe snowy crone taught the young Ranni to fear the dark moon as she imparted her cold sorcery.",
+    "info": "Shoot a mass of cold magic. Can be cast repeatedly, while in motion, and on horseback.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 199\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 100\n<font color=\"#E0B985\">Category:</font> Cold"
+  },
+  {
+    "id": 4410,
+    "name": "Zamor Ice Storm",
+    "caption": "Ice sorcery of the Town of Zamor.\n\nCloaked in icy tempests, the knights of Zamor have challenged the Fire Giants since ancient times.",
+    "info": "Conjure a large swirl of cold air which will hit enemies 6 times in 2 seconds. Charging increases this to 9 times in 3 seconds, increases the size of the swirl, and increases the magic damage.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 74\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 79\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 80\n<font color=\"#E0B985\">Category:</font> Cold"
+  },
+  {
+    "id": 4420,
+    "name": "Freezing Mist",
+    "caption": "Sorcery said to have been used by the old snow witch.\n\nThe snowy crone taught the young Ranni to fear the dark moon as she imparted her cold sorcery.",
+    "info": "Conjure a cloud of cold air which lasts for 15 seconds and causes <font color=\"#9DD7FB\">frostbite accumulation</font> 5 times per second. Charging increases size of cloud. Can be cast while in motion and on horseback.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 20\n<font color=\"#E0B985\">Category:</font> Cold"
+  },
+  {
+    "id": 4430,
+    "name": "Carian Greatsword",
+    "caption": "One of the sorceries of the Carian royal family.\n\nArmed with this spell, sorcerers gain the strength of knights, their loyalty sworn to the moon.",
+    "info": "Conjure a large, magical greatsword and swing it horizontally. Can be cast repeatedly and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 268\n<font color=\"#E0B985\">Category:</font> Carian, Carian Sword"
+  },
+  {
+    "id": 4431,
+    "name": "Adula's Moonblade",
+    "caption": "Sorcery of Adula, the Glintstone Dragon.\n\nAdula, a devourer of sorcerers, was bested by Ranni and subsequently swore a knightly oath to her Dark Moon.",
+    "info": "Conjure a large, magical, icy greatsword and swing it horizontally, which launches a large horizontal arc of icy magic. Can be cast repeatedly and on horseback.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage (greatsword):</font> 243\n<font color=\"#57DBCE\">Base magic damage (projectile):</font> 235\n<font color=\"#9DD7FB\">Base frostbite accumulation (greatsword):</font> 120\n<font color=\"#9DD7FB\">Base frostbite accumulation (projectile):</font> 35\n<font color=\"#E0B985\">Category:</font> Cold, Carian Sword"
+  },
+  {
+    "id": 4440,
+    "name": "Carian Slicer",
+    "caption": "One of the sorceries of the Carian royal family.\n\nEven among the Carian sword sorceries, this is a notably effective technique.",
+    "info": "Conjure a small, magical blade and swing it horizontally. Can be cast repeatedly and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 180\n<font color=\"#E0B985\">Category:</font> Carian, Carian Sword"
+  },
+  {
+    "id": 4450,
+    "name": "Carian Piercer",
+    "caption": "One of the sorceries of the Carian royal family.\n\nThis sorcery forms a counterpart to Carian Greatsword. Highly lethal when used against single foes riding alone.",
+    "info": "Conjure a large, magical ice greatsword and thrust it forward. Charging increases damage and extends the reach of the thrust. Can be cast on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 287\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 355\n<font color=\"#E0B985\">Category:</font> Carian, Carian Sword"
+  },
+  {
+    "id": 4460,
+    "name": "Scholar's Armament",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nTaught to the Knights of the Cuckoo by the academy as payment for their contract.",
+    "info": "Enchant right-hand armament. Adds 75% of casting armament's sorcery scaling value as <font color=\"#57DBCE\">magic damage</font> for 90 seconds. Can be cast while in motion.\n\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4470,
+    "name": "Scholar's Shield",
+    "caption": "One of the glintstone sorceries of the Academy of Raya Lucaria.\n\nTaught to the Knights of the Cuckoo by the academy as payment for their contract.",
+    "info": "Enchant left-hand armament. Increases <font color=\"#E0B985\">guard boost</font> by 20%, reduces <font color=\"#57DBCE\">magic damage received</font> from blocked attacks by 70%, and reduces <font color=\"#E0B985\">all damage received</font> from blocked attacks of any other type by 30% for 60 seconds. The amount that <font color=\"#E0B985\">guard boost</font> is increased by depends on the shield's base guard boost. Shields with a lower base value will get a bigger increase, while shields with a higher base value will get a smaller increase. Can be cast while in motion.\n\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4480,
+    "name": "Lucidity",
+    "caption": "One of the sorceries of the Carian royal family.\n\nThe Carian knights never waver.",
+    "info": "Alleviate all <font color=\"#A698F4\">sleep accumulation</font> and <font color=\"#EEAA2B\">madness accumulation</font>. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Carian"
+  },
+  {
+    "id": 4490,
+    "name": "Frozen Armament",
+    "caption": "Sorcery said to have been used by the old snow witch.\n\nThe snowy crone taught the young Ranni to fear the dark moon as she imparted her cold sorcery.",
+    "info": "Enchant right-hand armament. Causes 63 <font color=\"#9DD7FB\">frostbite accumulation</font> per attack for 60 seconds. Can be cast while in motion.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#E0B985\">Category:</font> Cold"
+  },
+  {
+    "id": 4500,
+    "name": "Shattering Crystal",
+    "caption": "Sorcery of the mysterious Crystalians.\n\nThe Crystalians are inorganic beings, yet they live. They cleave close to the ideals of the primeval current, and as such, they are revered guests of the sorcerers.",
+    "info": "Shoot a barrage of crystal shards in a cone-shaped pattern, which inflict varying amounts of damage. Charging increases damage and speed of projectiles. Can be cast while in motion and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 51, 60, or 127\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 67, 75, or 160\n<font color=\"#E0B985\">Category:</font> Crystalian"
+  },
+  {
+    "id": 4510,
+    "name": "Crystal Release",
+    "caption": "Sorcery of the mysterious Crystalians.\n\nThis sorcery is used by high-ranking adepts among the Crystalians. Some also call this sorcery \"the Crystal Sun.\"",
+    "info": "Conjure a mass of crystal shards above you, which then continuously shoot downward a in a cone-shaped pattern around you for 2.5 seconds. You are unable to move for the entire duration of this. Can be cast on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 100\n<font color=\"#E0B985\">Category:</font> Crystalian"
+  },
+  {
+    "id": 4520,
+    "name": "Crystal Torrent",
+    "caption": "Sorcery of the mysterious Crystalians.\n\nThe wrath of the Crystalians encapsulated in sorcery. Each shard is of substantial size, making even a stray blow capable of inflicting a severe wound.",
+    "info": "Shoot a barrage of crystal shards in a straight line. Hold to continue casting. Can be cast on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 57\n<font color=\"#E0B985\">Category:</font> Crystalian"
+  },
+  {
+    "id": 4600,
+    "name": "Ambush Shard",
+    "caption": "One of the night sorceries of Sellia, Town of Sorcery.\n\nThe Sellian sorcerers were assassins, and it is said that they often hunted their fellows.",
+    "info": "Quickly conjure a magic projectile behind an enemy which then shoots towards them. Can be cast repeatedly and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 146\n<font color=\"#E0B985\">Category:</font> Night"
+  },
+  {
+    "id": 4610,
+    "name": "Night Shard",
+    "caption": "One of the night sorceries of Sellia, Town of Sorcery.\n\nThe Sellian sorcerers were assassins, and it is said that they often hunted their fellows.",
+    "info": "Quickly shoot a small magic projectile. Can be used without delay after performing another action, repeatedly and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 111\n<font color=\"#E0B985\">Category:</font> Night"
+  },
+  {
+    "id": 4620,
+    "name": "Night Comet",
+    "caption": "One of the night sorceries of Sellia, Town of Sorcery.\n\nThe Sellian sorcerers were assassins, and it is said that they often hunted their fellows.",
+    "info": "Shoot a magic projectile. Charging increases damage. Can be cast repeatedly, while in motion, and on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 230\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 276\n<font color=\"#E0B985\">Category:</font> Night"
+  },
+  {
+    "id": 4630,
+    "name": "Thops's Barrier",
+    "caption": "The lifelong pursuit of Thops the Bluntstone.\n\nFuture generations will learn. They will know the foolishness of the sneering sorcerers who ridiculed this theory, little realizing that it was in fact a discovery worthy of a new conspectus of the academy.",
+    "info": "Conjure a very brief magic forcefield to deflect sorceries and incantations. Hold to cast repeatedly. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Glintstone"
+  },
+  {
+    "id": 4640,
+    "name": "Carian Retaliation",
+    "caption": "One of the sorceries of the Carian royal family.\n\nThis was the Carian royal family's secret means to prepare against the disloyalty of the academy. The moon and stars would one day go their separate ways.",
+    "info": "Conjure a very brief void to absorb a single enemy sorcery or incantation projectile and turn it into 3 magical dagger projectiles which float above you and automatically shoot into an enemy when they are within range. Can be cast on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 115\n<font color=\"#E0B985\">Category:</font> Carian, Glintblade"
+  },
+  {
+    "id": 4650,
+    "name": "Eternal Darkness",
+    "caption": "Forbidden sorcery of Sellia, Town of Sorcery.\n\nOriginally a lost sorcery of the Eternal City; the despair that brought about its ruin made manifest.",
+    "info": "Conjure a very large void above you which pulls in most enemy sorceries and incantations for 9 seconds. Only 1 void per caster can exist at a time. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Night"
+  },
+  {
+    "id": 4660,
+    "name": "Unseen Blade",
+    "caption": "One of the night sorceries of Sellia, Town of Sorcery.\n\nUsed by Sellian assassins to present themselves as unarmed sorcerers.",
+    "info": "Enchant right-hand armament. Makes armament completely invisible for 45 seconds. Can be cast while in motion.\n\n<font color=\"#E0B985\">Category:</font> Night"
+  },
+  {
+    "id": 4670,
+    "name": "Unseen Form",
+    "caption": "One of the night sorceries of Sellia, Town of Sorcery.\n\nThe Sellian assassins considered every option that aided their dirty work.",
+    "info": "Become semi-invisible for 30 seconds, reducing the range at which non-aggressive enemies will notice you by 60%. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Night"
+  },
+  {
+    "id": 4700,
+    "name": "Meteorite",
+    "caption": "One of the glintstone sorceries that manipulates gravitational forces.\n\nThis sorcery originates from the Onyx Lords, who had skin of stone, and were called lords in reverential fear of their destructive power.",
+    "info": "Conjure a very large void above you which shoots out rocks at different angles. Hold to continue casting.\n\n<font color=\"#F395C4\">Base physical damage:</font> 180\n<font color=\"#57DBCE\">Base magic damage:</font> 100\n<font color=\"#E0B985\">Category:</font> Gravity"
+  },
+  {
+    "id": 4701,
+    "name": "Meteorite of Astel",
+    "caption": "One of the glintstone sorceries that manipulates gravitational forces.\n\nA manifestation of the power with which Astel leveled the Eternal City.",
+    "info": "Conjure 3 very large voids above you which shoot out large rocks at different angles. Hold to continue casting.\n\n<font color=\"#F395C4\">Base physical damage:</font> 185\n<font color=\"#57DBCE\">Base magic damage:</font> 105\n<font color=\"#E0B985\">Category:</font> Gravity"
+  },
+  {
+    "id": 4710,
+    "name": "Rock Sling",
+    "caption": "One of the glintstone sorceries that manipulates gravitational forces.\n\nA gravitational technique studied by the young Radahn. His master was an Alabaster Lord with skin of stone.",
+    "info": "Conjure 3 large rocks and throws them forward simultaneously. Can be cast on horseback.\n\n<font color=\"#F395C4\">Base physical damage:</font> 102\n<font color=\"#E0B985\">Category:</font> Gravity"
+  },
+  {
+    "id": 4720,
+    "name": "Gravity Well",
+    "caption": "One of the glintstone sorceries that manipulates gravitational forces.\n\nA gravitational technique studied by the young Radahn. His master was an Alabaster Lord with skin of stone.",
+    "info": "Shoot a gravitational magic orb. Smaller enemies hit by the projectile will be pulled towards you slightly. Charging increases damage.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 148\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 180\n<font color=\"#E0B985\">Category:</font> Gravity"
+  },
+  {
+    "id": 4721,
+    "name": "Collapsing Stars",
+    "caption": "One of the glintstone sorceries that manipulates gravitational forces.\n\nA gravitational technique mastered by the young Radahn. \"I thank you for your tutelage, for now I can challenge the stars.\"",
+    "info": "Shoot 9 gravitational magic orbs. Smaller enemies hit by the projectiles will be pulled towards you slightly. Charging increases damage.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 44\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 49\n<font color=\"#E0B985\">Category:</font> Gravity"
+  },
+  {
+    "id": 4800,
+    "name": "Magma Shot",
+    "caption": "One of the sorceries developed from the magma of Mt. Gelmir.\n\nAfter discovering the ancient hexes of Gelmir, Rykard, son of Queen Rennala, brought them back into practical use as new forms of sorcery.",
+    "info": "Lob a fireball which explodes on impact, leaving behind a small pool of magma for 3 seconds. Charging increases damage. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage (projectile):</font> 210\n<font color=\"#F48C25\">Base fire damage (magma):</font> 48\n<font color=\"#F48C25\">Base fire damage (charged, projectile):</font> 250\n<font color=\"#F48C25\">Base fire damage (charged, magma):</font> 53\n<font color=\"#E0B985\">Category:</font> Magma"
+  },
+  {
+    "id": 4810,
+    "name": "Gelmir's Fury",
+    "caption": "One of the sorceries developed from the magma of Mt. Gelmir.\n\nThis sorcery is held to represent the fury of the volcano, but the arrogance of attempting to harness it is solely that of men and serpents.",
+    "info": "Slam armament into the ground then sporadically lob fireballs in every direction around you, which leave very brief pools of magma on the ground where they land. Hold to continue casting the spell for up to 4 seconds.\n\n<font color=\"#F48C25\">Base fire damage (slam):</font> 160\n<font color=\"#F48C25\">Base fire damage (fireball):</font> 125\n<font color=\"#F48C25\">Base fire damage (magma):</font> 125\n<font color=\"#E0B985\">Category:</font> Magma"
+  },
+  {
+    "id": 4820,
+    "name": "Roiling Magma",
+    "caption": "One of the sorceries developed from the magma of Mt. Gelmir.\n\nAfter discovering the ancient hexes of Gelmir, Rykard, son of Queen Rennala, brought them back into practical use as new forms of sorcery.",
+    "info": "Lob a fireball. If it lands on the ground it will explode after 3 seconds, spewing small pools of magma in every direction which last for 2 seconds. Charging increases damage, explosion delay to 4 seconds, and explosion size. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage (projectile):</font> 234\n<font color=\"#F48C25\">Base fire damage (explosion):</font> 318\n<font color=\"#F48C25\">Base fire damage (magma):</font> 43\n<font color=\"#F48C25\">Base fire damage (charged, projectile):</font> 325\n<font color=\"#F48C25\">Base fire damage (charged, explosion):</font> 390\n<font color=\"#F48C25\">Base fire damage (charged, magma):</font> 48\n<font color=\"#E0B985\">Category:</font> Magma"
+  },
+  {
+    "id": 4830,
+    "name": "Rykard's Rancor",
+    "caption": "The terrible power of Rykard, Lord of Blasphemy.\n\nThese spirits manifest from the rancor of heroes who met a violent end. The lord granted them an audience, whereupon they were welcomed by the maw of the great serpent—and within the serpent's bowels, they became the lord's kin.",
+    "info": "Conjure a spirit which will leave a trail of delayed explosions. Can be cast while in motion and on horseback.\n\n<font color=\"#F48C25\">Base fire damage:</font> 150\n<font color=\"#E0B985\">Category:</font> Magma"
+  },
+  {
+    "id": 4900,
+    "name": "Briars of Sin",
+    "caption": "An aberrant sorcery discovered by exiled criminals. Theirs are the sorceries most reviled by the academy.\n\nThe guilty, their eyes gouged by thorns, lived in eternal darkness. There, they discovered the blood star.",
+    "info": "Inflict 80 damage and cause 30 <font color=\"#C84343\">blood loss accumulation</font> on yourself to conjure a spiral of bloodthorns around you, which will inflict <font color=\"#57DBCE\">magic damage</font> and cause <font color=\"#C84343\">blood loss accumulation</font> on any enemy hit by it. Can be cast up to 3 times repeatedly, conjuring a larger and more powerful spiral of bloodthorns with each cast.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 200, 232, 233\n<font color=\"#C84343\">Base blood loss accumulation:</font> 95\n<font color=\"#E0B985\">Category:</font> Bloodthorn"
+  },
+  {
+    "id": 4910,
+    "name": "Briars of Punishment",
+    "caption": "An aberrant sorcery discovered by exiled criminals.\nTheirs are the sorceries most reviled by the academy.\n\nThe guilty, their eyes gouged by thorns, lived in eternal darkness. There, they discovered the blood star.",
+    "info": "Inflict 50 damage and cause 25 <font color=\"#C84343\">blood loss accumulation</font> on yourself to conjure a straight trail of bloodthorns followed by a large bloodthorn right underneath the target, which will inflict <font color=\"#57DBCE\">magic damage</font> and cause <font color=\"#C84343\">blood loss accumulation</font> on any enemy hit by it. Can be cast repeatedly.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 212\n<font color=\"#C84343\">Base blood loss accumulation:</font> 72\n<font color=\"#E0B985\">Category:</font> Bloodthorn"
+  },
+  {
+    "id": 5000,
+    "name": "Rancorcall",
+    "caption": "Sorcery of the servants of Death.\n\nOnce thought lost, this ancient death hex was rediscovered by the necromancer Garris.",
+    "info": "Conjure 6 spirits which will seek out an enemy to fly into. Charging increases damage.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 54\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 57\n<font color=\"#E0B985\">Category:</font> Death"
+  },
+  {
+    "id": 5001,
+    "name": "Ancient Death Rancor",
+    "caption": "Sorcery of the servants of Death.\n\nThey are cinders of the ancient death hex, raked from the fires of ghostflame by Deathbirds.",
+    "info": "Conjure 9 spirits which will seek out an enemy to fly into. Charging increases damage.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 49\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 52\n<font color=\"#E0B985\">Category:</font> Death"
+  },
+  {
+    "id": 5010,
+    "name": "Explosive Ghostflame",
+    "caption": "Sorcery of the servants of Death.\n\nIn the time when there was no Erdtree, death was burned in ghostflame. Deathbirds were the keepers of that fire.",
+    "info": "Cause a large ghostflame explosion around you which will leave 5 ghostflame trails on the ground for 5 seconds.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage (explosion):</font> 312\n<font color=\"#57DBCE\">Base magic damage (trail):</font> 60\n<font color=\"#9DD7FB\">Base frostbite accumulation (explosion):</font> 130\n<font color=\"#9DD7FB\">Base frostbite accumulation (trail):</font> 38\n<font color=\"#E0B985\">Category:</font> Death"
+  },
+  {
+    "id": 5020,
+    "name": "Fia's Mist",
+    "caption": "Sorcery of Fia, the Deathbed Companion.\n\nThis sorcery was developed to oppose the Roundtable Hold, and is effective only against the Tarnished.",
+    "info": "Conjure a cloud of deadly mist which lasts for 6 seconds, causing <font color=\"#A17945\">death blight accumulation</font> up to 16 times. Charging increases size of cloud. Can be cast while in motion and on horseback.\n\n<font color=\"#A17945\">Death blight:</font> Instant death. Only effective against Tarnished.\n\n<font color=\"#A17945\">Base death blight accumulation:</font> 20\n<font color=\"#E0B985\">Category:</font> Death"
+  },
+  {
+    "id": 5030,
+    "name": "Tibia's Summons",
+    "caption": "Sorcery of the servants of Death.\n\nThe dead have long been left to wander; what they need is leadership.",
+    "info": "Summon 3 skeletons around a target which will each do a single vertical swing of their sword before disappearing.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 125\n<font color=\"#E0B985\">Category:</font> Death"
+  },
+  {
+    "id": 5100,
+    "name": "Oracle Bubbles",
+    "caption": "Sorcery of the claymen who served as priests in the ancient dynasty.\n\nThe claymen search for lost oracles within their bubbles.",
+    "info": "Conjure 9 small magic bubbles which will drift forward and explode either on impact of after a short delay. Charging increases damage and delay before explosion. Can be cast while in motion.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 54\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 65\n<font color=\"#E0B985\">Category:</font> Claymen"
+  },
+  {
+    "id": 5110,
+    "name": "Great Oracular Bubble",
+    "caption": "Sorcery of the claymen who served as priests in the ancient dynasty.\n\nThe claymen search for lost oracles within their bubbles.",
+    "info": "Conjure a large magic bubble which will drift forward and explode either on impact of after a short delay. Charging increases damage and delay before explosion. Can be cast while in motion.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 298\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 355\n<font color=\"#E0B985\">Category:</font> Claymen"
+  },
+  {
+    "id": 6500,
+    "name": "Night Maiden's Mist",
+    "caption": "One of the night sorceries of Sellia, Town of Sorcery.\n\nBelow Sellia, the Eternal City of Nokron sleeps. This sorcery originates from the maidens of that place.",
+    "info": "Lob a cloud of harmful mist which will last for 15 seconds and inflict damage 2 times per second on anyone who touches it, including yourself. Damage persists for a short amount of time after exiting the mist. Charging creates a larger cloud. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Typeless damage:</font> 19\n<font color=\"#F395C4\">Base physical damage:</font> 20\n<font color=\"#E0B985\">Category:</font> Night"
+  }
+]

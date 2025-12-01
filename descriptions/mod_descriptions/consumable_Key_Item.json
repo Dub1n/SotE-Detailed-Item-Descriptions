@@ -1,0 +1,164 @@
+[
+  {
+    "id": 2090,
+    "name": "Deathroot",
+    "caption": "A source that gives rise to Those Who Live in Death.\n\nOn the night of the dire plot the stolen Rune of Death enabled the first Death of a demigod. Later, the Rune of Death spread across the Lands Between through the underground roots of the Greattree, sprouting in the form of Deathroot.",
+    "info": "Give to the Beast Clergyman, found at Bestial Sanctum in the distant east, who collects and devours these roots."
+  },
+  {
+    "id": 2130,
+    "name": "Celestial Dew",
+    "caption": "A hidden Tear found in the Eternal City. Also known as a Night Tear.\n\nOnce upon a time, the stars of the night sky guided fate, and this is a recollection of those times.",
+    "info": "Allows you to carry out an Absolution at the Church of Vows.\n\nAbsolution causes anyone who was previously friendly towards you to forgive your violent transgressions towards them, if they're still alive."
+  },
+  {
+    "id": 8000,
+    "name": "Stonesword Key",
+    "caption": "A sword-shaped stone key.\n\nThink well before using one.",
+    "info": "Breaks the seal on imp statues. Remains embedded in the statue after use, meaning it can only be used once.\n\nSome imp statues require 2 keys to break the seal."
+  },
+  {
+    "id": 8109,
+    "name": "Academy Glintstone Key",
+    "caption": "Key to the seals binding both gates to the Academy of Raya Lucaria.\n\nA glintstone key will remember its user, meaning once used it can never be passed on to another. The academy does not welcome the indolent.",
+    "info": "Allows access to the Academy of Raya Lucaria."
+  },
+  {
+    "id": 8111,
+    "name": "Carian Inverted Statue",
+    "caption": "Statuette of a scholar, with ground and sky inverted.\n\nTo unveil the secret, affix it to the pedestal of the celestial globe.",
+    "info": "Reveals the hidden form of the Carian Study Hall."
+  },
+  {
+    "id": 8131,
+    "name": "Irina's Letter",
+    "caption": "Letter given by Irina, addressed to her father, the commander of Castle Morne.\n\nGorgeous silken handkerchief, lightly stained with blood. Words can be made out within.",
+    "info": "Irina requested this be given to her father, the commander of Castle Morne."
+  },
+  {
+    "id": 8134,
+    "name": "Drawing-Room Key",
+    "caption": "-",
+    "info": "Allows access some of the rooms in Volcano Manor, including the drawing room."
+  },
+  {
+    "id": 8142,
+    "name": "Amber Starlight",
+    "caption": "An ephemeral sliver that gives off a pale amber glow. What remains of a passing flash of starlight.\n\nIf the stars command our fates, then amber-hued stars must command the fates of the gods. Such is the belief that inspired the use of these shards to prepare a most special draught.\n\nCannot be consumed by mere humans.",
+    "info": "Ingredient used in a special draught."
+  },
+  {
+    "id": 8158,
+    "name": "Spirit Calling Bell",
+    "caption": "-",
+    "info": "Possessing this allows you to summon spirits from ashen remains.\n\nSpirits can only be summoned in the vicinity of a rebirth monument. When summoning is possible, the monument icon will be visible on the left side of the screen.\n\nOnly one type of spirit may be summoned at once."
+  },
+  {
+    "id": 8159,
+    "name": "Fingerslayer Blade",
+    "caption": "The hidden treasure of the Eternal City of Nokron and symbolizes its downfall; a blood-drenched blade said to have been born of a corpse.\n\nCannot be wielded by those without a fate, but is said to be able to harm the Greater Will and its vassals.",
+    "info": "Proof of the high treason committed by the Eternal City."
+  },
+  {
+    "id": 8161,
+    "name": "Sewing Needle",
+    "caption": "A large sewing needle, curved like a fang.",
+    "info": "Enables garb alterations from Boc."
+  },
+  {
+    "id": 8162,
+    "name": "Gold Sewing Needle",
+    "caption": "Sewing needle made of gold.\n\nOne of the tools brought by Radagon when he entered into marriage with Rennala, Queen of the Full Moon, and joined the Carian line.",
+    "info": "Allows demigod garb alterations from Boc."
+  },
+  {
+    "id": 8163,
+    "name": "Tailoring Tools",
+    "caption": "A portable set of tailoring tools.",
+    "info": "Enables garb alterations at sites of grace."
+  },
+  {
+    "id": 8164,
+    "name": "Seluvis's Potion",
+    "caption": "Small flask received from Preceptor Seluvis containing a cloudy tonic of bluish black.",
+    "info": "\"Find Nepheli, and ensure she drinks it.\" - Seluvis"
+  },
+  {
+    "id": 8166,
+    "name": "Amber Draught",
+    "caption": "Small flask received from Preceptor Seluvis containing a gleaming amber draught for use in a scheme.",
+    "info": "\"Give it to Ranni and ensure she drinks it. And we'll be in a position to claim the very finest puppet ever crafted.\" - Seluvis"
+  },
+  {
+    "id": 8174,
+    "name": "Academy Glintstone Key",
+    "caption": "Key to the seals binding both gates to the Academy of Raya Lucaria.\n\nA glintstone key will remember its user, meaning once used it can never be passed on to another. The academy does not welcome the indolent. This glintstone key is still brand new, unused by anyone.",
+    "info": "Allows access to the Academy of Raya Lucaria."
+  },
+  {
+    "id": 8188,
+    "name": "Golden Tailoring Tools",
+    "caption": "Tailoring tools made from gold. Tools brought with the red-haired Radagon when he married into the Carian line.",
+    "info": "Allows demigod garb alterations at sites of grace."
+  },
+  {
+    "id": 8199,
+    "name": "Discarded Palace Key",
+    "caption": "A key discarded by Lunar Princess Ranni alongside her very flesh.",
+    "info": "Opens a treasure chest passed down to Carian Princesses, found in the Grand Library of Raya Lucaria."
+  },
+  {
+    "id": 8970,
+    "name": "Iron Whetblade",
+    "caption": "Iron whetblade with a cipher engraved. Can be used as a whetstone knife.",
+    "info": "When applying an affinity using ashes of war, additional affinities can be chosen:\n\n- <font color=\"#F395C4\">Heavy</font>\n- <font color=\"#F395C4\">Keen</font>\n- <font color=\"#F395C4\">Quality</font>"
+  },
+  {
+    "id": 8971,
+    "name": "Red-Hot Whetblade",
+    "caption": "Red-hot whetblade with a cipher engraved. Can be used as a whetstone knife.",
+    "info": "When applying an affinity using physical or flame-type ashes of war, additional affinities can be chosen:\n\n- <font color=\"#F48C25\">Fire</font>\n- <font color=\"#F48C25\">Flame art</font>"
+  },
+  {
+    "id": 8972,
+    "name": "Sanctified Whetblade",
+    "caption": "Sanctified whetblade with a cipher engraved. Can be used as a whetstone knife.",
+    "info": "When applying an affinity using physical or golden-type ashes of war, additional affinities can be chosen:\n\n- <font color=\"#F5EB89\">Sacred</font>\n- <font color=\"#FFE033\">Lightning</font>"
+  },
+  {
+    "id": 8973,
+    "name": "Glintstone Whetblade",
+    "caption": "Glintstone whetblade with a cipher engraved. Can be used as a whetstone knife.",
+    "info": "When applying an affinity using physical or magic-type ashes of war, additional affinities can be chosen:\n\n- <font color=\"#57DBCE\">Magic</font>\n- <font color=\"#9DD7FB\">Frost</font>"
+  },
+  {
+    "id": 8974,
+    "name": "Black Whetblade",
+    "caption": "Black whetblade with a cipher engraved. Can be used as a whetstone knife.",
+    "info": "When applying an affinity using physical or occult-type ashes of war, additional affinities can be chosen:\n\n- <font color=\"#40BF40\">Poison</font>\n- <font color=\"#C84343\">Blood</font>\n- <font color=\"#E0B985\">Occult</font>"
+  },
+  {
+    "id": 8979,
+    "name": "Beast Eye",
+    "caption": "Claw-marked stone eye received from Gurranq, Beast Clergyman.\n\nThe murky violet iris writhes as if alive.\n\"I am not sated... Feed me more...Death...\"",
+    "info": "Trembles when near Deathroot."
+  },
+  {
+    "id": 8980,
+    "name": "Weathered Dagger",
+    "caption": "Dagger received from Fia, the Deathbed Companion.\n\nIt was once a special weapon of gold and silver intertwined, but is now worn down and marred by a black gash.",
+    "info": "Fia wishes for it to be returned to its rightful owner."
+  },
+  {
+    "id": 10030,
+    "name": "Memory Stone",
+    "caption": "A black, lightly beguiling stone. Prized by the sorcerers who produce them.\n\nSaid to be a fragment of the black moon that once hung above the Eternal City.",
+    "info": "Possessing this increases the number of available <font color=\"#E0B985\">memory slots</font> by 1, allowing more spells to be memorized."
+  },
+  {
+    "id": 10040,
+    "name": "Talisman Pouch",
+    "caption": "Small, withered bag, knitted by hand. Bestowed upon the ruling lord, or those attempting to become lord, by the elderly Finger Reader.\n\nAs the voices of the Two Fingers, Finger Readers are said to live lives eternal, and one is even supposed to have served as a wetnurse to royalty.",
+    "info": "Possessing this increases the number of available <font color=\"#E0B985\">talisman slots</font> by 1, allowing another talisman to be equipped."
+  }
+]

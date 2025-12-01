@@ -1,0 +1,667 @@
+[
+  {
+    "id": 10000,
+    "name": "Ash of War: Lion's Claw",
+    "category": "ash",
+    "caption": "Skill of the Redmanes, who fought alongside General Radahn.",
+    "info": "Jump into a frontward flip then slam your armament down in front of you as you land."
+  },
+  {
+    "id": 10100,
+    "name": "Ash of War: Impaling Thrust",
+    "category": "ash",
+    "caption": "Skill that lets piercing armaments overcome enemy shields.",
+    "info": "Thrust armament forward with enough force to pierce an enemy's guard."
+  },
+  {
+    "id": 10200,
+    "name": "Ash of War: Piercing Fang",
+    "category": "ash",
+    "caption": "Skill used by Yura, the Bloody Finger Hunter.",
+    "info": "Starting with the blade held horizontally over your head, thrust armament forward with enough force to pierce an enemy's guard."
+  },
+  {
+    "id": 10300,
+    "name": "Ash of War: Spinning Slash",
+    "category": "ash",
+    "caption": "Skill favored by dexterous warriors.",
+    "info": "Spin around in a circle then slash your armament in front of you. Follow up by using the skill a second time to perform two more spins, each with their own forward slash."
+  },
+  {
+    "id": 10500,
+    "name": "Ash of War: Charge Forth",
+    "category": "ash",
+    "caption": "-",
+    "info": "Charge forward with the armament held out in front of you, then thrust the armament forward with force. Hold to charge farther."
+  },
+  {
+    "id": 10600,
+    "name": "Ash of War: Stamp (Upward Cut)",
+    "category": "ash",
+    "caption": "-",
+    "info": "Stomp forward and briefly brace for an incoming attack. While in this stance <font color=\"#E0B985\">all damage received</font> is reduced by 50% and you are much less likely to stagger from getting hit. Follow up with a strong attack to do an upward strike, which may knock some enemies into the air."
+  },
+  {
+    "id": 10700,
+    "name": "Ash of War: Stamp (Sweep)",
+    "category": "ash",
+    "caption": "-",
+    "info": "Stomp forward and briefly brace for an incoming attack. While in this stance <font color=\"#E0B985\">all damage received</font> is reduced by 50% and you are much less likely to stagger from getting hit. Follow up with a strong attack to do a horizontal slash in a full circle around you."
+  },
+  {
+    "id": 10800,
+    "name": "Ash of War: Blood Tax",
+    "category": "ash",
+    "caption": "Blood Oath skill granted by the Lord of Blood.",
+    "info": "Spin around in a circle then rapidly thrust your armament forward 4 times. Each of the first 3 thrusts that hit an enemy will restore 2% of your <font color=\"#E0B985\">maximum HP</font> plus 25, and the final thrust will restore 4% of your <font color=\"#E0B985\">maximum HP</font> plus 45 if it hits an enemy."
+  },
+  {
+    "id": 10900,
+    "name": "Ash of War: Repeating Thrust",
+    "category": "ash",
+    "caption": "-",
+    "info": "Spin around in a circle then rapidly thrust your armament forward 4 times."
+  },
+  {
+    "id": 11000,
+    "name": "Ash of War: Wild Strikes",
+    "category": "ash",
+    "caption": "-",
+    "info": "Swing armament in an X-shaped pattern. Hold to coninue swinging. Can be used while moving. Follow up with a normal attack to do a horizontal slash in a full circle around you. Alternatively, follow up with a strong attack to raise your armament and do a downward vertical slash."
+  },
+  {
+    "id": 11100,
+    "name": "Ash of War: Spinning Strikes",
+    "category": "ash",
+    "caption": "-",
+    "info": "Raise armament above your head and spin it in a circle horizontally, which can deflect small physical projectiles. Hold to continue spinning it. Can be used while moving and camera can be used to control angle. Follow with a normal attack to do a horizontal slash in a full circle around you, ending with a second slash forward. Alternatively, follow with a strong attack to leap forward and slam the armament downward in front of you."
+  },
+  {
+    "id": 11200,
+    "name": "Ash of War: Double Slash",
+    "category": "ash",
+    "caption": "Skill of superior swordsmen.",
+    "info": "Step forward and slash your armament forward twice in an X-shaped pattern. Follow up by using the skill a second time to perform three more slashes. Follow that up by using the skill a third time to do a powerful downward slash."
+  },
+  {
+    "id": 11300,
+    "name": "Ash of War: Prelate's Charge",
+    "category": "ash",
+    "caption": "-",
+    "info": "Raise and ignite armament before slamming it into the ground and charging forward, leaving behind a trail of flames which will linger for a short time. At the end of the charge, rip the armament out of the ground with enough force to knock some enemies into the air. Hold to continue charging."
+  },
+  {
+    "id": 11400,
+    "name": "Ash of War: Unsheathe",
+    "category": "ash",
+    "caption": "Skill of swordsmen from the Land of Reeds.",
+    "info": "Sheathe armament in preparation for an attack. Hold to keep weapon sheathed. Can be used while moving. Follow up with a normal attack to quickly step forward while doing a horizontal slash. Alternatively, follow up with a strong attack to do a small hop forward while doing a downward vertical slash."
+  },
+  {
+    "id": 11500,
+    "name": "Ash of War: Square Off",
+    "category": "ash",
+    "caption": "-",
+    "info": "Hold armament in a raised position in preparation for an attack. Follow up with a normal attack to do an upward vertical slash through an enemy's guard. Alternatively, follow up with a strong attack to run forward a few steps and thrust the armament forward."
+  },
+  {
+    "id": 11600,
+    "name": "Ash of War: Giant Hunt",
+    "category": "ash",
+    "caption": "Skill developed for confronting gigantic foes.",
+    "info": "Step forward and do a powerful upward thrust, which may knock some enemies into the air."
+  },
+  {
+    "id": 11700,
+    "name": "Ash of War: Torch Attack",
+    "category": "ash",
+    "caption": "-",
+    "info": "Thrust armament forward. Follow up by using the skill a second time to do a horizontal slash."
+  },
+  {
+    "id": 11800,
+    "name": "Ash of War: Loretta's Slash",
+    "category": "ash",
+    "caption": "Skill of Loretta the Royal Knight.",
+    "info": "Imbue the armament with glintstone magic and do an upward slash as you jump into the air, then do a horizontal slash as you return to the ground."
+  },
+  {
+    "id": 11900,
+    "name": "Ash of War: Poison Moth Flight",
+    "category": "ash",
+    "caption": "-",
+    "info": "Imbue the armament with poison then leap foward and do a horizontal slash. If an enemy hit by this skill is already poisoned then this will inflict additional damage equal to 5% of the enemy's <font color=\"#E0B985\">maximum HP</font> plus 250, but the poison ailment will then be removed from the enemy.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds.\n\n<font color=\"#40BF40\">Base poison accumulation:</font> 250"
+  },
+  {
+    "id": 12000,
+    "name": "Ash of War: Spinning Weapon",
+    "category": "ash",
+    "caption": "Defensive skill employed by Carian princesses.",
+    "info": "Telekinetically lift armament in front of you and spin it vertically several times. Can be used while moving."
+  },
+  {
+    "id": 12200,
+    "name": "Ash of War: Storm Assault",
+    "category": "ash",
+    "caption": "One of the skills that channel the tempests of Stormveil.",
+    "info": "Produce a swirl of harmful wind around you as you leap into the air then slam your armament into the ground, producing another swirl of wind where you land."
+  },
+  {
+    "id": 12300,
+    "name": "Ash of War: Stormcaller",
+    "category": "ash",
+    "caption": "One of the skills that channel the tempests of Stormveil.",
+    "info": "Spin armament in circles above your head to produce 3 successive swirls of harmful wind around you. Follow up by using the skill again to step forward and do 2 additional spins. Follow that up by using the skill a third time to step forward again and do another 2 additional spins."
+  },
+  {
+    "id": 12400,
+    "name": "Ash of War: Sword Dance",
+    "category": "ash",
+    "caption": "-",
+    "info": "Leap forward and quickly do 2 diagonal slashes. Follow up by using the skill again to do a downward vertical slash."
+  },
+  {
+    "id": 12500,
+    "name": "Ash of War: Spinning Chain",
+    "category": "ash",
+    "caption": "-",
+    "info": "Hold the flail out in front of you and spin the ball vertically. Hold to continue spinning. Can be used while moving. Follow up with a normal attack to lift the flail up and slam it to the ground in front of you. Follow up with a strong attack to do a horizontal swipe then lift the flail up and slam it to the ground in front of you."
+  },
+  {
+    "id": 20000,
+    "name": "Ash of War: Glintblade Phalanx",
+    "category": "ash",
+    "caption": "Skill used by the enchanted knights who served the Carian royal family. Employs the glintstone sorcery of the same name.",
+    "info": "Conjure 4 magical dagger projectiles which float above you and automatically shoot into an enemy when they are within range. Follow up with a strong attack to thrust the armamant forward.\n\n<font color=\"#57DBCE\">Base magic damage (projectiles):</font> 47"
+  },
+  {
+    "id": 20100,
+    "name": "Ash of War: Sacred Blade",
+    "category": "ash",
+    "caption": "-",
+    "info": "Imbue the armament with holy essence then swing it horizontally to shoot a golden arc projectile. The armament retains its holy essence for 40 seconds, adding 90 <font color=\"#F5EB89\">holy damage</font>.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 180"
+  },
+  {
+    "id": 20200,
+    "name": "Ash of War: Ice Spear",
+    "category": "ash",
+    "caption": "Skill of the warriors who served Lunar Princess Ranni.",
+    "info": "Imbue the armament with cold magic then thrust it forward to cast the cold magic as a projectile.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage (projectile):</font> 230\n<font color=\"#9DD7FB\">Base frostbite accumulation (projectile):</font> 160"
+  },
+  {
+    "id": 20300,
+    "name": "Ash of War: Glintstone Pebble",
+    "category": "ash",
+    "caption": "Skill that employs the glintstone sorcery of the same name.",
+    "info": "Shoot a single magic glintstone projectile. Follow up with a strong attack to thrust the armamant forward while it's still imbued with glintstone magic.\n\n<font color=\"#57DBCE\">Base magic damage (projectile):</font> 137\n<font color=\"#57DBCE\">Base magic damage (thrust):</font> 45"
+  },
+  {
+    "id": 20400,
+    "name": "Ash of War: Bloody Slash",
+    "category": "ash",
+    "caption": "Blood Oath skill granted by the Lord of Blood.",
+    "info": "Inflict damage on yourself equal to 5% of your <font color=\"#E0B985\">maximum HP</font> plus 50, then do an upward slash with your armament. The upward slash will produce a large arc of blood, extending the range of the attack.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#C84343\">Base blood loss accumulation:</font> 60"
+  },
+  {
+    "id": 20500,
+    "name": "Ash of War: Lifesteal Fist",
+    "category": "ash",
+    "caption": "Skill that demonstrates mastery of the art of controlling vital energies.",
+    "info": "Crouch and build up power then thrust armament forward. If an enemy of human build is caught by this attack you will siphon health from the enemy and continuously deal damage to them for a short time. While siphoning you will restore 5% of your <font color=\"#E0B985\">maximum HP</font> 3 times, then 15% of your <font color=\"#E0B985\">maximum HP</font> once, for a total of 30%. If an enemy of non-human build is hit by this you will only do a slight amount of damage once and not be healed at all."
+  },
+  {
+    "id": 20700,
+    "name": "Ash of War: Eruption",
+    "category": "ash",
+    "caption": "Skill of the knights who serve at Volcano Manor.",
+    "info": "Imbue the armament with fire then slam it into the ground and rip it back out, leaving behind a small pool of magma for a few seconds.\n\n<font color=\"#F48C25\">Base fire damage (magma):</font> 40"
+  },
+  {
+    "id": 20800,
+    "name": "Ash of War: Prayerful Strike",
+    "category": "ash",
+    "caption": "-",
+    "info": "Raise armament and slam it into the ground in front of you. If it hits an enemy it will restore 30% of your <font color=\"#E0B985\">maximum HP</font> and nearby allies will also have 30% of their <font color=\"#E0B985\">maximum HP</font> restored.\n\nDespite its name and appearance, this skill only inflicts <font color=\"#F395C4\">physical damage</font>, not <font color=\"#F5EB89\">holy damage</font>."
+  },
+  {
+    "id": 20900,
+    "name": "Ash of War: Gravitas",
+    "category": "ash",
+    "caption": "Skill originating from the Alabaster Lords, who had skin of stone.",
+    "info": "Plunge the armament into the ground and create a gravity well in a large area around yourself, which can pull some enemies towards you slightly and stagger them.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 60"
+  },
+  {
+    "id": 21000,
+    "name": "Ash of War: Storm Blade",
+    "category": "ash",
+    "caption": "Lost skill of Stormveil.",
+    "info": "Imbue armament with a swirl of wind then slash it forward to cast it forward as a projectile. Can be used repeatedly to continue casting projectiles.\n\n<font color=\"#F395C4\">Base physical damage (projectile):</font> 150"
+  },
+  {
+    "id": 21200,
+    "name": "Ash of War: Earthshaker",
+    "category": "ash",
+    "caption": "-",
+    "info": "Slam armament into the ground to create a shockwave in a large area around you. Follow up with a strong attack to spin armament in a full circle horizontal slash around you.\n\n<font color=\"#F395C4\">Base physical damage (shockwave):</font> 120"
+  },
+  {
+    "id": 21300,
+    "name": "Ash of War: Golden Land",
+    "category": "ash",
+    "caption": "-",
+    "info": "Slam armament into the ground to create a shockwave of sacred energy in a large area around you, which also produces 6 golden darts that will shoot out at an enemy. Follow up with a strong attack to spin armament in a full circle horizontal slash around you.\n\n<font color=\"#F5EB89\">Base holy damage (shockwave):</font> 160\n<font color=\"#F5EB89\">Base holy damage (projectiles):</font> 75"
+  },
+  {
+    "id": 21400,
+    "name": "Ash of War: Flaming Strike",
+    "category": "ash",
+    "caption": "-",
+    "info": "Throw out an arc of flame in front of you. Follow up with a strong attack to do a horizontal slash through the arc of fire, which will imbue the armament with 90 <font color=\"#F48C25\">fire damage</font> for 40 seconds.\n\n<font color=\"#F48C25\">Base fire damage (projectile):</font> 138"
+  },
+  {
+    "id": 21600,
+    "name": "Ash of War: Thunderbolt",
+    "category": "ash",
+    "caption": "Skill used by the capital's ancient dragon cult.",
+    "info": "Raise armament to conjure a bolt of lightning from the sky. Can be used repeatedly to continue conjuring bolts of lightning.\n\n<font color=\"#FFE033\">Base lightning damage (bolt):</font> 120"
+  },
+  {
+    "id": 21700,
+    "name": "Ash of War: Lightning Slash",
+    "category": "ash",
+    "caption": "-",
+    "info": "Stomp on the ground to conjure a bolt of lightning into your armament, which adds 85 <font color=\"#FFE033\">lightning damage</font> for 40 seconds, then slash it downward to conjure another bolt of lightning in front of you. The second lightning bolt produces a small explosion of lightning where it lands.\n\n<font color=\"#FFE033\">Base lightning damage (bolt):</font> 120\n<font color=\"#FFE033\">Base lightning damage (explosion):</font> 60"
+  },
+  {
+    "id": 21800,
+    "name": "Ash of War: Carian Grandeur",
+    "category": "ash",
+    "caption": "Carian royal prestige embodied in a skill.",
+    "info": "Raise your armament above your head and transform armament into a large magical greatsword, then slam it to the ground in front of you. Can be charged to increase damage and distance.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 220\n<font color=\"#57DBCE\">Base magic damage (partially charged):</font> 315\n<font color=\"#57DBCE\">Base magic damage (fully charged):</font> 400"
+  },
+  {
+    "id": 21900,
+    "name": "Ash of War: Carian Greatsword",
+    "category": "ash",
+    "caption": "Carian royal prestige embodied in a skill.",
+    "info": "Raise your armament above your head and transform armament into a large magical greatsword, then slam it to the ground in front of you. Can be charged to increase damage and distance.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 220\n<font color=\"#57DBCE\">Base magic damage (charged):</font> 340"
+  },
+  {
+    "id": 22000,
+    "name": "Ash of War: Vacuum Slice",
+    "category": "ash",
+    "caption": "Lost skill of ancient heroes.",
+    "info": "Raise the armament above your head and imbue it with wind, then slam it to the ground in front of you to cast it off as a vertical arc projectile.\n\n<font color=\"#F395C4\">Base physical damage (projectile):</font> 200"
+  },
+  {
+    "id": 22100,
+    "name": "Ash of War: Black Flame Tornado",
+    "category": "ash",
+    "caption": "-",
+    "info": "Spin the armament above your head while imbuing it with black flame, then slam it to the ground to create a large swirl of black flame around you. Hold to spin armament over your head longer, creating a large swirl of black flame around you before slamming it to the ground, creating another large swirl of black flame around you. In addition to the damage from the attack, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> plus 1 per second for 2 seconds each time they are hit by the black flame.\n\n<font color=\"#F48C25\">Base fire damage (slam swirl):</font> 170\n<font color=\"#F48C25\">Base fire damage (overhead swirl):</font> 65"
+  },
+  {
+    "id": 22200,
+    "name": "Ash of War: Sacred Ring of Light",
+    "category": "ash",
+    "caption": "Skill used by the commanders of the Cleanrot Knights.",
+    "info": "Slash weapon forward to conjure a ring of light which will fly toward an enemy. Can be used repeatedly to continue shooting projectiles.\n\nThe horizontal slash performed during this skill's animation doesn't do any damage.\n\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 125"
+  },
+  {
+    "id": 22300,
+    "name": "Ash of War: Firebreather",
+    "category": "ash",
+    "caption": "-",
+    "info": "Blow the torch's flame in a wide arc in front of you. If the flames touch the ground it will continue to burn on the ground for a short time."
+  },
+  {
+    "id": 22400,
+    "name": "Ash of War: Blood Blade",
+    "category": "ash",
+    "caption": "-",
+    "info": "Inflict damage to yourself equal to 4% of your <font color=\"#E0B985\">maximum HP</font> to imbue the armament with blood then swipe it horizontally to cast it as a projectile. Can be used repeatedly to cast mutliple projectiles without taking any additional damage.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage (projectile):</font> 115\n<font color=\"#C84343\">Base blood loss accumulation (projectile):</font> 60"
+  },
+  {
+    "id": 22500,
+    "name": "Ash of War: Phantom Slash",
+    "category": "ash",
+    "caption": "Skill inspired by the fond remembrances of the Night's Cavalry. Creates an apparition of the knights' former instructor.",
+    "info": "Summon an apparition next to you who will lunge forward and do an upward vertical slash, followed by you doing the same thing. Follow up by using the skill again to re-summon the apparition to do a downward vertical slash, followed by you doing the same thing.\n\n<font color=\"#F395C4\">Base physical damage (apparition, upward):</font> 160\n<font color=\"#F395C4\">Base physical damage (apparition, downward):</font> 165"
+  },
+  {
+    "id": 22600,
+    "name": "Ash of War: Spectral Lance",
+    "category": "ash",
+    "caption": "Skill of the headless Mausoleum Knights.",
+    "info": "Transform armament into an apparition spear and hurl it forward.\n\n<font color=\"#F395C4\">Base physical damage:</font> 132"
+  },
+  {
+    "id": 22700,
+    "name": "Ash of War: Chilling Mist",
+    "category": "ash",
+    "caption": "-",
+    "info": "Imbue the armament with frost and do a hortizontal slash to produce a cloud of cold mist for 4 seconds, which will cause <font color=\"#9DD7FB\">frostbite accumulation</font> up to 6 times. The armament remains imbued with frost for 40 seconds, causing 30 <font color=\"#9DD7FB\">frostbite accumulation</font> per attack.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of maximum HP plus 30, then increases all damage received by 20% for 30 seconds.\n\n<font color=\"#9DD7FB\">Base frostbite accumulation (slash):</font> 60\n<font color=\"#9DD7FB\">Base frostbite accumulation (mist):</font> 120"
+  },
+  {
+    "id": 22800,
+    "name": "Ash of War: Poisonous Mist",
+    "category": "ash",
+    "caption": "-",
+    "info": "Imbue the armament with poison and do a hortizontal slash to produce a cloud of poison for 4 seconds, which will cause <font color=\"#40BF40\">poison accumulation</font> up to 6 times. The armament remains imbued with poison for 40 seconds, causing 30 <font color=\"#40BF40\">poison accumulation</font> per attack.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.1% of <font color=\"#E0B985\">maximum HP</font> plus 8, every second for 40 seconds.\n\n<font color=\"#40BF40\">Base poison accumulation (mist):</font>  60\n<font color=\"#40BF40\">Base poison accumulation (mist):</font>  120"
+  },
+  {
+    "id": 30000,
+    "name": "Ash of War: Shield Bash",
+    "category": "ash",
+    "caption": "-",
+    "info": "Lift shield to guard stance and ram it forward while maintaining guard. Some enemies may be knocked down or staggered."
+  },
+  {
+    "id": 30100,
+    "name": "Ash of War: Barricade Shield",
+    "category": "ash",
+    "caption": "Skill made famous by Sir Neidhardt.",
+    "info": "Lift shield to guard stance and imbue it with energy for 10 seconds, increasing <font color=\"#E0B985\">guard boost</font> and increasing its ability to repel enemy attacks. The amount that <font color=\"#E0B985\">guard boost</font> is increased by depends on the shield's base guard boost. Shields with a lower base value will get a bigger increase, while shields with a higher base value will get a smaller increase."
+  },
+  {
+    "id": 30200,
+    "name": "Ash of War: Parry",
+    "category": "ash",
+    "caption": "-",
+    "info": "Swing armament with precise timing to deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected.\n\nThis skill is not consistent on all armaments. The window of time to deflect is the earliest and longest on small shields and is slightly later and shorter on daggers. Compared to daggers, the window for most other armaments, including medium shields, begins at the same time but is half the duration, so it will require much more precise timing."
+  },
+  {
+    "id": 30300,
+    "name": "Ash of War: Buckler Parry",
+    "category": "ash",
+    "caption": "-",
+    "info": "Swing armament with precise timing to deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly earlier but is the same duration."
+  },
+  {
+    "id": 30500,
+    "name": "Ash of War: Carian Retaliation",
+    "category": "ash",
+    "caption": "-",
+    "info": "Swing armament with precise timing to transform an incoming spell into 3 magical daggers which float above you and automatically shoot into an enemy when they are within range. Can also deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly earlier, is slightly longer, and is consistent for all armaments.\n\n<font color=\"#57DBCE\">Base magic damage (projectiles):</font> 270"
+  },
+  {
+    "id": 30600,
+    "name": "Ash of War: Storm Wall",
+    "category": "ash",
+    "caption": "-",
+    "info": "Swing armament with precise timing to deflect small physical projectiles. Can also deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect is the same but it is consistent for all armaments."
+  },
+  {
+    "id": 30700,
+    "name": "Ash of War: Golden Parry",
+    "category": "ash",
+    "caption": "-",
+    "info": "Swing armament with to project a large golden arc in front of you which, with precise timing, can deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly earlier, is slightly longer, and is consistent for all armaments."
+  },
+  {
+    "id": 30800,
+    "name": "Ash of War: Shield Crash",
+    "category": "ash",
+    "caption": "-",
+    "info": "Lift shield to guard stance and charge forward while maintaining guard then ram the shield forward. Some enemies may be knocked down or staggered. Hold to charge forward longer.\n\n<font color=\"#F395C4\">Base physical damage:</font> 132"
+  },
+  {
+    "id": 30900,
+    "name": "Ash of War: No Skill",
+    "category": "ash",
+    "caption": "-",
+    "info": "Remove skill from this armament. If the armament in the other hand has a skill, that skill will be used instead."
+  },
+  {
+    "id": 31000,
+    "name": "Ash of War: Thops's Barrier",
+    "category": "ash",
+    "caption": "-",
+    "info": "Swing armament with precise timing to deflect an incoming spell. Can also deflect a melee attack, which will break the enemy's stance, typically allowing for a critical attack. Not all melee attacks can be deflected. Compared to a regular parry on a small shield, the window of time to deflect begins slightly later, is slightly shorter, and is consistent for all armaments."
+  },
+  {
+    "id": 40000,
+    "name": "Ash of War: Through and Through",
+    "category": "ash",
+    "caption": "Powerful archery skill using a greatbow held in an oblique stance.",
+    "info": "Hold to ready the bow. Arrows shot while in this stance will pierce through enemies who aren't guarding, allowing multiple enemies in a straight line to be hit. Arrows will not pierce through shields."
+  },
+  {
+    "id": 40100,
+    "name": "Ash of War: Barrage",
+    "category": "ash",
+    "caption": "Archery skill using a bow held horizontally.",
+    "info": "Hold to ready the bow. While in this stance you are able to shoot arrows without the usual delay of pulling back the string, allowing arrows to be shot in quick succession."
+  },
+  {
+    "id": 40200,
+    "name": "Ash of War: Mighty Shot",
+    "category": "ash",
+    "caption": "Archery skill performed from an oblique stance.",
+    "info": "Hold to ready the bow. Arrows shot while in this stance will have enough force to pierce an enemy's guard."
+  },
+  {
+    "id": 40400,
+    "name": "Ash of War: Enchanted Shot",
+    "category": "ash",
+    "caption": "Archery skill that enlivens the arrow with spiritual essence.",
+    "info": "Hold to ready the bow. Arrows shot while in this stance will change their trajectory to follow the target."
+  },
+  {
+    "id": 40500,
+    "name": "Ash of War: Sky Shot",
+    "category": "ash",
+    "caption": "Archery skill performed from a low stance.",
+    "info": "Hold to crouch in a prepared stance. Arrows shot while in this stance will be shot nearly straight up and arc to land where the target was standing when the arrow was shot, typically resulting in increased damage as a headshot.\n\nIt is very difficult to hit a moving enemy with this so it is much more useful to be used in stealth."
+  },
+  {
+    "id": 40600,
+    "name": "Ash of War: Rain of Arrows",
+    "category": "ash",
+    "caption": "Archery skill performed from a low stance.",
+    "info": "Hold to crouch in a prepared stance. Arrows shot while in this stance will be shot nearly straight up and split into a barrage of arrows which will arc to land around the area where the target was standing when the arrow was shot."
+  },
+  {
+    "id": 50100,
+    "name": "Ash of War: Hoarfrost Stomp",
+    "category": "ash",
+    "caption": "-",
+    "info": "Stomp on the ground to produce a large cone of icicles along the ground, which briefly spray up a cold mist.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 40\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 70"
+  },
+  {
+    "id": 50200,
+    "name": "Ash of War: Storm Stomp",
+    "category": "ash",
+    "caption": "One of the skills that channel the tempests of Stormveil.",
+    "info": "Stomp on the ground to produce a swirl of wind around you.\n\n<font color=\"#F395C4\">Base physical damage (wind):</font> 50"
+  },
+  {
+    "id": 50300,
+    "name": "Ash of War: Kick",
+    "category": "ash",
+    "caption": "-",
+    "info": "Kick forward with force. Effective at breaking a guarding enemy's stance."
+  },
+  {
+    "id": 50400,
+    "name": "Ash of War: Lightning Ram",
+    "category": "ash",
+    "caption": "Skill inspired by tumbling rams.",
+    "info": "Imbue your body with lightning and roll forward on the ground. Can be used repeatedly to continue rolling.\n\n<font color=\"#F395C4\">Base physical damage:</font> 40\n<font color=\"#FFE033\">Base lightning damage:</font> 95"
+  },
+  {
+    "id": 50500,
+    "name": "Ash of War: Flame of the Redmanes",
+    "category": "ash",
+    "caption": "Skill of the Redmanes, who fought alongside General Radahn.",
+    "info": "Conjure a wide arc of fire in front of you and push it outward.\n\n<font color=\"#F48C25\">Base fire damage:</font> 180"
+  },
+  {
+    "id": 50600,
+    "name": "Ash of War: Ground Slam",
+    "category": "ash",
+    "caption": "-",
+    "info": "Jump up into the air and slam back to the ground on your butt to create a large shockwave around you.\n\n<font color=\"#F395C4\">Base physical damage:</font> 264"
+  },
+  {
+    "id": 50700,
+    "name": "Ash of War: Golden Slam",
+    "category": "ash",
+    "caption": "Skill of the avatars who protect Minor Erdtrees.",
+    "info": "Jump up into the air and slam back to the ground on your butt to create a large shockwave of sacred energy around you which may knock down nearby enemies.\n\n<font color=\"#F395C4\">Base physical damage:</font> 308\n<font color=\"#F5EB89\">Base holy damage:</font> 225"
+  },
+  {
+    "id": 50800,
+    "name": "Ash of War: Waves of Darkness",
+    "category": "ash",
+    "caption": "-",
+    "info": "Imbue armament with dark energy then slam it into the ground to release it as 3 shockwaves around you, each shockwave bigger than the last. Follow up with a strong attack to do a horizontal slash in a full circle around you.\n\n<font color=\"#57DBCE\">Base magic damage (shockwaves):</font> 120"
+  },
+  {
+    "id": 50900,
+    "name": "Ash of War: Hoarah Loux's Earthshaker",
+    "category": "ash",
+    "caption": "-",
+    "info": "Let out a loud scream which may stagger some enemies in a small area around you, then slam your hands to the ground to produce a shockwave around you. Follow up by using the skill a second time to slam the ground again.\n\n<font color=\"#F395C4\">Base physical damage (first shockwave):</font> 220\n<font color=\"#F395C4\">Base physical damage (second shockwave):</font> 250"
+  },
+  {
+    "id": 60000,
+    "name": "Ash of War: Determination",
+    "category": "ash",
+    "caption": "A knightly skill.",
+    "info": "Imbue your armament with energy, increasing <font color=\"#E0B985\">all attack power</font> for your next single attack with that armament within 10 seconds by 60%. This effect works for critical attacks as well."
+  },
+  {
+    "id": 60100,
+    "name": "Ash of War: Royal Knight's Resolve",
+    "category": "ash",
+    "caption": "Skill of the knights who once served the Elden Lord.",
+    "info": "Imbue your armament with energy, increasing <font color=\"#E0B985\">all attack power</font> for your next single attack with that armament within 10 seconds by 80%. This effect works for critical attacks as well."
+  },
+  {
+    "id": 60200,
+    "name": "Ash of War: Assassin's Gambit",
+    "category": "ash",
+    "caption": "-",
+    "info": "Become semi-invisible for 30 seconds, which reduces the range at which non-aggressive enemies will notice you by 60% and completely negates sound made during movement."
+  },
+  {
+    "id": 60300,
+    "name": "Ash of War: Golden Vow",
+    "category": "ash",
+    "caption": "Skill passed down from antiquity among the knights of the capital. Pledge to honor the Erdtree in battle.",
+    "info": "Imbue yourself and nearby allies with sacred energy for 45 seconds, which increases <font color=\"#E0B985\">all damage inflicted</font> by 11.5% and reduces <font color=\"#E0B985\">all damage received</font> by 7.5%."
+  },
+  {
+    "id": 60400,
+    "name": "Ash of War: Sacred Order",
+    "category": "ash",
+    "caption": "Skill of the Golden Order fundamentalist knights.",
+    "info": "Imbue armament with holy essence for 60 seconds, which increases <font color=\"#E0B985\">all damage inflicted</font> by 10%. Attacks against Those Who Live in Death will inflict 2x damage and prevent them from reviving."
+  },
+  {
+    "id": 60500,
+    "name": "Ash of War: Shared Order",
+    "category": "ash",
+    "caption": "Skill of the Golden Order fundamentalist knights.",
+    "info": "Imbue yourself and nearby allies with holy essence for 60 seconds, which increases <font color=\"#E0B985\">all damage inflicted</font> by 10% for you and 7.5% for nearby allies. Attacks against Those Who Live in Death will inflict 50% more damage and prevent them from reviving."
+  },
+  {
+    "id": 60600,
+    "name": "Ash of War: Seppuku",
+    "category": "ash",
+    "caption": "A forbidden technique used by swordsmen from the Land of Reeds.",
+    "info": "Plunge armament into your stomach, inflicting damage to yourself equal to 15% of your <font color=\"#E0B985\">maximum HP</font> plus 100 and clearing all <font color=\"#C84343\">blood loss accumulation</font>. This imbues it with blood for 60 seconds, which adds 30 <font color=\"#F395C4\">physical damage</font> and 30 <font color=\"#C84343\">blood loss accumulation</font> to each attack.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100."
+  },
+  {
+    "id": 60700,
+    "name": "Ash of War: Cragblade",
+    "category": "ash",
+    "caption": "Skill that manipulates gravity.",
+    "info": "Plunge armament into the ground to reinforce it with rocks for 60 seconds, which increases <font color=\"#F395C4\">physical damage</font> by 10%. It also increases the amount of stamina removed with each attack from enemies who are guarding by 20%, making it easier to break their stance."
+  },
+  {
+    "id": 65000,
+    "name": "Ash of War: Barbaric Roar",
+    "category": "ash",
+    "caption": "-",
+    "info": "Let out a loud scream which will increase your <font color=\"#F395C4\">physical attack power</font> by 7.5% and your <font color=\"#E0B985\">strength</font> by 5 for 40 seconds. It also changes your strong attack to be a 3-attack combination."
+  },
+  {
+    "id": 65100,
+    "name": "Ash of War: War Cry",
+    "category": "ash",
+    "caption": "-",
+    "info": "Let out a loud scream which will increase your <font color=\"#F395C4\">physical attack power</font> by 7.5% and your <font color=\"#E0B985\">strength</font> by 5 for 40 seconds. It also changes your strong attack to be a downward vertical slash, and changes your charged strong attack to be a short run forward followed by a downward vertical slash."
+  },
+  {
+    "id": 65200,
+    "name": "Ash of War: Beast's Roar",
+    "category": "ash",
+    "caption": "-",
+    "info": "Let out a loud scream which will produce a projectile of wind that will fly forward."
+  },
+  {
+    "id": 65300,
+    "name": "Ash of War: Troll's Roar",
+    "category": "ash",
+    "caption": "-",
+    "info": "Stomp and let out a loud scream which will produce a large shockwave around you. Follow up with a strong attack to raise the armament above your head and slam it to the ground with force."
+  },
+  {
+    "id": 65400,
+    "name": "Ash of War: Braggart's Roar",
+    "category": "ash",
+    "caption": "-",
+    "info": "Let out a loud scream which will increase your <font color=\"#F395C4\">physical attack power</font> by 10%, <font color=\"#E0B985\">all damage negation</font> by 10%, and increase <font color=\"#E0B985\">stamina regeneration</font> by 10 per second for 60 seconds."
+  },
+  {
+    "id": 70000,
+    "name": "Ash of War: Endure",
+    "category": "ash",
+    "caption": "-",
+    "info": "Imbue your body with energy to brace for an incoming attack for 3.5 seconds, which increases <font color=\"#E0B985\">all damage negation</font> by 45%. Lighter physical attacks from enemies may cause the enemy to briefly stagger backwards after hitting you."
+  },
+  {
+    "id": 70100,
+    "name": "Ash of War: Vow of the Indomitable",
+    "category": "ash",
+    "caption": "Skill of the ancient warriors of the Erdtree.",
+    "info": "Raise shield and imbue yourself with golden energy which makes you completely invincible for a brief moment."
+  },
+  {
+    "id": 70200,
+    "name": "Ash of War: Holy Ground",
+    "category": "ash",
+    "caption": "-",
+    "info": "Raise shield and conjure a golden sigil on the ground for 35 seconds, which will reduce <font color=\"#E0B985\">all damage received</font> by 20% and restore 5 HP every 0.3 seconds while standing in it. The effects also apply to allies that are standing within the sigil."
+  },
+  {
+    "id": 80000,
+    "name": "Ash of War: Quickstep",
+    "category": "ash",
+    "caption": "Skill prized by the crafty and fleet of foot.",
+    "info": "Perform a quick dodging maneuver. Lock-on to an enemy and hold left or right while using this skill to quickly circle around to the backside of them if you are standing close enough.\n\nHaving a light equipment load will allow you to get the farthest distance when using this skill. Using this skill repeatedly will reduce its effectiveness."
+  },
+  {
+    "id": 80100,
+    "name": "Ash of War: Bloodhound's Step",
+    "category": "ash",
+    "caption": "-",
+    "info": "Become completely invisible while performing a quick dodging maneuver. Lock-on to an enemy and hold left or right while using this skill to quickly circle around to the backside of them if you are standing close enough. Compared to the regular quickstep skill, this skill is faster and you travel farther.\n\nHaving a light equipment load will allow you to get the farthest distance when using this skill. Using this skill repeatedly will reduce its effectiveness."
+  },
+  {
+    "id": 80200,
+    "name": "Ash of War: Raptor of the Mists",
+    "category": "ash",
+    "caption": "-",
+    "info": "Crouch to briefly brace for an incoming attack. If you are hit by an attack while in this stance <font color=\"#E0B985\">all damage</font> is completely negated and you will automatically leap into the air, allowing you to easily retaliate with a jump attack."
+  },
+  {
+    "id": 85000,
+    "name": "Ash of War: White Shadow's Lure",
+    "category": "ash",
+    "caption": "-",
+    "info": "Cast a pale shadow illusion which will lure human enemies outside of combat to attack it. Demi-humans will be lured in even during combat"
+  }
+]

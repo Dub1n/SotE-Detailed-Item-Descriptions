@@ -1,0 +1,1328 @@
+[
+  {
+    "id": 100,
+    "name": "Tarnished's Furled Finger",
+    "caption": "A finger of corpse wax, furled like a hook.\nIt is a relic of those who came before, left to help those who would come after.",
+    "info": "Online multiplayer item.\n\nCreates a summon sign for cooperative multiplayer. Arrive as a cooperator (Furled Finger) with the objective of defeating the area boss of the world to which you were summoned."
+  },
+  {
+    "id": 101,
+    "name": "Duelist's Furled Finger",
+    "caption": "A finger of corpse wax, furled like a hook.\nThe bronze adornments are the mark of a duelist.",
+    "info": "Online multiplayer item.\n\nCreates a summon sign for competitive multiplayer. Arrive as an adversary (Duelist) with the objective of defeating the Host of Fingers of the world to which you were summoned."
+  },
+  {
+    "id": 102,
+    "name": "Bloody Finger",
+    "caption": "Glistening blood has been siphoned into the nail of this finger. Its sickly pale skin feels nothing now, but the nail still aches with sweetest pain.",
+    "info": "Online multiplayer item.\n\nAttempts an invasion of another player's world. If successful, you will arrive as an invader (Bloody Finger) with the objective of defeating the Host of Fingers of that world."
+  },
+  {
+    "id": 103,
+    "name": "Finger Severer",
+    "caption": "This phantom blade severs the link formed by a Furled Finger, but the maidens scorn those who abuse its use.",
+    "info": "Online multiplayer item.\n\nUse as a Host of Fingers to select a summoned player and send them back to their world. Use when you have been summoned to another player's world to return to your own world."
+  },
+  {
+    "id": 104,
+    "name": "White Cipher Ring",
+    "caption": "One of the lost mystic codes said to have been bestowed by the Two Fingers.",
+    "info": "Online multiplayer item.\n\nAllows you to automatically request for a hunter from another world to come to your rescue when your world is invaded. (Summoning is not always possible.)"
+  },
+  {
+    "id": 105,
+    "name": "Blue Cipher Ring",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nPuts the wearer in ready state to answer should someone in another world call for rescue. You will be summoned to their world as a hunter.\n\nDuring hunter multiplayer, your objective will be to defeat the invader of the summoned world."
+  },
+  {
+    "id": 106,
+    "name": "Tarnished's Wizened Finger",
+    "caption": "A finger of corpse wax, so emaciated the bone is visible. It is a relic of those who came before, left to help those who would come after.",
+    "info": "Online multiplayer item.\n\nUse to write messages. Your messages will be conveyed to other worlds, allowing other players to read them."
+  },
+  {
+    "id": 107,
+    "name": "Phantom Bloody Finger",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nAttempts another invasion of the most recently invaded world. This may come in handy should separation from the Host of Fingers force a temporary retreat."
+  },
+  {
+    "id": 108,
+    "name": "Taunter's Tongue",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nLures in invaders. This allows your world to be invaded without any Furled Finger cooperators present, and it also shortens the interval between windows of opportunity for invasion.\n\nAdditionally, enables the arrival of a second invader to join when a cooperator is present. (With two invaders, the maximum number of cooperators becomes one.)"
+  },
+  {
+    "id": 109,
+    "name": "Small Golden Effigy",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nSend a cooperative summon sign to several summoning pools (activated pools only).\n\nIn cooperative multiplayer, your objective will be to defeat the area boss of the world to which you were summoned."
+  },
+  {
+    "id": 110,
+    "name": "Small Red Effigy",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nSend a competitive summon sign to several summoning pools (activated pools only).\n\nIn competitive multiplayer, your objective will be to defeat the Host of Fingers of the world to which you were summoned."
+  },
+  {
+    "id": 111,
+    "name": "Festering Bloody Finger",
+    "caption": "This furled finger is blackened with blood congestion. It seems to have been chopped off rather unceremoniously.",
+    "info": "Online multiplayer item.\n\nAttempts an invasion of another player's world. If successful, you will arrive as an invader (Bloody Finger) with the objective of defeating the Host of Fingers of that world."
+  },
+  {
+    "id": 112,
+    "name": "Recusant Finger",
+    "caption": "This furled finger is covered in snake scales. An heirloom of the lord of the Volcano Manor, bequeathed to Tarnished who have become family.",
+    "info": "Online multiplayer item.\n\nAttempts an invasion of another player's world. If successful, you will arrive as an invader (Recusant) with the objective of defeating the Host of Fingers of that world."
+  },
+  {
+    "id": 113,
+    "name": "Phantom Bloody Finger",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nAttempts another invasion of the most recently invaded world. This may come in handy should separation from the Host of Fingers force a temporary retreat."
+  },
+  {
+    "id": 114,
+    "name": "Phantom Recusant Finger",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nAttempts another invasion of the most recently invaded world. This may come in handy should separation from the Host of Fingers force a temporary retreat."
+  },
+  {
+    "id": 130,
+    "name": "Spectral Steed Whistle",
+    "caption": "A delicate goldwork ring. Can be used as a finger whistle.",
+    "info": "Sound the whistle to summon and ride Torrent, the spectral steed. Dismounts and expels steed when used while on horseback.\n\nUpon his death, the spectral steed can be summoned again, but doing so drains the Flask of Crimson Tears."
+  },
+  {
+    "id": 135,
+    "name": "Phantom Great Rune",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nEnemies inside the invaded world receive a blessing of blood, which boosts their <font color=\"#E0B985\">attack power</font> when <font color=\"#C84343\">blood loss</font> occurs nearby. Also, your HP recovers when blessed enemies defeat a player."
+  },
+  {
+    "id": 150,
+    "name": "Furlcalling Finger Remedy",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nReveals cooperative and competitive multiplayer signs. Co-op summoning signs will be shown in gold, while hostile summoning signs will be shown in red.\n\nMultiplayer begins when you summon a player from another world through their sign.\n\nCraftable item."
+  },
+  {
+    "id": 170,
+    "name": "Tarnished's Furled Finger",
+    "caption": "A finger of corpse wax, furled like a hook. It is a relic of those who came before, left to help those who would come after.",
+    "info": "Online multiplayer item.\n\nCreates a summon sign for cooperative multiplayer. Arrive as a cooperator (Furled Finger) with the objective of defeating the area boss of the world to which you were summoned."
+  },
+  {
+    "id": 171,
+    "name": "Duelist's Furled Finger",
+    "caption": "A finger of corpse wax, furled like a hook. The bronze adornments are the mark of a duelist.",
+    "info": "Online multiplayer item.\n\nCreates a summon sign for competitive multiplayer. Arrive as an adversary (Duelist) with the objective of defeating the Host of Fingers of the world to which you were summoned."
+  },
+  {
+    "id": 172,
+    "name": "Bloody Finger",
+    "caption": "Glistening blood has been siphoned into the nail of this finger. Its sickly pale skin feels nothing now, but the nail still aches with sweetest pain.",
+    "info": "Online multiplayer item.\n\nAttempts an invasion of another player's world. If successful, you will arrive as an invader (Bloody Finger) with the objective of defeating the Host of Fingers of that world."
+  },
+  {
+    "id": 174,
+    "name": "White Cipher Ring",
+    "caption": "One of the lost mystic codes said to have been bestowed by the Two Fingers.",
+    "info": "Online multiplayer item.\n\nAllows you to automatically request for a hunter from another world to come to your rescue when your world is invaded. Summoning is not always possible."
+  },
+  {
+    "id": 175,
+    "name": "Blue Cipher Ring",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nPuts the wearer in ready state to answer should someone in another world call for rescue. You will be summoned to their world as a hunter.\n\nDuring hunter multiplayer, your objective will be to defeat the invader of the summoned world."
+  },
+  {
+    "id": 178,
+    "name": "Taunter's Tongue",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nLures in invaders. This allows your world to be invaded without any Furled Finger cooperators present, and it also shortens the interval between windows of opportunity for invasion.\n\nAdditionally, enables the arrival of a second invader to join when a cooperator is present. (With two invaders, the maximum number of cooperators becomes one.)"
+  },
+  {
+    "id": 179,
+    "name": "Small Golden Effigy",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nSend a cooperative summon sign to several summoning pools (activated pools only). In cooperative multiplayer, your objective will be to defeat the area boss of the world to which you were summoned."
+  },
+  {
+    "id": 180,
+    "name": "Small Red Effigy",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nSend a competitive summon sign to several summoning pools (activated pools only). In competitive multiplayer, your objective will be to defeat the Host of Fingers of the world to which you were summoned."
+  },
+  {
+    "id": 181,
+    "name": "Spectral Steed Whistle",
+    "caption": "-",
+    "info": "A delicate goldwork ring. Can be used as a finger whistle.\n\nSound the whistle to summon and ride Torrent, the spectral steed. Dismounts and expels steed when used while on horseback.\n\nUpon his death, the spectral steed can be summoned again, but doing so drains the Flask of Crimson Tears."
+  },
+  {
+    "id": 182,
+    "name": "Furlcalling Finger Remedy",
+    "caption": "-",
+    "info": "Online multiplayer item.\n\nReveals cooperative and competitive multiplayer signs. Co-op summoning signs will be shown in gold, while hostile summoning signs will be shown in red.\n\nMultiplayer begins when you summon a player from another world through their sign.\n\nCraftable item."
+  },
+  {
+    "id": 183,
+    "name": "Festering Bloody Finger",
+    "caption": "This furled finger is blackened with blood congestion. It seems to have been chopped off rather unceremoniously.",
+    "info": "Online multiplayer item.\n\nAttempts an invasion of another player's world. If successful, you will arrive as an invader (Bloody Finger) with the objective of defeating the Host of Fingers of that world."
+  },
+  {
+    "id": 184,
+    "name": "Recusant Finger",
+    "caption": "This furled finger is covered in snake scales. An heirloom of the lord of the Volcano Manor, bequeathed to Tarnished who have become family.",
+    "info": "Online multiplayer item.\n\nAttempts an invasion of another player's world. If successful, you will arrive as an invader (Recusant) with the objective of defeating the Host of Fingers of that world."
+  },
+  {
+    "id": 190,
+    "name": "Rune Arc",
+    "caption": "A shard of the shattered Elden Ring.\n\nThe lower arc of the Elden Ring is held to be the basin in which its blessings pool. Perhaps this shard originates from that very arc.",
+    "info": "Increases your <font color=\"#E0B985\">maximum HP</font> by 10%. If you have equipped a Great Rune at a site of grace then it will also activate the benefits of that Great Rune. These benefits will last until your next death."
+  },
+  {
+    "id": 300,
+    "name": "Fire Pot",
+    "caption": "A cocktail of incendiary materials is sealed inside.",
+    "info": "Throw at an enemy to inflict <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 230\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 301,
+    "name": "Redmane Fire Pot",
+    "caption": "Engraved with the crest of red-maned lion.\n\nEven today, the survivors of Radahn's battalion employ fire to stave off the scarlet rot.",
+    "info": "Throw at an enemy to inflict <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 326\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 302,
+    "name": "Giantsflame Fire Pot",
+    "caption": "Enchanted by incantations of the Giants' Flame.",
+    "info": "Throw at an enemy to inflict <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 344\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 320,
+    "name": "Lightning Pot",
+    "caption": "A cocktail of fulminating materials is sealed inside.",
+    "info": "Throw at an enemy to inflict <font color=\"#FFE033\">lightning damage</font>.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 260\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 321,
+    "name": "Ancient Dragonbolt Pot",
+    "caption": "Engraved with the crest of the ancient dragon.\n\nAllows one to wield ancient drake lightning regardless of faith. The residual power of relics is a purely natural phenomenon.",
+    "info": "Throw at an enemy to inflict <font color=\"#FFE033\">lightning damage</font>.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 340\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 330,
+    "name": "Fetid Pot",
+    "caption": "A cocktail of effluents is sealed inside. As the mixture ferments, toxins are produced alongside a putrid stench that seeps out once ripe.\n\nPush someone in a privy; expect to get dung on your hands.",
+    "info": "Throw at an enemy to cause <font color=\"#40BF40\">poison accumulation</font> on target, but also causes 200 <font color=\"#40BF40\">poison accumulation</font> on yourself.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 12, every second for 30 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#40BF40\">Base poison accumulation:</font> 250\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 340,
+    "name": "Swarm Pot",
+    "caption": "A cocktail of effluents is sealed inside.\n\nThe maggots found in waste feed on blood and turn into vicious flies that are pitiably short-lived. The cacophony of their wings assails the sanity of berserkers.",
+    "info": "Throw at an enemy to release a swarm of bloodflies which linger in the air where the pot breaks and attack the target up to 3 times.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage (pot and bloodflies):</font> 116\n<font color=\"#C84343\">Base blood loss accumulation (bloodflies):</font> 70\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 350,
+    "name": "Holy Water Pot",
+    "caption": "Enchanted by incantations of the Golden Order.\n\nHighly effective against Those Who Live in Death, even preventing them from rising again. The Golden Order has no mercy for those who trespass beyond life's bounds.",
+    "info": "Throw at an enemy to inflict <font color=\"#F5EB89\">holy damage</font>.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 167\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 351,
+    "name": "Sacred Order Pot",
+    "caption": "Enchanted by incantations of the Golden Order.\n\nHighly effective against Those Who Live in Death, even preventing them from rising again. The Golden Order has no mercy for those who trespass beyond life's bounds.",
+    "info": "Throw at an enemy to inflict <font color=\"#F5EB89\">holy damage</font>.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 312\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 360,
+    "name": "Freezing Pot",
+    "caption": "Engraved with the crest of the Carian Royals.\n\nOriginates from the cold, dark moon of Ranni, the Carian princess.",
+    "info": "Throw at an enemy to inflict <font color=\"#57DBCE\">magic damage</font> and cause <font color=\"#9DD7FB\">frostbite accumulation</font>.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 119\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 380\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 370,
+    "name": "Poison Pot",
+    "caption": "A cocktail of poisonous materials is sealed inside.",
+    "info": "Throw at an enemy to cause <font color=\"#40BF40\">poison accumulation</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#40BF40\">Base poison accumulation:</font> 200\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 380,
+    "name": "Oil Pot",
+    "caption": "A cocktail of oil-infused materials is sealed inside.\n\nThrow at an enemy to soak them in oil for 30 seconds, increasing the fire damage of the next fire-based attack by 50%. Oil is removed when enemy is hit with fire damage.",
+    "info": "Throw at an enemy to soak them in oil, increasing the <font color=\"#F48C25\">fire damage</font> of the next single fire-based attack by 50%. Oil is removed when the enemy is hit with <font color=\"#F48C25\">fire damage</font> or after 30 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 390,
+    "name": "Alluring Pot",
+    "caption": "Enchanted with assassin incantations.",
+    "info": "Throw to create a pale shadow illusion which will lure human enemies outside of combat to attack it. Demi-humans will be lured in even during combat.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 391,
+    "name": "Beastlure Pot",
+    "caption": "Enchanted with assassin incantations.",
+    "info": "Throw to create a red shadow illusion which lures beasts into attacking it, even during combat.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 400,
+    "name": "Roped Fire Pot",
+    "caption": "A cocktail of incendiary materials is sealed inside, and a short rope that aids throwing has been secured around the pot.",
+    "info": "Throw at an enemy behind you to inflict <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 230\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 420,
+    "name": "Roped Lightning Pot",
+    "caption": "A cocktail of fulminating materials is sealed inside, and a short rope that aids throwing has been secured around the pot.",
+    "info": "Throw at an enemy behind you to inflict <font color=\"#FFE033\">lightning damage</font>.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 260\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 430,
+    "name": "Roped Fetid Pot",
+    "caption": "A cocktail of effluents is sealed inside, and a short rope that aids throwing has been secured around the pot.\n\nThrow at rearward enemies to cause accumulation of deadly poison, but also causes 200 accumulation of deadly poison on thrower.\n\nBase deadly poison accumulation: 250\n\nPush someone in a privy; expect to get dung on your hands.",
+    "info": "Throw at an enemy behind you to cause <font color=\"#40BF40\">poison accumulation</font> on target, but also causes 200 <font color=\"#40BF40\">poison accumulation</font> on yourself.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 12, every second for 30 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#40BF40\">Base poison accumulation:</font> 250\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 440,
+    "name": "Roped Poison Pot",
+    "caption": "A cocktail of poisonous materials is sealed inside, and a short rope that aids throwing has been secured around the pot.",
+    "info": "Throw at an enemy behind you to cause <font color=\"#40BF40\">poison accumulation</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#40BF40\">Base poison accumulation:</font> 200\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 450,
+    "name": "Roped Oil Pot",
+    "caption": "A cocktail of oil-infused materials is sealed inside, and a short rope that aids throwing has been secured around the pot.",
+    "info": "Throw at an enemy behind you to soak them in oil, increasing the <font color=\"#F48C25\">fire damage</font> of the next single fire-based attack by 50%. Oil is removed when the enemy is hit with <font color=\"#F48C25\">fire damage</font> or after 30 seconds.\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 460,
+    "name": "Roped Magic Pot",
+    "caption": "A cocktail of magically resonant materials is sealed inside, and a short rope that aids throwing has been secured around the pot.",
+    "info": "Throw at an enemy behind you to inflict <font color=\"#57DBCE\">magic damage</font>.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 322\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 470,
+    "name": "Roped Fly Pot",
+    "caption": "A cocktail of effluents is sealed inside, and a short rope that aids throwing has been secured around the pot.\n\nThe maggots found in waste feed on blood and turn into vicious flies that are pitiably short-lived. The cacophony of their wings assails the sanity of berserkers.",
+    "info": "Throw at an enemy behind you to release a swarm of bloodflies which linger in the air where the pot breaks and attack the target up to 3 times.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage (pot and bloodflies):</font> 116\n<font color=\"#C84343\">Base blood loss accumulation (bloodflies):</font> 70\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 480,
+    "name": "Roped Freezing Pot",
+    "caption": "Frost has been sealed inside. A short rope that aids throwing is attached.",
+    "info": "Throw at an enemy behind you to inflict <font color=\"#57DBCE\">magic damage</font> and cause <font color=\"#9DD7FB\">frostbite accumulation</font>.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 119\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 380\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 490,
+    "name": "Roped Volcano Pot",
+    "caption": "Powdered volcanic rock is sealed inside, and a short rope that aids throwing has been secured around the pot.",
+    "info": "Throw at an enemy behind you to inflict continuous <font color=\"#F48C25\">fire damage</font> in an area for 3 seconds.\n\n<font color=\"#F48C25\">Base fire damage:</font> 82\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 510,
+    "name": "Roped Holy Water Pot",
+    "caption": "Enchanted by incantations of the Golden Order, and a short rope that aids throwing has been secured around the pot.\n\nHighly effective against Those Who Live in Death, even preventing them from rising again. The Golden Order has no mercy for those who trespass beyond life's bounds.",
+    "info": "Throw at an enemy behind you to inflict <font color=\"#F5EB89\">holy damage</font>.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 167\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 600,
+    "name": "Volcano Pot",
+    "caption": "Powdered volcanic rock is sealed inside.",
+    "info": "Throw at an enemy to disperse a cloud of heat for 3 seconds, which inflicts <font color=\"#F48C25\">fire damage</font> up to 11 times.\n\n<font color=\"#F48C25\">Base fire damage</font>: 82\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 610,
+    "name": "Albinauric Pot",
+    "caption": "Enchanted by sorceries of the Cuckoos.\n\nThe Knights of the Cuckoos do declare. Behold, thy defiled blood. Unlike any humor that flows in our grand realm.",
+    "info": "Throw at an enemy to prevent them from using a Flask of Crimson Tears for 25 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 630,
+    "name": "Cursed-Blood Pot",
+    "caption": "Decorated with the crest of the Lord of Blood.\n\nA childhood memory of the Lord of Blood.",
+    "info": "Throw at an enemy to douse them with accursed blood, causing any summoned spirits to prioritize them as a target.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 640,
+    "name": "Sleep Pot",
+    "caption": "Enchanted by the incantations of St. Trina.\n\nLike a lullaby, or a quagmire, its light-purple haze irresistibly draws its victims down into sleep. Sweet dreams.",
+    "info": "Throw at an enemy to disperse a cloud of purple mist for 3 seconds, which causes <font color=\"#A698F4\">sleep accumulation</font> 5 times per second.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#A698F4\">Base sleep accumulation:</font> 29\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 650,
+    "name": "Rancor Pot",
+    "caption": "Enchanted by the ancient death hex.\n\nIn times of old, the dead were burned with ghostflame, and from those cinders arose vengeful spirits.",
+    "info": "Throw at an enemy to spawn 4 vengeful spirits, which will chase down an enemy and inflict <font color=\"#57DBCE\">magic damage</font> on impact. Vengeful spirits will disappear on impact or after 4 seconds if they fail to reach a target.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 139\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 660,
+    "name": "Magic Pot",
+    "caption": "A cocktail of magically resonant materials is sealed inside. Called a \"faux sorcery\" in Raya Lucaria.",
+    "info": "Throw at an enemy to inflict <font color=\"#57DBCE\">magic damage</font>.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 322\n\nCraftable item using a Cracked Pot."
+  },
+  {
+    "id": 661,
+    "name": "Academy Magic Pot",
+    "caption": "Enchanted by Raya Lucaria sorceries.\n\nThis pot, considered a \"faux sorcery,\" was employed to protect the academy.",
+    "info": "Throw at an enemy to inflict <font color=\"#57DBCE\">magic damage</font>.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 405\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 670,
+    "name": "Rot Pot",
+    "caption": "Decorated with the crest of scarlet wings.\n\nThe rot bubbles up from the Swamp of Aeonia, and eats away at life like a vicious plague.",
+    "info": "Throw at an enemy to cause <font color=\"#EF7676\">scarlet rot accumulation</font>.\n\n<font color=\"#EF7676\">Scarlet rot:</font> Inflicts damage equal to 0.18% of <font color=\"#E0B985\">maximum HP</font> plus 15, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1\n<font color=\"#EF7676\">Base scarlet rot accumulation:</font> 300\n\nCraftable item using a Ritual Pot."
+  },
+  {
+    "id": 810,
+    "name": "Rowa Raisin",
+    "caption": "Preparation of dried Rowa fruit.\n\nHumans are unable to digest Rowa fruit, but Torrent seems to have a taste for it.",
+    "info": "Feed to Torrent to restore 15% of <font color=\"#E0B985\">maximum HP</font> plus 300.\n\nCraftable item."
+  },
+  {
+    "id": 811,
+    "name": "Sweet Raisin",
+    "caption": "Preparation of dried Golden Rowa fruit.\n\nGolden Rowa fruit is not unlike honey, and Torrent seems to have a taste for it.",
+    "info": "Feed to Torrent to restore 23% of <font color=\"#E0B985\">maximum HP</font> plus 450.\n\nCraftable item."
+  },
+  {
+    "id": 812,
+    "name": "Frozen Raisin",
+    "caption": "Preparation of dried Rimed Rowa.\n\nTorrent seems to enjoy the sensation of chewing this frozen, dried seed.",
+    "info": "Feed to Torrent to restore 30% of <font color=\"#E0B985\">maximum HP</font> plus 600.\n\nCraftable item."
+  },
+  {
+    "id": 820,
+    "name": "Boiled Crab",
+    "caption": "Boiled crab meat. A prime specimen of plump and moist meat. True connoisseurs know how to keep from over-salting.\n\nUnlike the \"prawn\" sold, this truly is crab. Not that it matters, it's delicious all the same.",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 20% for 60 seconds."
+  },
+  {
+    "id": 830,
+    "name": "Boiled Prawn",
+    "caption": "Boiled prawn meat. A prime specimen of plump and moist meat. True connoisseurs know how to keep from over-salting.\n\nThe meat actually looks to have come from a crayfish. Not that it matters, it's delicious all the same.",
+    "info": "Increases <font color=\"#F395C4\">physical damage negation</font> by 15% for 60 seconds."
+  },
+  {
+    "id": 900,
+    "name": "Neutralizing Boluses",
+    "caption": "Green boluses made from cave moss.",
+    "info": "Cures <font color=\"#40BF40\">poison</font> and alleviates all <font color=\"#40BF40\">poison accumulation</font>.\n\nCraftable item."
+  },
+  {
+    "id": 910,
+    "name": "Stanching Boluses",
+    "caption": "Red boluses made from cave moss.\n\nBlood loss escalates gradually, causing great damage once the threshold is reached. Take one of these in timely fashion to avoid such an event.",
+    "info": "Alleviates all <font color=\"#C84343\">blood loss accumulation</font>.\n\nCraftable item."
+  },
+  {
+    "id": 920,
+    "name": "Thawfrost Boluses",
+    "caption": "Ice-hued boluses made from cave moss.",
+    "info": "Alleviates all <font color=\"#9DD7FB\">frostbite accumulation</font>.\n\nCraftable item."
+  },
+  {
+    "id": 930,
+    "name": "Stimulating Boluses",
+    "caption": "Light-purple boluses made from cave moss.",
+    "info": "Alleviates all <font color=\"#A698F4\">sleep accumulation</font>.\n\nCraftable item."
+  },
+  {
+    "id": 940,
+    "name": "Preserving Boluses",
+    "caption": "Scarlet boluses made of cave moss.",
+    "info": "Cures <font color=\"#EF7676\">scarlet rot</font> and alleviates all <font color=\"#EF7676\">scarlet rot accumulation</font>.\n\nCraftable item."
+  },
+  {
+    "id": 950,
+    "name": "Rejuvenating Boluses",
+    "caption": "Black boluses made of cave moss.",
+    "info": "Alleviates all <font color=\"#A17945\">death blight accumulation</font>.\n\nCraftable item."
+  },
+  {
+    "id": 960,
+    "name": "Clarifying Boluses",
+    "caption": "Yellow boluses made of cave moss.",
+    "info": "Alleviates all <font color=\"#EEAA2B\">madness accumulation</font>.\n\nCraftable item."
+  },
+  {
+    "id": 1000,
+    "name": "Flask of Crimson Tears",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 250 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1001,
+    "name": "Flask of Crimson Tears",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 250 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1002,
+    "name": "Flask of Crimson Tears +1",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 345 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1003,
+    "name": "Flask of Crimson Tears +1",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 345 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1004,
+    "name": "Flask of Crimson Tears +2",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 430 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1005,
+    "name": "Flask of Crimson Tears +2",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 430 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1006,
+    "name": "Flask of Crimson Tears +3",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 505 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1007,
+    "name": "Flask of Crimson Tears +3",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 505 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1008,
+    "name": "Flask of Crimson Tears +4",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 570 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1009,
+    "name": "Flask of Crimson Tears +4",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 570 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1010,
+    "name": "Flask of Crimson Tears +5",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 625 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1011,
+    "name": "Flask of Crimson Tears +5",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 625 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1012,
+    "name": "Flask of Crimson Tears +6",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 670 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1013,
+    "name": "Flask of Crimson Tears +6",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 670 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1014,
+    "name": "Flask of Crimson Tears +7",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 700 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1015,
+    "name": "Flask of Crimson Tears +7",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 700 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1016,
+    "name": "Flask of Crimson Tears +8",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 730 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1017,
+    "name": "Flask of Crimson Tears +8",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 730 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1018,
+    "name": "Flask of Crimson Tears +9",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 755 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1019,
+    "name": "Flask of Crimson Tears +9",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 755 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1020,
+    "name": "Flask of Crimson Tears +10",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 780 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1021,
+    "name": "Flask of Crimson Tears +10",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 780 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1022,
+    "name": "Flask of Crimson Tears +11",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 795 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1023,
+    "name": "Flask of Crimson Tears +11",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 795 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1024,
+    "name": "Flask of Crimson Tears +12",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 810 HP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1025,
+    "name": "Flask of Crimson Tears +12",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with crimson tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 810 HP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1050,
+    "name": "Flask of Cerulean Tears",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 80 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1051,
+    "name": "Flask of Cerulean Tears",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 80 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1052,
+    "name": "Flask of Cerulean Tears +1",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 95 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1053,
+    "name": "Flask of Cerulean Tears +1",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 95 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1054,
+    "name": "Flask of Cerulean Tears +2",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 110 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1055,
+    "name": "Flask of Cerulean Tears +2",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 110 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1056,
+    "name": "Flask of Cerulean Tears +3",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 125 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1057,
+    "name": "Flask of Cerulean Tears +3",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 125 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1058,
+    "name": "Flask of Cerulean Tears +4",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 140 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1059,
+    "name": "Flask of Cerulean Tears +4",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 140 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1060,
+    "name": "Flask of Cerulean Tears +5",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 150 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1061,
+    "name": "Flask of Cerulean Tears +5",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 150 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1062,
+    "name": "Flask of Cerulean Tears +6",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 160 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1063,
+    "name": "Flask of Cerulean Tears +6",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 160 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1064,
+    "name": "Flask of Cerulean Tears +7",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 170 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1065,
+    "name": "Flask of Cerulean Tears +7",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 170 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1066,
+    "name": "Flask of Cerulean Tears +8",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 180 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1067,
+    "name": "Flask of Cerulean Tears +8",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 180 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1068,
+    "name": "Flask of Cerulean Tears +9",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 190 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1069,
+    "name": "Flask of Cerulean Tears +9",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 190 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1070,
+    "name": "Flask of Cerulean Tears +10",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 200 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1071,
+    "name": "Flask of Cerulean Tears +10",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 200 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1072,
+    "name": "Flask of Cerulean Tears +11",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 210 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1073,
+    "name": "Flask of Cerulean Tears +11",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 210 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1074,
+    "name": "Flask of Cerulean Tears +12",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 220 FP, but is currently empty.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1075,
+    "name": "Flask of Cerulean Tears +12",
+    "caption": "A sacred flask modelled after a golden holy chalice that was once graced by a tear of blessing. Filled with cerulean tears.\n\nThe one washed up on the gravesite was sure to die, until this flask offered its gift of rejuvenation. To seek the Elden Ring.",
+    "info": "Restores 220 FP.\n\nRest at a site of grace to replenish."
+  },
+  {
+    "id": 1100,
+    "name": "Pickled Turtle Neck",
+    "caption": "Turtle neck meat, pickled in a bitter medicinal solution.\n\nThe nutrients churn through the body, practically boiling out endless power.",
+    "info": "Increases <font color=\"#E0B985\">stamina regeneration</font> by 10 per second for 60 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1110,
+    "name": "Immunizing Cured Meat",
+    "caption": "Cured strip of meat, dried out after pickling in a green medicinal solution.",
+    "info": "Increases <font color=\"#E0B985\">immunity</font> by 100 for 60 seconds.\n\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.\n\nCraftable item."
+  },
+  {
+    "id": 1120,
+    "name": "Invigorating Cured Meat",
+    "caption": "Cured strip of meat, dried out after pickling in a red medicinal solution.",
+    "info": "Increases <font color=\"#E0B985\">robustness</font> by 100 for 60 seconds.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.\n\nCraftable item."
+  },
+  {
+    "id": 1130,
+    "name": "Clarifying Cured Meat",
+    "caption": "Cured strip of meat, dried out after pickling in a purple medicinal solution.",
+    "info": "Increases <font color=\"#E0B985\">focus</font> by 100 for 60 seconds.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>.\n\nCraftable item."
+  },
+  {
+    "id": 1140,
+    "name": "Dappled Cured Meat",
+    "caption": "Cured strip of meat, dried out after pickling in a dappled medicinal solution.",
+    "info": "Increases <font color=\"#E0B985\">robustness</font>, <font color=\"#E0B985\">immunity</font>, and <font color=\"#E0B985\">focus</font> by 100 for 60 seconds.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>.\n\nCraftable item."
+  },
+  {
+    "id": 1150,
+    "name": "Spellproof Dried Liver",
+    "caption": "Cured animal liver, dried out after pickling in a blue medicinal solution.",
+    "info": "Increases <font color=\"#57DBCE\">magic damage negation</font> by 15% for 120 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1160,
+    "name": "Fireproof Dried Liver",
+    "caption": "Cured animal liver, dried out after pickling in a red medicinal solution.",
+    "info": "Increases <font color=\"#F48C25\">fire damage negation</font> by 15% for 120 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1170,
+    "name": "Lightningproof Dried Liver",
+    "caption": "Cured animal liver, dried out after pickling in an yellow medicinal solution.",
+    "info": "Increases <font color=\"#FFE033\">lightning damage negation</font> by 15% for 120 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1180,
+    "name": "Holyproof Dried Liver",
+    "caption": "Cured animal liver, dried out after pickling in a golden medicinal solution.",
+    "info": "Increases <font color=\"#F5EB89\">holy damage negation</font> by 15% for 120 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1190,
+    "name": "Silver-Pickled Fowl Foot",
+    "caption": "Four-toed foot of a fowl, pickled in a silvery medicinal solution.\n\nSince old times, the needy would scrape the meat clean even from a fowl's claw.",
+    "info": "Increases <font color=\"#E0B985\">item discovery</font> by 50 for 180 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1200,
+    "name": "Gold-Pickled Fowl Foot",
+    "caption": "Four-toed foot of a fowl, pickled in a golden medicinal solution.\n\nSince old times, the needy would scrape the meat clean even from a fowl's claw.",
+    "info": "Increases runes obtained from defeated enemies by 30% for 180 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1210,
+    "name": "Exalted Flesh",
+    "caption": "A lump of animal flesh pickled in a medicinal solution mixed with fiery spices.\n\nConsidered a delicacy in the badlands, this invigorating repast was for the exclusive benefit of those who they deem heroes.",
+    "info": "Increases <font color=\"#F395C4\">physical damage</font> by 20% for 30 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1220,
+    "name": "Deathsbane Jerky",
+    "caption": "A grey colored cured liver, dried out after pickling in a medicinal solution.",
+    "info": "Increases <font color=\"#E0B985\">vitality</font> by 90 for 60 seconds.\n\n<font color=\"#E0B985\">Vitality:</font> Resistance to <font color=\"#A17945\">death blight</font>.\n\nCraftable item."
+  },
+  {
+    "id": 1235,
+    "name": "Raw Meat Dumpling",
+    "caption": "A pungent raw meatball, made succulent by virtue of being on the verge of turning.\n\nNot recommended for those who prefer to know the origin of their meats.",
+    "info": "Restores HP by 50% but inflicts <font color=\"#40BF40\">poison</font> on yourself.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds."
+  },
+  {
+    "id": 1290,
+    "name": "Starlight Shards",
+    "caption": "An ephemeral sliver that gives off a pale blue glow. What remains of a passing flash of starlight.\n\nA prized item that was once used in the Eternal City as an ingredient in intoxicating draughts.",
+    "info": "Restores 2 FP per second for 60 seconds."
+  },
+  {
+    "id": 1310,
+    "name": "Immunizing White Cured Meat",
+    "caption": "A white sliced meat, dried out after pickling in a green medicinal solution.\n\nLasts longer than traditional cured meat, but with reduced effectiveness.",
+    "info": "Increases <font color=\"#E0B985\">immunity</font> by 75 for 120 seconds.\n\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.\n\nCraftable item."
+  },
+  {
+    "id": 1320,
+    "name": "Invigorating White Cured Meat",
+    "caption": "A white sliced meat, dried out after pickling in a red medicinal solution.\n\nLasts longer than traditional cured meat, but with reduced effectiveness.",
+    "info": "Increases <font color=\"#E0B985\">robustness</font> by 75 for 120 seconds.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.\n\nCraftable item."
+  },
+  {
+    "id": 1330,
+    "name": "Clarifying White Cured Meat",
+    "caption": "A white sliced meat, dried out after pickling in a purple medicinal solution.\n\nLasts longer than traditional cured meat, but with reduced effectiveness.",
+    "info": "Increases <font color=\"#E0B985\">focus</font> by 75 for 120 seconds.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>.\n\nCraftable item."
+  },
+  {
+    "id": 1340,
+    "name": "Dappled White Cured Meat",
+    "caption": "A white sliced meat, dried out after pickling in a dappled medicinal solution.",
+    "info": "Increases <font color=\"#E0B985\">robustness</font>, <font color=\"#E0B985\">immunity</font>, and <font color=\"#E0B985\">focus</font> by 75 for 120 seconds.\n\n<font color=\"#E0B985\">Robustness:</font> Resistance to <font color=\"#C84343\">blood loss</font> and <font color=\"#9DD7FB\">frostbite</font>.\n<font color=\"#E0B985\">Immunity:</font> Resistance to <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font>.\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>.\n\nCraftable item."
+  },
+  {
+    "id": 1350,
+    "name": "Deathsbane White Jerky",
+    "caption": "A black-gold colored cured liver, dried out after pickling in a medicinal solution.\n\nThe blood has been properly drained, giving it a longer effect than traditional dried meat.",
+    "info": "Increases <font color=\"#E0B985\">vitality</font> by 150 for 120 seconds.\n\n<font color=\"#E0B985\">Vitality:</font> Resistance to <font color=\"#A17945\">death blight</font>.\n\nCraftable item."
+  },
+  {
+    "id": 1400,
+    "name": "Fire Grease",
+    "caption": "Solidified grease made from a mixture of incendiary materials.",
+    "info": "Coats right-hand armament. Adds 85 <font color=\"#F48C25\">fire damage</font> for 60 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1410,
+    "name": "Lightning Grease",
+    "caption": "Solidified grease made from a mixture of fulminating materials.",
+    "info": "Coats right-hand armament. Adds 85 <font color=\"#FFE033\">lightning damage</font> for 60 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1420,
+    "name": "Magic Grease",
+    "caption": "Solidified grease made from a mixture of magically resonant materials.",
+    "info": "Coats right-hand armament. Adds 85 <font color=\"#57DBCE\">magic damage</font> for 60 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1430,
+    "name": "Holy Grease",
+    "caption": "Solidified grease made from a mixture of holy resonant materials.",
+    "info": "Coats right-hand armament. Adds 85 <font color=\"#F5EB89\">holy damage</font> for 60 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1440,
+    "name": "Blood Grease",
+    "caption": "Solidified grease made from a mixture of blood-red materials.",
+    "info": "Coats right-hand armament. Causes 30 <font color=\"#C84343\">blood loss accumulation</font> per attack for 60 seconds.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\nCraftable item."
+  },
+  {
+    "id": 1450,
+    "name": "Soporific Grease",
+    "caption": "Solidified grease made from a mixture of light-purple materials.",
+    "info": "Coats right-hand armament. Causes 33 <font color=\"#A698F4\">sleep accumulation</font> per attack for 60 seconds.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack.\n\nCraftable item."
+  },
+  {
+    "id": 1460,
+    "name": "Poison Grease",
+    "caption": "Solidified grease made from a mixture of poison-green materials.",
+    "info": "Coats right-hand armament. Causes 63 <font color=\"#40BF40\">poison accumulation</font> per attack for 60 seconds.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1470,
+    "name": "Freezing Grease",
+    "caption": "Solidified grease made from a mixture of frozen materials.",
+    "info": "Coats right-hand armament. Causes 63 <font color=\"#9DD7FB\">frostbite accumulation</font> per attack for 60 seconds.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1480,
+    "name": "Dragonwound Grease",
+    "caption": "Solidified grease made from a mixture of Gravel Stones.\n\nWhen the dragons were born from their ancient kin, they lost their stone scales, which can now be used to cause them mortal harm.",
+    "info": "Coats right-hand armament. Increases <font color=\"#E0B985\">all damage inflicted</font> against ancient dragons by 20% and <font color=\"#E0B985\">all damage inflicted</font> against other dragons and wyrms by 30% for 60 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1490,
+    "name": "Rot Grease",
+    "caption": "Solidified grease made from a mixture of rotten materials.",
+    "info": "Coats right-hand armament. Causes 63 <font color=\"#EF7676\">scarlet rot accumulation</font> per attack for 60 seconds.\n\n<font color=\"#EF7676\">Scarlet rot:</font> Inflicts damage equal to 0.18% of <font color=\"#E0B985\">maximum HP</font> plus 15, every second for 90 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1500,
+    "name": "Drawstring Fire Grease",
+    "caption": "Solidified grease made from a mixture of incendiary materials. A short string is attached to this lump.",
+    "info": "Quickly coats right-hand armament. Adds 110 <font color=\"#F48C25\">fire damage</font> for 11 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1510,
+    "name": "Drawstring Lightning Grease",
+    "caption": "Solidified grease made from a mixture of fulminating materials. A short string is attached to this lump.",
+    "info": "Quickly coats right-hand armament. Adds 110 <font color=\"#FFE033\">lightning damage</font> for 11 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1520,
+    "name": "Drawstring Magic Grease",
+    "caption": "Solidified grease made from a mixture of magically resonant materials. A short string is attached to this lump.",
+    "info": "Quickly coats right-hand armament. Adds 110 <font color=\"#57DBCE\">magic damage</font> for 11 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1530,
+    "name": "Drawstring Holy Grease",
+    "caption": "Solidified grease made from a mixture of holy resonant materials. A short string is attached to this lump.",
+    "info": "Quickly coats right-hand armament. Adds 110 <font color=\"#F5EB89\">holy damage</font> for 11 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1540,
+    "name": "Drawstring Blood Grease",
+    "caption": "Blistered solid grease made from a mixture of blood-red materials. A short string is attached to this lump.",
+    "info": "Quickly coats right-hand armament. Causes 38 <font color=\"#C84343\">blood loss accumulation</font> per attack for 15 seconds.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\nCraftable item."
+  },
+  {
+    "id": 1550,
+    "name": "Drawstring Soporific Grease",
+    "caption": "Solidified grease made from a mixture of light-purple materials. A short string is attached to this lump.",
+    "info": "Quickly coats right-hand armament. Causes 42 <font color=\"#A698F4\">sleep accumulation</font> per attack for 15 seconds.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack.\n\nCraftable item."
+  },
+  {
+    "id": 1560,
+    "name": "Drawstring Poison Grease",
+    "caption": "Solidified grease made from a mixture of poison-green materials. A short string is attached to this lump.",
+    "info": "Quickly coats right-hand armament. Causes 80 <font color=\"#40BF40\">poison accumulation</font> per attack for 15 seconds.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1570,
+    "name": "Drawstring Freezing Grease",
+    "caption": "Solidified grease made using Rani's furtive arts. A short string is attached to this lump.\n\nThe women of the Carian royal family look to the moon to guide their fates. Rani's is a moon dark and blanketed with rime.",
+    "info": "Quickly coats right-hand armament. Causes 80 <font color=\"#9DD7FB\">frostbite accumulation</font> per attack for 15 seconds.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1590,
+    "name": "Drawstring Rot Grease",
+    "caption": "Solidified grease made from a mixture of rotten materials. A short string is attached to this lump.",
+    "info": "Quickly coats right-hand armament. Causes 80 <font color=\"#EF7676\">scarlet rot accumulation</font> per attack for 11 seconds.\n\n<font color=\"#EF7676\">Scarlet rot:</font> Inflicts damage equal to 0.18% of <font color=\"#E0B985\">maximum HP</font> plus 15, every second for 90 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 1690,
+    "name": "Shield Grease",
+    "caption": "Solidified grease made from a mixture of magically resonant materials.",
+    "info": "Coats left-hand armament. Increases <font color=\"#E0B985\">guard boost</font> by 13%, and reduces <font color=\"#E0B985\">all damage received</font> from blocked attacks by 20% for 60 seconds. The amount that <font color=\"#E0B985\">guard boost</font> is increased by depends on the shield's base guard boost. Shields with a lower base value will get a bigger increase, while shields with a higher base value will get a smaller increase.\n\nCraftable item."
+  },
+  {
+    "id": 1700,
+    "name": "Throwing Dagger",
+    "caption": "Short dagger for throwing. It has no handguard. The blade is polished, and its weight is expertly balanced.\n\nThis auxiliary weapon, used primarily to constrain an enemy's movements, can still be deadly in the right hands.",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font>.\n\n<font color=\"#F395C4\">Base physical damage:</font> 67"
+  },
+  {
+    "id": 1710,
+    "name": "Bone Dart",
+    "caption": "Animal bone sharpened into a knife for throwing.",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font>.\n\n<font color=\"#F395C4\">Base physical damage:</font> 57\n\nCraftable item."
+  },
+  {
+    "id": 1720,
+    "name": "Poisonbone Dart",
+    "caption": "Animal bone sharpened into a knife for throwing, with a poison-laced tip.",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font> and cause <font color=\"#40BF40\">poison accumulation</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 50\n<font color=\"#40BF40\">Base poison accumulation:</font> 58\n\nCraftable item."
+  },
+  {
+    "id": 1730,
+    "name": "Kukri",
+    "caption": "A large knife used for throwing. Its curved blade is sharp enough to slice flesh cleanly.\n\nThis heavy throwing weapon is unsuitable for swift attacks, but is able to inflict heavy damage.",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font> and cause <font color=\"#C84343\">blood loss accumulation</font>.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage:</font> 87\n<font color=\"#C84343\">Base blood loss accumulation:</font> 70"
+  },
+  {
+    "id": 1740,
+    "name": "Crystal Dart",
+    "caption": "Throwing knife chiseled from impure crystal.\n\nLong ago, it is said that a golem crafter employed a similar crystal tool.",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font> and <font color=\"#57DBCE\">magic damage</font>.\n\n<font color=\"#F395C4\">Base physical damage:</font> 66\n<font color=\"#57DBCE\">Base magic damage:</font> 44\n\nCraftable item."
+  },
+  {
+    "id": 1750,
+    "name": "Fan Daggers",
+    "caption": "A set of five throwing knives bundled together. A concealed weapon cherished by the raptor assassins.\n\nEach knife deals paltry damage, but the wide range makes it suitable for constraining enemies.",
+    "info": "Throw 5 knives in a horizontal arc at an enemy to inflict <font color=\"#F395C4\">physical damage</font>.\n\n<font color=\"#F395C4\">Base physical damage:</font> 37"
+  },
+  {
+    "id": 1760,
+    "name": "Ruin Fragment",
+    "caption": "Stone fragment found near places where ruins have fallen from the sky.\n\nThese shards of stone are believed to have once been part of a temple in the sky. They glow with a faint light from within.",
+    "info": "Material used for crafting items but can also be thrown.\n\n<font color=\"#F395C4\">Base physical damage:</font> 1"
+  },
+  {
+    "id": 1830,
+    "name": "Explosive Stone",
+    "caption": "A small stone with a smoldering core.\n\nMiners employ these stones as tools for rock blasting, but have long forgotten how to craft them.",
+    "info": "Explodes when thrown, inflicting <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 108"
+  },
+  {
+    "id": 1831,
+    "name": "Explosive Stone Clump",
+    "caption": "A clump of small stones with smoldering cores.\n\nMiners employ these stones as tools for rock blasting, but have long forgotten how to craft them.",
+    "info": "Explodes when thrown together, inflicting <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 54"
+  },
+  {
+    "id": 1840,
+    "name": "Poisoned Stone",
+    "caption": "A small stone with a poison core.\n\nMiners employ these stones as tools for pest extermination, but have long forgotten how to craft them.",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font> and cause <font color=\"#40BF40\">poison accumulation</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 50\n<font color=\"#40BF40\">Base poison accumulation:</font> 100"
+  },
+  {
+    "id": 1841,
+    "name": "Poisoned Stone Clump",
+    "caption": "A clump of small stones with poison cores.\n\nMiners employ these stones as tools for pest extermination, but have long forgotten how to craft them.",
+    "info": "Throw at an enemy to inflict <font color=\"#F395C4\">physical damage</font> and cause <font color=\"#40BF40\">poison accumulation</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds\n\n<font color=\"#F395C4\">Base physical damage:</font> 32\n<font color=\"#40BF40\">Base poison accumulation:</font> 45"
+  },
+  {
+    "id": 2020,
+    "name": "Rainbow Stone",
+    "caption": "Ruin Fragment that has undergone some simple processing. Stones such as these shine with the colors of the rainbow, making them useful markers when placed on the ground.\n\nOnce used to entertain children on the fringes of the Lands Between.",
+    "info": "Shines with colored light when placed, serving as a guide.\n\nIf the stone shatters when dropped from a high place then it is not a survivable fall.\n\nCraftable item."
+  },
+  {
+    "id": 2030,
+    "name": "Glowstone",
+    "caption": "Polished Ruin Fragment that shines brighter than Rainbow Stone.",
+    "info": "Emits a faint light to increase visibility in dark areas for 120 seconds from the location it is placed.\n\nCraftable item."
+  },
+  {
+    "id": 2040,
+    "name": "Telescope",
+    "caption": "Astrology tool used by members of the Carian royal family. A stolen part of a larger instrument.\n\nDuring the age of the Erdtree, Carian astrology withered on the vine. The fate once writ in the night skies had been fettered by the Golden Order.",
+    "info": "Allows you to see faraway things."
+  },
+  {
+    "id": 2050,
+    "name": "Grace Mimic",
+    "caption": "A fetish indicating the guidance of grace.\n\nUseful as a last resort for those who have lost their way, or for use by those who believe that unrefined guidance will lead to truer encounters.",
+    "info": "Light shows the suggested path for 30 seconds, but without particular order.\n\nCraftable item."
+  },
+  {
+    "id": 2070,
+    "name": "Lantern",
+    "caption": "A small waist-worn lantern that illuminates surroundings.\n\nWhile its light is dimmer than that of a torch, it has the advantage of freeing up the user's hands.",
+    "info": "Use to attach it to your waist. Increases visibility in dark areas while keeping both hands free."
+  },
+  {
+    "id": 2100,
+    "name": "Soft Cotton",
+    "caption": "A soft but sturdy cotton formed from splitting open Rowa fruit in a particular manner.\n\nIf you must court danger, at the very least, tread lightly.",
+    "info": "Completely negates fall damage and sound made during movement for 20 seconds.\n\nThe height at which a fall is fatal remains the same even while under the effects of this item.\n\nCraftable item."
+  },
+  {
+    "id": 2120,
+    "name": "Soap",
+    "caption": "A plant-based soap made from mushroom juice.\n\nFilth covering the exterior eventually seeps inside, soiling one's very spirit.",
+    "info": "Cleans blood and filth from the body and alleviates 100 <font color=\"#40BF40\">poison accumulation</font>.\n\nCraftable item."
+  },
+  {
+    "id": 2140,
+    "name": "Margit's Shackle",
+    "caption": "A fetish bathed in golden magic.\n\nShackles were used to bind the accursed people called the Omen, and these ones were made to keep a particular Omen under strictest confinement.\n\nThough faint, the shackles still retain vestiges of power—enough to trap the once-bound Margit on earth.",
+    "info": "Binds Margit or Morgott in place for 5 seconds.\n\nCan be used twice per fight, but must be used early."
+  },
+  {
+    "id": 2150,
+    "name": "Mohg's Shackle",
+    "caption": "A fetish bathed in golden magic.\n\nShackles were used to bind the accursed people called the Omen, and these ones were made to keep a particular Omen under strictest confinement.\n\nThough faint, the shackles still retain vestiges of power—enough to trap the once-bound Mohg on earth.",
+    "info": "Binds Mohg in place for 5 seconds.\n\nCan be used twice per fight, but must be used early."
+  },
+  {
+    "id": 2190,
+    "name": "Miquella's Needle",
+    "caption": "One of the unalloyed gold needles that Miquella crafted to ward away the meddling of outer gods.",
+    "info": "Use to subdue the flame of frenzy if inherited, allowing one to cheat fate and avoid becoming Lord of Frenzied Flame.\n\nHowever, the needle is as yet unfinished and can only be used in the heart of the storm beyond time said to be found in Farum Azula."
+  },
+  {
+    "id": 2910,
+    "name": "Golden Rune [6200]",
+    "caption": "Grace that dwells within the inhabitants of the Lands Between; the lingering residue of gold.\n\nThe grace of gold blessed those who were first to serve it with the most vivid coloration.",
+    "info": "Use to gain 6200 runes."
+  },
+  {
+    "id": 2912,
+    "name": "Golden Rune [10,000]",
+    "caption": "Grace that dwells within the inhabitants of the Lands Between; the lingering residue of gold.\n\nThe grace of gold blessed those who were first to serve it with the most vivid coloration.",
+    "info": "Use to gain 10,000 runes."
+  },
+  {
+    "id": 2913,
+    "name": "Numen's Rune [12,500]",
+    "caption": "Grace that dwells within the inhabitants of the Lands Between; the lingering residue of gold.\n\nThe Numen are said to have come from outside the Lands Between, and are in fact of the same stock as Queen Marika herself.",
+    "info": "Use to gain 12,500 runes."
+  },
+  {
+    "id": 2914,
+    "name": "Hero's Rune [15,000]",
+    "caption": "Grace that dwells within the inhabitants of the Lands Between; the lingering residue of gold.\n\nThere were once heroes who walked the battlefields, abundantly blessed by the Erdtree itself, who upon earning their honor simply died.",
+    "info": "Use to gain 15,000 runes."
+  },
+  {
+    "id": 2915,
+    "name": "Hero's Rune [20,000]",
+    "caption": "Grace that dwells within the inhabitants of the Lands Between; the lingering residue of gold.\n\nThere were once heroes who walked the battlefields, abundantly blessed by the Erdtree itself, who upon earning their honor simply died.",
+    "info": "Use to gain 20,000 runes."
+  },
+  {
+    "id": 2916,
+    "name": "Hero's Rune [25,000]",
+    "caption": "Grace that dwells within the inhabitants of the Lands Between; the lingering residue of gold.\n\nThere were once heroes who walked the battlefields, abundantly blessed by the Erdtree itself, who upon earning their honor simply died.",
+    "info": "Use to gain 25,000 runes."
+  },
+  {
+    "id": 2917,
+    "name": "Hero's Rune [30,000]",
+    "caption": "Grace that dwells within the inhabitants of the Lands Between; the lingering residue of gold.\n\nThere were once heroes who walked the battlefields, abundantly blessed by the Erdtree itself, who upon earning their honor simply died.",
+    "info": "Use to gain 30,000 runes."
+  },
+  {
+    "id": 2918,
+    "name": "Hero's Rune [35,000]",
+    "caption": "Grace that dwells within the inhabitants of the Lands Between; the lingering residue of gold.\n\nThere were once heroes who walked the battlefields, abundantly blessed by the Erdtree itself, who upon earning their honor simply died.",
+    "info": "Use to gain 35,000 runes."
+  },
+  {
+    "id": 2919,
+    "name": "Lord's Rune [50,000]",
+    "caption": "Grace that dwells within the inhabitants of the Lands Between; true vestiges of gold.\n\nRunes of one who was destined to become a Lord, but when the Elden Ring was shattered, all that remained was a distant duty.",
+    "info": "Use to gain 50,000 runes."
+  },
+  {
+    "id": 3000,
+    "name": "Ancestral Infant's Head",
+    "caption": "Skull of a very young ancestral spirit. Just think how many sproutings It might bear.",
+    "info": "Spray an arc of spirit vapor in front of you, which will remain on the ground for 4 seconds after they land and do continuous damage to enemies in the area of effect.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 55"
+  },
+  {
+    "id": 3010,
+    "name": "Omen Bairn",
+    "caption": "Doll of a curseborn bairn.\n\nOmen babies have all their horns excised, causing most to perish. These fetishes are made to memorialize them.\n\"Please, don't hate me, or curse me. Please.\"",
+    "info": "Produce an explosion of <font color=\"#F5EB89\">holy damage</font> which releases several wraiths that chase down foes.\n\n<font color=\"#F5EB89\">Base holy damage (explosion):</font> 105\n<font color=\"#F5EB89\">Base holy damage (wraith):</font> 70"
+  },
+  {
+    "id": 3011,
+    "name": "Regal Omen Bairn",
+    "caption": "Doll of a curseborn bairn from the Erdtree's royal line.\n\nOmen babies born of royalty do not have their horns excised, but instead are kept underground, unbeknownst to anyone, imprisoned for eternity. These memorial fetishes are fashioned in secret.",
+    "info": "Produce an explosion of <font color=\"#F5EB89\">holy damage</font> which releases a large number of wraiths that chase down foes.\n\n<font color=\"#F5EB89\">Base holy damage (explosion):</font> 115\n<font color=\"#F5EB89\">Base holy damage (wraith):</font> 60"
+  },
+  {
+    "id": 3020,
+    "name": "Miranda's Prayer",
+    "caption": "This statuette depicts a flower that preys on humans, posed in prayer.\n\nMiranda, maiden of the Flower Crucible is said to have been the very first of this breed.",
+    "info": "Call down a large number of light strikes randomly in an area around the target for 7 seconds.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 95"
+  },
+  {
+    "id": 3030,
+    "name": "Cuckoo Glintstone",
+    "caption": "Lump of broken glintstone enwreathed with magic power. A \"faux sorcery\" used by the Knights of the Cuckoo.",
+    "info": "Throw at or near an enemy to produce 3 homing magic projectiles where it lands.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 92\n\nCraftable item."
+  },
+  {
+    "id": 3040,
+    "name": "Mimic's Veil",
+    "caption": "Golden veil of intricate design.\n\nWhen Godrick was hounded from Leyndell, the Royal Capital, this was one of a multitude of treasures he took with him. Also known as \"Marika's Mischief.\"",
+    "info": "Transform yourself into an object from the area you are in. You can still move around while transformed, but performing any other action will revert the transformation. Non-aggressive enemies will ignore you as long as they don't see you moving."
+  },
+  {
+    "id": 3050,
+    "name": "Glintstone Scrap",
+    "caption": "Piece of glintstone tinged with unstable magic. Found in crystal tunnels.\n\nPoor quality and thereby easily broken, a sorcerer wouldn't give it a second look.",
+    "info": "Produce 3 magic projectiles which will sporadically shoot straight forward.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 82"
+  },
+  {
+    "id": 3051,
+    "name": "Large Glintstone Scrap",
+    "caption": "Large piece of glintstone tinged with unstable magic. Found in crystal tunnels.\n\nPoor quality and thereby easily broken, a sorcerer wouldn't give it a second look.",
+    "info": "Produce 7 magic projectiles which will sporadically shoot straight forward.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 65"
+  },
+  {
+    "id": 3060,
+    "name": "Gravity Stone Fan",
+    "caption": "Shard of rock found in the wake of a meteorite strike. It is imbued with a particularly weighty magic.\n\nThe desperate ones who scavenge for these shards dub themselves \"starcallers.\"",
+    "info": "Emit a gravitational shockwave in an outward triangle shape in front of you.\n\n<font color=\"#F395C4\">Base physical damage:</font> 160\n<font color=\"#57DBCE\">Base magic damage:</font> 50"
+  },
+  {
+    "id": 3070,
+    "name": "Gravity Stone Chunk",
+    "caption": "Shard of rock found in the wake of a meteorite strike. It is imbued with a particularly weighty magic.\n\nThe desperate ones who scavenge for these shards dub themselves \"starcallers.\"",
+    "info": "Throw at an enemy to cause a gravitational explosion underneath them.\n\n<font color=\"#F395C4\">Base physical damage:</font> 247\n<font color=\"#57DBCE\">Base magic damage:</font> 50"
+  },
+  {
+    "id": 3080,
+    "name": "Wraith Calling Bell",
+    "caption": "Bell used by worshippers of revenants.\n\nWraiths are said to be the vengeful spirits of those who died when cursed.",
+    "info": "Ring bell to call a single prowling wraith. Can be used repeatedly to call multiple in quick succession.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 120"
+  },
+  {
+    "id": 3300,
+    "name": "Holy Water Grease",
+    "caption": "Grease which holds the blessing of the Erdtree.\n\nThere is no place in the Golden Order for those who have exceeded life's bounds. These blemishes must be hunted down by the Virtuous.",
+    "info": "Coats right-hand armament. Adds 95 <font color=\"#F5EB89\">holy damage</font> for 60 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 3310,
+    "name": "Warming Stone",
+    "caption": "Ruin Fragment blessed with an incantation of the Two Fingers.\n\nIt's said that the Erdtree was once as warm as the gentle sun, and would gradually heal all who bathed in its rays.",
+    "info": "Drop at your feet to restore 25 HP per second for anyone, including enemies, in a small area of effect for 30 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 3311,
+    "name": "Frenzyflame Stone",
+    "caption": "Ruin Fragment blessed with an incantation of the Three Fingers.\n\nConfers madness upon those who have not adopted the flame. Take care not to mistake this for its gentler cousin.",
+    "info": "Drop at your feet to restore 35 HP per second for anyone, including enemies, in a small area of effect for 30 seconds.\n\nOnly work on those who host the frenzied flame.\n\nCraftable item."
+  },
+  {
+    "id": 3320,
+    "name": "Scriptstone",
+    "caption": "Ruin Fragment with a cipher inscription.\n\nWords are gregarious things, drawn to one another much as people are.",
+    "info": "Online multiplayer item.\n\nReveals more messages from other worlds.\n\nCraftable item."
+  },
+  {
+    "id": 3350,
+    "name": "Bewitching Branch",
+    "caption": "Tree branch blessed with an incantation of unalloyed gold.\n\nThe Empyrean Miquella is loved by many people. Indeed, he has learned very well how to compel such affection.",
+    "info": "Spray a pink smoke directly in front of you that will charm enemies inside of it, which will cause them to be your ally for 180 seconds.\n\nCraftable item."
+  },
+  {
+    "id": 3360,
+    "name": "Baldachin's Blessing",
+    "caption": "Favor bestowed by a deathbed companion. Protection of a hidden temple in the guise of a bedchamber.\n\nThe favor allows one to forget any aches and pains. In Death, there is only peace, for in Death, there can be no sensation.",
+    "info": "Possessing this item reduces your <font color=\"#E0B985\">maximum HP</font> by 5%. Using this item reduces <font color=\"#F395C4\">physical damage received</font> by 35% and reduces <font color=\"#E0B985\">poise damage received</font> by about 34.2% for 15 seconds.\n\nAlthough this item shows your poise stat increase by about 52%, this item doesn't actually increase your maximum poise. It only reduces the amount of poise damage that you receive from each attack.\n\nThis effect can be combined with the effects of Bull-Goat's Talisman to reduce <font color=\"#E0B985\">poise damage received</font> by about 50.65%."
+  },
+  {
+    "id": 3361,
+    "name": "Radiant Baldachin's Blessing",
+    "caption": "Protection of a hidden temple in the guise of a bedchamber. This blessing is of the utmost rarity.\n\nIt is said a deathbed companion will only produce a blessing of this kind for a champion but once in her entire life. The sole blessing which she imbues of her own volition.",
+    "info": "Using this item reduces <font color=\"#F395C4\">physical damage received</font> by 35% and reduces <font color=\"#E0B985\">poise damage received</font> by about 45% for 70 seconds.\n\nAlthough this item shows your poise stat increase by about 82%, this item doesn't actually increase your maximum poise. It only reduces the amount of poise damage that you receive from each attack.\n\nThis effect can be combined with the effects of Bull-Goat's Talisman to reduce <font color=\"#E0B985\">poise damage received</font> by about 58.75%."
+  },
+  {
+    "id": 3500,
+    "name": "Uplifting Aromatic",
+    "caption": "Art of the perfumers who fought in the Shattering.\n\nThis aromatic has an extremely potent morale-raising effect that makes those accustomed to it fearless in the face of death. It was this influence that made the perfumers exceptional commanders.",
+    "info": "Increases <font color=\"#E0B985\">all damage negation</font> by 90% for the next single attack received wihtin 40 seconds and increases <font color=\"#F395C4\">physical damage inflicted</font> by 10% for 40 seconds. These buffs are applied to the player and all nearby allies.\n\nCraftable item using a Perfume Bottle."
+  },
+  {
+    "id": 3510,
+    "name": "Spark Aromatic",
+    "caption": "Art of the perfumers who fought in the Shattering.\n\nThough fire was prohibited to those who served the Erdtree, this rule was forgotten as the war drew ever on.",
+    "info": "Scatter sparks in a wide arc straight ahead, which will ignite to inflict <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage:</font> 352\n\nCraftable item using a Perfume Bottle."
+  },
+  {
+    "id": 3520,
+    "name": "Ironjar Aromatic",
+    "caption": "Forbidden art of depraved perfumers.\n\nAn art that requires fragments of hunted noble jars. Depraved perfumers are plainly in league with jar poachers.",
+    "info": "Drink to turn your body and armor to steel for 40 seconds, which reduces <font color=\"#F395C4\">physical damage received</font> by 40%, increases <font color=\"#FFE033\">lightning damage received</font> by 60%, increases <font color=\"#E0B985\">all resistances</font> by 45, and causes you to be very heavy and slow.\n\nWhile under the effects of this lighter physical attacks from enemies may cause the enemy to briefly stagger backwards after hitting you.\n\nCraftable item using a Perfume Bottle."
+  },
+  {
+    "id": 3550,
+    "name": "Bloodboil Aromatic",
+    "caption": "Forbidden art of depraved perfumers.\n\n\"Even upon the battlefield, do you fear being wounded? Take a good look. Your limbs are frozen stiff.\"",
+    "info": "Drink to enter a temporary state of fervor for 60 seconds, which increases <font color=\"#E0B985\">maximum stamina</font> by 20% and <font color=\"#F395C4\">physical damage inflicted</font> by 30%, but increases <font color=\"#E0B985\">all damage received</font> by 25%.\n\nCraftable item using a Perfume Bottle."
+  },
+  {
+    "id": 3580,
+    "name": "Poison Spraymist",
+    "caption": "Forbidden art of depraved perfumers.\n\nPerfumed powder is held in the mouth to dissolve before being expelled. It was once a restorative art, or so it is said.",
+    "info": "Spray a poison mist from your mouth and leave a lingering cloud of poison in the area for 7 seconds, which will cause 26 <font color=\"#40BF40\">poison accumulation</font> 5 times per second to enemies within the area of effect.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.21% of <font color=\"#E0B985\">maximum HP</font> plus 21, every second for 30 seconds.\n\nCraftable item using a Perfume Bottle."
+  },
+  {
+    "id": 3610,
+    "name": "Acid Spraymist",
+    "caption": "Forbidden art of depraved perfumers.\n\nPerfumed powder is held in the mouth to dissolve before being expelled. It was once a restorative art, or so it is said.",
+    "info": "Spray acid mist from your mouth and leave a lingering cloud of acid in the area for 7 seconds, which will instantly inflict the <font color=\"#C18B8B\">acid debuff</font> on any enemy within the area of effect.\n\n<font color=\"#C18B8B\">Acid debuff:</font> Reduces <font color=\"#F395C4\">physical damage inflicted</font> by 15% for 60 seconds.\n\nCraftable item using a Perfume Bottle."
+  }
+]

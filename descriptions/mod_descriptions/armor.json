@@ -1,0 +1,674 @@
+[
+  {
+    "id": 120000,
+    "name": "Alberich's Pointed Hat",
+    "category": "armor",
+    "caption": "Mad Tongue Alberich's pointed hat, a sign of a heretical practitioner. Set with red glintstones, said to be formed by the blood of sacrifices. Alberich was an aloof yet disturbed heretical sorcerer said to have been driven mad by jeering tongues during his service to the Roundtable Hold long ago.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for thorn sorceries by 6%.",
+    "info": "Hat of a defected glintstone sorcerer."
+  },
+  {
+    "id": 120100,
+    "name": "Alberich's Robe",
+    "category": "armor",
+    "caption": "Mad Tongue Alberich's robe. Set with red glintstones, said to be formed by the blood of sacrifices. Alberich was an aloof yet disturbed heretical sorcerer said to have been driven mad by jeering tongues during his service to the Roundtable Hold long ago.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for thorn sorceries by 6%.",
+    "info": "Robe of a defected glintstone sorcerer."
+  },
+  {
+    "id": 120200,
+    "name": "Alberich's Bracers",
+    "category": "armor",
+    "caption": "Mad Tongue Alberich's bracers. Set with red glintstones, said to be formed by the blood of sacrifices. Alberich was an aloof yet disturbed heretical sorcerer said to have been driven mad by jeering tongues during his service to the Roundtable Hold long ago.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for thorn sorceries by 6%.",
+    "info": "Gloves of a defected glintstone sorcerer."
+  },
+  {
+    "id": 121000,
+    "name": "Alberich's Pointed Hat (Altered)",
+    "category": "armor",
+    "caption": "Mad Tongue Alberich's pointed hat, a sign of a heretical practitioner. Set with red glintstones, said to be formed by the blood of sacrifices. Alberich was an aloof yet disturbed heretical sorcerer said to have been driven mad by jeering tongues during his service to the Roundtable Hold long ago.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for thorn sorceries by 6%.",
+    "info": "Cowl of a defected glintstone sorcerer."
+  },
+  {
+    "id": 130000,
+    "name": "Spellblade's Pointed Hat",
+    "category": "armor",
+    "caption": "Glintstone sorcerer Rogier's pointed hat, a sign of a heretical practitioner. Rogier spent his entire life behaving with utter detachment. No one noticed the anger, grief, regret, or fear that existed along with it.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for glintstone sorceries by 2%.",
+    "info": "Glintstone sorcerer Rogier's hat."
+  },
+  {
+    "id": 130100,
+    "name": "Spellblade's Traveling Attire",
+    "category": "armor",
+    "caption": "Glintstone sorcerer Rogier's traveling attire, graced with an intricate, aristocratic decoration. Rogier spent his entire life behaving with utter detachment. No one noticed the anger, grief, regret, or fear that existed along with it.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for glintstone sorceries by 2%.",
+    "info": "Glintstone sorcerer Rogier's cape."
+  },
+  {
+    "id": 130200,
+    "name": "Spellblade's Gloves",
+    "category": "armor",
+    "caption": "Glintstone sorcerer Rogier's gloves, graced with an intricate, aristocratic decoration. Rogier spent his entire life behaving with utter detachment. No one noticed the anger, grief, regret, or fear that existed along with it.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for glintstone sorceries by 2%.",
+    "info": "Glintstone sorcerer Rogier's gloves."
+  },
+  {
+    "id": 130300,
+    "name": "Spellblade's Trousers",
+    "category": "armor",
+    "caption": "Glintstone sorcerer Rogier's trousers, graced with an intricate, aristocratic decoration. Rogier spent his entire life behaving with utter detachment. No one noticed the anger, grief, regret, or fear that existed along with it.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for glintstone sorceries by 2%.",
+    "info": "Glintstone sorcerer Rogier's Trousers."
+  },
+  {
+    "id": 131100,
+    "name": "Spellblade's Traveling Attire (Altered)",
+    "category": "armor",
+    "caption": "Glintstone sorcerer Rogier's traveling attire, graced with an intricate, aristocratic decoration. Rogier spent his entire life behaving with utter detachment. No one noticed the anger, grief, regret, or fear that existed along with it.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for glintstone sorceries by 2%.",
+    "info": "Glintstone sorcerer Rogier's vest."
+  },
+  {
+    "id": 180100,
+    "name": "Black Knife Armor",
+    "category": "armor",
+    "caption": "Scale armor used by the Black Knife Assassins, forged to make no sound. Traces of power yet remain in its concealing veil. The assassins that carried out the deeds of the Night of the Black Knives were all women, and rumored to be Numen who had close ties with Marika herself.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nNegates all movement sounds made by the wearer.",
+    "info": "Armor used by the Black Blade Assassins."
+  },
+  {
+    "id": 210000,
+    "name": "Briar Helm",
+    "category": "armor",
+    "caption": "Battered iron helm from a foreign land. Worn by Elemer of the Briar. The winding, rusted iron briars are a mark of the guilty, and typically indicate a sentence of death. Elemer murdered numerous instructors and merchants, and was known as the Bell Bearing Hunter.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nInflicts 18 <font color=\"#F395C4\">physical damage</font> to any enemy in the path of your dodge roll.",
+    "info": "Helm worn by Condor Knights."
+  },
+  {
+    "id": 210100,
+    "name": "Briar Armor",
+    "category": "armor",
+    "caption": "Battered iron armor from a foreign land. Worn by Elemer of the Briar. The winding, rusted iron briars are a mark of the guilty, and typically indicate a sentence of death. Elemer murdered numerous instructors and merchants, and was known as the Bell Bearing Hunter.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nInflicts 25 <font color=\"#F395C4\">physical damage</font> to any enemy in the path of your dodge roll.",
+    "info": "Armor worn by Condor Knights."
+  },
+  {
+    "id": 210200,
+    "name": "Briar Gauntlets",
+    "category": "armor",
+    "caption": "Battered gauntlets from a foreign land. Worn by Elemer of the Briar. The winding, rusted iron briars are a mark of the guilty, and typically indicate a sentence of death. Elemer murdered numerous instructors and merchants, and was known as the Bell Bearing Hunter.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nInflicts 18 <font color=\"#F395C4\">physical damage</font> to any enemy in the path of your dodge roll.",
+    "info": "Gauntlets worn by Condor Knights."
+  },
+  {
+    "id": 210300,
+    "name": "Briar Greaves",
+    "category": "armor",
+    "caption": "Battered greaves from a foreign land. Worn by Elemer of the Briar. The winding, rusted iron briars are a mark of the guilty, and typically indicate a sentence of death. Elemer murdered numerous instructors and merchants, and was known as the Bell Bearing Hunter.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nInflicts 18 <font color=\"#F395C4\">physical damage</font> to any enemy in the path of your dodge roll.",
+    "info": "Greaves worn by Condor Knights."
+  },
+  {
+    "id": 211100,
+    "name": "Briar Armor (Altered)",
+    "category": "armor",
+    "caption": "Battered iron armor from a foreign land. Worn by Elemer of the Briar. The winding, rusted iron briars are a mark of the guilty, and typically indicate a sentence of death. Elemer murdered numerous instructors and merchants, and was known as the Bell Bearing Hunter.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nInflicts 25 <font color=\"#F395C4\">physical damage</font> to any enemy in the path of your dodge roll.",
+    "info": "Armor worn by Condor Knights."
+  },
+  {
+    "id": 301000,
+    "name": "Shining Horned Headband",
+    "category": "armor",
+    "caption": "Headband decorated by a pair of shining horns. Worn by ancestral follower shamans. Horns with buds that also shine are ideal ceremonial items for ancestral worship.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of Ancestral Infant's Head by 20%.",
+    "info": "%null%"
+  },
+  {
+    "id": 310000,
+    "name": "Duelist Helm",
+    "category": "armor",
+    "caption": "Bronze helm decorated with innumerable snakes. Worn by gladiators who were driven from the colosseum. The snake is viewed as a traitor to the Erdtree, and the audience delighted in seeing these bronze effigies beaten and battered.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player.",
+    "info": "Bronze helm adorned with many snakes."
+  },
+  {
+    "id": 310300,
+    "name": "Duelist Greaves",
+    "category": "armor",
+    "caption": "Greaves encircled by bronze snakes. Worn by gladiators who were driven from the colosseum. The snake is viewed as a traitor to the Erdtree, and the audience delighted in seeing these bronze effigies beaten and battered.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player.",
+    "info": "Bronze anklets adorned with snakes."
+  },
+  {
+    "id": 311100,
+    "name": "Gravekeeper Cloak (Altered)",
+    "category": "armor",
+    "caption": "Defensive wear encircled by bronze snakes. Worn by gladiators who were driven from the colosseum. The wearer becomes a slightly easier target for foes. The snake is viewed as a traitor to the Erdtree, and the audience delighted in seeing these bronze effigies beaten and battered.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player.",
+    "info": "Bronze bracelets adorned with snakes."
+  },
+  {
+    "id": 330100,
+    "name": "Guardian Garb (Full Bloom)",
+    "category": "armor",
+    "caption": "Engraved golden garb. Worn by the guardians of the Minor Erdtrees. It is said that the blood-red flowers blooming on their backs mark the senescence of their ancient pact. Perhaps the guardians are part tree already.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases HP restoration from Flask of Crimson Tears by 10%.",
+    "info": "Armor worn by the people of rotted abundance."
+  },
+  {
+    "id": 440000,
+    "name": "Pumpkin Helm",
+    "category": "armor",
+    "caption": "An oval helm large enough to cover any head. Very heavy and very hard. The inside of the helm is pitch black, keeping the crazed warrior within from panicking. Perhaps its rather roomy interior also helps alleviate feelings of pressure and claustrophobia.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nReduces damage and impact of headshots.",
+    "info": "Oval helmet large enough to cover any head."
+  },
+  {
+    "id": 510000,
+    "name": "Queen's Crescent Crown",
+    "category": "armor",
+    "caption": "A tall crown depicting the moon. Worn by Rennala, Queen of the Full Moon. When Rennala, head of both the Academy of Raya Lucaria and the Carian royal family, lost her husband Radagon, her heart went along with him. And then, those at the academy realized. That Rennala was no champion, after all.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> by 3.",
+    "info": "Crown of Rennala, the Full Moon Witch."
+  },
+  {
+    "id": 530100,
+    "name": "Godskin Noble Robe",
+    "category": "armor",
+    "caption": "Robe made by sewing together patches of smooth skin. Subcutaneous fat makes it plump and soft. Worn by Godskin Nobles, known for their seven-face aprons. Nobles are the most ancient apostles who are said to have assimilated inhuman physiology. Not unlike the crucible, the Erdtree in its primordial form.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of the Noble Presence incantation by 20%.",
+    "info": "Robe made from tanned corpulent Demigod skin."
+  },
+  {
+    "id": 570000,
+    "name": "Crucible Axe Helm",
+    "category": "armor",
+    "caption": "Helm of the Crucible Knights who served Godfrey, the first Elden Lord. Holds the power of the crucible of life, the primordial form of the Erdtree. The axe ornamentation is the knight Ordovis's mark, displayed also by his men.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%.",
+    "info": "Helm used by Ordovis of the Crucible and his men."
+  },
+  {
+    "id": 570100,
+    "name": "Crucible Axe Armor",
+    "category": "armor",
+    "caption": "Armor of the Crucible Knights who served Godfrey, the first Elden Lord. Holds the power of the crucible of life, the primordial form of the Erdtree. Worn by the knight Ordovis and his men.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%.",
+    "info": "Armor used by Ordovis of the Crucible and his men."
+  },
+  {
+    "id": 570200,
+    "name": "Crucible Gauntlets",
+    "category": "armor",
+    "caption": "Gauntlets of the Crucible Knights who served Godfrey, the first Elden Lord. Hold the power of the crucible of life, the primordial form of the Erdtree. In time, the strength shown by these knights, and even their appearance, was seen as chaotic and deserving of scorn.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%.",
+    "info": "Gauntlets used by the Crucible Knights."
+  },
+  {
+    "id": 570300,
+    "name": "Crucible Greaves",
+    "category": "armor",
+    "caption": "Greaves of the Crucible Knights who served Godfrey, the first Elden Lord. Hold the power of the crucible of life, the primordial form of the Erdtree. In time, the strength shown by these knights, and even their appearance, was seen as chaotic and deserving of scorn.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%.",
+    "info": "Greaves used by the Crucible Knights."
+  },
+  {
+    "id": 571000,
+    "name": "Crucible Tree Helm",
+    "category": "armor",
+    "caption": "Helm of the Crucible Knights who served Godfrey, the first Elden Lord. Holds the power of the crucible of life, the primordial form of the Erdtree. The great tree ornamentation is the knight Siluria's mark, displayed also by her men.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%.",
+    "info": "Helm used by Siluria of the Crucible and her men."
+  },
+  {
+    "id": 571100,
+    "name": "Crucible Tree Armor",
+    "category": "armor",
+    "caption": "Armor of the Crucible Knights who served Godfrey, the first Elden Lord. Holds the power of the crucible of life, the primordial form of the Erdtree. Worn by the knight Siluria and her men.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%.",
+    "info": "Armor used by Siluria of the Crucible and her men."
+  },
+  {
+    "id": 572100,
+    "name": "Crucible Axe Armor (Altered)",
+    "category": "armor",
+    "caption": "Armor of the Crucible Knights who served Godfrey, the first Elden Lord.Holds the power of the crucible of life, the primordial form of the Erdtree. Worn by the knight Ordovis and his men.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%.",
+    "info": "Armor used by Ordovis of the Crucible and his men."
+  },
+  {
+    "id": 573100,
+    "name": "Crucible Tree Armor (Altered)",
+    "category": "armor",
+    "caption": "Armor of the Crucible Knights who served Godfrey, the first Elden Lord. Holds the power of the crucible of life, the primordial form of the Erdtree. Worn by the knight Siluria and her men.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Aspects of the Crucible incantations by 4%.",
+    "info": "Armor used by Siluria of the Crucible and her men."
+  },
+  {
+    "id": 580000,
+    "name": "Lusat's Glintstone Crown",
+    "category": "armor",
+    "caption": "The giant blue glintstone crown worn by Lusat, primeval current sorcerer. This crown replaced Lusat's brain and skull altogether, and now, removed from his body, it is all but dead.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for primeval current sorceries by 10-15%, but increases FP consumption for sorceries by 15%.",
+    "info": "Skull-merged Crown of a Crystal Sorcerer."
+  },
+  {
+    "id": 581000,
+    "name": "Azur's Glintstone Crown",
+    "category": "armor",
+    "caption": "Crown of Azur, primeval current sorcerer, set with a prominent blue-green glintstone. This crown replaced Azur's brain and skull altogether, and now, removed from his body, it is all but dead.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for primeval current sorceries by 10-15%, but increases FP consumption for sorceries by 15%.",
+    "info": "Blue transparent crown of a Crystal Sorcerer."
+  },
+  {
+    "id": 680000,
+    "name": "White Mask",
+    "category": "armor",
+    "caption": "Bloodstained, faintly grinning white mask. Worn by war surgeons who were effectively mercy killers. The Lord of Blood's curse enlivens the wearer when bloodletting occurs.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all damage inflicted</font> by 10% for 20 seconds when <font color=\"#C84343\">blood loss</font> occurs nearby.",
+    "info": "Strange birch mask that hides one's expression."
+  },
+  {
+    "id": 690000,
+    "name": "Royal Remains Helm",
+    "category": "armor",
+    "caption": "Helm graced with gold human bones. Worn by the unspeaking adherent of Sir Gideon the All-Knowing. It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nRestores 2 HP per second while HP is below 18%.",
+    "info": "Mask that mediates via body of famed ancestor."
+  },
+  {
+    "id": 690100,
+    "name": "Royal Remains Armor",
+    "category": "armor",
+    "caption": "Armor graced with gold human bones. Worn by the unspeaking adherent of Sir Gideon the All-Knowing. It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nRestores 2 HP per second while HP is below 18%.",
+    "info": "Armor that mediates via body of famed ancestor."
+  },
+  {
+    "id": 690200,
+    "name": "Royal Remains Gauntlets",
+    "category": "armor",
+    "caption": "Gauntlets graced with gold human bones. Worn by the unspeaking adherent of Sir Gideon the All-Knowing. It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nRestores 2 HP per second while HP is below 18%.",
+    "info": "Gauntlets that mediate via body of famed ancestor."
+  },
+  {
+    "id": 690300,
+    "name": "Royal Remains Greaves",
+    "category": "armor",
+    "caption": "Greaves graced with gold human bones. Worn by the unspeaking adherent of Sir Gideon the All-Knowing. It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nRestores 2 HP per second while HP is below 18%.",
+    "info": "Greaves that mediate via body of famed ancestor."
+  },
+  {
+    "id": 740000,
+    "name": "Crimson Hood",
+    "category": "armor",
+    "caption": "A hooded cloak of vivid crimson. Worn by expatriated royalty. Such cloaks were gifted to those who departed on journeys without specific orders, to faraway lands from which they would never return. In other words, the gift of a cloak made it easier for undesirables to be on their way.  Roderika never once saw the guidance of grace.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">vigor</font> by 1.",
+    "info": "Hooded cloak of expatriated royalty."
+  },
+  {
+    "id": 741000,
+    "name": "Navy Hood",
+    "category": "armor",
+    "caption": "A hooded cloak of deep navy. Worn by expatriated royalty. Such cloaks were gifted to those who departed on missions to faraway lands, from which they would never return. But what choice did they have, having seen the guidance of grace?\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">mind</font> by 1.",
+    "info": "Hooded cloak of expatriated royalty."
+  },
+  {
+    "id": 810100,
+    "name": "Commoner's Garb",
+    "category": "armor",
+    "caption": "Garb with a thick embroidered cape attached. Standard wear for commoners of the Lands Between. The board hung from the neck depicts a sprawling tree, its roots and branches forming two holes. This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1.",
+    "info": "Garb of a rune cursed citizen."
+  },
+  {
+    "id": 811100,
+    "name": "Commoner's Garb (Altered)",
+    "category": "armor",
+    "caption": "Garb decorated with intricate embroidery. Standard wear for commoners of the Lands Between. The board hung from the neck depicts a sprawling tree, its roots and branches forming two holes. This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1.",
+    "info": "Garb of a rune cursed citizen."
+  },
+  {
+    "id": 812000,
+    "name": "Commoner's Simple Garb",
+    "category": "armor",
+    "caption": "Garb with a modest cloth cape attached. Standard wear for commoners of the Lands Between. The board hung from the neck depicts a sprawling tree, its roots and branches forming two holes. This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1.",
+    "info": "Crown of a rune cursed citizen."
+  },
+  {
+    "id": 812100,
+    "name": "Commoner's Simple Garb (Altered)",
+    "category": "armor",
+    "caption": "Modest garb made of cloth. Standard wear for commoners of the Lands Between. The board hung from the neck depicts a sprawling tree, its roots and branches forming two holes. This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1.",
+    "info": "Garb of a rune cursed citizen."
+  },
+  {
+    "id": 820000,
+    "name": "Envoy Crown",
+    "category": "armor",
+    "caption": "The soft bundle worn on the head by Oracle Envoys. Densely wrapped in several layers of cloth. No one knows what the cloth hides, but some claim to have heard a faint whimpering from inside. It must have been their imagination.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of bubble-based skills by 15%. This effect does not work for bubble-based sorceries.",
+    "info": "Head concealing silver robe."
+  },
+  {
+    "id": 830000,
+    "name": "Twinsage Glintstone Crown",
+    "category": "armor",
+    "caption": "One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy. Scholars of the Twinsage Conspectus were the elites of the academy, permitted to study and excel in sorceries of all kinds.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> by 6, but reduces <font color=\"#E0B985\">maximum HP</font> and <font color=\"#E0B985\">maximum stamina</font> by 9%.",
+    "info": "Stone mask of the Twin Crystal Sage."
+  },
+  {
+    "id": 831000,
+    "name": "Olivinus Glintstone Crown",
+    "category": "armor",
+    "caption": "One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy. The lineage of the Olivinus Conspectus began with the sorcerer Lusat, and its adherents continue his study of meteors.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> by 3, but reduces <font color=\"#E0B985\">maximum HP</font> by 9%.",
+    "info": "Stone mask of a Gold Amber Sage."
+  },
+  {
+    "id": 832000,
+    "name": "Lazuli Glintstone Crown",
+    "category": "armor",
+    "caption": "One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy. Scholars of the Lazuli Conspectus study Carian sorceries—a heterodox pursuit that views the moon as equal to the stars.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">dexterity</font> by 3, but reduces <font color=\"#E0B985\">maximum HP</font> by 18%.",
+    "info": "Stone mask of a Red Glintstone Sage."
+  },
+  {
+    "id": 833000,
+    "name": "Karolos Glintstone Crown",
+    "category": "armor",
+    "caption": "One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy. The Karolos Conspectus is the oldest of the academy's lineages of study, begat by the sorcerer Azur. Scholars who follow in his footsteps pursue the mysteries of comets.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> by 3, but reduces <font color=\"#E0B985\">maximum stamina</font> by 9%.",
+    "info": "Stone mask depicting the wise Karolos."
+  },
+  {
+    "id": 834000,
+    "name": "Witch's Glintstone Crown",
+    "category": "armor",
+    "caption": "One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy. This gentle-looking crown was granted to a scholar who excelled in her studies, which also merited the title of \"witch.\"\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">arcane</font> by 3, but reduces <font color=\"#E0B985\">maximum stamina</font> by 18%.",
+    "info": "Stone mask of a Green Glintstone Sage."
+  },
+  {
+    "id": 872000,
+    "name": "Okina Mask",
+    "category": "armor",
+    "caption": "A wooden mask that depicts an old man baring his teeth. The source of the sobriquet of the great swordsman of the Land of Reeds. The more he sharpened his mind, the more the absurdities of the world came into stark relief. And so Okina renounced it all, and rose to a higher plane. There was only himself. His katana. And its mastery. Before long, Okina became a demon of a swordsman.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">dexterity</font> by 3, but reduces <font color=\"#E0B985\">focus</font> by 50.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>.",
+    "info": "Mask adorned with a land of reeds veteran warrior."
+  },
+  {
+    "id": 910000,
+    "name": "Preceptor's Big Hat",
+    "category": "armor",
+    "caption": "Large hat with the movements of the stars drawn on the inside of the brim. Worn by the magic preceptors who served the Carian royals. Glintstone sorcerers are the descendants of astrologers, a fact that the Carians remain aware of. Even if their fate has been long severed from the stars.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">mind</font> by 3, but reduces <font color=\"#E0B985\">maximum stamina</font> by 9%.",
+    "info": "Hat worn by ruthless Chaplains."
+  },
+  {
+    "id": 911000,
+    "name": "Mask of Confidence",
+    "category": "armor",
+    "caption": "Mask with the mouth sewn shut with gold thread. When Radagon married Rennala, he ordered the Carian magic preceptors to don these masks. To make it clear that all of their matters were to be kept strictly private.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">arcane</font> by 3.",
+    "info": "Hood worn by ruthless Chaplains."
+  },
+  {
+    "id": 930100,
+    "name": "Raptor's Black Feathers",
+    "category": "armor",
+    "caption": "Robe crafted with the black feathers of a bird of prey. Worn by the assassins of Ravenmount. A ritual implement for transforming into a Deathbird, if only by imitation. \"We are birds of prey, bringers of death.\"\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for jump attacks by 10%.",
+    "info": "Cloak worn by followers of the deadly birds."
+  },
+  {
+    "id": 960000,
+    "name": "Consort's Mask",
+    "category": "armor",
+    "caption": "Mask worn by Tanith, Lady of the Volcano Manor, in the image of a foreign queen. Long ago, when Rykard first set eyes on Tanith, she was working as a dancer in a foreign land. Soon, he made her his consort. She was the only human to remain by his side when he became the serpent of blasphemy. In that moment, Tanith was truly charmed by him.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">dexterity</font> by 1.",
+    "info": "White mask of Tanith, Lady of the Volcano Manor."
+  },
+  {
+    "id": 961000,
+    "name": "Ruler's Mask",
+    "category": "armor",
+    "caption": "Mask in the image of a wizened sage. Customary dress among lords in a smaller nation. Such a mask illustrates the qualities of an ideal lord: chiefly, wise and possessing a certain defanged geniality. One at the center of society often finds these qualities most expedient.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1.",
+    "info": "Stone mask of Rya, servant to the Volcano Manor."
+  },
+  {
+    "id": 963000,
+    "name": "Marais Mask",
+    "category": "armor",
+    "caption": "Mask in the image of a white-haired young noble. Customarily worn by the head of House Marais. The Marais family has a dual history spanning generations, serving as both executioners and castellans of the Shaded Castle. This mask bears the likeness of the first of their line.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">arcane</font> by 1.",
+    "info": "An eerie white haired silver mask."
+  },
+  {
+    "id": 970000,
+    "name": "Omen Helm",
+    "category": "armor",
+    "caption": "Malformed helm resembling an Omen with its horns cut off. Worn by the Dung Eater, its form is a vision of the landscape of his mind, and of his appearance as he wished to see it. The heart of an Omen without the body to match; could there be any crueler existence? What does it matter, then, if the curse claims it all?\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of Omen Bairn and Regal Omen Bairn by 5%.",
+    "info": "Mask of a curse gnawed Omen."
+  },
+  {
+    "id": 970100,
+    "name": "Omen Armor",
+    "category": "armor",
+    "caption": "Malformed armor resembling an Omen with its horns cut off. Worn by the Dung Eater. The heavy, sun-shaped medallion represents both the guidance he once saw, and the ring to which it will one day lead.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of Omen Bairn and Regal Omen Bairn by 5%.",
+    "info": "Armor of a curse gnawed Omen."
+  },
+  {
+    "id": 970200,
+    "name": "Omen Gauntlets",
+    "category": "armor",
+    "caption": "Malformed gauntlets resembling an Omen with its horns cut off. Worn by the Dung Eater, their form is a vision of the landscape of his mind, and of his appearance as he wished to see it. The heart of an Omen without the body to match; could there be any crueler existence? What does it matter, then, if the curse claims it all?\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of Omen Bairn and Regal Omen Bairn by 5%.",
+    "info": "Gauntlets of a curse gnawed Omen."
+  },
+  {
+    "id": 970300,
+    "name": "Omen Greaves",
+    "category": "armor",
+    "caption": "Malformed greaves resembling an Omen with its horns cut off. Worn by the Dung Eater, their form is a vision of the landscape of his mind, and of his appearance as he wished to see it. The heart of an Omen without the body to match; could there be any crueler existence? What does it matter, then, if the curse claims it all?\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases the <font color=\"#E0B985\">attack power</font> of Omen Bairn and Regal Omen Bairn by 5%.",
+    "info": "Greaves of a curse gnawed Omen."
+  },
+  {
+    "id": 990000,
+    "name": "Hierodas Glintstone Crown",
+    "category": "armor",
+    "caption": "One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy. The crown of Hierodas was granted to scholars who engaged in nomadic study away from the academy.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">endurance</font> by 2, but reduces <font color=\"#E0B985\">maximum FP</font> by 9%.",
+    "info": "Eyepatch worn by a great sorcerer turned hermit."
+  },
+  {
+    "id": 1000000,
+    "name": "Haima Glintstone Crown",
+    "category": "armor",
+    "caption": "One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy. Scholars of the Haima Conspectus sought the power to quell conflict, and to this end studied the sorceries of cannon fire and the gavel.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">strength</font> by 2, but reduces <font color=\"#E0B985\">maximum FP</font> by 9%.",
+    "info": "Mask of an unaffiliated glintstone sorcerer."
+  },
+  {
+    "id": 1010000,
+    "name": "Snow Witch Hat",
+    "category": "armor",
+    "caption": "Witch's pointed hat, frigid and frozen through. Of a style associated with practitioners of heretical sorcery. Once worn by the snowy crone who the young Ranni encountered deep in the woods. She was a witch, and well versed in cold sorceries. It is said that the doll that houses Ranni's soul was modeled after her. That old witch was Ranni's secret mentor.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for cold sorceries by 10%.",
+    "info": "Hat worn by Enchantress Ranni."
+  },
+  {
+    "id": 1040000,
+    "name": "Radiant Gold Mask",
+    "category": "armor",
+    "caption": "A mask designed to resemble a blazing golden halo. Created and left behind by Lord Goldmask, a staunch pursuer of Golden Order fundamentalism. Its striking design represents both the brilliant inspiration that once shone upon him, and the vision of a ring that he will surely find at the end of his pursuit. \"To you who seek to shine as I do, wear it well!\"\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for Golden Order incantations by 10%.",
+    "info": "Mask worn by researchers of the Golden Order."
+  },
+  {
+    "id": 1060000,
+    "name": "Albinauric Mask",
+    "category": "armor",
+    "caption": "Mask made from the largely unaltered hide of a young Albinauric. A far cry from godskin, this Albinauric hide mask is the product of malicious mockery.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">arcane</font> by 4, but reduces the HP restoration from Flask of Crimson Tears by 10%.",
+    "info": "Helm modeled after the silent Frog People."
+  },
+  {
+    "id": 1080000,
+    "name": "Imp Head (Cat)",
+    "category": "armor",
+    "caption": "Head covering made from the largely unaltered head of an impish golem. Resembling a cat, it holds trace amounts of feline intelligence.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> by 2.",
+    "info": "Ancient mask with an animal motif."
+  },
+  {
+    "id": 1081000,
+    "name": "Imp Head (Fanged)",
+    "category": "armor",
+    "caption": "Head covering made from the largely unaltered head of an impish golem. Resembling a fanged demon, it holds trace amounts of bestial strength.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">strength</font> by 2.",
+    "info": "Ancient mask with an animal motif."
+  },
+  {
+    "id": 1082000,
+    "name": "Imp Head (Long-Tongued)",
+    "category": "armor",
+    "caption": "Head covering made from the largely unaltered head of an impish golem. Resembling a long-tongued demon, it holds trace amounts of vexatious dexterity.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">dexterity</font> by 2.",
+    "info": "Ancient mask with an animal motif."
+  },
+  {
+    "id": 1083000,
+    "name": "Imp Head (Corpse)",
+    "category": "armor",
+    "caption": "Head covering made from the largely unaltered head of an impish golem. Resembling the visage of a corpse, it holds trace amounts of lingering faith.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 2.",
+    "info": "Ancient mask with an animal motif."
+  },
+  {
+    "id": 1084000,
+    "name": "Imp Head (Wolf)",
+    "category": "armor",
+    "caption": "Head covering made from the largely unaltered head of an impish golem. Resembling a wolf, it holds trace amounts of lupine endurance.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">endurance</font> by 2.",
+    "info": "Ancient mask with an animal motif."
+  },
+  {
+    "id": 1085000,
+    "name": "Imp Head (Elder)",
+    "category": "armor",
+    "caption": "Head covering made from the largely unaltered head of an impish golem. Resembling an elder, it holds trace amounts of arcane knowledge.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">arcane</font> by 2.",
+    "info": "Ancient mask with an animal motif."
+  },
+  {
+    "id": 1090000,
+    "name": "Silver Tear Mask",
+    "category": "armor",
+    "caption": "Mask fashioned from the corpse of a formless Silver Tear, supported by its hardened, shed husk. To imitate the imitator is a cunning play indeed.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">arcane</font> by 8, but reduces <font color=\"#F395C4\">physical attack power</font> by 5%.",
+    "info": "Head covering formed from silver tears."
+  },
+  {
+    "id": 1120000,
+    "name": "Jar",
+    "category": "armor",
+    "caption": "Jar that fits cleanly over the head when upturned. Made with pride by Iron Fist Alexander.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all attack power</font> for throwing pot items by 15%.",
+    "info": "This sturdy jar might serve well as a helm."
+  },
+  {
+    "id": 1300000,
+    "name": "Nox Mirrorhelm",
+    "category": "armor",
+    "caption": "Helm fashioned from a crystal looking-glass. One among the Eternal City's ritual implements. Weak against striking attacks. Worn by those committed to high treason, it wards off the intervention of the Greater Will and its vassal Fingers.",
+    "info": "Shining helm decorated with a mirror."
+  },
+  {
+    "id": 1301000,
+    "name": "Iji's Mirrorhelm",
+    "category": "armor",
+    "caption": "Helm fashioned from a crystal looking-glass, said to have never left War Counselor Iji's head. Weak against striking attacks. Worn by those committed to high treason, it wards off the intervention of the Greater Will and its vassal Fingers. Iji was afraid. Terrified of his own treachery.",
+    "info": "Shining helm decorated on all sides with mirrors."
+  },
+  {
+    "id": 1600000,
+    "name": "Greathood",
+    "category": "armor",
+    "caption": "Hood far larger than the head it is meant to cover. A burial shroud of sorts for those who discover, at long last, the truth they sought. \"Yes, surely this is the moon that young Rennala gazed upon.\"\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">intelligence</font> and <font color=\"#E0B985\">faith</font> by 2, but reduces <font color=\"#E0B985\">maximum HP</font> by 9%.",
+    "info": "Hood with a mysterious silhouette."
+  },
+  {
+    "id": 1750000,
+    "name": "Haligtree Helm",
+    "category": "armor",
+    "caption": "Helm worn by soldiers sworn to the Haligtree. An iron helm graced by a crown of unalloyed gold.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1.",
+    "info": "Helm used by Knights of Miquella."
+  },
+  {
+    "id": 1820000,
+    "name": "Haligtree Knight Helm",
+    "category": "armor",
+    "caption": "Helm worn by knights sworn to the Haligtree. Graced by a crown of unalloyed gold.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 2.",
+    "info": "Helm used by Elite Knights of Miquella."
+  },
+  {
+    "id": 1880000,
+    "name": "Sacred Crown Helm",
+    "category": "armor",
+    "caption": "Flanged iron cap adorned with a crown of unalloyed gold. Worn by foot soldiers sworn to the Haligtree. Who is it that Miquella shall bless, if not the low and the meek?\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">faith</font> by 1.",
+    "info": "Helm used by Miquella's Soldiers."
+  },
+  {
+    "id": 1890000,
+    "name": "Omensmirk Mask",
+    "category": "armor",
+    "caption": "Mask with long, hideously twisted horns worn by the Omenkillers. Bears the smirking face of an elder, twisted in wicked delight. This visage is carved in the image of the evil spirits that haunt the Omen in their nightmares.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">strength</font> by 2.",
+    "info": "Mask worn by Executioners."
+  },
+  {
+    "id": 1900000,
+    "name": "Ash-of-War Scarab",
+    "category": "armor",
+    "caption": "Gray scarab worn directly on the head. These scarabs roll clumps of Ashes of War during their labors.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nReduces the FP consumption of skills by 15%, but increases <font color=\"#E0B985\">all damage received</font> by 10%.",
+    "info": "Mask made from a large, old white scarab's body."
+  },
+  {
+    "id": 1901000,
+    "name": "Incantation Scarab",
+    "category": "armor",
+    "caption": "Golden scarab worn directly on the head. These scarabs roll clumps of incantations during their labors. As a scarab approaches death, it abandons its rolled treasure and stretches its wings wide for the long journey to its home nest.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nReduces the FP consumption of incantations by 15%, but increases <font color=\"#E0B985\">all damage received</font> by 10%.",
+    "info": ""
+  },
+  {
+    "id": 1902000,
+    "name": "Glintstone Scarab",
+    "category": "armor",
+    "caption": "Blue-green scarab worn directly on the head. These scarabs roll clumps of sorcery during their labors.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nReduces the FP consumption of sorceries by 15%, but increases <font color=\"#E0B985\">all damage received</font> by 10%.",
+    "info": ""
+  },
+  {
+    "id": 1910000,
+    "name": "Crimson Tear Scarab",
+    "category": "armor",
+    "caption": "Red scarab worn directly on the head. The red scarabs roll clumps of crimson tears during their labors.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases HP restoration from Flask of Crimson Tears by 10%, but increases <font color=\"#E0B985\">all damage received</font> by 10%.",
+    "info": "Mask made from a large, old yellow scarab's body."
+  },
+  {
+    "id": 1920000,
+    "name": "Cerulean Tear Scarab",
+    "category": "armor",
+    "caption": "Blue scarab worn directly on the head. These scarabs roll clumps of cerulean tears during their labors.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases FP restoration from Flask of Cerulean Tears by 10%, but increases <font color=\"#E0B985\">all damage received</font> by 10%.",
+    "info": "Mask made from a large, old green scarab's body."
+  },
+  {
+    "id": 1930100,
+    "name": "Deathbed Dress",
+    "category": "armor",
+    "caption": "Extremely thin and sheer white dress worn by the Deathbed Companion as she embraces the dead. The touch of the fabric is exceedingly soft, so as not to harm even the most withered corpse, while still sharing her warmth.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nRestores 2 HP per second for nearby allies, but not for the wearer.",
+    "info": "Dress worn by Fia, the Deathbed Companion."
+  },
+  {
+    "id": 1930300,
+    "name": "Deathbed Smalls",
+    "category": "armor",
+    "caption": "Undergarment worn by Fia, the Deathbed Companion.",
+    "info": "Undergarment worn by Fia, the Deathbed Companion."
+  },
+  {
+    "id": 1940000,
+    "name": "Fia's Hood",
+    "category": "armor",
+    "caption": "Hood of black cloth that covers the whole head. Worn by Fia, the Deathbed Companion, on her journey after being exiled from her home. The fabric itself is soft as silk.",
+    "info": "Hood worn by Fia, the Deathbed Companion."
+  },
+  {
+    "id": 1940100,
+    "name": "Fia's Robe",
+    "category": "armor",
+    "caption": "Robe of black cloth that covers the entire body. Worn by Fia, the Deathbed Companion, on her journey after being exiled from her home. The fabric itself is soft as silk and thin enough that those embraced can feel every pulse; every bit of her warmth.",
+    "info": "Robe worn by Fia, the Deathbed Companion."
+  },
+  {
+    "id": 1941100,
+    "name": "Fia's Robe (Altered)",
+    "category": "armor",
+    "caption": "Robe of black cloth that covers the entire body. Worn by Fia, the Deathbed Companion, on her journey after being exiled from her home. The fabric itself is soft as silk and thin enough that those embraced can feel every pulse; every bit of her warmth.",
+    "info": "Gown worn by Fia, the Deathbed Companion."
+  },
+  {
+    "id": 2000000,
+    "name": "Rotten Duelist Helm",
+    "category": "armor",
+    "caption": "Bronze helm decorated with innumerable snakes, eaten through by scarlet rot. Worn by gladiators who were driven from the colosseum.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player.",
+    "info": "Scarlet-bronze helm adorned with many snakes."
+  },
+  {
+    "id": 2000300,
+    "name": "Rotten Duelist Greaves",
+    "category": "armor",
+    "caption": "Greaves wrapped with bronze snakes, eaten through by scarlet rot. Worn by gladiators who were driven from the colosseum.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player.",
+    "info": "Scarlet-bronze bracelet depicting coiled snakes."
+  },
+  {
+    "id": 2001100,
+    "name": "Rotten Gravekeeper Cloak (Altered)",
+    "category": "armor",
+    "caption": "Cloak wrapped with bronze snakes, eaten through by scarlet rot. Worn by gladiators who were driven from the colosseum.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nMakes enemies more likely to attack you rather than an online co-op partner. Has no effect in single player.",
+    "info": "Scarlet-bronze anklet depicting coiled snakes."
+  },
+  {
+    "id": 2010000,
+    "name": "Mushroom Crown",
+    "category": "armor",
+    "caption": "Mushrooms found growing all over the body. These overgrown mushrooms form a towering headpiece. Long ago, great lords served the scarlet rot. Perhaps such fungal bodies served as their crowns.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all damage inflicted</font> by 10% for 20 seconds when <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">scarlet rot</font> occurs nearby.",
+    "info": "Garland crown of large flowers rotted by poison."
+  },
+  {
+    "id": 2020000,
+    "name": "Black Dumpling",
+    "category": "armor",
+    "caption": "Mask forced on a victim's head to lend torture an extra degree of cruelty. It magnifies one's fears and makes them acutely aware of all forms of pain. When the Black Dumpling goes on, the torturer no longer seeks answers; only to inflict suffering without hope of relief.\n\n\n<font color=\"#C0B194\">Passive Effect:</font>\nIncreases <font color=\"#E0B985\">all damage inflicted</font> by 10% for 60 seconds when the wearer suffers from <font color=\"#EEAA2B\">madness</font>.",
+    "info": "Red cloth blindfold used to cover prisoners' eyes."
+  }
+]

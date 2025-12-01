@@ -52,14 +52,12 @@
     "id": 30300,
     "name": "Ash of War: Buckler Parry",
     "category": "ash",
-    "caption": "",
     "info": "Take a braced stance with the buckler and flick it out just before impact to deflect the attack, breaking the enemy stance and typically allowing a critical hit. Only parryable melee attacks can be turned aside, so spacing and timing still matter.\n\nBuckler Parry keeps the small-shield timing of 4 start-up frames and 5 active parry frames at 30 FPS (double at 60 FPS) but its deflection point occurs slightly earlier, letting you answer fast swings more reliably."
   },
   {
     "id": 30400,
     "name": "Ash of War: Parry",
     "category": "ash",
-    "caption": "",
     "info": "Use precise timing to swat aside a melee attack and stagger the foe, setting up a critical riposte if you are close enough. Only parryable melee strings can be deflected, so recognizing an opponent's moveset is key.\n\nSmall shields share 4 frames of start-up and 5 active parry frames at 30 FPS, daggers share 4 frames of start-up and 4 active frames, and medium shields, thrusting swords, curved swords, fists, and claws only give 2 active parry frames after the same 4-frame start-up."
   },
   {
@@ -262,14 +260,12 @@
     "id": 422000,
     "name": "Ash of War: Ghostflame Call",
     "category": "ash",
-    "caption": "",
     "info": "Drive the armament forward to manifest a burst of <font color=\"#57DBCE\">magic damage</font> ghostflame that applies 20 <font color=\"#9DD7FB\">frostbite accumulation</font>. A light attack follow-up leaves a burning trail that inflicts 20 per tick, while a strong attack enlarges the explosion to 80. All variants also apply the weapon hit <font color=\"#E0B985\">poise damage</font> on the opening thrust.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Base stance damage (no-input explosion):</font> 4\n<font color=\"#C0B194\">Base stance damage (light follow-up):</font> 5\n<font color=\"#C0B194\">Base stance damage (heavy follow-up):</font> 11\n<font color=\"#9DD7FB\">Base frostbite accumulation (no-input explosion):</font> 20\n<font color=\"#9DD7FB\">Base frostbite accumulation (trail, per tick):</font> 20\n<font color=\"#9DD7FB\">Base frostbite accumulation (heavy explosion):</font> 80"
   },
   {
     "id": 505000,
     "name": "Ash of War: The Poison Flower Blooms Twice",
     "category": "ash",
-    "caption": "",
     "info": "Conjure a stinger underfoot to stab the enemy, creating a shockwave on impact. If the stung enemy is already inflicted with any <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">rot</font>, deal an extra 5% of <font color=\"#E0B985\">maximum HP</font> plus 250 damage to them and purge the ailment.\n\n<font color=\"#F395C4\">Base physical damage (stab):</font> 150\n<font color=\"#F395C4\">Base physical damage (shockwave):</font> 70\n<font color=\"#EF7676\">Base scarlet rot accumulation:</font> 160"
   },
   {

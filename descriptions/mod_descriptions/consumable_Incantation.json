@@ -1,0 +1,608 @@
+[
+  {
+    "id": 5040,
+    "name": "Death Lightning",
+    "caption": "Incantation that channels the power of the ancient dragon Fortissax, now corrupted by Death.\n\nIt said that this golden lightning was wielded by Godwyn, who befriended Fortissax.",
+    "info": "Strike a small area around you with multiple lightning strikes which each leave behind a cloud of deadly mist for 3 seconds, causing <font color=\"#A17945\">death blight accumulation</font> 5 times per second. Charging increases damage and number of lightning strikes.\n\n<font color=\"#A17945\">Death blight:</font> Instant death. Only effective against Tarnished.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 513\n<font color=\"#FFE033\">Base lightning damage (charged):</font> 564\n<font color=\"#A17945\">Base death blight accumulation:</font> 30\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 6000,
+    "name": "Catch Flame",
+    "caption": "Incantation originating from a sinister prophecy.\n\nThe flame of ruin is anathema to the Erdtree. But prophets sometimes glimpse it within the faith all the same. Sadly when this occurs their sole reward is banishment.",
+    "info": "Conjure a small burst of flame directly in front of you. Can be cast without delay after performing another action and on horseback.\n\n<font color=\"#F48C25\">Base fire damage:</font> 225\n<font color=\"#E0B985\">Category:</font> Fire Monk"
+  },
+  {
+    "id": 6001,
+    "name": "O, Flame!",
+    "caption": "Incantation of the Fire Monks.\n\nThe Giants' Flame still smolders upon the distant northern mountaintop, and the Fire Monks are its guardians.",
+    "info": "Conjure a large burst of flame directly in front of you. Charging increases damage. Can be cast without delay after performing another action and on horseback.\n\n<font color=\"#F48C25\">Base fire damage:</font> 257\n<font color=\"#F48C25\">Base fire damage (charged):</font> 301\n<font color=\"#E0B985\">Category:</font> Fire Monk"
+  },
+  {
+    "id": 6010,
+    "name": "Flame Sling",
+    "caption": "Incantation originating from a sinister prophecy.\n\nThe flame of ruin is anathema to the Erdtree. But prophets sometimes glimpse it within the faith all the same. Sadly when this occurs their sole reward is banishment.",
+    "info": "Lob a fireball. Charging increases damage and creates a small explosion on impact. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage:</font> 202\n<font color=\"#F48C25\">Base fire damage (charged):</font> 255\n<font color=\"#E0B985\">Category:</font> Fire Monk"
+  },
+  {
+    "id": 6020,
+    "name": "Flame, Fall Upon Them",
+    "caption": "One of the incantations that draws directly from the power of the Fire Giants.\n\nThere is no record of this incantation in common prayerbooks. Only a select few prelates know of its existence.",
+    "info": "Lob a barrage of fireballs over a wide area. Charging increases damage and creates small explosions on impact. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage:</font> 245\n<font color=\"#F48C25\">Base fire damage (charged):</font> 286\n<font color=\"#E0B985\">Category:</font> Giants' Flame"
+  },
+  {
+    "id": 6030,
+    "name": "Whirl, O Flame!",
+    "caption": "Superior incantation of the Fire Monks.\n\nFire beguiles those who gaze into it. And so the guardians of the Flame are also its worshippers.",
+    "info": "Shoot a stream of fire forward in a spiral pattern. Charging increases damage and distance. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage:</font> 91\n<font color=\"#F48C25\">Base fire damage (charged):</font> 106\n<font color=\"#E0B985\">Category:</font> Fire Monk"
+  },
+  {
+    "id": 6040,
+    "name": "Flame, Cleanse Me",
+    "caption": "One of the incantations of the Fire Monks.\n\nThis incantation leaves the caster with subtle burns—a reminder that they must fear the flame.",
+    "info": "Cure <font color=\"#40BF40\">poison</font> and <font color=\"#EF7676\">scarlet rot</font> and alleviate all <font color=\"#40BF40\">poison accumulation</font> and <font color=\"#EF7676\">scarlet rot accumulation</font>. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Fire Monk"
+  },
+  {
+    "id": 6050,
+    "name": "Flame, Grant Me Strength",
+    "caption": "Superior incantation of the Fire Monks.\n\nThis incantation does not burn the caster, and so it is considered forbidden by the guardians of the Flame.",
+    "info": "Increase all <font color=\"#F395C4\">physical damage</font> and <font color=\"#F48C25\">fire damage inflicted</font> by 20% for 30 seconds. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Fire Monk"
+  },
+  {
+    "id": 6060,
+    "name": "Flame, Protect Me",
+    "caption": "The most ancient of the Fire Monks' incantations.\n\nIt is said that this incantation was used during the War against the Giants long ago, during which it protected the champions of the Erdtree.",
+    "info": "Increase <font color=\"#F48C25\">fire damage negation</font> by 60% for 70 seconds. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Fire Monk"
+  },
+  {
+    "id": 6100,
+    "name": "Giantsflame Take Thee",
+    "caption": "One of the incantations that draws directly from the power of the Fire Giants.\n\nHurls a massive ball of raging fire.\nCharging enhances potency and causes the ball of fire to explode.\n\nThere is no record of this incantation in common prayerbooks. Only a select few prelates know of its existence.",
+    "info": "Lob a large fireball which explodes on impact. Charging increases damage and creates a larger explosion on impact. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage:</font> 325\n<font color=\"#F48C25\">Base fire damage (charged):</font> 389\n<font color=\"#E0B985\">Category:</font> Giants' Flame"
+  },
+  {
+    "id": 6110,
+    "name": "Flame of the Fell God",
+    "caption": "This legendary incantation is one of several that draws directly from the power of the Fire Giants. Said to be inhabited by a fell god.\n\nArghanthy, the chief guardian of the Flame, had kept this incantation a well-kept secret until it was stolen by Adan. The fell god still lurks within the Fire Giants.",
+    "info": "Conjure a large, fiery orb which floats forward for a few seconds, or until impact, before exploding. The explosion leaves behind a fire which will burn on the ground for a few seconds. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage (explosion):</font> 352\n<font color=\"#F48C25\">Base fire damage (fire):</font> 35\n<font color=\"#E0B985\">Category:</font> Giants' Flame"
+  },
+  {
+    "id": 6120,
+    "name": "Burn, O Flame!",
+    "caption": "One of the incantations that draws directly from the power of the Fire Giants.\n\nThe Fire Giants borrowed from the power of a fell god, and still they were defeated. Yet their failure released them from their solitary curse: to serve as keepers of the Flame for eternity.",
+    "info": "Conjure a large number of flame pillars around you. Charging increases the number of flame pillars.\n\n<font color=\"#F48C25\">Base fire damage:</font> 288\n<font color=\"#E0B985\">Category:</font> Giants' Flame"
+  },
+  {
+    "id": 6210,
+    "name": "Black Flame",
+    "caption": "A black flame incantation of the Godskin Apostles.\n\nBlack flame is weighty. After dealing damage it continues to sap foes' HP for a very short time.",
+    "info": "Lob a fireball of black fire. In addition to the damage from the projectile, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds. Charging increases the projectile's damage and creates a small explosion on impact. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage:</font> 214\n<font color=\"#F48C25\">Base fire damage (charged):</font> 248\n<font color=\"#E0B985\">Category:</font> Godskin, Godslayer"
+  },
+  {
+    "id": 6220,
+    "name": "Surge, O Flame!",
+    "caption": "Superior incantation of the Fire Monks.\n\nThe Giants' Flame is the flame of ruin, capable of burning the Erdtree. And so, following the War against the Giants, its ruinous blaze was sealed, and guardians were appointed to watch over it.",
+    "info": "Spew a stream of fire forward. Hold to continue casting. Can be cast while in motion and on horseback.\n\n<font color=\"#F48C25\">Base fire damage:</font> 51\n<font color=\"#E0B985\">Category:</font> Fire Monk"
+  },
+  {
+    "id": 6230,
+    "name": "Scouring Black Flame",
+    "caption": "A black flame incantation of the Godskin Apostles.\n\nThe black flame could once slay gods. But when Maliketh sealed Destined Death, the true power of the black flame was lost.",
+    "info": "Sweep a wide area with black flame. In addition to the damage from the projectile, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds. Charging increases projectile damage and distance. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage:</font> 255\n<font color=\"#F48C25\">Base fire damage (charged):</font> 299\n<font color=\"#E0B985\">Category:</font> Godskin, Godslayer"
+  },
+  {
+    "id": 6240,
+    "name": "Black Flame Ritual",
+    "caption": "Superior black flame incantation of the Godskin Apostles.\n\nThe Gloam-Eyed Queen led the apostles. It is said that she was an Empyrean chosen by the Fingers.",
+    "info": "Conjure a circle of black flame pillars around you, which will persist for 4 seconds. In addition to the damage from the projectile, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds. Charging increases damage and size of the circle.\n\n<font color=\"#F48C25\">Base fire damage:</font> 106\n<font color=\"#F48C25\">Base fire damage (charged):</font> 109\n<font color=\"#E0B985\">Category:</font> Godskin, Godslayer"
+  },
+  {
+    "id": 6250,
+    "name": "Black Flame Blade",
+    "caption": "A black flame incantation of the Godskin Apostles.\n\nBlack flame is weighty. After dealing damage it continues to sap foes' HP for a very short time.",
+    "info": "Enchant right-hand armament. Adds 65 <font color=\"#F48C25\">fire damage</font> for 7 seconds. In addition to the damage from each attack, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds. Can be cast without delay after performing another action.\n\n<font color=\"#E0B985\">Category:</font> Godskin, Godslayer"
+  },
+  {
+    "id": 6260,
+    "name": "Black Flame's Protection",
+    "caption": "A black flame incantation of the Godskin Apostles.\n\nThe Apostles were all embraced by the Gloam-Eyed Queen, and the black flame was their armor within.",
+    "info": "Increase <font color=\"#F395C4\">physical damage negation</font> by 35%, but reduce all healing by 20% for 70 seconds. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Godskin, Godslayer"
+  },
+  {
+    "id": 6270,
+    "name": "Noble Presence",
+    "caption": "Ancient power of the Godskin Nobles.\n\nOnce a sign of the gods' wrath, this incantation became a trophy of the Nobles' god hunt.",
+    "info": "Produce a shockwave of black flame which may knock back nearby foes. In addition to the damage from the shockwave, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds. Charging increases damage and size of the shockwave, and may toss smaller enemies into the air.\n\n<font color=\"#F48C25\">Base fire damage:</font> 239\n<font color=\"#F48C25\">Base fire damage (charged):</font> 279\n<font color=\"#E0B985\">Category:</font> Godskin"
+  },
+  {
+    "id": 6300,
+    "name": "Bloodflame Talons",
+    "caption": "A Blood Oath incantation, granted by the Lord of Blood.",
+    "info": "Conjure a set bloodflame lacerations in front of you, which then explodes. In addition to the damage from the attack it causes 50 <font color=\"#C84343\">blood loss accumulation</font> per second for 2 seconds. Can be cast repeatedly.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F48C25\">Base fire damage (explosions):</font> 236\n<font color=\"#E0B985\">Category:</font> Blood Oath"
+  },
+  {
+    "id": 6310,
+    "name": "Bloodboon",
+    "caption": "Sacred incantation of Mohg, Lord of Blood.\n\nThe mother of truth craves wounds. When Mohg stood before her, deep underground, his accursed blood erupted with fire, and he was besotted with the defilement that he was born into.",
+    "info": "Scatter an arc of bloodflame which burns on the ground for 2.5 seconds. In addition to the damage from the attack it causes 30 <font color=\"#C84343\">blood loss accumulation</font> per second for 2 seconds. Can be cast while in motion.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F48C25\">Base fire damage (projectile):</font> 159\n<font color=\"#F48C25\">Base fire damage (fire):</font> 44\n<font color=\"#E0B985\">Category:</font> Blood Oath"
+  },
+  {
+    "id": 6320,
+    "name": "Bloodflame Blade",
+    "caption": "A Blood Oath incantation, granted by the Lord of Blood.",
+    "info": "Enchant right-hand armament. Adds 40 <font color=\"#F48C25\">fire damage</font> for 60 seconds. In addition to the damage from each attack it causes 20 <font color=\"#C84343\">blood loss accumulation</font> per second for 2 seconds. Can be cast while in motion.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#E0B985\">Category:</font> Blood Oath"
+  },
+  {
+    "id": 6330,
+    "name": "Barrier of Gold",
+    "caption": "One of the incantations of Erdtree Worship.\n\nThis incantation was used by the champions of the Erdtree in the First and Second Liurnian Wars, during which the red-haired Radagon joined the heroes' ranks.",
+    "info": "Increase <font color=\"#57DBCE\">magic damage negation</font> by 60% for you and nearby allies for 70 seconds. Hold to delay activation. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Erdtree"
+  },
+  {
+    "id": 6340,
+    "name": "Protection of the Erdtree",
+    "caption": "A superior incantation of Erdtree Worship.\n\nIncrease damage negation for all affinities except physical, for both the caster and nearby allies.\n\nIn the beginning, everything was in opposition to the Erdtree. But through countless victories in war, it became the embodiment of Order.",
+    "info": "Increase <font color=\"#57DBCE\">magic damage negation</font>, <font color=\"#F48C25\">fire damage negation</font>, <font color=\"#FFE033\">lightning damage negation</font>, and <font color=\"#F5EB89\">holy damage negation</font> for you and nearby allies by 30% for 70 seconds. Hold to delay activation. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Erdtree"
+  },
+  {
+    "id": 6400,
+    "name": "Rejection",
+    "caption": "Incantation of the Two Fingers' faithful.\n\nHark, Tarnished! If you truly walk in faith, you must be prepared to reject all else.",
+    "info": "Produce a shockwave which may knock back nearby foes. Charging increases the size of the shockwave.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6410,
+    "name": "Wrath of Gold",
+    "caption": "Superior Erdtree Worship incantation.\n\nThis incantation was discovered when the Elden Ring was shattered, and it was feared as a sign of the Erdtree's wrath.",
+    "info": "Produce a shockwave which may knock back nearby foes. Charging increases damage and the size of the shockwave.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 350\n<font color=\"#F5EB89\">Base holy damage (Charged):</font> 420\n<font color=\"#E0B985\">Category:</font> Erdtree"
+  },
+  {
+    "id": 6420,
+    "name": "Urgent Heal",
+    "caption": "Incantation of the Two Fingers' faithful.\n\nThe Two Fingers has high hopes for the Tarnished; that even if they should be wounded, even should they fall, they will continue to fight for their duty.",
+    "info": "Restore 115% of armament's incant scaling value as HP for you and 57% for nearby allies. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6421,
+    "name": "Heal",
+    "caption": "Incantation of the Two Fingers' faithful.\n\nThe Two Fingers has high hopes for the Tarnished; that even if they should be wounded, even should they fall, they will continue to fight for their duty.",
+    "info": "Restore 230% of armament's incant scaling value as HP for you and 115% for nearby allies. Hold to delay activation. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6422,
+    "name": "Great Heal",
+    "caption": "Superior incantation of the Two Fingers' faithful.\n\nThe Two Fingers has high hopes for the Tarnished; that even if they should be wounded, even should they fall, they will continue to fight for their duty.",
+    "info": "Restore 364% of armament's incant scaling value as HP for you and 207% for nearby allies. Hold to delay activation. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6423,
+    "name": "Lord's Heal",
+    "caption": "Incantation bestowed by the Two Fingers upon the Tarnished deemed worthy of becoming a lord.\n\nTarnished—O, Tarnished! Seek the Erdtree and stand before Marika, its Queen. Become the Elden Lord!",
+    "info": "Restore 420% of armament's incant scaling value as HP for you and 210% for nearby allies. Hold to delay activation. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6424,
+    "name": "Erdtree Heal",
+    "caption": "One of the ancient Erdtree incantations.\n\nThe Erdtree once flourished with abundance—yet it was only for a fleeting moment. Such is the course of all life.",
+    "info": "Restore 590% of armament's incant scaling value as HP for you and 398% for nearby allies. Hold to delay activation. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Erdtree"
+  },
+  {
+    "id": 6430,
+    "name": "Blessing's Boon",
+    "caption": "One of the ancient Erdtree incantations.\n\nBlessings once fell like tears from the Erdtree, and this incantation is but a lingering remnant of their power.",
+    "info": "Restore 8 HP per second for 90 seconds, and heals nearby allies by the same amount. Hold to delay activation. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Erdtree"
+  },
+  {
+    "id": 6431,
+    "name": "Blessing of the Erdtree",
+    "caption": "One of the ancient Erdtree incantations.\n\nThe Erdtree once flourished with abundance—yet it was only for a fleeting moment. Such is the course of all life.",
+    "info": "Restore 12 HP per second for 90 seconds, and heals nearby allies by the same amount. Hold to delay activation. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Erdtree"
+  },
+  {
+    "id": 6440,
+    "name": "Cure Poison",
+    "caption": "Incantation of the Two Fingers' faithful.\n\nThe Two Fingers has high hopes for the Tarnished; that even if they should be wounded, even should they fall, they will continue to fight for their duty.",
+    "info": "Cure <font color=\"#40BF40\">poison</font> and alleviate all <font color=\"#40BF40\">poison accumulation</font>. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6441,
+    "name": "Lord's Aid",
+    "caption": "Incantation bestowed by the Two Fingers upon the Tarnished deemed worthy of becoming a lord.\n\nHold to continue praying and delay activation.",
+    "info": "Cure <font color=\"#40BF40\">poison</font> and alleviate all <font color=\"#40BF40\">poison accumulation</font>, <font color=\"#C84343\">blood loss accumulation</font>, and <font color=\"#A698F4\">sleep accumulation</font> for you and nearby allies. Hold to delay activation. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6450,
+    "name": "Flame Fortification",
+    "caption": "Incantation of the Two Fingers' faithful.\n\nFollow the path that has been set for you, and you will make enemies of all others: the monks, the sorcerers, the ancient dragon knights, and the scions of gold. Heed me—the Lands Between offers no welcome to the Tarnished.",
+    "info": "Increase <font color=\"#F48C25\">fire damage negation</font> by 35%. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6460,
+    "name": "Magic Fortification",
+    "caption": "Incantation of the Two Fingers' faithful.\n\nFollow the path that has been set for you, and you will make enemies of all others: the monks, the sorcerers, the ancient dragon knights, and the scions of gold. Heed me—the Lands Between offers no welcome to the Tarnished.",
+    "info": "Increase <font color=\"#57DBCE\">magic damage negation</font> by 35%. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6470,
+    "name": "Lightning Fortification",
+    "caption": "Incantation of the Two Fingers' faithful.\n\nFollow the path that has been set for you, and you will make enemies of all others: the monks, the sorcerers, the ancient dragon knights, and the scions of gold. Heed me—the Lands Between offers no welcome to the Tarnished.",
+    "info": "Increase <font color=\"#FFE033\">lightning damage negation</font> by 35%. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6480,
+    "name": "Divine Fortification",
+    "caption": "Incantation of the Two Fingers' faithful.\n\nFollow the path that has been set for you, and you will make enemies of all others: the monks, the sorcerers, the ancient dragon knights, and the scions of gold. Heed me—the Lands Between offers no welcome to the Tarnished.",
+    "info": "Increase <font color=\"#F5EB89\">holy damage negation</font> by 35%. Can be cast while in motion and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6490,
+    "name": "Lord's Divine Fortification",
+    "caption": "Incantation taught to Gideon the All-Knowing by the Two Fingers.\n\nGideon gained true knowledge after his long exchange with the Two Fingers—discovering all had been broken long ago; that the trembling fingers, bent with age, and the Erdtree itself, were no exception.",
+    "info": "Increase <font color=\"#F5EB89\">holy damage negation</font> by 60% for you and nearby allies. Hold to delay activation. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6510,
+    "name": "Assassin's Approach",
+    "caption": "Incantation of the Two Fingers' servants, who once served as the assassins of the Roundtable Hold.\n\nThe assassins were charged with eliminating Tarnished who had strayed from guidance.",
+    "info": "Completely negate fall damage and sound made by the during movement for 30 seconds. Can be cast while in motion, while crouching, and on horseback.\n\nThe height at which a fall is fatal remains the same even while under the effects of this incantation.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6520,
+    "name": "Shadow Bait",
+    "caption": "Incantation of the Two Fingers' servants, who once served as the assassins of the Roundtable Hold.\n\nIt is said that those beguiled by the shadow see within it a hated foe.",
+    "info": "Lob a pale shadow which lures human enemies to attack it, even if they are already in combat. Can be cast while in motion, while crouching, and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6530,
+    "name": "Darkness",
+    "caption": "Incantation of the Two Fingers' servants, who once served as the assassins of the Roundtable Hold.\n\nThe assassins were themselves once Tarnished who had strayed from guidance, and they pursued their duty in the darkness that is without grace.",
+    "info": "Conjure a cloud of dark smoke for 3 seconds, which will cause any enemies hit by it to be unable to see you for 7 seconds. Can be cast while in motion, while crouching, and on horseback.\n\n<font color=\"#E0B985\">Category:</font> Two Fingers"
+  },
+  {
+    "id": 6600,
+    "name": "Golden Vow",
+    "caption": "An incantation of Erdtree Worship.\n\nThis incantation has been taught to knights of the royal capital for generations, and knights sent on distant expeditions lean on it as a source of courage.",
+    "info": "Increase <font color=\"#E0B985\">all damage inflicted</font> by 15% and <font color=\"#E0B985\">all damage negation</font> by 10% for you and nearby allies for 80 seconds. Hold to delay activation. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Erdtree"
+  },
+  {
+    "id": 6700,
+    "name": "Discus of Light",
+    "caption": "One of the incantations of the Golden Order fundamentalists.\n\nA gift from the young Miquella to his father, Radagon.",
+    "info": "Shoot a small ring of light which goes forward then returns to you. Can be cast repeatedly and 2 rings can exist at a time. Can be cast on horseback.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 114\n<font color=\"#E0B985\">Category:</font> Golden Order"
+  },
+  {
+    "id": 6701,
+    "name": "Triple Rings of Light",
+    "caption": "One of the incantations of the Golden Order fundamentalists.\n\nA gift from the young Miquella to his father, Radagon.",
+    "info": "Shoot 3 large rings of light which goes forward at different angles then return to you. Can be cast repeatedly and 6 rings can exist at a time. Can be cast on horseback.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 134\n<font color=\"#E0B985\">Category:</font> Golden Order"
+  },
+  {
+    "id": 6710,
+    "name": "Radagon's Rings of Light",
+    "caption": "One of the incantations of the Golden Order fundamentalists. A gift of gratitude to the young Miquella from his father, Radagon.\n\nAnd yet, the young Miquella abandoned fundamentalism, for it could do nothing to treat Malenia's accursed rot. This was the beginning of unalloyed gold.",
+    "info": "Conjure a ring of light around you which expands outward in every direction. Charging increases damage and distance. Can be cast on horseback.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 282\n<font color=\"#F5EB89\">Base holy damage (charged):</font> 333\n<font color=\"#E0B985\">Category:</font> Golden Order"
+  },
+  {
+    "id": 6720,
+    "name": "Elden Stars",
+    "caption": "This legendary incantation is the most ancient of those that derive from the Erdtree.\n\nIt is said that long ago, the Greater Will sent a golden star bearing a beast into the Lands Between, which would later become the Elden Ring.",
+    "info": "Conjure an orb of light which will float around while shooting a barrage of holy projectiles for up to 14 seconds, or until impact, and then explode. Can be cast on horseback.\n\n<font color=\"#F5EB89\">Base holy damage (orb):</font> 61\n<font color=\"#F5EB89\">Base holy damage (projectiles):</font> 20\n<font color=\"#F5EB89\">Base holy damage (explosion):</font> 199\n<font color=\"#E0B985\">Category:</font> Erdtree"
+  },
+  {
+    "id": 6730,
+    "name": "Law of Regression",
+    "caption": "Incantation of the Golden Order fundamentalists. One of the key fundamentals.\n\nThe fundamentalists describe the Golden Order through the powers of regression and causality. Regression is the pull of meaning; that all things yearn eternally to converge.",
+    "info": "Cure <font color=\"#40BF40\">poison</font>, <font color=\"#EF7676\">scarlet rot</font>, <font color=\"#9DD7FB\">frostbite</font>, and <font color=\"#C18B8B\">acid debuff</font>. Alleviate all <font color=\"#40BF40\">poison accumulation</font>, <font color=\"#EF7676\">scarlet rot accumulation</font>, <font color=\"#9DD7FB\">frostbite accumulation</font>, <font color=\"#C84343\">blood loss accumulation</font>, <font color=\"#A698F4\">sleep accumulation</font>, <font color=\"#EEAA2B\">madness accumulation</font>, and <font color=\"#A17945\">death blight accumulation</font>. Remove all active special effects, such as buffs or debuffs from spells, from everyone nearby, including your own. Reveal mimicry of any form. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Golden Order"
+  },
+  {
+    "id": 6740,
+    "name": "Immutable Shield",
+    "caption": "One of the incantations of the Golden Order fundamentalists.\n\nTwo concepts form the basis for Golden Order fundamentalism. One is the law of regression, to which this incantation relates.",
+    "info": "Enchant left-hand armament. Makes you completely immune to <font color=\"#57DBCE\">magic damage</font>, <font color=\"#F48C25\">fire damage</font>, <font color=\"#FFE033\">lightning damage</font>, <font color=\"#F5EB89\">holy damage</font>, <font color=\"#40BF40\">poison accumulation</font>, <font color=\"#EF7676\">scarlet rot accumulation</font>, <font color=\"#9DD7FB\">frostbite accumulation</font>, <font color=\"#C84343\">blood loss accumulation</font>, <font color=\"#A698F4\">sleep accumulation</font>, <font color=\"#EEAA2B\">madness accumulation</font>, and <font color=\"#A17945\">death blight accumulation</font> from blocked attacks for 30 seconds.\n\n<font color=\"#E0B985\">Category:</font> Golden Order"
+  },
+  {
+    "id": 6750,
+    "name": "Litany of Proper Death",
+    "caption": "One of the incantations of the Golden Order fundamentalists. Used by hunters of Those Who Live in Death.\n\nThe role of the hunters is to stamp out defiled reason—all for the perfection of the Golden Order.",
+    "info": "Shoot an arc of light along the ground in front of you. Inflicts 900% more damage to Those Who Live in Death.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 56\n<font color=\"#E0B985\">Category:</font> Golden Order"
+  },
+  {
+    "id": 6760,
+    "name": "Law of Causality",
+    "caption": "One of the incantations of the Golden Order fundamentalists. One of the key fundamentals.\n\nThe fundamentalists describe the Golden Order through the powers of regression and causality. Causality is the pull between meanings; that which links all things in a chain of relation.",
+    "info": "Conjure a small ring of light on you which will explode after receiving 5 attacks. This does not include damage from status effects, damage over time effects, self-inflicted damage, or attacks where 100% of the damage was blocked using a shield. The resulting explosion doesn't harm yourself. The ring will disappear after 120 seconds if the explosion is not triggered. Can be cast on horseback.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 487\n<font color=\"#E0B985\">Category:</font> Golden Order"
+  },
+  {
+    "id": 6770,
+    "name": "Order's Blade",
+    "caption": "One of the incantations of the Golden Order fundamentalists.\nUsed by hunters of Those Who Live in Death.\n\nEnchants armament held in the right hand with holy-affinity attacks. This incantation is especially damaging to Those Who Live in Death. Any felled by this incantation cannot be revived.\n\nThe role of the hunters is to stamp out defiled reason—all for the perfection of the Golden Order.",
+    "info": "Enchant right-hand armament. Adds 75% of casting armament's incant scaling value as <font color=\"#F5EB89\">holy damage</font> for 90 seconds. Inflicts 100% more damage to Those Who Live in Death.\n\n<font color=\"#E0B985\">Category:</font> Golden Order"
+  },
+  {
+    "id": 6780,
+    "name": "Order Healing",
+    "caption": "One of the incantations of the Golden Order fundamentalists. Used by hunters of Those Who Live in Death.\n\nThe noble Goldmask lamented what had become of the hunters. How easy it is for learning and learnedness to be reduced to the ravings of fanatics; all the good and the great wanted, in their foolishness, was an absolute evil to contend with. Does such a notion exist in the fundamentals of Order?",
+    "info": "Alleviate all <font color=\"#A17945\">death blight accumulation</font>. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Golden Order"
+  },
+  {
+    "id": 6800,
+    "name": "Bestial Sling",
+    "caption": "Incantation taught by Gurranq, the Beast Clergyman.\n\nIt is said that in the time before the Erdtree, stones were the first weapons of the beasts who had gained intelligence.",
+    "info": "Quickly shoot a barrage of rocks in a cone-shaped pattern. Can be cast without delay after performing another action. Can be cast on horseback.\n\n<font color=\"#F395C4\">Base physical damage:</font> 87\n<font color=\"#E0B985\">Category:</font> Bestial"
+  },
+  {
+    "id": 6810,
+    "name": "Stone of Gurranq",
+    "caption": "Superior incantation taught by Gurranq, the Beast Clergyman.\n\nLong ago, Gurranq was a beast of such terrifying ferocity that his former name meant \"Death of the Demigods.\"",
+    "info": "Shoot a boulder. Can be cast repeatedly and on horseback.\n\n<font color=\"#F395C4\">Base physical damage:</font> 245\n<font color=\"#E0B985\">Category:</font> Bestial"
+  },
+  {
+    "id": 6820,
+    "name": "Beast Claw",
+    "caption": "Incantation taught by Gurranq, the Beast Clergyman.\n\nThis incantation represents the fury of Gurranq, his bestial nature returned, as much as it does his restless agitation.",
+    "info": "Shoot 5 claws along the ground in a cone-shaped pattern. Charging increases damage, size of claws, and spreads claws out more. Can be cast on horseback.\n\n<font color=\"#F395C4\">Base physical damage:</font> 193\n<font color=\"#F395C4\">Base physical damage (charged):</font> 222\n<font color=\"#E0B985\">Category:</font> Bestial"
+  },
+  {
+    "id": 6830,
+    "name": "Gurranq's Beast Claw",
+    "caption": "Superior incantation taught by Gurranq, the Beast Clergyman.\n\nLong ago, Gurranq was a beast of such terrifying ferocity that his former name meant \"Death of the Demigods.\"",
+    "info": "Shoot claws along the ground in every direction around you.\n\n<font color=\"#F395C4\">Base physical damage:</font> 225\n<font color=\"#E0B985\">Category:</font> Bestial"
+  },
+  {
+    "id": 6840,
+    "name": "Bestial Vitality",
+    "caption": "Incantation taught by Gurranq, the Beast Clergyman.\n\nHaving gained intelligence, the beasts must have felt how their wildness slipped away as civilization took hold.",
+    "info": "Restore 5 HP per second for 120 seconds. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Bestial"
+  },
+  {
+    "id": 6850,
+    "name": "Bestial Constitution",
+    "caption": "Incantation taught by Gurranq, the Beast Clergyman.\n\nHaving gained intelligence, the beasts must have felt how their wildness slipped away as civilization took hold.",
+    "info": "Alleviate all <font color=\"#C84343\">blood loss accumulation</font> and <font color=\"#9DD7FB\">frostbite accumulation</font>. Can be cast on horseback.\n\n<font color=\"#E0B985\">Category:</font> Bestial"
+  },
+  {
+    "id": 6900,
+    "name": "Lightning Spear",
+    "caption": "One of the incantations of the capital's ancient dragon cult.\n\nLong ago, Godwyn the Golden defeated the ancient dragon Fortissax, and befriended his fallen foe—an event that gave rise to the ancient dragon cult in the capital.",
+    "info": "Conjure a bolt of lightning and throws it. Charging causes lightning to strike from the sky at the point of impact which increases the damage inflicted. Can be cast on horseback.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 234\n<font color=\"#FFE033\">Base lightning damage (charged):</font> 293\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 6910,
+    "name": "Ancient Dragons' Lightning Strike",
+    "caption": "A secret incantation of the capital's ancient dragon cult.\n\nSpoken of in legend, red lightning is the weapon wielded by the ancient dragons.",
+    "info": "Conjure red lightning strikes from the sky in every direction around you followed by 4 subsequent lightning strikes in every direcion that each expand outward. Charging increases damage, number of lightning strikes, and distance. Can be cast on horseback.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 317\n<font color=\"#FFE033\">Base lightning damage (charged):</font> 379\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 6920,
+    "name": "Lightning Strike",
+    "caption": "One of the incantations of the capital's ancient dragon cult.\n\nAncestors of the modern dragons, the ancient dragons had scales of Gravel Stone and wielded lightning as their weapon. It is said that once they attacked Leyndell, the Royal Capital.",
+    "info": "Conjure several lightning strikes from the sky in front of you. Can be cast repeatedly and on horseback.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 246\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 6921,
+    "name": "Frozen Lightning Spear",
+    "caption": "Incantation that channels the power of the Dragonkin Soldiers.\n\nThe Dragonkin were born in the Eternal City, where they knew no true sky, nor true lightning. Instead, ice lightning was their weapon.",
+    "info": "Conjure a bolt of icy lightning and throws it into the ground directly in front of you then conjures a barrage of icy lightning strikes from the sky in a cone-shaped pattern.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#FFE033\">Base lightning damage (bolt):</font> 240\n<font color=\"#FFE033\">Base lightning damage (strikes):</font> 307\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 120\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 6930,
+    "name": "Honed Bolt",
+    "caption": "One of the incantations of the capital's ancient dragon cult.\n\nLong ago, Godwyn the Golden defeated the ancient dragon Fortissax, and befriended his fallen foe—an event that gave rise to the ancient dragon cult in the capital.",
+    "info": "Conjure a lightning strike from the sky. Can be cast repeatedly and on horseback.\n\n<font color=\"#FFE033\">Base lightning damage:</font> 205\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 6940,
+    "name": "Ancient Dragons' Lightning Spear",
+    "caption": "A secret incantation of the capital's ancient dragon cult.\n\nSpoken of in legend, red lightning is the weapon wielded by the ancient dragons.",
+    "info": "Conjure a bolt of red lightning and throws it into the ground directly in front of you which causes an explosion followed by lightning running along the ground in all 4 cardinal directions.\n\n<font color=\"#FFE033\">Base lightning damage (bolt):</font> 360\n<font color=\"#FFE033\">Base lightning damage (explosion):</font> 122\n<font color=\"#FFE033\">Base lightning damage (ground):</font> 285\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 6941,
+    "name": "Fortissax's Lightning Spear",
+    "caption": "Incantation that channels the power of the ancient dragon Fortissax.\n\nDuring the War of the Ancient Dragons, these twin red lightning stakes were the hallmark of one ancient dragon who was called the mightiest boulderstone.",
+    "info": "Conjure 2 bolts of red lightning and throws them into the ground directly in front of you, one after the other, which each cause an explosion followed by lighting running along the ground in all 4 cardinal directions. The second bolt is slightly stronger than the first.\n\n<font color=\"#FFE033\">Base lightning damage (bolt):</font> 367, 374\n<font color=\"#FFE033\">Base lightning damage (explosion):</font> 122, 123\n<font color=\"#FFE033\">Base lightning damage (ground):</font> 288, 292\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 6950,
+    "name": "Lansseax's Glaive",
+    "caption": "Incantation that channels the power of the ancient dragon Lansseax.\n\nLansseax was the sister of Fortissax. It is said that she took the form of a human to commune with the knights as a priestess of the ancient dragon cult.",
+    "info": "Conjure a glaive of red lightning and swipe it horizontally, followed by a very wide arc of red lightning running along the ground.\n\n<font color=\"#FFE033\">Base lightning damage (glaive):</font> 325\n<font color=\"#FFE033\">Base lightning damage (ground):</font> 167\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 6960,
+    "name": "Electrify Armament",
+    "caption": "One of the incantations of the capital's ancient dragon cult.\n\nLong ago, Godwyn the Golden defeated the ancient dragon Fortissax, and befriended his fallen foe—an event that gave rise to the ancient dragon cult in the capital.",
+    "info": "Enchant right-hand armament. Adds 75% of casting armament's incant scaling value as <font color=\"#FFE033\">lightning damage</font> for 90 seconds.\n\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 6970,
+    "name": "Vyke's Dragonbolt",
+    "caption": "Incantation of Vyke, knight of the Roundtable Hold.\n\nOf all the knights, Vyke the Dragonspear was the one Lansseax loved the most.",
+    "info": "Enchant right-hand armament and your body. Adds 75% of casting armament's incant scaling value as <font color=\"#FFE033\">lightning damage</font> and increases <font color=\"#E0B985\">maximum equip load</font> by 15%, but reduces <font color=\"#FFE033\">lightning damage negation</font> by 35% for 90 seconds.\n\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 6971,
+    "name": "Dragonbolt Blessing",
+    "caption": "Superior incantation of the capital's ancient dragon cult.\n\nSummons lightning to bolster the caster's body. Attacks become easier to deflect and resistance to all ailments is increased. However, lightning damage negation will be reduced.\n\nOnly those loved by dragons can survive the ordeal of cladding their bodies in lightning.",
+    "info": "Enchant your body. Increases <font color=\"#E0B985\">all resistances</font> by 30 and lighter <font color=\"#F395C4\">physical attacks</font> from enemies will also cause the enemy to briefly stagger backwards after hitting you, but reduces <font color=\"#FFE033\">lightning damage negation</font> by 35% for 70 seconds.\n\n<font color=\"#E0B985\">Category:</font> Dragon Cult"
+  },
+  {
+    "id": 7000,
+    "name": "Dragonfire",
+    "caption": "One of the incantations of Dragon Communion.\n\nIncantation of those who have hunted dragons and feasted upon their hearts. Theirs is a pure and overwhelming power.",
+    "info": "Conjure a dragon head that breathes fire, which inflicts <font color=\"#F48C25\">fire damage</font> 2 times per second. Hold to extend duration. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage:</font> 144\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7001,
+    "name": "Agheel's Flame",
+    "caption": "Superior incantation of Dragon Communion. Channels the power of the flying dragon Agheel.\n\nThe dead gazed at the skies over the lakes of Limgrave, praying that the dragons' flames would burn them to ash.",
+    "info": "Jump up and conjure a dragon head that breathes fire, which inflicts <font color=\"#F48C25\">fire damage</font> 2 times per second. Hold to extend duration. Can be cast while in the air.\n\n<font color=\"#F48C25\">Base fire damage:</font> 169\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7010,
+    "name": "Magma Breath",
+    "caption": "One of the incantations of Dragon Communion.\n\nThose who have performed the Dragon Communion will find their humanity slowly slipping away. Once they fully succumb to their fate, they are left no more than wyrms that crawl the earth.",
+    "info": "Conjure a wyrm head to lob a ball of magma which will remain on the ground where it lands for 6 seconds. Allows one follow-up cast, which will be the same as the first. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage (projectile):</font> 223\n<font color=\"#F48C25\">Base fire damage (ground):</font> 34\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7011,
+    "name": "Theodorix's Magma",
+    "caption": "Superior incantation of Dragon Communion. Channels the power of the great wyrm Theodorix.\n\nThe name of the ancient troll warrior Theodorix lives on—as a hero of the War against the Giants.",
+    "info": "Conjure a great wyrm head to lob a lerge ball of magma which will spread on the ground where it lands and remain for for 6 seconds. Allows one follow-up cast, which will be the same as the first. Can be cast on horseback.\n\n<font color=\"#F48C25\">Base fire damage (projectile):</font> 315\n<font color=\"#F48C25\">Base fire damage (ground):</font> 40\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7020,
+    "name": "Dragonice",
+    "caption": "One of the incantations of Dragon Communion.\n\nThose extraordinary individuals who perpetuate Dragon Communion are called the dragon-hearted.",
+    "info": "Conjure a dragon head that breathes an icy mist which inflicts <font color=\"#57DBCE\">magic damage</font> and <font color=\"#9DD7FB\">frostbite accumulation</font> 2 times per second. Hold to extend duration. Can be cast on horseback.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 135\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 110\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7021,
+    "name": "Borealis's Mist",
+    "caption": "Superior incantation of Dragon Communion. Channels the power of Borealis, the Freezing Fog.\n\nThe ice dragons were once lords of the mountaintops long ago, until they were defeated by the Fire Giants and chased from the peak.",
+    "info": "Jump up and conjure a dragon head that breathes an icy mist which inflicts <font color=\"#57DBCE\">magic damage</font> and <font color=\"#9DD7FB\">frostbite accumulation</font> 2 times per second. Hold to extend duration. Can be cast while in the air.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 158\n<font color=\"#9DD7FB\">Base frostbite accumulation:</font> 110\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7030,
+    "name": "Rotten Breath",
+    "caption": "One of the incantations of Dragon Communion.\n\nThose extraordinary individuals who perpetuate Dragon Communion are called the dragon-hearted.",
+    "info": "Conjure a dragon head that breathes a rotten mist which inflicts <font color=\"#F395C4\">physical damage</font> and <font color=\"#EF7676\">scarlet rot accumulation</font> 2 times per second. Hold to extend duration. Can be cast on horseback.\n\n<font color=\"#EF7676\">Scarlet rot:</font> Inflicts damage equal to 0.33% of <font color=\"#E0B985\">maximum HP</font> plus 33, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 131\n<font color=\"#EF7676\">Base scarlet rot accumulation:</font> 65\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7031,
+    "name": "Ekzykes's Decay",
+    "caption": "Superior incantation of Dragon Communion.\nChannels the power of Ekzykes, the Decaying.\n\nEkzykes, Dragon Communion Revenger, did not forget his hatred even as he succumbed to the scarlet rot.",
+    "info": "Jump up and conjure a dragon head that breathes a rotten mist which inflicts <font color=\"#F395C4\">physical damage</font> and <font color=\"#EF7676\">scarlet rot accumulation</font> 2 times per second. Hold to extend duration. Can be cast while in the air.\n\n<font color=\"#EF7676\">Scarlet rot:</font> Inflicts damage equal to 0.33% of <font color=\"#E0B985\">maximum HP</font> plus 33, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage:</font> 155\n<font color=\"#EF7676\">Base scarlet rot accumulation:</font> 65\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7040,
+    "name": "Glintstone Breath",
+    "caption": "One of the incantations of Dragon Communion.\n\nThose extraordinary individuals who perpetuate Dragon Communion are called the dragon-hearted.",
+    "info": "Conjure a dragon head that breathes magical flames, which inflicts <font color=\"#57DBCE\">magic damage</font> 2 times per second. Hold to extend duration. Can be cast on horseback.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 159\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7041,
+    "name": "Smarag's Glintstone Breath",
+    "caption": "Superior incantation of Dragon Communion.\nChannels the power of Smarag, the Glintstone Dragon.\n\nSmarag was a devourer of sorcerers, and over time, his body became corrupted by their glintstones.",
+    "info": "Jump up and conjure a dragon head that breathes magical flames, which inflicts <font color=\"#57DBCE\">magic damage</font> 2 times per second. Hold to extend duration. Can be cast while in the air.\n\n<font color=\"#57DBCE\">Base magic damage:</font> 188\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7050,
+    "name": "Placidusax's Ruin",
+    "caption": "Power gleaned from the remembrance of Dragonlord Placidusax.\n\nThese are the dying wails of the Dragonlord who once dwelled eternally beyond time.",
+    "info": "Cause an explosion of red lightning around you then jump up and conjure a dragon head which shoots a golden beam in a wide arc in front of you. Can be cast while in the air.\n\n<font color=\"#F48C25\">Base fire damage (beam):</font> 356\n<font color=\"#FFE033\">Base lightning damage (explosion):</font> 241\n<font color=\"#E0B985\">Category:</font> None"
+  },
+  {
+    "id": 7060,
+    "name": "Dragonclaw",
+    "caption": "One of the incantations of Dragon Communion.\n\nIncantation of those who have hunted dragons and feasted upon their hearts. Theirs is a pure and overwhelming power.",
+    "info": "Conjure a dragon claw and slam in to the ground to cause a shockwave. Allows one follow-up cast, which is slightly stronger.\n\n<font color=\"#F395C4\">Base physical damage (claw):</font> 395, 410\n<font color=\"#F395C4\">Base physical damage (shockwave):</font> 253, 263\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7080,
+    "name": "Dragonmaw",
+    "caption": "One of the incantations of Dragon Communion.\n\nIncantation of those who have hunted dragons and feasted upon their hearts. Theirs is a pure and overwhelming power.",
+    "info": "Conjure a dragon head which will bite in front of you.\n\n<font color=\"#F395C4\">Base physical damage:</font> 628\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7090,
+    "name": "Greyoll's Roar",
+    "caption": "Superior incantation of Dragon Communion. Channels the power of Greyoll, the Elder Dragon. An incantation of legendary status.\n\nGreyoll was the mother of all dragons, dwarfing all who stood before her like a looming mountain.",
+    "info": "Conjure a dragon head which lets out a loud roar. Reduces <font color=\"#E0B985\">all damage inflicted</font> by 15% and <font color=\"#E0B985\">all damage negation</font> by 10% for all nearby enemies for 60 seconds.\n\n<font color=\"#E0B985\">Category:</font> Dragon Communion"
+  },
+  {
+    "id": 7200,
+    "name": "Pest Threads",
+    "caption": "Incantation of the servants of rot.\n\nA technique of the pale pests who crawl through the lands afflicted by scarlet rot; the abandoned children of the goddess.\n\"Do you have an interest in rot incantations?\"",
+    "info": "Shoot a large number of projectiles in an arc above you, which then fly toward the target.\n\n<font color=\"#F395C4\">Base physical damage:</font> 60\n<font color=\"#E0B985\">Category:</font> Servants of Rot"
+  },
+  {
+    "id": 7210,
+    "name": "Swarm of Flies",
+    "caption": "A Blood Oath incantation, shared from the Lord of Blood's power.\n\nThe new palace of the Lord of Blood lies in a swamp of festering blood, and these flies are said to spawn from excrement in that land.",
+    "info": "Conjure a swarm of bloodflies which attack the target 6 times with alternating damage. Can be cast while in motion and on horseback.\n\n<font color=\"#C84343\">Blood loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F395C4\">Base physical damage:</font> 52, 15, 52, 15, 52, 15\n<font color=\"#C84343\">Base blood loss accumulation:</font> 0, 70, 0, 70, 0, 70\n<font color=\"#E0B985\">Category:</font> Blood Oath"
+  },
+  {
+    "id": 7220,
+    "name": "Poison Mist",
+    "caption": "Incantation of the servants of rot.\n\nThose who dwell within poison know rot all too well. The death that begets life, that comes to all equally. That is to say: it is the cycle of rebirth put into practice.",
+    "info": "Conjure a cloud of poison mist which lasts for 15 seconds and causes <font color=\"#40BF40\">poison accumulation</font> 5 times per second. Can be cast while in motion and on horseback.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\n<font color=\"#40BF40\">Base poison accumulation:</font> 20\n<font color=\"#E0B985\">Category:</font> Servants of Rot"
+  },
+  {
+    "id": 7230,
+    "name": "Poison Armament",
+    "caption": "Incantation of the servants of rot.\n\nThose who dwell within poison know rot all too well. The death that begets life, that comes to all equally. That is to say: it is the cycle of rebirth put into practice.",
+    "info": "Enchant right-hand armament. Causes 70 <font color=\"#40BF40\">poison accumulation</font> per attack for 60 seconds. Can be cast while in motion.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.07% of <font color=\"#E0B985\">maximum HP</font> plus 7, every second for 90 seconds.\n\n<font color=\"#E0B985\">Category:</font> Servants of Rot"
+  },
+  {
+    "id": 7240,
+    "name": "Scarlet Aeonia",
+    "caption": "Technique of Malenia, the Goddess of Rot.\n\nEach time the scarlet flower blooms, Malenia's rot advances. It has bloomed twice already. With the third bloom, she will become a true goddess.",
+    "info": "Incarnate a giant flower that blooms into an explosion of scarlet rot mist which lingers for 4 seconds.\n\n<font color=\"#EF7676\">Scarlet rot:</font> Inflicts damage equal to 0.33% of <font color=\"#E0B985\">maximum HP</font> plus 13, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage (explosion):</font> 362\n<font color=\"#F395C4\">Base physical damage (mist):</font> 60\n<font color=\"#EF7676\">Base scarlet rot accumulation (explosion):</font> 150\n<font color=\"#EF7676\">Base scarlet rot accumulation (mist):</font> 50\n<font color=\"#E0B985\">Category:</font> Servants of Rot"
+  },
+  {
+    "id": 7300,
+    "name": "Inescapable Frenzy",
+    "caption": "Incantation originating from the maddening Three Fingers.\n\nTo gaze into one another's eyes is truly the most intimate form of human contact.",
+    "info": "Grab a Tarnished and emit a yellow flame of frenzy directly into their eyes 6 times. Causes <font color=\"#EEAA2B\">madness accumulation</font> on yourself for the initial cast and each of the 6 hits. This is only effective against Tarnished and cannot be used on any other enemies.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#F395C4\">Base physical damage:</font> 70\n<font color=\"#EEAA2B\">Base madness accumulation:</font> 50\n<font color=\"#E0B985\">Category:</font> Frenzied Flame"
+  },
+  {
+    "id": 7310,
+    "name": "The Flame of Frenzy",
+    "caption": "Incantation originating from the maddening Three Fingers.\n\nThe flame of frenzy deals damage and causes accumulation of madness. This incantation also causes accumulation of madness in the caster, and is only effective against Tarnished.",
+    "info": "Sporadically shoot several yellow flame of frenzy streams. Charging increases damage and distance. Causes <font color=\"#EEAA2B\">madness accumulation</font> on yourself. Can be cast on horseback.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#F48C25\">Base fire damage:</font> 107\n<font color=\"#F48C25\">Base fire damage (charged):</font> 124\n<font color=\"#EEAA2B\">Base madness accumulation:</font> 25\n<font color=\"#EEAA2B\">Base madness accumulation (charged):</font> 35\n<font color=\"#E0B985\">Category:</font> Frenzied Flame"
+  },
+  {
+    "id": 7311,
+    "name": "Unendurable Frenzy",
+    "caption": "Incantation originating from the maddening Three Fingers.\n\nIt is the maddening pain and unstoppable tears of those afflicted with the flame of frenzy brought into being.",
+    "info": "Sporadically shoot several yellow flame of frenzy streams forward, then several more in every direction. Hold to continue casting. Causes <font color=\"#EEAA2B\">madness accumulation</font> on yourself.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#F48C25\">Base fire damage:</font> 125\n<font color=\"#EEAA2B\">Base madness accumulation:</font> 25\n<font color=\"#E0B985\">Category:</font> Frenzied Flame"
+  },
+  {
+    "id": 7320,
+    "name": "Frenzied Burst",
+    "caption": "Incantation originating from the maddening Three Fingers.\n\nIn times past, every single person who attempted to control the flame of frenzy succumbed to madness after a desperate internal struggle. This incantation is testament to a meager victory.",
+    "info": "Shoot a blast of yellow flame of frenzy. Charging increases damage and allows projectile to penetrate enemy's guard. Causes 20 <font color=\"#EEAA2B\">madness accumulation</font> on yourself, 30 if charged. Can be cast on horseback.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#F48C25\">Base fire damage:</font> 250\n<font color=\"#F48C25\">Base fire damage (charged):</font> 309\n<font color=\"#EEAA2B\">Base madness accumulation:</font> 90\n<font color=\"#EEAA2B\">Base madness accumulation (charged):</font> 105\n<font color=\"#E0B985\">Category:</font> Frenzied Flame"
+  },
+  {
+    "id": 7330,
+    "name": "Howl of Shabriri",
+    "caption": "Incantation originating from the maddening Three Fingers.\n\nIt is said that the sickness of the flame of frenzy began with Shabriri, the most reviled man in all history.",
+    "info": "Release a maddening shriek which produces a yellow flame of frenzy wave around you, hitting enemies several times. Increases <font color=\"#E0B985\">all damage inflicted</font> by 25% but reduces <font color=\"#E0B985\">all damage negation</font> by 30% for yourself for 40 seconds. Causes <font color=\"#EEAA2B\">madness accumulation</font> on yourself.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#F395C4\">Base physical damage:</font> 22\n<font color=\"#EEAA2B\">Base madness accumulation:</font> 60\n<font color=\"#E0B985\">Category:</font> Frenzied Flame"
+  },
+  {
+    "id": 7500,
+    "name": "Aspects of the Crucible: Tail",
+    "caption": "One of the ancient Erdtree incantations.\n\nThis is a manifestation of the Erdtree's primal vital energies—an aspect of the primordial crucible, where all life was once blended together.",
+    "info": "Conjure a large tail a swing it in a horizontal arc in front of you. Hold to do a second, stronger swing.\n\n<font color=\"#F395C4\">Base physical damage:</font> 202, 274\n<font color=\"#E0B985\">Category:</font> Erdtree, Aspects of the Crucible"
+  },
+  {
+    "id": 7510,
+    "name": "Aspects of the Crucible: Horns",
+    "caption": "One of the ancient Erdtree incantations.\n\nThis is a manifestation of the Erdtree's primal vital energies—an aspect of the primordial crucible, where all life was once blended together.",
+    "info": "Conjure a horn on your shoulder and ram it forward. Charging increases damage and cuases you to charge forward.\n\n<font color=\"#F395C4\">Base physical damage:</font> 277\n<font color=\"#F395C4\">Base physical damage (charged):</font> 327\n<font color=\"#E0B985\">Category:</font> Erdtree, Aspects of the Crucible"
+  },
+  {
+    "id": 7520,
+    "name": "Aspects of the Crucible: Breath",
+    "caption": "One of the ancient Erdtree incantations.\n\nThis is a manifestation of the Erdtree's primal vital energies—an aspect of the primordial crucible, where all life was once blended together.",
+    "info": "Walk forward while spewing a wide arc of flames. Hold to continue casting for a few more steps.\n\n<font color=\"#F48C25\">Base fire damage:</font> 98\n<font color=\"#E0B985\">Category:</font> Erdtree, Aspects of the Crucible"
+  },
+  {
+    "id": 7530,
+    "name": "Black Blade",
+    "caption": "Power gleaned from the remembrance of Maliketh.\n\nThis blade was once imbued with Destined Death.",
+    "info": "Conjure an illusory greatsword and swing it vertically in front of you, which shoots out a projectile. Allows one follow-up cast, which is a slightly stronger horizontal swing. In addition to the damage from the attack, the enemy will also lose 1% of their <font color=\"#E0B985\">maximum HP</font> per second for 2 seconds and have their <font color=\"#E0B985\">maximum HP</font> reduced by 10% for 15 seconds.\n\n<font color=\"#F5EB89\">Base holy damage (greatsword):</font> 225, 232\n<font color=\"#F5EB89\">Base holy damage (projectile):</font> 162, 169\n<font color=\"#E0B985\">Category:</font> Erdtree"
+  },
+  {
+    "id": 7900,
+    "name": "Fire's Deadly Sin",
+    "caption": "Incantation originating from a deeply ominous prophecy.\n\nThe prophet despaired, looking up at the Erdtree, for soon the kindling would burst into flame, bringing ruin.\n\n\"The burning of the Erdtree is the first cardinal sin. That is not the domain of mere men.\"",
+    "info": "Create an explosion of flame around you, igniting yourself on fire for 40 seconds. You will take 3 damage per second during this time. Charging increases damage but also increase damage per second you take to 4.\n\n<font color=\"#F48C25\">Base fire damage (explosion):</font> 183\n<font color=\"#F48C25\">Base fire damage (fire):</font> 45\n<font color=\"#F48C25\">Base fire damage (charged, explosion):</font> 212\n<font color=\"#F48C25\">Base fire damage (charged, fire):</font> 59\n<font color=\"#E0B985\">Category:</font> Fire Monk"
+  },
+  {
+    "id": 7903,
+    "name": "Golden Lightning Fortification",
+    "caption": "An incantation of Erdtree Worship.\n\nThis incantation was used by the knights of the Erdtree during the assault by the great ancient dragon Gransax, and the bitter War of the Ancient Dragons that followed.",
+    "info": "Increase <font color=\"#FFE033\">lightning damage negation</font> by 60% for yourself and nearby allies for 70 seconds. Hold to delay activation.\n\n<font color=\"#E0B985\">Category:</font> Erdtree"
+  }
+]

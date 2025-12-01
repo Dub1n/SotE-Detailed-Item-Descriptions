@@ -1,0 +1,38 @@
+[
+  {
+    "id": 191,
+    "name": "Godrick's Great Rune",
+    "caption": "A Great Rune of the shardbearer Godrick.\n\nThis Great Rune is known as the anchor ring, found in the center of the Elden Ring. The first demigods were The Elden Lord Godfrey and his offspring, the golden lineage.",
+    "info": "Increases <font color=\"#E0B985\">vigor</font>, <font color=\"#E0B985\">mind</font>, <font color=\"#E0B985\">endurance</font>, <font color=\"#E0B985\">strength</font>, <font color=\"#E0B985\">dexterity</font>, <font color=\"#E0B985\">intelligence</font>, <font color=\"#E0B985\">faith</font>, and <font color=\"#E0B985\">arcane</font> by 5.\n\nOnce equipped at a site of grace you will need to use a Rune Arc to activate the benefits of this rune, which will then last until your next death."
+  },
+  {
+    "id": 192,
+    "name": "Radahn's Great Rune",
+    "caption": "A Great Rune of the shardbearer Radahn.\n\nRadahn was amongst the children of Rennala and Radagon, who became demigod stepchildren after Radagon's union with Queen Marika. The Great Rune burns, to resist the encroachment of the scarlet rot.",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font>, <font color=\"#E0B985\">maximum FP</font>, and <font color=\"#E0B985\">maximum stamina</font> by 15%.\n\nOnce equipped at a site of grace you will need to use a Rune Arc to activate the benefits of this rune, which will then last until your next death."
+  },
+  {
+    "id": 193,
+    "name": "Morgott's Great Rune",
+    "caption": "A Great Rune of the shardbearer Morgott.\n\nThis Great Rune is the anchor ring that houses the base, and proves two things: That the Omen King was born of the golden lineage, and that he was indeed the Lord of Leyndell.",
+    "info": "Increases <font color=\"#E0B985\">maximum HP</font> by 25%.\n\nOnce equipped at a site of grace you will need to use a Rune Arc to activate the benefits of this rune, which will then last until your next death."
+  },
+  {
+    "id": 194,
+    "name": "Rykard's Great Rune",
+    "caption": "A Great Rune of the shardbearer Rykard.\n\nRykard was amongst the children of Rennala and Radagon, who became demigod stepchildren after Radagon's union with Queen Marika. But Rykard fed himself to the blasphemous serpent, Great Rune and all.",
+    "info": "Restores 185 HP when an enemy dies.\n\nOnce equipped at a site of grace you will need to use a Rune Arc to activate the benefits of this rune, which will then last until your next death."
+  },
+  {
+    "id": 195,
+    "name": "Mohg's Great Rune",
+    "caption": "A Great Rune of the shardbearer Mohg.\n\nMohg and Morgott are twin brothers, and their Great Runes are naturally similar. But Mohg's rune is soaked in accursed blood, from his devout love for the wretched mire that he was born into far below the earth.",
+    "info": "Grants a blessing of blood to summoned phantoms, which restores 10% of your <font color=\"#E0B985\">maximum HP</font> when an enemy dies from a summoned phantom and will occasionally give a temporary damage buff to the summoned phantom.\n\nOnce equipped at a site of grace you will need to use a Rune Arc to activate the benefits of this rune, which will then last until your next death."
+  },
+  {
+    "id": 196,
+    "name": "Malenia's Great Rune",
+    "caption": "A Great Rune of the shardbearer Malenia.\n\nMalenia is daughter to Queen Marika and Radagon, and her Great Rune should have been the most sacred of all.",
+    "info": "Reduces healing from Flask of Crimson Tears by 30% but attacks recover HP for 5 seconds after damage is taken. The amount healed from this method cannot exceed the amount of damage that was received from the last single attack.\n\nOnce equipped at a site of grace you will need to use a Rune Arc to activate the benefits of this rune, which will then last until your next death."
+  }
+]

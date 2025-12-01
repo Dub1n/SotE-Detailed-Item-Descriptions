@@ -1,0 +1,68 @@
+[
+  {
+    "id": 8167,
+    "name": "Letter to Patches",
+    "caption": "A written request from Volcano Manor addressed to Patches disclosing the name of a Tarnished to be hunted.\n\n\"Great Horned Tragoth\"\n\nHe can be found at the Ruin-Strewn Precipice. Find the red mark on your map for the exact location.",
+    "info": "Request from Volcano Manor, addressed to Patches.\n\n<?keyicon@31?> Examine"
+  },
+  {
+    "id": 8173,
+    "name": "Letter to Bernahl",
+    "caption": "A written request from Volcano Manor addressed to Bernahl disclosing the names of two Tarnished to be hunted.\n\n\"Vargram the Raging Wolf\"\n\"Errant Sorcerer Wilhelm\"\n\nBoth men can be found in the Royal Capital of Leyndell. Find the red mark on your map for the exact location.",
+    "info": "Request from Volcano Manor, addressed to Bernahl.\n\n<?keyicon@31?> Examine"
+  },
+  {
+    "id": 8190,
+    "name": "Knifeprint Clue",
+    "caption": "A simple map given by Fia.",
+    "info": "Shows the location of a black knifeprint.\n\n<?keyicon@31?> Examine"
+  },
+  {
+    "id": 8200,
+    "name": "\"Homing Instinct\" Painting",
+    "caption": "Work of a wandering artist.\n\nThis painter is said to have captured the landscapes seen during the last moments of those welcomed into death's embrace.",
+    "info": "The soul of the painter, and vestiges of the dead's last moments can be discovered by visiting the location depicted.\n\n<?keyicon@31?> Examine"
+  },
+  {
+    "id": 8201,
+    "name": "\"Resurrection\" Painting",
+    "caption": "Work of a wandering artist.\n\nThis painter is said to have captured the landscapes seen during the last moments of those welcomed into death's embrace.",
+    "info": "The soul of the painter, and vestiges of the dead's last moments can be discovered by visiting the location depicted.\n\n<?keyicon@31?> Examine"
+  },
+  {
+    "id": 8202,
+    "name": "\"Champion's Song\" Painting",
+    "caption": "Work of a wandering artist.\n\nThis painter is said to have captured the landscapes seen during the last moments of those welcomed into death's embrace.",
+    "info": "The soul of the painter, and vestiges of the dead's last moments can be discovered by visiting the location depicted.\n\n<?keyicon@31?> Examine"
+  },
+  {
+    "id": 8203,
+    "name": "\"Sorcerer\" Painting",
+    "caption": "Work of a wandering artist.\n\nThis painter is said to have captured the landscapes seen during the last moments of those welcomed into death's embrace.",
+    "info": "The soul of the painter, and vestiges of the dead's last moments can be discovered by visiting the location depicted.\n\n<?keyicon@31?> Examine"
+  },
+  {
+    "id": 8204,
+    "name": "\"Prophecy\" Painting",
+    "caption": "Work of a wandering artist.\n\nThis painter is said to have captured the landscapes seen during the last moments of those welcomed into death's embrace.",
+    "info": "The soul of the painter, and vestiges of the dead's last moments can be discovered by visiting the location depicted.\n\n<?keyicon@31?> Examine"
+  },
+  {
+    "id": 8205,
+    "name": "\"Flightless Bird\" Painting",
+    "caption": "Work of a wandering artist.\n\nThis painter is said to have captured the landscapes seen during the last moments of those welcomed into death's embrace.",
+    "info": "The soul of the painter, and vestiges of the dead's last moments can be discovered by visiting the location depicted.\n\n<?keyicon@31?> Examine"
+  },
+  {
+    "id": 8206,
+    "name": "\"Redmane\" Painting",
+    "caption": "Work of a wandering artist.\n\nThis painter is said to have captured the landscapes seen during the last moments of those welcomed into death's embrace.",
+    "info": "The soul of the painter, and vestiges of the dead's last moments can be discovered by visiting the location depicted.\n\n<?keyicon@31?> Examine"
+  },
+  {
+    "id": 9153,
+    "name": "About Marika's Effigy at the Roundtable",
+    "caption": "The effigy of Marika at the Roundtable Hold can be used to enter Colosseum combat.\n\nYour preferred ruleset may be chosen from those of Colosseums already visited.",
+    "info": "Information about the effigy of Marika at the Roundtable Hold.\n\n<?keyicon@31?> Examine"
+  }
+]
