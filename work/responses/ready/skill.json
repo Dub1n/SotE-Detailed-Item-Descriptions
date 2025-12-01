@@ -4,35 +4,35 @@
     "name": "Spinning Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Spinning Slash</font>",
-    "info": "Spin in place to carve every foe around you, then repeat the input to hurl yourself forward into another whirling slash that continues the assault. When equipped on the Dragon Halberd, the follow-up strike releases ice lightning that adds <font color=\"#FFE033\">Lightning damage</font>, <font color=\"#9DD7FB\">Frostbite</font> buildup, and 10 extra <font color=\"#C0B194\">stance damage</font> to every hit. Cannot be parried when consuming <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#C0B194\">Base stance damage (throwing blades):</font> 13\n<font color=\"#C0B194\">Base stance damage (daggers):</font> 20\n<font color=\"#C0B194\">Base stance damage (halberds/reapers/spears):</font> 26\n<font color=\"#C0B194\">Base stance damage (greatswords/curved greatswords/greataxes/great spears):</font> 29\n<font color=\"#C0B194\">Base stance damage (straight swords/curved swords/backhand blades/katanas/axes):</font> 33\n<font color=\"#C0B194\">Base stance damage (light greatswords):</font> 36"
+    "info": "Spin in place to carve every foe around you, then repeat the input to hurl yourself forward into another whirling slash that continues the assault. When wielded on the Dragon Halberd, the follow-up strike releases ice lightning that adds <font color=\"#FFE033\">Lightning damage</font>, <font color=\"#9DD7FB\">Frostbite</font> buildup, and 10 extra <font color=\"#C0B194\">stance damage</font> to every hit, and it cannot be parried when consuming <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Base stance damage (throwing blades):</font> 13\n<font color=\"#C0B194\">Base stance damage (daggers):</font> 20\n<font color=\"#C0B194\">Base stance damage (halberds/reapers/spears):</font> 26\n<font color=\"#C0B194\">Base stance damage (greatswords/curved greatswords/greataxes/great spears):</font> 29\n<font color=\"#C0B194\">Base stance damage (straight swords/curved swords/backhand blades/katanas/axes):</font> 33\n<font color=\"#C0B194\">Base stance damage (light greatswords):</font> 36"
   },
   {
     "id": 118,
     "name": "Loretta's Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Loretta's Slash</font>",
-    "info": "Leap forward while cloaking the blade in glintstone, then dive into a sweeping slash as you land to catch distant foes. Each follow-up inherits any weapon buffs already on the armament. Cannot be parried.\n\n<font color=\"#C0B194\">Base stance damage (leap):</font> 12\n<font color=\"#C0B194\">Base stance damage (finisher):</font> 10\n<font color=\"#C0B194\">Base stance damage (total):</font> 22"
+    "info": "Leap forward while cloaking the blade in glintstone, then dive into a sweeping slash as you land to catch distant foes. Each follow-up inherits any weapon buffs already on the armament, the hit deals both <font color=\"#F395C4\">physical damage</font> and <font color=\"#57DBCE\">magic damage</font>, scales with the weapon's scaling, costs 14 <font color=\"#E0B985\">FP</font>, and cannot be parried. Wearing the Spellblade Set increases the damage.\n\n<font color=\"#C0B194\">Base stance damage (leap):</font> 12\n<font color=\"#C0B194\">Base stance damage (finisher):</font> 10\n<font color=\"#C0B194\">Base stance damage (total):</font> 22"
   },
   {
     "id": 122,
     "name": "Storm Assault",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Storm Assault</font>",
-    "info": "Wrap yourself in a cyclone, leap forward, and drive the armament into the ground to detonate another spiral of storm winds at the point of impact. The takeoff gust damages foes around you before the diving thrust lands, and the swirling winds linger briefly to pin targets in place."
+    "info": "Wrap yourself in a cyclone, leap forward, and drive the armament into the ground to detonate another spiral of storm winds at the point of impact. The takeoff gust damages foes around you before the diving thrust lands, and the swirling winds linger briefly to pin targets in place. The skill costs 22 <font color=\"#E0B985\">FP</font>, is not chargeable, and Enraged Divine Beast boosts its damage by 10%."
   },
   {
     "id": 123,
     "name": "Stormcaller",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Stormcaller</font>",
-    "info": "Spin the armament to surround yourself with storm winds, then repeat the input up to two times to step forward and unfold wider cyclones. Cannot be parried when consuming <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#C0B194\">Base stance damage (initial sweep):</font> 24\n<font color=\"#C0B194\">Base stance damage (first follow-up):</font> 12\n<font color=\"#C0B194\">Base stance damage (second follow-up):</font> 12"
+    "info": "Spin the armament to surround yourself with storm winds, then repeat the input up to two times to step forward and unfold wider cyclones. The skill costs 9 <font color=\"#E0B985\">FP</font> (11 for the heavy attack version), cannot be parried while consuming <font color=\"#E0B985\">FP</font>, becomes parryable if performed without any <font color=\"#E0B985\">FP</font>, and Enraged Divine Beast boosts its damage by 10%.\n\n<font color=\"#C0B194\">Base stance damage (initial sweep):</font> 24\n<font color=\"#C0B194\">Base stance damage (first follow-up):</font> 12\n<font color=\"#C0B194\">Base stance damage (second follow-up):</font> 12"
   },
   {
     "id": 200,
     "name": "Glintblade Phalanx",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Glintblade Phalanx</font>",
-    "info": "Conjure four magical dagger projectiles overhead; they hover defensively before automatically launching at the nearest enemy once they enter range. Following up with a strong attack chains the skill into a lunging thrust, and the glintblades can even track invisible foes so long as they have a clear path. Each blade shatters the instant it touches any geometry, so casting in tight quarters can waste the shots.\n\n<font color=\"#57DBCE\">Base magic damage (projectiles):</font> 47"
+    "info": "Conjure four magical dagger projectiles overhead; they hover defensively until they automatically launch at the nearest enemy once they enter range. Following up with a strong attack chains the skill into a lunging thrust, and the glintblades can even track invisible foes so long as they have a clear path. Each blade shatters the instant it touches any geometry, so casting in tight quarters can waste the shots."
   },
   {
     "id": 214,
@@ -109,21 +109,21 @@
     "name": "Kick",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Kick</font>",
-    "info": "Deliver a fast, high kick that instantly staggers guarding enemies, opening them to a guard break while you are bare-handed in either hand. Cannot be parried.\n\n<font color=\"#C0B194\">Base stance damage:</font> 6"
+    "info": "Deliver a fast, high kick that instantly staggers guarding enemies, opening them to a guard break while you are bare-handed in either hand. The skill is not chargeable and cannot be parried.\n\n<font color=\"#C0B194\">Base stance damage:</font> 6"
   },
   {
     "id": 1004,
     "name": "Bubble Shower",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bubble Shower</font>",
-    "info": "Blow the horn to launch a slow-moving spray of bubbles that drift forward before raining down in front of you. The volley deals pure <font color=\"#F5EB89\">holy damage</font>, cannot be charged, and the bubbles hit even harder when you wear the Envoy Crown.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 65\n<font color=\"#C0B194\">Base stance damage:</font> 72 (92 if all bubbles hit)"
+    "info": "Blow the horn to launch a slow-moving spray of bubbles that drift forward before raining down in front of you. The volley deals pure <font color=\"#F5EB89\">holy damage</font>, cannot be charged, costs 16 <font color=\"#E0B985\">FP</font>, and hits even harder when you wear the Envoy Crown.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 65\n<font color=\"#C0B194\">Base stance damage:</font> 72 (92 if all bubbles hit)"
   },
   {
     "id": 1008,
     "name": "Moonlight Greatsword",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moonlight Greatsword</font>",
-    "info": "Raise the sword aloft to wreathe it in the dark moon's light for 60 seconds, adding 65 <font color=\"#57DBCE\">magic damage</font> and 15 <font color=\"#9DD7FB\">frostbite accumulation</font> to every attack. Heavy attacks during the buff launch moonlight projectiles, while the weapon swings during the buff deal their full status and stance but 50% of their normal damage or 65% when the projectile is charged. Only the activation consumes <font color=\"#E0B985\">FP</font>; firing the moonlight waves costs stamina, and the heavy swing hitbox can still be parried.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Base stance damage (projectile):</font> 15\n<font color=\"#C0B194\">Base stance damage (projectile, charged):</font> 24\n<font color=\"#9DD7FB\">Base frostbite accumulation (projectile):</font> 120% of the weapon's frost buildup\n<font color=\"#9DD7FB\">Base frostbite accumulation (projectile, charged):</font> 150% of the weapon's frost buildup",
+    "info": "Raise the sword aloft to wreathe it in the dark moon's light for 60 seconds, adding 65 <font color=\"#57DBCE\">magic damage</font> and 15 <font color=\"#9DD7FB\">frostbite accumulation</font> to every attack. Heavy attacks during the buff launch moonlight projectiles, while the buffed swings still deal their full status and stance but only roughly 50% of their normal damage (65% when the projectile is charged); only the activation consumes <font color=\"#E0B985\">FP</font>, firing the moonlight waves costs stamina, and the heavy swing hitbox can still be parried.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Base stance damage (projectile):</font> 15\n<font color=\"#C0B194\">Base stance damage (projectile, charged):</font> 24\n<font color=\"#9DD7FB\">Base frostbite accumulation (projectile):</font> 120% of the weapon's frost buildup\n<font color=\"#9DD7FB\">Base frostbite accumulation (projectile, charged):</font> 150% of the weapon's frost buildup",
     "note": "Fex cache confirms +65 magic/+15 frost for 60s with 15/24 stance waves and stamina-only projectiles; mod's +85/+100 buff values are outdated."
   },
   {
@@ -131,204 +131,203 @@
     "name": "Bear Witness!",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bear Witness!</font>",
-    "info": "Drag the small dragon head along the ground into a fire-laced uppercut before launching a wide barrage of fireballs overhead. The volley deals pure <font color=\"#F48C25\">fire damage</font>, scales exclusively with <font color=\"#E0B985\">faith</font>, and can be used from either hand like a shield skill.\n\n<font color=\"#C0B194\">Base stance damage:</font> 20"
+    "info": "Drag the small dragon head along the ground into a fire-laced uppercut before launching a wide barrage of fireballs overhead. The volley deals pure <font color=\"#F48C25\">fire damage</font>, scales exclusively with <font color=\"#E0B985\">faith</font> (not <font color=\"#F395C4\">strength</font> or <font color=\"#F395C4\">dexterity</font>), costs 20 <font color=\"#E0B985\">FP</font>, cannot be charged, can be used from either hand like a shield skill, and benefits from the Talisman of the Dread and Fire Scorpion Charm.\n\n<font color=\"#C0B194\">Base stance damage:</font> 20"
   },
   {
     "id": 1014,
     "name": "Taker's Flames",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Taker's Flames</font>",
-    "info": "Raise the blade to wreath it in blasphemous flame before slamming forward and sending a chain of eruptions along the ground. The eruption wave deals pure <font color=\"#F48C25\">fire damage</font>, scales only with <font color=\"#E0B985\">faith</font>, and each enemy struck returns HP as the chain travels.\n\n<font color=\"#E0B985\">HP restored per enemy:</font> 10% of <font color=\"#E0B985\">maximum HP</font> plus 150\n<font color=\"#C0B194\">Base stance damage:</font> 22"
+    "info": "Raise the blade to wreath it in blasphemous flame before slamming forward and sending a chain of eruptions along the ground. The eruption wave deals pure <font color=\"#F48C25\">fire damage</font>, scales only with <font color=\"#E0B985\">faith</font>, costs 30 <font color=\"#E0B985\">FP</font>, cannot be charged or parried, and benefits from the Talisman of the Dread and Fire Scorpion Charm while each enemy struck restores HP as the chain travels.\n\n<font color=\"#E0B985\">HP restored per enemy:</font> 10% of <font color=\"#E0B985\">maximum HP</font> plus 150\n<font color=\"#C0B194\">Base stance damage:</font> 22"
   },
   {
     "id": 1024,
     "name": "Spearcall Ritual",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Spearcall Ritual</font>",
-    "info": "Hoist the spear skyward to summon a cluster of spectral spears above the target that rain down after a short delay, dealing pure <font color=\"#57DBCE\">magic damage</font>.\n\n<font color=\"#C0B194\">Base stance damage:</font> 26"
+    "info": "Hoist the spear skyward to summon a cluster of spectral spears above the target that rain down after a short delay, dealing pure <font color=\"#57DBCE\">magic damage</font>. Costs 20 <font color=\"#E0B985\">FP</font>, cannot be charged, and wearing the Spellblade Set increases the damage while it scales with weapon upgrade level and <font color=\"#E0B985\">Intelligence</font>.\n\n<font color=\"#C0B194\">Base stance damage:</font> 26 (<font color=\"#E0B985\">weapon upgrade level</font>, <font color=\"#E0B985\">Intelligence</font>)"
   },
   {
     "id": 1026,
     "name": "Thundercloud Form",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Thundercloud Form</font>",
-    "info": "Transform into a rushing red thundercloud before plunging down with a lightning-charged strike; holding the skill extends the cloud's travel distance without increasing the bolts' damage. The passing lightning and plunge both deal pure <font color=\"#FFE033\">lightning damage</font>, and the skill cannot be parried.\n\n<font color=\"#C0B194\">Base stance damage (passing bolt):</font> 6 per tick\n<font color=\"#C0B194\">Base stance damage (plunge):</font> 11\n<font color=\"#C0B194\">Base stance damage (plunge, charged):</font> 33"
+    "info": "Transform into a rushing red thundercloud and fly through the air before plunging down with a lightning-charged strike; holding the skill extends the cloud's travel distance while charging only increases its reach and leaves the Godfrey Icon powerless. Both the passing lightning and plunge deal pure <font color=\"#FFE033\">lightning damage</font>, cannot be parried, cost 28 <font color=\"#E0B985\">FP</font>, and the cloud ticks for 6 stance damage per tick before the plunge deals 11 stance damage (33 when charged), reaching up to 55 stance damage if the whole charged chain connects.\n\n<font color=\"#C0B194\">Base stance damage (passing bolt):</font> 6 per tick\n<font color=\"#C0B194\">Base stance damage (plunge):</font> 11\n<font color=\"#C0B194\">Base stance damage (plunge, charged):</font> 33"
   },
   {
     "id": 1027,
     "name": "Cursed-Blood Slice",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Cursed-Blood Slice</font>",
-    "info": "Brace, then leap into a diagonal slash that paints a cursed trail which detonates moments later; repeat with another input for a horizontal follow-up that leaves a second delayed explosion. This unique skill cannot be charged, does not inflict gradual <font color=\"#C84343\">blood loss accumulation</font>, and cannot be parried while consuming <font color=\"#E0B985\">FP</font>; using it with no <font color=\"#E0B985\">FP</font> leaves it parryable.\n\nBoth strikes deal pure <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage (explosions):</font> 80\n<font color=\"#C0B194\">Base stance damage:</font> 14"
+    "info": "Brace, then leap into a diagonal slash that paints a cursed trail which detonates moments later; repeat with another input for a horizontal follow-up that leaves a second delayed explosion. This unique skill cannot be charged, consumes 20 <font color=\"#E0B985\">FP</font>, cannot be parried while consuming FP, and becomes parryable when executed with no FP, while both strikes deal pure <font color=\"#F48C25\">fire damage</font> and the explosions sidestep gradual <font color=\"#C84343\">blood loss accumulation</font> like Bloodflame Blade.\n\n<font color=\"#C84343\">Blood Loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#F48C25\">Base fire damage (explosions):</font> 80\n<font color=\"#C0B194\">Base stance damage:</font> 14"
   },
   {
     "id": 1030,
     "name": "I Command Thee, Kneel!",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: I Command Thee, Kneel!</font>",
-    "info": "Slam the axe into the ground twice in succession to unleash two wide shockwaves, then repeat the skill for a third, larger shockwave. The shockwaves deal heavy <font color=\"#F395C4\">physical damage</font> and cannot be parried while consuming <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#C0B194\">Base stance damage (full sequence):</font> 19"
+    "info": "Slam the axe into the ground twice in succession to unleash two wide shockwaves, then repeat the skill for a third, larger shockwave. The shockwaves deal heavy <font color=\"#F395C4\">physical damage</font>, cannot be charged, and cost 15 <font color=\"#E0B985\">FP</font>; they cannot be parried while FP is consumed but become parryable if the skill is executed with no focus.\n\n<font color=\"#C0B194\">Base stance damage (full sequence):</font> 19"
   },
   {
     "id": 1034,
     "name": "Bloodboon Ritual",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bloodboon Ritual</font>",
-    "info": "Raise the sacred spear and pierce the Formless Mother up to three times, each thrust spawning an explosion of bloodflame that rains droplets around you before coating the weapon. The third thrust hits harder, recovers more slowly, and cannot be charged, and the armament stays imbued for 20 seconds with 30 added <font color=\"#F48C25\">fire damage</font> and steady <font color=\"#C84343\">blood loss accumulation</font> on every hit. Damage scales with weapon upgrade level and <font color=\"#E0B985\">arcane</font>.\n\nEach detonation deals pure <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#C0B194\">Base stance damage (3 inputs):</font> 21",
-    "note": "Fex cache matches 21 stance damage, 20s bloodflame imbue with +30 fire AR and arcane scaling; it does not list the mod's base explosion/drip numbers, so those remain omitted."
+    "info": "Raise the sacred spear and pierce the Formless Mother up to three times, each thrust spawning an explosion of bloodflame that rains droplets around you before coating the weapon. The third thrust hits harder, recovers more slowly, and cannot be charged, while the armament stays imbued for 20 seconds with 30 added <font color=\"#F48C25\">fire damage</font> and steady <font color=\"#C84343\">blood loss accumulation</font> on every hit; damage scales with weapon upgrade level and <font color=\"#E0B985\">Arcane</font>, each detonation deals pure <font color=\"#F48C25\">fire damage</font>, and the activation costs 20 <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#C84343\">Blood Loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#C0B194\">Base stance damage (3 inputs):</font> 21"
   },
   {
     "id": 1049,
     "name": "Ancient Lightning Spear",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Ancient Lightning Spear</font>",
-    "info": "Imbue the armament with ancient red lightning, take a short step forward, and hurl it as a spear of pure <font color=\"#FFE033\">lightning damage</font>.\n\nHolding the skill charges the throw for higher attack power, benefits from charge-enhancing effects, and the projectile scales with weapon upgrades and <font color=\"#E0B985\">dexterity</font>. The hit can knock back foes.\n\n<font color=\"#C0B194\">Base stance damage:</font> 9"
+    "info": "Imbue the armament with the ancient dragons' red lightning, take a short step forward, and fling it as a spear of pure <font color=\"#FFE033\">lightning damage</font> that knocks back foes when fully charged and flinches tougher enemies. Charging the skill increases the throw's attack power, and the projectile still hits sidestepping targets while benefiting from charge-enhancing effects such as Godfrey Icon.\n\n<font color=\"#C0B194\">Base stance damage:</font> 9 (weapon upgrade level, <font color=\"#E0B985\">Dexterity</font>)"
   },
   {
     "id": 1053,
     "name": "Last Rites",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Last Rites</font>",
-    "info": "Raise the epitaph to bathe yourself and nearby allies in sacred order for 60 seconds.\n\nAdds 25 <font color=\"#F5EB89\">holy damage</font> to affected armaments and increases <font color=\"#E0B985\">all damage inflicted</font> by 10%. Attacks against Those Who Live in Death deal 100% more damage during the aura and prevent them from reviving. Counts as an aura buff and will not stack with other Sacred Order boons."
+    "info": "Raise the epitaph to bathe yourself and nearby allies in sacred order for 60 seconds; the aura cannot be parried.\n\nAdds 25 <font color=\"#F5EB89\">holy damage</font> to affected armaments and increases <font color=\"#E0B985\">all damage inflicted</font> by 10% (5% in PvP). Attacks against Those Who Live in Death deal 100% more damage during the aura and prevent them from reviving, and the buff counts as an aura that will not stack with other Sacred Order boons.\n\n<font color=\"#F5EB89\">Base holy damage added to armaments:</font> 25"
   },
   {
     "id": 1169,
     "name": "Radahn's Rain",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Radahn's Rain</font>",
-    "info": "Settle into Radahn's hunting stance, firing each shot overhead so it splits into a dense rain that pours down where the target stood.\n\nThe barrage deals reduced damage and status buildup per projectile but overwhelms foes with multiple hits, and switching to Radahn's Spears greatly boosts the rain's attack power."
+    "info": "Settle into Radahn's hunting stance, ready your bow, and fire a sudden flurry of arrows into the sky so each projectile splits overhead and pours down where the target stood, overwhelming foes with multiple hits. The barrage deals reduced damage and status buildup per projectile but is amplified when you switch to Radahn's Spears, and the skill is not chargeable."
   },
   {
     "id": 1172,
     "name": "Magma Shower",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Magma Shower</font>",
-    "info": "Slash in a tight circle to scatter pools of magma around you, then use an additional input to spin again and carpet the area in fire.\n\nEach spin scatters pools that linger briefly to keep scorching foes and cannot be parried while consuming <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#F48C25\">Base fire damage (magma):</font> 30\n<font color=\"#C0B194\">Base stance damage (spin):</font> 18"
+    "info": "Slash in a tight circle to scatter pools of magma around you, then use an additional input to spin again and carpet the area in fire; each spin costs 12 <font color=\"#E0B985\">FP</font> and leaves lingering magma pools that continue scorching foes.\n\nEach spin cannot be parried while Focus is held but becomes parryable if executed with no focus, the skill is not chargeable, and the Talisman of the Dread enhances the flames.\n\n<font color=\"#F48C25\">Base fire damage (magma):</font> 30\n<font color=\"#C0B194\">Base stance damage (spin):</font> 18"
   },
   {
     "id": 1178,
     "name": "Transient Moonlight",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Transient Moonlight</font>",
-    "info": "Sheathe the blade while moving freely, then release into a stepping horizontal slash or a short-hop vertical slash depending on the follow-up input.\n\nBoth slashes launch waves of light; landing the projectile and katana hit from each release inflicts stance damage, and the waves deal pure <font color=\"#57DBCE\">magic damage</font> that scales only with <font color=\"#E0B985\">intelligence</font>. Can be parried or reflected by retaliation skills.\n\n<font color=\"#57DBCE\">Base magic damage (normal projectile):</font> 140\n<font color=\"#57DBCE\">Base magic damage (strong projectile):</font> 155\n<font color=\"#C0B194\">Base stance damage (light version):</font> 28\n<font color=\"#C0B194\">Base stance damage (heavy version):</font> 30"
+    "info": "Sheathe the blade while moving freely, then release into a stepping horizontal slash or a short-hop vertical slash depending on the follow-up input; both slashes launch waves of light and the skill is not chargeable.\n\nThe waves deal pure <font color=\"#57DBCE\">magic damage</font>, scale only with <font color=\"#E0B985\">Intelligence</font> (not <font color=\"#E0B985\">Dexterity</font> or <font color=\"#E0B985\">Strength</font>), the Light Attack is excellent for crowd control, and the heavy attack's projectile can be aimed upward or downward with camera control; wearing Spellblade Set increases the damage and the skill activates with Rellana's Cameo.\n\nLanding the projectile and katana hit from each release inflicts stance damage (light version 28, heavy version 30), the projectile deals 12.5 Poise damage and direct hits with the Moonveil add 15 (light) or 17.5 (heavy) for totals of 27.5 or 30 Poise damage, and the Light and Heavy attacks can be parried while the projectiles can be parried or reflected by Golden Retaliation, Ash of War: Carian Retaliation, and the Carian Retaliation sorcery.\n\n<font color=\"#57DBCE\">Base magic damage (normal projectile):</font> 140 (<font color=\"#E0B985\">Intelligence</font>)\n<font color=\"#57DBCE\">Base magic damage (strong projectile):</font> 155 (<font color=\"#E0B985\">Intelligence</font>)\n<font color=\"#C0B194\">Base stance damage (light version):</font> 28\n<font color=\"#C0B194\">Base stance damage (heavy version):</font> 30"
   },
   {
     "id": 1186,
     "name": "Thunderstorm",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Thunderstorm</font>",
-    "info": "Imbue the wing-blade with lightning and spin it to surround yourself with a storm, chaining up to two additional spins with further inputs. The weapon stays infused for 40 seconds, adding 120 <font color=\"#FFE033\">lightning damage</font> to every attack. Cannot be parried and does not trigger multi-hit effects.\n\n<font color=\"#C0B194\">Base stance damage (first swing):</font> 16\n<font color=\"#C0B194\">Base stance damage (follow-up swings):</font> 10\n<font color=\"#FFE033\">Base lightning damage (swirl):</font> 95"
+    "info": "Imbue the armament with lightning and spin it to surround yourself with a storm, chaining up to two additional spins with further inputs. The weapon stays infused for 40 seconds, adding 120 <font color=\"#FFE033\">lightning damage</font> to every attack. The skill is not chargeable, cannot be parried, and does not trigger Winged Sword Insignia, Rotten Winged Sword Insignia, or Millicent's Prosthesis.\n\n<font color=\"#FFE033\">Base lightning damage (swirl):</font> 95\n<font color=\"#C0B194\">Base stance damage (first swing):</font> 16\n<font color=\"#C0B194\">Base stance damage (follow-up swings):</font> 10"
   },
   {
     "id": 1197,
     "name": "Contagious Fury",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Contagious Fury</font>",
-    "info": "Raise the jellyfish shield to channel its rage for 30 seconds, draping yourself in red energy that increases <font color=\"#E0B985\">all damage inflicted</font> by 12.5%. Counts as a unique buff and ends immediately if you swap the shield."
+    "info": "Raise the jellyfish shield to channel its rage for 30 seconds, draping yourself in red energy that increases <font color=\"#E0B985\">all damage inflicted</font> by 12.5%. The skill is not chargeable, counts as a unique buff, and ends immediately if you swap the shield."
   },
   {
     "id": 2000,
     "name": "Dryleaf Whirlwind",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Dryleaf Whirlwind</font>",
-    "info": "Leap upward in a cyclone of four rapid kicks before driving a final heel drop into the ground, extending the reach of all kicking attacks with <font color=\"#E0B985\">arcane</font> force and triggering multi-hit effects.\n\n<font color=\"#C0B194\">Base stance damage (with FP):</font> 28\n<font color=\"#C0B194\">Base stance damage (without FP):</font> 16"
+    "info": "Leap upward in a cyclone of four rapid kicks before driving a final heel drop into the ground, extending the reach of all kicking attacks with <font color=\"#E0B985\">arcane</font> force. The attack is not chargeable, procs multi-hit talismans such as Millicent's Prosthesis and Rotten Winged Sword Insignia, and its damage is increased by the Shattered Stone Talisman and Divine Bird Warrior Greaves.\n\n<font color=\"#C0B194\">Base stance damage (with FP):</font> 28\n<font color=\"#C0B194\">Base stance damage (without FP):</font> 16"
   },
   {
     "id": 2001,
     "name": "Aspects of the Crucible: Wings",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Aspects of the Crucible: Wings</font>",
-    "info": "Manifest Crucible wings, take flight, and dive weapon-first into the target; twinblades replace the thrust with an eight-spin charge.\n\n<font color=\"#C0B194\">Base stance damage (colossal swords):</font> 24\n<font color=\"#C0B194\">Base stance damage (greatswords/light greatswords/heavy thrusting swords/great spears/great katanas):</font> 22\n<font color=\"#C0B194\">Base stance damage (twinblades/straight swords/katanas/spears/halberds):</font> 20\n<font color=\"#C0B194\">Base stance damage (thrusting swords):</font> 16\n<font color=\"#C0B194\">Base stance damage (daggers):</font> 12\n<font color=\"#C0B194\">Base stance damage (throwing daggers):</font> 8"
+    "info": "Manifest Crucible wings, take flight, and dive weapon-first into the target; twinblades replace the thrust with an eight-spin charge. The skill is not chargeable, cannot be used without enough FP, and is enhanced by Crucible Knight armor pieces.\n\n<font color=\"#C0B194\">Base stance damage (colossal swords):</font> 24\n<font color=\"#C0B194\">Base stance damage (greatswords/light greatswords/heavy thrusting swords/great spears/great katanas):</font> 22\n<font color=\"#C0B194\">Base stance damage (twinblades/straight swords/katanas/spears/halberds):</font> 20\n<font color=\"#C0B194\">Base stance damage (thrusting swords):</font> 16\n<font color=\"#C0B194\">Base stance damage (daggers):</font> 12\n<font color=\"#C0B194\">Base stance damage (throwing daggers):</font> 8"
   },
   {
     "id": 4000,
     "name": "Spinning Gravity Thrust",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Spinning Gravity Thrust</font>",
-    "info": "Use gravity to hover in place, rotate, and drive forward with a piercing thrust, then input again to crash down in another spinning strike that knocks foes back. Triggers multi-hit effects.\n\n<font color=\"#C0B194\">Base stance damage (greatswords/curved greatswords/heavy thrusting swords/great katanas - first thrust):</font> 21\n<font color=\"#C0B194\">Base stance damage (greatswords/curved greatswords/heavy thrusting swords/great katanas - follow-up):</font> 25\n<font color=\"#C0B194\">Base stance damage (colossal swords - first thrust):</font> 23\n<font color=\"#C0B194\">Base stance damage (colossal swords - follow-up):</font> 26"
+    "info": "Use gravity to hover in place, rotate, and drive forward with a piercing thrust, then input again to crash down in another spinning strike that knocks foes back. The skill is not chargeable and works with multi-hit buffs.\n\n<font color=\"#C0B194\">Base stance damage (greatswords/curved greatswords/heavy thrusting swords/great katanas - first thrust):</font> 21\n<font color=\"#C0B194\">Base stance damage (greatswords/curved greatswords/heavy thrusting swords/great katanas - follow-up):</font> 25\n<font color=\"#C0B194\">Base stance damage (colossal swords - first thrust):</font> 23\n<font color=\"#C0B194\">Base stance damage (colossal swords - follow-up):</font> 26"
   },
   {
     "id": 4010,
     "name": "Palm Blast",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Palm Blast</font>",
-    "info": "Gather energy in your palm before unleashing an explosive strike that travels slightly past your reach; charging widens the blast, knocks enemies away, spreads the weapon's status buildup across the area, and greatly boosts <font color=\"#E0B985\">poise</font> while charging.\n\n<font color=\"#C0B194\">Base stance damage:</font> 20\n<font color=\"#C0B194\">Base stance damage (charged):</font> 36"
+    "info": "Imbue your palm with energy before unleashing an explosive strike that travels slightly beyond your reach, spreading the weapon's status buildup across the blast radius. Charging widens the explosion, knocks enemies back like Rejection, and grants the poise of a fully charged Endure while increasing the stance damage it deals.\n\n<font color=\"#C0B194\">Base stance damage:</font> 20\n<font color=\"#C0B194\">Base stance damage (charged):</font> 36"
   },
   {
     "id": 4020,
     "name": "Piercing Throw",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Piercing Throw</font>",
-    "info": "Hurl the armament with a powerful spin to tunnel through every foe in its path and reach roughly double the normal range, retaining full damage on each pierce while blocking still prevents damage even as the projectile keeps traveling. Used without <font color=\"#E0B985\">FP</font>, damage is reduced and piercing is removed.\n\n<font color=\"#C0B194\">Base stance damage:</font> 3"
+    "info": "Hurl the armament with a powerful spin to tunnel through every foe in its path while reaching roughly double the normal range; the projectile keeps its full damage on each pierce and has no falloff, though blocking still prevents damage even as the projectile continues traveling. Using the skill without <font color=\"#E0B985\">FP</font> reduces the damage and removes the piercing effect.\n\n<font color=\"#C0B194\">Base stance damage:</font> 3"
   },
   {
     "id": 4030,
     "name": "Scattershot Throw",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Scattershot Throw</font>",
-    "info": "Conjure mirrored copies of the dagger in both hands and fling a cloud of 28 projectiles that can strike large foes up to four times each, then repeat with a second input. The daggers count as pierce damage for counter bonuses such as Spear Talisman, gain roughly 50% more range than normal throws, and add an extra close-range hitbox. Using it without <font color=\"#E0B985\">FP</font> throws only two daggers but retains the extended range.\n\n<font color=\"#C0B194\">Base stance damage (per volley):</font> 11"
+    "info": "Conjure mirrored copies of the dagger in both hands, fling a cloud of 28 projectiles that can strike large foes up to four times each, then repeat the same input for a second volley; all hits count as pierce damage for counter bonuses such as Spear Talisman, and the cast gains an extra close-range hitbox. The projectiles reach roughly 50% farther than normal throws, and using the skill without <font color=\"#E0B985\">FP</font> releases only two daggers while keeping the extended range.\n\n<font color=\"#C0B194\">Base stance damage (per volley):</font> 11.2"
   },
   {
     "id": 4040,
     "name": "Wall of Sparks",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Wall of Sparks</font>",
-    "info": "Scatter perfumed powder around you that ignites after a short delay into a wall of intense sparks, with the element determined by the perfume bottle. Charging widens the wall, increases damage, and the sparks cannot be parried.\n\n<font color=\"#C0B194\">Base stance damage (per explosion):</font> 3"
+    "info": "Scatter perfumed powder around you that ignites after a short delay into a wall of intense sparks whose element is determined by the perfume bottle; charging widens the wall, raises its damage, and the sparks cannot be parried.\n\n<font color=\"#C0B194\">Base stance damage (per explosion):</font> 3"
   },
   {
     "id": 4050,
     "name": "Rolling Sparks",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Rolling Sparks</font>",
-    "info": "Spread perfumed powder in a rolling line that erupts into successive explosions of sparks, inheriting the bottle's properties. Large targets can be struck multiple times along the trail, and the line stops releasing hits if it collides with terrain.\n\n<font color=\"#C0B194\">Base stance damage (per explosion):</font> 3"
+    "info": "Spread perfumed powder in a rolling line that triggers successive explosions of sparks inheriting the bottle's properties; large targets can be struck multiple times along the trail, and the line stops releasing new hitboxes once it collides with terrain.\n\n<font color=\"#C0B194\">Base stance damage (per explosion):</font> 3.2"
   },
   {
     "id": 4060,
     "name": "Raging Beast",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Raging Beast</font>",
-    "info": "Dash in any direction with beastlike speed, vault upward, and rake the enemy with an aerial slash before diving into a follow-up strike with a strong-attack input. The evasive step grants 6 invulnerability frames.\n\n<font color=\"#C0B194\">Base stance damage (opening slash):</font> 6\n<font color=\"#C0B194\">Base stance damage (follow-up plunge):</font> 11"
+    "info": "Step with beastlike speed in any direction, leap upward, and rake the foe with an aerial slash before a strong-attack follow-up dives downward; holding a directional input while evading determines which flank you strike and the dash grants 6 invulnerability frames.\n\n<font color=\"#C0B194\">Base stance damage (opening slash):</font> 6\n<font color=\"#C0B194\">Base stance damage (follow-up plunge):</font> 10.5"
   },
   {
     "id": 4070,
     "name": "Savage Claws",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Savage Claws</font>",
-    "info": "Pounce on the target and rake it with six alternating claw swipes in rapid succession. Each swipe applies 60% of the weapon's status buildup.\n\n<font color=\"#C0B194\">Base stance damage (6-hit combo):</font> 22"
+    "info": "Pounce onto the target and rake it with six alternating claw swipes in rapid succession, each swipe applying 60% of the weapon's status buildup to the foe.\n\n<font color=\"#C0B194\">Base stance damage (6-hit combo):</font> 22"
   },
   {
     "id": 4080,
     "name": "Red Bear Hunt",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Red Bear Hunt</font>",
-    "info": "Slaughter prey with a wide claw swipe that manifests a lingering vacuum, then chain up to two additional swipes with repeated inputs. Each swipe leaves a lingering vacuum that inflicts continuous Standard damage, totaling 32 stance damage across the full sequence.\n\n<font color=\"#C0B194\">Base stance damage (first swipe):</font> 10\n<font color=\"#C0B194\">Base stance damage (second swipe):</font> 10\n<font color=\"#C0B194\">Base stance damage (third swipe):</font> 12"
+    "info": "Slaughter prey with a wide right swipe that spawns a lingering vacuum dealing continuous Standard damage, then repeat the input to flow into a left slash and a front double-claw sweep while the vacuums persist; the three slashes total 32.6 stance damage.\n\n<font color=\"#C0B194\">Base stance damage (right slash):</font> 10.4\n<font color=\"#C0B194\">Base stance damage (left slash):</font> 10.4\n<font color=\"#C0B194\">Base stance damage (front slash):</font> 11.6"
   },
   {
     "id": 4090,
     "name": "Blind Spot",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Blind Spot</font>",
-    "info": "Dash to either side of a target before executing a piercing stab that slips beneath their guard, with the input determining which flank you strike from. The dash grants 6 invulnerability frames, and the stab's <font color=\"#F395C4\">pierce damage</font> ignores blocking.\n\n<font color=\"#C0B194\">Base stance damage (stab):</font> 10"
+    "info": "Leap into a foe's blind spot and gore them from the side; directional inputs pick which flank you dash toward, the evasion grants 6 invulnerability frames, and the resulting stab slips below their guard while dealing <font color=\"#F395C4\">pierce damage</font> that bypasses blocking.\n\n<font color=\"#C0B194\">Base stance damage (stab):</font> 10"
   },
   {
     "id": 4100,
     "name": "Swift Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Swift Slash</font>",
-    "info": "Step forward with a razor-quick cut that slices through foes and fires a shearing vacuum, gaining power and lunge distance when charged. The vacuum's repeated hits rapidly build status.\n\n<font color=\"#C0B194\">Base stance damage (uncharged slash):</font> 10\n<font color=\"#C0B194\">Base stance damage (charged slash):</font> 20"
+    "info": "Step forward with a razor-quick cut that slices through foes and fires a shearing vacuum whose repeated hits rapidly build status; charging increases the strike's power and the distance of the forward step.\n\n<font color=\"#C0B194\">Base stance damage (uncharged slash):</font> 10\n<font color=\"#C0B194\">Base stance damage (charged slash):</font> 20"
   },
   {
     "id": 4110,
     "name": "Overhead Stance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Overhead Stance</font>",
-    "info": "Enter a high guard, then perform a stepping downward slash with a light attack or unleash a series of plunging blows with a strong attack. Counts as a stance skill.\n\n<font color=\"#C0B194\">Base stance damage (light follow-up):</font> 11\n<font color=\"#C0B194\">Base stance damage (heavy series):</font> 22"
+    "info": "Enter a high guard, then follow a light attack with a stepping downward slash or a strong attack with a series of plunging blows. This skill is not chargeable, counts as a stance skill, and is buffed by <font color=\"#E0B985\">Rellana's Cameo</font>.\n\n<font color=\"#C0B194\">Base stance damage (light follow-up):</font> 11\n<font color=\"#C0B194\">Base stance damage (heavy series):</font> 22"
   },
   {
     "id": 4120,
     "name": "Wing Stance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Wing Stance</font>",
-    "info": "Hold a <font color=\"#E0B985\">poise</font>d right-sided guard before releasing a rapid three-slash light combo or a leaping heavy thrust. The light chain can loop with minimal delay if you hold the button, while the heavy thrust hops over low attacks without counting as a jumping attack. Can be parried.\n\n<font color=\"#C0B194\">Base stance damage (light chain):</font> 17\n<font color=\"#C0B194\">Base stance damage (heavy thrust):</font> 30"
+    "info": "Hold a <font color=\"#E0B985\">poise</font>d right-sided guard before releasing a rapid three-slash light combo or a leaping heavy thrust; holding the Skill button after the light follow-up immediately returns you to the stance so you can loop again while the heavy thrust has extra end lag before resetting, leaps over low/ground attacks, and still fails to count as a jumping attack. While wielded one-handed, the light follow-up can chain into the heavy for a multi-hit combo. The skill can be parried, is not chargeable, and is buffed by <font color=\"#E0B985\">Rellana's Cameo</font>.\n\n<font color=\"#C0B194\">Base stance damage (light chain):</font> 16.5\n<font color=\"#C0B194\">Base stance damage (heavy thrust):</font> 30.2"
   },
   {
     "id": 4130,
@@ -342,280 +341,280 @@
     "name": "Flame Skewer",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Flame Skewer</font>",
-    "info": "Enwreathe the armament in fire, dip into a low stance, and skewer the target in one thrust, with a strong-attack follow-up that fans flames across the front. The buff adds 95 <font color=\"#F48C25\">fire attack rating</font> for 15 seconds, and the first thrust can be parried.\n\n<font color=\"#C0B194\">Base stance damage (colossal swords - thrust):</font> 24\n<font color=\"#C0B194\">Base stance damage (greatswords/greatspears/great katanas/heavy thrusting swords/thrusting shields - thrust):</font> 22\n<font color=\"#C0B194\">Base stance damage (straight swords/halberds/spears/twinblades/katanas - thrust):</font> 20\n<font color=\"#C0B194\">Base stance damage (thrusting swords - thrust):</font> 16\n<font color=\"#C0B194\">Base stance damage (follow-up flames):</font> 15"
+    "info": "Enwreathe the armament in fire, dip into a low stance, and skewer the target in one thrust before a strong-attack follow-up fans flames across the front; the opening thrust can be parried and the skill is not chargeable. Adds 95 <font color=\"#F48C25\">fire attack rating</font> to the armament for 15 seconds.\n\n<font color=\"#C0B194\">Base stance damage (colossal swords - thrust):</font> 24\n<font color=\"#C0B194\">Base stance damage (greatswords/greatspears/great katanas/heavy thrusting swords/thrusting shields - thrust):</font> 22\n<font color=\"#C0B194\">Base stance damage (straight swords/halberds/spears/twinblades/katanas - thrust):</font> 20\n<font color=\"#C0B194\">Base stance damage (thrusting swords - thrust):</font> 16\n<font color=\"#C0B194\">Base stance damage (follow-up flames):</font> 15"
   },
   {
     "id": 4150,
     "name": "Savage Lion's Claw",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Savage Lion's Claw</font>",
-    "info": "Somersault forward, landing a weaker Lion's Claw slash, a regular attack during the flip, and a finishing Lion's Claw slam, with an additional input enabling the final strike. Each hit inherits your weapon's damage type.\n\n<font color=\"#C0B194\">Base stance damage (colossal weapons):</font> 64\n<font color=\"#C0B194\">Base stance damage (great hammers):</font> 60\n<font color=\"#C0B194\">Base stance damage (hammers):</font> 55\n<font color=\"#C0B194\">Base stance damage (colossal swords/flails):</font> 51\n<font color=\"#C0B194\">Base stance damage (greatswords/light greatswords/greataxes/great katanas/curved greatswords):</font> 47\n<font color=\"#C0B194\">Base stance damage (straight swords/axes/twinblades/katanas/curved swords):</font> 43"
+    "info": "Somersault forward, landing a weaker Lion's Claw slash, a regular attack during the flip, and a finishing Lion's Claw slam, with an additional input enabling the final strike; the three-hit sequence is not chargeable, each hit inherits your weapon's damage type, and the skill costs 20 <font color=\"#E0B985\">stamina</font>.\n\n<font color=\"#C0B194\">Base stance damage (colossal weapons):</font> 63.75\n<font color=\"#C0B194\">Base stance damage (great hammers):</font> 59.5\n<font color=\"#C0B194\">Base stance damage (hammers):</font> 55.25\n<font color=\"#C0B194\">Base stance damage (colossal swords/flails):</font> 51\n<font color=\"#C0B194\">Base stance damage (greatswords/light greatswords/greataxes/great katanas/curved greatswords):</font> 46.75\n<font color=\"#C0B194\">Base stance damage (straight swords/axes/twinblades/katanas/curved swords):</font> 42.5"
   },
   {
     "id": 4160,
     "name": "Divine Beast Frost Stomp",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Divine Beast Frost Stomp</font>",
-    "info": "Raise a leg high before stomping to send a ground-hugging wave of frost forward that detonates into spikes and ice explosions along its path. Charging increases the wave's range and power while dealing <font color=\"#57DBCE\">magic damage</font>.\n\n<font color=\"#C0B194\">Base stance damage:</font> 5\n<font color=\"#C0B194\">Base stance damage (charged):</font> 10\n<font color=\"#9DD7FB\">Base frostbite accumulation (spikes):</font> 70\n<font color=\"#9DD7FB\">Base frostbite accumulation (explosions):</font> 70"
+    "info": "Lift a leg high and stamp it down to send a ground-hugging wave of frost straight ahead that detonates into spikes and ice explosions along its path, dealing <font color=\"#57DBCE\">magic damage</font>; charging increases the wave's range and power, the skill costs 30 <font color=\"#E0B985\">stamina</font>, and the attack is chargeable. The wave also inflicts frostbite buildup on the spikes and each explosion.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Base stance damage:</font> 5\n<font color=\"#C0B194\">Base stance damage (charged):</font> 10\n<font color=\"#9DD7FB\">Base frostbite accumulation (spikes):</font> 70\n<font color=\"#9DD7FB\">Base frostbite accumulation (explosions):</font> 70"
   },
   {
     "id": 4170,
     "name": "Flame Spear",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Flame Spear</font>",
-    "info": "Ready a thrust imbued with flame before unleashing a fiery spear straight ahead, gaining damage and travel distance when you charge the attack. Adds 95 <font color=\"#F48C25\">fire attack rating</font> for 40 seconds and sends the flame projectile as soon as the thrust fires. The weapon hit can be parried.\n\n<font color=\"#C0B194\">Base stance damage (colossal swords):</font> 38\n<font color=\"#C0B194\">Base stance damage (greatswords/greatspears/great katanas/heavy thrusting swords/thrusting shields):</font> 36\n<font color=\"#C0B194\">Base stance damage (straight swords/halberds/spears/twinblades/katanas):</font> 33\n<font color=\"#C0B194\">Base stance damage (thrusting swords):</font> 28\n<font color=\"#C0B194\">Base stance damage (daggers):</font> 22"
+    "info": "Ready a thrust imbued with flame, then unleash a fiery spear straight ahead; charging the attack increases damage and travel distance. The buff coats the armament in flame for 40 seconds, adding 95 <font color=\"#F48C25\">fire attack rating</font>, and the projectile fires the moment the thrust launches. The weapon hit can still be parried.\n\n<font color=\"#C0B194\">Base stance damage (colossal swords):</font> 38\n<font color=\"#C0B194\">Base stance damage (greatswords/greatspears/great katanas/heavy thrusting swords/thrusting shields):</font> 36\n<font color=\"#C0B194\">Base stance damage (straight swords/halberds/spears/twinblades/katanas):</font> 33\n<font color=\"#C0B194\">Base stance damage (thrusting swords):</font> 28\n<font color=\"#C0B194\">Base stance damage (daggers):</font> 22"
   },
   {
     "id": 4180,
     "name": "Carian Sovereignty",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Carian Sovereignty</font>",
-    "info": "Transform the blade into a massive magical greatsword and slam it down, with an additional input producing a horizontal sweep; either attack can be charged for greater force. A fully charged slam releases a ground shockwave that fires two bursts in a line for about 40% of the slam's damage each, and a single foe cannot be hit by both the slam and the bursts. The follow-up sweep matches the initial cast in raw damage. All hits deal pure <font color=\"#57DBCE\">magic damage</font> that scales with <font color=\"#E0B985\">Intelligence</font>, weapon upgrade level, and infusion, and the skill provides significant hyper armor while casting ranging from 118 <font color=\"#E0B985\">poise</font> on greatswords to 22 on daggers.\n\n<font color=\"#C0B194\">Base stance damage (charged slam):</font> 48\n<font color=\"#C0B194\">Base stance damage (charged follow-up sweep):</font> 45"
+    "info": "Transform the blade into a massive magical greatsword and slam it down, with an additional input producing a horizontal sweep; charge either attack for greater force. A fully charged slam releases a ground shockwave that sends two bursts in a line, each dealing roughly 40% of the slam's damage, and a single foe cannot be hit by both the slam and the bursts. The follow-up sweep matches the initial cast in raw damage. All hits deal pure <font color=\"#57DBCE\">magic damage</font> that scales with <font color=\"#E0B985\">Intelligence</font>, weapon upgrade level, and infusion affinity (Magic granting the highest output), and the skill grants hyper armor while casting (118 <font color=\"#E0B985\">poise</font> on greatswords, curved greatswords, and heavy thrusting swords, 104 on great katanas, 60 on light greatswords, 30 on straight swords/twinblades/katanas/curved swords, 28 on thrusting swords, and 22 on daggers).\n\n<font color=\"#C0B194\">Base stance damage (charged slam):</font> 48 (<font color=\"#E0B985\">Intelligence</font>)\n<font color=\"#C0B194\">Base stance damage (charged follow-up sweep):</font> 45 (<font color=\"#E0B985\">Intelligence</font>)"
   },
   {
     "id": 4190,
     "name": "Shriek of Sorrow",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Shriek of Sorrow</font>",
-    "info": "Unleash a harrowing scream that makes nearby foes flinch before channeling resentment into your weapon for 40 seconds based on your remaining HP. The buff locks in at the HP when cast, increases <font color=\"#F395C4\">physical damage</font> by 10% at 100% HP, 15% at 85% HP, 20% at 55% HP, and 25% at 30% HP or lower (7.5%, 10%, 15%, and 20% in PvP), and adds +5 <font color=\"#E0B985\">Strength</font> scaling to the weapon until you recast. Cannot be parried and counts as a weapon buff, so it will not stack with other buffs such as greases."
+    "info": "Unleash a harrowing scream that makes nearby foes flinch before channeling resentment into your weapon for 40 seconds based on your remaining HP. The buff locks in at the HP when cast, increases <font color=\"#F395C4\">physical damage</font> by 10% at 100% HP, 15% at 85% HP, 20% at 55% HP, and 25% at 30% HP or lower (7.5%, 10%, 15%, and 20% in PvP), and adds +5 <font color=\"#E0B985\">Strength</font> scaling to the weapon until you recast; it cannot be parried, counts as a weapon buff (so it does not stack with greases), and Roar Medallion has no effect."
   },
   {
     "id": 4200,
     "name": "Shield Strike",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Shield Strike</font>",
-    "info": "Bash forward with the equipped shield and input repeatedly to chain up to three additional shield strikes. When assigned off-hand it gives the shield its own light attack string so you can keep the main-hand skill."
+    "info": "Bash forward with the equipped shield and input repeatedly to chain up to three additional shield strikes. When assigned off-hand it gives the shield its own light attack string so you can keep the main-hand skill, effectively allowing the shield to use its light attack instead of the main-hand Skill, and the ability is not chargeable."
   },
   {
     "id": 4210,
     "name": "Igon's Drake Hunt",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Igon's Drake Hunt</font>",
-    "info": "Draw the bow with a guttural bellow that prepares either a light or heavy shot, then release to fire a twisted arrow as soon as you press the corresponding attack.\n\nShots from this stance consume <font color=\"#E0B985\">FP</font>, deal roughly 75% more damage than normal arrows, and do not benefit from roar damage bonuses."
+    "info": "Draw the bow with a guttural bellow to enter a stance, then release either a light or heavy shot to fire a twisted arrow as soon as you press the corresponding attack. Holding the skill button prepares the bow so the respective arrow launches quickly, consuming <font color=\"#E0B985\">FP</font> (and stamina while in combat). Each shot deals roughly 75% more damage than normal arrows and does not benefit from roar damage bonuses (Roar Medallion has no effect)."
   },
   {
     "id": 4220,
     "name": "Ghostflame Call",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Ghostflame Call</font>",
-    "info": "Drive the armament forward to manifest a burst of <font color=\"#57DBCE\">magic damage</font> ghostflame that applies 20 <font color=\"#9DD7FB\">frostbite accumulation</font>. A light attack follow-up leaves a burning trail that inflicts 20 per tick, while a strong attack enlarges the explosion to 80. All variants also apply the weapon hit <font color=\"#E0B985\">poise damage</font> on the opening thrust.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Base stance damage (no-input explosion):</font> 4\n<font color=\"#C0B194\">Base stance damage (light follow-up):</font> 5\n<font color=\"#C0B194\">Base stance damage (heavy follow-up):</font> 11\n<font color=\"#9DD7FB\">Base frostbite accumulation (no-input explosion):</font> 20\n<font color=\"#9DD7FB\">Base frostbite accumulation (trail, per tick):</font> 20\n<font color=\"#9DD7FB\">Base frostbite accumulation (heavy explosion):</font> 80"
+    "info": "Drive the armament forward to manifest a burst of <font color=\"#57DBCE\">magic damage</font> ghostflame that applies 20 <font color=\"#9DD7FB\">frostbite accumulation</font>. A light attack follow-up leaves a burning trail that inflicts 20 <font color=\"#9DD7FB\">frostbite accumulation</font> per tick while a strong attack enlarges the explosion to 80; all variants still apply the weapon hit's <font color=\"#E0B985\">poise damage</font> (100% of the weapon's poise) on the opening thrust, and the light trail itself contributes no stance damage. This skill is not chargeable.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Base stance damage (no-input explosion):</font> 4\n<font color=\"#C0B194\">Base stance damage (light input explosion):</font> 5\n<font color=\"#C0B194\">Base stance damage (light input trail):</font> 0\n<font color=\"#C0B194\">Base stance damage (heavy input explosion):</font> 11\n<font color=\"#9DD7FB\">Base frostbite accumulation (no-input explosion):</font> 20\n<font color=\"#9DD7FB\">Base frostbite accumulation (trail, per tick):</font> 20\n<font color=\"#9DD7FB\">Base frostbite accumulation (heavy explosion):</font> 80"
   },
   {
     "id": 5000,
     "name": "Dragonwound Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Dragonwound Slash</font>",
-    "info": "Leap through the air while cloaked in jagged gravel stone, charging the attack to fire the aura as additional damage alongside the high slash.\n\nInflicts 20% increased damage on Dragons and Ancient Dragons.\n\n<font color=\"#C0B194\">Base stance damage (uncharged):</font> 22\n<font color=\"#C0B194\">Base stance damage (charged):</font> 33"
+    "info": "Leap through the air while cloaked in jagged gravel stone, charging the attack to fire the aura as additional damage alongside the high slash; the charge is pure <font color=\"#F395C4\">physical damage</font> and the combo hits for 33 total (16.5 from the slash plus 16.5 from the projectile). Inflicts 20% increased damage on Dragons and Ancient Dragons.\n\n<font color=\"#C0B194\">Base stance damage (uncharged):</font> 22\n<font color=\"#C0B194\">Base stance damage (charged slash):</font> 16.5\n<font color=\"#C0B194\">Base stance damage (charged projectile):</font> 16.5"
   },
   {
     "id": 5010,
     "name": "Needle Piercer",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Needle Piercer</font>",
-    "info": "Generate ten gold needles that pierce at once, purging any ailments or special effects from pierced foes.\n\n<font color=\"#C0B194\">Base stance damage (sword swipe):</font> 8\n<font color=\"#C0B194\">Base stance damage (needles):</font> 11"
+    "info": "Generate ten gold needles that pierce at once, purging any ailments or special effects from pierced foes while the sword swipe and needles deal mostly <font color=\"#F395C4\">physical damage</font> with only a minor <font color=\"#F5EB89\">holy damage</font> component. The sword swipe hits for 8.3 stance damage, the needles add 11 total (1.1 each), and when attacking unaware enemies only the first projectile gains the surprise damage bonus. This skill is not chargeable but can be parried.\n\n<font color=\"#C0B194\">Base stance damage (sword swipe):</font> 8.3\n<font color=\"#C0B194\">Base stance damage (needles):</font> 11"
   },
   {
     "id": 5020,
     "name": "Light",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Light</font>",
-    "info": "Launch the armament upward to unleash a cone of blinding light whose rays sweep through the area.\n\nEach ray can hit up to four times and deals pure <font color=\"#F5EB89\">holy damage</font> that scales with <font color=\"#E0B985\">Faith</font>. Grants a body buff that increases <font color=\"#F5EB89\">holy damage</font> by 20% for 60 seconds, unaffected by spell duration multipliers.\n\n<font color=\"#C0B194\">Base stance damage (per ray hit):</font> 5"
+    "info": "Launch the armament upward to unleash a cone of blinding light whose rays sweep through the area ahead; the skill cannot be parried, each ray hits up to four times, and the caster cannot cancel or perform other actions until the roughly 4.5 second animation finishes. Each ray deals pure <font color=\"#F5EB89\">holy damage</font> that scales with <font color=\"#E0B985\">Faith</font>, and casting also applies a body buff that increases holy damage by 20% for 60 seconds, ignores Old Lord's Talisman and other spell-duration modifiers, and does not stack with other body-buff holy damage boosts.\n\n<font color=\"#F5EB89\">Base holy damage (per ray hit):</font> 5 (<font color=\"#E0B985\">Faith</font>)"
   },
   {
     "id": 5030,
     "name": "Darkness",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Darkness</font>",
-    "info": "Raise the sword and cleave with darkness to form a veil that conceals the caster while blinding foes around them. Enemies touched by the veil have their aggro reset, remain blinded for about 7 seconds, and temporarily suffer reduced <font color=\"#F5EB89\">holy damage negation</font>."
+    "info": "Raise the sword and cleave with darkness to form a veil that conceals the caster while blinding foes around them; enemies tagged by the veil have their aggro reset, remain blinded for about 7 seconds, and temporarily suffer reduced <font color=\"#F5EB89\">holy damage negation</font>.\n\nThe Two Fingers incantation costs 24 stamina, does not work against certain enemies (notably most bosses), and in PvP it does not prevent lock-on, though it still masks your actions while inside the veil.\n\nSee Buffs & Debuffs for more information on stacking the debuff."
   },
   {
     "id": 5040,
     "name": "Onze's Line of Stars",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Onze's Line of Stars</font>",
-    "info": "Imbue lined glintstones with sorcerous energy to slash once, then allow up to two follow-up attacks that swell in force with each input.\n\n<font color=\"#C0B194\">Base stance damage (full combo):</font> 30"
+    "info": "Imbue lined glintstones with sorcerous energy to slash once, then continue through up to two follow-up attacks that each hit harder than the last. The combo totals 30 stance damage, scales with the weapon's attack rating, and is boosted by multi-hit talismans and the Thorny Cracked Tear.\n\n<font color=\"#C0B194\">Base stance damage (full combo):</font> 30"
   },
   {
     "id": 5050,
     "name": "The Poison Flower Blooms Twice",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: The Poison Flower Blooms Twice</font>",
-    "info": "Conjure a stinger underfoot to stab the enemy, creating a shockwave on impact. If the stung enemy is already inflicted with any <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">rot</font>, deal an extra 5% of <font color=\"#E0B985\">maximum HP</font> plus 250 damage to them and purge the ailment.\n\n<font color=\"#F395C4\">Base physical damage (stab):</font> 150\n<font color=\"#F395C4\">Base physical damage (shockwave):</font> 70\n<font color=\"#EF7676\">Base scarlet rot accumulation:</font> 160"
+    "info": "Conjure a scarlet-rot-laden stinger beneath yourself to stab the enemy and kick up a shockwave on impact; the dive-kick inflicts 160 Scarlet Rot buildup while the wave only adds physical damage, and both hits scale solely with Weapon Level and gain damage from Shattered Stone Talisman. The shockwave inflicts no Scarlet Rot buildup on its own. If the dive-kick lands on a foe already afflicted with any <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">Scarlet Rot</font>, detonate it for 5% of <font color=\"#E0B985\">maximum HP</font> plus 250 damage (the same detonation as Poison Moth Flight) and purge the ailment, but only the dive-kick can trigger that detonation and it will not occur if you lack the <font color=\"#E0B985\">FP</font> to spawn the stinger and shockwave. If performed without <font color=\"#E0B985\">FP</font>, neither component materializes, so the detonation cannot trigger.\n\n<font color=\"#EF7676\">Scarlet Rot:</font> Inflicts damage equal to 0.18% of <font color=\"#E0B985\">maximum HP</font> plus 15, every second for 90 seconds, for a total of 16.2% of <font color=\"#E0B985\">maximum HP</font> plus 1350 damage when the dive-kick lands.\n\n<font color=\"#F395C4\">Base physical damage (dive-kick):</font> 150\n<font color=\"#F395C4\">Base physical damage (shockwave):</font> 70\n<font color=\"#EF7676\">Base scarlet rot accumulation (stinger):</font> 160"
   },
   {
     "id": 5080,
     "name": "Spinning Guillotine",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Spinning Guillotine</font>",
-    "info": "Hold the putrid blade at both ends, arch backward for a powerful overhead chop, and keep inputting to spin continuously while draining <font color=\"#E0B985\">stamina</font> and 7 <font color=\"#E0B985\">FP</font> per spin. The strong attack follow-up launches into a jumping spinning slash.\n\n<font color=\"#C0B194\">Base stance damage (initial chop):</font> 20\n<font color=\"#C0B194\">Base stance damage (each spin):</font> 7\n<font color=\"#C0B194\">Base stance damage (jumping follow-up):</font> 30"
+    "info": "Hold the putrid blade at both ends, arch backward for a powerful overhead chop, and keep inputting to spin continuously while draining <font color=\"#E0B985\">stamina</font> and 7 <font color=\"#E0B985\">FP</font> per spin; repeated inputs let you keep turning until the resources run dry. The strong attack follow-up launches into a jumping spinning slash that also costs 7 <font color=\"#E0B985\">FP</font>, and the skill is not chargeable.\n\n<font color=\"#C0B194\">Base stance damage (initial chop):</font> 20\n<font color=\"#C0B194\">Base stance damage (each spin):</font> 7\n<font color=\"#C0B194\">Base stance damage (jumping follow-up):</font> 30"
   },
   {
     "id": 5090,
     "name": "Unending Dance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Unending Dance</font>",
-    "info": "Perform a furious succession of slashes and hold the button to sustain the dance; the sequence continues as long as those <font color=\"#E0B985\">FP</font> and <font color=\"#E0B985\">stamina</font> allow."
+    "info": "Perform a furious succession of slashes and hold the button to sustain the dance for as long as <font color=\"#E0B985\">FP</font> and <font color=\"#E0B985\">stamina</font> allow, continuously draining both while you spin. The Dancer's Set increases the damage of this skill, and it is not chargeable."
   },
   {
     "id": 5100,
     "name": "Revenger's Blade",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Revenger's Blade</font>",
-    "info": "Dash up to an enemy with blades in each hand, extending the dash by charging, then follow with a strong attack that hacks the enemy to pieces.\n\n<font color=\"#C0B194\">Base stance damage (dash):</font> 5\n<font color=\"#C0B194\">Base stance damage (follow-up):</font> 24"
+    "info": "Dash up to an enemy with blades in each hand, holding the button to extend the dash while it costs 15 <font color=\"#E0B985\">FP</font> and deals 5 stance damage; follow with a strong attack that hacks the enemy to pieces for 10 <font color=\"#E0B985\">FP</font> and adds 24.4 stance damage, for 29.4 total. Only the initial dash is chargeable (Godfrey Icon affects that attack alone) while the follow-up cannot be charged, and the skill is parriable.\n\n<font color=\"#C0B194\">Base stance damage (dash):</font> 5\n<font color=\"#C0B194\">Base stance damage (follow-up):</font> 24.4"
   },
   {
     "id": 5110,
     "name": "Mists of Eternal Sleep",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Mists of Eternal Sleep</font>",
-    "info": "Release a velvety purple mist across a wide frontal area that inflicts <font color=\"#A698F4\">Eternal Sleep</font> buildup on touch, and while it persists the weapon gains bonus buildup for 30 seconds.\n\n<font color=\"#C0B194\">Base stance damage (weapon hitbox):</font> 7\n<font color=\"#A698F4\">Base Eternal Sleep accumulation (mist):</font> 112\n<font color=\"#A698F4\">Base Eternal Sleep accumulation (weapon buff):</font> 15"
+    "info": "Release a velvety purple mist across a wide frontal area that inflicts <font color=\"#A698F4\">Eternal Sleep</font> accumulation on touch; the mist is not chargeable and the weapon remains imbued for 30 seconds, adding 15 <font color=\"#A698F4\">Eternal Sleep</font> accumulation per attack while it persists.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack.\n\n<font color=\"#C0B194\">Base stance damage (weapon hitbox):</font> 6.5\n<font color=\"#A698F4\">Base Eternal Sleep accumulation (mist):</font> 112\n<font color=\"#A698F4\">Base Eternal Sleep accumulation (weapon buff):</font> 15"
   },
   {
     "id": 5120,
     "name": "Dynastic Sickleplay",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Dynastic Sickleplay</font>",
-    "info": "Perform a finessed evasive backstep that gives directional control, then chain two additional strong attack inputs for an advancing upward slash followed by a downward bring-back strike; the skill grants 20 i-frames.\n\n<font color=\"#C0B194\">Base stance damage (initial follow-up):</font> 22\n<font color=\"#C0B194\">Base stance damage (FP follow-up):</font> 33\n<font color=\"#C0B194\">Base stance damage (full sequence):</font> 55"
+    "info": "Perform a finessed evasive backstep that gives directional control, then chain two additional strong attack inputs for an advancing upward slash followed by a downward bring-back strike; the skill grants 20 i-frames, is not chargeable, and the initial follow-up consumes no FP while landing three hits (10 + 2.5 + 10) before the FP-consuming finisher.\n\n<font color=\"#C0B194\">Base stance damage (initial follow-up):</font> 22.5\n<font color=\"#C0B194\">Base stance damage (FP follow-up):</font> 33\n<font color=\"#C0B194\">Base stance damage (full sequence):</font> 55.5"
   },
   {
     "id": 5130,
     "name": "Blinkbolt: Twinaxe",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Blinkbolt: Twinaxe</font>",
-    "info": "Transform into a bolt of lightning from a low stance and charge straight ahead; the strong attack follow-up is a lightning-charged spinning slash.\n\n<font color=\"#C0B194\">Base stance damage:</font> 30"
+    "info": "From a low stance, transform into a bolt of lightning and charge straight ahead at fulgurous speed; the strong attack follow-up is a lightning-charged spinning slash. The dash mirrors the standard Blinkbolt Ash of War, is not chargeable, grants invulnerability frames only when FP is used, and is boosted by pieces of the Death Knight Set.\n\n<font color=\"#C0B194\">Base stance damage:</font> 30"
   },
   {
     "id": 5140,
     "name": "Blinkbolt: Long-hafted Axe",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Blinkbolt: Long-hafted Axe</font>",
-    "info": "Transform into a bolt of lightning from a low stance and charge straight ahead; the strong attack follow-up is a lightning-charged leaping slash.\n\n<font color=\"#C0B194\">Base stance damage:</font> 33"
+    "info": "From a low stance, transform into a bolt of lightning and charge straight ahead at fulgurous speed; the strong attack follow-up is a lightning-charged leaping slash. The dash mirrors the standard Blinkbolt Ash of War, is not chargeable, grants invulnerability frames only when FP is used, and is boosted by pieces of the Death Knight Set.\n\n<font color=\"#C0B194\">Base stance damage:</font> 33"
   },
   {
     "id": 5150,
     "name": "Promised Consort",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Promised Consort</font>",
-    "info": "Imbue the twin greatswords with the light of Miquella, delivering a slash accompanied by columns of <font color=\"#F5EB89\">holy light</font> and chaining up to two additional follow-up attacks.\n\n<font color=\"#C0B194\">Base stance damage (opener):</font> 15\n<font color=\"#C0B194\">Base stance damage (second attack):</font> 15\n<font color=\"#C0B194\">Base stance damage (final follow-up):</font> 22\n<font color=\"#C0B194\">Base stance damage (full combo):</font> 52"
+    "info": "Imbue the twin greatswords with the light of Miquella, delivering a slash accompanied by columns of <font color=\"#F5EB89\">holy light</font> and chaining up to two additional follow-up attacks; the light pillars deal Holy damage that scales with Intelligence and the skill is not chargeable.\n\n<font color=\"#C0B194\">Base stance damage (opener):</font> 15\n<font color=\"#C0B194\">Base stance damage (second attack):</font> 15\n<font color=\"#C0B194\">Base stance damage (final follow-up):</font> 22\n<font color=\"#C0B194\">Base stance damage (full combo):</font> 52"
   },
   {
     "id": 5160,
     "name": "Shadow Sunflower Headbutt",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Shadow Sunflower Headbutt</font>",
-    "info": "Slam the blossom downward to send a flattening shockwave, then chain two follow-up slams through repeated inputs for a furious combo.\n\n<font color=\"#C0B194\">Base stance damage (opener):</font> 20\n<font color=\"#C0B194\">Base stance damage (second slam):</font> 15\n<font color=\"#C0B194\">Base stance damage (final slam):</font> 30\n<font color=\"#C0B194\">Base stance damage (full combo):</font> 65"
+    "info": "Slam the blossom downward to send a flattening shockwave and then chain two follow-up slams through repeated inputs for a furious four-hit sequence that ends with a crashing finale.\n\n<font color=\"#C0B194\">Base stance damage (opener):</font> 20\n<font color=\"#C0B194\">Base stance damage (second slam):</font> 15\n<font color=\"#C0B194\">Base stance damage (final slam):</font> 30\n<font color=\"#C0B194\">Base stance damage (full combo):</font> 65"
   },
   {
     "id": 5170,
     "name": "Moon-and-Fire Stance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moon-and-Fire Stance</font>",
-    "info": "Cast glintstone light waves from the ready stance with normal attacks, each able to chain up to two additional light-wave casts, then finish with a strong attack to spin into a flaming tornado that drenches the area in <font color=\"#F48C25\">fire</font>."
+    "info": "Assume the ready stance to imbue each sword with opposing light and fire, then chain normal attacks to launch glintstone light waves (each light attack allows up to two additional light-wave casts) before finishing with a heavy input that spins into a flaming tornado that drenches the area in <font color=\"#F48C25\">fire</font> and ends with flaming pillars. The stance still functions while another light greatsword is powerstanced in the offhand and benefits from Rellana's Cameo plus the Shard of Alexander."
   },
   {
     "id": 5180,
     "name": "Devonia's Vortex",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Devonia's Vortex</font>",
-    "info": "Violently spin the hammer and slam the ground to unleash a shockwave; an uncharged release flattens foes, while a full charge strikes even harder.\n\n<font color=\"#C0B194\">Base stance damage (uncharged):</font> 28\n<font color=\"#C0B194\">Base stance damage (charged):</font> 53"
+    "info": "Violently spin the hammer and slam the ground to unleash a Crucible shockwave; the skill is chargeable, with the uncharged release flattening foes and a full charge striking even harder, and the Crucible Axe Set, Crucible Tree Set, and Crucible Hammer-Helm further enhance the impact.\n\n<font color=\"#C0B194\">Base stance damage (uncharged):</font> 27.5\n<font color=\"#C0B194\">Base stance damage (charged):</font> 52.5"
   },
   {
     "id": 5190,
     "name": "Messmer's Assault",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Messmer's Assault</font>",
-    "info": "Drive a series of spear thrusts wreathed in <font color=\"#F48C25\">fire</font>, allowing up to two follow-up attacks before the final thrust slams into the ground and spawns countless spears around you. Counts as a Fire Knight skill.\n\n<font color=\"#C0B194\">Base stance damage (full combo):</font> 42"
+    "info": "Drive a series of spear thrusts wreathed in <font color=\"#F48C25\">fire</font>, allowing up to two follow-up attacks before the final thrust slams into the ground and spawns countless spears around you. Counts as a Fire Knight skill, and damage is boosted by 10% while wearing the Winged Serpent Helm.\n\n<font color=\"#C0B194\">Base stance damage (full combo):</font> 42"
   },
   {
     "id": 5210,
     "name": "Sleep Evermore",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Sleep Evermore</font>",
-    "info": "Pierce with a toxin-coated needle to inflict <font color=\"#A698F4\">Eternal Sleep</font>, dealing significantly more damage to foes already in slumber or eternal sleep.\n\n<font color=\"#A698F4\">Base eternal sleep accumulation:</font> 97"
+    "info": "Pierce with a toxin-coated needle to inflict <font color=\"#A698F4\">Eternal Sleep</font>, dealing significantly more damage to foes already in slumber or eternal sleep (targets stunned by sleep also count), and the skill can be parried.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack.\n\n<font color=\"#A698F4\">Base Eternal Sleep accumulation:</font> 97"
   },
   {
     "id": 5220,
     "name": "Golden Crux",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Golden Crux</font>",
-    "info": "Leap up and skewer foes from overhead, unfolding the barbs to excruciate from within on a hit or spawning piercing barbs around you with the follow-up input to knock enemies into the air. Consumes <font color=\"#E0B985\">FP</font> when the hit connects; without <font color=\"#E0B985\">FP</font> the hits lose 25% damage and the beam is not fired.\n\n<font color=\"#C0B194\">Base stance damage (pierce):</font> 17\n<font color=\"#C0B194\">Base stance damage (holy):</font> 16"
+    "info": "Leap up and skewer foes from overhead, unfolding the barbs to excruciate from within on a hit while the follow-up input spawns piercing barbs that knock enemies into the air. Consumes <font color=\"#E0B985\">FP</font> when the hit connects; without <font color=\"#E0B985\">FP</font> the hits lose 25% damage and the beam is not fired.\n\n<font color=\"#C0B194\">Base stance damage (pierce):</font> 17\n<font color=\"#C0B194\">Base stance damage (holy):</font> 16"
   },
   {
     "id": 5230,
     "name": "Moore's Charge",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moore's Charge</font>",
-    "info": "Ready the shield with both hands and charge forward while guarding, ending in a verdigris shove that knocks back and down nearby foes; holding the input extends the length of the charge.\n\n<font color=\"#C0B194\">Base stance damage:</font> 30\n<font color=\"#C0B194\">Base stance damage (final blast):</font> 12"
+    "info": "Ready the shield with both hands and charge forward while guarding, ending in a verdigris shove that knocks back and down nearby foes; holding the input extends the length of the charge and the verdigris AoE at the end knocks down multiple enemies.\n\n<font color=\"#C0B194\">Base stance damage:</font> 30\n<font color=\"#C0B194\">Base stance damage (final blast):</font> 12"
   },
   {
     "id": 5240,
     "name": "White Light Charge",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: White Light Charge</font>",
-    "info": "Summon white light from the meteoric ore to charge through foes, then use an additional input to detonate an immediate white light explosion around you.\n\n<font color=\"#C0B194\">Base stance damage:</font> 24"
+    "info": "Summon white light from the meteoric ore to charge through foes, then use an additional input to detonate an immediate white light explosion around you. This skill is not chargeable.\n\n<font color=\"#C0B194\">Base stance damage:</font> 24"
   },
   {
     "id": 5250,
     "name": "Rancor Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Rancor Slash</font>",
-    "info": "Spin around to slash foes while summoning five vengeful spirit skulls that chase enemies and deal <font color=\"#57DBCE\">magic damage</font>, then use an additional input for a follow-up attack; each strike builds <font color=\"#9DD7FB\">frostbite</font> on contact."
+    "info": "Spin around to slash foes while summoning five vengeful spirit skulls that chase enemies and deal <font color=\"#57DBCE\">magic damage</font>; use an additional input for a follow-up attack, and each strike builds <font color=\"#9DD7FB\">frostbite</font> on contact.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds."
   },
   {
     "id": 5260,
     "name": "Witching Hour Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Witching Hour Slash</font>",
-    "info": "Hold the sword level, infuse it with Night, and unleash an incorporeal series of attacks that cannot be blocked.\n\n<font color=\"#C0B194\">Base stance damage (uncharged):</font> 14\n<font color=\"#C0B194\">Base stance damage (charged):</font> 27"
+    "info": "Hold the sword level, infuse it with Night, and unleash an incorporeal series of attacks that cannot be blocked or parried; charging increases their power, and the skill is buffed by the Godfrey Icon, Shard of Alexander, multi-hit talismans such as Rotten Winged Sword Insignia, and the Thorny Cracked Tear.\n\n<font color=\"#C0B194\">Base stance damage (uncharged):</font> 14\n<font color=\"#C0B194\">Base stance damage (charged):</font> 27"
   },
   {
     "id": 5270,
     "name": "Euporia Vortex",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Euporia Vortex</font>",
-    "info": "Twirl the armament through the vortex to execute five slashes straight ahead and fire a beam of light that consumes all of the blades' luster. Without <font color=\"#E0B985\">FP</font> the weapon does not glow, each hit suffers roughly a 75% damage penalty, and the beam does not fire."
+    "info": "Twirl the armament through the vortex to unleash five hits directly ahead while the blade glows with restored luster; if the weapon was charged beforehand the vortex also fires a beam of light from its center and the animation stretches to ten hits. The unique skill costs <font color=\"#E0B985\">FP</font> 28 and cannot be charged.\n\nWhen the blades are fully charged before activation, the beam widens, the duration and <font color=\"#E0B985\">stamina</font> consumption double, each hit consumes <font color=\"#E0B985\">stamina</font> separately, the beam can track with the vortex and knock down humanoids if its final hit connects, it benefits from Rotten Winged Sword Insignia-style bonuses without adding charges to those effects, and rolling will cancel the skill while still expending the charges once the input ends.\n\nShard of Alexander and Warrior Jar Shard boost the damage of both the physical hits and the beam by 15% and 10%, respectively.\n\nIf the skill is used without <font color=\"#E0B985\">FP</font>, the weapon stays dull, every hit suffers roughly a 75% damage penalty, the beam cannot fire, and the charges are not consumed again until enough <font color=\"#E0B985\">FP</font> is recovered."
   },
   {
     "id": 5280,
     "name": "Smithing Art Spears",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Smithing Art Spears</font>",
-    "info": "Slam the red-hot anvil into the ground and rip it free to erupt countless spears that vanish an instant later.\n\n<font color=\"#C0B194\">Base stance damage:</font> 45"
+    "info": "Slam the red-hot anvil into the ground to send up countless spears that vanish instantly; this unique skill costs <font color=\"#E0B985\">FP</font> 18, shares the animation with Eruption, and cannot be charged.\n\n<font color=\"#C0B194\">Base stance damage:</font> 45"
   },
   {
     "id": 5290,
     "name": "Rancor Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Rancor Slash</font>",
-    "info": "Spin around to carve everything nearby, then use an additional input for a follow-up slash as each cut summons five vengeful spirit skulls that pursue targets and detonate for <font color=\"#57DBCE\">magic damage</font>. Every hit and spirit explosion inflicts <font color=\"#9DD7FB\">Frostbite</font> accumulation, so even if the weapon whiffs, the skulls continue chasing until they connect."
+    "info": "Spin around to slash foes while summoning five vengeful spirit skulls that chase enemies and detonate for <font color=\"#57DBCE\">magic damage</font>; use an additional input for a follow-up attack, and each strike plus skull explosion inflicts <font color=\"#9DD7FB\">Frostbite</font> even if the weapon whiffs, since the skulls continue chasing until they connect. The skill costs <font color=\"#E0B985\">FP</font> 12, is not chargeable, and shares a similar animation with Sword Dance.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds."
   },
   {
     "id": 5300,
     "name": "Romina's Purification",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Romina's Purification</font>",
-    "info": "Imbue the bud-blade with butterflies, then unleash two sweeping slashes for them to erupt after a short delay.\n\n<font color=\"#C0B194\">Base stance damage (first slash):</font> 9\n<font color=\"#C0B194\">Base stance damage (second slash):</font> 11\n<font color=\"#C0B194\">Base stance damage (butterfly explosion):</font> 2\n<font color=\"#EF7676\">Base scarlet rot accumulation (per slash):</font> 110\n<font color=\"#EF7676\">Base scarlet rot accumulation (butterfly explosion):</font> 22"
+    "info": "Imbue the bud-blade with scarlet rot butterflies, then unleash two sweeping slashes so the butterflies erupt after a short delay; the unique skill costs <font color=\"#E0B985\">FP</font> 24, deals physical damage, and cannot be charged. Every slash and each butterfly explosion inflicts <font color=\"#EF7676\">Scarlet Rot</font> while the butterflies vanish instantly.\n\n<font color=\"#EF7676\">Scarlet Rot:</font> Inflicts damage equal to 0.33% of <font color=\"#E0B985\">maximum HP</font> plus 33, every second for 90 seconds.\n\n<font color=\"#C0B194\">Base stance damage (first slash):</font> 8.5\n<font color=\"#C0B194\">Base stance damage (second slash):</font> 11\n<font color=\"#C0B194\">Base stance damage (butterfly explosion):</font> 2\n<font color=\"#EF7676\">Base scarlet rot accumulation (per slash):</font> 110\n<font color=\"#EF7676\">Base scarlet rot accumulation (butterfly explosion):</font> 22"
   },
   {
     "id": 5310,
     "name": "Poison Spear-Hand Strike",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Poison Spear-Hand Strike</font>",
-    "info": "Shape your hand into a spear and plunge through the enemy to inject deadly poison.\n\n<font color=\"#40BF40\">Deadly Poison:</font> Deals 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14 per second for 30 seconds, totaling 4.2% of <font color=\"#E0B985\">maximum HP</font> plus 420 damage over the full duration.\n\n<font color=\"#40BF40\">Base deadly poison accumulation:</font> 155 (415 at 60 <font color=\"#E0B985\">Arcane</font>)"
+    "info": "Shape your hand into a spear and plunge through the enemy to inject deadly poison; the unique skill costs <font color=\"#E0B985\">FP</font> 13, is not chargeable, and applies a large dose of <font color=\"#40BF40\">Deadly Poison</font> buildup that scales with <font color=\"#E0B985\">Arcane</font>.\n\n<font color=\"#40BF40\">Deadly Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds (4.2% of <font color=\"#E0B985\">maximum HP</font> plus 420 total).\n\n<font color=\"#40BF40\">Base deadly poison accumulation:</font> 155 (weapon <font color=\"#E0B985\">Arcane</font> scaling; 415 at 60 <font color=\"#E0B985\">Arcane</font>)"
   },
   {
     "id": 5320,
     "name": "Madding Spear-Hand Strike",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Madding Spear-Hand Strike</font>",
-    "info": "Form your hand into a spear and stab through a foe to drive them mad, only threatening Tarnished <font color=\"#E0B985\">mind</font>s.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces <font color=\"#E0B985\">FP</font> equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30 when it triggers against Tarnished.\n\n<font color=\"#EEAA2B\">Base madness accumulation:</font> 305"
+    "info": "Form your hand into a spear and stab through a foe to drive them mad, only threatening Tarnished <font color=\"#E0B985\">mind</font>s.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces <font color=\"#E0B985\">FP</font> equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#EEAA2B\">Base madness accumulation:</font> 305"
   },
   {
     "id": 5330,
     "name": "Feeble Lord's Frenzied Flame",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Feeble Lord's Frenzied Flame</font>",
-    "info": "Raise the torch and exhale a stream of frenzied flame while moving, sustaining the spray for as long as the input is held until <font color=\"#E0B985\">FP</font> is exhausted. The cone deals <font color=\"#F48C25\">fire damage</font> that scales with fire buffs and rapidly builds <font color=\"#EEAA2B\">Madness</font> on everything caught in the blaze, including the user.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces <font color=\"#E0B985\">FP</font> equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30 when it triggers against Tarnished."
+    "info": "Raise the torch and exhale a stream of frenzied flame while moving, sustaining the spray for as long as the input is held until <font color=\"#E0B985\">FP</font> is exhausted. The cone deals <font color=\"#F48C25\">fire damage</font> that scales with fire buffs and rapidly builds <font color=\"#EEAA2B\">Madness</font> on everything caught in the blaze, including the user.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces <font color=\"#E0B985\">FP</font> equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished."
   },
   {
     "id": 5340,
@@ -643,7 +642,7 @@
     "name": "Discus Hurl",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Discus Hurl</font>",
-    "info": "Hurl the roundshield like a smithing-infused discus that hangs in the air for a heartbeat before spinning vertically to chase its target, then re-materializes in your hand. The shield keeps pursuing even as you reposition, delivering a mobile homing strike without needing to retrieve the armament manually."
+    "info": "Hurl the roundshield like a smithing-infused discus that hangs in the air for a heartbeat before spinning vertically to chase its target, then re-materializes in your hand. The shield keeps pursuing even as you reposition, delivering a mobile homing strike without needing to retrieve the armament manually. This skill is not chargeable."
   },
   {
     "id": 5380,
@@ -657,126 +656,126 @@
     "name": "Kowtower's Resentment",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Kowtower's Resentment</font>",
-    "info": "Force the finger weapon into a resentful bow that charges while held, then slam it down to vent the pent-up anger in successive shockwaves.\n\nThe initial slam scales purely with weapon attack rating, while the shockwaves deal <font color=\"#F5EB89\">holy damage</font> that scales with <font color=\"#E0B985\">Faith</font>. Does not benefit from charged attack buffs, and only the weapon hitbox counts toward skill buffs while the shockwaves do not."
+    "info": "Force the finger weapon into a resentful bow that charges while held, then slam it down to vent the pent-up anger in successive shockwaves. Holding the input increases the resentment before impact, but the skill does not benefit from charged attack buffs and only the weapon hitbox counts toward skill buffs while the holy shockwaves never do.\n\nThe weapon slam scales purely with weapon attack rating, whereas the shockwaves deal <font color=\"#F5EB89\">holy damage</font> that scales with <font color=\"#E0B985\">Faith</font>; Shard of Alexander affects only the weapon hitbox and leaves the holy AoE unchanged."
   },
   {
     "id": 5420,
     "name": "Painful Strike",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Painful Strike</font>",
-    "info": "Unleash a chastening flurry of whip strikes that layers <font color=\"#40BF40\">Deadly Poison</font> onto the victim while reducing <font color=\"#E0B985\">stamina regeneration</font> by 8 for 30 seconds. Cannot be parried.\n\n<font color=\"#C0B194\">Base stance damage:</font> 14"
+    "info": "Unleash a chastening flurry of whip strikes that layers <font color=\"#40BF40\">Deadly Poison</font> onto the victim while reducing <font color=\"#E0B985\">stamina regeneration</font> by 8 for 30 seconds. Cannot be parried. This skill is not chargeable.\n\n<font color=\"#40BF40\">Deadly Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds.\n\n<font color=\"#C0B194\">Base stance damage:</font> 14"
   },
   {
     "id": 5430,
     "name": "Solitary Moon Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Solitary Moon Slash</font>",
-    "info": "Deliver a downward slash that launches a moonlit arc, then chain into a lunging horizontal sweep with the strong attack.\n\n<font color=\"#C0B194\">Base stance damage (opener):</font> 11\n<font color=\"#C0B194\">Base stance damage (follow-up):</font> 28"
+    "info": "Deliver a downward slash that launches a moonlit arc, then chain into a lunging horizontal sweep with the strong attack; holding strong lets you delay the follow-up to make the timing less predictable. The opener does 11 stance damage and the follow-up another 28 (39 total), and this skill is not chargeable.\n\n<font color=\"#C0B194\">Base stance damage (opener):</font> 11\n<font color=\"#C0B194\">Base stance damage (follow-up):</font> 28"
   },
   {
     "id": 5440,
     "name": "Revenge of the Night",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Revenge of the Night</font>",
-    "info": "Release a bolt of Night-infused magic that scales with <font color=\"#E0B985\">Dexterity</font>, and casting immediately after blocking converts the absorbed blow into a much stronger retaliation that roughly triples its power while remaining unaffected by guard counter damage increase.\n\n<font color=\"#C0B194\">Base stance damage:</font> 3\n<font color=\"#C0B194\">Base stance damage (guard counter):</font> 15"
+    "info": "Launch a Night-infused bolt that deals <font color=\"#57DBCE\">Magic damage</font> scaling with <font color=\"#E0B985\">Dexterity</font> and costs 5 FP; casting it immediately after blocking absorbs the incoming blow and converts that energy into a guard-counter retaliation that roughly triples the projectile's power while delivering 15 stance damage.\n\nThe skill is not chargeable, and the projectile damage can still be boosted by Shard of Alexander and Magic Scorpion Charm even though Curved Sword Talisman and Deflecting Hardtear have no effect.\n\n<font color=\"#C0B194\">Base stance damage:</font> 3\n<font color=\"#C0B194\">Base stance damage (guard counter):</font> 15"
   },
   {
     "id": 5450,
     "name": "Weed Cutter",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Weed Cutter</font>",
-    "info": "Scythe through foes with broad horizontal swings, chaining the motion for as long as you can keep spending resources.\n\n<font color=\"#C0B194\">Base stance damage (per hit):</font> 11"
+    "info": "Scythe through foes with broad horizontal swings, chaining the motion for as long as stamina remains while each hit consumes 8 FP, letting repeated inputs keep the barrage active until those resources run out; the skill is not chargeable.\n\n<font color=\"#C0B194\">Base stance damage (per hit):</font> 11"
   },
   {
     "id": 5460,
     "name": "Blindfold of Happiness",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Blindfold of Happiness</font>",
-    "info": "Swing your head while covering your eyes to unleash a lamenting wail that veils you from sight for 15 seconds, reducing enemy detection the same way as Unseen Form. The invisibility remains active even if Crepus's Vial or Black Knife Armor hide the visual effect."
+    "info": "Swing your head while covering your eyes to unleash a lamenting wail that veils you from sight for 15 seconds, reducing enemy detection the same way as Unseen Form; the invisibility persists even if Crepus's Vial or Black Knife Armor hide the visual effect. The skill is not chargeable."
   },
   {
     "id": 5470,
     "name": "Jori's Inquisition",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Jori's Inquisition</font>",
-    "info": "Thrust the greatstaff overhead to launch streams of golden barbs that deal <font color=\"#F5EB89\">Holy damage</font>. Charging sustains the barrage briefly, letting you manually aim the rapid shots before the storm dissipates."
+    "info": "Thrust the greatstaff overhead to launch streams of golden barbs that deal <font color=\"#F5EB89\">Holy damage</font>, holding the button to sustain the barrage briefly while manually aiming the rapid projectiles via camera free aim; the skill consumes 6 FP per activation or 42 FP for the full duration.\n\nThe projectiles appear to inflict <font color=\"#C84343\">Blood Loss accumulation</font> (listed as a possible bug), making the skill useful against large enemies vulnerable to Holy damage."
   },
   {
     "id": 5480,
     "name": "Roaring Bash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Roaring Bash</font>",
-    "info": "Roar from behind your guard to drive a shield bash that erupts in a wide shockwave, knocking back and staggering surrounding foes.\nFreyja's Greatsword increases this skill's damage by 10% while roar damage buffs have no effect."
+    "info": "Roar from behind your guard to drive a shield bash that erupts in a wide shockwave, knocking back and staggering surrounding foes while behaving identically to Shield Bash and delivering the same area knockback.\n\nThe skill costs 12 FP, is not chargeable, Freyja's Greatsword passively boosts its damage by 10% while equipped, and Roar Medallion has no effect when using the skill."
   },
   {
     "id": 5490,
     "name": "Deadly Poison Spray",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Deadly Poison Spray</font>",
-    "info": "Swing the perfume bottle overhead to release a broad, lingering cloud that inflicts continuous <font color=\"#40BF40\">Deadly Poison</font> accumulation across a wide area.\nThe fumes do not draw enemy attention, allowing you to melt unaware targets without breaking stealth."
+    "info": "Swing the perfume bottle overhead to release a 7-second cloud of <font color=\"#40BF40\">Deadly Poison</font> that inflicts buildup on anyone inside—even yourself—while the lingering fumes stay hidden from enemies. The 21 FP cast cannot be charged or parried and locks you into the animation until roughly 2.5 seconds after the spray completes, forcing you to wait for the mist to fade.\n\nThe skill can be used to manually trigger Kindred of Rot's Exultation, Mushroom Crown, and the Poisoned Hand, but the long duration means you'll need to retreat or wait for the poison to dissipate before moving on.\n\n<font color=\"#40BF40\">Deadly Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds.\n\n<font color=\"#40BF40\">Base Deadly Poison accumulation per tick:</font> 10 (weapon <font color=\"#E0B985\">Arcane</font> scaling)"
   },
   {
     "id": 5500,
     "name": "Flare, O Serpent",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Flare, O Serpent</font>",
-    "info": "Ignite the serpents to add 90 <font color=\"#F48C25\">fire damage</font> to your armament for 30 seconds.\nWhile the buff is active, heavy attacks or ground-slamming actions trigger an explosion that consumes the enchantment and must be recast before another blast. Triggering explosions with paired Serpent Flails will detonate both weapons simultaneously. Counts as a Fire Knight skill.\n\n<font color=\"#C0B194\">Base stance damage (explosion):</font> 12"
+    "info": "Ignite the serpents to add 90 <font color=\"#F48C25\">fire damage</font> to your armament for 30 seconds; the 8 FP buff cannot be charged, and heavy attacks or ground-slamming actions trigger a 12 stance damage explosion that consumes the enchantment, requiring the skill to be recast before another blast. Triggering explosions with paired Serpent Flails detonates both weapons simultaneously, Shard of Alexander only buffs the blast, and the Winged Serpent Helm buffs the effect. Counts as a Fire Knight skill.\n\n<font color=\"#C0B194\">Base stance damage (explosion):</font> 12"
   },
   {
     "id": 5510,
     "name": "Scattershot (Claws)",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Scattershot (Claws)</font>",
-    "info": "Conjure multiple spectral claws in each hand and hurl 28 projectiles at once, with each volley able to strike large targets up to four times. Can be repeated for a second scatter throw, and using the skill without <font color=\"#E0B985\">FP</font> releases only six claws.\n\n<font color=\"#C0B194\">Base stance damage:</font> 11"
+    "info": "Conjure multiple spectral claws in each hand and hurl 28 projectiles at once; the volley can strike large enemies and bosses up to four times at a further reach, though it otherwise mirrors Scattershot Throw with slightly less range and moderate stagger. The 11 FP cast is unique, not chargeable, additional input allows a second scatter throw, and using the skill without <font color=\"#E0B985\">FP</font> launches only six claws.\n\n<font color=\"#C0B194\">Base stance damage:</font> 11.2"
   },
   {
     "id": 5520,
     "name": "Hone Blade",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Hone Blade</font>",
-    "info": "Stroke the blade to apply a 40-second weapon buff that increases damage by 6% (4% in PvP) and causes each hit to restore 1% of your <font color=\"#E0B985\">maximum HP</font>. Counts as a weapon buff."
+    "info": "Stroke the blade to apply a 40-second weapon buff that increases damage by 6% (4% in PvP), shows as an AR increase, and causes each hit to restore 1% of your <font color=\"#E0B985\">maximum HP</font>. The unique 16 FP cast cannot be charged, locks you into a roughly 3-second animation that does not alert enemies, and leaves the weapon glowing with sparkles along its edge. Counts as a weapon buff."
   },
   {
     "id": 5530,
     "name": "Horn Calling",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Horn Calling</font>",
-    "info": "Shroud the weapon in tangled horns before driving it into the ground, sending pure <font color=\"#F5EB89\">holy damage</font> spikes upward that scale with <font color=\"#E0B985\">Faith</font>.\n\n<font color=\"#C0B194\">Base stance damage (spikes):</font> 12"
+    "info": "Shroud the weapon in tangled horns, drive it into the ground, and call up piercing spikes that erupt below the enemy, delivering pure <font color=\"#F5EB89\">holy damage</font> that scales with <font color=\"#E0B985\">Faith</font>. The 17 FP unique cast cannot be charged and keeps the horns protruding beneath the target before you can act again.\n\n<font color=\"#C0B194\">Base stance damage (spikes):</font> 12"
   },
   {
     "id": 5540,
     "name": "Horn Calling: Storm",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Horn Calling: Storm</font>",
-    "info": "Infuse the horned blade with storm winds, then mow through enemies in a sweeping spin that strikes repeatedly with far greater range than Stormcaller. Up to two follow-up inputs extend the combo, and each hit triggers multi-hit effects.\n\n<font color=\"#C0B194\">Base stance damage (first sweep):</font> 24\n<font color=\"#C0B194\">Base stance damage (follow-up spins):</font> 17"
+    "info": "Infuse the horned blade with storm winds, then mow through enemies with a sweeping spin that strikes repeatedly at far greater range than Stormcaller. Each hit triggers multi-hit talisman effects, and two follow-up inputs extend the combo while the skill cannot be charged. Enraged Divine Beast boosts the damage by 10%.\n\n<font color=\"#C0B194\">Base stance damage (first sweep):</font> 24.2\n<font color=\"#C0B194\">Base stance damage (follow-up spins):</font> 16.5"
   },
   {
     "id": 5550,
     "name": "Tremendous Phalanx",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Tremendous Phalanx</font>",
-    "info": "Raise your weapon to summon a protective arch of homing glintblades overhead, each blade automatically firing as foes approach. The strong attack follow-up chains into a lunging thrust that propels you forward.\n\n<font color=\"#C0B194\">Base stance damage (glintblades):</font> 8\n<font color=\"#C0B194\">Base stance damage (follow-up thrust):</font> 15"
+    "info": "Raise your weapon to summon a defensive arch of three homing glintblades overhead, each automatically firing as nearby foes approach. The strong attack follow-up chains into a lunging thrust that propels you forward, and the skill cannot be charged.\n\n<font color=\"#C0B194\">Base stance damage (each glintblade):</font> 8\n<font color=\"#C0B194\">Base stance damage (follow-up thrust):</font> 15"
   },
   {
     "id": 5560,
     "name": "Bloodfiends' Bloodboon",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bloodfiends' Bloodboon</font>",
-    "info": "Drive the spear through your target to detonate a ranged bloodflame eruption that deals <font color=\"#F48C25\">fire damage</font> and inflicts <font color=\"#C84343\">blood loss accumulation</font> around them rather than around yourself. Additional inputs chain up to three thrusts, with the final stab hitting harder at the cost of a longer recovery, and the skill never coats the weapon in bloodflame."
+    "info": "Drive the spear through your target to detonate a ranged bloodflame eruption that deals <font color=\"#F48C25\">fire damage</font> and inflicts <font color=\"#C84343\">blood loss accumulation</font> around them rather than around yourself. Additional inputs chain up to three thrusts, with the third stab dealing increased damage but suffering a longer recovery, and the skill never coats the weapon in bloodflame. The skill is not chargeable.\n\n<font color=\"#C84343\">Blood Loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100."
   },
   {
     "id": 5570,
     "name": "Dragonform Flame",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Dragonform Flame</font>",
-    "info": "Transform your arm into a draconic maw to sweep a gout of fire in front of you, leaving burning ground that lingers briefly. Using the skill without <font color=\"#E0B985\">FP</font> causes a harmless sputter with no flames."
+    "info": "Transform your arm into a draconic maw to sweep a gout of fire in front of you, leaving burning ground that lingers briefly, identical to the Firebreather skill. Using the skill without <font color=\"#E0B985\">FP</font> causes a harmless sputter with no flames, and the skill cannot be charged."
   },
   {
     "id": 5580,
     "name": "Lightspeed Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Lightspeed Slash</font>",
-    "info": "Assume a luminous form to leap forward for a downward slash, then unleash radiant beams that disperse <font color=\"#F5EB89\">Holy damage</font> scaling with <font color=\"#E0B985\">Intelligence</font>. Charging increases the power and number of follow-up attacks while benefiting from the Godfrey Icon.\n\n<font color=\"#C0B194\">Base stance damage:</font> 20\n<font color=\"#C0B194\">Base stance damage (charged):</font> 32"
+    "info": "Assume a luminous form to leap forward for a downward slash, then unleash radiant beams that disperse <font color=\"#F5EB89\">Holy damage</font> scaling with <font color=\"#E0B985\">Intelligence</font>. Charging increases the power and number of follow-up attacks, and the fully charged version benefits from the Godfrey Icon.\n\n<font color=\"#C0B194\">Base stance damage:</font> 20\n<font color=\"#C0B194\">Base stance damage (charged):</font> 32"
   },
   {
     "id": 5600,

@@ -95,7 +95,7 @@
     "name": "Horned Warrior Helm",
     "category": "armor",
     "caption": "Helm featuring a crown of sturdy tangled horns, allowing the wearer to invoke divinity. Attire of the horned warriors, keepers of the tower.",
-    "info": "Increases <font color=\"#E0B985\">Strength</font> by 5, but decreases <font color=\"#E0B985\">Focus</font> by 30 and reduces healing from Flask of Crimson Tears by 7%."
+    "info": "Increases <font color=\"#E0B985\">Strength</font> by 5, but decreases <font color=\"#E0B985\">Focus</font> by 30 and reduces healing from Flask of Crimson Tears by 7%.\n\n<font color=\"#E0B985\">Focus:</font> Resistance to <font color=\"#A698F4\">sleep</font> and <font color=\"#EEAA2B\">madness</font>."
   },
   {
     "id": 5253300,

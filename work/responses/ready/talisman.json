@@ -115,7 +115,7 @@
     "id": 8000,
     "name": "Blessed Blue Dew Talisman",
     "category": "talisman",
-    "caption": "Talisman depicting the blessed boon that is a droplet of the blue, luminescent sap of the Erdtree.\n\nIt was once thought that the blessed sap of the Erdtree would drip from its boughs forever\u2014but that age of plenty swiftly came to a close, and with time, the Erdtree became more an object of faith.",
+    "caption": "Talisman depicting the blessed boon that is a droplet of the blue, luminescent sap of the Erdtree.\n\nIt was once thought that the blessed sap of the Erdtree would drip from its boughs forever—but that age of plenty swiftly came to a close, and with time, the Erdtree became more an object of faith.",
     "info": "Restores 1 point of <font color=\"#E0B985\">FP</font> every 2 seconds while equipped."
   },
   {
@@ -136,7 +136,7 @@
     "id": 8030,
     "name": "Shattered Stone Talisman",
     "category": "talisman",
-    "caption": "Shattered linchpin stone.\n\nLinchpin stones are spiritual anchors said to hold the ground in place and quell the fury of earthquakes\u2014when this one shattered, the surrounding town fell into the broken earth. One account claimed that the moon itself had come tumbling down.",
+    "caption": "Shattered linchpin stone.\n\nLinchpin stones are spiritual anchors said to hold the ground in place and quell the fury of earthquakes—when this one shattered, the surrounding town fell into the broken earth. One account claimed that the moon itself had come tumbling down.",
     "info": "Increases the potency of kicking and stomping attacks by 10%, affecting Dryleaf Whirlwind, Dryleaf Arts kicking attacks, Dane's Footwork kicking attacks, Deadly Dance's final kick, The <font color=\"#40BF40\">Poison</font> Flower Blooms Twice, Hoarfrost Stomp, Divine Beast Frost Stomp, and Regal Roar altered heavy attacks of Axe of Godfrey, but does not affect Storm Kick."
   },
   {
@@ -158,7 +158,7 @@
     "name": "Aged One's Exultation",
     "category": "talisman",
     "caption": "A talisman depicting the exultation of the aging untouchable, whose head resembles a sprig of ripe grapes.\n\n\"Gift your madness to our Lord.\nBless our brethren with grapes.\nTake care that they fully ripen.\"",
-    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> by 20% for 30 seconds when <font color=\"#EEAA2B\">madness</font> is triggered nearby."
+    "info": "Increases <font color=\"#E0B985\">all damage inflicted</font> by 20% for 30 seconds when <font color=\"#EEAA2B\">madness</font> is triggered nearby.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished."
   },
   {
     "id": 8070,
@@ -193,7 +193,7 @@
     "name": "Ailment Talisman",
     "category": "talisman",
     "caption": "A talisman depicting a soul taken by sickness.\n\nWhen the weak were infected with the dreaded fly sickness, they perished well before the metamorphosis could take hold. Oddly, those who cared for the infected and made certain they were given a proper burial were never afflicted themselves.",
-    "info": "Increases resistance to the most recently applied status effect by 350 for 120 seconds for <font color=\"#40BF40\">Poison</font> and <font color=\"#EF7676\">Scarlet Rot</font>, 45 seconds for <font color=\"#9DD7FB\">Frostbite</font>, and 30 seconds for <font color=\"#C84343\">Hemorrhage</font>, <font color=\"#A698F4\">Sleep</font>, and <font color=\"#EEAA2B\">Madness</font>; does not affect <font color=\"#A17945\">Death Blight</font>."
+    "info": "Increases resistance to the most recently applied status effect by 350 for 120 seconds for <font color=\"#40BF40\">Poison</font> and <font color=\"#EF7676\">Scarlet Rot</font>, 45 seconds for <font color=\"#9DD7FB\">Frostbite</font>, and 30 seconds for <font color=\"#C84343\">Hemorrhage</font>, <font color=\"#A698F4\">Sleep</font>, and <font color=\"#EEAA2B\">Madness</font>; does not affect <font color=\"#A17945\">Death Blight</font>.\n\n<font color=\"#40BF40\">Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds.\n\n<font color=\"#EF7676\">Scarlet Rot:</font> Inflicts damage equal to 0.33% of <font color=\"#E0B985\">maximum HP</font> plus 33, every second for 90 seconds.\n\n<font color=\"#C84343\">Blood Loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces FP equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#A17945\">Death Blight:</font> Instant death. Only effective against Tarnished."
   },
   {
     "id": 8130,
@@ -221,13 +221,13 @@
     "name": "St. Trina's Smile",
     "category": "talisman",
     "caption": "A talisman depicting a smiling St. Trina,\na vision conjured deep within a certain man's heart.\n\nEngraved as a reminder of the unparalleled devotion of those who left their homelands to serve Rellana.\n\n\"By your leave, we will accompany you wherever your lunar vessel takes you.\"",
-    "info": "Increases <font color=\"#E0B985\">attack power</font> by 20% for 30 seconds when <font color=\"#A698F4\">sleep</font> occurs in the vicinity (12% in PvP)."
+    "info": "Increases <font color=\"#E0B985\">attack power</font> by 20% for 30 seconds when <font color=\"#A698F4\">sleep</font> occurs in the vicinity (12% in PvP).\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack."
   },
   {
     "id": 8170,
     "name": "Talisman of the Dread",
     "category": "talisman",
-    "caption": "Talisman depicting the dread dragon of the jagged peak, whose roars cause the peak's molten fury to boil and churn.\n\nBayle was the foul dragon's name\u2014a terrible harbinger of destruction whose challenge to the ancient Dragonlord ended in grievous mutual injury.",
+    "caption": "Talisman depicting the dread dragon of the jagged peak, whose roars cause the peak's molten fury to boil and churn.\n\nBayle was the foul dragon's name—a terrible harbinger of destruction whose challenge to the ancient Dragonlord ended in grievous mutual injury.",
     "info": "Increases <font color=\"#E0B985\">damage inflicted</font> by magma sorceries, incantations, and skills by 15%."
   },
   {
