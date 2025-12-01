@@ -6,6 +6,7 @@ from datetime import datetime
 from pathlib import Path
 from collections import defaultdict
 from typing import Iterable, List, Dict, Optional
+from html.parser import HTMLParser
 
 ITEMS_INDEX = Path("work/items_index.json")
 READY_DIR = Path("work/responses/ready")
@@ -44,30 +45,89 @@ def load_ready_entries(paths: Iterable[Path]) -> List[Dict]:
                     continue
                 obj = dict(obj)
                 obj["category"] = cat
+                obj["__source"] = path.name  # tracked for validation messages
                 out.append(obj)
     return out
 
 
 def update_fmg_text(paths, target_id, new_text):
+    """Overwrite existing FMG entries by id; never add new elements."""
+    target_str = str(target_id)
+    found_any = False
     for fmg_path in paths:
         if not fmg_path.exists():
             continue
         tree = ET.parse(fmg_path)
         root = tree.getroot()
+        updated = False
         for t in root.findall(".//text"):
-            if t.attrib.get("id") == str(target_id):
-                t.text = new_text
-                tree.write(fmg_path, encoding="utf-8", xml_declaration=True)
-    # If not found, append to the first existing file
-    for fmg_path in paths:
-        if not fmg_path.exists():
-            continue
-        tree = ET.parse(fmg_path)
-        root = tree.getroot()
-        new_elem = ET.SubElement(root, "text", {"id": str(target_id)})
-        new_elem.text = new_text
-        tree.write(fmg_path, encoding="utf-8", xml_declaration=True)
-        break
+            if t.attrib.get("id") == target_str:
+                found_any = True
+                if t.text != new_text:
+                    t.text = new_text
+                    updated = True
+        if updated:
+            tree.write(fmg_path, encoding="utf-8", xml_declaration=True)
+    if not found_any:
+        print(f"[warn] id {target_id} not found in any FMG; skipping append")
+
+
+class _TagValidator(HTMLParser):
+    """Minimal HTML/tag validator for FMG strings."""
+    allowed_tags = {"font"}
+
+    def __init__(self):
+        super().__init__()
+        self.stack: List[str] = []
+        self.errors: List[str] = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag not in self.allowed_tags:
+            self.errors.append(f"disallowed tag <{tag}>")
+            return
+        self.stack.append(tag)
+
+    def handle_endtag(self, tag):
+        if tag not in self.allowed_tags:
+            self.errors.append(f"disallowed closing </{tag}>")
+            return
+        if not self.stack or self.stack[-1] != tag:
+            self.errors.append(f"mismatched closing </{tag}>; stack={self.stack}")
+        else:
+            self.stack.pop()
+
+    def close(self):
+        super().close()
+        if self.stack:
+            self.errors.append(f"unclosed tags {self.stack}")
+
+
+def validate_html_text(text: str) -> List[str]:
+    parser = _TagValidator()
+    parser.feed(text)
+    parser.close()
+    return parser.errors
+
+
+def validate_ready_entries(entries: List[Dict]):
+    """Ensure all caption/info strings only use allowed tags with proper balance."""
+    issues: List[str] = []
+    for obj in entries:
+        source = obj.get("__source", "?")
+        item_id = obj.get("id")
+        name = obj.get("name")
+        for field in ("caption", "info"):
+            val = obj.get(field)
+            if not isinstance(val, str):
+                continue
+            errors = validate_html_text(val)
+            for err in errors:
+                issues.append(f"{source}: id {item_id} {name} {field} -> {err}")
+    if issues:
+        print("[error] HTML validation failed:")
+        for msg in issues:
+            print(f" - {msg}")
+        raise SystemExit(1)
 
 
 def refresh_ashes_from_skills(skill_path: Path, ashes_path: Path):
@@ -138,6 +198,7 @@ def main():
 
     idx = load_index()
     ready = load_ready_entries(response_paths)
+    validate_ready_entries(ready)
     for item in ready:
         cat = item.get("category")
         if not cat:
