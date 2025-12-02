@@ -80,11 +80,14 @@ If a status buildup doesn't scale with any stats and is part of the attack/effec
 We are Capitalizing the names of the status buildups, including both words.
 When there are multiple of either buildups or resistances, we need to order them in the order they are in here, both in the buildup stats block and in the definition block. This is less important in the descriptive block, but should be applied if it doesn't disrupt the flow of the text i.e. it is a simple rearrangement.
 The definition block goes below the descriptive block and above the stats block (if there is a stats block)
-When Fextralife shows a value scaling table or provides multiple values depending on the level of a stat, *always* write `Base` for that value and provide the stats that scale it after the number. Use the minimum value listed as the `Base` value.
+When Fextralife shows a value scaling table or provides multiple values depending on the level of a given stat, write `Base` for that value and provide the stats that scale it after the number. Use the minimum value listed as the `Base` value.
 If a value doesn't scale with any stats, do *not* write `Base` for that value, and do not note that it doesn't have scaling.
-Do *not* include scaling details in the description block of the item's info, only with the stat name in brackets after the value that scales
+Do *not* include scaling details in the description block of the item's info, only with the stat name in brackets after the value that scales.
+Do *not* include the damage or buildup values in the description block, only in the stat block. Exception: lasting buffs or one-off synergies that change the weapon/player after the skill/item is used (e.g. added elemental damage or buildup on the armament) belong in the description block, not the stat block.
 If a weapon or entity, such as the player, gains a lasting effect from an item, that information goes in the description block using the appropriate Casing and coloring, with numbers where available. For instance, when a weapon gains a status buildup damage: `The armament retains its imbuement for 45 seconds, which adds 160 <font color=\"#FFE033\">lightning damage</font> and 80 <font color=\"#9DD7FB\">frostbite accumulation</font>`
 If an item applies an effect to the player as a one-off, such as on-use or on-hit, that information goes in the description block, not in the stats block: `...but also 200 <font color=\"#40BF40\">poison accumulation</font> on yourself.`
+When referring to status buildup in the description block, "buildup" is acceptable; in the stats block use "accumulation" with the capitalized status name and proper color.
+Use "<font color=\"#C0B194\">Stance damage</font>" rather than "poise" numbers; if a value is listed as poise damage, rename it to stance damage rather than listing both.
 If damage is dealt over a period of time, it is formatted as:
   `<font color={color}>[Base ]{Damage} per tick[ {part}]:</font> x[ (<font color=\"#E0B985\">{Stat}</font>)]`
   where parts in the `[square brackets]` are optional based on whether it is scaling and/or for part of the attack
