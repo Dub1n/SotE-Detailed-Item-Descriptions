@@ -2,6 +2,34 @@
 
 The goal is to turn each skill entry in `work/responses/ready/skill.json` into a set of base damage, stance, and status values pulled straight from the PARAM CSVs. The data we need is spread across `EquipParam*`, `Magic`, `Bullet`, `AtkParam_Pc`, and `SpEffectParam`, plus the message XMLs when we need to confirm IDs.
 
+### Global orientation (what points to what)
+
+All of the numbers we care about sit on this graph. It helps to keep the join keys in mind before diving in:
+
+```
+Animation (TAE) ──> BehaviorParam[_PC] ──┬──> AtkParam_Pc ──> SpEffectParam (on-hit)
+                                         ├──> Bullet ──────> AtkParam_Pc + SpEffectParam
+                                         └──> SpEffectParam (pure buffs)
+
+Magic ──────────────┬──> BehaviorParam (behaviorId)
+                    └──> Atk/Bullet/SpEffect (refId + refCategory)
+
+EquipParamWeapon ───┬──> BehaviorParam (behaviorVariationId + TAE)
+                    ├──> SwordArtsParam (swordArtsParamId)
+                    └──> SpEffectParam (resident/on-hit)
+
+EquipParamGem ──────└──> SwordArtsParam (swordArtsParamId)
+
+EquipParamGoods ────┬──> BehaviorParam (behaviorId)
+                    └──> Atk/Bullet/SpEffect (ref fields)
+
+Armor / Talismans ──└──> SpEffectParam
+```
+
+Every arrow is an equality join on an ID field (e.g., `Magic.refId → Bullet.ID`, `Bullet.atkId_Bullet → AtkParam_Pc.ID`, `Bullet.spEffectId0 → SpEffectParam.ID`, and so on).
+
+**Big caveat:** Sorceries and incantations really do funnel through `Magic → Behavior → Bullet/Atk/SpEffect`, but skills/Ashes of War are ultimately driven by `SwordArtsParam + TAE + BehaviorParam_PC`. The `Magic` table happens to contain “shadow” rows whose `refId*` share the sword arts’ prefixes (which is why our `1043xxxx` trick works), yet FromSoftware’s actual execution path relies on animation events. If we ever run into a skill where the Magic shortcut fails, the fallback is to use a precomputed map `skill_id, variation_id → [BehaviorParam_PC IDs]` built from the TAEs (exactly what modders do in DSAnimStudio/DSMapStudio). Keep that limitation in mind before trusting an automated extraction for a brand-new DLC skill.
+
 ### 1. Start from the skill ID and confirm the text row
 
 1. Skill IDs in `skill.json` match:
@@ -16,6 +44,7 @@ The goal is to turn each skill entry in `work/responses/ready/skill.json` into a
    - On Ashes this value usually equals the skill `ID`.
    - On unique skills, `EquipParamWeapon.swordArtsParamId` points to the correct skill even if the weapon has multiple innate behaviors.
 2. A Dragonscale Blade modder on Nexus noted they had to move `EquipParamWeapon.swordArtsParamId` along with the `BehaviorParam_Pc`, `Bullet`, `SpEffectParam`, and `AtkParam_Pc` rows when porting the move-set, so treat this as the “key” that ties all the downstream tables together (DuckDuckGo search for `"swordArtsParamId"`, Nexus, Feb 2025).
+3. **TAE caveat:** Everything downstream of `swordArtsParamId` depends on which animation events fire during the skill. When the `Magic` table exposes clean `refId` prefixes (as it does for 1.10 skills), we can stay inside CSV-land. If it doesn’t, you must fall back to a prebuilt behavior map from TAE: `BehaviorParam_PC ID = 30 | variation_id | behaviorJudgeId`. Unique skills use their weapon’s `behaviorVariationId`; transferrable Ashes typically use `variation_id = 0`. Without that map you cannot find every Atk/Bullet row a skill triggers.
 
 ### 3. Walk Magic → Bullet → AtkParam (with SpEffect detours)
 
@@ -58,7 +87,7 @@ The goal is to turn each skill entry in `work/responses/ready/skill.json` into a
 ### 6. Worked example: Ice Lightning Sword (swordArtsParamId = 1043)
 
 1. **Locate the skill**: `EquipParamWeapon` row `9070000` (Dragonscale Blade) reports `swordArtsParamId=1043`.
-2. **Magic rows**: Searching for `refId` values starting with `1043` returns the full attack suite:
+2. **Magic rows (shortcut when available)**: Searching for `refId` values starting with `1043` returns the full attack suite:
    - `MagicID 4300/4301/4302` → Bullets `10430000/10430100/10430200` (the downward bolt and its chained hits).
    - `MagicID 4360/4361` → Bullets `10436000/10436100` (shockwave variants, one of which embeds `spEffectId0=1436000` for the buff trigger).
    - `MagicID 4370/4390` → Bullets `10437000` and `10439000` (close-range shockwave and lingering lightning puddle).
@@ -75,6 +104,7 @@ The goal is to turn each skill entry in `work/responses/ready/skill.json` into a
 
 - `Paramdex` (`https://github.com/soulsmods/Paramdex/tree/master/ER/Defs`) documents every field used above (`MagicParam`, `BehaviorParam`, `SwordArtsParam`, etc.). Use it when you are not sure what a flag or enum represents.
 - Quick Python snippets are the fastest way to chase a skill through the CSVs. Example:  
+
   ```bash
   python - <<'PY'
   import csv
@@ -87,8 +117,11 @@ The goal is to turn each skill entry in `work/responses/ready/skill.json` into a
               print(row['ID'], row['refCategory1'], row['refId1'])
   PY
   ```
+
 - Use `rg '^1043' PARAM/Bullet.csv` (or the Python equivalent) to dump every bullet tied to a skill. This is much faster than scrolling through the CSV in a spreadsheet.
 - Keep `csv_skill_extraction_notes.md` handy; it contains the sanity checks that prevented the earlier bad extractions (skip `atkAttribute=254`, insist on `isAttackSFX=1`, etc.).
 - If the `Magic` table fails to mention a buff you see in-game, double-check `EquipParamWeapon.residentSpEffectId*`, `SpEffectParam.replaceSpEffectId`, and the FMGs. Sometimes FromSoftware hard-codes an effect onto the weapon instead of the skill.
+- For team members new to the data: build one-time lookup tables from the FMGs (e.g., `skill name → ID`, `spell name → Magic ID`, `goods name → EquipParamGoods ID`). It keeps the CSV workflow deterministic and avoids repeated XML scraping.
+- If we ever need perfect skill coverage, invest time in generating a TAE-derived map `SwordArtsParam ID + behaviorVariationId → [BehaviorParam_PC IDs]`. Once that file exists we can feed it to the same extraction pipeline we use for spells and items.
 
 Following this workflow keeps the extraction deterministic: given a skill ID, you have a repeatable path to find its projectiles, their attack rows, and any status/buff data we need to surface. When fex_cache is missing a number, use the repo data; when the repo data is ambiguous, cross-reference the community breadcrumbs (Fextralife/Nexus) for the correct target IDs before you commit the numbers.
