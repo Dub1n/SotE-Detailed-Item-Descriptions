@@ -18,3 +18,7 @@ __pycache__/
 mod/
 *.fmg
 tools/
+bhd/
+tae/
+!PARAM/tae_behavior_map/tae/
+!PARAM/tae_behavior_map/tae/**
