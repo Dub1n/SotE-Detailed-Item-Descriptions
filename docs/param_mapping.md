@@ -46,6 +46,21 @@ Every arrow is an equality join on an ID field (e.g., `Magic.refId → Bullet.ID
 2. A Dragonscale Blade modder on Nexus noted they had to move `EquipParamWeapon.swordArtsParamId` along with the `BehaviorParam_Pc`, `Bullet`, `SpEffectParam`, and `AtkParam_Pc` rows when porting the move-set, so treat this as the “key” that ties all the downstream tables together (DuckDuckGo search for `"swordArtsParamId"`, Nexus, Feb 2025).
 3. **TAE caveat:** Everything downstream of `swordArtsParamId` depends on which animation events fire during the skill. When the `Magic` table exposes clean `refId` prefixes (as it does for 1.10 skills), we can stay inside CSV-land. If it doesn’t, you must fall back to a prebuilt behavior map from TAE: `BehaviorParam_PC ID = 30 | variation_id | behaviorJudgeId`. Unique skills use their weapon’s `behaviorVariationId`; transferrable Ashes typically use `variation_id = 0`. Without that map you cannot find every Atk/Bullet row a skill triggers.
 
+### 2.5 When Magic is incomplete: go straight through BehaviorParam_PC
+
+- We now ship `PARAM/BehaviorParam_PC.csv` (DSMS portable export). It only contains the essentials: `variationId`, `behaviorJudgeId`, `ezStateBehaviorType_old`, `refType`, and `refId`. There is no `isAddBaseAtk`/`isAttackSFX` flag in the Atk CSVs, so lean on `atkAttribute` (254 = dummy/helper) and sensible damage splits when filtering.
+- Keys to find the right behavior row:
+  - `variationId` = `EquipParamWeapon.behaviorVariationId` for unique skills, or `0` for Ashes of War/gems. (`rg -n ",<skill id>," PARAM/EquipParamWeapon.csv` is the fastest way to confirm a weapon’s variation.)
+  - `behaviorJudgeId` comes from the TAE event for the skill (DSAnimStudio → Behavior event → Behavior ID column).
+  - The player block lives in the `100000000 + variationId * 1000 + behaviorJudgeId` ID band. DSMapStudio also exports parallel `300...` and `700...` bands; start with the `100...` rows unless you know the animation calls one of the others.
+- `refType` tells you which table to open next: `0 = AtkParam_Pc`, `1 = Bullet`, `2 = SpEffectParam`. The `refId` is the lookup key. Ignore rows with `refId = -1`.
+- Once you have the Atk or Bullet IDs:
+  - Atk rows expose the base splits directly: `atkPhys/atkMag/atkFire/atkThun/atkDark` and `atkStam` (stance). Drop rows with `atkAttribute = 254` as VFX/dummy hits.
+  - Bullet rows give you `atkId_Bullet` (then open `AtkParam_Pc.csv`) plus `spEffectId0-4` and `HitBulletID` chains for buffs/secondary hits.
+- Helper script: `python scripts/behavior_lookup.py --variation 0 --judge 430` will print the matching BehaviorParam_PC rows and follow them into Bullet/Atk/SpEffect. Swap `--variation` to the weapon’s `behaviorVariationId` and pass every Behavior ID you see in the TAE for that skill. `--skill <id>` adds a Magic trace (and auto-fills variation for uniques); still supply `--judge` once you have the TAE behavior IDs.
+- TAE dump helper: `python scripts/tae_dump_behaviors.py --tae-root /path/to/unpacked/chr --out PARAM/tae_behavior_map/behaviors.json` walks every `.tae` under an unpacked `chr/` (e.g., `.../c0000-anibnd/GR/data/INTERROOT_win64/chr/c0000/tae/`) and records Behavior events (type 304 / BehaviorListID). The output is stored in `PARAM/tae_behavior_map/behaviors.json`. If a behavior ID you need is missing, open the matching `.tae` in DSAnimStudio and grab the Behavior ID manually, then feed it to `behavior_lookup.py`.
+- This is the path to unblock the “need BehaviorParam_PC map” notes in `work/responses/ready/skill.json`: pull the Behavior IDs from the TAE, run the helper, and surface the Atk/Bullet/SpEffect values it reports instead of trusting the shadow `Magic` rows.
+
 ### 3. Walk Magic → Bullet → AtkParam (with SpEffect detours)
 
 1. `PARAM/Magic.csv` is the bridge from a skill to the data it spawns:
@@ -58,7 +73,7 @@ Every arrow is an equality join on an ID field (e.g., `Magic.refId → Bullet.ID
    - `spEffectId0-4` directly reference `SpEffectParam` rows (weapon buffs, self-buffs, delayed detonations). When a skill adds an elemental buff, that buff usually shows up here.
 3. If `refCategory` is `0`, you are already holding an `AtkParam_Pc` ID and can skip the bullet step.
 4. When you finally open `PARAM/AtkParam_Pc.csv`:
-   - Only read rows where `isAddBaseAtk == 0`. In those cases `atkPhys/atkMag/atkFire/atkThun/atkDark` are the “base” damage splits we need and `atkStam` is the stance damage (this is the same assumption we used in `csv_skill_extraction_notes.md`).
+   - Use `atkPhys/atkMag/atkFire/atkThun/atkDark` as the base damage splits and `atkStam` as stance damage. Filter out rows with `atkAttribute = 254` or where every damage column is `0` (helpers/VFX).
    - `guardAtkRate` and `guardBreakRate` often stay at defaults; ignore them unless the skill is explicitly about guard-breaking.
 5. Use `SpEffectParam` for lasting buffs or on-hit statuses:
    - Follow the IDs surfaced either by `Magic` (`refCategory=2`) or by `Bullet.spEffectId*`.
@@ -69,7 +84,7 @@ Every arrow is an equality join on an ID field (e.g., `Magic.refId → Bullet.ID
 
 1. Dummy hits are everywhere. Skip bullet rows when:
    - `atkAttribute == 254` (pure VFX or helper bullets).
-   - `isAttackSFX == 0` **and** all damage columns are zero (wing effects, camera dust, etc.).
+   - All damage columns are zero and the bullet has trivial `life/dist` (wing effects, camera dust, etc.).
    - `atkId_Bullet` is `0` or `1`.
 2. If several bullets share the same `atkId_Bullet`, prioritize the ones with sensible `life/dist` values and non-zero damage splits.
 3. Always cross-check `Magic` and `Bullet` data against expected behavior from the `descriptions-*` JSON bundles or Fextralife. A Feb 28 2025 Fextralife comment on the Ice Lightning Sword explicitly named `AtkParam_Pc` row `30090011` as the lightning bolt and pointed out that its INT/FTH scaling was bugged because Dragonscale Blade has zero in those stats. That comment lined up perfectly with the `Magic → Bullet → AtkParam` chain and confirmed that the first four digits of the `AtkParam` IDs still mirror the skill ID.
