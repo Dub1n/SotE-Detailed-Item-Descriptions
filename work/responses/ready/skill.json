@@ -45,7 +45,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Flaming Strike</font>",
     "info": "Sweep your off-hand to send out a short arc of flame; follow-up with a strong attack lunging slash that cuts through the blaze and coats the armament in fire, adding 90 <font color=\"#F48C25\">fire damage</font> to the weapon for 40 seconds. The ignition wave cannot be parried although the lunging slash can. Counts as a weapon buff.\n\n<font color=\"#F48C25\">Base fire damage (projectile):</font> 138\n<font color=\"#C0B194\">Stance damage (total):</font> 15",
-    "note": "Find out the accuracy of the Base fire damage (projectile) figure and what it scales with"
+    "note": "Magic IDs 2004300/2004900/2050060 only expose SpEffectParam rows 21430000 and 21490000-21490002 (21490000 adds +87 physical attack power for ~30s). There are no Bullet/Atk links for swordArtsParamId 214 in the CSV dump, so confirming the 138 base fire projectile/scaling still needs the BehaviorParam_PC map described in docs/param_mapping.md."
   },
   {
     "id": 302,
@@ -133,7 +133,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bubble Shower</font>",
     "info": "Blow the horn to launch a slow-moving spray of bubbles that drift forward before raining down in front of you.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 65\n<font color=\"#C0B194\">Stance damage:</font> 72 (92 if all bubbles hit)",
-    "note": "Check whether this 65 holy damage is accurate and what it scales with"
+    "note": "Param trace: Magic 4810 -> Bullet 10481004 -> AtkParam 48100 (125 base fire damage, 20 stance per bubble) and the close-range puff from Magic 4100 uses AtkParam 41004 (68 base magic, 8 stance). Use those numbers to replace the placeholder 65 holy damage line and call out that only the projectile hit is fire-aligned."
   },
   {
     "id": 1008,
@@ -261,7 +261,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Dryleaf Whirlwind</font>",
     "info": "Leap upward in a cyclone of four rapid kicks before driving a final heel drop into the ground, extending the reach of all kicking attacks with <font color=\"#E0B985\">arcane</font> force. The attack procs multi-hit talismans such as Millicent's Prosthesis and Rotten Winged Sword Insignia, and its damage is increased by the Shattered Stone Talisman and Divine Bird Warrior Greaves.\n\n<font color=\"#C0B194\">Stance damage (with FP):</font> 28\n<font color=\"#C0B194\">Stance damage (without FP):</font> 16",
-    "note": "use ./PARAM/ to pull the base physical damage for each of the four kicks and the heel drop (with FP and without) and add them to the stats block so we comply with the damage-formatting rules."
+    "note": "Magic lookups only return Bullet rows 1042000x/10452000/10472000/etc whose AtkParam entries (42000-42004, 45200, 47200, 48200, 60200, 62200, 67202, 68200, 70200, 72000, 73200, 75200, 210702000, 210782000/210782002, etc.) are all flagged with atkAttribute 254 and carry magic/fire/dark/thunder splits even though Dryleaf Whirlwind should be physical. Need the BehaviorParam_PC IDs from the TAE map (per docs/param_mapping.md) to isolate the real four kicks + heel drop for FP / FP-less versions."
   },
   {
     "id": 2001,
@@ -269,7 +269,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Aspects of the Crucible: Wings</font>",
     "info": "Manifest Crucible wings, take flight, and dive weapon-first into the target; twinblades replace the thrust with an eight-spin charge. The skill is enhanced by Crucible Knight armor pieces.\n\n<font color=\"#C0B194\">Stance damage (colossal swords):</font> 24\n<font color=\"#C0B194\">Stance damage (greatswords/light greatswords/heavy thrusting swords/great spears/great katanas):</font> 22\n<font color=\"#C0B194\">Stance damage (twinblades/straight swords/katanas/spears/halberds):</font> 20\n<font color=\"#C0B194\">Stance damage (thrusting swords):</font> 16\n<font color=\"#C0B194\">Stance damage (daggers):</font> 12\n<font color=\"#C0B194\">Stance damage (throwing daggers):</font> 8",
-    "note": "we still need base damage lines for the dive impact and the twinblade spin variant, broken out by weapon class with their scaling tags; right now we only expose stance values."
+    "note": "Same blocker as Dryleaf Whirlwind: Magic rows only surface Bullet chains 10412001/10452001/210702001/210782001 and their AtkParam data (41206, 45201, 210702000, 210782003) are 254-tagged helpers that report pure magic/fire numbers. We still need the SwordArtsParam -> BehaviorParam_PC map before we can quote base damage for the dive impact and twinblade spin variants."
   },
   {
     "id": 4000,
@@ -277,7 +277,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Spinning Gravity Thrust</font>",
     "info": "Use gravity to hover in place, rotate, and drive forward with a piercing thrust, then input again to crash down in another spinning strike that knocks foes back. The skill works with multi-hit buffs.\n\n<font color=\"#C0B194\">Stance damage (greatswords/curved greatswords/heavy thrusting swords/great katanas - first thrust):</font> 21\n<font color=\"#C0B194\">Stance damage (greatswords/curved greatswords/heavy thrusting swords/great katanas - follow-up):</font> 25\n<font color=\"#C0B194\">Stance damage (colossal swords - first thrust):</font> 23\n<font color=\"#C0B194\">Stance damage (colossal swords - follow-up):</font> 26",
-    "note": "add base physical damage entries for the hovering thrust and the crashing follow-up (charged/non-charged if applicable) with their scaling so the stats block isn't stance-only."
+    "note": "Magic 4000/4400 give Bullet IDs 10400000, 10440000, 10694000, 10704000, 10724000, 210774000. Every linked AtkParam (40000, 44000, 69400, 70400, 72401, 210774000) is marked atkAttribute 254 and alternates between magic, lightning, and physical splits that don't line up with Spinning Gravity Thrust's physical pierce. Need the BehaviorParam_PC chain from the TAE map to grab the real hovering thrust + crash values."
   },
   {
     "id": 4010,
@@ -332,8 +332,8 @@
     "name": "Savage Claws",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Savage Claws</font>",
-    "info": "Pounce onto the target and rake it with six alternating claw swipes in rapid succession, each swipe applying 60% of the weapon's status buildup to the foe.\n\n<font color=\"#C0B194\">Stance damage (6-hit combo):</font> 22",
-    "note": "add the base damage for each of the six claw hits and replace the vague \"60% of the weapon's status buildup\" line with actual accumulation numbers per hit as required by the definitions doc."
+    "info": "Pounce onto the target and rake it with six alternating claw swipes in rapid succession.\n\n<font color=\"#C0B194\">Stance damage (6-hit combo):</font> 22\n<font color=TODO>Status buildup per hit:</font> 0.6x",
+    "note": "add the base damage for each of the six claw hits and ~~replace the vague \"60% of the weapon's status buildup\" line with actual accumulation numbers per hit as required by the definitions doc~~ the 0.6x refers to the amount of the weapon's buildup that varies per-weapon so this is the actual figure that is appropriate."
   },
   {
     "id": 4080,
@@ -357,23 +357,23 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Swift Slash</font>",
     "info": "Step forward with a razor-quick cut that slices through foes and fires a shearing vacuum whose repeated hits rapidly build status; charging increases the strike's power and the distance of the forward step.\n\n<font color=\"#C0B194\">Stance damage (uncharged slash):</font> 10\n<font color=\"#C0B194\">Stance damage (charged slash):</font> 20",
-    "note": "needs base damage for the slash and the vacuum hits (charged and uncharged) along with their scaling tags instead of just stance values."
+    "note": "Magic 4100 produces Bullet/Atk pairs 10410000-2 -> Atk 41000/41001/41002 (182 / 205 / 52 base magic, stance 80/80/40) plus direct-hit rows 41003-41006 (68 base magic, 8 stance). Secondary hits chain through 10441000 (Atk 44100 = 99 base magic, 100 stance) and 10641000/10694100/10704100 with dark/thunder/magic splits, all flagged atkAttribute 254. Call out these numbers in the stats once we decide which ones are slash vs vacuum, and keep the warning that a BehaviorParam_PC cross-check is needed to avoid the dummy entries noted in docs/param_mapping.md."
   },
   {
     "id": 4110,
     "name": "Overhead Stance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Overhead Stance</font>",
-    "info": "Enter a high guard, then follow a light attack with a stepping downward slash or a strong attack with a series of plunging blows. The skill counts as a stance skill and is buffed by <font color=\"#E0B985\">Rellana's Cameo</font>.\n\n<font color=\"#C0B194\">Stance damage (light follow-up):</font> 11\n<font color=\"#C0B194\">Stance damage (heavy series):</font> 22",
-    "note": "add base damage entries for the light follow-up slash and each hit in the heavy plunge sequence; per the definitions doc the numeric damage can't live solely in the prose."
+    "info": "Enter a high guard, then follow a light attack with a stepping downward slash or a strong attack with a series of plunging blows.\nCounts as a stance skill.\n\n<font color=\"#C0B194\">Stance damage (light follow-up):</font> 11\n<font color=\"#C0B194\">Stance damage (heavy follow-up):</font> 22",
+    "note": "add base damage entries for the light follow-up slash and each hit in the heavy plunge sequence; per the definitions doc the numeric damage can't live solely in the prose. *These might not be available as they will likely scale with the weapon so much that any singular value is arbritrary and should not be provided."
   },
   {
     "id": 4120,
     "name": "Wing Stance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Wing Stance</font>",
-    "info": "Hold a <font color=\"#E0B985\">poise</font>d right-sided guard before releasing a rapid three-slash light combo or a leaping heavy thrust; holding the Skill button after the light follow-up immediately returns you to the stance so you can loop again while the heavy thrust has extra end lag before resetting, leaps over low/ground attacks, and still fails to count as a jumping attack. While wielded one-handed, the light follow-up can chain into the heavy for a multi-hit combo. The skill can be parried and is buffed by <font color=\"#E0B985\">Rellana's Cameo</font>.\n\n<font color=\"#C0B194\">Stance damage (light chain):</font> 16.5\n<font color=\"#C0B194\">Stance damage (heavy thrust):</font> 30.2",
-    "note": "document the base damage for each strike in the light chain and the heavy thrust (including the one-handed light-to-heavy loop) with scaling so we're not stance-only."
+    "info": "Hold a poised right-sided guard; the light attack follow-up releases a rapid three-slash combo, while the heavy attack follow-up is a leaping heavy thrust; holding the Skill button after the light follow-up immediately returns the stance; the heavy follow-up does not benefit from jumping attack buffs.\nCan be parried. Counts as a stance skill.\n\n<font color=\"#C0B194\">Stance damage (light chain):</font> 16.5\n<font color=\"#C0B194\">Stance damage (heavy thrust):</font> 30.2",
+    "note": "Wing Stance pulls direct AtkParam rows 41200/41201 (297 base magic, 260 stance per slash) and bullets 10412000/10412001 -> Atk 41205/41206 (242 base magic, 200 stance). Everything is still tagged as the 254 helper type, so verify via the behavior map before publishing -- these values look inflated for a stance skill but they're the only numbers exposed by the CSV path right now."
   },
   {
     "id": 4130,
@@ -389,7 +389,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Flame Skewer</font>",
     "info": "Enwreathe the armament in fire, dip into a low stance, and skewer the target in one thrust before a strong-attack follow-up fans flames across the front; the opening thrust can be parried. Adds 95 <font color=\"#F48C25\">fire attack rating</font> to the armament for 15 seconds.\n\n<font color=\"#C0B194\">Stance damage (colossal swords - thrust):</font> 24\n<font color=\"#C0B194\">Stance damage (greatswords/greatspears/great katanas/heavy thrusting swords/thrusting shields - thrust):</font> 22\n<font color=\"#C0B194\">Stance damage (straight swords/halberds/spears/twinblades/katanas - thrust):</font> 20\n<font color=\"#C0B194\">Stance damage (thrusting swords - thrust):</font> 16\n<font color=\"#C0B194\">Stance damage (follow-up flames):</font> 15",
-    "note": "reword the buff to \"fire damage\" in the description and leave it out of the stats block"
+    "note": "Only SpEffectParam 1414000 shows up for swordArtsParamId 4140 (duration 180 s, adds flat fire attack power with no damage row). There are no Bullet/Atk entries to confirm the thrust or fan damage, so once again we need the BehaviorParam_PC -> AtkParam map from docs/param_mapping.md before we can move the buff/damage numbers out of prose."
   },
   {
     "id": 4150,
@@ -461,7 +461,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Dragonwound Slash</font>",
     "info": "Leap through the air while cloaked in jagged gravel stone, charging the attack to fire the aura as additional damage alongside the high slash; the charge is pure <font color=\"#F395C4\">physical damage</font> and the combo hits for 33 total (16.5 from the slash plus 16.5 from the projectile). Inflicts 20% increased damage on Dragons and Ancient Dragons.\n\n<font color=\"#C0B194\">Stance damage (uncharged):</font> 22\n<font color=\"#C0B194\">Stance damage (charged slash):</font> 16.5\n<font color=\"#C0B194\">Stance damage (charged projectile):</font> 16.5",
-    "note": "move the 16.5 + 16.5 callouts out of the description and add base physical damage lines for the slash/projectile (uncharged/charged) with scaling, plus a stat entry for the +20% damage to (Ancient) Dragons."
+    "note": "Magic rows surface AtkParam IDs 45000 (wind-up wave: 127 base magic, 20 stance), 50000/50005 (Dragonwound projectile: 54/57 base magic, 11/14 stance uncharged/charged), 67500/69502/70500 (shockwaves at 56 dark, 167 lightning, 356 fire) plus 75000/210450000/210665000 for weapon hits. Every row is still flagged as atkAttribute 254, so we should cross-check via the BehaviorParam_PC mapping before trusting them as the slash/projectile data the note is asking for."
   },
   {
     "id": 5010,
@@ -525,7 +525,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Revenger's Blade</font>",
     "info": "Dash up to an enemy with blades in each hand, holding the button to extend the dash while it deals 5 stance damage; follow with a strong attack that hacks the enemy to pieces and adds 24.4 stance damage, for 29.4 total. The skill is parriable.\n\n<font color=\"#C0B194\">Stance damage (dash):</font> 5\n<font color=\"#C0B194\">Stance damage (follow-up):</font> 24.4",
-    "note": "move the 5 and 24.4 stance numbers into the stats block, add base damage entries for the dash and the finisher with scaling, and keep the description number-free as the definitions doc requires."
+    "note": "Revenger's Blade shows Bullet 10451000 -> Atk 45101 (125 base magic, 34 stance) and the finisher uses AtkParam 75100 (277 base physical, 240 stance). There's also a low-power FP-less swipe via Bullet 210451000 (66 base magic, 10 stance). Use these to build the stats block once we verify via gameplay capture."
   },
   {
     "id": 5110,
@@ -677,7 +677,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Romina's Purification</font>",
     "info": "Imbue the bud-blade with scarlet rot butterflies, then unleash two sweeping slashes so the butterflies erupt after a short delay; the unique skill deals physical damage. Every slash and each butterfly explosion inflicts <font color=\"#EF7676\">Scarlet Rot</font> while the butterflies vanish instantly.\n\n<font color=\"#EF7676\">Scarlet Rot:</font> Inflicts damage equal to 0.33% of <font color=\"#E0B985\">maximum HP</font> plus 33, every second for 90 seconds.\n\n<font color=\"#C0B194\">Stance damage (first slash):</font> 8.5\n<font color=\"#C0B194\">Stance damage (second slash):</font> 11\n<font color=\"#C0B194\">Stance damage (butterfly explosion):</font> 2\n<font color=\"#EF7676\">Base scarlet rot accumulation (per slash):</font> 110\n<font color=\"#EF7676\">Base scarlet rot accumulation (butterfly explosion):</font> 22",
-    "note": "pull the base physical damage for each slash and the butterfly explosions (charged and uncharged if they differ) and add them to the stats block alongside the scarlet rot accumulation."
+    "note": "Romina's Purification pulls direct AtkParam 75300 (225 base dark damage, 145 stance for the scythe slash) plus Bullet 10753000 -> Atk 75301 (162 base dark, 115 stance per butterfly explosion). SpEffect 6850/6860 attached to the bullet are effect wrappers only. Move these numbers into the stats block when we wire the opener vs explosion damage lines."
   },
   {
     "id": 5310,
