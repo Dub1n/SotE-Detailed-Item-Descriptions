@@ -20,5 +20,4 @@ mod/
 tools/
 bhd/
 tae/
-!PARAM/tae_behavior_map/tae/
-!PARAM/tae_behavior_map/tae/**
+dump/

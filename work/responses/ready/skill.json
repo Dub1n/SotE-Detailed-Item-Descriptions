@@ -5,6 +5,15 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Spinning Slash</font>",
     "info": "Spin in place to carve every foe around you, then repeat the input to hurl yourself forward into another whirling slash that continues the assault. When wielded on the Dragon Halberd, the follow-up strike releases ice lightning that adds <font color=\"#FFE033\">lightning damage</font>, <font color=\"#9DD7FB\">frostbite</font> buildup, and 10 extra <font color=\"#C0B194\">stance damage</font> to every hit. Cannot be parried while consuming <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Stance damage (throwing blades):</font> 13\n<font color=\"#C0B194\">Stance damage (daggers):</font> 20\n<font color=\"#C0B194\">Stance damage (halberds/reapers/spears):</font> 26\n<font color=\"#C0B194\">Stance damage (greatswords/curved greatswords/greataxes/great spears):</font> 29\n<font color=\"#C0B194\">Stance damage (straight swords/curved swords/backhand blades/katanas/axes):</font> 33\n<font color=\"#C0B194\">Stance damage (light greatswords):</font> 36",
+    "Spinning Slash": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 105, 170 [70, 125]",
+      "\n<font color=\"#FFE033\">Lightning damage (Bullet):</font> 0, 166",
+      "\n<font color=\"#FFE033\">Lightning damage (Bullet (Water AoE)):</font> 0, 109",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0.65x, 1.2x [0.65x, 1.2x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 11.5, 15.25 [5, 7.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 0, 5",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet (Water AoE)):</font> 0, 2.5"
+    ],
     "note": "we need to find the separate IDs for the Dragon Halberd version vs the Ash of War version and keep them separate, only including the Dragon Halberd details in that one (while not saying \"when wielded on the dragon halberd...\""
   },
   {
@@ -13,7 +22,13 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Loretta's Slash</font>",
     "info": "Leap forward while cloaking the blade in glintstone, then dive into a sweeping slash as you land to catch distant foes. Each follow-up inherits any weapon buffs already on the armament, scales with the weapon's attack rating, and cannot be parried.\n\n<font color=\"#C0B194\">Stance damage (leap):</font> 12\n<font color=\"#C0B194\">Stance damage (finisher):</font> 10",
-    "note": "move the physical/magic damage mentions out of the description and into proper base-damage stats (fill in the numbers), and repair the truncated stance block."
+    "Loretta's Slash": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 252 [170]",
+      "\n<font color=\"#57DBCE\">Magic damage:</font> 102",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x [2x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 22.5 [10.5]"
+    ],
+    "note": ""
   },
   {
     "id": 122,
@@ -21,6 +36,18 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Storm Assault</font>",
     "info": "Wrap yourself in a cyclone, leap forward, and drive the armament into the ground to detonate another spiral of storm winds at the point of impact. The takeoff gust damages foes around you before the diving thrust lands, and the swirling winds linger briefly to pin targets in place.",
+    "Storm Assault": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 200 [130]",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet (Jump)):</font> 90 (<font color=\"#E0B985\">Str</font>, <font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet (Land)):</font> 90 (<font color=\"#E0B985\">Str</font>, <font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage (Twinblade, Spear, Halberd):</font> 20 [5]",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Shield, Great Spear, Heavy Thrusting Sword):</font> 22 [5.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Twinblade, Spear, Halberd, Bullet (Jump)):</font> 5",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Shield, Great Spear, Heavy Thrusting Sword, Bullet (Jump)):</font> 5.5",
+      "\n<font color=\"#C0B194\">Stance damage (Twinblade, Spear, Halberd, Bullet (Land)):</font> 5",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Shield, Great Spear, Heavy Thrusting Sword, Bullet (Land)):</font> 5.5"
+    ],
     "note": "Wiki: The initial wind AoE deals stance damage based on the weapon class this skill is applied to 5.5 for Heavy Thrusting Swords, Great Spears and Halberds, and 5 for Twin Blades and Spears. We still need to know the stance damage for the landing AoE if we are to add the stance damage to the info."
   },
   {
@@ -29,6 +56,21 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Stormcaller</font>",
     "info": "Spin the armament to surround yourself with storm winds, then repeat the input up to two times to step forward and unfold wider cyclones. Cannot be parried while consuming <font color=\"#E0B985\">FP</font>.\n\n<font color=\"#C0B194\">Stance damage (initial sweep):</font> 24\n<font color=\"#C0B194\">Stance damage (first follow-up):</font> 12\n<font color=\"#C0B194\">Stance damage (second follow-up):</font> 12",
+    "Stormcaller": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 283, 198, 218 [180, 120, 140]",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 283, 198, 140 (<font color=\"#E0B985\">Str</font>, <font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2.5x, 1.75x, 1.75x [2.5x, 1.75x, 1.75x]",
+      "\n<font color=\"#C0B194\">Stance damage (Straight Sword):</font> 8.8, 4, 4 [4.5, 3, 3]",
+      "\n<font color=\"#C0B194\">Stance damage (Reaper, Axe, Twinblade, Curved Sword, Spear, Katana, Halberd):</font> 22, 10, 10 [11.25, 7.5, 7.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Curved Greatsword, Greatsword, Greataxe, Light Greatsword, Great Katana, Great Spear):</font> 24.2, 11, 11 [12.38, 8.25, 8.25]",
+      "\n<font color=\"#C0B194\">Stance damage (Hammer):</font> 28.6, 13, 13 [14.62, 9.75, 9.75]",
+      "\n<font color=\"#C0B194\">Stance damage (Great Hammer):</font> 30.8, 14, 14 [15.75, 10.5, 10.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Straight Sword, Bullet):</font> 6, 4, 4",
+      "\n<font color=\"#C0B194\">Stance damage (Reaper, Axe, Twinblade, Curved Sword, Spear, Katana, Halberd, Bullet):</font> 15, 10, 10",
+      "\n<font color=\"#C0B194\">Stance damage (Curved Greatsword, Greatsword, Greataxe, Light Greatsword, Great Katana, Great Spear, Bullet):</font> 16.5, 11, 11",
+      "\n<font color=\"#C0B194\">Stance damage (Hammer, Bullet):</font> 19.5, 13, 13",
+      "\n<font color=\"#C0B194\">Stance damage (Great Hammer, Bullet):</font> 21, 14, 14"
+    ],
     "note": "Fine"
   },
   {
@@ -37,6 +79,16 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Glintblade Phalanx</font>",
     "info": "Conjure four magic dagger projectiles overhead which hover defensively until they automatically launch at the nearest enemy that enter range, dealing magic damage that scales with Intelligence. Follow-up with a strong attack to launch into a lunging thrust, dealing damage based on Attack Rating with damage type matching the weapon's. Both the glintblades and the follow-up can be parried, while the activation can only not be parried while consuming FP.\n\n<font color=\"#C0B194\">Stance damage per hit (projectile):</font> 4\n<font color=\"#C0B194\">Stance damage (follow-up, daggers):</font> 12\n<font color=\"#C0B194\">Stance damage (follow-up, thrusting swords):</font> 16\n<font color=\"#C0B194\">Stance damage (follow-up, straight swords/curved swords/katanas/twinblades/spears/halberds):</font> 20\n<font color=\"#C0B194\">Stance damage (follow-up, greatswords/curved greatswords/heavy thrusting swords/great spears):</font> 22",
+    "Glintblade Phalanx": [
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet):</font> 51 (<font color=\"#E0B985\">Int</font>)",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 160 [105]",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Straight Sword, Throwing Weapon):</font> 8 [2]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Dagger):</font> 12 [3]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Thrusting Sword):</font> 16 [4]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Twinblade, Curved Sword, Spear, Katana, Halberd):</font> 20 [5]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Thrusting Shield, Curved Greatsword, Greatsword, Light Greatsword, Great Katana, Great Spear, Heavy Thrusting Sword):</font> 22 [5.5]"
+    ],
     "note": "Fine"
   },
   {
@@ -45,6 +97,19 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Flaming Strike</font>",
     "info": "Sweep your off-hand to send out a short arc of flame; follow-up with a strong attack lunging slash that cuts through the blaze and coats the armament in fire, adding 90 <font color=\"#F48C25\">fire damage</font> to the weapon for 40 seconds. The ignition wave cannot be parried although the lunging slash can. Counts as a weapon buff.\n\n<font color=\"#F48C25\">Base fire damage (projectile):</font> 138\n<font color=\"#C0B194\">Stance damage (total):</font> 15",
+    "Flaming Strike": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 0 [40] (<font color=\"#E0B985\">Str</font>)",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 138 (<font color=\"#E0B985\">Str</font>)",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 178 [100]",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Straight Sword):</font> 6 [2]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Dagger):</font> 9 [3]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Thrusting Sword, Claw, Beast Claw):</font> 12 [4]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Reaper, Axe, Backhand Blade, Twinblade, Curved Sword, Fist, Spear, Katana, Halberd):</font> 15 [5]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Thrusting Shield, Curved Greatsword, Greatsword, Greataxe, Light Greatsword, Great Katana, Great Spear, Heavy Thrusting Sword):</font> 16.5 [5.5]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Hammer):</font> 19.5 [6.5]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Great Hammer):</font> 21 [7]"
+    ],
     "note": "Magic IDs 2004300/2004900/2050060 only expose SpEffectParam rows 21430000 and 21490000-21490002 (21490000 adds +87 physical attack power for ~30s). There are no Bullet/Atk links for swordArtsParamId 214 in the CSV dump, so confirming the 138 base fire projectile/scaling still needs the BehaviorParam_PC map described in docs/param_mapping.md."
   },
   {
@@ -117,6 +182,20 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Storm Stomp</font>",
     "info": "Stomp to summon a tight cyclone that hits around you, keeping foes locked in hitstun and setting up follow-up attacks with the bound armament. Cannot be parried.\n\n<font color=\"#F395C4\">Base physical damage:</font> 50\n<font color=\"#C0B194\">Stance damage:</font> 6",
+    "Storm Stomp": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 0 [10] (<font color=\"#E0B985\">Str</font>, <font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 50 (<font color=\"#E0B985\">Str</font>, <font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage (Hammer):</font> 0 [6.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Straight Sword, Throwing Weapon):</font> 0 [2]",
+      "\n<font color=\"#C0B194\">Stance damage (Whip, Hand-to-Hand, Perfume Bottle, Thrusting Sword, Claw, Beast Claw):</font> 0 [4]",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Shield, Curved Greatsword, Greatsword, Greataxe, Light Greatsword, Great Katana, Great Spear, Heavy Thrusting Sword):</font> 0 [5.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Reaper, Axe, Backhand Blade, Twinblade, Curved Sword, Fist, Spear, Katana, Halberd):</font> 0 [5]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Sword):</font> 0 [6]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Weapon):</font> 0 [7.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Dagger):</font> 0 [3]",
+      "\n<font color=\"#C0B194\">Stance damage (Great Hammer):</font> 0 [7]"
+    ],
     "note": "Check the accuracy of the 50 Physical damage and what it scales with; use `./Param/`"
   },
   {
@@ -125,6 +204,19 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Kick</font>",
     "info": "Deliver a fast, high kick that instantly staggers guarding enemies, opening them to a guard break while you are bare-handed in either hand. Cannot be parried.\n\n<font color=\"#C0B194\">Stance damage:</font> 6",
+    "Kick": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 30 [30]",
+      "\n<font color=\"#F5EB89\">Holy damage:</font> 30 [10]",
+      "\n<font color=\"#C0B194\">Stance damage (Hammer):</font> 0 [3.25]",
+      "\n<font color=\"#C0B194\">Stance damage (Straight Sword, Throwing Weapon):</font> 0 [1]",
+      "\n<font color=\"#C0B194\">Stance damage (Whip, Hand-to-Hand, Perfume Bottle, Thrusting Sword, Claw, Beast Claw):</font> 0 [2]",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Shield, Curved Greatsword, Greatsword, Greataxe, Light Greatsword, Great Katana, Great Spear, Heavy Thrusting Sword):</font> 0 [2.75]",
+      "\n<font color=\"#C0B194\">Stance damage (Reaper, Axe, Backhand Blade, Twinblade, Curved Sword, Fist, Spear, Katana, Halberd):</font> 0 [2.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Sword):</font> 0 [3]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Weapon):</font> 0 [3.75]",
+      "\n<font color=\"#C0B194\">Stance damage (Dagger):</font> 0 [1.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Great Hammer):</font> 0 [3.5]"
+    ],
     "note": "Fine"
   },
   {
@@ -133,6 +225,9 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bubble Shower</font>",
     "info": "Blow the horn to launch a slow-moving spray of bubbles that drift forward before raining down in front of you.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 65\n<font color=\"#C0B194\">Stance damage:</font> 72 (92 if all bubbles hit)",
+    "Bubble Shower": [
+      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 32"
+    ],
     "note": "Param trace: Magic 4810 -> Bullet 10481004 -> AtkParam 48100 (125 base fire damage, 20 stance per bubble) and the close-range puff from Magic 4100 uses AtkParam 41004 (68 base magic, 8 stance). Use those numbers to replace the placeholder 65 holy damage line and call out that only the projectile hit is fire-aligned."
   },
   {
@@ -141,6 +236,34 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moonlight Greatsword</font>",
     "info": "Raise the sword aloft to wreathe it in the dark moon's light for 60 seconds, adding 65 <font color=\"#57DBCE\">magic damage</font> and 15 <font color=\"#9DD7FB\">frostbite accumulation</font> to every attack. Heavy attacks during the buff launch chargeable moonlight projectiles which are affected by skill charge and skill damage buffs, while only the weapon hitbox benefits from attack charge buffs; the heavy swing hitbox can still be parried, and the projectiles can be parried by Golden Relatiation but not deflected by Eternel Darkness. The weapon's hit during the skill activation deals full status buildup, stance damage, and 50% damage or 65% charged. Counts as a weapon buff.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Magic damage (projectile, uncharged):</font> 115\n<font color=\"#C0B194\">Magic damage (projectile, charged):</font> 145\n<font color=\"#C0B194\">Stance damage (projectile, uncharged):</font> 15\n<font color=\"#C0B194\">Stance damage (projectile, charged):</font> 24\n<font color=\"#9DD7FB\">Frostbite accumulation (projectile, uncharged):</font> 84\n<font color=\"#9DD7FB\">Frostbite accumulation (projectile, charged):</font> 105",
+    "Moonlight Greatsword": [
+      "\n(Heavy Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 115",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup (Bullet):</font> 1.2x"
+    ],
+    "Moonlight Greatsword 1h Charged R2": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 65, 65",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 8.8, 8.8"
+    ],
+    "Moonlight Greatsword 1h R2": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 50, 50",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 7.7, 7.7"
+    ],
+    "Moonlight Greatsword 2h Charged R2": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 68, 68",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 8.8, 8.8"
+    ],
+    "Moonlight Greatsword 2h R2": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 53, 53",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 7.7, 7.7"
+    ],
+    "Moonlight Greatsword Charged": [
+      "\n(Heavy Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 145",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup (Bullet):</font> 1.5x"
+    ],
     "note": "Fex cache confirms +65 magic/+15 frost for 60s with 15/24 stance waves and stamina-only projectiles; mod's +85/+100 buff values are outdated. 115/145;\nIs fine for now"
   },
   {
@@ -149,6 +272,22 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bear Witness!</font>",
     "info": "Drag the small dragon head along the ground into a fire-laced uppercut before launching a wide barrage of fireballs overhead, dealing pure <font color=\"#F48C25\">fire damage</font> that scales only with <font color=\"#E0B985\">faith</font>.\n\n<font color=\"#C0B194\">Stance damage:</font> 20",
+    "Bear Witness!": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 0 [120]",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 240",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet (Explosion)):</font> 610",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet (Lingering Fire)):</font> 100",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet (Projectile)):</font> 390",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 2x",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet (Explosion)):</font> 1x",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet (Lingering Fire)):</font> 1x",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet (Projectile)):</font> 3x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0 [6]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 5",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet (Explosion)):</font> 7.5",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet (Projectile)):</font> 12"
+    ],
     "note": "use `./PARAM/` to find base damage values"
   },
   {
@@ -157,6 +296,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Taker's Flames</font>",
     "info": "Raise the blade to wreath it in blasphemous flame before slamming forward and sending a chain of eruptions along the ground, restoring 10% of <font color=\"#E0B985\">maximum HP</font> plus 150 with each enemy hit. The eruption wave deals pure <font color=\"#F48C25\">fire damage</font>, scales with <font color=\"#E0B985\">faith</font>, cannot be parried, and benefits from the Talisman of the Dread and Fire Scorpion Charm.\n<font color=\"#C0B194\">Stance damage:</font> 15",
+    "Taker's Flames": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 65 [150]",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 510",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 8.25 [8.25]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 15.95"
+    ],
     "note": "use `./PARAM/` to find base damage values"
   },
   {
@@ -165,6 +312,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Spearcall Ritual</font>",
     "info": "Hoist the spear skyward to summon a cluster of spectral spears above the target that rain down after a short delay, dealing pure <font color=\"#57DBCE\">magic damage</font>. Scales with <font color=\"#E0B985\">Intelligence</font>.\n\n<font color=\"#C0B194\">Stance damage:</font> 26",
+    "Spearcall Ritual": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 100",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet):</font> 168",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 5",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 6"
+    ],
     "note": "use `./PARAM/` to find base magic damage values"
   },
   {
@@ -173,6 +328,20 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Thundercloud Form</font>",
     "info": "Transform into a rushing red thundercloud and fly through the air before plunging down with a lightning-charged strike; holding the skill extends the cloud's travel distance without benefiting from charge buffs. Both the passing lightning and plunge deal pure <font color=\"#FFE033\">lightning damage</font>. Cannot be parried.\n\n<font color=\"#C0B194\">Stance damage per tick (passing bolt):</font> 6\n<font color=\"#C0B194\">Stance damage (plunge, uncharged):</font> 11\n<font color=\"#C0B194\">Stance damage (plunge, charged):</font> 33",
+    "Thundercloud Form": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 190",
+      "\n<font color=\"#FFE033\">Lightning damage:</font> 20",
+      "\n<font color=\"#FFE033\">Lightning damage (Uncharged/Partial Loop 1-3x):</font> 25",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 11"
+    ],
+    "Thundercloud Form Charged": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 256",
+      "\n<font color=\"#FFE033\">Lightning damage:</font> 20",
+      "\n<font color=\"#FFE033\">Lightning damage (Loop 6x):</font> 25",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 33"
+    ],
     "note": ""
   },
   {
@@ -181,6 +350,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Cursed-Blood Slice</font>",
     "info": "Brace, then leap into a diagonal slash that paints a cursed trail which detonates moments later; repeat with another input for a horizontal follow-up that leaves a second delayed explosion. Cannot parried while consuming FP. Deal pure <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#F48C25\">Base fire damage (explosions):</font> 80\n<font color=\"#C0B194\">Stance damage:</font> 14",
+    "Cursed-Blood Slice": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 0, 100, 100 [0, 105, 105]",
+      "\n<font color=\"#F48C25\">Fire damage:</font> 0, 50, 50",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 80, 0, 0",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 1.1x, 1.1x [0x, 1x, 1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 0.7x, 0x, 0x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0, 10.12, 13.2 [0, 7.15, 11]"
+    ],
     "note": "Find out what the base fire damage scales with"
   },
   {
@@ -197,6 +374,17 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bloodboon Ritual</font>",
     "info": "Raise the sacred spear and pierce the Formless Mother up to three times, each thrust spawning an explosion of bloodflame that rains droplets around you before coating the weapon. The third thrust hits harder and recovers more slowly, while the armament stays imbued for 20 seconds with 30 added <font color=\"#F48C25\">fire damage</font> and steady <font color=\"#C84343\">blood loss accumulation</font> on every hit; damage scales with weapon upgrade level and <font color=\"#E0B985\">Arcane</font>, and each detonation deals pure <font color=\"#F48C25\">fire damage</font>.\n\n<font color=\"#C84343\">Blood Loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.\n\n<font color=\"#C0B194\">Stance damage (3 inputs):</font> 21",
+    "Bloodboon Ritual": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 0, 0, 0 [100, 100, 100]",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet 1):</font> 100, 100, 100",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet 1&2 [Hit]):</font> 65, 65, 65",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet 2):</font> 100, 100, 100",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 0x, 0x [1x, 1x, 1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet 1):</font> 0.4x, 0.5x, 0.6x",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet 1&2 [Hit]):</font> 0.4x, 0.5x, 0.6x",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet 2):</font> 0.4x, 0.5x, 0.6x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0, 0, 0 [5.5, 5.5, 5.5]"
+    ],
     "note": "getting the fire damage numbers would be ideal, using `./PARAM/` or otherwise"
   },
   {
@@ -205,6 +393,19 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Ancient Lightning Spear</font>",
     "info": "Imbue the armament with the ancient dragons' red lightning, take a short step forward, and fling it as a spear of pure <font color=\"#FFE033\">lightning damage</font> that knocks back foes when fully charged and flinches tougher enemies. Charging the skill increases the throw's attack power, and the projectile still hits sidestepping targets while benefiting from .\n\n<font color=\"#C0B194\">Stance damage:</font> 9 (weapon upgrade level, <font color=\"#E0B985\">Dexterity</font>)",
+    "Ancient Lightning Spear": [
+      "\n<font color=\"#FFE033\">Lightning damage (Bullet):</font> 250",
+      "\n<font color=\"#FFE033\">Lightning damage (Bullet (Water AoE)):</font> 100",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet (Water AoE)):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 2.5",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet (Water AoE)):</font> 1"
+    ],
+    "Ancient Lightning Spear Charged": [
+      "\n<font color=\"#FFE033\">Lightning damage (Bullet):</font> 300",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 2.5"
+    ],
     "note": "The stance damage does *not* scale with weapon upgrade level or dexterity- we need to find the actual lightning damage values and if we can we add the appropriate (perhaps these) scaling details to them in the stats section, if we can't find the exact numbers but do know what the lightning damage scales with we add that to the description block"
   },
   {
@@ -229,6 +430,13 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Magma Shower</font>",
     "info": "Slash in a tight circle to scatter pools of magma around you, then use an additional input to spin again and carpet the area in fire; each spin leaves lingering magma pools that continue scorching foes.\n\nEach spin cannot be parried while Focus is held but becomes parryable if executed with no focus, and the Talisman of the Dread enhances the flames.\n\n<font color=\"#F48C25\">Base fire damage (magma):</font> 30\n<font color=\"#C0B194\">Stance damage (spin):</font> 18",
+    "Magma Shower": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 0, 100, 185 [0, 80, 150]",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 30, 0, 0",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 1x, 2x [0x, 1x, 2x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x, 0x, 0x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0, 14.5, 19 [0, 3.75, 6.25]"
+    ],
     "note": "only the magma pools have a number; we still need base physical/fire damage lines for each spin, the lingering magma ticks, and the charged follow-up along with their scaling tags per the definitions doc."
   },
   {
@@ -237,6 +445,18 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Transient Moonlight</font>",
     "info": "Sheathe the blade while moving freely, then release into a stepping horizontal slash or a short-hop vertical slash depending on the follow-up input; both slashes launch waves of light.\n\nThe waves deal pure <font color=\"#57DBCE\">magic damage</font>, scales with <font color=\"#E0B985\">Intelligence</font>, and can be aimed up or down with camera control. The Light and Heavy attacks can be parried while the projectiles can be parried or reflected. Counts as a stance skill.\n\n<font color=\"#57DBCE\">Base magic damage (normal projectile):</font> 140 (<font color=\"#E0B985\">Intelligence</font>)\n<font color=\"#57DBCE\">Base magic damage (strong projectile):</font> 155 (<font color=\"#E0B985\">Intelligence</font>)\n<font color=\"#C0B194\">Stance damage (light version):</font> 28\n<font color=\"#C0B194\">Stance damage (heavy version):</font> 30",
+    "Transient Moonlight": [
+      "\n(Light Follow-up) <font color=\"#F395C4\">Slash damage:</font> 50 [115]",
+      "\n(Light Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 140",
+      "\n(Light Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage:</font> 22.5 [5]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage (Bullet):</font> 5",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Slash damage:</font> 55 [135]",
+      "\n(Heavy Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 155",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 22.5 [10]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Bullet):</font> 7.5"
+    ],
     "note": "remove the stance/poise figures from the description entirely and keep them only in the stats block; no separate poise numbers, just stance"
   },
   {
@@ -245,6 +465,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Thunderstorm</font>",
     "info": "Imbue the armament with lightning and spin it to surround yourself with a storm, chaining up to two additional spins with further inputs. The weapon stays infused for 40 seconds, adding 120 <font color=\"#FFE033\">lightning damage</font> to every attack. The skill cannot be parried and does not trigger Winged Sword Insignia, Rotten Winged Sword Insignia, or Millicent's Prosthesis.\n\n<font color=\"#FFE033\">Base lightning damage (swirl):</font> 95\n<font color=\"#C0B194\">Stance damage (first swing):</font> 16\n<font color=\"#C0B194\">Stance damage (follow-up swings):</font> 10",
+    "Thunderstorm": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 300, 200, 210 [195, 130, 140]",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 189, 149, 160",
+      "\n<font color=\"#FFE033\">Lightning damage:</font> 285, 190, 202",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 0x, 0x [3x, 2x, 2x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 13.5, 9, 9 [10.5, 7, 7]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 13.5, 9, 9"
+    ],
     "note": "add base lightning damage entries for each spin/follow-up (and note the stat scaling) rather than a single 95 value, and confirm whether the 120 lightning buff shares the same scaling so it can be documented clearly."
   },
   {
@@ -261,6 +489,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Dryleaf Whirlwind</font>",
     "info": "Leap upward in a cyclone of four rapid kicks before driving a final heel drop into the ground, extending the reach of all kicking attacks with <font color=\"#E0B985\">arcane</font> force. The attack procs multi-hit talismans such as Millicent's Prosthesis and Rotten Winged Sword Insignia, and its damage is increased by the Shattered Stone Talisman and Divine Bird Warrior Greaves.\n\n<font color=\"#C0B194\">Stance damage (with FP):</font> 28\n<font color=\"#C0B194\">Stance damage (without FP):</font> 16",
+    "Dryleaf Whirlwind": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 442 [280]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2.8x [4x]",
+      "\n<font color=\"#C0B194\">Stance damage (Hand-to-Hand):</font> 28 [16]"
+    ],
     "note": "Magic lookups only return Bullet rows 1042000x/10452000/10472000/etc whose AtkParam entries (42000-42004, 45200, 47200, 48200, 60200, 62200, 67202, 68200, 70200, 72000, 73200, 75200, 210702000, 210782000/210782002, etc.) are all flagged with atkAttribute 254 and carry magic/fire/dark/thunder splits even though Dryleaf Whirlwind should be physical. Need the BehaviorParam_PC IDs from the TAE map (per docs/param_mapping.md) to isolate the real four kicks + heel drop for FP / FP-less versions."
   },
   {
@@ -277,6 +510,13 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Spinning Gravity Thrust</font>",
     "info": "Use gravity to hover in place, rotate, and drive forward with a piercing thrust, then input again to crash down in another spinning strike that knocks foes back. The skill works with multi-hit buffs.\n\n<font color=\"#C0B194\">Stance damage (greatswords/curved greatswords/heavy thrusting swords/great katanas - first thrust):</font> 21\n<font color=\"#C0B194\">Stance damage (greatswords/curved greatswords/heavy thrusting swords/great katanas - follow-up):</font> 25\n<font color=\"#C0B194\">Stance damage (colossal swords - first thrust):</font> 23\n<font color=\"#C0B194\">Stance damage (colossal swords - follow-up):</font> 26",
+    "Spinning Gravity Thrust": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 247, 224",
+      "\n<font color=\"#F395C4\">Strike damage:</font> 0, 0 [130, 110]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 3.25x, 2.6x [3.25x, 2.6x]",
+      "\n<font color=\"#C0B194\">Stance damage (Curved Greatsword, Greatsword, Great Katana, Heavy Thrusting Sword):</font> 20.9, 24.75 [13.75, 11]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Sword):</font> 22.8, 27 [15, 12]"
+    ],
     "note": "Magic 4000/4400 give Bullet IDs 10400000, 10440000, 10694000, 10704000, 10724000, 210774000. Every linked AtkParam (40000, 44000, 69400, 70400, 72401, 210774000) is marked atkAttribute 254 and alternates between magic, lightning, and physical splits that don't line up with Spinning Gravity Thrust's physical pierce. Need the BehaviorParam_PC chain from the TAE map to grab the real hovering thrust + crash values."
   },
   {
@@ -285,6 +525,16 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Palm Blast</font>",
     "info": "Imbue your palm with energy before unleashing an explosive strike that travels slightly beyond your reach, spreading the weapon's status buildup across the blast radius. Charging widens the explosion, knocks enemies back like Rejection, and grants the poise of a fully charged Endure while increasing the stance damage it deals.\n\n<font color=\"#C0B194\">Stance damage:</font> 20\n<font color=\"#C0B194\">Stance damage (charged):</font> 36",
+    "Palm Blast": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 220 [120]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0.65x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage (Hand-to-Hand):</font> 20 [4]"
+    ],
+    "Palm Blast Charged": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 460 [180]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0.65x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 900 [200]"
+    ],
     "note": "document the base damage for the uncharged and charged blasts (plus how much inherited status buildup is applied) and let the stats handle it instead of leaving it implicit in the description."
   },
   {
@@ -293,6 +543,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Piercing Throw</font>",
     "info": "Hurl the armament with a powerful spin to tunnel through every foe in its path while reaching roughly double the normal range; the projectile keeps its full damage on each pierce and has no falloff, though blocking still prevents damage even as the projectile continues traveling. Using the skill without <font color=\"#E0B985\">FP</font> reduces the damage and removes the piercing effect.\n\n<font color=\"#C0B194\">Stance damage:</font> 3",
+    "Piercing Throw": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 175 [50]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [0.5x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 3 [2]"
+    ],
     "note": "needs base physical damage values for the FP version and the reduced FP-less throw, along with the scaling details; the definitions doc expects those numbers in the stats block."
   },
   {
@@ -301,6 +556,16 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Scattershot Throw</font>",
     "info": "Conjure mirrored copies of the dagger in both hands, fling a cloud of 28 projectiles that can strike large foes up to four times each, then repeat the same input for a second volley; all hits count as pierce damage for counter bonuses such as Spear Talisman, and the cast gains an extra close-range hitbox. The projectiles reach roughly 50% farther than normal throws, and using the skill without <font color=\"#E0B985\">FP</font> releases only two daggers while keeping the extended range.\n\n<font color=\"#C0B194\">Stance damage (per volley):</font> 11.2",
+    "Scattershot Throw": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 0, 316, 316 [70, 0, 0]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 2.8x, 2.8x [0.7x, 0x, 0x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0, 5.6, 5.6 [2.8, 0, 0]"
+    ],
+    "Scattershot Throw (Far)": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 39",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0.7x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 1.4"
+    ],
     "note": "add base damage per dagger/per volley (and the FP-less two-dagger version) with scaling so we meet the stats-block requirements for multihit skills."
   },
   {
@@ -309,7 +574,13 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Wall of Sparks</font>",
     "info": "Scatter perfumed powder around you that ignites after a short delay into a wall of intense sparks whose element is determined by the perfume bottle; charging widens the wall, raises its damage, and the sparks cannot be parried.\n\n<font color=\"#C0B194\">Stance damage (per explosion):</font> 3",
-    "note": "quantify the damage on the delayed spark wall (per explosion/tick) for each perfume element and add the scaling tags\u2014right now we only mention the behavior."
+    "Wall of Sparks": [
+      "\n<font color=\"#F395C4\">Physical damage (Bullet):</font> 40",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 10",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 0.5x",
+      "\n<font color=\"#C0B194\">Stance damage (Perfume Bottle, Bullet):</font> 2"
+    ],
+    "note": "quantify the damage on the delayed spark wall (per explosion/tick) for each perfume element and add the scaling tags—right now we only mention the behavior."
   },
   {
     "id": 4050,
@@ -317,7 +588,13 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Rolling Sparks</font>",
     "info": "Spread perfumed powder in a rolling line that triggers successive explosions of sparks inheriting the bottle's properties; large targets can be struck multiple times along the trail, and the line stops releasing new hitboxes once it collides with terrain.\n\n<font color=\"#C0B194\">Stance damage (per explosion):</font> 3.2",
-    "note": "same as Wall of Sparks\u2014pull the per-explosion damage/tick values (and any lingering tick rate) from ./PARAM/ and add them with proper scaling labels in the stats block."
+    "Rolling Sparks": [
+      "\n<font color=\"#F395C4\">Physical damage (Bullet):</font> 82",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 10",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 0.9x",
+      "\n<font color=\"#C0B194\">Stance damage (Perfume Bottle, Bullet):</font> 3.2"
+    ],
+    "note": "same as Wall of Sparks—pull the per-explosion damage/tick values (and any lingering tick rate) from ./PARAM/ and add them with proper scaling labels in the stats block."
   },
   {
     "id": 4060,
@@ -325,6 +602,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Raging Beast</font>",
     "info": "Step with beastlike speed in any direction, leap upward, and rake the foe with an aerial slash before a strong-attack follow-up dives downward; holding a directional input while evading determines which flank you strike and the dash grants 6 invulnerability frames.\n\n<font color=\"#C0B194\">Stance damage (opening slash):</font> 6\n<font color=\"#C0B194\">Stance damage (follow-up plunge):</font> 10.5",
+    "Raging Beast": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 145 [85]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 6 [4]",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Slash damage:</font> 235 [150]",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.5x [1.5x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 10.4 [5.4]"
+    ],
     "note": "needs base physical damage entries for the aerial slash and the follow-up plunge (with their scaling) so the stats aren't stance-only."
   },
   {
@@ -333,6 +618,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Savage Claws</font>",
     "info": "Pounce onto the target and rake it with six alternating claw swipes in rapid succession.\n\n<font color=\"#C0B194\">Stance damage (6-hit combo):</font> 22\n<font color=TODO>Status buildup per hit:</font> 0.6x",
+    "Savage Claws": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 485 [300]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 3.6x [6x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 22 [9.6]"
+    ],
     "note": "add the base damage for each of the six claw hits and ~~replace the vague \"60% of the weapon's status buildup\" line with actual accumulation numbers per hit as required by the definitions doc~~ the 0.6x refers to the amount of the weapon's buildup that varies per-weapon so this is the actual figure that is appropriate."
   },
   {
@@ -341,6 +631,13 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Red Bear Hunt</font>",
     "info": "Slaughter prey with a wide right swipe that spawns a lingering vacuum dealing continuous Standard damage, then repeat the input to flow into a left slash and a front double-claw sweep while the vacuums persist; the three slashes total 32.6 stance damage.\n\n<font color=\"#C0B194\">Stance damage (right slash):</font> 10.4\n<font color=\"#C0B194\">Stance damage (left slash):</font> 10.4\n<font color=\"#C0B194\">Stance damage (front slash):</font> 11.6",
+    "Red Bear Hunt": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 138, 129, 172 [50, 50, 100]",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 56, 56, 49",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x, 2x [1x, 1x, 2x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 8, 8, 9.2 [2, 2, 4]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 1.2, 1.2, 1.2"
+    ],
     "note": "the vacuums and each slash need base damage/tick entries with scaling, and the lingering vacuum ticks should be formatted using the per-tick template from the definitions doc."
   },
   {
@@ -349,6 +646,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Blind Spot</font>",
     "info": "Leap into a foe's blind spot and gore them from the side; directional inputs pick which flank you dash toward, the evasion grants 6 invulnerability frames, and the resulting stab slips below their guard while dealing <font color=\"#F395C4\">pierce damage</font> that bypasses blocking.\n\n<font color=\"#C0B194\">Stance damage (stab):</font> 10",
+    "Blind Spot": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 145 [70]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage (Backhand Blade):</font> 10 [5]"
+    ],
     "note": "document the base pierce damage (and scaling) for the stab plus any FP-less variation; only stance is shown right now."
   },
   {
@@ -357,6 +659,27 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Swift Slash</font>",
     "info": "Step forward with a razor-quick cut that slices through foes and fires a shearing vacuum whose repeated hits rapidly build status; charging increases the strike's power and the distance of the forward step.\n\n<font color=\"#C0B194\">Stance damage (uncharged slash):</font> 10\n<font color=\"#C0B194\">Stance damage (charged slash):</font> 20",
+    "Swift Slash": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 92 [70]",
+      "\n<font color=\"#F395C4\">Physical damage (Bullet):</font> 120",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage (Backhand Blade):</font> 5 [5]",
+      "\n<font color=\"#C0B194\">Stance damage (Backhand Blade, Bullet):</font> 5"
+    ],
+    "Swift Slash Charged": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 104",
+      "\n<font color=\"#F395C4\">Physical damage (Bullet):</font> 160",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 300",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 100"
+    ],
+    "Swift Slash Charged (lacking FP)": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 80",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 100"
+    ],
     "note": "Magic 4100 produces Bullet/Atk pairs 10410000-2 -> Atk 41000/41001/41002 (182 / 205 / 52 base magic, stance 80/80/40) plus direct-hit rows 41003-41006 (68 base magic, 8 stance). Secondary hits chain through 10441000 (Atk 44100 = 99 base magic, 100 stance) and 10641000/10694100/10704100 with dark/thunder/magic splits, all flagged atkAttribute 254. Call out these numbers in the stats once we decide which ones are slash vs vacuum, and keep the warning that a BehaviorParam_PC cross-check is needed to avoid the dummy entries noted in docs/param_mapping.md."
   },
   {
@@ -365,6 +688,16 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Overhead Stance</font>",
     "info": "Enter a high guard, then follow a light attack with a stepping downward slash or a strong attack with a series of plunging blows.\nCounts as a stance skill.\n\n<font color=\"#C0B194\">Stance damage (light follow-up):</font> 11\n<font color=\"#C0B194\">Stance damage (heavy follow-up):</font> 22",
+    "Overhead Stance": [
+      "\n(Light Follow-up) <font color=\"#F395C4\">Slash damage:</font> 0 [50]",
+      "\n(Light Follow-up) <font color=\"#57DBCE\">Magic damage:</font> 155",
+      "\n(Light Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage:</font> 11 [2.75]",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Slash damage:</font> 97 [150]",
+      "\n(Heavy Follow-up) <font color=\"#57DBCE\">Magic damage:</font> 200",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.3x [3x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 22 [8.25]"
+    ],
     "note": "add base damage entries for the light follow-up slash and each hit in the heavy plunge sequence; per the definitions doc the numeric damage can't live solely in the prose. *These might not be available as they will likely scale with the weapon so much that any singular value is arbritrary and should not be provided."
   },
   {
@@ -373,6 +706,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Wing Stance</font>",
     "info": "Hold a poised right-sided guard; the light attack follow-up releases a rapid three-slash combo, while the heavy attack follow-up is a leaping heavy thrust; holding the Skill button after the light follow-up immediately returns the stance; the heavy follow-up does not benefit from jumping attack buffs.\nCan be parried. Counts as a stance skill.\n\n<font color=\"#C0B194\">Stance damage (light chain):</font> 16.5\n<font color=\"#C0B194\">Stance damage (heavy thrust):</font> 30.2",
+    "Wing Stance": [
+      "\n(Light Follow-up) <font color=\"#F395C4\">Standard damage:</font> 254 [150]",
+      "\n(Light Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.4x [3x]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage:</font> 16.5 [16.5]",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Pierce damage:</font> 251 [100]",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 30.25 [5.5]"
+    ],
     "note": "Wing Stance pulls direct AtkParam rows 41200/41201 (297 base magic, 260 stance per slash) and bullets 10412000/10412001 -> Atk 41205/41206 (242 base magic, 200 stance). Everything is still tagged as the 254 helper type, so verify via the behavior map before publishing -- these values look inflated for a stance skill but they're the only numbers exposed by the CSV path right now."
   },
   {
@@ -381,6 +722,10 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Blinkbolt</font>",
     "info": "Transform into a bolt of lightning from a low stance and rush straight ahead even when locked onto a target. Deals minimal <font color=\"#FFE033\">lightning damage</font> while surging forward and, after 14 frames of startup, grants 16 invulnerability frames that let you ignore incoming attacks.\n\n<font color=\"#C0B194\">Stance damage:</font> 1",
+    "Blinkbolt": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 0 [40] (<font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#FFE033\">Lightning damage:</font> 50 (<font color=\"#E0B985\">Dex</font>)"
+    ],
     "note": "add base lightning damage stats for the dash and the strong-attack follow-up, complete with scaling, instead of just saying it deals minimal lightning damage."
   },
   {
@@ -389,6 +734,18 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Flame Skewer</font>",
     "info": "Enwreathe the armament in fire, dip into a low stance, and skewer the target in one thrust before a strong-attack follow-up fans flames across the front; the opening thrust can be parried. Adds 95 <font color=\"#F48C25\">fire attack rating</font> to the armament for 15 seconds.\n\n<font color=\"#C0B194\">Stance damage (colossal swords - thrust):</font> 24\n<font color=\"#C0B194\">Stance damage (greatswords/greatspears/great katanas/heavy thrusting swords/thrusting shields - thrust):</font> 22\n<font color=\"#C0B194\">Stance damage (straight swords/halberds/spears/twinblades/katanas - thrust):</font> 20\n<font color=\"#C0B194\">Stance damage (thrusting swords - thrust):</font> 16\n<font color=\"#C0B194\">Stance damage (follow-up flames):</font> 15",
+    "Flame Skewer": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 0 [105]",
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 138",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage (Straight Sword):</font> 8 [2]",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Sword):</font> 16 [4]",
+      "\n<font color=\"#C0B194\">Stance damage (Twinblade, Spear, Katana, Halberd):</font> 20 [5]",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Shield, Greatsword, Light Greatsword, Great Katana, Great Spear, Heavy Thrusting Sword):</font> 22 [5.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Sword):</font> 24 [6]",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Strike damage:</font> 0 [25]",
+      "\n(Heavy Follow-up) <font color=\"#F48C25\">Fire damage (Bullet):</font> 128 (<font color=\"#E0B985\">Fth</font>)"
+    ],
     "note": "Only SpEffectParam 1414000 shows up for swordArtsParamId 4140 (duration 180 s, adds flat fire attack power with no damage row). There are no Bullet/Atk entries to confirm the thrust or fan damage, so once again we need the BehaviorParam_PC -> AtkParam map from docs/param_mapping.md before we can move the buff/damage numbers out of prose."
   },
   {
@@ -397,6 +754,17 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Savage Lion's Claw</font>",
     "info": "Somersault forward, landing a weaker Lion's Claw slash, a regular attack during the flip, and a finishing Lion's Claw slam, with an additional input enabling the final strike; each hit inherits your weapon's damage type.\n\n<font color=\"#C0B194\">Stance damage (colossal weapons):</font> 63.75\n<font color=\"#C0B194\">Stance damage (great hammers):</font> 59.5\n<font color=\"#C0B194\">Stance damage (hammers):</font> 55.25\n<font color=\"#C0B194\">Stance damage (colossal swords/flails):</font> 51\n<font color=\"#C0B194\">Stance damage (greatswords/light greatswords/greataxes/great katanas/curved greatswords):</font> 46.75\n<font color=\"#C0B194\">Stance damage (straight swords/axes/twinblades/katanas/curved swords):</font> 42.5",
+    "Savage Lion's Claw": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 195, 223 [120, 240]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 2x [1x, 2x]",
+      "\n<font color=\"#C0B194\">Stance damage (Straight Sword):</font> 5, 12 [2, 4]",
+      "\n<font color=\"#C0B194\">Stance damage (Axe, Twinblade, Curved Sword, Katana):</font> 12.5, 30 [5, 10]",
+      "\n<font color=\"#C0B194\">Stance damage (Curved Greatsword, Greatsword, Greataxe, Light Greatsword, Great Katana):</font> 13.75, 33 [5.5, 11]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Sword):</font> 15, 36 [6, 12]",
+      "\n<font color=\"#C0B194\">Stance damage (Hammer):</font> 16.25, 39 [6.5, 13]",
+      "\n<font color=\"#C0B194\">Stance damage (Great Hammer):</font> 17.5, 42 [7, 14]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Weapon):</font> 18.75, 45 [7.5, 15]"
+    ],
     "note": "pull the base damage per hit (flip slash, mid-air attack, slam) for each weapon class and add them to the stats block; only stance numbers are present now."
   },
   {
@@ -405,6 +773,28 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Divine Beast Frost Stomp</font>",
     "info": "Lift a leg high and stamp it down to send a ground-hugging wave of frost straight ahead that detonates into spikes and ice explosions along its path, dealing <font color=\"#57DBCE\">magic damage</font>; charging increases the wave's range and power. The wave also inflicts frostbite buildup on the spikes and each explosion.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Stance damage:</font> 5\n<font color=\"#C0B194\">Stance damage (charged):</font> 10\n<font color=\"#9DD7FB\">Base frostbite accumulation (spikes):</font> 70\n<font color=\"#9DD7FB\">Base frostbite accumulation (explosions):</font> 70",
+    "Divine Beast Frost Stomp": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 0 [10] (<font color=\"#E0B985\">Str</font>, <font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet (Ice Spikes)):</font> 130 (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet (Shatter)):</font> 30 (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage (Hammer):</font> 0 [6.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Straight Sword, Throwing Weapon):</font> 0 [2]",
+      "\n<font color=\"#C0B194\">Stance damage (Whip, Hand-to-Hand, Thrusting Sword, Claw, Beast Claw):</font> 0 [4]",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Shield, Curved Greatsword, Greatsword, Greataxe, Light Greatsword, Great Katana, Great Spear, Heavy Thrusting Sword):</font> 0 [5.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Reaper, Axe, Backhand Blade, Twinblade, Curved Sword, Fist, Spear, Katana, Halberd):</font> 0 [5]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Sword):</font> 0 [6]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Weapon):</font> 0 [7.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Dagger):</font> 0 [3]",
+      "\n<font color=\"#C0B194\">Stance damage (Great Hammer):</font> 0 [7]"
+    ],
+    "Divine Beast Frost Stomp Charged": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 0 [15] (<font color=\"#E0B985\">Str</font>, <font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet (Ice Spikes)):</font> 180 (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet (Shatter)):</font> 45 (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0 [100]"
+    ],
     "note": "we still need base magic damage entries for the traveling wave, the spikes, and the explosions (charged/uncharged) with their scaling tags to go alongside the frostbite accumulation."
   },
   {
@@ -413,6 +803,23 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Flame Spear</font>",
     "info": "Ready a thrust imbued with flame, then unleash a fiery spear straight ahead; charging the attack increases damage and travel distance. The buff coats the armament in flame for 40 seconds, adding 95 <font color=\"#F48C25\">fire attack rating</font>, and the projectile fires the moment the thrust launches. The weapon hit can still be parried.\n\n<font color=\"#C0B194\">Stance damage (colossal swords):</font> 38\n<font color=\"#C0B194\">Stance damage (greatswords/greatspears/great katanas/heavy thrusting swords/thrusting shields):</font> 36\n<font color=\"#C0B194\">Stance damage (straight swords/halberds/spears/twinblades/katanas):</font> 33\n<font color=\"#C0B194\">Stance damage (thrusting swords):</font> 28\n<font color=\"#C0B194\">Stance damage (daggers):</font> 22",
+    "Flame Spear": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 80 [80]",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 106 (<font color=\"#E0B985\">Fth</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage (Straight Sword):</font> 4.5 [2]",
+      "\n<font color=\"#C0B194\">Stance damage (Dagger):</font> 6.75 [3]",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Sword):</font> 9 [4]",
+      "\n<font color=\"#C0B194\">Stance damage (Twinblade, Spear, Katana, Halberd):</font> 11.25 [5]",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Shield, Greatsword, Light Greatsword, Great Katana, Great Spear, Heavy Thrusting Sword):</font> 12.38 [5.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Sword):</font> 13.5 [6]"
+    ],
+    "Flame Spear Charged": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 120 [110]",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 134 (<font color=\"#E0B985\">Fth</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 540 [100]"
+    ],
     "note": "reword the buff to \"fire damage\" in the description and leave it out of the stats block;"
   },
   {
@@ -421,6 +828,23 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Carian Sovereignty</font>",
     "info": "Transform the blade into a massive magical greatsword and slam it down, with an additional input producing a horizontal sweep; charge either attack for greater force. A fully charged slam releases a ground shockwave that sends two bursts in a line, each dealing roughly 40% of the slam's damage, and a single foe cannot be hit by both the slam and the bursts. The follow-up sweep matches the initial cast in raw damage. All hits deal pure <font color=\"#57DBCE\">magic damage</font> that scales with <font color=\"#E0B985\">Intelligence</font>, weapon upgrade level, and infusion affinity (Magic granting the highest output), and the skill grants hyper armor while casting (118 <font color=\"#E0B985\">poise</font> on greatswords, curved greatswords, and heavy thrusting swords, 104 on great katanas, 60 on light greatswords, 30 on straight swords/twinblades/katanas/curved swords, 28 on thrusting swords, and 22 on daggers).\n\n<font color=\"#C0B194\">Stance damage (charged slam):</font> 48 (<font color=\"#E0B985\">Intelligence</font>)\n<font color=\"#C0B194\">Stance damage (charged follow-up sweep):</font> 45 (<font color=\"#E0B985\">Intelligence</font>)",
+    "Carian Sovereignty": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 0, 0 [150, 150]",
+      "\n<font color=\"#57DBCE\">Magic damage:</font> 315, 315 (<font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 0x [1x, 1x]",
+      "\n<font color=\"#C0B194\">Stance damage (Straight Sword, Throwing Weapon):</font> 0, 0 [4, 4]",
+      "\n<font color=\"#C0B194\">Stance damage (Curved Greatsword, Greatsword, Light Greatsword, Great Katana, Heavy Thrusting Sword):</font> 0, 0 [11, 11]",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Sword):</font> 0, 0 [8, 8]",
+      "\n<font color=\"#C0B194\">Stance damage (Twinblade, Curved Sword, Katana):</font> 0, 0 [10, 10]",
+      "\n<font color=\"#C0B194\">Stance damage (Dagger):</font> 0, 0 [6, 6]"
+    ],
+    "Carian Sovereignty Charged": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 0, 0 [120, 0]",
+      "\n<font color=\"#57DBCE\">Magic damage:</font> 284, 400 (<font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet):</font> 160, 0 (<font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 0x [1x, 0x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0, 0 [150, 0]"
+    ],
     "note": "add base magic damage stats for the slam, bursts, and follow-up with Intelligence/upgrade scaling, and leave stance damage as plain values with no scaling tags"
   },
   {
@@ -437,7 +861,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Shield Strike</font>",
     "info": "Bash forward with the equipped shield and input repeatedly to chain up to three additional shield strikes. When assigned off-hand it gives the shield its own light attack string so you can keep the main-hand skill, effectively allowing the shield to use its light attack instead of the main-hand Skill.",
-    "note": "needs base damage and stance values for each bash in the chain (FP and FP-less if they differ), plus scaling tags\u2014currently there's no stats block at all."
+    "note": "needs base damage and stance values for each bash in the chain (FP and FP-less if they differ), plus scaling tags—currently there's no stats block at all."
   },
   {
     "id": 4210,
@@ -453,6 +877,34 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Ghostflame Call</font>",
     "info": "Drive the armament forward to manifest a burst of <font color=\"#57DBCE\">magic damage</font> ghostflame that applies 20 <font color=\"#9DD7FB\">frostbite accumulation</font>. A light attack follow-up leaves a burning trail that inflicts 20 <font color=\"#9DD7FB\">frostbite accumulation</font> per tick while a strong attack enlarges the explosion to 80; all variants still apply the weapon hit's <font color=\"#E0B985\">poise damage</font> (100% of the weapon's poise) on the opening thrust, and the light trail itself contributes no stance damage.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Stance damage (no-input explosion):</font> 4\n<font color=\"#C0B194\">Stance damage (light input explosion):</font> 5\n<font color=\"#C0B194\">Stance damage (light input trail):</font> 0\n<font color=\"#C0B194\">Stance damage (heavy input explosion):</font> 11\n<font color=\"#9DD7FB\">Base frostbite accumulation (no-input explosion):</font> 20\n<font color=\"#9DD7FB\">Base frostbite accumulation (trail, per tick):</font> 20\n<font color=\"#9DD7FB\">Base frostbite accumulation (heavy explosion):</font> 80",
+    "Ghostflame Call": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 50 [75]",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet (Explosion)):</font> 50 (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet (Ticks)):</font> 30 (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0.5x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage (Straight Sword):</font> 2 [1.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Thrusting Sword):</font> 4 [3]",
+      "\n<font color=\"#C0B194\">Stance damage (Curved Sword, Spear, Katana, Halberd):</font> 5 [3.75]",
+      "\n<font color=\"#C0B194\">Stance damage (Curved Greatsword, Greatsword, Light Greatsword, Great Katana, Great Spear, Heavy Thrusting Sword):</font> 5.5 [4.12]",
+      "\n<font color=\"#C0B194\">Stance damage (Colossal Sword):</font> 6 [4.5]",
+      "\n(Light Follow-up) <font color=\"#F395C4\">Standard damage:</font> 75 [85]",
+      "\n(Light Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 50 (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n(Light Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet (Ground Flame)):</font> 20 (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n(Light Follow-up) <font color=\"#E0B985\">Status buildup:</font> 0.5x [1x]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage (Straight Sword):</font> 2 [1.7]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage (Thrusting Sword):</font> 4 [3.4]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage (Curved Sword, Spear, Katana, Halberd):</font> 5 [4.25]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage (Curved Greatsword, Greatsword, Light Greatsword, Great Katana, Great Spear, Heavy Thrusting Sword):</font> 5.5 [4.67]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage (Colossal Sword):</font> 6 [5.1]",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 80 [85]",
+      "\n(Heavy Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 80 (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 0.5x [1x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Straight Sword):</font> 2 [1.7]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Thrusting Sword):</font> 4 [3.4]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Curved Sword, Spear, Katana, Halberd):</font> 5 [4.25]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Curved Greatsword, Greatsword, Light Greatsword, Great Katana, Great Spear, Heavy Thrusting Sword):</font> 5.5 [4.67]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Colossal Sword):</font> 6 [5.1]"
+    ],
     "note": "keep frostbite buildup wording in the description but move every numeric accumulation amount into the stats block (with \"accumulation\" wording) and include the frostbite definition between body and stats."
   },
   {
@@ -461,6 +913,18 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Dragonwound Slash</font>",
     "info": "Leap through the air while cloaked in jagged gravel stone, charging the attack to fire the aura as additional damage alongside the high slash; the charge is pure <font color=\"#F395C4\">physical damage</font> and the combo hits for 33 total (16.5 from the slash plus 16.5 from the projectile). Inflicts 20% increased damage on Dragons and Ancient Dragons.\n\n<font color=\"#C0B194\">Stance damage (uncharged):</font> 22\n<font color=\"#C0B194\">Stance damage (charged slash):</font> 16.5\n<font color=\"#C0B194\">Stance damage (charged projectile):</font> 16.5",
+    "Dragonwound Slash": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 169 [100]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 22 [5.5]"
+    ],
+    "Dragonwound Slash Charged": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 65 [120]",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 191",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 16.5 [5.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 16.5"
+    ],
     "note": "Magic rows surface AtkParam IDs 45000 (wind-up wave: 127 base magic, 20 stance), 50000/50005 (Dragonwound projectile: 54/57 base magic, 11/14 stance uncharged/charged), 67500/69502/70500 (shockwaves at 56 dark, 167 lightning, 356 fire) plus 75000/210450000/210665000 for weapon hits. Every row is still flagged as atkAttribute 254, so we should cross-check via the BehaviorParam_PC mapping before trusting them as the slash/projectile data the note is asking for."
   },
   {
@@ -469,6 +933,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Needle Piercer</font>",
     "info": "Generate ten gold needles that pierce at once, purging any ailments or special effects from pierced foes while the sword swipe and needles deal mostly <font color=\"#F395C4\">physical damage</font> with only a minor <font color=\"#F5EB89\">holy damage</font> component. The sword swipe hits for 8.3 stance damage, the needles add 11 total (1.1 each), and when attacking unaware enemies only the first projectile gains the surprise damage bonus. The skill can be parried.\n\n<font color=\"#C0B194\">Stance damage (sword swipe):</font> 8.3\n<font color=\"#C0B194\">Stance damage (needles):</font> 11",
+    "Needle Piercer": [
+      "\n<font color=\"#F395C4\">Pierce damage (Bullet (10x)):</font> 38",
+      "\n<font color=\"#F395C4\">Standard damage:</font> 78 [100]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet (10x)):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 8.25 [5.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet (10x)):</font> 1.1"
+    ],
     "note": "strip the stance values out of the description, add base physical/holy damage numbers for the swipe and the needles with their scaling, and let the stats carry all the numeric data per the definitions doc."
   },
   {
@@ -477,6 +949,10 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Light</font>",
     "info": "Launch the armament upward to unleash a cone of blinding light whose rays sweep through the area ahead; the skill cannot be parried, each ray hits up to four times, and the caster cannot cancel or perform other actions until the roughly 4.5 second animation finishes. Each ray deals pure <font color=\"#F5EB89\">holy damage</font> that scales with <font color=\"#E0B985\">Faith</font>, and casting also applies a body buff that increases holy damage by 20% for 60 seconds, ignores Old Lord's Talisman and other spell-duration modifiers, and does not stack with other body-buff holy damage boosts.\n\n<font color=\"#F5EB89\">Base holy damage (per ray hit):</font> 5 (<font color=\"#E0B985\">Faith</font>)",
+    "Light": [
+      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 61",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x"
+    ],
     "note": "keep the lasting buff explanation but add stats for the 20% holy damage body buff (duration, stacking rules if needed) and remove the \"scales with Faith\" sentence since the scaling tag belongs in the stats block."
   },
   {
@@ -485,6 +961,10 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Darkness</font>",
     "info": "Raise the sword and cleave with darkness to form a veil that conceals the caster while blinding foes around them; enemies tagged by the veil have their aggro reset, remain blinded for about 7 seconds, and temporarily suffer reduced <font color=\"#F5EB89\">holy damage negation</font>.\n\nThe Two Fingers incantation does not work against certain enemies (notably most bosses), and in PvP it does not prevent lock-on, though it still masks your actions while inside the veil.\n\nSee Buffs & Debuffs for more information on stacking the debuff.",
+    "Darkness": [
+      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 310",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x"
+    ],
     "note": "build a stats block that spells out the blind/aggro-reset duration, the radius, and the holy-negation debuff magnitude so the mechanical numbers aren't confined to the prose."
   },
   {
@@ -493,6 +973,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Onze's Line of Stars</font>",
     "info": "Imbue lined glintstones with sorcerous energy to slash once, then continue through up to two follow-up attacks that each hit harder than the last. The combo totals 30 stance damage, scales with the weapon's attack rating, and is boosted by multi-hit talismans and the Thorny Cracked Tear.\n\n<font color=\"#C0B194\">Stance damage (full combo):</font> 30",
+    "Onze's Line of Stars": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 165, 196, 215 [80, 90, 100]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x, 2x, 2x [2x, 2x, 2x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 7.5, 7.5, 15 [10, 10, 10]"
+    ],
     "note": "needs base damage entries for the opener and each follow-up (with scaling) instead of just the 30 stance damage line; follow the definitions doc format."
   },
   {
@@ -501,6 +986,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: The Poison Flower Blooms Twice</font>",
     "info": "Conjure a scarlet-rot-laden stinger beneath yourself to stab the enemy and kick up a shockwave on impact; the dive-kick inflicts 160 Scarlet Rot buildup while the wave only adds physical damage, and both hits scale solely with Weapon Level and gain damage from Shattered Stone Talisman. The shockwave inflicts no Scarlet Rot buildup on its own. If the dive-kick lands on a foe already afflicted with any <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">Scarlet Rot</font>, detonate it for 5% of <font color=\"#E0B985\">maximum HP</font> plus 250 damage (the same detonation as Poison Moth Flight) and purge the ailment, but only the dive-kick can trigger that detonation and it will not occur if you lack the <font color=\"#E0B985\">FP</font> to spawn the stinger and shockwave. If performed without <font color=\"#E0B985\">FP</font>, neither component materializes, so the detonation cannot trigger.\n\n<font color=\"#EF7676\">Scarlet Rot:</font> Inflicts damage equal to 0.18% of <font color=\"#E0B985\">maximum HP</font> plus 15, every second for 90 seconds, for a total of 16.2% of <font color=\"#E0B985\">maximum HP</font> plus 1350 damage when the dive-kick lands.\n\n<font color=\"#F395C4\">Base physical damage (dive-kick):</font> 150\n<font color=\"#F395C4\">Base physical damage (shockwave):</font> 70\n<font color=\"#EF7676\">Base scarlet rot accumulation (stinger):</font> 160",
+    "The Poison Flower Blooms Twice": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 150 (<font color=\"#E0B985\">Arc</font>)",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 70 (<font color=\"#E0B985\">Arc</font>)",
+      "\n<font color=\"#F395C4\">Strike damage:</font> 0 [55] (<font color=\"#E0B985\">Arc</font>)"
+    ],
     "note": "Ensure the Scarlet Rot definition uses the standard 0.33%+33 numbers (unless new data proves otherwise) and keep detonation damage/buildup numbers confined to the appropriate blocks per the guidelines"
   },
   {
@@ -509,6 +999,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Spinning Guillotine</font>",
     "info": "Hold the putrid blade at both ends, arch backward for a powerful overhead chop, and keep inputting to spin continuously until you stop. The strong attack follow-up launches into a jumping spinning slash.\n\n<font color=\"#C0B194\">Stance damage (initial chop):</font> 20\n<font color=\"#C0B194\">Stance damage (each spin):</font> 7\n<font color=\"#C0B194\">Stance damage (jumping follow-up):</font> 30",
+    "Spinning Guillotine": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 0, 163, 239 [0, 50, 150]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 1x, 3x [0x, 1x, 3x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0, 16.5, 13.75 [0, 5.5, 16.5]",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Slash damage:</font> 254, 0, 0 [150, 0, 0]",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 3x, 0x, 0x [3x, 0x, 0x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 33, 0, 0 [16.5, 0, 0]"
+    ],
     "note": "add base damage numbers for the initial chop, the spinning hits (per tick), and the jumping follow-up with the appropriate scaling tags."
   },
   {
@@ -517,7 +1015,15 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Unending Dance</font>",
     "info": "Perform a furious succession of slashes and hold the button to sustain the dance while you spin. The Dancer's Set increases the damage of this skill.",
-    "note": "there's no stats block at all\u2014pull the base damage/stance data for each hit in the dance (including the held version) from ./PARAM/ and document them per the guidelines."
+    "Unending Dance": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 110 [75]",
+      "\n<font color=\"#F395C4\">Slash damage (Loop):</font> 1044 [692]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0.6x [0.6x]",
+      "\n<font color=\"#E0B985\">Status buildup (Loop):</font> 7.2x [7.2x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 6 [1.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Loop):</font> 26.5 [15]"
+    ],
+    "note": "there's no stats block at all—pull the base damage/stance data for each hit in the dance (including the held version) from ./PARAM/ and document them per the guidelines."
   },
   {
     "id": 5100,
@@ -525,6 +1031,20 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Revenger's Blade</font>",
     "info": "Dash up to an enemy with blades in each hand, holding the button to extend the dash while it deals 5 stance damage; follow with a strong attack that hacks the enemy to pieces and adds 24.4 stance damage, for 29.4 total. The skill is parriable.\n\n<font color=\"#C0B194\">Stance damage (dash):</font> 5\n<font color=\"#C0B194\">Stance damage (follow-up):</font> 24.4",
+    "Revenger's Blade": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 250 [200]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x [2x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 10 [10]",
+      "\n(Light Follow-up) <font color=\"#F395C4\">Slash damage:</font> 536 [350]",
+      "\n(Light Follow-up) <font color=\"#E0B985\">Status buildup:</font> 7x [7x]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage:</font> 24.5 [35]"
+    ],
+    "Revenger's Blade Charged": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 153 [200]",
+      "\n<font color=\"#F395C4\">Slash damage:</font> 100 (<font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x [2x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 10 [10]"
+    ],
     "note": "Revenger's Blade shows Bullet 10451000 -> Atk 45101 (125 base magic, 34 stance) and the finisher uses AtkParam 75100 (277 base physical, 240 stance). There's also a low-power FP-less swipe via Bullet 210451000 (66 base magic, 10 stance). Use these to build the stats block once we verify via gameplay capture."
   },
   {
@@ -533,6 +1053,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Mists of Eternal Sleep</font>",
     "info": "Release a velvety purple mist across a wide frontal area that inflicts <font color=\"#A698F4\">Eternal Sleep</font> accumulation on touch; the weapon remains imbued for 30 seconds, adding 15 <font color=\"#A698F4\">Eternal Sleep</font> accumulation per attack while it persists.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack.\n\n<font color=\"#C0B194\">Stance damage (weapon hitbox):</font> 6.5\n<font color=\"#A698F4\">Base Eternal Sleep accumulation (mist):</font> 112\n<font color=\"#A698F4\">Base Eternal Sleep accumulation (weapon buff):</font> 15",
+    "Mists of Eternal Sleep": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 160 [100]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 6.5 [5]"
+    ],
     "note": "Fine"
   },
   {
@@ -541,6 +1066,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Dynastic Sickleplay</font>",
     "info": "Perform a finessed evasive backstep that gives directional control, then chain two additional strong attack inputs for an advancing upward slash followed by a downward bring-back strike; the skill grants 20 i-frames, and the initial follow-up lands three hits (10 + 2.5 + 10) before the finisher.\n\n<font color=\"#C0B194\">Stance damage (initial follow-up):</font> 22.5\n<font color=\"#C0B194\">Stance damage (FP follow-up):</font> 33\n<font color=\"#C0B194\">Stance damage (full sequence):</font> 55.5",
+    "Dynastic Sickleplay R2": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 180, 279 [50, 150]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 3x [1x, 3x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 33, 22.5 [5, 15]"
+    ],
     "note": "add base damage lines for the evasive slash, the FP follow-up, and the finisher (with their scaling) so the stats section isn't stance-only."
   },
   {
@@ -549,6 +1079,13 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Blinkbolt: Twinaxe</font>",
     "info": "From a low stance, transform into a bolt of lightning and charge straight ahead at fulgurous speed; the strong attack follow-up is a lightning-charged spinning slash. The dash mirrors the standard Blinkbolt Ash of War, grants invulnerability frames only when FP is used, and is boosted by pieces of the Death Knight Set.\n\n<font color=\"#C0B194\">Stance damage:</font> 30",
+    "Blinkbolt: Twinaxe": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 0 [40] (<font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#FFE033\">Lightning damage:</font> 50 (<font color=\"#E0B985\">Dex</font>)",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 325 [300]",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 6x [6x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 30 [30]"
+    ],
     "note": "needs base lightning damage entries for the dash and the twinaxe follow-up (plus scaling and FP-less behavior) in addition to the stance data."
   },
   {
@@ -557,7 +1094,16 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Blinkbolt: Long-hafted Axe</font>",
     "info": "From a low stance, transform into a bolt of lightning and charge straight ahead at fulgurous speed; the strong attack follow-up is a lightning-charged leaping slash. The dash mirrors the standard Blinkbolt Ash of War, grants invulnerability frames only when FP is used, and is boosted by pieces of the Death Knight Set.\n\n<font color=\"#C0B194\">Stance damage:</font> 33",
-    "note": "same as the twinaxe version\u2014add base lightning damage for the dash and the long-hafted follow-up with scaling tags so the stats aren't empty."
+    "Blinkbolt: Long-hafted Axe": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 0 [10] (<font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#FFE033\">Lightning damage:</font> 50 (<font color=\"#E0B985\">Dex</font>)",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 180 [100]",
+      "\n(Heavy Follow-up) <font color=\"#FFE033\">Lightning damage (Bullet):</font> 90 (<font color=\"#E0B985\">Dex</font>)",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup (Bullet):</font> 1x",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 22 [5.5]"
+    ],
+    "note": "same as the twinaxe version—add base lightning damage for the dash and the long-hafted follow-up with scaling tags so the stats aren't empty."
   },
   {
     "id": 5150,
@@ -565,6 +1111,13 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Promised Consort</font>",
     "info": "Imbue the twin greatswords with the light of Miquella, delivering a slash accompanied by columns of <font color=\"#F5EB89\">holy light</font> and chaining up to two additional follow-up attacks; the light pillars deal Holy damage that scales with Intelligence.\n\n<font color=\"#C0B194\">Stance damage (opener):</font> 15\n<font color=\"#C0B194\">Stance damage (second attack):</font> 15\n<font color=\"#C0B194\">Stance damage (final follow-up):</font> 22\n<font color=\"#C0B194\">Stance damage (full combo):</font> 52",
+    "Promised Consort": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 164, 164, 179 [92, 94, 154]",
+      "\n<font color=\"#F5EB89\">Holy damage:</font> 40, 40, 60",
+      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 31, 31, 135 (<font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1.8x, 1.8x, 2.7x [1.8x, 1.8x, 2.7x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 15, 15, 15 [5.4, 5.4, 8.1]"
+    ],
     "note": "document the base damage of each slash plus the holy pillars (and their Intelligence scaling) and keep the stance totals confined to the stats block per the doc."
   },
   {
@@ -573,6 +1126,16 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Shadow Sunflower Headbutt</font>",
     "info": "Slam the blossom downward to send a flattening shockwave and then chain two follow-up slams through repeated inputs for a furious four-hit sequence that ends with a crashing finale.\n\n<font color=\"#C0B194\">Stance damage (opener):</font> 20\n<font color=\"#C0B194\">Stance damage (second slam):</font> 15\n<font color=\"#C0B194\">Stance damage (final slam):</font> 30\n<font color=\"#C0B194\">Stance damage (full combo):</font> 65",
+    "Shadow Sunflower Headbutt": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 201, 182, 210 [50, 100, 50]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 2x, 1x [1x, 2x, 1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 21, 15, 30 [7.5, 15, 7.5]"
+    ],
+    "Shadow Sunflower Headbutt (AoE)": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 201, 182, 210",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 2x, 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 21, 15, 30"
+    ],
     "note": "add base damage entries for each slam (opener, second, final) with scaling instead of only listing stance."
   },
   {
@@ -581,6 +1144,22 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moon-and-Fire Stance</font>",
     "info": "Assume the ready stance to imbue each sword with opposing light and fire, then chain normal attacks to launch glintstone light waves (each light attack allows up to two additional light-wave casts) before finishing with a heavy input that spins into a flaming tornado that drenches the area in <font color=\"#F48C25\">fire</font> and ends with flaming pillars. The stance still functions while another light greatsword is powerstanced in the offhand and benefits from Rellana's Cameo plus the Shard of Alexander.",
+    "Moon-and-Fire Stance": [
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 75 [165]",
+      "\n(Heavy Follow-up) <font color=\"#F48C25\">Fire damage (Bullet):</font> 696",
+      "\n(Heavy Follow-up) <font color=\"#F48C25\">Fire damage (Bullet (Fire Pillars)):</font> 120",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 3x [3x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 8.25 [16.5]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Bullet):</font> 27.5",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Bullet (Fire Pillars)):</font> 5.5"
+    ],
+    "Moon-and-Fire Stance R1": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 101, 105, 55 [201, 205, 110]",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet):</font> 400, 400, 300",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x, 2x, 1x [2x, 2x, 1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 5.5, 5.5, 2.75 [11, 11, 11]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 11, 11, 8.25"
+    ],
     "note": "needs an entirely new stats block that breaks out the glintstone wave damage, the flaming tornado ticks, the pillar explosions, and any status buildup added by the stance, all with proper scaling tags."
   },
   {
@@ -589,7 +1168,26 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Devonia's Vortex</font>",
     "info": "Violently spin the hammer and slam the ground to unleash a Crucible shockwave; the uncharged release flattens foes and holding the input strikes even harder, and the Crucible Axe Set, Crucible Tree Set, and Crucible Hammer-Helm further enhance the impact.\n\n<font color=\"#C0B194\">Stance damage (uncharged):</font> 27.5\n<font color=\"#C0B194\">Stance damage (charged):</font> 52.5",
-    "note": "add base damage numbers for the uncharged and charged vortex hits along with their scaling\u2014currently only stance values are provided."
+    "Devonia's Vortex": [
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 50",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet (2x)):</font> 160",
+      "\n<font color=\"#F395C4\">Strike damage:</font> 50 [90]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet (2x)):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 7.5 [7.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 7.5",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet (2x)):</font> 22.5"
+    ],
+    "Devonia's Vortex Charged": [
+      "\n<font color=\"#F395C4\">Standard damage (Bullet (2x)):</font> 200",
+      "\n<font color=\"#F395C4\">Strike damage:</font> 65 [120]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet (2x)):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 7.5 [7.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet (2x)):</font> 30"
+    ],
+    "note": "add base damage numbers for the uncharged and charged vortex hits along with their scaling—currently only stance values are provided."
   },
   {
     "id": 5190,
@@ -597,6 +1195,17 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Messmer's Assault</font>",
     "info": "Drive a series of spear thrusts wreathed in <font color=\"#F48C25\">fire</font>, allowing up to two follow-up attacks before the final thrust slams into the ground and spawns countless spears around you. Counts as a Fire Knight skill, and damage is boosted by 10% while wearing the Winged Serpent Helm.\n\n<font color=\"#C0B194\">Stance damage (full combo):</font> 42",
+    "Messmer's Assault": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 0, 229, 74 [0, 168, 100]",
+      "\n<font color=\"#F395C4\">Pierce damage (Bullet):</font> 0, 0, 140",
+      "\n<font color=\"#F395C4\">Standard damage:</font> 62, 0, 0 [150, 0, 0]",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 0, 0, 105",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 160, 0, 0",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x, 3x, 1x [1.5x, 2.25x, 0.75x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x, 0x, 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 8.25, 11, 5.5 [8.25, 12.38, 4.12]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 0, 0, 5.5"
+    ],
     "note": "document the base damage for each thrust and the final spear eruption (plus the fire component and scaling) so we're not relying solely on stance totals."
   },
   {
@@ -605,6 +1214,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Sleep Evermore</font>",
     "info": "Pierce with a toxin-coated needle to inflict <font color=\"#A698F4\">Eternal Sleep</font>, dealing significantly more damage to foes already in slumber or eternal sleep (targets stunned by sleep also count), and the skill can be parried.\n\n<font color=\"#A698F4\">Sleep:</font> Reduces FP by 30 then forces the enemy to sleep for 60 seconds, or until any damage is received, typically allowing for a critical attack.\n\n<font color=\"#A698F4\">Base Eternal Sleep accumulation:</font> 97",
+    "Sleep Evermore": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 150 [100]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 15 [5]"
+    ],
     "note": "add base physical damage for the needle thrust and include the extra-damage modifier versus sleeping targets inside the stats block, alongside the existing sleep accumulation entry."
   },
   {
@@ -613,6 +1227,17 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Golden Crux</font>",
     "info": "Leap up and skewer foes from overhead, unfolding the barbs to excruciate from within on a hit while the follow-up input spawns piercing barbs that knock enemies into the air. Consumes <font color=\"#E0B985\">FP</font> when the hit connects; without <font color=\"#E0B985\">FP</font> the hits lose 25% damage and the beam is not fired.\n\n<font color=\"#C0B194\">Stance damage (pierce):</font> 17\n<font color=\"#C0B194\">Stance damage (holy):</font> 16",
+    "Golden Crux": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 0, 150, 0 [0, 120, 50]",
+      "\n<font color=\"#F395C4\">Pierce damage (Bullet):</font> 0, 0, 180",
+      "\n<font color=\"#F395C4\">Pierce damage (Grab Confirm):</font> 290, 0, 0",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 1x, 0x [0x, 1x, 1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 0x, 0x, 1x",
+      "\n<font color=\"#E0B985\">Status buildup (Grab Confirm):</font> 1x, 0x, 0x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0, 16.5, 0 [0, 5.5, 5.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 0, 0, 16.5",
+      "\n<font color=\"#C0B194\">Stance damage (Grab Confirm):</font> 5.5, 0, 0"
+    ],
     "note": "needs base physical/holy damage lines for the pierce and the erupting barbs (and whether the follow-up beam is holy) along with scaling and a proper stats block."
   },
   {
@@ -621,6 +1246,18 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moore's Charge</font>",
     "info": "Ready the shield with both hands and charge forward while guarding, ending in a verdigris shove that knocks back and down nearby foes; holding the input extends the length of the charge and the verdigris AoE at the end knocks down multiple enemies.\n\n<font color=\"#C0B194\">Stance damage:</font> 30\n<font color=\"#C0B194\">Stance damage (final blast):</font> 12",
+    "Moore's Charge": [
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2.3x [2.3x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 0.1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 25.5 [18]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 4.5"
+    ],
+    "Moore's Charge Early Release": [
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 0.1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 7.5 [6]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 4.5"
+    ],
     "note": "add base damage values for the shield charge and the verdigris blast (including scaling) so the stats aren't just stance numbers."
   },
   {
@@ -629,6 +1266,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: White Light Charge</font>",
     "info": "Summon white light from the meteoric ore to charge through foes, then use an additional input to detonate an immediate white light explosion around you.\n\n<font color=\"#C0B194\">Stance damage:</font> 24",
+    "White Light Charge": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 85, 0 [70, 70]",
+      "\n<font color=\"#F395C4\">Pierce damage (Bullet):</font> 0, 185",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 0x [1x, 1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 0x, 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 12, 0 [6, 6]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 0, 24"
+    ],
     "note": "needs base damage entries for the charge-through hit and the detonation, plus their scaling, in addition to documenting any stance damage."
   },
   {
@@ -637,6 +1282,13 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Rancor Slash</font>",
     "info": "Spin around to slash foes while summoning five vengeful spirit skulls that chase enemies and deal <font color=\"#57DBCE\">magic damage</font>; use an additional input for a follow-up attack, and each strike builds <font color=\"#9DD7FB\">frostbite</font> on contact.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.",
+    "Rancor Slash": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 0, 320, 100 [0, 280, 100]",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet):</font> 46, 0, 0 (<font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 3x, 1x [0x, 4x, 1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x, 0x, 0x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0, 23.5, 8.5 [0, 19.5, 7]"
+    ],
     "note": "add stats for the base physical damage of the slashes, the magic damage/skulls, and the frostbite accumulation per strike and per skull to comply with the definitions doc."
   },
   {
@@ -645,6 +1297,16 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Witching Hour Slash</font>",
     "info": "Hold the sword level, infuse it with Night, and unleash an incorporeal series of attacks that cannot be blocked or parried; charging increases their power, and the skill is buffed by the Godfrey Icon, Shard of Alexander, multi-hit talismans such as Rotten Winged Sword Insignia, and the Thorny Cracked Tear.\n\n<font color=\"#C0B194\">Stance damage (uncharged):</font> 14\n<font color=\"#C0B194\">Stance damage (charged):</font> 27",
+    "Witching Hour Slash": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 261 [160]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 3x [3x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 13.5 [13.5]"
+    ],
+    "Witching Hour Slash Charged": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 311 [190]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 3x [3x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 27 [13.5]"
+    ],
     "note": "document the base damage for the uncharged and charged hits (with their Night scaling) instead of only stance data."
   },
   {
@@ -653,6 +1315,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Euporia Vortex</font>",
     "info": "Twirl the armament through the vortex to unleash five hits directly ahead while the blade glows with restored luster; if the weapon was charged beforehand the vortex also fires a beam of light from its center and the animation stretches to ten hits.\n\nWhen the blades are fully charged before activation, the beam widens, the duration doubles, the beam can track with the vortex and knock down humanoids if its final hit connects, it benefits from Rotten Winged Sword Insignia-style bonuses without adding charges to those effects, and rolling will cancel the skill while still expending the charges once the input ends.\n\nShard of Alexander and Warrior Jar Shard boost the damage of both the physical hits and the beam by 15% and 10%, respectively.\n\nIf the skill is used without <font color=\"#E0B985\">FP</font>, the weapon stays dull, every hit suffers roughly a 75% damage penalty, the beam cannot fire, and the charges are not consumed again until enough <font color=\"#E0B985\">FP</font> is recovered.",
+    "Euporia Vortex": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 350 [175]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1.5x [1.5x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 6.25 [6.25]"
+    ],
     "note": "needs a comprehensive stats block covering the five-hit vortex, the charged ten-hit/beam version, and their scaling plus any lingering effect durations; currently no numeric data is captured."
   },
   {
@@ -661,6 +1328,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Smithing Art Spears</font>",
     "info": "Slam the red-hot anvil into the ground to send up countless spears that vanish instantly; this unique skill shares the animation with Eruption.\n\n<font color=\"#C0B194\">Stance damage:</font> 45",
+    "Smithing Art Spears": [
+      "\n<font color=\"#F395C4\">Pierce damage (Bullet):</font> 178",
+      "\n<font color=\"#F395C4\">Strike damage:</font> 90 [50]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 2x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 15 [7.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 30"
+    ],
     "note": "add base damage (and scaling) for the erupting spears so we're not leaving the stats block at a single stance line."
   },
   {
@@ -669,7 +1344,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Rancor Slash</font>",
     "info": "Spin around to slash foes while summoning five vengeful spirit skulls that chase enemies and detonate for <font color=\"#57DBCE\">magic damage</font>; use an additional input for a follow-up attack, and each strike plus skull explosion inflicts <font color=\"#9DD7FB\">Frostbite</font> even if the weapon whiffs, since the skulls continue chasing until they connect. The skill shares a similar animation with Sword Dance.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.",
-    "note": "same issues as the other Rancor Slash entry\u2014add base physical/magic damage numbers and frostbite accumulation values for both the weapon hits and the skull explosions."
+    "Rancor Slash": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 0, 320, 100 [0, 280, 100]",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet):</font> 46, 0, 0 (<font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 3x, 1x [0x, 4x, 1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x, 0x, 0x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0, 23.5, 8.5 [0, 19.5, 7]"
+    ],
+    "note": "same issues as the other Rancor Slash entry—add base physical/magic damage numbers and frostbite accumulation values for both the weapon hits and the skull explosions."
   },
   {
     "id": 5300,
@@ -677,6 +1359,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Romina's Purification</font>",
     "info": "Imbue the bud-blade with scarlet rot butterflies, then unleash two sweeping slashes so the butterflies erupt after a short delay; the unique skill deals physical damage. Every slash and each butterfly explosion inflicts <font color=\"#EF7676\">Scarlet Rot</font> while the butterflies vanish instantly.\n\n<font color=\"#EF7676\">Scarlet Rot:</font> Inflicts damage equal to 0.33% of <font color=\"#E0B985\">maximum HP</font> plus 33, every second for 90 seconds.\n\n<font color=\"#C0B194\">Stance damage (first slash):</font> 8.5\n<font color=\"#C0B194\">Stance damage (second slash):</font> 11\n<font color=\"#C0B194\">Stance damage (butterfly explosion):</font> 2\n<font color=\"#EF7676\">Base scarlet rot accumulation (per slash):</font> 110\n<font color=\"#EF7676\">Base scarlet rot accumulation (butterfly explosion):</font> 22",
+    "Romina's Purification": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 217 [140]",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 25",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x [2x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 0.4x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 19.5 [10]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 2"
+    ],
     "note": "Romina's Purification pulls direct AtkParam 75300 (225 base dark damage, 145 stance for the scythe slash) plus Bullet 10753000 -> Atk 75301 (162 base dark, 115 stance per butterfly explosion). SpEffect 6850/6860 attached to the bullet are effect wrappers only. Move these numbers into the stats block when we wire the opener vs explosion damage lines."
   },
   {
@@ -685,6 +1375,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Poison Spear-Hand Strike</font>",
     "info": "Shape your hand into a spear and plunge through the enemy to inject deadly poison; the unique skill applies a large dose of <font color=\"#40BF40\">Deadly Poison</font> buildup that scales with <font color=\"#E0B985\">Arcane</font>.\n\n<font color=\"#40BF40\">Deadly Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds (4.2% of <font color=\"#E0B985\">maximum HP</font> plus 420 total).\n\n<font color=\"#40BF40\">Base deadly poison accumulation:</font> 155 (weapon <font color=\"#E0B985\">Arcane</font> scaling; 415 at 60 <font color=\"#E0B985\">Arcane</font>)",
+    "Poison Spear-Hand Strike": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 150 [100]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 15 [5]"
+    ],
     "note": "capitalize Deadly Poison in the accumulation line per the format and add base physical damage/stance data for the strike itself; right now we only mention buildup."
   },
   {
@@ -693,6 +1388,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Madding Spear-Hand Strike</font>",
     "info": "Form your hand into a spear and stab through a foe to drive them mad, only threatening Tarnished <font color=\"#E0B985\">mind</font>s.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces <font color=\"#E0B985\">FP</font> equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.\n\n<font color=\"#EEAA2B\">Base madness accumulation:</font> 305",
+    "Madding Spear-Hand Strike": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 150 [100]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 15 [5]"
+    ],
     "note": "needs base physical damage and stance values for the thrust (and any FP-less variant) to sit next to the madness accumulation entry."
   },
   {
@@ -701,6 +1401,10 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Feeble Lord's Frenzied Flame</font>",
     "info": "Raise the torch and exhale a stream of frenzied flame while moving, sustaining the spray for as long as the input is held until <font color=\"#E0B985\">FP</font> is exhausted. The cone deals <font color=\"#F48C25\">fire damage</font> that scales with fire buffs and rapidly builds <font color=\"#EEAA2B\">Madness</font> on everything caught in the blaze, including the user.\n\n<font color=\"#EEAA2B\">Madness:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100 and reduces <font color=\"#E0B985\">FP</font> equal to 10% of <font color=\"#E0B985\">maximum FP</font> plus 30. Only on Tarnished.",
+    "Feeble Lord's Frenzied Flame": [
+      "\n<font color=\"#F48C25\">Fire damage:</font> 21",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x"
+    ],
     "note": "add per-tick base fire damage and Madness accumulation stats (with tick rate/duration callouts) so the channeled cone follows the DoT formatting from the definitions doc."
   },
   {
@@ -717,6 +1421,12 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Deadly Dance</font>",
     "info": "Spin forward with paired circular blades to shred foes, then add an input to unleash a sharp axe-kick finisher. The whole skill counts as a dancing attack, and the follow-up also counts as a kick.\n\n<font color=\"#C0B194\">Stance damage (initial dance):</font> 16\n<font color=\"#C0B194\">Stance damage (axe-kick):</font> 15",
+    "Deadly Dance": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 300, 0 [152, 0]",
+      "\n<font color=\"#F395C4\">Strike damage:</font> 0, 148 [0, 50]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 0x [1x, 0x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 16, 20 [12, 5]"
+    ],
     "note": "needs base damage entries for the initial spin and the axe-kick finisher with scaling; currently the stats only mention stance."
   },
   {
@@ -733,6 +1443,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Discus Hurl</font>",
     "info": "Hurl the roundshield like a smithing-infused discus that hangs in the air for a heartbeat before spinning vertically to chase its target, then re-materializes in your hand. The shield keeps pursuing even as you reposition, delivering a mobile homing strike without needing to retrieve the armament manually.",
+    "Discus Hurl": [
+      "\n<font color=\"#F395C4\">Strike damage (Bullet):</font> 330 [50]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 2x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 10 [2.5]"
+    ],
     "note": "document the base damage, stance damage, and scaling for the homing discus hit so the stats block isn't empty."
   },
   {
@@ -741,6 +1456,19 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Flower Dragonbolt</font>",
     "info": "Call down red dragon lightning onto a target and hold to charge the thrust for greater effect. The lightning blast scales with <font color=\"#E0B985\">Arcane</font> and benefits from charged skill buffs. Cannot be parried.\n\nInflicts a unique debuff that increases <font color=\"#FFE033\">lightning damage</font> taken by 12% (17% when fully charged) for 20 seconds, stacking alongside other Power Shred debuffs.",
+    "Flower Dragonbolt": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 0 [100]",
+      "\n<font color=\"#FFE033\">Lightning damage (Bullet):</font> 104 (<font color=\"#E0B985\">Arc</font>)",
+      "\n<font color=\"#FFE033\">Lightning damage (Bullet (Water AoE)):</font> 40 (<font color=\"#E0B985\">Arc</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0 [6.5]"
+    ],
+    "Flower Dragonbolt Charged": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 0 [100]",
+      "\n<font color=\"#FFE033\">Lightning damage (Bullet):</font> 137 (<font color=\"#E0B985\">Arc</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0 [6.5]"
+    ],
     "note": "add base lightning damage for the thrust and the charged explosion along with the stat scaling, and include a stats line for the +12%/+17% lightning vulnerability debuff (duration) per the definitions doc."
   },
   {
@@ -749,7 +1477,23 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Kowtower's Resentment</font>",
     "info": "Force the finger weapon into a resentful bow that charges while held, then slam it down to vent the pent-up anger in successive shockwaves. Holding the input increases the resentment before impact, but the skill does not benefit from charged attack buffs and only the weapon hitbox counts toward skill buffs while the holy shockwaves never do.\n\nThe weapon slam scales purely with weapon attack rating, whereas the shockwaves deal <font color=\"#F5EB89\">holy damage</font> that scales with <font color=\"#E0B985\">Faith</font>; Shard of Alexander affects only the weapon hitbox and leaves the holy AoE unchanged.",
-    "note": "needs base physical damage for the weapon slam, base holy damage for each shockwave, and their scaling tags\u2014plus a note in the stats block about which portions Shard of Alexander affects."
+    "Kowtower's Resentment": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 167 [120]",
+      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 320",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x [2x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 15 [15]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 7.5"
+    ],
+    "Kowtower's Resentment Early Release": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 66 [55]",
+      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 220",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 7.5 [7.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 7.5"
+    ],
+    "note": "needs base physical damage for the weapon slam, base holy damage for each shockwave, and their scaling tags—plus a note in the stats block about which portions Shard of Alexander affects."
   },
   {
     "id": 5420,
@@ -757,6 +1501,11 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Painful Strike</font>",
     "info": "Unleash a chastening flurry of whip strikes that layers <font color=\"#40BF40\">Deadly Poison</font> onto the victim. Cannot be parried.\n\n<font color=\"#40BF40\">Deadly Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds.\n\n<font color=\"#C0B194\">Stance damage:</font> 14",
+    "Painful Strike": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 270 [180]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x [2x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 13.6 [7.2]"
+    ],
     "note": "add base physical damage for the whip flurry and quantify the Deadly Poison accumulation per hit (with the proper color/casing) instead of only giving a definition."
   },
   {
@@ -765,6 +1514,20 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Solitary Moon Slash</font>",
     "info": "Deliver a downward slash that launches a moonlit arc, then chain into a lunging horizontal sweep with the strong attack; holding strong lets you delay the follow-up to make the timing less predictable. The opener does 11 stance damage and the follow-up another 28 (39 total).\n\n<font color=\"#C0B194\">Stance damage (opener):</font> 11\n<font color=\"#C0B194\">Stance damage (follow-up):</font> 28",
+    "Solitary Moon Slash": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 50 [110]",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 130",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 5.5 [16.5]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 11",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 170 [105]",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 27.5 [5.5]"
+    ],
+    "Solitary Moon Slash R2 (Startup Stagger)": [
+      "\n<font color=\"#C0B194\">Stance damage:</font> 5.5 [11]"
+    ],
     "note": "move the 11/28 stance callouts out of the description, add base damage entries for the opener/follow-up with scaling, and let the stats handle all numerical data."
   },
   {
@@ -773,6 +1536,18 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Revenge of the Night</font>",
     "info": "Launch a Night-infused bolt that deals <font color=\"#57DBCE\">Magic damage</font> scaling with <font color=\"#E0B985\">Dexterity</font>; casting it immediately after blocking absorbs the incoming blow and converts that energy into a guard-counter retaliation that roughly triples the projectile's power while delivering 15 stance damage.\n\nThe projectile damage can still be boosted by Shard of Alexander and Magic Scorpion Charm even though Curved Sword Talisman and Deflecting Hardtear have no effect.\n\n<font color=\"#C0B194\">Stance damage:</font> 3\n<font color=\"#C0B194\">Stance damage (guard counter):</font> 15",
+    "Revenge of the Night": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 0 [80]",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet):</font> 32 (<font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0 [5]"
+    ],
+    "Revenge of the Night Guard Counter": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 0 [80]",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet):</font> 95 (<font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 0 [5]"
+    ],
     "note": "add base magic damage stats for the regular shot and the guard-counter retaliation (with Dexterity scaling) so the description isn't carrying the scaling info by itself."
   },
   {
@@ -780,8 +1555,13 @@
     "name": "Weed Cutter",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Weed Cutter</font>",
-    "info": "Scythe through foes with broad horizontal swings, chaining the motion for as long as stamina remains, letting repeated inputs keep the barrage active until those resources run out.\n\n<font color=\"#C0B194\">Stance damage (per hit):</font> 11",
-    "note": "needs base damage per sweep plus scaling so the stats block isn't just stance numbers repeated across infinite swings."
+    "info": "Scythe through foes with broad horizontal swings, chaining the motion for as long as stamina remains, letting repeated inputs keep the barrage active until those resources run out.\n\n<font color=\"#C0B194\">Stance damage (per hit):</font> 11\n<font color=\"#F395C4\">Slash damage per hit:</font> 204 [152]\n<font color=\"#E0B985\">Status buildup per hit:</font> 2x [1.5x]\n<font color=\"#C0B194\">Stance damage per hit:</font> 200 [150]",
+    "Weed Cutter": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 204, 204, 204 [152, 152, 152]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x, 2x, 2x [1.5x, 1.5x, 1.5x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 11, 11, 11 [8.25, 8.25, 8.25]"
+    ],
+    "note": ""
   },
   {
     "id": 5460,
@@ -796,7 +1576,14 @@
     "name": "Jori's Inquisition",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Jori's Inquisition</font>",
-    "info": "Thrust the greatstaff overhead to launch streams of golden barbs that deal <font color=\"#F5EB89\">Holy damage</font>, holding the button to sustain the barrage briefly while manually aiming the rapid projectiles via camera free aim.\n\nThe projectiles appear to inflict <font color=\"#C84343\">Blood Loss accumulation</font>, making the skill useful against large enemies vulnerable to Holy damage.",
+    "info": "Thrust the greatstaff overhead to launch streams of golden barbs that deal <font color=\"#F5EB89\">Holy damage</font>, holding the button to sustain the barrage briefly while manually aiming the rapid projectiles via camera free aim.\n\n<font color=\"#C84343\">Blood Loss accumulation:</font> minimal",
+    "Jori's Inquisition": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 50",
+      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 59",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 0.5x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 5.5"
+    ],
     "note": "document the base holy damage per barb and the Blood Loss accumulation per hit (with the standard definition) to replace the vague \"appears to inflict\" language."
   },
   {
@@ -805,6 +1592,16 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Roaring Bash</font>",
     "info": "Roar from behind your guard to drive a shield bash that erupts in a wide shockwave, knocking back and staggering surrounding foes while behaving identically to Shield Bash and delivering the same area knockback.\n\nFreyja's Greatsword passively boosts its damage by 10% while equipped, and Roar Medallion has no effect when using the skill.",
+    "Roaring Bash": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 275 [90]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 13.75 [4.95]"
+    ],
+    "Roaring Bash (Left)": [
+      "\n<font color=\"#F395C4\">Strike damage:</font> 275 [90]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 13.75 [4.95]"
+    ],
     "note": "needs base damage/stance data for the bash and the shockwave plus any roar modifiers so we're not relying purely on descriptive text."
   },
   {
@@ -812,8 +1609,8 @@
     "name": "Deadly Poison Spray",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Deadly Poison Spray</font>",
-    "info": "Swing the perfume bottle overhead to release a 7-second cloud of <font color=\"#40BF40\">Deadly Poison</font> that inflicts buildup on anyone inside\u2014even yourself\u2014while the lingering fumes stay hidden from enemies. The cast cannot be parried and locks you into the animation until roughly 2.5 seconds after the spray completes, forcing you to wait for the mist to fade.\n\nThe skill can be used to manually trigger Kindred of Rot's Exultation, Mushroom Crown, and the Poisoned Hand, but the long duration means you'll need to retreat or wait for the poison to dissipate before moving on.\n\n<font color=\"#40BF40\">Deadly Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds.\n\n<font color=\"#40BF40\">Base Deadly Poison accumulation per tick:</font> 10 (weapon <font color=\"#E0B985\">Arcane</font> scaling)",
-    "note": "confirm the mist's tick rate and add it to the description, and consider adding a stance/damage entry if the spray does impact damage\u2014per the definitions doc DoT effects should spell out their cadence."
+    "info": "Swing the perfume bottle overhead to release a 7-second cloud of <font color=\"#40BF40\">Deadly Poison</font> that inflicts buildup on anyone inside—even yourself—while the lingering fumes stay hidden from enemies. The cast cannot be parried and locks you into the animation until roughly 2.5 seconds after the spray completes, forcing you to wait for the mist to fade.\n\nThe skill can be used to manually trigger Kindred of Rot's Exultation, Mushroom Crown, and the Poisoned Hand, but the long duration means you'll need to retreat or wait for the poison to dissipate before moving on.\n\n<font color=\"#40BF40\">Deadly Poison:</font> Inflicts damage equal to 0.14% of <font color=\"#E0B985\">maximum HP</font> plus 14, every second for 30 seconds.\n\n<font color=\"#40BF40\">Base Deadly Poison accumulation per tick:</font> 10 (weapon <font color=\"#E0B985\">Arcane</font> scaling)",
+    "note": "confirm the mist's tick rate and add it to the description, and consider adding a stance/damage entry if the spray does impact damage—per the definitions doc DoT effects should spell out their cadence."
   },
   {
     "id": 5500,
@@ -821,6 +1618,22 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Flare, O Serpent</font>",
     "info": "Ignite the serpents to add 90 <font color=\"#F48C25\">fire damage</font> to your armament for 30 seconds; heavy attacks or ground-slamming actions trigger a 12 stance damage explosion that consumes the enchantment, requiring the skill to be recast before another blast. Triggering explosions with paired Serpent Flails detonates both weapons simultaneously, Shard of Alexander only buffs the blast, and the Winged Serpent Helm buffs the effect. Counts as a Fire Knight skill.\n\n<font color=\"#C0B194\">Stance damage (explosion):</font> 12",
+    "Flare, O Serpent": [
+      "\n(Heavy Follow-up) <font color=\"#F48C25\">Fire damage (Bullet):</font> 75",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup (Bullet):</font> 1x"
+    ],
+    "Flare, O Serpent Charged": [
+      "\n(Heavy Follow-up) <font color=\"#F48C25\">Fire damage (Bullet):</font> 117",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup (Bullet):</font> 1x"
+    ],
+    "Flare, O Serpent Jumping": [
+      "\n(Heavy Follow-up) <font color=\"#F48C25\">Fire damage (Bullet):</font> 75",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup (Bullet):</font> 1x"
+    ],
+    "Flare, O Serpent Running": [
+      "\n(Heavy Follow-up) <font color=\"#F48C25\">Fire damage (Bullet):</font> 75",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup (Bullet):</font> 1x"
+    ],
     "note": "add stats for the 90 fire-damage weapon buff (duration) and the explosion's base fire damage so the numbers aren't just in prose; keep the stance damage in the stats block as well."
   },
   {
@@ -845,6 +1658,12 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Horn Calling</font>",
     "info": "Shroud the weapon in tangled horns, drive it into the ground, and call up piercing spikes that erupt below the enemy, delivering pure <font color=\"#F5EB89\">holy damage</font> that scales with <font color=\"#E0B985\">Faith</font>. The unique cast keeps the horns protruding beneath the target before you can act again.\n\n<font color=\"#C0B194\">Stance damage (spikes):</font> 12",
+    "Horn Calling": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 100 [100]",
+      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 215 (<font color=\"#E0B985\">Fth</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 5 [5]"
+    ],
     "note": "document the base holy damage (and scaling) for the spikes, plus any stance data, to comply with the stats formatting rules."
   },
   {
@@ -853,6 +1672,14 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Horn Calling: Storm</font>",
     "info": "Infuse the horned blade with storm winds, then mow through enemies with a sweeping spin that strikes repeatedly at far greater range than Stormcaller. Each hit triggers multi-hit talisman effects, and two follow-up inputs extend the combo. Enraged Divine Beast boosts the damage by 10%.\n\n<font color=\"#C0B194\">Stance damage (first sweep):</font> 24.2\n<font color=\"#C0B194\">Stance damage (follow-up spins):</font> 16.5",
+    "Horn Calling: Storm": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 199, 203, 207 [100, 100, 100]",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 70, 70, 70 (<font color=\"#E0B985\">Str</font>, <font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#F5EB89\">Holy damage:</font> 70, 70, 70",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1.5x, 1.75x, 1.75x [1.5x, 1.75x, 1.75x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 18.7, 11, 11 [8.25, 8.25, 8.25]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 5.5, 5.5, 5.5"
+    ],
     "note": "needs base damage entries for the opener and each follow-up sweep along with their scaling, since we currently only list stance damage."
   },
   {
@@ -861,6 +1688,12 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Tremendous Phalanx</font>",
     "info": "Raise your weapon to summon a defensive arch of three homing glintblades overhead, each automatically firing as nearby foes approach. The strong attack follow-up chains into a lunging thrust that propels you forward.\n\n<font color=\"#C0B194\">Stance damage (each glintblade):</font> 8\n<font color=\"#C0B194\">Stance damage (follow-up thrust):</font> 15",
+    "Tremendous Phalanx": [
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet (Swords)):</font> 75 (<font color=\"#E0B985\">Int</font>)",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Pierce damage:</font> 150 [105]",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 15 [6]"
+    ],
     "note": "add base magic damage for each glintblade and base physical (or holy) damage for the follow-up thrust, with scaling, instead of showing stance only."
   },
   {
@@ -869,6 +1702,10 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bloodfiends' Bloodboon</font>",
     "info": "Drive the spear through your target to detonate a ranged bloodflame eruption that deals <font color=\"#F48C25\">fire damage</font> and inflicts <font color=\"#C84343\">blood loss accumulation</font> around them rather than around yourself. Additional inputs chain up to three thrusts, with the third stab dealing increased damage but suffering a longer recovery, and the skill never coats the weapon in bloodflame.\n\n<font color=\"#C84343\">Blood Loss:</font> Inflicts damage equal to 15% of <font color=\"#E0B985\">maximum HP</font> plus 100.",
+    "Bloodfiends' Bloodboon": [
+      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 65, 65, 65",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 0.55x, 0.55x, 0.55x"
+    ],
     "note": "we need base fire damage for each thrust explosion and actual Blood Loss accumulation values per hit; only the definition is present right now."
   },
   {
@@ -877,6 +1714,10 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Dragonform Flame</font>",
     "info": "Transform your arm into a draconic maw to sweep a gout of fire in front of you, leaving burning ground that lingers briefly, identical to the Firebreather skill. Using the skill without <font color=\"#E0B985\">FP</font> causes a harmless sputter with no flames.",
+    "Dragonform Flame": [
+      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 90",
+      "\n<font color=\"#F48C25\">Fire damage (Bullet (Ground Fire)):</font> 40"
+    ],
     "note": "add per-tick base fire damage values (with duration/tick rate) for the breath and the lingering ground flames so the DoT follows the definitions doc format."
   },
   {
@@ -885,6 +1726,22 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Lightspeed Slash</font>",
     "info": "Assume a luminous form to leap forward for a downward slash, then unleash radiant beams that disperse <font color=\"#F5EB89\">Holy damage</font> scaling with <font color=\"#E0B985\">Intelligence</font>. Charging increases the power and number of follow-up attacks, and the fully charged version benefits from the Godfrey Icon.\n\n<font color=\"#C0B194\">Stance damage:</font> 20\n<font color=\"#C0B194\">Stance damage (charged):</font> 32",
+    "Lightspeed Slash": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 99",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 17",
+      "\n<font color=\"#F5EB89\">Holy damage:</font> 20",
+      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 3",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 15"
+    ],
+    "Lightspeed Slash Charged": [
+      "\n<font color=\"#F395C4\">Standard damage:</font> 132",
+      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 19",
+      "\n<font color=\"#F5EB89\">Holy damage:</font> 20",
+      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 3",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 27"
+    ],
     "note": "needs base holy damage entries for the initial slash and the follow-up beams (charged/uncharged) plus scaling tags, since only stance is listed."
   },
   {
