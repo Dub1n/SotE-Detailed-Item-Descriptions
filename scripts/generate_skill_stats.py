@@ -432,9 +432,26 @@ def main() -> None:
             hash_groups[entry.get("hash_id", "")].append(entry)
 
         def collapse_group(group_entries: List[Dict[str, object]]) -> List[Dict[str, object]]:
+            def normalize_stance_fields(entry: Dict[str, object]) -> Dict[str, object]:
+                """Normalize stance-related fields so FP/Lacking FP share the same keys."""
+                normalized = dict(entry)
+                stance_base = normalized.get("stance_base")
+                normalized["stance_base"] = None if stance_base in ("", None) else stance_base
+
+                stance_cat_key = normalized.get("stance_cat_key")
+                if not stance_cat_key:
+                    stance_cat_key = ()
+                elif isinstance(stance_cat_key, list):
+                    stance_cat_key = tuple(stance_cat_key)
+                elif not isinstance(stance_cat_key, tuple):
+                    stance_cat_key = (stance_cat_key,)
+                normalized["stance_cat_key"] = stance_cat_key
+                return normalized
+
             combined: Dict[Tuple[str, str, str, bool, str, bool, str, float | None, Tuple], Dict[str, object]] = {}
             others: List[Dict[str, object]] = []
             for entry in group_entries:
+                entry = normalize_stance_fields(entry)
                 phase = entry.get("phase", "")
                 canonical_phase = phase
                 stripped_phase = re_any_bracket.sub("", canonical_phase).strip()
@@ -475,9 +492,8 @@ def main() -> None:
 
             combined_entries = list(combined.values()) + others
 
-            # Pair FP/Lacking FP variants.
+            # Pair FP/Lacking FP variants by shared key (ignoring is_lacking).
             paired_output = []
-            used = set()
             key_fields = (
                 "kind",
                 "descriptor",
@@ -488,51 +504,32 @@ def main() -> None:
                 "stance_base",
                 "stance_cat_key",
             )
-            entry_map: Dict[Tuple, Dict[str, object]] = {}
-            for idx, entry in enumerate(combined_entries):
-                key = tuple(entry.get(k, "") for k in key_fields) + (entry.get("is_lacking", False),)
-                entry_map[(key, idx)] = entry
-
-            for idx, entry in enumerate(combined_entries):
-                if idx in used:
-                    continue
+            base_map: Dict[Tuple, Dict[str, object]] = {}
+            lacking_map: Dict[Tuple, Dict[str, object]] = {}
+            for entry in combined_entries:
+                key = tuple(entry.get(k, "") for k in key_fields)
                 if entry.get("is_lacking"):
-                    # Try to pair to a base entry; if none, create a synthetic base with zero value.
-                    partner_key = tuple(entry.get(k, "") for k in key_fields) + (False,)
-                    partner_idx = None
-                    for (k, i) in entry_map.keys():
-                        if k == partner_key and i not in used:
-                            partner_idx = i
-                            break
-                    if partner_idx is not None:
-                        base_entry = dict(combined_entries[partner_idx])
-                        base_entry["lacking_value"] = entry.get("value")
-                        base_entry["_has_lacking"] = True
-                        paired_output.append(base_entry)
-                        used.add(partner_idx)
-                        used.add(idx)
-                        continue
-                    synthetic = dict(entry)
-                    synthetic["is_lacking"] = False
-                    synthetic["lacking_value"] = entry.get("value")
-                    synthetic["_has_lacking"] = True
-                    synthetic["value"] = 0
-                    paired_output.append(synthetic)
-                    used.add(idx)
+                    lacking_map[key] = entry
+                else:
+                    base_map[key] = entry
+
+            all_keys = set(base_map.keys()) | set(lacking_map.keys())
+            for key in all_keys:
+                base_entry = dict(base_map.get(key, {})) if key in base_map else None
+                lacking_entry = lacking_map.get(key)
+
+                if base_entry is None and lacking_entry is not None:
+                    base_entry = dict(lacking_entry)
+                    base_entry["is_lacking"] = False
+                    base_entry["value"] = 0
+                elif base_entry is None:
                     continue
-                partner_key = tuple(entry.get(k, "") for k in key_fields) + (True,)
-                partner_idx = None
-                for (k, i) in entry_map.keys():
-                    if k == partner_key and i not in used:
-                        partner_idx = i
-                        break
-                if partner_idx is not None:
-                    partner = combined_entries[partner_idx]
-                    entry = dict(entry)
-                    entry["lacking_value"] = partner.get("value")
-                    used.add(partner_idx)
-                paired_output.append(entry)
-                used.add(idx)
+
+                if lacking_entry:
+                    base_entry["lacking_value"] = lacking_entry.get("value")
+                    base_entry["_has_lacking"] = True
+
+                paired_output.append(base_entry)
             return paired_output
 
         collapsed_by_hash: Dict[str, List[Dict[str, object]]] = {
