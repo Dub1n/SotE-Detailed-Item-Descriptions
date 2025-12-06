@@ -153,11 +153,6 @@ For the Ice Lightning Sword, one user on Fextralife commented: "The scaling on t
     "name": "Scarlet Aeonia",
     "category": "consumable_Incantation",
     "caption": "Technique of Malenia, the Goddess of Rot.\n\nEach time the scarlet flower blooms, Malenia's rot advances. It has bloomed twice already. With the third bloom, she will become a true goddess.",
-    "info": "Incarnate a giant flower that blooms into an explosion of scarlet rot mist which lingers for 4 seconds.\n\n<font color=\"#EF7676\">Scarlet rot:</font> Inflicts damage equal to 0.33% of <font color=\"#E0B985\">maximum HP</font> plus 13, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage (explosion):</font> 362\n<font color=\"#F395C4\">Base physical damage (mist):</font> 60\n<font color=\"#EF7676\">Base scarlet rot accumulation (explosion):</font> 150\n<font color=\"#EF7676\">Base scarlet rot accumulat    "id": 2000600,
-    "id": 2000380,
-    "id": 2000370,
-    "id": 2000360,
-    "id": 2000340,
-ion (mist):</font> 50\n<font color=\"#E0B985\">Category:</font> Servants of Rot"
+    "info": "Incarnate a giant flower that blooms into an explosion of scarlet rot mist which lingers for 4 seconds.\n\n<font color=\"#EF7676\">Scarlet rot:</font> Inflicts damage equal to 0.33% of <font color=\"#E0B985\">maximum HP</font> plus 13, every second for 90 seconds.\n\n<font color=\"#F395C4\">Base physical damage (explosion):</font> 362\n<font color=\"#F395C4\">Base physical damage (mist):</font> 60\n<font color=\"#EF7676\">Base scarlet rot accumulation (explosion):</font> 150\n<font color=\"#EF7676\">Base scarlet rot accumulation (mist):</font> 50\n<font color=\"#E0B985\">Category:</font> Servants of Rot"
   },
 ```

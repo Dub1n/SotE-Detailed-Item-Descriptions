@@ -1,0 +1,178 @@
+{
+  "canMountWep_Dagger": {
+    "name": "Dagger",
+    "poise": 3
+  },
+  "canMountWep_SwordNormal": {
+    "name": "Straight Sword",
+    "poise": 2
+  },
+  "canMountWep_SwordLarge": {
+    "name": "Greatsword",
+    "poise": 5.5
+  },
+  "canMountWep_SwordGigantic": {
+    "name": "Colossal Sword",
+    "poise": 6
+  },
+  "canMountWep_SaberNormal": {
+    "name": "Curved Sword",
+    "poise": 5
+  },
+  "canMountWep_SaberLarge": {
+    "name": "Curved Greatsword",
+    "poise": 5.5
+  },
+  "canMountWep_katana": {
+    "name": "Katana",
+    "poise": 5
+  },
+  "canMountWep_SwordDoubleEdge": {
+    "name": "Twinblade",
+    "poise": 5
+  },
+  "canMountWep_SwordPierce": {
+    "name": "Thrusting Sword",
+    "poise": 4
+  },
+  "canMountWep_RapierHeavy": {
+    "name": "Heavy Thrusting Sword",
+    "poise": 5.5
+  },
+  "canMountWep_AxeNormal": {
+    "name": "Axe",
+    "poise": 5
+  },
+  "canMountWep_AxeLarge": {
+    "name": "Greataxe",
+    "poise": 5.5
+  },
+  "canMountWep_HammerNormal": {
+    "name": "Hammer",
+    "poise": 6.5
+  },
+  "canMountWep_HammerLarge": {
+    "name": "Great Hammer",
+    "poise": 7
+  },
+  "canMountWep_Flail": {
+    "name": "Flail",
+    "poise": null
+  },
+  "canMountWep_SpearNormal": {
+    "name": "Spear",
+    "poise": 5
+  },
+  "canMountWep_SpearLarge": {
+    "name": "Great Spear",
+    "poise": 5.5
+  },
+  "canMountWep_SpearHeavy": {
+    "name": "Great Spear",
+    "poise": 5.5
+  },
+  "canMountWep_SpearAxe": {
+    "name": "Halberd",
+    "poise": 5
+  },
+  "canMountWep_Sickle": {
+    "name": "Reaper",
+    "poise": 5
+  },
+  "canMountWep_Knuckle": {
+    "name": "Fist",
+    "poise": 5
+  },
+  "canMountWep_Claw": {
+    "name": "Claw",
+    "poise": 4
+  },
+  "canMountWep_Whip": {
+    "name": "Whip",
+    "poise": 4
+  },
+  "canMountWep_AxhammerLarge": {
+    "name": "Colossal Weapon",
+    "poise": 7.5
+  },
+  "canMountWep_BowSmall": {
+    "name": "Light Bow",
+    "poise": 2
+  },
+  "canMountWep_BowNormal": {
+    "name": "Bow",
+    "poise": 2
+  },
+  "canMountWep_BowLarge": {
+    "name": "Greatbow",
+    "poise": 7
+  },
+  "canMountWep_ClossBow": {
+    "name": "Crossbow",
+    "poise": 2
+  },
+  "canMountWep_Ballista": {
+    "name": "Ballista",
+    "poise": 7
+  },
+  "canMountWep_Staff": {
+    "name": "Glintstone Staff",
+    "poise": 3
+  },
+  "canMountWep_Sorcery": {
+    "name": "Unused Catalyst",
+    "poise": null
+  },
+  "canMountWep_Talisman": {
+    "name": "Sacred Seal",
+    "poise": 3
+  },
+  "canMountWep_ShieldSmall": {
+    "name": "Small Shield",
+    "poise": 5
+  },
+  "canMountWep_ShieldNormal": {
+    "name": "Medium Shield",
+    "poise": 5.5
+  },
+  "canMountWep_ShieldLarge": {
+    "name": "Greatshield",
+    "poise": 6
+  },
+  "canMountWep_Torch": {
+    "name": "Torch",
+    "poise": 5.75
+  },
+  "canMountWep_HandToHand": {
+    "name": "Hand-to-Hand",
+    "poise": 4
+  },
+  "canMountWep_PerfumeBottle": {
+    "name": "Perfume Bottle",
+    "poise": 4
+  },
+  "canMountWep_ThrustingShield": {
+    "name": "Thrusting Shield",
+    "poise": 5.5
+  },
+  "canMountWep_ThrowingWeapon": {
+    "name": "Throwing Weapon",
+    "poise": 2
+  },
+  "canMountWep_ReverseHandSword": {
+    "name": "Backhand Blade",
+    "poise": 5
+  },
+  "canMountWep_LightGreatsword": {
+    "name": "Light Greatsword",
+    "poise": 5.5
+  },
+  "canMountWep_GreatKatana": {
+    "name": "Great Katana",
+    "poise": 5.5
+  },
+  "canMountWep_BeastClaw": {
+    "name": "Beast Claw",
+    "poise": 4
+  }
+}

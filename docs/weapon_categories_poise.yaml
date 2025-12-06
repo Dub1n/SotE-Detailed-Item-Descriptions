@@ -1,0 +1,44 @@
+canMountWep_Dagger: Dagger | 3
+canMountWep_SwordNormal: Straight Sword | 2
+canMountWep_SwordLarge: Greatsword | 5.5
+canMountWep_SwordGigantic: Colossal Sword | 6
+canMountWep_SaberNormal: Curved Sword | 5
+canMountWep_SaberLarge: Curved Greatsword | 5.5
+canMountWep_katana: Katana | 5
+canMountWep_SwordDoubleEdge: Twinblade | 5
+canMountWep_SwordPierce: Thrusting Sword | 4
+canMountWep_RapierHeavy: Heavy Thrusting Sword | 5.5
+canMountWep_AxeNormal: Axe | 5
+canMountWep_AxeLarge: Greataxe | 5.5
+canMountWep_HammerNormal: Hammer | 6.5
+canMountWep_HammerLarge: Great Hammer | 7
+canMountWep_Flail: Flail | 
+canMountWep_SpearNormal: Spear | 5
+canMountWep_SpearLarge: Great Spear | 5.5
+canMountWep_SpearHeavy: Great Spear | 5.5
+canMountWep_SpearAxe: Halberd | 5
+canMountWep_Sickle: Reaper | 5
+canMountWep_Knuckle: Fist | 5
+canMountWep_Claw: Claw | 4
+canMountWep_Whip: Whip | 4
+canMountWep_AxhammerLarge: Colossal Weapon | 7.5
+canMountWep_BowSmall: Light Bow | 2
+canMountWep_BowNormal: Bow | 2
+canMountWep_BowLarge: Greatbow | 7
+canMountWep_ClossBow: Crossbow | 2
+canMountWep_Ballista: Ballista | 7
+canMountWep_Staff: Glintstone Staff | 3
+canMountWep_Sorcery: Unused Catalyst | 
+canMountWep_Talisman: Sacred Seal | 3
+canMountWep_ShieldSmall: Small Shield | 5
+canMountWep_ShieldNormal: Medium Shield | 5.5
+canMountWep_ShieldLarge: Greatshield | 6
+canMountWep_Torch: Torch | 5.75
+canMountWep_HandToHand: Hand-to-Hand | 4
+canMountWep_PerfumeBottle: Perfume Bottle | 4
+canMountWep_ThrustingShield: Thrusting Shield | 5.5
+canMountWep_ThrowingWeapon: Throwing Weapon | 2
+canMountWep_ReverseHandSword: Backhand Blade | 5
+canMountWep_LightGreatsword: Light Greatsword | 5.5
+canMountWep_GreatKatana: Great Katana | 5.5
+canMountWep_BeastClaw: Beast Claw | 4
