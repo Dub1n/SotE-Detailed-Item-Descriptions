@@ -106,7 +106,35 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
                 elif existing != incoming and incoming != "":
                     warnings.append(f"Disagreement on column '{col}' for key {key}: keeping '{existing}', saw '{incoming}'")
 
+    def zero_for_disabled(agg_row: Dict[str, Any]) -> None:
+        try:
+            disable_flag = int(str(agg_row.get("Disable Gem Attr", "0") or "0"))
+        except ValueError:
+            disable_flag = 0
+        if disable_flag != 1:
+            return
+        wep_fields = {
+            "phys": "Wep Phys",
+            "magic": "Wep Magic",
+            "fire": "Wep Fire",
+            "ltng": "Wep Ltng",
+            "holy": "Wep Holy",
+        }
+        mv_fields = {
+            "phys": "Phys MV",
+            "magic": "Magic MV",
+            "fire": "Fire MV",
+            "ltng": "Ltng MV",
+            "holy": "Holy MV",
+        }
+        for key, wep_col in wep_fields.items():
+            mv_col = mv_fields[key]
+            wep_val = parse_float(agg_row.get(wep_col, 0))
+            if wep_val is not None and wep_val == 0:
+                agg_row[mv_col] = 0
+
     def compute_damage_meta(agg_row: Dict[str, Any]) -> Tuple[str, float]:
+        zero_for_disabled(agg_row)
         dmg_fields = [
             ("Phys", "Phys MV"),
             ("Magic", "Magic MV"),
