@@ -163,6 +163,15 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
         mx = max(val for _, val in non_zero)
         if mn > 0 and mx >= 2 * mn:
             return "!", dmg_mv
+
+        if 1 < len(non_zero) < 5:
+            max_val = max(val for _, val in non_zero)
+            threshold = max_val * 0.75
+            if any(val < threshold for _, val in non_zero if val == val):  # guard for NaN
+                types = " | ".join(name for name, _ in non_zero)
+                return f"! | {types}", dmg_mv
+            return " | ".join(name for name, _ in non_zero), dmg_mv
+
         return "Weapon", dmg_mv
 
     # Finalize output rows with numeric formatting.
