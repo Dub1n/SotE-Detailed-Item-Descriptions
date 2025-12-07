@@ -649,9 +649,6 @@ def collapse_group(entries: Sequence[Dict[str, object]]) -> List[Dict[str, objec
         if lacking_entry:
             base_entry["lacking_value"] = lacking_entry.get("value")
             base_entry["_has_lacking"] = True
-        elif has_any_lacking:
-            base_entry["lacking_value"] = 0
-            base_entry["_has_lacking"] = True
 
         if base_entry.get("kind") == "stance":
             base_entry["stance_super_armor"] = float(
@@ -663,8 +660,6 @@ def collapse_group(entries: Sequence[Dict[str, object]]) -> List[Dict[str, objec
                 base_entry["stance_super_armor_lacking"] = float(
                     lacking_entry.get("stance_super_armor", 0) or 0
                 )
-            elif has_any_lacking:
-                base_entry["stance_super_armor_lacking"] = 0.0
 
         paired_output.append(base_entry)
     return paired_output
@@ -929,8 +924,21 @@ def build_line_entries(entries: List[Dict[str, object]]) -> List[Dict[str, objec
                 factors,
                 present_flags,
             )
-            add_line_entry(label_text, combined_vals, combined_lacks)
-            if line_entries:
+            def all_zero(seq: List[object]) -> bool:
+                def is_zero(v):
+                    if v is None:
+                        return True
+                    if isinstance(v, (list, tuple)):
+                        return all(is_zero(x) for x in v)
+                    try:
+                        return float(v) == 0.0
+                    except Exception:
+                        return False
+                return all(is_zero(v) for v in seq)
+
+            stance_has_lacking = has_lacking and combined_lacks and not all_zero(combined_lacks)
+            add_line_entry(label_text, combined_vals, combined_lacks if stance_has_lacking else [])
+            if line_entries and stance_has_lacking:
                 line_entries[-1]["has_lacking"] = True
         else:
             add_line_entry(label_text, values, lacking_values)
@@ -1008,7 +1016,13 @@ def build_line_entries(entries: List[Dict[str, object]]) -> List[Dict[str, objec
     for bucket in stance_buckets.values():
         bucket["values"] = to_range_lists(bucket.pop("values_lists"))
         if bucket.get("has_lacking"):
-            bucket["lacking_values"] = to_range_lists(bucket.pop("lacking_lists"))
+            lacks = to_range_lists(bucket.pop("lacking_lists"))
+            # Drop lacking lists when all zero across all steps for this prefix.
+            if all((isinstance(v, (int, float)) and v == 0) or (isinstance(v, (tuple, list)) and all((x or 0) == 0 for x in v)) for v in lacks):
+                bucket["has_lacking"] = False
+                bucket["lacking_values"] = []
+            else:
+                bucket["lacking_values"] = lacks
         else:
             bucket["lacking_values"] = []
         filtered_entries.append(bucket)
@@ -1166,7 +1180,25 @@ def collapse_variants(group: List[Dict[str, object]]) -> List[str]:
     variant_count = len(group)
     merge_map: Dict[Tuple, List[Dict[str, object] | None]] = {}
     prefix_max_len: Dict[str, int] = defaultdict(int)
+    prefix_has_lacking: Dict[str, bool] = defaultdict(bool)
     prefix_variants: Dict[str, set[int]] = defaultdict(set)
+
+    def has_nontrivial_lacking(line: Dict[str, object]) -> bool:
+        if not line.get("has_lacking"):
+            return False
+        lacks = line.get("lacking_values") or []
+        if not lacks:
+            return False
+        def is_zero(v):
+            if v is None:
+                return True
+            if isinstance(v, (list, tuple)):
+                return all(is_zero(x) for x in v)
+            try:
+                return float(v) == 0.0
+            except Exception:
+                return False
+        return not all(is_zero(v) for v in lacks)
 
     for idx, variant in enumerate(group):
         for line in variant["lines"]:
@@ -1174,6 +1206,8 @@ def collapse_variants(group: List[Dict[str, object]]) -> List[str]:
             vals_len = len(line.get("values") or [])
             lacks_len = len(line.get("lacking_values") or [])
             prefix_max_len[prefix] = max(prefix_max_len[prefix], vals_len, lacks_len)
+            if has_nontrivial_lacking(line):
+                prefix_has_lacking[prefix] = True
             prefix_variants[prefix].add(idx)
             bucket = merge_map.setdefault(line["merge_key"], [None] * variant_count)
             bucket[idx] = line
@@ -1195,6 +1229,7 @@ def collapse_variants(group: List[Dict[str, object]]) -> List[str]:
         # Pad steps within the same attack part (same prefix) to the max length seen for that prefix.
         adjusted_bucket: List[Dict[str, object] | None] = []
         target_len = prefix_max_len.get(prefix, 0)
+        need_lacking = prefix_has_lacking.get(prefix, False)
         for line in selected_bucket:
             if line is None:
                 adjusted_bucket.append(None)
@@ -1204,8 +1239,13 @@ def collapse_variants(group: List[Dict[str, object]]) -> List[str]:
             lacks = list((new_line.get("lacking_values") or []))
             while len(vals) < target_len:
                 vals.append(0)
-            while len(lacks) < target_len and new_line.get("has_lacking"):
-                lacks.append(0)
+            if need_lacking:
+                new_line["has_lacking"] = True
+                while len(lacks) < target_len:
+                    lacks.append(0)
+            else:
+                new_line["has_lacking"] = False
+                lacks = []
             new_line["values"] = vals
             if new_line.get("has_lacking"):
                 new_line["lacking_values"] = lacks
