@@ -1769,22 +1769,28 @@ def main() -> None:
         combined_variants: List[Dict[str, object]] = []
         if generic_variants:
             grouped_by_name: Dict[
-                Tuple[str, str | None], List[Dict[str, object]]
+                Tuple[str, str | None, Tuple[str, ...]], List[Dict[str, object]]
             ] = defaultdict(list)
             for variant in generic_variants:
-                grouped_by_name[(variant["name"], variant.get("hand_mode"))].append(
-                    variant
-                )
+                w = variant.get("weapon") or []
+                if isinstance(w, str):
+                    w = [w]
+                grouped_by_name[
+                    (variant["name"], variant.get("hand_mode"), tuple(sorted(set(w))))
+                ].append(variant)
             for key in sorted(grouped_by_name.keys()):
                 combined_variants.append(combine_variant_group(grouped_by_name[key]))
         if var_generic:
             grouped_var_by_name: Dict[
-                Tuple[str, str | None], List[Dict[str, object]]
+                Tuple[str, str | None, Tuple[str, ...]], List[Dict[str, object]]
             ] = defaultdict(list)
             for variant in var_generic:
-                grouped_var_by_name[(variant["name"], variant.get("hand_mode"))].append(
-                    variant
-                )
+                w = variant.get("weapon") or []
+                if isinstance(w, str):
+                    w = [w]
+                grouped_var_by_name[
+                    (variant["name"], variant.get("hand_mode"), tuple(sorted(set(w))))
+                ].append(variant)
             for key in sorted(grouped_var_by_name.keys()):
                 combined_variants.append(
                     combine_variant_group(grouped_var_by_name[key])
