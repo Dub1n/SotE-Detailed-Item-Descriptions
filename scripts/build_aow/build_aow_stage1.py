@@ -33,6 +33,7 @@ OUTPUT_COLUMNS = [
     "Weapon Source",
     "Weapon",
     "Weapon Poise",
+    "Disable Gem Attr",
     "Wep Phys",
     "Wep Magic",
     "Wep Fire",
@@ -230,6 +231,7 @@ def load_weapon_base_stats() -> Dict[str, Dict[str, str]]:
                 continue
             key = name.lower()
             stats[key] = {
+                "disable_gem_attr": row.get("disableGemAttr", "") or "0",
                 "phys": row.get("attackBasePhysics", "") or "-",
                 "magic": row.get("attackBaseMagic", "") or "-",
                 "fire": row.get("attackBaseFire", "") or "-",
@@ -339,7 +341,7 @@ def build_rows(
             weapon_list: List[str] = []
             poise_list: List[str] = []
             weapon_source = ""
-            wep_phys = wep_magic = wep_fire = wep_ltng = wep_holy = "-"
+            wep_disable_attr = wep_phys = wep_magic = wep_fire = wep_ltng = wep_holy = "-"
 
             if unique_weapon:
                 weapon_source = "unique"
@@ -365,6 +367,7 @@ def build_rows(
 
                 stats = weapon_base_stats.get(unique_weapon.lower())
                 if stats:
+                    wep_disable_attr = stats.get("disable_gem_attr", "-")
                     wep_phys = stats.get("phys", "-")
                     wep_magic = stats.get("magic", "-")
                     wep_fire = stats.get("fire", "-")
@@ -416,6 +419,7 @@ def build_rows(
             out["Weapon Source"] = weapon_source
             out["Weapon"] = weapon_field
             out["Weapon Poise"] = poise_field
+            out["Disable Gem Attr"] = wep_disable_attr
             out["Wep Phys"] = wep_phys
             out["Wep Magic"] = wep_magic
             out["Wep Fire"] = wep_fire
