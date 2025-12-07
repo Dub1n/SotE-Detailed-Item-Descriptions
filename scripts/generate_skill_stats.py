@@ -1165,8 +1165,14 @@ def collapse_variants(group: List[Dict[str, object]]) -> List[str]:
     merged_lines = []
     variant_count = len(group)
     merge_map: Dict[Tuple, List[Dict[str, object] | None]] = {}
+    prefix_max_len: Dict[str, int] = defaultdict(int)
+
     for idx, variant in enumerate(group):
         for line in variant["lines"]:
+            prefix = line.get("prefix", "")
+            vals_len = len(line.get("values") or [])
+            lacks_len = len(line.get("lacking_values") or [])
+            prefix_max_len[prefix] = max(prefix_max_len[prefix], vals_len, lacks_len)
             bucket = merge_map.setdefault(line["merge_key"], [None] * variant_count)
             bucket[idx] = line
 
@@ -1177,12 +1183,33 @@ def collapse_variants(group: List[Dict[str, object]]) -> List[str]:
                     bucket[1] = dict(bucket[0])
 
     for bucket in merge_map.values():
-        template = next((b for b in bucket if b), None)
+        # Drop completely empty variants so we don't add zero columns for missing attack parts.
+        bucket = [b for b in bucket if b]
+        if not bucket:
+            continue
+        # Pad steps within the same attack part (same prefix) to the max length seen for that prefix.
+        adjusted_bucket: List[Dict[str, object]] = []
+        for line in bucket:
+            prefix = line.get("prefix", "")
+            target_len = prefix_max_len.get(prefix, 0)
+            new_line = dict(line)
+            vals = list((new_line.get("values") or []))
+            lacks = list((new_line.get("lacking_values") or []))
+            while len(vals) < target_len:
+                vals.append(0)
+            while len(lacks) < target_len and new_line.get("has_lacking"):
+                lacks.append(0)
+            new_line["values"] = vals
+            if new_line.get("has_lacking"):
+                new_line["lacking_values"] = lacks
+            adjusted_bucket.append(new_line)
+
+        template = next((b for b in adjusted_bucket if b), None)
         if not template:
             continue
         merged_lines.append(
             {
-                "text": render_combined_line(template, bucket),
+                "text": render_combined_line(template, adjusted_bucket),
                 "sort_key": template["sort_key"],
             }
         )
