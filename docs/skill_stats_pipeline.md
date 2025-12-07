@@ -9,6 +9,7 @@ This script builds `work/skill_stats_from_sheet.json` from `docs/(1.16.1)-Ashes-
 - Populate `ready/skill.json` after generating stats: `python scripts/generate_skill_stats.py --populate`
 
 Outputs:
+
 - `work/skill_stats_from_sheet.json`: merged stats with a `weapon` list when variants share stats.
 - `work/responses/ready/skill.json`: per-skill entry gains bracketed keys per weapon grouping and a `weapon` list; existing `stats` fields are left untouched.
 
@@ -33,16 +34,19 @@ Outputs:
    - EquipParamGem mount categories are used to fetch poise factors per weapon type.
 5) Collapse variants:
    - Identical stats across weapons are merged into one entry with a `weapon` list.
-- Stance values are scaled by poise factors; min/max become ranges, lacking-FP defaults to 0 when absent.
- - Charged + uncharged are concatenated into one line when both exist, with `|` separating the variants (missing entries get `0` placeholders so column counts match).
- - Multi-step rows (`#1`, `#2`, etc.) keep a slot for every step across all lines in that attack section; missing steps are padded with zeros so timings stay aligned.
- - Nested bullet labels like `(Bullet (Ice Spikes))` are trimmed to `(Ice Spikes)` unless that trimmed label already exists, to avoid collisions.
- - Handedness variants (`1h`/`2h`) collapse into a single entry; each line gains a leading `(1h ...)` or `(2h ...)` prefix (paired with follow-up labels) and keeps its own uncharged/charged columns.
- - Duplicate-name sheet rows are summed first (numeric columns only) so multi-line entries like `Bubble Shower - Bullet` combine before formatting.
- - Step/variant padding is per attack part: only lines that share the same prefix (e.g., none/Light Follow-up/Heavy Follow-up plus hand mode) are padded to the same step count. Charged/uncharged columns are added only when that part has charged data; parts with no charged rows stay uncharged-only.
+
+   - Stance values are scaled by poise factors; min/max become ranges, lacking-FP defaults to 0 when absent.
+   - Charged + uncharged are concatenated into one line when both exist, with `|` separating the variants (missing entries get `0` placeholders so column counts match).
+   - Multi-step rows (`#1`, `#2`, etc.) keep a slot for every step across all lines in that attack section; missing steps are padded with zeros so timings stay aligned.
+   - Nested bullet labels like `(Bullet (Ice Spikes))` are trimmed to `(Ice Spikes)` unless that trimmed label already exists, to avoid collisions.
+   - Handedness variants (`1h`/`2h`) collapse into a single entry; each line gains a leading `(1h ...)` or `(2h ...)` prefix (paired with follow-up labels) and keeps its own uncharged/charged columns.
+   - Duplicate-name sheet rows are summed first (numeric columns only) so multi-line entries like `Bubble Shower - Bullet` combine before formatting.
+   - Step/variant padding is per attack part: only lines that share the same prefix (e.g., none/Light Follow-up/Heavy Follow-up plus hand mode) are padded to the same step count. Charged/uncharged columns are added only when that part has charged data; parts with no charged rows stay uncharged-only.
+
 6) Populate `ready/skill.json`:
-  - Insert bracketed keys like `[Axe/Curved Sword/...] Skill` and `[Dragon Halberd] Skill`.
-  - Do not overwrite an existing `stats` field; only add variant keys and `weapon` metadata.
+
+- Insert bracketed keys like `[Axe/Curved Sword/...] Skill` and `[Dragon Halberd] Skill`.
+- Do not overwrite an existing `stats` field; only add variant keys and `weapon` metadata.
 
 ## Stance handling
 
@@ -63,6 +67,40 @@ Outputs:
 - Add a new column: update the column lists near the top if you need a new damage type.
 - Adjust stance wording: tweak the `label_text` construction in `build_line_entries`.
 - Change rounding: stance ranges are rounded in `normalize_stance_strings` (base uses nearest int, lacking uses `ceil` on both ends; stance buckets from categories use `ceil`).
+
+## Flow diagrams
+
+```mermaid
+flowchart TD
+  A[Input CSVs\n- Attack Data\n- Poise Damage MVs\n- EquipParamGem categories] --> B[Preprocess rows\n- sum duplicate names\n- extract weapon prefix/hand mode\n- split labels/hash IDs]
+  B --> C[Line extraction per row\n- base/elemental/status\n- motion value choice\n- stance + super armor\n- scaling suffixes]
+  C --> D[Variant grouping\nby skill name + weapon label]
+  D --> E[Hash/phase pairing\n- FP vs lacking\n- follow-up normalization]
+  E --> F[Collapse variants per attack part\n- pad steps per prefix\n- merge charged/uncharged columns]
+  F --> G[Stance scaling\n- apply weapon categories/base poise\n- range min/max per prefix]
+  G --> H[Merge identical outputs\n- merge by non-stance lines\n- stance lines range-merged]
+  H --> I[Outputs\n- work/skill_stats_from_sheet.json\n- optional ready population]
+```
+
+```mermaid
+flowchart LR
+  subgraph Inputs
+    CSV1[(Attack Data CSV)]
+    CSV2[(Poise Damage MVs)]
+    CAT[(EquipParamGem\nweapon categories)]
+  end
+  CSV1 --> P1[Dedup rows\nsum numeric columns]
+  P1 --> P2[Parse name/prefix/hand\nsplit charged/lacking/hash]
+  P2 --> P3[Build lines\nbullet/weapon/status/stance]
+  CSV2 --> P3
+  CAT --> P3
+  P3 --> P4[Group by skill + weapon label]
+  P4 --> P5[Pair FP/lacking & follow-ups\npad per prefix]
+  P5 --> P6[Apply stance factors\nproduce ranges]
+  P6 --> P7[Merge variants\nstance ranges across merged sets]
+  P7 --> OUT1[(work/skill_stats_from_sheet.json)]
+  P7 -->|--populate| OUT2[(work/responses/ready/skill.json)]
+```
 
 ## Regeneration checklist
 
