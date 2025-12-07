@@ -1166,6 +1166,7 @@ def collapse_variants(group: List[Dict[str, object]]) -> List[str]:
     variant_count = len(group)
     merge_map: Dict[Tuple, List[Dict[str, object] | None]] = {}
     prefix_max_len: Dict[str, int] = defaultdict(int)
+    prefix_variants: Dict[str, set[int]] = defaultdict(set)
 
     for idx, variant in enumerate(group):
         for line in variant["lines"]:
@@ -1173,6 +1174,7 @@ def collapse_variants(group: List[Dict[str, object]]) -> List[str]:
             vals_len = len(line.get("values") or [])
             lacks_len = len(line.get("lacking_values") or [])
             prefix_max_len[prefix] = max(prefix_max_len[prefix], vals_len, lacks_len)
+            prefix_variants[prefix].add(idx)
             bucket = merge_map.setdefault(line["merge_key"], [None] * variant_count)
             bucket[idx] = line
 
@@ -1183,15 +1185,20 @@ def collapse_variants(group: List[Dict[str, object]]) -> List[str]:
                     bucket[1] = dict(bucket[0])
 
     for bucket in merge_map.values():
-        # Drop completely empty variants so we don't add zero columns for missing attack parts.
-        bucket = [b for b in bucket if b]
-        if not bucket:
+        template = next((b for b in bucket if b), None)
+        if not template:
             continue
+        prefix = template.get("prefix", "")
+        variant_indices = sorted(prefix_variants.get(prefix, range(variant_count)))
+        selected_bucket = [bucket[i] if i < len(bucket) else None for i in variant_indices]
+
         # Pad steps within the same attack part (same prefix) to the max length seen for that prefix.
-        adjusted_bucket: List[Dict[str, object]] = []
-        for line in bucket:
-            prefix = line.get("prefix", "")
-            target_len = prefix_max_len.get(prefix, 0)
+        adjusted_bucket: List[Dict[str, object] | None] = []
+        target_len = prefix_max_len.get(prefix, 0)
+        for line in selected_bucket:
+            if line is None:
+                adjusted_bucket.append(None)
+                continue
             new_line = dict(line)
             vals = list((new_line.get("values") or []))
             lacks = list((new_line.get("lacking_values") or []))
