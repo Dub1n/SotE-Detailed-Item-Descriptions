@@ -52,7 +52,8 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
         raise ValueError("Expected 'Phys MV' column in input.")
     numeric_start = fieldnames.index("Phys MV")
     output_columns = [col for col in fieldnames if col not in DROP_COLUMNS]
-    numeric_columns = [col for col in output_columns if output_columns.index(col) >= numeric_start]
+    col_positions = {col: idx for idx, col in enumerate(fieldnames)}
+    numeric_columns = [col for col in output_columns if col_positions.get(col, 0) >= numeric_start]
 
     grouped: Dict[Tuple[str, ...], Dict[str, Any]] = {}
     warnings: List[str] = []
