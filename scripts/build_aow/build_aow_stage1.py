@@ -32,7 +32,6 @@ OUTPUT_COLUMNS = [
     "Weapon Source",
     "Weapon",
     "Weapon Poise",
-    "AtkId",
     "Phys MV",
     "Magic MV",
     "Fire MV",
@@ -382,7 +381,6 @@ def build_rows(
             out["Weapon Source"] = weapon_source
             out["Weapon"] = weapon_field
             out["Weapon Poise"] = poise_field
-            out["AtkId"] = row.get("AtkId", "")
             out["Phys MV"] = row.get("Phys MV", "")
             out["Magic MV"] = row.get("Magic MV", "")
             out["Fire MV"] = row.get("Fire MV", "")

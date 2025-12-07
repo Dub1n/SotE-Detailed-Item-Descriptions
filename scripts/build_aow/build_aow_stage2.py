@@ -22,7 +22,7 @@ GROUP_KEYS = [
     "Overwrite Scaling",
 ]
 
-DROP_COLUMNS = {"Name", "Bullet", "Tick"}
+DROP_COLUMNS = {"Name", "Bullet", "Tick", "AtkId"}
 
 
 def parse_float(value: Any) -> float | None:
