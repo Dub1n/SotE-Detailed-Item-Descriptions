@@ -1706,6 +1706,14 @@ def main() -> None:
                 stance_base = unique_poise_bases.get(unique_weapon.lower())
             else:
                 stance_categories = find_aow_categories(base_no_hash, aow_categories)
+                if stance_categories and weapon_label:
+                    filtered = [
+                        cat
+                        for cat in stance_categories
+                        if weapon_label.lower() in str(cat.get("name", "")).lower()
+                    ]
+                    if filtered:
+                        stance_categories = filtered
 
             row = dict(row)
             row["label"] = label
