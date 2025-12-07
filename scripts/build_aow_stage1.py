@@ -12,7 +12,7 @@ ATTACK_DATA_CSV = ROOT / "docs/(1.16.1)-Ashes-of-War-Attack-Data.csv"
 POISE_MV_CSV = ROOT / "docs/(1.16.1)-Poise-Damage-MVs.csv"
 EQUIP_PARAM_GEM_CSV = ROOT / "PARAM/EquipParamGem.csv"
 CATEGORY_POISE_JSON = ROOT / "docs/weapon_categories_poise.json"
-SKILL_LIST_TXT = ROOT / "docs/skill_names_from_gem.txt"
+SKILL_LIST_TXT = ROOT / "docs/skill_names_from_gem_and_behavior.txt"
 DEFAULT_OUTPUT = ROOT / "work/aow_pipeline/AoW-data-1.csv"
 
 IGNORED_PREFIXES = {"Slow", "Var1", "Var2"}
@@ -130,37 +130,22 @@ def infer_part(name: str, matched_skill: Optional[str] = None) -> str:
     base = strip_weapon_prefix(name)
     if matched_skill:
         base = re.sub(rf"(?i)\b{re.escape(matched_skill)}\b", "", base, count=1)
-    base = base.replace("(Lacking FP)", "").strip()
-    base = base.replace("1h", "").replace("2h", "")
-    base = base.replace("Charged", "")
-    loop_present = "Loop" in base
-    part = ""
-    if " - " in base:
-        part = base.split(" - ", 1)[1]
-    if part:
-        part = re.sub(r"#\d+", "", part)
-        part = re.sub(r"\[\s*\d+\s*\]", "", part)
-        part = re.sub(r"\bBullet\b", "", part, flags=re.IGNORECASE)
-        part = re.sub(r"\bR[12]\b", "", part).strip()
-        part = part.strip(" -:")
-        part = part.strip()
-        if part.startswith("(") and part.endswith(")") and len(part) > 1:
-            inner = part[1:-1].strip()
-            if inner:
-                part = inner
-        if part:
-            return part
-    if not part:
-        tail = re.search(r"\(([^()]*)\)\s*$", base)
-        if tail:
-            candidate = tail.group(1).strip()
-            candidate = re.sub(r"\bR[12]\b", "", candidate)
-            candidate = re.sub(r"\bBullet\b", "", candidate, flags=re.IGNORECASE).strip()
-            if candidate.lower() == "tick":
-                return "Tick"
-    if loop_present:
-        return "Loop"
-    return "Main"
+    base = re.sub(r"\(Lacking FP\)", "", base, flags=re.IGNORECASE)
+    base = re.sub(r"\b(1h|2h)\b", "", base, flags=re.IGNORECASE)
+    base = re.sub(r"\bCharged\b", "", base, flags=re.IGNORECASE)
+    base = re.sub(r"\bBullet\b", "", base, flags=re.IGNORECASE)
+    base = re.sub(r"\bR[12]\b", "", base)
+    base = re.sub(r"#\d+", "", base)
+    base = re.sub(r"\[\s*\d+\s*\]", "", base)
+    # Trim leading " - " if present
+    base = base.split(" - ", 1)[1] if " - " in base else base
+    base = base.strip(" -:\t")
+    if base.startswith("(") and base.endswith(")") and len(base) > 1:
+        base = base[1:-1].strip()
+    base = re.sub(r"\s{2,}", " ", base).strip()
+    if not base:
+        return "Loop" if "Loop" in name else "Main"
+    return base
 
 
 def parse_fp_flag(name: str) -> int:

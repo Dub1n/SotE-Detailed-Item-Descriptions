@@ -58,7 +58,7 @@ flowchart TD
 ## Filesystem layout
 - `docs/aow_pipeline_overview.md` (this plan).
 - `docs/AoW-data-1_example.csv` (authoritative sample rows for reference).
-- `docs/skill_names_from_gem.txt` (canonical skill names derived from EquipParamGem).
+- `docs/skill_names_from_gem_and_behavior.txt` (canonical skill names derived from EquipParamGem + Behavior).
 - `work/aow_pipeline/AoW-data-1.csv` (generated Stage 1 output).
 - `work/aow_pipeline/` (workspace for outputs and scratch; add temp files as needed).
 - `scripts/build_aow_stage1.py` (rebuild script).
