@@ -39,6 +39,7 @@ Outputs:
  - Nested bullet labels like `(Bullet (Ice Spikes))` are trimmed to `(Ice Spikes)` unless that trimmed label already exists, to avoid collisions.
  - Handedness variants (`1h`/`2h`) collapse into a single entry; each line gains a leading `(1h ...)` or `(2h ...)` prefix (paired with follow-up labels) and keeps its own uncharged/charged columns.
  - Duplicate-name sheet rows are summed first (numeric columns only) so multi-line entries like `Bubble Shower - Bullet` combine before formatting.
+ - Step/variant padding is per attack part: only lines that share the same prefix (e.g., none/Light Follow-up/Heavy Follow-up plus hand mode) are padded to the same step count. Charged/uncharged columns are added only when that part has charged data; parts with no charged rows stay uncharged-only.
 6) Populate `ready/skill.json`:
   - Insert bracketed keys like `[Axe/Curved Sword/...] Skill` and `[Dragon Halberd] Skill`.
   - Do not overwrite an existing `stats` field; only add variant keys and `weapon` metadata.
