@@ -19,18 +19,19 @@ IGNORED_PREFIXES = {"Slow", "Var1", "Var2"}
 
 CATEGORY_FLAG_PREFIX = "canMountWep_"
 OUTPUT_COLUMNS = [
+    "Name",
     "Skill",
-    "Weapon",
-    "Weapon Poise",
-    "Weapon Source",
-    "FP",
-    "Charged",
-    "Part",
     "Follow-up",
     "Hand",
+    "Part",
+    "FP",
+    "Charged",
     "Step",
     "Bullet",
-    "Name",
+    "Tick",
+    "Weapon Source",
+    "Weapon",
+    "Weapon Poise",
     "AtkId",
     "Phys MV",
     "Magic MV",
@@ -82,6 +83,7 @@ def base_skill_name(name: str) -> str:
     text = re.sub(r"\bR[12]\b", "", text)
     text = re.sub(r"\b(1h|2h)\b", "", text, flags=re.IGNORECASE)
     text = re.sub(r"\bCharged\b", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"\bTick\b", "", text, flags=re.IGNORECASE)
     text = re.sub(r"\bBullet\b", "", text, flags=re.IGNORECASE)
     text = text.strip()
     text = re.split(r"\s*-\s*", text, 1)[0].strip()
@@ -134,6 +136,7 @@ def infer_part(name: str, matched_skill: Optional[str] = None) -> str:
     base = re.sub(r"\(Lacking FP\)", "", base, flags=re.IGNORECASE)
     base = re.sub(r"\b(1h|2h)\b", "", base, flags=re.IGNORECASE)
     base = re.sub(r"\bCharged\b", "", base, flags=re.IGNORECASE)
+    base = re.sub(r"\bTick\b", "", base, flags=re.IGNORECASE)
     base = re.sub(r"\bBullet\b", "", base, flags=re.IGNORECASE)
     base = re.sub(r"\bR[12]\b", "", base)
     base = re.sub(r"#\d+", "", base)
@@ -212,6 +215,10 @@ def detect_step(name: str) -> str:
 
 def detect_bullet(name: str) -> int:
     return 1 if "Bullet" in name else 0
+
+
+def detect_tick(name: str) -> int:
+    return 1 if re.search(r"\bTick\b", name, flags=re.IGNORECASE) else 0
 
 
 def build_gem_mount_map(flag_to_info: Dict[str, Dict[str, float]], skill_names: List[str]) -> Dict[str, List[str]]:
@@ -308,6 +315,7 @@ def build_rows(
             charged = detect_charged(raw_name)
             step = detect_step(raw_name)
             bullet_flag = detect_bullet(raw_name)
+            tick_flag = detect_tick(raw_name)
 
             weapon_list: List[str] = []
             poise_list: List[str] = []
@@ -367,18 +375,19 @@ def build_rows(
             poise_field = align_join(poise_list, len(weapon_list)) if weapon_list else ""
 
             out = OrderedDict()
+            out["Name"] = raw_name
             out["Skill"] = skill
-            out["Weapon"] = weapon_field
-            out["Weapon Poise"] = poise_field
-            out["Weapon Source"] = weapon_source
-            out["FP"] = fp_flag
-            out["Charged"] = charged
             out["Part"] = part
             out["Follow-up"] = follow_up
             out["Hand"] = hand
+            out["FP"] = fp_flag
+            out["Charged"] = charged
             out["Step"] = step
             out["Bullet"] = bullet_flag
-            out["Name"] = raw_name
+            out["Tick"] = tick_flag
+            out["Weapon Source"] = weapon_source
+            out["Weapon"] = weapon_field
+            out["Weapon Poise"] = poise_field
             out["AtkId"] = row.get("AtkId", "")
             out["Phys MV"] = row.get("Phys MV", "")
             out["Magic MV"] = row.get("Magic MV", "")
