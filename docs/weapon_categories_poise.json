@@ -5,7 +5,7 @@
   },
   "canMountWep_SwordNormal": {
     "name": "Straight Sword",
-    "poise": 2
+    "poise": 5
   },
   "canMountWep_SwordLarge": {
     "name": "Greatsword",
@@ -57,7 +57,7 @@
   },
   "canMountWep_Flail": {
     "name": "Flail",
-    "poise": null
+    "poise": 6
   },
   "canMountWep_SpearNormal": {
     "name": "Spear",

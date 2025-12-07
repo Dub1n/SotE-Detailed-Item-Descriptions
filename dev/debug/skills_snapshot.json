@@ -1,469 +1,421 @@
 [
   {
     "name": "War Cry",
-    "versions": {
-      "ideal": [
-        {
-          "stats": [
-            "\n<font color=\"#C0B194\">Stance damage (Roar):</font> 6"
-          ],
-          "weapon": []
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 140, 140 | 180, 183",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 10, 10 | 30, 30",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 150, 150 | 190, 193",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 12, 12 | 33, 33"
-          ],
-          "weapon": [
-            "Axe"
-          ]
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 140, 140 | 195, 200",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 11, 11 | 33, 33",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 155, 155 | 210, 215",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 14, 14 | 37, 37"
-          ],
-          "weapon": [
-            "Greataxe"
-          ]
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 135, 135 | 195, 200",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 3x, 3x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 12, 12 | 36, 36",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 140, 140 | 205, 210",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 3x, 3x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 15, 15 | 40, 40"
-          ],
-          "weapon": [
-            "Colossal Sword",
-            "Colossal Weapon"
-          ]
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 135, 135 | 190, 195",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 11, 11 | 33, 33",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 150, 150 | 205, 210",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 14, 14 | 37, 37"
-          ],
-          "weapon": [
-            "Curved Greatsword",
-            "Greatsword",
-            "Great Hammer"
-          ]
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 135, 135 | 175, 178",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 8, 8 | 24, 24",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 200, 200 | 250, 260",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2x, 2x | 3x, 3x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 10, 10 | 29, 39"
-          ],
-          "weapon": [
-            "Beast Claw",
-            "Claw",
-            "Hand-to-Hand",
-            "Fist"
-          ]
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 135, 135 | 175, 178",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 10, 10 | 30, 30",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 145, 145 | 185, 188",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 12, 12 | 33, 33"
-          ],
-          "weapon": [
-            "Great Katana",
-            "Great Spear",
-            "Light Greatsword",
-            "Curved Sword",
-            "Halberd",
-            "Katana",
-            "Reaper",
-            "Spear",
-            "Twinblade",
-            "Hammer",
-            "Straight Sword",
-            "Flail"
-          ]
-        }
-      ]
-    }
+    "stats": [
+      "\n<font color=\"#C0B194\">Stance damage (Roar):</font> 6"
+    ],
+    "weapon": []
+  },
+  {
+    "name": "War Cry",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 140, 140 | 180, 183",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 10, 10 | 30, 30",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 150, 150 | 190, 193",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 12, 12 | 33, 33"
+    ],
+    "weapon": [
+      "Axe"
+    ]
+  },
+  {
+    "name": "War Cry",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 140, 140 | 195, 200",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 11, 11 | 33, 33",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 155, 155 | 210, 215",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 14, 14 | 37, 37"
+    ],
+    "weapon": [
+      "Greataxe"
+    ]
+  },
+  {
+    "name": "War Cry",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 135, 135 | 195, 200",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 3x, 3x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 12, 12 | 36, 36",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 140, 140 | 205, 210",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 3x, 3x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 15, 15 | 40, 40"
+    ],
+    "weapon": [
+      "Colossal Sword",
+      "Colossal Weapon"
+    ]
+  },
+  {
+    "name": "War Cry",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 135, 135 | 190, 195",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 11, 11 | 33, 33",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 150, 150 | 205, 210",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 14, 14 | 37, 37"
+    ],
+    "weapon": [
+      "Curved Greatsword",
+      "Greatsword",
+      "Great Hammer"
+    ]
+  },
+  {
+    "name": "War Cry",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 135, 135 | 175, 178",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 8, 8 | 24, 24",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 200, 200 | 250, 260",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2x, 2x | 3x, 3x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 10, 10 | 29, 39"
+    ],
+    "weapon": [
+      "Beast Claw",
+      "Claw",
+      "Hand-to-Hand",
+      "Fist"
+    ]
+  },
+  {
+    "name": "War Cry",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 135, 135 | 175, 178",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 10, 10 | 30, 30",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 145, 145 | 185, 188",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 2x, 2x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 12, 12 | 33, 33"
+    ],
+    "weapon": [
+      "Great Katana",
+      "Great Spear",
+      "Light Greatsword",
+      "Curved Sword",
+      "Halberd",
+      "Katana",
+      "Reaper",
+      "Spear",
+      "Twinblade",
+      "Hammer",
+      "Straight Sword",
+      "Flail"
+    ]
   },
   {
     "name": "Barbaric Roar",
-    "versions": {
-      "ideal": [
-        {
-          "stats": [
-            "\n<font color=\"#C0B194\">Stance damage (Roar):</font> 6"
-          ],
-          "weapon": []
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 215, 190 | 250, 225",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.8x | 2.4x, 2.35x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 18-23, 11-15 | 25-33, 16-21",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 230, 200 | 265, 235",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.8x | 2.4x, 2.35x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 21-28, 13-17 | 31-40, 20-26"
-          ],
-          "weapon": [
-            "Axe",
-            "Curved Sword",
-            "Katana",
-            "Flail",
-            "Great Katana",
-            "Light Greatsword",
-            "Hammer",
-            "Straight Sword"
-          ]
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 224, 199 | 262, 236",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.8x | 2.4x, 2.35x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 14-18, 9-11 | 20-25, 13-16",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 282, 220 | 305, 260",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.8x | 2.4x, 2.35x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 17-21, 11-13 | 25-31, 16-20"
-          ],
-          "weapon": [
-            "Beast Claw",
-            "Claw",
-            "Hand-to-Hand",
-            "Fist"
-          ]
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 215, 135 | 250, 210",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.4x, 1.5x | 2.7x, 2.5x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 21, 12 | 35, 36",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 230, 140 | 265, 220",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.4x, 1.8x | 2.7x, 3x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 27, 15 | 42, 40"
-          ],
-          "weapon": [
-            "Colossal Sword",
-            "Colossal Weapon"
-          ]
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 215, 135 | 250, 195",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.25x, 1.5x | 2.55x, 2x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 20, 11 | 32, 33",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 230, 140 | 265, 200",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.25x, 1.8x | 2.55x, 2.4x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 25, 14 | 39, 37"
-          ],
-          "weapon": [
-            "Curved Greatsword",
-            "Greataxe",
-            "Greatsword",
-            "Great Hammer"
-          ]
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 215, 135 | 250, 195",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.5x | 2.4x, 2x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 20, 11 | 28, 33",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 230, 140 | 265, 200",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.8x | 2.4x, 2.4x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 24, 14 | 34, 37"
-          ],
-          "weapon": [
-            "Great Spear",
-            "Halberd",
-            "Reaper",
-            "Spear"
-          ]
-        },
-        {
-          "stats": [
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 215, 135 | 250, 195",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.1x, 1.5x | 3x, 2x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 18, 10 | 25, 20",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 230, 140 | 265, 200",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.1x, 1.5x | 3x, 2x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 21, 12 | 31, 24"
-          ],
-          "weapon": [
-            "Twinblade"
-          ]
-        }
-      ]
-    }
+    "stats": [
+      "\n<font color=\"#C0B194\">Stance damage (Roar):</font> 6"
+    ],
+    "weapon": []
+  },
+  {
+    "name": "Barbaric Roar",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 215, 190 | 250, 225",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.8x | 2.4x, 2.35x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 18-23, 11-15 | 25-33, 16-21",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 230, 200 | 265, 235",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.8x | 2.4x, 2.35x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 21-28, 13-17 | 31-40, 20-26"
+    ],
+    "weapon": [
+      "Axe",
+      "Curved Sword",
+      "Katana",
+      "Flail",
+      "Great Katana",
+      "Light Greatsword",
+      "Hammer",
+      "Straight Sword"
+    ]
+  },
+  {
+    "name": "Barbaric Roar",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 224, 199 | 262, 236",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.8x | 2.4x, 2.35x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 14-18, 9-11 | 20-25, 13-16",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 282, 220 | 305, 260",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.8x | 2.4x, 2.35x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 17-21, 11-13 | 25-31, 16-20"
+    ],
+    "weapon": [
+      "Beast Claw",
+      "Claw",
+      "Hand-to-Hand",
+      "Fist"
+    ]
+  },
+  {
+    "name": "Barbaric Roar",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 215, 135 | 250, 210",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.4x, 1.5x | 2.7x, 2.5x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 21, 12 | 35, 36",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 230, 140 | 265, 220",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.4x, 1.8x | 2.7x, 3x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 27, 15 | 42, 40"
+    ],
+    "weapon": [
+      "Colossal Sword",
+      "Colossal Weapon"
+    ]
+  },
+  {
+    "name": "Barbaric Roar",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 215, 135 | 250, 195",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.25x, 1.5x | 2.55x, 2x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 20, 11 | 32, 33",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 230, 140 | 265, 200",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.25x, 1.8x | 2.55x, 2.4x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 25, 14 | 39, 37"
+    ],
+    "weapon": [
+      "Curved Greatsword",
+      "Greataxe",
+      "Greatsword",
+      "Great Hammer"
+    ]
+  },
+  {
+    "name": "Barbaric Roar",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 215, 135 | 250, 195",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.5x | 2.4x, 2x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 20, 11 | 28, 33",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 230, 140 | 265, 200",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1.95x, 1.8x | 2.4x, 2.4x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 24, 14 | 34, 37"
+    ],
+    "weapon": [
+      "Great Spear",
+      "Halberd",
+      "Reaper",
+      "Spear"
+    ]
+  },
+  {
+    "name": "Barbaric Roar",
+    "stats": [
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 215, 135 | 250, 195",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.1x, 1.5x | 3x, 2x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 18, 10 | 25, 20",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Physical damage:</font> 230, 140 | 265, 200",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 2.1x, 1.5x | 3x, 2x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 21, 12 | 31, 24"
+    ],
+    "weapon": [
+      "Twinblade"
+    ]
   },
   {
     "name": "Swift Slash",
-    "versions": {
-      "ideal": [
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Physical damage:</font> 92 | 104 [70 | 80]",
-            "\n<font color=\"#F395C4\">Physical damage (Bullet):</font> 120 | 160 [0 | 0]",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 1x | 1x [1x | 1x]",
-            "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x | 1x [0x | 0x]",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 5 | 15 [5 | 5]",
-            "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 5 | 5 [0 | 0]"
-          ],
-          "weapon": []
-        }
-      ]
-    }
+    "stats": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 92 | 104 [70 | 80]",
+      "\n<font color=\"#F395C4\">Physical damage (Bullet):</font> 120 | 160 [0 | 0]",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x | 1x [1x | 1x]",
+      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x | 1x [0x | 0x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 5 | 15 [5 | 5]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 5 | 5 [0 | 0]"
+    ],
+    "weapon": []
   },
   {
     "name": "Carian Sovereignty",
-    "versions": {
-      "ideal": [
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Physical damage:</font> 0, 0 | 0, 0 [150, 150 | 120, 0]",
-            "\n<font color=\"#57DBCE\">Magic damage:</font> 315, 315 | 284, 400 [0, 0 | 0, 0] (<font color=\"#E0B985\">Int</font>)",
-            "\n<font color=\"#57DBCE\">Magic damage (Bullet):</font> 0, 0 | 160, 0 [0, 0 | 0, 0] (<font color=\"#E0B985\">Int</font>)",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 0x | 0x, 0x [1x, 1x | 1x, 0x]",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 30, 30 | 37, 45 [4-11, 4-11 | 3-9, 0]",
-            "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 0, 0 | 11, 0 [0, 0 | 0, 0]"
-          ],
-          "weapon": []
-        }
-      ]
-    }
+    "stats": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 0, 0 | 0, 0 [150, 150 | 120, 0]",
+      "\n<font color=\"#57DBCE\">Magic damage:</font> 315, 315 | 284, 400 [0, 0 | 0, 0] (<font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#57DBCE\">Magic damage (Bullet):</font> 0, 0 | 160, 0 [0, 0 | 0, 0] (<font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x, 0x | 0x, 0x [1x, 1x | 1x, 0x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 30, 30 | 37, 45 [4-11, 4-11 | 3-9, 0]",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 0, 0 | 11, 0 [0, 0 | 0, 0]"
+    ],
+    "weapon": []
   },
   {
     "name": "Aspects of the Crucible: Wings",
-    "versions": {
-      "ideal": [
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Physical damage:</font> 231",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 24"
-          ],
-          "weapon": [
-            "Colossal Sword"
-          ]
-        },
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Physical damage:</font> 247",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 20-22"
-          ],
-          "weapon": [
-            "Curved Greatsword",
-            "Great Katana",
-            "Great Spear",
-            "Greatsword",
-            "Heavy Thrusting Sword",
-            "Halberd"
-          ]
-        },
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Physical damage:</font> 258",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 16-22"
-          ],
-          "weapon": [
-            "Curved Sword",
-            "Katana",
-            "Spear",
-            "Light Greatsword",
-            "Straight Sword",
-            "Thrusting Sword"
-          ]
-        },
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Physical damage:</font> 283",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 8-12"
-          ],
-          "weapon": [
-            "Dagger",
-            "Throwing Blade"
-          ]
-        },
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Physical damage:</font> 460",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 3.2x",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 20"
-          ],
-          "weapon": [
-            "Twinblade"
-          ]
-        }
-      ]
-    }
+    "stats": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 231",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 24"
+    ],
+    "weapon": [
+      "Colossal Sword"
+    ]
+  },
+  {
+    "name": "Aspects of the Crucible: Wings",
+    "stats": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 247",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 20-22"
+    ],
+    "weapon": [
+      "Curved Greatsword",
+      "Great Katana",
+      "Great Spear",
+      "Greatsword",
+      "Heavy Thrusting Sword",
+      "Halberd"
+    ]
+  },
+  {
+    "name": "Aspects of the Crucible: Wings",
+    "stats": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 258",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 16-22"
+    ],
+    "weapon": [
+      "Curved Sword",
+      "Katana",
+      "Spear",
+      "Light Greatsword",
+      "Straight Sword",
+      "Thrusting Sword"
+    ]
+  },
+  {
+    "name": "Aspects of the Crucible: Wings",
+    "stats": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 283",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 8-12"
+    ],
+    "weapon": [
+      "Dagger",
+      "Throwing Blade"
+    ]
+  },
+  {
+    "name": "Aspects of the Crucible: Wings",
+    "stats": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 460",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 3.2x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 20"
+    ],
+    "weapon": [
+      "Twinblade"
+    ]
   },
   {
     "name": "Bloody Slash",
-    "versions": {
-      "ideal": [
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Physical damage:</font> 0 [130]",
-            "\n<font color=\"#F395C4\">Standard damage:</font> 322 [0] (<font color=\"#E0B985\">Arc</font>)",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 11 [6]"
-          ],
-          "weapon": [
-            "Curved Greatsword",
-            "Great Katana",
-            "Greatsword"
-          ]
-        }
-      ]
-    }
+    "stats": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 0 [130]",
+      "\n<font color=\"#F395C4\">Standard damage:</font> 322 [0] (<font color=\"#E0B985\">Arc</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 11 [6]"
+    ],
+    "weapon": [
+      "Curved Greatsword",
+      "Great Katana",
+      "Greatsword"
+    ]
   },
   {
     "name": "Ghostflame Call",
-    "versions": {
-      "ideal": [
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Pierce damage:</font> 50 [75]",
-            "\n<font color=\"#57DBCE\">Magic damage (Explosion):</font> 50 [0] (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
-            "\n<font color=\"#57DBCE\">Magic damage (Ticks):</font> 30 [0] (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 0.5x [1x]",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 4-6 [3-5]",
-            "\n<font color=\"#C0B194\">Stance damage (Explosion):</font> 4 [0]",
-            "\n(Light Follow-up) <font color=\"#F395C4\">Standard damage:</font> 75 [85]",
-            "\n(Light Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 50 [0] (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
-            "\n(Light Follow-up) <font color=\"#57DBCE\">Magic damage (Ground Flame):</font> 20 [0] (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
-            "\n(Light Follow-up) <font color=\"#E0B985\">Status buildup:</font> 0.5x [1x]",
-            "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage:</font> 4-6 [4-6]",
-            "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage (Bullet):</font> 5 [0]",
-            "\n(Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 80 [85]",
-            "\n(Heavy Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 80 [0] (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
-            "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 0.5x [1x]",
-            "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 4-6 [4-6]",
-            "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Bullet):</font> 11 [0]"
-          ],
-          "weapon": []
-        }
-      ]
-    }
+    "stats": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 50 [75]",
+      "\n<font color=\"#57DBCE\">Magic damage (Explosion):</font> 50 [0] (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#57DBCE\">Magic damage (Ticks):</font> 30 [0] (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 0.5x [1x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 4-6 [3-5]",
+      "\n<font color=\"#C0B194\">Stance damage (Explosion):</font> 4 [0]",
+      "\n(Light Follow-up) <font color=\"#F395C4\">Standard damage:</font> 75 [85]",
+      "\n(Light Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 50 [0] (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n(Light Follow-up) <font color=\"#57DBCE\">Magic damage (Ground Flame):</font> 20 [0] (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n(Light Follow-up) <font color=\"#E0B985\">Status buildup:</font> 0.5x [1x]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage:</font> 4-6 [4-6]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage (Bullet):</font> 5 [0]",
+      "\n(Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 80 [85]",
+      "\n(Heavy Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 80 [0] (<font color=\"#E0B985\">Dex</font>, <font color=\"#E0B985\">Int</font>)",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 0.5x [1x]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 4-6 [4-6]",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Bullet):</font> 11 [0]"
+    ],
+    "weapon": []
   },
   {
     "name": "Shield Strike",
-    "versions": {
-      "ideal": [
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Physical damage:</font> 100, 102, 105",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x, 1x",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 13, 13, 14"
-          ],
-          "weapon": [
-            "Greatshield"
-          ]
-        },
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Physical damage:</font> 100, 101, 102, 105",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x, 1x, 1x",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 5-6, 5-6, 5-6, 10-11"
-          ],
-          "weapon": [
-            "Medium Shield",
-            "Small Shield"
-          ]
-        },
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Pierce damage:</font> 100, 101, 102, 110",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x, 1x, 1x",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 11, 11, 11, 11"
-          ],
-          "weapon": [
-            "Thrusting Shield"
-          ]
-        }
-      ]
-    }
+    "stats": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 100, 102, 105",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x, 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 13, 13, 14"
+    ],
+    "weapon": [
+      "Greatshield"
+    ]
+  },
+  {
+    "name": "Shield Strike",
+    "stats": [
+      "\n<font color=\"#F395C4\">Physical damage:</font> 100, 101, 102, 105",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x, 1x, 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 5-6, 5-6, 5-6, 10-11"
+    ],
+    "weapon": [
+      "Medium Shield",
+      "Small Shield"
+    ]
+  },
+  {
+    "name": "Shield Strike",
+    "stats": [
+      "\n<font color=\"#F395C4\">Pierce damage:</font> 100, 101, 102, 110",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x, 1x, 1x",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 11, 11, 11, 11"
+    ],
+    "weapon": [
+      "Thrusting Shield"
+    ]
   },
   {
     "name": "Moonlight Greatsword",
-    "versions": {
-      "ideal": [
-        {
-          "stats": [
-            "\n(Heavy Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 115 | 145",
-            "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup (Bullet):</font> 1.2x | 1.5x",
-            "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Bullet):</font> 15 | 24",
-            "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 50, 50 | 65, 65",
-            "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 1x, 1x",
-            "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 8, 8 | 9, 9",
-            "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 53, 53 | 68, 68",
-            "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 1x, 1x",
-            "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 8, 8 | 9, 9"
-          ],
-          "weapon": [
-            "Dark Moon Greatsword"
-          ]
-        }
-      ]
-    }
+    "stats": [
+      "\n(Heavy Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 115 | 145",
+      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup (Bullet):</font> 1.2x | 1.5x",
+      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Bullet):</font> 15 | 24",
+      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 50, 50 | 65, 65",
+      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 1x, 1x",
+      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 8, 8 | 9, 9",
+      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 53, 53 | 68, 68",
+      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 1x, 1x",
+      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 8, 8 | 9, 9"
+    ],
+    "weapon": [
+      "Dark Moon Greatsword"
+    ]
   },
   {
     "name": "Revenger's Blade",
-    "versions": {
-      "ideal": [
-        {
-          "stats": [
-            "\n<font color=\"#F395C4\">Slash damage:</font> 250 | 153 [200 | 200]",
-            "\n<font color=\"#F395C4\">Slash damage:</font> 0 | 100 [0 | 0] (<font color=\"#E0B985\">Dex</font>)",
-            "\n<font color=\"#E0B985\">Status buildup:</font> 2x | 2x [2x | 2x]",
-            "\n(Light Follow-up) <font color=\"#F395C4\">Slash damage:</font> 536 [350]",
-            "\n(Light Follow-up) <font color=\"#E0B985\">Status buildup:</font> 7x [7x]",
-            "\n<font color=\"#C0B194\">Stance damage:</font> 10 | 15 [10 | 10]",
-            "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage:</font> 25 [35]"
-          ],
-          "weapon": [
-            "Falx"
-          ]
-        }
-      ]
-    }
+    "stats": [
+      "\n<font color=\"#F395C4\">Slash damage:</font> 250 | 153 [200 | 200]",
+      "\n<font color=\"#F395C4\">Slash damage:</font> 0 | 100 [0 | 0] (<font color=\"#E0B985\">Dex</font>)",
+      "\n<font color=\"#E0B985\">Status buildup:</font> 2x | 2x [2x | 2x]",
+      "\n(Light Follow-up) <font color=\"#F395C4\">Slash damage:</font> 536 [350]",
+      "\n(Light Follow-up) <font color=\"#E0B985\">Status buildup:</font> 7x [7x]",
+      "\n<font color=\"#C0B194\">Stance damage:</font> 10 | 15 [10 | 10]",
+      "\n(Light Follow-up) <font color=\"#C0B194\">Stance damage:</font> 25 [35]"
+    ],
+    "weapon": [
+      "Falx"
+    ]
   },
   {
     "name": "Bubble Shower",
-    "versions": {
-      "ideal": [
-        {
-          "stats": [
-            "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 96",
-            "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 6"
-          ],
-          "weapon": [
-            "Envoy's Long Horn"
-          ]
-        }
-      ]
-    }
+    "stats": [
+      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 96",
+      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 6"
+    ],
+    "weapon": [
+      "Envoy's Long Horn"
+    ]
   }
 ]

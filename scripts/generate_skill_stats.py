@@ -10,7 +10,7 @@ import math
 import re
 from collections import defaultdict
 from pathlib import Path
-from typing import Dict, Iterable, List, Sequence, Tuple
+from typing import Dict, Iterable, List, Sequence, Set, Tuple
 
 # Colour constants match docs/definitions.md
 COLOR_GOLD = "#E0B985"
@@ -84,6 +84,15 @@ def parse_args() -> argparse.Namespace:
         help='Where to write the JSON output (list of {"name": ..., "stats": [...]}).',
     )
     parser.add_argument(
+        "--only-skills",
+        nargs="+",
+        help="Optional list of skill names to regenerate; other skills already in the output file are preserved.",
+    )
+    parser.add_argument(
+        "--only-skills-file",
+        help="Newline-delimited file of skill names to regenerate; combined with --only-skills when present.",
+    )
+    parser.add_argument(
         "--populate",
         action="store_true",
         help="If set, also populate work/responses/ready/skill.json with the generated stats.",
@@ -97,6 +106,21 @@ def parse_args() -> argparse.Namespace:
         "--ready-path",
         default="work/responses/ready/skill.json",
         help="Path to ready skill JSON used when --ready-only is specified.",
+    )
+    parser.add_argument(
+        "--append-version-key",
+        help=(
+            "If set, also store the generated stats under this version key on each skill entry,"
+            " keeping any existing entries in the output file."
+        ),
+    )
+    parser.add_argument(
+        "--append-preserve-latest",
+        action="store_true",
+        help=(
+            "When used with --append-version-key, keep existing top-level stats/weapon fields and"
+            " only add the versioned block."
+        ),
     )
     return parser.parse_args()
 
@@ -397,7 +421,9 @@ def load_unique_poise_bases(path: Path) -> Dict[str, float]:
 
 
 def load_aow_categories(
-    equip_path: Path, category_map: Dict[str, Dict[str, object]]
+    equip_path: Path,
+    category_map: Dict[str, Dict[str, object]],
+    base_poise_map: Dict[str, float] | None = None,
 ) -> Dict[str, List[Dict[str, object]]]:
     mapping: Dict[str, List[Dict[str, object]]] = defaultdict(list)
     cat_keys = set(category_map.keys())
@@ -416,11 +442,18 @@ def load_aow_categories(
             key_name = name.lower()
             for cat_key in cat_keys:
                 if row.get(cat_key, "0") == "1":
+                    poise_val = category_map[cat_key]["poise"]
+                    if (poise_val is None or poise_val == "") and base_poise_map is not None:
+                        fallback = base_poise_map.get(
+                            str(category_map[cat_key].get("name", "")).lower()
+                        )
+                        if fallback is not None:
+                            poise_val = fallback
                     mapping[key_name].append(
                         {
                             "key": cat_key,
                             "name": category_map[cat_key]["name"],
-                            "poise": category_map[cat_key]["poise"],
+                            "poise": poise_val,
                         }
                     )
     return mapping
@@ -461,6 +494,52 @@ def load_ready_names(ready_path: Path, required: bool) -> List[str]:
     return [
         item["name"] for item in ready_data if isinstance(item, dict) and "name" in item
     ]
+
+
+def normalize_skill_key(name: str | None) -> str:
+    return canonical_skill_name(name or "").lower().strip()
+
+
+def parse_skill_list(raw_items: List[str] | None) -> Set[str]:
+    parsed: Set[str] = set()
+    for raw in raw_items or []:
+        parts = [p.strip() for p in raw.split(",")]
+        for part in parts:
+            if part:
+                parsed.add(part)
+    return parsed
+
+
+def load_only_skills(cli_list: List[str] | None, file_path: str | None) -> Set[str]:
+    selected: Set[str] = set()
+    selected.update(parse_skill_list(cli_list))
+    if file_path:
+        file = Path(file_path)
+        if not file.exists():
+            raise FileNotFoundError(f"--only-skills-file not found: {file}")
+        with file.open() as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                selected.update(parse_skill_list([line]))
+    return {normalize_skill_key(name) for name in selected if name.strip()}
+
+
+def make_only_filter(selected: Set[str]):
+    if not selected:
+        return lambda name, base_key=None: True
+
+    def is_selected(name: str, base_key: str | None = None) -> bool:
+        candidates = [name, base_key]
+        base_split, _ = split_skill_name(name)
+        candidates.extend([base_split, canonical_skill_name(base_split)])
+        for cand in candidates:
+            if cand and normalize_skill_key(cand) in selected:
+                return True
+        return False
+
+    return is_selected
 
 
 def make_ready_filter(ready_names: List[str]):
@@ -1725,10 +1804,101 @@ def populate_ready(skill_path: Path, output: List[Dict[str, object]]) -> None:
     print(f"Populated stats into {skill_path}")
 
 
+def load_existing_output(
+    output_path: Path,
+) -> Tuple[Dict[str, Dict[str, object]], List[str]]:
+    if not output_path.exists():
+        return {}, []
+    with output_path.open() as f:
+        data = json.load(f)
+
+    mapping: Dict[str, Dict[str, object]] = {}
+    order: List[str] = []
+    if isinstance(data, list):
+        for entry in data:
+            if not isinstance(entry, dict) or "name" not in entry:
+                continue
+            mapping[entry["name"]] = entry
+            order.append(entry["name"])
+    return mapping, order
+
+
+def merge_entry(
+    existing_entry: Dict[str, object] | None,
+    new_entry: Dict[str, object],
+    version_key: str | None,
+    update_latest: bool,
+) -> Dict[str, object]:
+    merged = dict(existing_entry) if existing_entry else {"name": new_entry.get("name")}
+
+    if version_key:
+        versions = merged.get("versions")
+        if not isinstance(versions, dict):
+            versions = {}
+        version_list = versions.get(version_key)
+        if isinstance(version_list, dict):
+            version_list = [version_list]
+        elif not isinstance(version_list, list):
+            version_list = []
+
+        block = {
+            k: v
+            for k, v in new_entry.items()
+            if k not in ("name", "versions")
+        }
+        # Deduplicate identical blocks.
+        if block not in version_list:
+            version_list.append(block)
+        versions[version_key] = version_list
+        merged["versions"] = versions
+
+    if update_latest or not version_key:
+        for key, value in new_entry.items():
+            if key in ("name", "versions"):
+                continue
+            merged[key] = value
+    else:
+        for field in ("stats", "weapon"):
+            if field not in merged and field in new_entry:
+                merged[field] = new_entry[field]
+
+    return merged
+
+
+def merge_outputs(
+    new_entries: List[Dict[str, object]],
+    existing_map: Dict[str, Dict[str, object]],
+    existing_order: List[str],
+    version_key: str | None,
+    update_latest: bool,
+    preserve_existing: bool,
+) -> List[Dict[str, object]]:
+    merged = dict(existing_map) if preserve_existing else {}
+    order = list(existing_order) if preserve_existing else []
+
+    for entry in new_entries:
+        name = entry.get("name")
+        if not name:
+            continue
+        merged[name] = merge_entry(merged.get(name), entry, version_key, update_latest)
+        if name not in order:
+            order.append(name)
+
+    if not preserve_existing:
+        order = [entry.get("name") for entry in new_entries if entry.get("name") in merged]
+    else:
+        order = [name for name in order if name in merged]
+
+    return [merged[name] for name in order]
+
+
 def main() -> None:
     args = parse_args()
     input_path = Path(args.input)
     output_path = Path(args.output)
+
+    only_skills = load_only_skills(args.only_skills, args.only_skills_file)
+    only_filter = make_only_filter(only_skills)
 
     ready_names = load_ready_names(Path(args.ready_path), args.ready_only)
     ready_filter = make_ready_filter(ready_names)
@@ -1740,7 +1910,7 @@ def main() -> None:
         Path("docs/weapon_categories_poise.json").read_text()
     )
     aow_categories = load_aow_categories(
-        Path("PARAM/EquipParamGem.csv"), weapon_category_map
+        Path("PARAM/EquipParamGem.csv"), weapon_category_map, unique_poise_bases
     )
 
     grouped_variants: Dict[Tuple[str, str], Dict[str, object]] = {}
@@ -1794,11 +1964,16 @@ def main() -> None:
                 },
             )
             entry["lines"].extend(lines)
+            if hand_mode and not entry.get("hand_mode"):
+                entry["hand_mode"] = hand_mode
 
     variant_entries: List[Dict[str, object]] = []
     for (_, weapon_label), data in grouped_variants.items():
         canon_name = canonical_skill_name(data["raw_name"])
         if args.ready_only and not ready_filter(canon_name, weapon_label):
+            continue
+        base_key = re.sub(r"\s+charged$", "", data["raw_name"], flags=re.IGNORECASE).strip()
+        if not only_filter(data["raw_name"], base_key):
             continue
         variant_entries.append(
             {
@@ -1808,11 +1983,9 @@ def main() -> None:
                 "is_charged": bool(
                     re.search(r"\s+charged$", data["raw_name"], flags=re.IGNORECASE)
                 ),
-                "base_key": re.sub(
-                    r"\s+charged$", "", data["raw_name"], flags=re.IGNORECASE
-                ).strip(),
+                "base_key": base_key,
                 "is_unique": data.get("is_unique", False),
-                "hand_mode": hand_mode,
+                "hand_mode": data.get("hand_mode"),
             }
         )
 
@@ -1842,7 +2015,7 @@ def main() -> None:
                 grouped_by_name[(variant["name"], variant.get("hand_mode"))].append(
                     variant
                 )
-            for key in sorted(grouped_by_name.keys()):
+            for key in sorted(grouped_by_name.keys(), key=lambda k: (k[0], k[1] or "")):
                 combined_variants.append(combine_variant_group(grouped_by_name[key]))
         if var_generic:
             grouped_var_by_name: Dict[
@@ -1852,7 +2025,7 @@ def main() -> None:
                 grouped_var_by_name[(variant["name"], variant.get("hand_mode"))].append(
                     variant
                 )
-            for key in sorted(grouped_var_by_name.keys()):
+            for key in sorted(grouped_var_by_name.keys(), key=lambda k: (k[0], k[1] or "")):
                 combined_variants.append(
                     combine_variant_group(grouped_var_by_name[key])
                 )
@@ -1869,6 +2042,26 @@ def main() -> None:
         collapse_variant_group(base_name, variants_sorted, output)
 
     output = merge_identical_stats(output)
+
+    preserve_existing = bool(
+        args.append_version_key or args.only_skills or args.only_skills_file
+    )
+    existing_map: Dict[str, Dict[str, object]]
+    existing_order: List[str]
+    if preserve_existing:
+        existing_map, existing_order = load_existing_output(output_path)
+    else:
+        existing_map, existing_order = {}, []
+
+    update_latest = not args.append_preserve_latest
+    output = merge_outputs(
+        output,
+        existing_map,
+        existing_order,
+        args.append_version_key,
+        update_latest,
+        preserve_existing,
+    )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8") as f:

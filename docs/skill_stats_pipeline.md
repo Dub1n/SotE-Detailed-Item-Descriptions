@@ -7,6 +7,12 @@ This script builds `work/skill_stats_from_sheet.json` from `docs/(1.16.1)-Ashes-
 - Build stats only: `python scripts/generate_skill_stats.py`
 - Limit to skills present in `ready/skill.json`: `python scripts/generate_skill_stats.py --ready-only`
 - Populate `ready/skill.json` after generating stats: `python scripts/generate_skill_stats.py --populate`
+- Regenerate a subset without dropping other entries: `python scripts/generate_skill_stats.py --only-skills "War Cry" "Barbaric Roar"`
+- Append a versioned snapshot to an existing output: `python scripts/generate_skill_stats.py --append-version-key stats_v1` (use `--append-preserve-latest` to avoid replacing the top-level `stats`/`weapon` fields). Versioned blocks are stored as lists so multiple blocks per version key can coexist.
+- Compare a flattened snapshot to generated output (order-insensitive):
+  - Snapshot is already flattened at `dev/debug/skills_snapshot.json` (list of {name, stats, weapon}).
+  - Compare: `python scripts/compare_skill_snapshots.py --snapshot dev/debug/skills_snapshot.json --target work/skill_stats_from_sheet.json --output dev/debug/skills_snapshot_diff.json`
+    - Ignores order of stats blocks and weapon arrays; reports per-skill reorder-only mismatches, content diffs (lines changed), and missing/extra blocks.
 
 Outputs:
 
