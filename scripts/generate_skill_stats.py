@@ -39,6 +39,22 @@ MV_COLUMNS: Tuple[Tuple[str, str], ...] = (
     ("holy", "Holy MV"),
 )
 
+NUMERIC_SUM_COLUMNS: Tuple[str, ...] = (
+    "AtkPhys",
+    "AtkMag",
+    "AtkFire",
+    "AtkLtng",
+    "AtkHoly",
+    "Phys MV",
+    "Magic MV",
+    "Fire MV",
+    "Ltng MV",
+    "Holy MV",
+    "Poise Dmg MV",
+    "AtkSuperArmor",
+    "Status MV",
+)
+
 SCALING_LOOKUP: Dict[str, List[str]] = {
     "-": [],
     "No Scaling": [],
@@ -127,8 +143,8 @@ def scaling_suffix(stats: Iterable[str]) -> str:
 def parse_label(label: str | None) -> Tuple[str, bool]:
     if not label:
         return "", False
-    is_lacking = "Lacking FP" in label
-    phase = label.replace("Lacking FP", "").strip()
+    is_lacking = "lacking fp" in label.lower()
+    phase = re.sub(r"\s*lacking fp\s*", "", label, flags=re.IGNORECASE).strip()
     return phase, is_lacking
 
 
@@ -159,6 +175,16 @@ def strip_hash_variant(name: str) -> Tuple[str, str]:
     return stripped, hash_id
 
 
+def extract_hand_mode(name: str) -> Tuple[str, str | None]:
+    """Extract 1h/2h markers from the base name, returning (cleaned_name, hand_mode)."""
+    match = re.search(r"\b(1h|2h)\b", name, flags=re.IGNORECASE)
+    if not match:
+        return name.strip(), None
+    cleaned = re.sub(r"\b(1h|2h)\b", "", name, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s{2,}", " ", cleaned).strip()
+    return cleaned, match.group(1).lower()
+
+
 def physical_type_label(row: Dict[str, str]) -> str:
     raw = (row.get("PhysAtkAttribute") or "").strip()
     lookup = {
@@ -174,8 +200,9 @@ def split_skill_name(name: str) -> Tuple[str, str | None]:
     label_parts: List[str] = []
     base_candidate = name.strip()
 
-    if base_candidate.endswith("(Lacking FP)"):
-        base_candidate = base_candidate.replace(" (Lacking FP)", "")
+    lacking_match = re.search(r"\(lacking fp\)$", base_candidate, flags=re.IGNORECASE)
+    if lacking_match:
+        base_candidate = re.sub(r"\s*\(lacking fp\)\s*$", "", base_candidate, flags=re.IGNORECASE)
         label_parts.append("Lacking FP")
 
     if " - " in base_candidate:
@@ -399,6 +426,29 @@ def load_aow_categories(
     return mapping
 
 
+def merge_duplicate_rows(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
+    grouped: Dict[str, List[Dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        grouped[row.get("Name", "")].append(row)
+
+    merged_rows: List[Dict[str, str]] = []
+    for name, entries in grouped.items():
+        if len(entries) == 1:
+            merged_rows.append(entries[0])
+            continue
+        base = dict(entries[0])
+        for col in NUMERIC_SUM_COLUMNS:
+            total = 0.0
+            for entry in entries:
+                try:
+                    total += float(entry.get(col, "") or 0)
+                except Exception:
+                    continue
+            base[col] = str(total)
+        merged_rows.append(base)
+    return merged_rows
+
+
 def load_ready_names(ready_path: Path, required: bool) -> List[str]:
     if not required:
         return []
@@ -486,6 +536,7 @@ def build_lines_for_row(
     lines = bullet_lines + weapon_lines + status_lines + stance_lines
     for line in lines:
         line["hash_id"] = row.get("hash_id", "")
+        line["hand_mode"] = row.get("hand_mode")
     return lines
 
 
@@ -509,7 +560,7 @@ def collapse_group(entries: Sequence[Dict[str, object]]) -> List[Dict[str, objec
     re_any_bracket = re.compile(r"\[\d+\]")
 
     combined: Dict[
-        Tuple[str, str, str, bool, str, bool, str, float | None, Tuple],
+        Tuple[str, str, str, bool, str, bool, str, float | None, Tuple, str | None],
         Dict[str, object],
     ] = {}
     others: List[Dict[str, object]] = []
@@ -528,6 +579,7 @@ def collapse_group(entries: Sequence[Dict[str, object]]) -> List[Dict[str, objec
                 stripped_phase,
                 entry.get("stance_base"),
                 entry.get("stance_cat_key", ()),
+                entry.get("hand_mode"),
             )
             bucket = combined.setdefault(
                 key,
@@ -545,6 +597,7 @@ def collapse_group(entries: Sequence[Dict[str, object]]) -> List[Dict[str, objec
                     "stance_categories": entry.get("stance_categories", []),
                     "stance_cat_key": entry.get("stance_cat_key", ()),
                     "stance_super_armor": 0.0,
+                    "hand_mode": entry.get("hand_mode"),
                 },
             )
             bucket["value"] += float(entry.get("value", 0) or 0)
@@ -567,6 +620,7 @@ def collapse_group(entries: Sequence[Dict[str, object]]) -> List[Dict[str, objec
         "phase",
         "stance_base",
         "stance_cat_key",
+        "hand_mode",
     )
     base_map: Dict[Tuple, Dict[str, object]] = {}
     lacking_map: Dict[Tuple, Dict[str, object]] = {}
@@ -633,6 +687,17 @@ def follow_up_priority(phase_value: str) -> int:
     return 0
 
 
+def hand_mode_priority(mode: str | None) -> int:
+    if not mode:
+        return 0
+    mode = mode.lower()
+    if mode == "1h":
+        return 1
+    if mode == "2h":
+        return 2
+    return 3
+
+
 def stance_factors(meta_entry: Dict[str, object] | None) -> List[float]:
     if not meta_entry:
         return [1.0]
@@ -697,28 +762,6 @@ def apply_stance_scaling(
         mn_l, mx_l = min(scaled_lack), max(scaled_lack)
         combined_lacks.append((mn_l, mx_l) if abs(mx_l - mn_l) > 1e-9 else mn_l)
 
-    while combined_vals and present_flags and not present_flags[len(combined_vals) - 1]:
-        last_idx = len(combined_vals) - 1
-        last_val = combined_vals[last_idx]
-        last_lack = combined_lacks[last_idx] if last_idx < len(combined_lacks) else None
-
-        def is_zero(v):
-            if v is None:
-                return True
-            if isinstance(v, (list, tuple)):
-                return all((x or 0) == 0 for x in v)
-            try:
-                return float(v) == 0.0
-            except Exception:
-                return False
-
-        if not is_zero(last_val) or (combined_lacks and not is_zero(last_lack)):
-            break
-        combined_vals.pop()
-        if combined_lacks:
-            combined_lacks.pop()
-        present_flags.pop()
-
     return combined_vals, combined_lacks
 
 
@@ -732,9 +775,15 @@ def build_line_entries(entries: List[Dict[str, object]]) -> List[Dict[str, objec
     collapsed_by_hash: Dict[str, List[Dict[str, object]]] = {
         hid: collapse_group(group_entries) for hid, group_entries in hash_groups.items()
     }
-    hash_ids_sorted = sorted(collapsed_by_hash.keys(), key=hash_sort_key)
-
-    key_fields = ("kind", "descriptor", "suffix", "is_multiplier", "color", "phase")
+    key_fields = (
+        "kind",
+        "descriptor",
+        "suffix",
+        "is_multiplier",
+        "color",
+        "phase",
+        "hand_mode",
+    )
     all_keys = set()
     for entries_list in collapsed_by_hash.values():
         for entry in entries_list:
@@ -745,12 +794,20 @@ def build_line_entries(entries: List[Dict[str, object]]) -> List[Dict[str, objec
         all_keys,
         key=lambda e: (
             follow_up_priority(e[5]),
+            hand_mode_priority(e[6] if len(e) > 6 else None),
             order.get(e[0], 99),
             e[1],
             e[5],
         ),
     ):
-        kind, descriptor, suffix, is_multiplier, color, phase = key
+        kind, descriptor, suffix, is_multiplier, color, phase, hand_mode = key
+        relevant_hids = [
+            hid
+            for hid, entries_list in collapsed_by_hash.items()
+            if any(tuple(entry.get(k, "") for k in key_fields) == key for entry in entries_list)
+        ]
+        hash_ids_sorted = sorted(relevant_hids, key=hash_sort_key)
+
         values: List[object] = []
         lacking_values: List[object] = []
         super_values: List[float] = []
@@ -798,13 +855,21 @@ def build_line_entries(entries: List[Dict[str, object]]) -> List[Dict[str, objec
 
         desc = descriptor[:1].upper() + descriptor[1:]
         label_phase = phase.strip()
-        prefix = ""
+        follow_up = None
         if "R1" in label_phase:
-            prefix = "(Light Follow-up) "
+            follow_up = "Light Follow-up"
             label_phase = label_phase.replace("R1", "").strip()
         if "R2" in label_phase:
-            prefix = "(Heavy Follow-up) "
+            follow_up = "Heavy Follow-up"
             label_phase = label_phase.replace("R2", "").strip()
+
+        mode_tag = meta_entry.get("hand_mode") if meta_entry else None
+        prefix_parts = []
+        if mode_tag:
+            prefix_parts.append(mode_tag)
+        if follow_up:
+            prefix_parts.append(follow_up)
+        prefix = f"({' '.join(prefix_parts)}) " if prefix_parts else ""
 
         label_text = f"{prefix}{desc}"
         if label_phase:
@@ -812,6 +877,7 @@ def build_line_entries(entries: List[Dict[str, object]]) -> List[Dict[str, objec
 
         base_sort_key = (
             follow_up_priority(phase),
+            hand_mode_priority(mode_tag),
             order.get(kind, 99),
             descriptor,
             phase,
@@ -849,6 +915,7 @@ def build_line_entries(entries: List[Dict[str, object]]) -> List[Dict[str, objec
                     "kind": kind,
                     "sort_key": base_sort_key,
                     "is_multiplier_flag": is_multiplier,
+                    "hand_mode": mode_tag,
                 }
             )
 
@@ -946,6 +1013,39 @@ def build_line_entries(entries: List[Dict[str, object]]) -> List[Dict[str, objec
             bucket["lacking_values"] = []
         filtered_entries.append(bucket)
 
+    # Trim nested bullet labels like "(Bullet (Ice Spikes))" to "(Ice Spikes)" when unique.
+    bullet_trim = re.compile(r"\(Bullet \(([^)]+)\)\)")
+    existing_labels = {
+        entry.get("label_body")
+        for entry in filtered_entries
+        if isinstance(entry.get("label_body"), str)
+    }
+    for entry in filtered_entries:
+        label_body = entry.get("label_body")
+        if not isinstance(label_body, str):
+            continue
+        if not bullet_trim.search(label_body):
+            continue
+        trimmed = bullet_trim.sub(r"(\1)", label_body)
+        if trimmed in existing_labels:
+            continue
+        entry["label_body"] = trimmed
+        if isinstance(entry.get("label_body_base"), str):
+            entry["label_body_base"] = bullet_trim.sub(
+                r"(\1)", entry["label_body_base"]
+            )
+        if isinstance(entry.get("merge_label"), str):
+            entry["merge_label"] = bullet_trim.sub(r"(\1)", entry["merge_label"])
+        mk = entry.get("merge_key")
+        if isinstance(mk, tuple) and len(mk) >= 5:
+            entry["merge_key"] = (
+                entry.get("prefix", ""),
+                entry["label_body"],
+                entry.get("suffix", ""),
+                entry.get("color", COLOR_GOLD),
+                entry.get("kind"),
+            )
+
     return filtered_entries
 
 
@@ -960,6 +1060,11 @@ def render_combined_line(
     overall_has_lacking = any(
         line and line.get("has_lacking") for line in variant_lines
     )
+    max_len = 1
+    for line in variant_lines:
+        vals = (line.get("values") if line else []) or []
+        lacks = (line.get("lacking_values") if line else []) or []
+        max_len = max(max_len, len(vals), len(lacks))
 
     def fmt(val, is_multiplier: bool) -> str:
         s = format_number(str(val))
@@ -1015,8 +1120,12 @@ def render_combined_line(
     value_parts: List[str] = []
     lacking_parts: List[str] = []
     for line in variant_lines:
-        vals = (line.get("values") if line else []) or []
-        lacks = (line.get("lacking_values") if line else []) or []
+        vals = list((line.get("values") if line else []) or [])
+        lacks = list((line.get("lacking_values") if line else []) or [])
+        while len(vals) < max_len:
+            vals.append(0)
+        while len(lacks) < max_len and overall_has_lacking:
+            lacks.append(0)
         if not vals:
             vals = [0]
         if is_stance:
@@ -1034,10 +1143,6 @@ def render_combined_line(
             if is_stance:
                 lack_str = fmt_stance_vals(lacks if lacks else [0])
             else:
-                target_len = max(len(vals), len(lacks)) if lacks else len(vals)
-                lacks = list(lacks) if lacks else []
-                while len(lacks) < target_len:
-                    lacks.append(0)
                 lack_str = ", ".join(
                     fmt(
                         v if v is not None else 0,
@@ -1221,6 +1326,7 @@ def combine_variant_group(entries: List[Dict[str, object]]) -> Dict[str, object]
         "is_charged": entries[0].get("is_charged", False),
         "base_key": entries[0].get("base_key"),
         "is_unique": entries[0].get("is_unique", False),
+        "hand_mode": entries[0].get("hand_mode"),
     }
 
 
@@ -1311,14 +1417,18 @@ def collapse_variant_group(
 
     if has_charged and has_uncharged:
 
-        def weapon_key(v: Dict[str, object]) -> Tuple[Tuple[str, ...], bool]:
+        def weapon_key(v: Dict[str, object]) -> Tuple[Tuple[str, ...], bool, str | None]:
             w = v.get("weapon") or []
             if isinstance(w, str):
                 w = [w]
-            return (tuple(sorted(set(w))), bool(v.get("is_unique")))
+            return (tuple(sorted(set(w))), bool(v.get("is_unique")), v.get("hand_mode"))
 
-        uncharged_map: Dict[Tuple[Tuple[str, ...], bool], Dict[str, object]] = {}
-        charged_map: Dict[Tuple[Tuple[str, ...], bool], Dict[str, object]] = {}
+        uncharged_map: Dict[
+            Tuple[Tuple[str, ...], bool, str | None], Dict[str, object]
+        ] = {}
+        charged_map: Dict[
+            Tuple[Tuple[str, ...], bool, str | None], Dict[str, object]
+        ] = {}
         for variant in variants_sorted:
             key = weapon_key(variant)
             if variant.get("is_charged"):
@@ -1327,6 +1437,8 @@ def collapse_variant_group(
                 uncharged_map[key] = variant
 
         all_keys = sorted(set(uncharged_map.keys()) | set(charged_map.keys()))
+        combined_lines: List[str] = []
+        all_weapons: List[str] = []
         for key in all_keys:
             base_variant = uncharged_map.get(
                 key,
@@ -1337,6 +1449,7 @@ def collapse_variant_group(
                     "is_charged": False,
                     "base_key": base_name,
                     "is_unique": key[1],
+                    "hand_mode": key[2],
                 },
             )
             charged_variant = charged_map.get(
@@ -1348,9 +1461,19 @@ def collapse_variant_group(
                     "is_charged": True,
                     "base_key": base_name,
                     "is_unique": key[1],
+                    "hand_mode": key[2],
                 },
             )
-            emit_entry(base_name, [base_variant, charged_variant])
+            lines_out = collapse_variants([base_variant, charged_variant])
+            lines_out = normalize_stance_strings(lines_out)
+            combined_lines.extend(lines_out)
+            for v in (base_variant, charged_variant):
+                w = v.get("weapon") or []
+                if isinstance(w, str):
+                    w = [w]
+                all_weapons.extend(w)
+        all_weapons = sorted(set(w for w in all_weapons if w))
+        output.append({"name": base_name, "weapon": all_weapons, "stats": combined_lines})
     else:
         for variant in variants_sorted:
             emit_entry(variant["name"], [variant])
@@ -1492,13 +1615,16 @@ def main() -> None:
     grouped_variants: Dict[Tuple[str, str], Dict[str, object]] = {}
     with input_path.open(newline="") as csv_file:
         reader = csv.DictReader(csv_file)
-        for row in reader:
+        merged_rows = merge_duplicate_rows(list(reader))
+        for row in merged_rows:
             weapon_prefix, name_wo_prefix = extract_weapon_prefix(row["Name"])
             unique_weapon = (row.get("Unique Skill Weapon") or "").strip()
             weapon_label = unique_weapon or (weapon_prefix or "")
 
-            base_name, label = split_skill_name(name_wo_prefix)
-            base_no_hash, hash_id = strip_hash_variant(base_name)
+            base_no_hash_raw, hash_id = strip_hash_variant(name_wo_prefix)
+            base_name, label = split_skill_name(base_no_hash_raw)
+            base_name, hand_mode = extract_hand_mode(base_name)
+            base_no_hash = base_name
 
             stance_base = None
             stance_categories = None
@@ -1510,6 +1636,7 @@ def main() -> None:
             row = dict(row)
             row["label"] = label
             row["hash_id"] = hash_id
+            row["hand_mode"] = hand_mode
 
             lines = build_lines_for_row(row, stance_base, stance_categories)
             if not lines:
@@ -1544,6 +1671,7 @@ def main() -> None:
                     r"\s+charged$", "", data["raw_name"], flags=re.IGNORECASE
                 ).strip(),
                 "is_unique": data.get("is_unique", False),
+                "hand_mode": hand_mode,
             }
         )
 
@@ -1566,23 +1694,36 @@ def main() -> None:
 
         combined_variants: List[Dict[str, object]] = []
         if generic_variants:
-            grouped_by_name: Dict[str, List[Dict[str, object]]] = defaultdict(list)
+            grouped_by_name: Dict[
+                Tuple[str, str | None], List[Dict[str, object]]
+            ] = defaultdict(list)
             for variant in generic_variants:
-                grouped_by_name[variant["name"]].append(variant)
-            for name in sorted(grouped_by_name.keys()):
-                combined_variants.append(combine_variant_group(grouped_by_name[name]))
+                grouped_by_name[(variant["name"], variant.get("hand_mode"))].append(
+                    variant
+                )
+            for key in sorted(grouped_by_name.keys()):
+                combined_variants.append(combine_variant_group(grouped_by_name[key]))
         if var_generic:
-            grouped_var_by_name: Dict[str, List[Dict[str, object]]] = defaultdict(list)
+            grouped_var_by_name: Dict[
+                Tuple[str, str | None], List[Dict[str, object]]
+            ] = defaultdict(list)
             for variant in var_generic:
-                grouped_var_by_name[variant["name"]].append(variant)
-            for name in sorted(grouped_var_by_name.keys()):
+                grouped_var_by_name[(variant["name"], variant.get("hand_mode"))].append(
+                    variant
+                )
+            for key in sorted(grouped_var_by_name.keys()):
                 combined_variants.append(
-                    combine_variant_group(grouped_var_by_name[name])
+                    combine_variant_group(grouped_var_by_name[key])
                 )
         combined_variants.extend(unique_variants)
 
         variants_sorted = sorted(
-            combined_variants, key=lambda v: (1 if v["is_charged"] else 0, v["name"])
+            combined_variants,
+            key=lambda v: (
+                1 if v["is_charged"] else 0,
+                hand_mode_priority(v.get("hand_mode")),
+                v["name"],
+            ),
         )
         collapse_variant_group(base_name, variants_sorted, output)
 

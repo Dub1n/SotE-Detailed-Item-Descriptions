@@ -35,6 +35,10 @@ Outputs:
    - Identical stats across weapons are merged into one entry with a `weapon` list.
 - Stance values are scaled by poise factors; min/max become ranges, lacking-FP defaults to 0 when absent.
  - Charged + uncharged are concatenated into one line when both exist, with `|` separating the variants (missing entries get `0` placeholders so column counts match).
+ - Multi-step rows (`#1`, `#2`, etc.) keep a slot for every step across all lines in that attack section; missing steps are padded with zeros so timings stay aligned.
+ - Nested bullet labels like `(Bullet (Ice Spikes))` are trimmed to `(Ice Spikes)` unless that trimmed label already exists, to avoid collisions.
+ - Handedness variants (`1h`/`2h`) collapse into a single entry; each line gains a leading `(1h ...)` or `(2h ...)` prefix (paired with follow-up labels) and keeps its own uncharged/charged columns.
+ - Duplicate-name sheet rows are summed first (numeric columns only) so multi-line entries like `Bubble Shower - Bullet` combine before formatting.
 6) Populate `ready/skill.json`:
   - Insert bracketed keys like `[Axe/Curved Sword/...] Skill` and `[Dragon Halberd] Skill`.
   - Do not overwrite an existing `stats` field; only add variant keys and `weapon` metadata.
