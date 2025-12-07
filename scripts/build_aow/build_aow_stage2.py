@@ -43,9 +43,11 @@ def fmt_number(value: Any) -> str:
         num = float(value)
     except (TypeError, ValueError):
         return str(value) if value is not None else ""
-    if num.is_integer():
-        return str(int(num))
-    return f"{num}".rstrip("0").rstrip(".")
+    rounded = round(num, 1)
+    if rounded.is_integer():
+        return str(int(rounded))
+    text = f"{rounded:.1f}"
+    return text.rstrip("0").rstrip(".")
 
 
 def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[List[Dict[str, str]], List[str], List[str]]:
