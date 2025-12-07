@@ -53,7 +53,11 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
     numeric_start = fieldnames.index("Phys MV")
     output_columns = [col for col in fieldnames if col not in DROP_COLUMNS]
     col_positions = {col: idx for idx, col in enumerate(fieldnames)}
-    numeric_columns = [col for col in output_columns if col_positions.get(col, 0) >= numeric_start]
+    numeric_columns = [
+        col
+        for col in output_columns
+        if col_positions.get(col, 0) >= numeric_start and col != "PhysAtkAttribute"
+    ]
 
     grouped: Dict[Tuple[str, ...], Dict[str, Any]] = {}
     warnings: List[str] = []
