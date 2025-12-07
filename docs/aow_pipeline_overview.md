@@ -71,3 +71,11 @@ python scripts/build_aow_stage1.py --output work/aow_pipeline/custom.csv
 ```
 
 Regenerate whenever upstream CSVs change. The script reports any skills missing mount categories or poise lookups so we can patch inputs instead of silently guessing.
+
+## Quickstart
+```sh
+# 1) Build the unified skill list (Gem + Behavior + SwordArts)
+python scripts/build_aow_stage0.py
+# 2) Generate the collated AoW data
+python scripts/build_aow_stage1.py
+```
