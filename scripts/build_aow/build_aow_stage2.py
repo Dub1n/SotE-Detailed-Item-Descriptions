@@ -163,7 +163,7 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
         mx = max(val for _, val in non_zero)
         if mn > 0 and mx >= 2 * mn:
             return "!", dmg_mv
-        return "-", dmg_mv
+        return "Weapon", dmg_mv
 
     # Finalize output rows with numeric formatting.
     output_rows: List[Dict[str, str]] = []
