@@ -1543,21 +1543,89 @@ def collapse_variant_group(
 
 
 def merge_identical_stats(entries: List[Dict[str, object]]) -> List[Dict[str, object]]:
-    merged_output: Dict[Tuple[str, Tuple[str, ...]], Dict[str, object]] = {}
+    def split_stance_line(line: str) -> Tuple[str, str]:
+        if "stance damage" not in line.lower():
+            return line, ""
+        parts = line.split(":</font>", 1)
+        if len(parts) == 2:
+            return parts[0] + ":</font>", parts[1]
+        return line, ""
+
+    def count_numbers(text: str) -> int:
+        return len(re.findall(r"-?\\d+\\.?\\d*", text))
+
+    def merge_stance_values(lines: List[str]) -> str:
+        label, rest = split_stance_line(lines[0])
+        matches = list(re.finditer(r"-?\\d+\\.?\\d*", rest))
+        if not matches:
+            return lines[0]
+        tokens_lists = []
+        for ln in lines:
+            _, ln_rest = split_stance_line(ln)
+            toks = re.findall(r"-?\\d+\\.?\\d*", ln_rest)
+            tokens_lists.append(toks)
+        token_count = len(tokens_lists[0])
+        if any(len(toks) != token_count for toks in tokens_lists):
+            return lines[0]
+        merged_tokens = []
+        for idx in range(token_count):
+            nums = [float(toks[idx]) for toks in tokens_lists]
+            mn, mx = min(nums), max(nums)
+            mn_i = int(math.ceil(mn))
+            mx_i = int(math.ceil(mx))
+            merged_tokens.append(str(mn_i) if mn_i == mx_i else f"{mn_i}-{mx_i}")
+
+        # Rebuild the rest string using the positions from the first line.
+        pieces = []
+        last_end = 0
+        tokens_iter = iter(merged_tokens)
+        for m in matches:
+            pieces.append(rest[last_end : m.start()])
+            pieces.append(next(tokens_iter, m.group(0)))
+            last_end = m.end()
+        pieces.append(rest[last_end:])
+        merged_rest = "".join(pieces)
+        return f"{label}{merged_rest}"
+
+    grouped: Dict[
+        Tuple[str, Tuple[str, ...], Tuple[str, ...], Tuple[int, ...]], List[Dict[str, object]]
+    ] = {}
     for entry in entries:
-        base_name = entry["name"]
-        stats_tuple = tuple(entry["stats"])
-        key = (base_name, stats_tuple)
-        bucket = merged_output.setdefault(
-            key, {"name": base_name, "stats": list(stats_tuple), "weapon": []}
-        )
-        bucket["weapon"].extend(entry.get("weapon") or [])
+        name = entry["name"]
+        stats = entry.get("stats") or []
+        non_stance = tuple(s for s in stats if "stance damage" not in s.lower())
+        stance_lines = [s for s in stats if "stance damage" in s.lower()]
+        stance_labels = tuple(split_stance_line(s)[0] for s in stance_lines)
+        stance_counts = tuple(count_numbers(split_stance_line(s)[1]) for s in stance_lines)
+        key = (name, non_stance, stance_labels, stance_counts)
+        grouped.setdefault(key, []).append(entry)
 
     output: List[Dict[str, object]] = []
-    for bucket in merged_output.values():
-        weapons = sorted(set(w for w in bucket.get("weapon") or [] if w))
-        bucket["weapon"] = weapons
-        output.append(bucket)
+    for key, bucket in grouped.items():
+        name, non_stance, stance_labels, stance_counts = key
+        weapons: List[str] = []
+        stance_lines_per_entry = []
+        for entry in bucket:
+            w = entry.get("weapon") or []
+            if isinstance(w, str):
+                w = [w]
+            weapons.extend(w)
+            stance_lines_per_entry.append([s for s in entry.get("stats", []) if "stance damage" in s.lower()])
+
+        merged_stance: List[str] = []
+        if stance_labels:
+            for idx in range(len(stance_labels)):
+                lines_at_idx = [lines[idx] for lines in stance_lines_per_entry if len(lines) > idx]
+                merged_stance.append(merge_stance_values(lines_at_idx))
+
+        stats_out = list(non_stance) + merged_stance
+        output.append(
+            {
+                "name": name,
+                "stats": stats_out,
+                "weapon": sorted(set(w for w in weapons if w)),
+            }
+        )
     return output
 
 
@@ -1768,28 +1836,22 @@ def main() -> None:
         combined_variants: List[Dict[str, object]] = []
         if generic_variants:
             grouped_by_name: Dict[
-                Tuple[str, str | None, Tuple[str, ...]], List[Dict[str, object]]
+                Tuple[str, str | None], List[Dict[str, object]]
             ] = defaultdict(list)
             for variant in generic_variants:
-                w = variant.get("weapon") or []
-                if isinstance(w, str):
-                    w = [w]
-                grouped_by_name[
-                    (variant["name"], variant.get("hand_mode"), tuple(sorted(set(w))))
-                ].append(variant)
+                grouped_by_name[(variant["name"], variant.get("hand_mode"))].append(
+                    variant
+                )
             for key in sorted(grouped_by_name.keys()):
                 combined_variants.append(combine_variant_group(grouped_by_name[key]))
         if var_generic:
             grouped_var_by_name: Dict[
-                Tuple[str, str | None, Tuple[str, ...]], List[Dict[str, object]]
+                Tuple[str, str | None], List[Dict[str, object]]
             ] = defaultdict(list)
             for variant in var_generic:
-                w = variant.get("weapon") or []
-                if isinstance(w, str):
-                    w = [w]
-                grouped_var_by_name[
-                    (variant["name"], variant.get("hand_mode"), tuple(sorted(set(w))))
-                ].append(variant)
+                grouped_var_by_name[(variant["name"], variant.get("hand_mode"))].append(
+                    variant
+                )
             for key in sorted(grouped_var_by_name.keys()):
                 combined_variants.append(
                     combine_variant_group(grouped_var_by_name[key])
