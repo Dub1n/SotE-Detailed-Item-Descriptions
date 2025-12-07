@@ -157,6 +157,11 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
 
         if has_zero:
             dmg_type = " | ".join(name for name, _ in non_zero)
+            if len(non_zero) > 1:
+                max_val = max(val for _, val in non_zero)
+                min_val = min(val for _, val in non_zero)
+                if max_val > 0 and min_val < 0.75 * max_val:
+                    return f"! | {dmg_type}", dmg_mv
             return dmg_type or "-", dmg_mv
 
         mn = min(val for _, val in non_zero)
