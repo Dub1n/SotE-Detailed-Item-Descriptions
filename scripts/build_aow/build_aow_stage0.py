@@ -3,7 +3,7 @@ import csv
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 GEM_CSV = ROOT / "PARAM/EquipParamGem.csv"
 BEHAVIOR_CSV = ROOT / "PARAM/BehaviorParam_PC.csv"
 SWORDARTS_CSV = ROOT / "PARAM/SwordArtsParam.csv"

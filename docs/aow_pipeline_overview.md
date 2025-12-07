@@ -16,11 +16,12 @@ This approach makes the skill data flow deterministic, debuggable, and repeatabl
   - `docs/(1.16.1)-Poise-Damage-MVs.csv` (weapon-specific `Base` poise for unique weapons).
   - `PARAM/EquipParamGem.csv` (mount flags → weapon categories for non-unique skills).
   - `docs/weapon_categories_poise.json` (category → display name + poise).
-  - `docs/skill_names_from_gem_and_behavior.txt` (canonical skill list, longest-first matching; built by `scripts/build_aow_stage0.py` from EquipParamGem + BehaviorParam_PC + SwordArtsParam).
+- `docs/skill_names_from_gem_and_behavior.txt` (canonical skill list, longest-first matching; built by `scripts/build_aow/build_aow_stage0.py` from EquipParamGem + BehaviorParam_PC + SwordArtsParam).
 - Output: `work/aow_pipeline/AoW-data-1.csv` (collated rows; no value transforms beyond lightweight labeling).
-- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `AtkId`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `overwriteAttackElementCorrectId`, `Overwrite Scaling`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`, `spEffectId0`, `spEffectId1`, `spEffectId2`, `spEffectId3`, `spEffectId4`.
+- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `AtkId`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `Overwrite Scaling`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`.
 - Resolution rules:
   - `Weapon`: if `Unique Skill Weapon` is populated, use it directly; else if the row name carries a `[Weapon Type]` prefix, use only that category unless the prefix is in the ignored list (`Slow`, `Var1`, `Var2`), in which case use the category mapping; otherwise, map the skill name to `EquipParamGem` mount flags **that have a valid `mountWepTextId` (not -1)** and emit the human-readable category names (space-separated).
+  - `Weapon` and `Weapon Poise` are pipe-delimited (` | `) lists to keep multi-word names intact; counts stay aligned (same number of entries in both fields).
   - `Weapon Poise`: if a unique weapon is present, read its `Base` from `Poise-Damage-MVs` (with category fallback when needed); if a bracketed weapon prefix is present, look up that category’s base poise; otherwise, emit category poise values from `weapon_categories_poise.json` aligned with the `Weapon` list.
   - `FP`: `0` when the name contains `(Lacking FP)`, else `1`.
   - `Charged`: `1` when the name contains `Charged`, else `0`.
@@ -40,14 +41,15 @@ flowchart TD
   D --> F["work/aow_pipeline/AoW-data-1.csv<br>collated + labeled rows"]
 ```
 
-## Stage 2 (placeholder): Normalize/augment (identity for now)
+## Stage 2: Collapse duplicate rows
 
 - Input: `work/aow_pipeline/AoW-data-1.csv`
-- Output: `work/aow_pipeline/AoW-data-2.csv` (currently identical to Stage 1; will host future normalizations/handedness merges).
+- Output: `work/aow_pipeline/AoW-data-2.csv`
+- Behavior: group rows by `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Weapon`, `PhysAtkAttribute`, `isAddBaseAtk`, `Overwrite Scaling`; drop `Name`, `Bullet`, `Tick`; sum numeric columns from `Phys MV` onward (non-numeric fields in that range keep the first value, e.g., `subCategory*`), keep the first value for columns before `Phys MV`.
 
 ```mermaid
 flowchart TD
-  A["work/aow_pipeline/AoW-data-1.csv"] --> B["Stage 2 (pending)<br>identity pass-through"] --> C["work/aow_pipeline/AoW-data-2.csv"]
+  A["work/aow_pipeline/AoW-data-1.csv"] --> B["Stage 2<br>collapse + sum numeric cols"] --> C["work/aow_pipeline/AoW-data-2.csv"]
 ```
 
 ## Stage 3 (placeholder): Final shaping for downstream
@@ -66,15 +68,16 @@ flowchart TD
 - `docs/AoW-data-1_example.csv` (authoritative sample rows for reference).
 - `docs/skill_names_from_gem_and_behavior.txt` (canonical skill names derived from EquipParamGem + Behavior + SwordArts).
 - `work/aow_pipeline/AoW-data-1.csv` (generated Stage 1 output).
+- `work/aow_pipeline/AoW-data-2.csv` (generated Stage 2 output).
 - `work/aow_pipeline/` (workspace for outputs and scratch; add temp files as needed).
-- `scripts/build_aow_stage1.py` (rebuild script).
+- `scripts/build_aow/build_aow_stage0.py` (skill list), `scripts/build_aow/build_aow_stage1.py` (stage 1 collate), `scripts/build_aow/build_aow_stage2.py` (stage 2 collapse).
 
 ## How to regenerate Stage 1
 
 ```sh
-python scripts/build_aow_stage1.py
+python scripts/build_aow/build_aow_stage1.py
 # optional: choose another output
-python scripts/build_aow_stage1.py --output work/aow_pipeline/custom.csv
+python scripts/build_aow/build_aow_stage1.py --output work/aow_pipeline/custom.csv
 ```
 
 Regenerate whenever upstream CSVs change. The script reports any skills missing mount categories or poise lookups so we can patch inputs instead of silently guessing.
@@ -83,9 +86,11 @@ Regenerate whenever upstream CSVs change. The script reports any skills missing 
 
 ```sh
 # 1) Build the unified skill list (Gem + Behavior + SwordArts)
-python scripts/build_aow_stage0.py
+python scripts/build_aow/build_aow_stage0.py
 # 2) Generate the collated AoW data
-python scripts/build_aow_stage1.py
+python scripts/build_aow/build_aow_stage1.py
+# 3) Collapse duplicate rows and sum numeric columns
+python scripts/build_aow/build_aow_stage2.py
 ```
 
 ## Remaining Implementation

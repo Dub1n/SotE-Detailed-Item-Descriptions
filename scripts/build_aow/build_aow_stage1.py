@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Tuple, Optional
 
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 ATTACK_DATA_CSV = ROOT / "docs/(1.16.1)-Ashes-of-War-Attack-Data.csv"
 POISE_MV_CSV = ROOT / "docs/(1.16.1)-Poise-Damage-MVs.csv"
 EQUIP_PARAM_GEM_CSV = ROOT / "PARAM/EquipParamGem.csv"
@@ -49,17 +49,11 @@ OUTPUT_COLUMNS = [
     "AtkHoly",
     "AtkSuperArmor",
     "isAddBaseAtk",
-    "overwriteAttackElementCorrectId",
     "Overwrite Scaling",
     "subCategory1",
     "subCategory2",
     "subCategory3",
     "subCategory4",
-    "spEffectId0",
-    "spEffectId1",
-    "spEffectId2",
-    "spEffectId3",
-    "spEffectId4",
 ]
 
 
@@ -285,7 +279,7 @@ def align_join(values: Iterable[str], count: int) -> str:
     for idx in range(count):
         val = vals[idx] if idx < len(vals) else None
         out.append(fmt_poise(val))
-    return " ".join(out).strip()
+    return " | ".join(out).strip()
 
 
 def build_rows(
@@ -371,7 +365,7 @@ def build_rows(
                 weapon_list = ["Unmapped"]
                 poise_list = ["-"]
 
-            weapon_field = " ".join(weapon_list).strip()
+            weapon_field = " | ".join(weapon_list).strip()
             poise_field = align_join(poise_list, len(weapon_list)) if weapon_list else ""
 
             out = OrderedDict()
@@ -405,17 +399,11 @@ def build_rows(
             out["AtkHoly"] = row.get("AtkHoly", "")
             out["AtkSuperArmor"] = row.get("AtkSuperArmor", "")
             out["isAddBaseAtk"] = row.get("isAddBaseAtk", "")
-            out["overwriteAttackElementCorrectId"] = row.get("overwriteAttackElementCorrectId", "")
             out["Overwrite Scaling"] = row.get("Overwrite Scaling", "")
             out["subCategory1"] = row.get("subCategory1", "")
             out["subCategory2"] = row.get("subCategory2", "")
             out["subCategory3"] = row.get("subCategory3", "")
             out["subCategory4"] = row.get("subCategory4", "")
-            out["spEffectId0"] = row.get("spEffectId0", "")
-            out["spEffectId1"] = row.get("spEffectId1", "")
-            out["spEffectId2"] = row.get("spEffectId2", "")
-            out["spEffectId3"] = row.get("spEffectId3", "")
-            out["spEffectId4"] = row.get("spEffectId4", "")
             rows.append(out)
     return rows, warnings
 
