@@ -47,16 +47,24 @@ def fmt_number(value: Any) -> str:
     return f"{num}".rstrip("0").rstrip(".")
 
 
-def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[List[Dict[str, str]], List[str]]:
+def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[List[Dict[str, str]], List[str], List[str]]:
     if "Phys MV" not in fieldnames:
         raise ValueError("Expected 'Phys MV' column in input.")
     numeric_start = fieldnames.index("Phys MV")
     output_columns = [col for col in fieldnames if col not in DROP_COLUMNS]
+    if "Holy MV" in output_columns:
+        idx = output_columns.index("Holy MV")
+        output_columns[idx + 1 : idx + 1] = ["Dmg Type", "Dmg MV"]
+    else:
+        output_columns.extend(["Dmg Type", "Dmg MV"])
+
     col_positions = {col: idx for idx, col in enumerate(fieldnames)}
     numeric_columns = [
         col
         for col in output_columns
-        if col_positions.get(col, 0) >= numeric_start and col != "PhysAtkAttribute"
+        if col in col_positions
+        and col_positions.get(col, 0) >= numeric_start
+        and col != "PhysAtkAttribute"
     ]
 
     grouped: Dict[Tuple[str, ...], Dict[str, Any]] = {}
@@ -92,18 +100,54 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
                 elif existing != incoming and incoming != "":
                     warnings.append(f"Disagreement on column '{col}' for key {key}: keeping '{existing}', saw '{incoming}'")
 
+    def compute_damage_meta(agg_row: Dict[str, Any]) -> Tuple[str, float]:
+        dmg_fields = [
+            ("Phys", "Phys MV"),
+            ("Magic", "Magic MV"),
+            ("Fire", "Fire MV"),
+            ("Ltng", "Ltng MV"),
+            ("Holy", "Holy MV"),
+        ]
+        values = []
+        for _, col in dmg_fields:
+            val = parse_float(agg_row.get(col, 0))
+            values.append(val if val is not None else 0.0)
+
+        non_zero = [(name, val) for (name, _), val in zip(dmg_fields, values) if val > 0]
+        has_zero = any(val == 0 for val in values)
+
+        if not non_zero:
+            return "-", 0.0
+
+        dmg_mv = sum(val for _, val in non_zero) / len(non_zero) / 100.0
+
+        if has_zero:
+            dmg_type = " | ".join(name for name, _ in non_zero)
+            return dmg_type or "-", dmg_mv
+
+        mn = min(val for _, val in non_zero)
+        mx = max(val for _, val in non_zero)
+        if mn > 0 and mx >= 2 * mn:
+            return "!", dmg_mv
+        return "-", dmg_mv
+
     # Finalize output rows with numeric formatting.
     output_rows: List[Dict[str, str]] = []
     for agg in grouped.values():
+        dmg_type, dmg_mv = compute_damage_meta(agg)
         out_row: Dict[str, str] = {}
         for col in output_columns:
             val = agg.get(col, "")
             if col in numeric_columns:
                 out_row[col] = fmt_number(val)
+            elif col == "Dmg Type":
+                out_row[col] = dmg_type
+            elif col == "Dmg MV":
+                out_row[col] = fmt_number(dmg_mv)
             else:
                 out_row[col] = val
         output_rows.append(out_row)
-    return output_rows, warnings
+    return output_rows, output_columns, warnings
 
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
@@ -130,8 +174,8 @@ def main() -> None:
     args = parser.parse_args()
 
     rows, fieldnames = read_rows(args.input)
-    output_rows, warnings = collapse_rows(rows, fieldnames)
-    write_csv(output_rows, [col for col in fieldnames if col not in DROP_COLUMNS], args.output)
+    output_rows, output_columns, warnings = collapse_rows(rows, fieldnames)
+    write_csv(output_rows, output_columns, args.output)
 
     print(f"Wrote {len(output_rows)} rows to {args.output}")
     if warnings:
