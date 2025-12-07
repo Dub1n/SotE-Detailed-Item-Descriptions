@@ -1511,8 +1511,6 @@ def collapse_variant_group(
                 uncharged_map[key] = variant
 
         all_keys = sorted(set(uncharged_map.keys()) | set(charged_map.keys()))
-        combined_lines: List[str] = []
-        all_weapons: List[str] = []
         for key in all_keys:
             base_variant = uncharged_map.get(
                 key,
@@ -1538,16 +1536,7 @@ def collapse_variant_group(
                     "hand_mode": key[2],
                 },
             )
-            lines_out = collapse_variants([base_variant, charged_variant])
-            lines_out = normalize_stance_strings(lines_out)
-            combined_lines.extend(lines_out)
-            for v in (base_variant, charged_variant):
-                w = v.get("weapon") or []
-                if isinstance(w, str):
-                    w = [w]
-                all_weapons.extend(w)
-        all_weapons = sorted(set(w for w in all_weapons if w))
-        output.append({"name": base_name, "weapon": all_weapons, "stats": combined_lines})
+            emit_entry(base_name, [base_variant, charged_variant])
     else:
         for variant in variants_sorted:
             emit_entry(variant["name"], [variant])
@@ -1707,11 +1696,13 @@ def main() -> None:
             else:
                 stance_categories = find_aow_categories(base_no_hash, aow_categories)
                 if stance_categories and weapon_label:
-                    filtered = [
-                        cat
-                        for cat in stance_categories
-                        if weapon_label.lower() in str(cat.get("name", "")).lower()
-                    ]
+                    label_lower = weapon_label.lower()
+                    filtered = []
+                    for cat in stance_categories:
+                        name = str(cat.get("name", ""))
+                        parts = [p.strip().lower() for p in name.split("/")]
+                        if label_lower == name.lower() or label_lower in parts:
+                            filtered.append(cat)
                     if filtered:
                         stance_categories = filtered
 
