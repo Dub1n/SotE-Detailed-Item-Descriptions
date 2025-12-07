@@ -12,11 +12,15 @@ Black Flame Tornado
 Blade of Death
 Blade of Gold
 Blind Spot
+Blindfold of Happiness
 Blinkbolt
+Blinkbolt: Long-hafted Axe
+Blinkbolt: Twinaxe
 Blood Blade
 Blood Tax
 Bloodblade Dance
 Bloodboon Ritual
+Bloodfiends' Bloodboon
 Bloodhound's Finesse
 Bloodhound's Step
 Bloody Slash
@@ -31,18 +35,27 @@ Charge Forth
 Chilling Mist
 Chilling/Poisonous Mist
 Claw Flick
+Contagious Fury
 Corpse Piler
 Corpse Wax Cutter
 Cragblade
 Cursed-Blood Slice
+Darkness
+Deadly Dance
+Deadly Poison Spray
 Death Flare
 Destined Death
 Determination
+Devonia's Vortex
 Devourer of Worlds
+Discus Hurl
 Divine Beast Frost Stomp
 Double Slash
+Dragonform Flame
+Dragonwound Slash
 Dryleaf Whirlwind
 Dynast's Finesse
+Dynastic Sickleplay
 Earthshaker
 Enchanted Shot
 Endure
@@ -50,7 +63,11 @@ Eochaid's Dancing Blade
 Erdtree Slam
 Eruption
 Establish Order
+Euporia Vortex
+Familal Rancor
 Familial Rancor
+Fan Shot
+Feeble Lord's Frenzied Flame
 Firebreather
 Fires of Slumber
 Flame Dance
@@ -59,6 +76,8 @@ Flame Spear
 Flame Spit
 Flame of the Redmanes
 Flaming Strike
+Flare- O Serpent
+Flower Dragonbolt
 Flowing Form
 Frenzyflame Thrust
 Ghostflame Call
@@ -68,6 +87,7 @@ Glintblade Phalanx
 Glintstone Dart
 Glintstone Pebble
 Gold Breaker
+Golden Crux
 Golden Land
 Golden Parry
 Golden Retaliation
@@ -77,57 +97,85 @@ Golden Vow
 Gravitas
 Gravity Bolt
 Great Oracular Bubble
+Great-Serpent Hunt
 Ground Slam
 Hoarah Loux's Earthshaker
 Hoarfrost Stomp
 Holy Ground
+Hone Blade
+Horn Calling
+Horn Calling: Storm
 I Command Thee Kneel!
 Ice Lightning Sword
 Ice Spear
 Igon's Drake Hunt
 Impaling Thrust
+Jori's Inquisition
 Kick
 Knowledge Above All
+Kowtower's Resentment
 Last Rites
 Lifesteal Fist
+Light
 Lightning Ram
 Lightning Ram - Roll
 Lightning Slash
+Lightspeed Slash
 Lion's Claw
 Loretta's Slash
+Madding Spear-Hand Strike
 Magma Guillotine
 Magma Shower
+Messmer's Assault
 Mighty Shot
 Miquella's Ring of Light
+Mists of Eternal Sleep
 Mists of Slumber
+Moon-and-Fire Stance
+Moonlight Greatsword
+Moore's Charge
 Nebula
+Needle Piercer
 Night-and-Flame Stance
 No Skill
 Oath of Vengeance
 Onyx Lords' Repulsion
+Onze's Line of Stars
 Oracular Bubble
 Ordovis's Vortex
 Overhead Stance
+Painful Strike
 Palm Blast
 Parry
 Phantom Slash
 Piercing Fang
 Piercing Throw
 Poison Moth Flight
+Poison Spear-Hand Strike
 Poisonous Mist
 Prayerful Strike
 Prelate's Charge
+Promised Consort
 Quickstep
+Radahn's Rain
 Raging Beast
 Rain of Arrows
 Rallying Standard
+Rancor Shot
+Rancor Slash
 Raptor of the Mists
 Raptor of the Mists / Golden Land
+Red Bear Hunt
 Reduvia Blood Blade
 Regal Beastclaw
 Regal Roar
+Repeating Fire
 Repeating Thrust
+Revenge of the Night
+Revenger's Blade
+Roaring Bash
 Rolling Sparks
+Romina's Purification
 Rosus's Summons
 Royal Knight's Resolve
 Ruinous Ghostflame
@@ -137,9 +185,11 @@ Sacred Phalanx
 Sacred Ring of Light
 Savage Claws
 Savage Lion's Claw
+Scattershot (Claws)
 Scattershot Throw
 Sea of Magma
 Seppuku
+Shadow Sunflower Headbutts
 Shared Order
 Shield Bash
 Shield Crash
@@ -150,12 +200,16 @@ Shriek of Milos
 Shriek of Sorrow
 Siluria's Woe
 Sky Shot
+Sleep Evermore
+Smithing Art Spears
+Solitary Moon Slash
 Sorcery of the Crozier
 Soul Stifler
 Spearcall Ritual
 Spectral Lance
 Spinning Chain
 Spinning Gravity Thrust
+Spinning Guillotine
 Spinning Slash
 Spinning Strikes
 Spinning Weapon
@@ -184,8 +238,10 @@ Thunderstorm
 Tongues of Fire
 Torch Attack
 Transient Moonlight
+Tremendous Phalanx
 Troll's Roar
 Unblockable Blade
+Unending Dance
 Unsheathe
 Vacuum Slice
 Viper Bite
@@ -196,10 +252,13 @@ Waterfowl Dance
 Wave of Destruction
 Wave of Gold
 Waves of Darkness
+Weed Cutter
+White Light Charge
 White Shadow's Lure
 Wild Strikes
 Wild Strikes / Dodge Movement
 Wild Strikes / Slam Movement
 Wing Stance
+Witching Hour Slash
 Wolf's Assault
 Zamor Ice Storm

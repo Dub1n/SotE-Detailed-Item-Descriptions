@@ -14,7 +14,7 @@ This approach makes the skill data flow deterministic, debuggable, and repeatabl
   - `docs/(1.16.1)-Poise-Damage-MVs.csv` (weapon-specific `Base` poise for unique weapons).
   - `PARAM/EquipParamGem.csv` (mount flags → weapon categories for non-unique skills).
   - `docs/weapon_categories_poise.json` (category → display name + poise).
-  - `docs/skill_names_from_gem.txt` (canonical skill list, longest-first matching).
+  - `docs/skill_names_from_gem_and_behavior.txt` (canonical skill list, longest-first matching; built by `scripts/build_aow_stage0.py` from EquipParamGem + BehaviorParam_PC + SwordArtsParam).
 - Output: `work/aow_pipeline/AoW-data-1.csv` (collated rows; no value transforms beyond lightweight labeling).
 - Column shape (initial): `Skill`, `Weapon`, `Weapon Poise`, `Weapon Source`, `FP`, `Charged`, `Part`, `Follow-up`, `Hand`, `Step`, `Bullet`, `Name`, `AtkId`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `overwriteAttackElementCorrectId`, `Overwrite Scaling`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`, `spEffectId0`, `spEffectId1`, `spEffectId2`, `spEffectId3`, `spEffectId4`.
 - Resolution rules:
@@ -58,7 +58,7 @@ flowchart TD
 ## Filesystem layout
 - `docs/aow_pipeline_overview.md` (this plan).
 - `docs/AoW-data-1_example.csv` (authoritative sample rows for reference).
-- `docs/skill_names_from_gem_and_behavior.txt` (canonical skill names derived from EquipParamGem + Behavior).
+- `docs/skill_names_from_gem_and_behavior.txt` (canonical skill names derived from EquipParamGem + Behavior + SwordArts).
 - `work/aow_pipeline/AoW-data-1.csv` (generated Stage 1 output).
 - `work/aow_pipeline/` (workspace for outputs and scratch; add temp files as needed).
 - `scripts/build_aow_stage1.py` (rebuild script).
