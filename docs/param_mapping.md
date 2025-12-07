@@ -6,7 +6,7 @@ The goal is to turn each skill entry in `work/responses/ready/skill.json` into a
 
 All of the numbers we care about sit on this graph. It helps to keep the join keys in mind before diving in:
 
-```
+```graph
 Animation (TAE) ──> BehaviorParam[_PC] ──┬──> AtkParam_Pc ──> SpEffectParam (on-hit)
                                          ├──> Bullet ──────> AtkParam_Pc + SpEffectParam
                                          └──> SpEffectParam (pure buffs)
