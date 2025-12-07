@@ -129,7 +129,8 @@ def extract_prefix(name: str) -> Tuple[str, str]:
 def infer_part(name: str, matched_skill: Optional[str] = None) -> str:
     base = strip_weapon_prefix(name)
     if matched_skill:
-        base = re.sub(rf"(?i)\b{re.escape(matched_skill)}\b", "", base, count=1)
+        pattern = rf"(?i)(^|[\s\[\(-]){re.escape(matched_skill)}(?=$|[\s\]\)-])"
+        base = re.sub(pattern, " ", base, count=1)
     base = re.sub(r"\(Lacking FP\)", "", base, flags=re.IGNORECASE)
     base = re.sub(r"\b(1h|2h)\b", "", base, flags=re.IGNORECASE)
     base = re.sub(r"\bCharged\b", "", base, flags=re.IGNORECASE)
@@ -434,9 +435,49 @@ def main() -> None:
     mount_map = build_gem_mount_map(flag_to_info, skill_names)
     poise_lookup = load_poise_lookup()
     rows, warnings = build_rows(mount_map, category_poise, poise_lookup, skill_names)
+    before: Dict[str, Dict[str, str]] = {}
+    if args.output.exists():
+        with args.output.open() as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                before[row["Name"]] = row
     write_csv(rows, args.output)
 
     print(f"Wrote {len(rows)} rows to {args.output}")
+    added = []
+    removed = []
+    changed = []
+    if before:
+        after_map = {row["Name"]: row for row in rows}
+        for name, prev in before.items():
+            if name not in after_map:
+                removed.append(name)
+                continue
+            curr = after_map[name]
+            if any(str(prev.get(col, "")) != str(curr.get(col, "")) for col in OUTPUT_COLUMNS):
+                changed.append(name)
+        for name in after_map:
+            if name not in before:
+                added.append(name)
+    total_diff = len(added) + len(removed) + len(changed)
+    if total_diff:
+        print(f"Row deltas: added={len(added)}, removed={len(removed)}, changed={len(changed)}")
+        if total_diff <= 50:
+            if added:
+                print("  Added:")
+                for n in sorted(added):
+                    print(f"    - {n}")
+            if removed:
+                print("  Removed:")
+                for n in sorted(removed):
+                    print(f"    - {n}")
+            if changed:
+                print("  Changed:")
+                for n in sorted(changed):
+                    print(f"    - {n}")
+    else:
+        if before:
+            print("No row content changes detected.")
     if warnings:
         for kind, items in warnings.items():
             uniq = sorted(set(items))
