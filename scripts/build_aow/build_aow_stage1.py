@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ATTACK_DATA_CSV = ROOT / "docs/(1.16.1)-Ashes-of-War-Attack-Data.csv"
 POISE_MV_CSV = ROOT / "docs/(1.16.1)-Poise-Damage-MVs.csv"
 EQUIP_PARAM_GEM_CSV = ROOT / "PARAM/EquipParamGem.csv"
+EQUIP_PARAM_WEAPON_CSV = ROOT / "PARAM/EquipParamWeapon.csv"
 CATEGORY_POISE_JSON = ROOT / "docs/weapon_categories_poise.json"
 SKILL_LIST_TXT = ROOT / "docs/skill_names_from_gem_and_behavior.txt"
 DEFAULT_OUTPUT = ROOT / "work/aow_pipeline/AoW-data-1.csv"
@@ -32,6 +33,11 @@ OUTPUT_COLUMNS = [
     "Weapon Source",
     "Weapon",
     "Weapon Poise",
+    "Wep Phys",
+    "Wep Magic",
+    "Wep Fire",
+    "Wep Ltng",
+    "Wep Holy",
     "Phys MV",
     "Magic MV",
     "Fire MV",
@@ -214,6 +220,25 @@ def detect_tick(name: str) -> int:
     return 1 if re.search(r"\bTick\b", name, flags=re.IGNORECASE) else 0
 
 
+def load_weapon_base_stats() -> Dict[str, Dict[str, str]]:
+    stats: Dict[str, Dict[str, str]] = {}
+    with EQUIP_PARAM_WEAPON_CSV.open() as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            name = (row.get("Name") or "").strip()
+            if not name:
+                continue
+            key = name.lower()
+            stats[key] = {
+                "phys": row.get("attackBasePhysics", "") or "-",
+                "magic": row.get("attackBaseMagic", "") or "-",
+                "fire": row.get("attackBaseFire", "") or "-",
+                "ltng": row.get("attackBaseThunder", "") or "-",
+                "holy": row.get("attackBaseDark", "") or "-",
+            }
+    return stats
+
+
 def build_gem_mount_map(flag_to_info: Dict[str, Dict[str, float]], skill_names: List[str]) -> Dict[str, List[str]]:
     """Map canonical skill -> list of weapon category names."""
     mount_map: Dict[str, List[str]] = {}
@@ -286,6 +311,7 @@ def build_rows(
     category_poise: Dict[str, float],
     poise_lookup: Dict[str, str],
     skill_names: List[str],
+    weapon_base_stats: Dict[str, Dict[str, str]],
 ) -> Tuple[List[OrderedDict], Dict[str, List[str]]]:
     rows: List[OrderedDict] = []
     warnings: Dict[str, List[str]] = defaultdict(list)
@@ -313,6 +339,7 @@ def build_rows(
             weapon_list: List[str] = []
             poise_list: List[str] = []
             weapon_source = ""
+            wep_phys = wep_magic = wep_fire = wep_ltng = wep_holy = "-"
 
             if unique_weapon:
                 weapon_source = "unique"
@@ -335,6 +362,14 @@ def build_rows(
                     poise_list = [None]
                 else:
                     poise_list = [poise_val]
+
+                stats = weapon_base_stats.get(unique_weapon.lower())
+                if stats:
+                    wep_phys = stats.get("phys", "-")
+                    wep_magic = stats.get("magic", "-")
+                    wep_fire = stats.get("fire", "-")
+                    wep_ltng = stats.get("ltng", "-")
+                    wep_holy = stats.get("holy", "-")
             elif prefix:
                 weapon_source = "prefix"
                 weapon_list = [prefix]
@@ -381,6 +416,11 @@ def build_rows(
             out["Weapon Source"] = weapon_source
             out["Weapon"] = weapon_field
             out["Weapon Poise"] = poise_field
+            out["Wep Phys"] = wep_phys
+            out["Wep Magic"] = wep_magic
+            out["Wep Fire"] = wep_fire
+            out["Wep Ltng"] = wep_ltng
+            out["Wep Holy"] = wep_holy
             out["Phys MV"] = row.get("Phys MV", "")
             out["Magic MV"] = row.get("Magic MV", "")
             out["Fire MV"] = row.get("Fire MV", "")
@@ -429,7 +469,10 @@ def main() -> None:
     flag_to_info, category_poise = load_category_flags()
     mount_map = build_gem_mount_map(flag_to_info, skill_names)
     poise_lookup = load_poise_lookup()
-    rows, warnings = build_rows(mount_map, category_poise, poise_lookup, skill_names)
+    weapon_base_stats = load_weapon_base_stats()
+    rows, warnings = build_rows(
+        mount_map, category_poise, poise_lookup, skill_names, weapon_base_stats
+    )
     before: Dict[str, Dict[str, str]] = {}
     if args.output.exists():
         with args.output.open() as f:

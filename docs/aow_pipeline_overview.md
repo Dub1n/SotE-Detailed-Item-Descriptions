@@ -18,11 +18,12 @@ This approach makes the skill data flow deterministic, debuggable, and repeatabl
   - `docs/weapon_categories_poise.json` (category → display name + poise).
 - `docs/skill_names_from_gem_and_behavior.txt` (canonical skill list, longest-first matching; built by `scripts/build_aow/build_aow_stage0.py` from EquipParamGem + BehaviorParam_PC + SwordArtsParam).
 - Output: `work/aow_pipeline/AoW-data-1.csv` (collated rows; no value transforms beyond lightweight labeling).
-- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `Overwrite Scaling`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`.
+- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `Overwrite Scaling`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`.
 - Resolution rules:
   - `Weapon`: if `Unique Skill Weapon` is populated, use it directly; else if the row name carries a `[Weapon Type]` prefix, use only that category unless the prefix is in the ignored list (`Slow`, `Var1`, `Var2`), in which case use the category mapping; otherwise, map the skill name to `EquipParamGem` mount flags **that have a valid `mountWepTextId` (not -1)** and emit the human-readable category names (space-separated).
   - `Weapon` and `Weapon Poise` are pipe-delimited (` | `) lists to keep multi-word names intact; counts stay aligned (same number of entries in both fields).
   - `Weapon Poise`: if a unique weapon is present, read its `Base` from `Poise-Damage-MVs` (with category fallback when needed); if a bracketed weapon prefix is present, look up that category’s base poise; otherwise, emit category poise values from `weapon_categories_poise.json` aligned with the `Weapon` list.
+  - `Wep Phys`/`Wep Magic`/`Wep Fire`/`Wep Ltng`/`Wep Holy`: for `Weapon Source` == `unique`, pull `attackBasePhysics`/`attackBaseMagic`/`attackBaseFire`/`attackBaseThunder`/`attackBaseDark` from `EquipParamWeapon` by weapon name; otherwise `-`.
   - `FP`: `0` when the name contains `(Lacking FP)`, else `1`.
   - `Charged`: `1` when the name contains `Charged`, else `0`.
   - `Part`: inferred from name tokens without charged/hand/follow-up labels; removes `Bullet` and strips outer parentheses when the whole part is wrapped. Defaults to `Main`, with `Loop` preserved when present.
@@ -45,7 +46,7 @@ flowchart TD
 
 - Input: `work/aow_pipeline/AoW-data-1.csv`
 - Output: `work/aow_pipeline/AoW-data-2.csv`
-- Behavior: group rows by `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Weapon`, `PhysAtkAttribute`, `isAddBaseAtk`, `Overwrite Scaling`; drop `Name`, `Bullet`, `Tick`, `AtkId`; sum numeric columns from `Phys MV` onward except `PhysAtkAttribute` (non-numeric fields in that range keep the first value, e.g., `subCategory*`), keep the first value for columns before `Phys MV`. Adds derived columns after `Holy MV`: `Dmg Type` (`-` if all five MVs are non-zero and within 2x, `!` if any non-zero is >=2x another, otherwise list non-zero types when zeros exist) and `Dmg MV` (average of non-zero Phys/Magic/Fire/Ltng/Holy MVs divided by 100).
+- Behavior: group rows by `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Weapon`, `PhysAtkAttribute`, `isAddBaseAtk`, `Overwrite Scaling`; drop `Name`, `Tick`, `AtkId`; sum numeric columns from `Phys MV` onward except `PhysAtkAttribute` (non-numeric fields in that range keep the first value, e.g., `subCategory*`), keep the first value for columns before `Phys MV`. Adds derived columns after `Holy MV`: `Dmg Type` (`-` if all five MVs are non-zero and within 2x, `!` if any non-zero is >=2x another, otherwise list non-zero types when zeros exist) and `Dmg MV` (average of non-zero Phys/Magic/Fire/Ltng/Holy MVs divided by 100).
 
 ```mermaid
 flowchart TD

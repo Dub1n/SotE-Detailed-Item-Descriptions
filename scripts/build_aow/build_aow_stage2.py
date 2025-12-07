@@ -16,13 +16,14 @@ GROUP_KEYS = [
     "FP",
     "Charged",
     "Step",
+    "Bullet",
     "Weapon",
     "PhysAtkAttribute",
     "isAddBaseAtk",
     "Overwrite Scaling",
 ]
 
-DROP_COLUMNS = {"Name", "Bullet", "Tick", "AtkId"}
+DROP_COLUMNS = {"Name", "Tick", "AtkId"}
 
 
 def parse_float(value: Any) -> float | None:
@@ -52,6 +53,11 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
         raise ValueError("Expected 'Phys MV' column in input.")
     numeric_start = fieldnames.index("Phys MV")
     output_columns = [col for col in fieldnames if col not in DROP_COLUMNS]
+    # Ensure Bullet sits next to Step in the output order.
+    if "Bullet" in output_columns and "Step" in output_columns:
+        output_columns.remove("Bullet")
+        step_idx = output_columns.index("Step")
+        output_columns.insert(step_idx + 1, "Bullet")
     if "Holy MV" in output_columns:
         idx = output_columns.index("Holy MV")
         output_columns[idx + 1 : idx + 1] = ["Dmg Type", "Dmg MV"]
