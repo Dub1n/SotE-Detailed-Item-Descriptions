@@ -258,6 +258,10 @@ def collapse_rows(
         name = row.get("Name", "")
         raw_row = dict(row)
         working_row = dict(row)
+        # Normalize Dmg Type to "-" when Dmg MV is 0 before grouping.
+        dmg_mv_val = parse_float(working_row.get("Dmg MV"))
+        if dmg_mv_val == 0:
+            working_row["Dmg Type"] = "-"
         if name in force_groups:
             group_id = force_groups[name]
             key = ("__FORCED__", group_id)
@@ -325,10 +329,20 @@ def collapse_rows(
                 if existing == "" and incoming != "":
                     agg[col] = incoming
                 elif existing != incoming and incoming != "":
-                    warnings.append(
-                        f"Disagreement on column '{col}' for key {key}: "
-                        f"keeping '{existing}', saw '{incoming}'"
-                    )
+                    skip_warn = False
+                    if col == "Dmg Type" and (
+                        existing == "-" or incoming == "-"
+                    ):
+                        skip_warn = True
+                    if col == "Overwrite Scaling" and (
+                        existing == "null" or incoming == "null"
+                    ):
+                        skip_warn = True
+                    if not skip_warn:
+                        warnings.append(
+                            f"Disagreement on column '{col}' for key {key}: "
+                            f"keeping '{existing}', saw '{incoming}'"
+                        )
 
     def zero_for_disabled(agg_row: Dict[str, Any]) -> None:
         try:
@@ -415,6 +429,9 @@ def collapse_rows(
 
         if attr and attr not in {"252", "253"}:
             dmg_type = attr
+        # Force Dmg Type to "-" when aggregate MV is 0.
+        if dmg_mv == 0:
+            dmg_type = "-"
         return dmg_type, dmg_mv
 
     def has_nonzero_damage_data(agg_row: Mapping[str, Any]) -> bool:
@@ -434,6 +451,16 @@ def collapse_rows(
     output_rows: List[Dict[str, str]] = []
     for agg in grouped.values():
         dmg_type, dmg_mv = compute_damage_meta(agg)
+        # Overwrite Scaling -> "null" when all relevant damage fields are 0.
+        if (
+            parse_float(agg.get("Dmg MV", 0)) == 0
+            and parse_float(agg.get("Weapon Buff MV", 0)) == 0
+            and all(
+                parse_float(agg.get(col, 0)) == 0
+                for col in ["AtkPhys", "AtkMag", "AtkFire", "AtkLtng", "AtkHoly"]
+            )
+        ):
+            agg["Overwrite Scaling"] = "null"
         if not has_nonzero_damage_data(agg):
             continue
         poise_range_text, poise_range_bounds = summarize_range(
