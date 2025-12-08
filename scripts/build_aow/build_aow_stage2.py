@@ -1,5 +1,6 @@
 import argparse
 import csv
+from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 from typing import Dict, List, Tuple, Any
 
@@ -24,6 +25,11 @@ GROUP_KEYS = [
 ]
 
 DROP_COLUMNS = {"Name", "Tick", "AtkId"}
+STANCE_SUPERARMOR_COL = "AtkSuperArmor"
+RENAME_MAP = {
+    "Weapon Poise": "Wep Poise Range",
+    "Poise Dmg MV": "Stance Dmg",
+}
 
 
 def parse_float(value: Any) -> float | None:
@@ -50,11 +56,60 @@ def fmt_number(value: Any) -> str:
     return text.rstrip("0").rstrip(".")
 
 
+def round_half_up(value: float) -> int:
+    return int(Decimal(str(value)).quantize(Decimal("1"), rounding=ROUND_HALF_UP))
+
+
+def summarize_range(raw_value: Any) -> Tuple[str, Tuple[float, float] | None]:
+    """
+    Collapse a pipe-delimited range like '5.5 | 5' to a min-max string.
+    Returns (text, (min, max)) where the bounds are None when no numbers are found.
+    """
+    text = str(raw_value or "").strip()
+    if not text:
+        return "", None
+    values = []
+    for part in text.split("|"):
+        piece = part.strip()
+        if not piece:
+            continue
+        num = parse_float(piece)
+        if num is not None:
+            values.append(num)
+    if not values:
+        return text, None
+    mn, mx = min(values), max(values)
+    if mn == mx:
+        return fmt_number(mn), (mn, mx)
+    return f"{fmt_number(mn)}-{fmt_number(mx)}", (mn, mx)
+
+
+def compute_stance_damage(poise_range: Tuple[float, float] | None, poise_mv_value: Any, super_armor_value: Any) -> str:
+    if poise_range is None:
+        return ""
+    poise_mv = parse_float(poise_mv_value)
+    if poise_mv is None:
+        return ""
+    super_val = parse_float(super_armor_value)
+    if super_val is None:
+        super_val = 0.0
+    mn, mx = poise_range
+    low = round_half_up(mn * poise_mv / 100 + super_val)
+    high = round_half_up(mx * poise_mv / 100 + super_val)
+    if low == high:
+        return str(low)
+    return f"{low}-{high}"
+
+
 def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[List[Dict[str, str]], List[str], List[str]]:
     if "Phys MV" not in fieldnames:
         raise ValueError("Expected 'Phys MV' column in input.")
     numeric_start = fieldnames.index("Phys MV")
-    output_columns = [col for col in fieldnames if col not in DROP_COLUMNS]
+    base_output_columns = [
+        col for col in fieldnames if col not in DROP_COLUMNS and col != STANCE_SUPERARMOR_COL
+    ]
+    output_columns = [RENAME_MAP.get(col, col) for col in base_output_columns]
+    output_source_map = {out: src for out, src in zip(output_columns, base_output_columns)}
     has_phys_attr = "PhysAtkAttribute" in fieldnames
     # Ensure Bullet sits next to Step in the output order.
     if "Bullet" in output_columns and "Step" in output_columns:
@@ -66,25 +121,38 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
         output_columns[idx + 1 : idx + 1] = ["Dmg Type", "Dmg MV"]
     else:
         output_columns.extend(["Dmg Type", "Dmg MV"])
+    output_source_map["Dmg Type"] = None
+    output_source_map["Dmg MV"] = None
     if "PhysAtkAttribute" in output_columns:
         output_columns.remove("PhysAtkAttribute")
+        output_source_map.pop("PhysAtkAttribute", None)
     col_positions = {col: idx for idx, col in enumerate(fieldnames)}
     numeric_columns = [
         col
         for col in output_columns
-        if col in col_positions
-        and col_positions.get(col, 0) >= numeric_start
-        and col != "PhysAtkAttribute"
+        if (source := output_source_map.get(col)) in col_positions
+        and col_positions.get(source, 0) >= numeric_start
+        and source != "PhysAtkAttribute"
     ]
 
     grouped: Dict[Tuple[str, ...], Dict[str, Any]] = {}
     warnings: List[str] = []
+
+    def source_value(row: Dict[str, str], col: str) -> Any:
+        source_col = output_source_map.get(col, col)
+        return row.get(source_col, "")
+
+    def parse_super(val: Any) -> float:
+        parsed = parse_float(val)
+        return parsed if parsed is not None else 0.0
+
     for row in rows:
         key = tuple(row.get(col, "") for col in GROUP_KEYS)
         if key not in grouped:
-            grouped[key] = {col: row.get(col, "") for col in output_columns}
+            grouped[key] = {col: source_value(row, col) for col in output_columns}
             if has_phys_attr:
                 grouped[key]["_phys_attr"] = row.get("PhysAtkAttribute", "")
+            grouped[key]["_stance_super"] = parse_super(row.get(STANCE_SUPERARMOR_COL, ""))
             # Normalize numeric seeds to floats when possible.
             for col in numeric_columns:
                 num = parse_float(grouped[key].get(col, ""))
@@ -95,9 +163,10 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
         agg = grouped[key]
         if has_phys_attr and "_phys_attr" not in agg:
             agg["_phys_attr"] = row.get("PhysAtkAttribute", "")
+        agg["_stance_super"] = agg.get("_stance_super", 0.0) + parse_super(row.get(STANCE_SUPERARMOR_COL, ""))
         for col in output_columns:
             if col in numeric_columns:
-                num = parse_float(row.get(col, ""))
+                num = parse_float(source_value(row, col))
                 if num is None:
                     continue
                 current = parse_float(agg.get(col, 0))
@@ -108,7 +177,7 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
             else:
                 # Keep the first value; record disagreement for visibility.
                 existing = agg.get(col, "")
-                incoming = row.get(col, "")
+                incoming = source_value(row, col)
                 if existing == "" and incoming != "":
                     agg[col] = incoming
                 elif existing != incoming and incoming != "":
@@ -195,10 +264,18 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
     output_rows: List[Dict[str, str]] = []
     for agg in grouped.values():
         dmg_type, dmg_mv = compute_damage_meta(agg)
+        poise_range_text, poise_range_bounds = summarize_range(agg.get("Wep Poise Range", ""))
+        stance_dmg = compute_stance_damage(
+            poise_range_bounds, agg.get("Stance Dmg", ""), agg.get("_stance_super", 0.0)
+        )
         out_row: Dict[str, str] = {}
         for col in output_columns:
             val = agg.get(col, "")
-            if col in numeric_columns:
+            if col == "Wep Poise Range":
+                out_row[col] = poise_range_text
+            elif col == "Stance Dmg":
+                out_row[col] = stance_dmg
+            elif col in numeric_columns:
                 out_row[col] = fmt_number(val)
             elif col == "Dmg Type":
                 out_row[col] = dmg_type

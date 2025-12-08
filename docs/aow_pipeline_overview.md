@@ -9,6 +9,25 @@ This approach makes the skill data flow deterministic, debuggable, and repeatabl
 - Keep every stage reproducible via scripts so we can regenerate when upstream CSVs change.
 - Future stages stay pass-through until we design their transforms; this keeps the pipeline shape stable while we iterate.
 
+## Stage 0: Build canonical skill list
+
+- Input: `PARAM/EquipParamGem.csv`, `PARAM/BehaviorParam_PC.csv`, `PARAM/SwordArtsParam.csv`
+- Output: `docs/skill_names_from_gem_and_behavior.txt` (longest-first sorted skill names for Stage 1 resolution)
+- Behavior: collect Gem names (strip `Ash of War:` prefix, drop test rows), collect `[AOW]` Behavior names, collect SwordArts names, union them, sort, and write to disk. Reports Gem-only, Behavior-only, and SwordArts-only names.
+
+```mermaid
+flowchart LR
+  subgraph Stage0Inputs["Stage 0 inputs"]
+    gemNames["EquipParamGem.csv<br>Name (cleaned)"]
+    behaviorNames["BehaviorParam_PC.csv<br>Name containing [AOW]"]
+    swordArtsNames["SwordArtsParam.csv<br>Name"]
+  end
+  combine0["Union + sort (desc length)"] --> output0["skill_names_from_gem_and_behavior.txt"]
+  gemNames --> combine0
+  behaviorNames --> combine0
+  swordArtsNames --> combine0
+```
+
 ## Stage 1: Build `AoW-data-1.csv`
 
 - Inputs:
@@ -35,23 +54,286 @@ This approach makes the skill data flow deterministic, debuggable, and repeatabl
   - `Bullet`: `1` when the name contains `Bullet`, else `0`.
 
 ```mermaid
-flowchart TD
-  A["Attack data<br>(1.16.1)-Ashes-of-War-Attack-Data.csv<br>includes Unique Skill Weapon"] --> D["Build AoW-data-1"]
-  B["Poise MVs<br>(1.16.1)-Poise-Damage-MVs.csv<br>Base per weapon/class"] --> D
-  C["EquipParamGem.csv<br>mount flags"] --> D
-  E["weapon_categories_poise.json<br>category -> name + poise"] --> D
-  D --> F["work/aow_pipeline/AoW-data-1.csv<br>collated + labeled rows"]
+flowchart LR
+  subgraph AttackCSV["(1.16.1)-Ashes-of-War-Attack-Data.csv"]
+    aName["Name"]
+    aUnique["Unique Skill Weapon"]
+    aElemMVs["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
+    aStatus["Status MV"]
+    aBuff["Weapon Buff MV"]
+    aPoiseMV["Poise Dmg MV"]
+    aPhysAttr["PhysAtkAttribute"]
+    aAtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
+    aAtkSA["AtkSuperArmor"]
+    aIsAdd["isAddBaseAtk"]
+    aOverwrite["Overwrite Scaling"]
+    aSubCats["subCategory1-4"]
+  end
+  subgraph Stage1Refs["Reference data"]
+    refSkillList["skill_names_from_gem_and_behavior.txt"]
+    refPoiseMVs["(1.16.1)-Poise-Damage-MVs.csv"]
+    refGem["EquipParamGem.csv (mount flags)"]
+    refCategories["weapon_categories_poise.json"]
+    refWeapons["EquipParamWeapon.csv (base stats + disable)"]
+  end
+  subgraph Stage1Outputs["AoW-data-1 columns"]
+    o1Name["Name"]
+    o1Skill["Skill"]
+    o1Follow["Follow-up"]
+    o1Hand["Hand"]
+    o1Part["Part"]
+    o1FP["FP"]
+    o1Charged["Charged"]
+    o1Step["Step"]
+    o1Bullet["Bullet"]
+    o1Tick["Tick"]
+    o1WeaponSrc["Weapon Source"]
+    o1Weapon["Weapon"]
+    o1WeaponPoise["Weapon Poise"]
+    o1Disable["Disable Gem Attr"]
+    o1WepBases["Wep Phys / Wep Magic / Wep Fire / Wep Ltng / Wep Holy"]
+    o1ElemMVs["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
+    o1Status["Status MV"]
+    o1Buff["Weapon Buff MV"]
+    o1PoiseMV["Poise Dmg MV"]
+    o1PhysAttr["PhysAtkAttribute"]
+    o1AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
+    o1AtkSA["AtkSuperArmor"]
+    o1IsAdd["isAddBaseAtk"]
+    o1Overwrite["Overwrite Scaling"]
+    o1SubCats["subCategory1-4"]
+  end
+
+  aName --> skillResolve["Resolve Skill (longest match vs skill list, strip prefixes/variants)"]
+  refSkillList --> skillResolve
+  skillResolve --> o1Skill
+  aName --> weaponResolve
+
+  aName --> followDetect["Detect R1/R2 -> Follow-up"]
+  followDetect --> o1Follow
+
+  aName --> handDetect["Detect 1h/2h -> Hand"]
+  handDetect --> o1Hand
+
+  aName --> partInfer["Infer Part (strip tokens, skill, brackets)"]
+  skillResolve --> partInfer
+  partInfer --> o1Part
+
+  aName --> fpDetect["Detect (Lacking FP) -> FP"]
+  fpDetect --> o1FP
+
+  aName --> chargedDetect["Detect Charged token -> Charged"]
+  chargedDetect --> o1Charged
+
+  aName --> stepDetect["Extract #n -> Step (default 1)"]
+  stepDetect --> o1Step
+
+  aName --> bulletDetect["Detect Bullet token -> Bullet"]
+  bulletDetect --> o1Bullet
+
+  aName --> tickDetect["Detect Tick token -> Tick"]
+  tickDetect --> o1Tick
+
+  aName --> o1Name
+
+  aUnique --> weaponResolve["Resolve weapon/source + poise + bases"]
+  refSkillList --> weaponResolve
+  refGem --> weaponResolve
+  refCategories --> weaponResolve
+  refPoiseMVs --> weaponResolve
+  refWeapons --> weaponResolve
+  weaponResolve --> o1Weapon
+  weaponResolve --> o1WeaponSrc
+  weaponResolve --> o1WeaponPoise
+  weaponResolve --> o1Disable
+  weaponResolve --> o1WepBases
+
+  aElemMVs --> o1ElemMVs
+  aStatus --> o1Status
+  aBuff --> o1Buff
+  aPoiseMV --> o1PoiseMV
+  aPhysAttr --> o1PhysAttr
+  aAtkStats --> o1AtkStats
+  aAtkSA --> o1AtkSA
+  aIsAdd --> o1IsAdd
+  aOverwrite --> o1Overwrite
+  aSubCats --> o1SubCats
 ```
 
 ## Stage 2: Collapse duplicate rows
 
 - Input: `work/aow_pipeline/AoW-data-1.csv`
 - Output: `work/aow_pipeline/AoW-data-2.csv`
-- Behavior: group rows by `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Weapon`, `PhysAtkAttribute`, `isAddBaseAtk`, `Overwrite Scaling`; drop `Name`, `Tick`, `AtkId` (and remove `PhysAtkAttribute` from output while still using it for grouping/overrides); sum numeric columns from `Phys MV` onward except `PhysAtkAttribute` (non-numeric fields in that range keep the first value, e.g., `subCategory*`), keep the first value for columns before `Phys MV`. Adds derived columns after `Holy MV`: `Dmg Type` (`Weapon` when all five MVs are non-zero and within 2x; `!` if any non-zero is >=2x another; when zeros exist, list non-zero types and prefix `! |` if 2–4 types and the smallest is <75% of the largest; when 2–4 non-zero types exist without zeros and min <75% max, prefix `! |`; override with `PhysAtkAttribute` when it is not 252/253; `-` when all zero) and `Dmg MV` (average of non-zero Phys/Magic/Fire/Ltng/Holy MVs divided by 100, rounded to 1 decimal). For rows with `Disable Gem Attr` = 1, any MV whose matching `Wep *` value is 0 is zeroed before these calculations.
+- Behavior:
+  - Group by `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Weapon`, `PhysAtkAttribute`, `isAddBaseAtk`, `Overwrite Scaling`.
+  - Drop `Name`, `Tick`, `AtkId`; keep `PhysAtkAttribute` only for grouping/overrides (not in output).
+  - Sum numeric columns from `Phys MV` onward (except `PhysAtkAttribute`); non-numeric fields in that range keep the first value (`subCategory*`, etc.); columns before `Phys MV` keep the first value.
+  - Zero any MV whose corresponding `Wep *` value is 0 when `Disable Gem Attr` = 1.
+  - Rename `Weapon Poise` → `Wep Poise Range`, collapsing pipe-delimited values to a min–max string (single values stay single).
+  - Rename `Poise Dmg MV` → `Stance Dmg`, computing a min–max integer range from `Wep Poise Range` × original `Poise Dmg MV` ÷ 100, then adding summed `AtkSuperArmor` (half-up rounding). `AtkSuperArmor` is removed from the output columns.
+  - Add derived columns after `Holy MV`: `Dmg Type` (`Weapon` when all five MVs are non-zero and within 2x; `!` if any non-zero is >=2x another; when zeros exist, list non-zero types and prefix `! |` if 2–4 types and the smallest is <75% of the largest; when 2–4 non-zero types exist without zeros and min <75% max, prefix `! |`; override with `PhysAtkAttribute` when it is not 252/253; `-` when all zero) and `Dmg MV` (average of non-zero Phys/Magic/Fire/Ltng/Holy MVs divided by 100, rounded to 1 decimal).
 
 ```mermaid
-flowchart TD
-  A["work/aow_pipeline/AoW-data-1.csv"] --> B["Stage 2<br>collapse + sum numeric cols<br>add Dmg Type/Dmg MV"] --> C["work/aow_pipeline/AoW-data-2.csv"]
+flowchart LR
+  subgraph Stage2Inputs["AoW-data-1.csv columns"]
+    name1["Name (dropped)"]
+    skill1["Skill"]
+    follow1["Follow-up"]
+    hand1["Hand"]
+    part1["Part"]
+    fp1["FP"]
+    charged1["Charged"]
+    step1["Step"]
+    bullet1["Bullet"]
+    tick1["Tick (dropped)"]
+    weaponSrc1["Weapon Source"]
+    weapon1["Weapon"]
+    weaponPoise1["Weapon Poise"]
+    disable1["Disable Gem Attr"]
+    wepBases1["Wep Phys / Wep Magic / Wep Fire / Wep Ltng / Wep Holy"]
+    elemMVs1["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
+    status1["Status MV"]
+    buff1["Weapon Buff MV"]
+    poiseMV1["Poise Dmg MV"]
+    physAttr1["PhysAtkAttribute (dropped after grouping)"]
+    atkStats1["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
+    atkSA1["AtkSuperArmor (summed, removed)"]
+    isAdd1["isAddBaseAtk"]
+    overwrite1["Overwrite Scaling"]
+    subCats1["subCategory1-4"]
+  end
+
+  subgraph Stage2Outputs["AoW-data-2 columns"]
+    out2Skill["Skill"]
+    out2Follow["Follow-up"]
+    out2Hand["Hand"]
+    out2Part["Part"]
+    out2FP["FP"]
+    out2Charged["Charged"]
+    out2Step["Step"]
+    out2Bullet["Bullet"]
+    out2WeaponSrc["Weapon Source"]
+    out2Weapon["Weapon"]
+    out2WepPoise["Wep Poise Range"]
+    out2Disable["Disable Gem Attr"]
+    out2WepBases["Wep Phys / Wep Magic / Wep Fire / Wep Ltng / Wep Holy"]
+    out2ElemMVs["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
+    out2DmgType["Dmg Type"]
+    out2DmgMV["Dmg MV"]
+    out2Status["Status MV"]
+    out2Buff["Weapon Buff MV"]
+    out2Stance["Stance Dmg"]
+    out2AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
+    out2IsAdd["isAddBaseAtk"]
+    out2Overwrite["Overwrite Scaling"]
+    out2SubCats["subCategory1-4"]
+  end
+
+  elemMVs1 --> sumMVs["Sum Phys/Magic/Fire/Ltng/Holy MV per group"]
+  status1 --> sumStatus["Sum Status MV per group"]
+  buff1 --> sumBuff["Sum Weapon Buff MV per group"]
+  poiseMV1 --> sumPoiseMV["Sum Poise Dmg MV per group"]
+  atkStats1 --> sumAtkStats["Sum AtkPhys/AtkMag/AtkFire/AtkLtng/AtkHoly per group"]
+  atkSA1 --> sumAtkSA["Sum AtkSuperArmor per group"]
+
+  weaponPoise1 --> collapsePoise["Collapse Weapon Poise pipes -> Wep Poise Range"]
+
+  wepBases1 --> carryWepBases["Carry first Wep Phys/Magic/Fire/Ltng/Holy"]
+  weaponSrc1 --> carryWeaponSrc["Carry first Weapon Source"]
+  disable1 --> carryDisable["Carry first Disable Gem Attr"]
+  skill1 --> carrySkill["Carry first Skill"]
+  follow1 --> carryFollow["Carry first Follow-up"]
+  hand1 --> carryHand["Carry first Hand"]
+  part1 --> carryPart["Carry first Part"]
+  fp1 --> carryFP["Carry first FP"]
+  charged1 --> carryCharged["Carry first Charged"]
+  step1 --> carryStep["Carry first Step"]
+  bullet1 --> carryBullet["Carry first Bullet"]
+  weapon1 --> carryWeapon["Carry first Weapon"]
+  isAdd1 --> carryIsAdd["Carry first isAddBaseAtk"]
+  overwrite1 --> carryOverwrite["Carry first Overwrite Scaling"]
+  subCats1 --> carrySubCats["Carry first subCategory1-4"]
+  
+  skill1 --> groupKeys
+  follow1 --> groupKeys
+  hand1 --> groupKeys
+  part1 --> groupKeys
+  fp1 --> groupKeys
+  charged1 --> groupKeys
+  step1 --> groupKeys
+  bullet1 --> groupKeys
+  weapon1 --> groupKeys
+  physAttr1 --> groupKeys
+  isAdd1 --> groupKeys
+  overwrite1 --> groupKeys
+
+  groupKeys --> agg["Group + aggregate rows"]
+  sumMVs --> agg
+  sumStatus --> agg
+  sumBuff --> agg
+  sumPoiseMV --> agg
+  sumAtkStats --> agg
+  sumAtkSA --> agg
+  collapsePoise --> agg
+  carryWepBases --> agg
+  carryWeaponSrc --> agg
+  carryDisable --> agg
+  carrySkill --> agg
+  carryFollow --> agg
+  carryHand --> agg
+  carryPart --> agg
+  carryFP --> agg
+  carryCharged --> agg
+  carryStep --> agg
+  carryBullet --> agg
+  carryWeapon --> agg
+  carryIsAdd --> agg
+  carryOverwrite --> agg
+  carrySubCats --> agg
+  physAttr1 -. grouping only .-> agg
+
+  agg --> zeroing["Zero MV when Disable Gem Attr = 1 and matching Wep * = 0"]
+  agg --> wepRange["Collapse Weapon Poise pipes -> Wep Poise Range"]
+  agg --> stanceBase["Use summed Poise Dmg MV + summed AtkSuperArmor"]
+  agg --> passStatus["Pass summed Status MV"]
+  agg --> passBuff["Pass summed Weapon Buff MV"]
+  agg --> passAtkStats["Pass summed AtkPhys/AtkMag/AtkFire/AtkLtng/AtkHoly"]
+  agg --> passMeta["Pass first-value columns (Skill, Follow-up, Hand, Part, FP, Charged, Step, Bullet, Weapon Source, Weapon, Disable Gem Attr, Wep Phys/Magic/Fire/Ltng/Holy, isAddBaseAtk, Overwrite Scaling, subCategory1-4)"]
+
+  zeroing --> dmgMeta["Dmg Type + Dmg MV derived from MVs"]
+  physAttr1 --> dmgMeta
+  zeroing --> out2ElemMVs
+
+  stanceBase --> stanceDmg["Stance Dmg = Wep Poise Range × Poise Dmg MV / 100 + summed AtkSuperArmor (half-up)"]
+  wepRange --> stanceDmg
+  stanceDmg --> out2Stance
+
+  name1 -. dropped .-> out2Skill
+  tick1 -. dropped .-> out2Skill
+  physAttr1 -. dropped after grouping .-> out2Skill
+  atkSA1 -. removed after use .-> out2Skill
+
+  passMeta --> out2Skill
+  passMeta --> out2Follow
+  passMeta --> out2Hand
+  passMeta --> out2Part
+  passMeta --> out2FP
+  passMeta --> out2Charged
+  passMeta --> out2Step
+  passMeta --> out2Bullet
+  passMeta --> out2WeaponSrc
+  passMeta --> out2Weapon
+  wepRange --> out2WepPoise
+  passMeta --> out2Disable
+  passMeta --> out2WepBases
+  dmgMeta --> out2DmgType
+  dmgMeta --> out2DmgMV
+  passStatus --> out2Status
+  passBuff --> out2Buff
+  passAtkStats --> out2AtkStats
+  passMeta --> out2IsAdd
+  passMeta --> out2Overwrite
+  passMeta --> out2SubCats
 ```
 
 ## Stage 3 (placeholder): Final shaping for downstream
@@ -60,8 +342,81 @@ flowchart TD
 - Output: `work/aow_pipeline/AoW-data-3.csv` (currently identical to Stage 2; future spot for formatting ready/JSON ingest).
 
 ```mermaid
-flowchart TD
-  A["work/aow_pipeline/AoW-data-2.csv"] --> B["Stage 3 (pending)<br>identity pass-through"] --> C["work/aow_pipeline/AoW-data-3.csv"]
+flowchart LR
+  subgraph Stage3In["AoW-data-2.csv columns"]
+    s3Skill["Skill"]
+    s3Follow["Follow-up"]
+    s3Hand["Hand"]
+    s3Part["Part"]
+    s3FP["FP"]
+    s3Charged["Charged"]
+    s3Step["Step"]
+    s3Bullet["Bullet"]
+    s3WeaponSrc["Weapon Source"]
+    s3Weapon["Weapon"]
+    s3WepPoise["Wep Poise Range"]
+    s3Disable["Disable Gem Attr"]
+    s3WepBases["Wep Phys / Wep Magic / Wep Fire / Wep Ltng / Wep Holy"]
+    s3ElemMVs["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
+    s3DmgType["Dmg Type"]
+    s3DmgMV["Dmg MV"]
+    s3Status["Status MV"]
+    s3Buff["Weapon Buff MV"]
+    s3Stance["Stance Dmg"]
+    s3AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
+    s3IsAdd["isAddBaseAtk"]
+    s3Overwrite["Overwrite Scaling"]
+    s3SubCats["subCategory1-4"]
+  end
+  subgraph Stage3Out["AoW-data-3.csv columns"]
+    o3Skill["Skill"]
+    o3Follow["Follow-up"]
+    o3Hand["Hand"]
+    o3Part["Part"]
+    o3FP["FP"]
+    o3Charged["Charged"]
+    o3Step["Step"]
+    o3Bullet["Bullet"]
+    o3WeaponSrc["Weapon Source"]
+    o3Weapon["Weapon"]
+    o3WepPoise["Wep Poise Range"]
+    o3Disable["Disable Gem Attr"]
+    o3WepBases["Wep Phys / Wep Magic / Wep Fire / Wep Ltng / Wep Holy"]
+    o3ElemMVs["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
+    o3DmgType["Dmg Type"]
+    o3DmgMV["Dmg MV"]
+    o3Status["Status MV"]
+    o3Buff["Weapon Buff MV"]
+    o3Stance["Stance Dmg"]
+    o3AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
+    o3IsAdd["isAddBaseAtk"]
+    o3Overwrite["Overwrite Scaling"]
+    o3SubCats["subCategory1-4"]
+  end
+  Stage3In --> passthrough["Stage 3 (pending)<br>identity pass-through"]
+  passthrough --> o3Skill
+  passthrough --> o3Follow
+  passthrough --> o3Hand
+  passthrough --> o3Part
+  passthrough --> o3FP
+  passthrough --> o3Charged
+  passthrough --> o3Step
+  passthrough --> o3Bullet
+  passthrough --> o3WeaponSrc
+  passthrough --> o3Weapon
+  passthrough --> o3WepPoise
+  passthrough --> o3Disable
+  passthrough --> o3WepBases
+  passthrough --> o3ElemMVs
+  passthrough --> o3DmgType
+  passthrough --> o3DmgMV
+  passthrough --> o3Status
+  passthrough --> o3Buff
+  passthrough --> o3Stance
+  passthrough --> o3AtkStats
+  passthrough --> o3IsAdd
+  passthrough --> o3Overwrite
+  passthrough --> o3SubCats
 ```
 
 ## Filesystem layout
@@ -105,7 +460,7 @@ Checklist of the legacy `scripts/generate_skill_stats.py` behaviors we still nee
 - [x] Normalize names: strip `#n`/step numbers, remove extra numeric tails, canonicalize spacing, and record hash IDs for step ordering.
 - [x] Parse labels: peel `(Lacking FP)`, split `X - Y` suffixes, capture R1/R2 follow-ups, trailing bracket tokens, and bracketed numbers into a phase label; detect hand mode (`1h`/`2h`).
 - [ ] Filter generation via `--ready-only` (canonical + bracket-stripped name/weapon matches) and `--only-skills`/file lists.
-- [ ] Build per-row stat lines: pick the highest MV column for the weapon-damage line, use PhysAtkAttribute for physical type, append scaling suffix from `Overwrite Scaling`; emit base/bullet lines when `isAddBaseAtk` is true or base damage exists; emit status multiplier from `Status MV`/100; emit stance damage from `Poise Dmg MV` plus flat `AtkSuperArmor`, carrying stance base/category metadata.
+- [ ] Build per-row stat lines: pick the highest MV column for the weapon-damage line, use PhysAtkAttribute for physical type, append scaling suffix from `Overwrite Scaling`; emit base/bullet lines when `isAddBaseAtk` is true or base damage exists; emit status multiplier from `Status MV`/100; emit stance damage from `Stance Dmg` (Stage 2 now applies `Poise Dmg MV` × `Wep Poise Range` + summed `AtkSuperArmor`), carrying stance base/category metadata.
 - [ ] Group lines by canonical skill + weapon label, tracking uniqueness and first-seen hand mode; drop rows with no lines.
 - [ ] Collapse bracketed phases ([1], [2], etc.) and merge FP/lacking pairs, synthesizing zeroed bases when only lacking exists and carrying stance super-armor (including lacking variants).
 - [ ] Align hash/step variants per descriptor/phase/hand/kind, padding missing steps with zeros; order by follow-up priority (Light/R1 before Heavy/R2), hand mode (1h before 2h), then kind/descriptor/phase.

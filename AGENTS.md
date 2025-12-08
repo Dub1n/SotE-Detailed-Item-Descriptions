@@ -2,18 +2,22 @@
 
 ## Project Structure & Key Paths
 
-- **work/**: LLM workflow artifacts. `responses/ready/` holds cleaned JSON outputs per category; `responses/pending/` is for raw batches; `prompts/` stores generated prompts; `items_index.json` and `items_todo_filtered.json` drive batching.
-- **scripts/**: CLI tooling for planning, running, salvaging batches, restricting scope, and applying to FMGs.
-- **msg/mod/real_dlc/vanilla/**: Source FMG XMLs and comparisons; `PARAM/` contains extracted param CSVs (EquipParam*).
-- **descriptions-*/**: Derived JSON bundles: `mod`, `delta`, `comparison`, `vanilla`. Split consumable files live alongside combined `consumable.json`.
+- **docs/aow_pipeline_overview.md**: End-to-end CSV pipeline plan and diagrams.
+- **docs/skill_names_from_gem_and_behavior.txt**: Stage 0 output (canonical skill list).
+- **docs/AoW-data-1_example.csv**: Authoritative sample rows for reference.
+- **scripts/build_aow/**: Stage scripts (`build_aow_stage0.py`, `build_aow_stage1.py`, `build_aow_stage2.py`; Stage 3 placeholder).
+- **work/aow_pipeline/**: Generated CSV stages (`AoW-data-1.csv`, `AoW-data-2.csv`, `AoW-data-3.csv` placeholder).
+- **PARAM/**: Extracted param CSVs used by the pipeline (EquipParamGem, EquipParamWeapon, BehaviorParam_PC, SwordArtsParam).
+- **docs/(1.16.1)-*.csv**, **docs/weapon_categories_poise.json**: Source CSVs/lookup JSON for Stage 1.
+- **msg/mod/real_dlc/vanilla/**: FMG sources and comparisons (unchanged by the CSV pipeline).
 
 ## Build, Test, and Development Commands
 
-- Create venv: `python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt` (pip-only project; no build step).
-- Plan batches: `.venv/bin/python scripts/plan_batches.py`.
-- Run batches: `.venv/bin/python scripts/run_plan.py --concurrency 5 --output-dir work/responses/pending --model gpt-5.1-codex-mini`.
-- Salvage pending: `.venv/bin/python scripts/clean_pending.py`; archive: `scripts/archive_pending.py`.
-- Apply to FMGs: `.venv/bin/python scripts/apply_responses.py work/responses/ready/*.json` (honors `use:false`).
+- Create venv: `python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt`.
+- Stage 0: `.venv/bin/python scripts/build_aow/build_aow_stage0.py`.
+- Stage 1: `.venv/bin/python scripts/build_aow/build_aow_stage1.py` (outputs `work/aow_pipeline/AoW-data-1.csv`).
+- Stage 2: `.venv/bin/python scripts/build_aow/build_aow_stage2.py` (outputs `work/aow_pipeline/AoW-data-2.csv`; Stage 3 is pass-through today).
+- Regenerate in order when upstream CSVs change; see `docs/aow_pipeline_overview.md` for details.
 
 ## Coding Style & Naming
 
@@ -22,8 +26,16 @@
 
 ## Testing & Validation
 
-- No automated test suite. Validate by: ensuring `pending/` is empty before new runs, verifying ready JSON parses, and spot-checking applied FMGs in `build/msg/engus/`.
-- For data transforms, re-run the script and diff outputs; sanity-check counts (e.g., subcategory splits) and sample entries.
+- No automated test suite. Validate by rerunning the CSV stages and diffing outputs; sanity-check counts and sample rows against `docs/AoW-data-1_example.csv`.
+- Verify Stage 2 outputs parse and that derived fields (Wep Poise Range, Stance Dmg, Dmg Type/MV) look sane for spot-checked skills; compare shapes against `skill.json` expectations when iterating toward the final format.
+
+## CSV skill pipeline (new)
+
+- We now generate skill data via an explicit CSV pipeline instead of ad-hoc parsing. Stages live in `scripts/build_aow/`:
+  - Stage 0: `build_aow_stage0.py` unions skill names from Gem/Behavior/SwordArts into `docs/skill_names_from_gem_and_behavior.txt`.
+  - Stage 1: `build_aow_stage1.py` collates attack data + poise/category/weapon refs into `work/aow_pipeline/AoW-data-1.csv` (labels, weapon resolution, poise bases, base stats).
+  - Stage 2: `build_aow_stage2.py` groups/sums, collapses poise ranges, derives stance damage and damage type/MV into `work/aow_pipeline/AoW-data-2.csv`. Stage 3 is currently a pass-through.
+- The end goal is to drive `skill.json` population from these CSV stages. Format should align with `skill.json` structure, but values may differ while we correct parsing/understanding gaps. Use the docs (`docs/aow_pipeline_overview.md`) for per-column lineage and regeneration steps; do not hand-edit outputs.
 
 ## Commit & PR Guidelines
 
