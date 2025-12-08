@@ -31,14 +31,20 @@
   },
   {
     "names": [
-      "Bloodboon Ritual #2",
-      "Bloodboon Ritual #2 - Bullet 1",
-      "Bloodboon Ritual #2 - Bullet 2",
-      "Bloodboon Ritual #2 - Bullet 1&2 [Hit]"
+      "Bloodboon Ritual #3",
+      "Bloodboon Ritual #3 - Bullet 1",
+      "Bloodboon Ritual #3 - Bullet 2",
+      "Bloodboon Ritual #3 - Bullet 1&2 [Hit]"
     ],
     "overrides": {
       "PhysAtkAttribute": "Standard",
       "Bullet": "1"
     }
+  },
+  {
+    "names": [
+      "Loretta's Slash [1]",
+      "Loretta's Slash ?"
+    ]
   }
 ]
