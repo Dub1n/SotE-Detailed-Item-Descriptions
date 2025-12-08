@@ -48,6 +48,19 @@
     "names": [
       "Loretta's Slash [1]",
       "Loretta's Slash ?"
-    ]
+    ],
+    "overrides": {
+      "PhysAtkAttribute": "Slash",
+      "subCategory2": "Weapon Skill"
+    }
+  },
+  {
+    "names": [
+      "Golden Slam - Tush",
+      "Golden Slam - ?"
+    ],
+    "overrides": {
+      "PhysAtkAttribute": "Strike"
+    }
   }
 ]
