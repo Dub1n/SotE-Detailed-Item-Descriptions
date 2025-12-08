@@ -45,6 +45,23 @@ RENAME_MAP = {
     "Poise Dmg MV": "Stance Dmg",
 }
 
+# Columns that indicate whether a row carries any meaningful damage data.
+ZERO_MV_ATK_COLUMNS = [
+    "Phys MV",
+    "Magic MV",
+    "Fire MV",
+    "Ltng MV",
+    "Holy MV",
+    "Status MV",
+    "Weapon Buff MV",
+    "Stance Dmg",  # Source: Poise Dmg MV
+    "AtkPhys",
+    "AtkMag",
+    "AtkFire",
+    "AtkLtng",
+    "AtkHoly",
+]
+
 
 def parse_float(value: Any) -> float | None:
     try:
@@ -400,10 +417,25 @@ def collapse_rows(
             dmg_type = attr
         return dmg_type, dmg_mv
 
+    def has_nonzero_damage_data(agg_row: Mapping[str, Any]) -> bool:
+        for col in ZERO_MV_ATK_COLUMNS:
+            val = parse_float(agg_row.get(col, 0))
+            # Keep rows with malformed data to avoid false drops.
+            if val is None or val != val:  # NaN check via self-inequality
+                return True
+            if val != 0:
+                return True
+        super_val = parse_float(agg_row.get("_stance_super", 0))
+        if super_val is None or super_val != super_val:
+            return True
+        return super_val != 0
+
     # Finalize output rows with numeric formatting.
     output_rows: List[Dict[str, str]] = []
     for agg in grouped.values():
         dmg_type, dmg_mv = compute_damage_meta(agg)
+        if not has_nonzero_damage_data(agg):
+            continue
         poise_range_text, poise_range_bounds = summarize_range(
             agg.get("Wep Poise Range", "")
         )
