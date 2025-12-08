@@ -63,7 +63,9 @@ OUTPUT_COLUMNS = [
 ]
 
 
-def load_category_flags() -> Tuple[Dict[str, Dict[str, float]], Dict[str, float]]:
+def load_category_flags() -> Tuple[
+    Dict[str, Dict[str, float]], Dict[str, float]
+]:
     data = json.loads(CATEGORY_POISE_JSON.read_text())
     flag_to_info: Dict[str, Dict[str, float]] = {}
     name_to_poise: Dict[str, float] = {}
@@ -95,7 +97,11 @@ def base_skill_name(name: str) -> str:
 def load_skill_names() -> List[str]:
     if not SKILL_LIST_TXT.exists():
         return []
-    names = [line.strip() for line in SKILL_LIST_TXT.read_text().splitlines() if line.strip()]
+    names = [
+        line.strip()
+        for line in SKILL_LIST_TXT.read_text().splitlines()
+        if line.strip()
+    ]
     # Sort by length desc for longest-match search.
     names.sort(key=len, reverse=True)
     return names
@@ -131,7 +137,9 @@ def extract_prefix(name: str) -> Tuple[str, str]:
 def infer_part(name: str, matched_skill: Optional[str] = None) -> str:
     base = strip_weapon_prefix(name)
     if matched_skill:
-        pattern = rf"(?i)(^|[\s\[\(-]){re.escape(matched_skill)}(?=$|[\s\]\)-])"
+        pattern = (
+            rf"(?i)(^|[\s\[\(-]){re.escape(matched_skill)}(?=$|[\s\]\)-])"
+        )
         base = re.sub(pattern, " ", base, count=1)
     base = re.sub(r"\(Lacking FP\)", "", base, flags=re.IGNORECASE)
     base = re.sub(r"\b(1h|2h)\b", "", base, flags=re.IGNORECASE)
@@ -169,7 +177,7 @@ def expand_weapon_names(raw: str) -> List[str]:
     if text.startswith("(") and ")" in text:
         closing = text.find(")")
         inner = text[1:closing]
-        suffix = text[closing + 1 :].strip()
+        suffix = text[closing + 1:].strip()
         parts = [p.strip() for p in inner.split("/") if p.strip()]
         for part in parts:
             candidate = f"{part} {suffix}".strip()
@@ -241,10 +249,14 @@ def load_weapon_base_stats() -> Dict[str, Dict[str, str]]:
     return stats
 
 
-def build_gem_mount_map(flag_to_info: Dict[str, Dict[str, float]], skill_names: List[str]) -> Dict[str, List[str]]:
+def build_gem_mount_map(
+    flag_to_info: Dict[str, Dict[str, float]], skill_names: List[str]
+) -> Dict[str, List[str]]:
     """Map canonical skill -> list of weapon category names."""
     mount_map: Dict[str, List[str]] = {}
-    flag_order = [flag for flag in flag_to_info if flag.startswith(CATEGORY_FLAG_PREFIX)]
+    flag_order = [
+        flag for flag in flag_to_info if flag.startswith(CATEGORY_FLAG_PREFIX)
+    ]
     with EQUIP_PARAM_GEM_CSV.open() as f:
         reader = csv.DictReader(f)
         for row in reader:
@@ -341,7 +353,9 @@ def build_rows(
             weapon_list: List[str] = []
             poise_list: List[str] = []
             weapon_source = ""
-            wep_disable_attr = wep_phys = wep_magic = wep_fire = wep_ltng = wep_holy = "-"
+            wep_disable_attr = (
+                wep_phys
+            ) = wep_magic = wep_fire = wep_ltng = wep_holy = "-"
 
             if unique_weapon:
                 weapon_source = "unique"
@@ -357,7 +371,9 @@ def build_rows(
                         fallback = category_poise.get(candidate)
                         if fallback is not None:
                             poise_val = str(fallback)
-                            warnings["unique_poise_from_category"].append(unique_weapon)
+                            warnings["unique_poise_from_category"].append(
+                                unique_weapon
+                            )
                             break
                 if poise_val is None:
                     warnings["missing_poise"].append(unique_weapon)
@@ -403,7 +419,9 @@ def build_rows(
                 poise_list = ["-"]
 
             weapon_field = " | ".join(weapon_list).strip()
-            poise_field = align_join(poise_list, len(weapon_list)) if weapon_list else ""
+            poise_field = (
+                align_join(poise_list, len(weapon_list)) if weapon_list else ""
+            )
 
             out = OrderedDict()
             out["Name"] = raw_name
@@ -460,7 +478,9 @@ def write_csv(rows: List[OrderedDict], output_path: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build AoW-data-1.csv from source CSVs.")
+    parser = argparse.ArgumentParser(
+        description="Build AoW-data-1.csv from source CSVs."
+    )
     parser.add_argument(
         "--output",
         type=Path,
@@ -496,14 +516,20 @@ def main() -> None:
                 removed.append(name)
                 continue
             curr = after_map[name]
-            if any(str(prev.get(col, "")) != str(curr.get(col, "")) for col in OUTPUT_COLUMNS):
+            if any(
+                str(prev.get(col, "")) != str(curr.get(col, ""))
+                for col in OUTPUT_COLUMNS
+            ):
                 changed.append(name)
         for name in after_map:
             if name not in before:
                 added.append(name)
     total_diff = len(added) + len(removed) + len(changed)
     if total_diff:
-        print(f"Row deltas: added={len(added)}, removed={len(removed)}, changed={len(changed)}")
+        print(
+            "Row deltas: added="
+            f"{len(added)}, removed={len(removed)}, changed={len(changed)}"
+        )
         if total_diff <= 50:
             if added:
                 print("  Added:")

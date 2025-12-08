@@ -19,7 +19,10 @@ def load_gem_names() -> set[str]:
             if not name:
                 continue
             if name.lower().startswith("ash of war"):
-                name = name.split(":", 1)[1].strip() if ":" in name else name[len("ash of war") :].strip()
+                if ":" in name:
+                    name = name.split(":", 1)[1].strip()
+                else:
+                    name = name[len("ash of war"):].strip()
             if not name or name.lower().startswith("test gem"):
                 continue
             names.add(name)
@@ -34,7 +37,10 @@ def load_behavior_names() -> set[str]:
             name = (row.get("Name") or "").strip()
             if "[AOW]" not in name:
                 continue
-            skill = name.split("]", 1)[1].strip() if "]" in name else name.replace("[AOW]", "").strip()
+            if "]" in name:
+                skill = name.split("]", 1)[1].strip()
+            else:
+                skill = name.replace("[AOW]", "").strip()
             if skill:
                 names.add(skill)
     return names
@@ -53,8 +59,15 @@ def load_swordarts_names() -> set[str]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build unified AoW skill list from Gem and Behavior.")
-    parser.add_argument("--output", type=Path, default=OUTPUT, help="Output path for combined skill list.")
+    parser = argparse.ArgumentParser(
+        description="Build unified AoW skill list from Gem and Behavior."
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=OUTPUT,
+        help="Output path for combined skill list.",
+    )
     args = parser.parse_args()
 
     gem_names = load_gem_names()
@@ -71,9 +84,15 @@ def main() -> None:
     if only_gem:
         print(f"Gem-only ({len(only_gem)}): {', '.join(sorted(only_gem))}")
     if only_behavior:
-        print(f"Behavior-only ({len(only_behavior)}): {', '.join(sorted(only_behavior))}")
+        print(
+            f"Behavior-only ({len(only_behavior)}): "
+            f"{', '.join(sorted(only_behavior))}"
+        )
     if only_swordarts:
-        print(f"SwordArts-only ({len(only_swordarts)}): {', '.join(sorted(only_swordarts))}")
+        print(
+            f"SwordArts-only ({len(only_swordarts)}): "
+            f"{', '.join(sorted(only_swordarts))}"
+        )
 
 
 if __name__ == "__main__":
