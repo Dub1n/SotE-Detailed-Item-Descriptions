@@ -390,6 +390,7 @@ flowchart LR
 - Aggregated columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`):
   - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen in the group.
   - Format per column: `fp1_uncharged_steps, … | fp1_charged_steps, … [fp0_uncharged_steps, … | fp0_charged_steps, …]` (examples: `1, 2 | 2, 3 [0, 0 | 0, 0]`).
+- Dmg Type `-` and Overwrite Scaling `null` act as wildcards when grouping so empty placeholders don’t split otherwise matching rows.
 - Second pass: rows with identical non-Weapon columns and identical numeric arrangement are collapsed, concatenating `Weapon` with ` | ` and converting each numeric position into a range (`min-max`) when values differ (keeps single value when identical). Collapse only happens when all weapons for the skill/hand/part/dmg type/wep status share the same numeric token pattern (symmetry guard); otherwise rows stay separate.
 
 ```mermaid
