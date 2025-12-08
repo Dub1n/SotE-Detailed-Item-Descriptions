@@ -129,9 +129,11 @@ def collapse_rows(
     *,
     force_groups: Mapping[str, str] | None = None,
     force_overrides: Mapping[str, Dict[str, str]] | None = None,
+    force_primary: Mapping[str, str] | None = None,
 ) -> Tuple[List[Dict[str, str]], List[str], List[str], List[str]]:
     force_groups = force_groups or {}
     force_overrides = force_overrides or {}
+    force_primary = force_primary or {}
     if "Phys MV" not in fieldnames:
         raise ValueError("Expected 'Phys MV' column in input.")
     numeric_start = fieldnames.index("Phys MV")
@@ -173,6 +175,43 @@ def collapse_rows(
     warnings: List[str] = []
     forced_seen: Set[str] = set()
 
+    forced_names = set(force_groups.keys())
+    rows_by_name = {
+        row.get("Name", ""): row for row in rows if row.get("Name", "")
+    }
+    canonical_fields = [
+        "Name",
+        "Skill",
+        "Follow-up",
+        "Hand",
+        "Part",
+        "FP",
+        "Charged",
+        "Step",
+        "Bullet",
+        "Tick",
+    ]
+    canonical_map: Dict[str, Dict[str, str]] = {}
+    for group_id, primary in force_primary.items():
+        base_row = rows_by_name.get(primary)
+        if base_row is None:
+            # Fallback to any row in the group if primary missing.
+            base_row = next(
+                (
+                    rows_by_name.get(name)
+                    for name, gid in force_groups.items()
+                    if gid == group_id and rows_by_name.get(name)
+                ),
+                {},
+            )
+        base_row = base_row or {}
+        overrides = force_overrides.get(group_id, {})
+        canonical_map[group_id] = {}
+        for col in canonical_fields:
+            canonical_map[group_id][col] = overrides.get(
+                col, base_row.get(col, "")
+            )
+
     def source_value(row: Dict[str, str], col: str) -> Any:
         source_col = output_source_map.get(col, col)
         return row.get(source_col, "")
@@ -187,7 +226,12 @@ def collapse_rows(
         if name in force_groups:
             key = ("__FORCED__", force_groups[name])
             forced_seen.add(force_groups[name])
-            overrides = force_overrides.get(force_groups[name], {})
+            group_id = force_groups[name]
+            canon = canonical_map.get(group_id, {})
+            if canon:
+                for col, val in canon.items():
+                    working_row[col] = val
+            overrides = force_overrides.get(group_id, {})
             if overrides:
                 for col, val in overrides.items():
                     working_row[col] = val
@@ -233,7 +277,7 @@ def collapse_rows(
                 incoming = source_value(working_row, col)
                 if existing == "" and incoming != "":
                     agg[col] = incoming
-                elif existing != incoming and incoming != "" and key[0] != "__FORCED__":
+                elif existing != incoming and incoming != "":
                     warnings.append(
                         f"Disagreement on column '{col}' for key {key}: "
                         f"keeping '{existing}', saw '{incoming}'"
@@ -400,7 +444,9 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    force_groups, force_overrides = load_force_collapse_map(args.force_collapse)
+    force_groups, force_overrides, force_primary = load_force_collapse_map(
+        args.force_collapse
+    )
     before_rows = load_rows_by_key(args.output, GROUP_KEYS)
     rows, fieldnames = read_rows(args.input)
     output_rows, output_columns, warnings, forced_groups = collapse_rows(
@@ -408,6 +454,7 @@ def main() -> None:
         fieldnames,
         force_groups=force_groups,
         force_overrides=force_overrides,
+        force_primary=force_primary,
     )
     write_csv(output_rows, output_columns, args.output)
 

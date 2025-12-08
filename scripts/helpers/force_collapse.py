@@ -3,17 +3,22 @@ from pathlib import Path
 from typing import Dict, Tuple
 
 
-def load_force_collapse_map(path: Path) -> Tuple[Dict[str, str], Dict[str, Dict[str, str]]]:
+def load_force_collapse_map(
+    path: Path,
+) -> Tuple[
+    Dict[str, str], Dict[str, Dict[str, str]], Dict[str, str]
+]:
     """
     Load force-collapse rules from JSON. Supports two formats:
       - List of Name strings (length >= 2)
       - Object with {"names": [...], "overrides": {"Col": "Value"}}
-    Returns (name_to_group, group_overrides).
+    Returns (name_to_group, group_overrides, group_primary_name).
     """
     name_to_group: Dict[str, str] = {}
     group_overrides: Dict[str, Dict[str, str]] = {}
+    group_primary: Dict[str, str] = {}
     if not path.exists():
-        return name_to_group, group_overrides
+        return name_to_group, group_overrides, group_primary
     data = json.loads(path.read_text())
     if not isinstance(data, list):
         raise ValueError(
@@ -40,8 +45,9 @@ def load_force_collapse_map(path: Path) -> Tuple[Dict[str, str], Dict[str, Dict[
         if len(names) < 2:
             continue
         group_id = " | ".join(sorted(names))
+        group_primary[group_id] = names[0]
         for name in names:
             name_to_group[name] = group_id
         if overrides:
             group_overrides[group_id] = overrides
-    return name_to_group, group_overrides
+    return name_to_group, group_overrides, group_primary
