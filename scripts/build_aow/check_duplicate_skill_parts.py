@@ -6,7 +6,7 @@ import signal
 import sys
 from collections import defaultdict
 from pathlib import Path
-from typing import Dict, Iterable, List, Tuple
+from typing import Dict, Iterable, List, Sequence, Tuple
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -32,16 +32,20 @@ def safe_print(text: str) -> None:
         os._exit(0)
 
 
-def normalize_columns(raw: Iterable[str]) -> List[str]:
+def normalize_columns(raw: Iterable[Sequence[str] | str]) -> List[str]:
     """
     Normalize a list of column strings into a de-duplicated, ordered list.
-    Supports comma-separated values passed to --ignore.
+    Supports comma-separated values passed to --ignore, and multi-word
+    values provided as separate tokens (e.g., --ignore Dmg Type).
     """
     columns: List[str] = []
     for item in raw:
         if not item:
             continue
-        for part in str(item).split(","):
+        text = item
+        if isinstance(item, (list, tuple)):
+            text = " ".join(item)
+        for part in str(text).split(","):
             col = part.strip()
             if col and col not in columns:
                 columns.append(col)
@@ -121,10 +125,12 @@ def main() -> None:
     parser.add_argument(
         "--ignore",
         action="append",
+        nargs="+",
         default=[],
         help=(
             "Require duplicates to also match this column. "
-            "Repeatable or comma-separated (e.g., --ignore Weapon --ignore Hand)."
+            "Repeatable, supports multi-word columns, and accepts comma-separated "
+            "lists (e.g., --ignore \"Dmg Type\" --ignore Weapon,Hand)."
         ),
     )
     parser.add_argument(
