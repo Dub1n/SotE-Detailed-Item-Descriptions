@@ -152,6 +152,8 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
                     continue
                 # Strip leading bracketed prefixes like "[Weapon]".
                 cleaned = re.sub(r"^\[[^\]]+\]\s*", "", part).strip()
+                if cleaned == "Thiollier's Hidden Needle":
+                    cleaned = "Sleep"
                 if cleaned:
                     cleaned_parts.append(cleaned)
             if not cleaned_parts:
