@@ -469,7 +469,7 @@ def build_rows(
             wep_disable_attr = (
                 wep_phys
             ) = wep_magic = wep_fire = wep_ltng = wep_holy = "-"
-            wep_status_effects: List[str] = []
+            status_by_weapon: List[str] = []
 
             if unique_weapon:
                 weapon_source = "unique"
@@ -509,27 +509,41 @@ def build_rows(
 
                     stats = weapon_base_stats.get(weapon_name.lower())
                     if not stats:
+                        status_by_weapon.append("-")
                         continue
-                    disable_values.append(stats.get("disable_gem_attr", "-"))
+                    disable_flag = stats.get("disable_gem_attr", "-")
+                    disable_values.append(disable_flag)
                     phys_values.append(stats.get("phys", "-"))
                     magic_values.append(stats.get("magic", "-"))
                     fire_values.append(stats.get("fire", "-"))
                     ltng_values.append(stats.get("ltng", "-"))
                     holy_values.append(stats.get("holy", "-"))
-                    for effect in stats.get("status_effects", []):
+                    effects = stats.get("status_effects", [])
+                    per_weapon_effects: List[str] = []
+                    for effect in effects:
                         if effect not in status_values:
                             status_values.append(effect)
+                        if effect not in per_weapon_effects:
+                            per_weapon_effects.append(effect)
+                    if str(disable_flag).strip() == "1":
+                        if per_weapon_effects:
+                            status_by_weapon.append(" | ".join(per_weapon_effects))
+                        else:
+                            status_by_weapon.append("None")
+                    else:
+                        status_by_weapon.append("-")
 
                 if disable_values:
-                    wep_disable_attr = disable_values[0]
-                    if any(val != wep_disable_attr for val in disable_values):
+                    if len(set(disable_values)) == 1:
+                        wep_disable_attr = disable_values[0]
+                    else:
+                        wep_disable_attr = " | ".join(disable_values)
                         warnings["mixed_disable_attr"].append(unique_weapon)
                 wep_phys = avg_stat(phys_values)
                 wep_magic = avg_stat(magic_values)
                 wep_fire = avg_stat(fire_values)
                 wep_ltng = avg_stat(ltng_values)
                 wep_holy = avg_stat(holy_values)
-                wep_status_effects = status_values
             elif prefix:
                 weapon_source = "prefix"
                 weapon_list = [prefix]
@@ -564,14 +578,15 @@ def build_rows(
                 align_join(poise_list, len(weapon_list)) if weapon_list else ""
             )
             wep_status_field = "-"
-            if (
-                weapon_source == "unique"
-                and str(wep_disable_attr).strip() == "1"
-            ):
-                if wep_status_effects:
-                    wep_status_field = " | ".join(wep_status_effects)
-                else:
+            if weapon_source == "unique" and status_by_weapon:
+                if all(val == "None" for val in status_by_weapon):
                     wep_status_field = "None"
+                elif all(val == "-" for val in status_by_weapon):
+                    wep_status_field = "-"
+                elif len(status_by_weapon) == 1:
+                    wep_status_field = status_by_weapon[0]
+                else:
+                    wep_status_field = " | ".join(status_by_weapon)
 
             out = OrderedDict()
             out["Name"] = raw_name
