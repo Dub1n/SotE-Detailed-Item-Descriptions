@@ -3,7 +3,7 @@ import csv
 import sys
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
-from typing import Dict, List, Tuple, Any
+from typing import Dict, List, Tuple, Any, Mapping
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -15,9 +15,11 @@ from helpers.diff import (  # noqa: E402
     load_rows_by_key,
     report_row_deltas,
 )
+from helpers.force_collapse import load_force_collapse_map  # noqa: E402
 from helpers.output import format_path_for_console  # noqa: E402
 INPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-1.csv"
 OUTPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-2.csv"
+FORCE_COLLAPSE_DEFAULT = ROOT / "work/aow_pipeline/force_collapse_pairs.json"
 
 GROUP_KEYS = [
     "Skill",
@@ -120,8 +122,12 @@ def compute_stance_damage(
 
 
 def collapse_rows(
-    rows: List[Dict[str, str]], fieldnames: List[str]
+    rows: List[Dict[str, str]],
+    fieldnames: List[str],
+    *,
+    force_groups: Mapping[str, str] | None = None,
 ) -> Tuple[List[Dict[str, str]], List[str], List[str]]:
+    force_groups = force_groups or {}
     if "Phys MV" not in fieldnames:
         raise ValueError("Expected 'Phys MV' column in input.")
     numeric_start = fieldnames.index("Phys MV")
@@ -171,7 +177,11 @@ def collapse_rows(
         return parsed if parsed is not None else 0.0
 
     for row in rows:
-        key = tuple(row.get(col, "") for col in GROUP_KEYS)
+        name = row.get("Name", "")
+        if name in force_groups:
+            key = ("__FORCED__", force_groups[name])
+        else:
+            key = tuple(row.get(col, "") for col in GROUP_KEYS)
         if key not in grouped:
             grouped[key] = {
                 col: source_value(row, col) for col in output_columns
@@ -369,11 +379,20 @@ def main() -> None:
         default=OUTPUT_DEFAULT,
         help="Path to write AoW-data-2.csv",
     )
+    parser.add_argument(
+        "--force-collapse",
+        type=Path,
+        default=FORCE_COLLAPSE_DEFAULT,
+        help="Path to JSON list of Name pairs to force-collapse.",
+    )
     args = parser.parse_args()
 
+    force_groups = load_force_collapse_map(args.force_collapse)
     before_rows = load_rows_by_key(args.output, GROUP_KEYS)
     rows, fieldnames = read_rows(args.input)
-    output_rows, output_columns, warnings = collapse_rows(rows, fieldnames)
+    output_rows, output_columns, warnings = collapse_rows(
+        rows, fieldnames, force_groups=force_groups
+    )
     write_csv(output_rows, output_columns, args.output)
 
     path_text = format_path_for_console(args.output, ROOT)

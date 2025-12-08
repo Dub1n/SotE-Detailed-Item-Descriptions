@@ -35,6 +35,7 @@ tmp/
 fex_cache/
 fex_cache_filtered/
 work/aow_pipeline/*
+!work/aow_pipeline/force_collapse_pairs.json
 bk_*/
 *_bk
 
