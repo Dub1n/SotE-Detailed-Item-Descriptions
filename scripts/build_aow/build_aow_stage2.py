@@ -55,6 +55,7 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
         raise ValueError("Expected 'Phys MV' column in input.")
     numeric_start = fieldnames.index("Phys MV")
     output_columns = [col for col in fieldnames if col not in DROP_COLUMNS]
+    has_phys_attr = "PhysAtkAttribute" in fieldnames
     # Ensure Bullet sits next to Step in the output order.
     if "Bullet" in output_columns and "Step" in output_columns:
         output_columns.remove("Bullet")
@@ -65,6 +66,8 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
         output_columns[idx + 1 : idx + 1] = ["Dmg Type", "Dmg MV"]
     else:
         output_columns.extend(["Dmg Type", "Dmg MV"])
+    if "PhysAtkAttribute" in output_columns:
+        output_columns.remove("PhysAtkAttribute")
     col_positions = {col: idx for idx, col in enumerate(fieldnames)}
     numeric_columns = [
         col
@@ -80,6 +83,8 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
         key = tuple(row.get(col, "") for col in GROUP_KEYS)
         if key not in grouped:
             grouped[key] = {col: row.get(col, "") for col in output_columns}
+            if has_phys_attr:
+                grouped[key]["_phys_attr"] = row.get("PhysAtkAttribute", "")
             # Normalize numeric seeds to floats when possible.
             for col in numeric_columns:
                 num = parse_float(grouped[key].get(col, ""))
@@ -88,6 +93,8 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
             continue
 
         agg = grouped[key]
+        if has_phys_attr and "_phys_attr" not in agg:
+            agg["_phys_attr"] = row.get("PhysAtkAttribute", "")
         for col in output_columns:
             if col in numeric_columns:
                 num = parse_float(row.get(col, ""))
@@ -148,7 +155,7 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
             val = parse_float(agg_row.get(col, 0))
             values.append(val if val is not None else 0.0)
 
-        attr = (agg_row.get("PhysAtkAttribute") or "").strip()
+        attr = (agg_row.get("_phys_attr") or agg_row.get("PhysAtkAttribute") or "").strip()
         non_zero = [(name, val) for (name, _), val in zip(dmg_fields, values) if val > 0]
         has_zero = any(val == 0 for val in values)
 
