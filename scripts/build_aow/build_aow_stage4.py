@@ -25,13 +25,9 @@ KEY_FIELDS = [
     "Follow-up",
     "Hand",
     "Part",
-    "FP",
-    "Charged",
-    "Step",
-    "Bullet",
     "Weapon",
-    "isAddBaseAtk",
-    "Overwrite Scaling",
+    "Dmg Type",
+    "Wep Status",
 ]
 
 ANCHOR_INSERTIONS: Tuple[Tuple[str, str], ...] = (
@@ -41,7 +37,7 @@ ANCHOR_INSERTIONS: Tuple[Tuple[str, str], ...] = (
     ("Stance Dmg", "Text Stance"),
     ("AtkHoly", "Text Bullet"),
     ("Overwrite Scaling", "Text Scaling"),
-    ("subCategory4", "Text Category"),
+    ("subCategorySum", "Text Category"),
 )
 
 DROP_COLUMNS = {

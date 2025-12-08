@@ -66,10 +66,14 @@ def aggregate_steps(
 ) -> str:
     """
     Build a zero-padded FP/Charged/Step string for the given column.
-    Format: fp1_uncharged + ' | ' + fp1_charged + ' [' + fp0_uncharged + ' | ' + fp0_charged + ']'
+    Only include FP/Charged groups that exist in the input rows; pad Steps
+    within each present group up to the max step in the set.
+    Format (when present):
+      fp1_uncharged[ | fp1_charged][ [fp0_uncharged[ | fp0_charged]]]
     """
     combos: Dict[tuple[int, int, int], str] = {}
     max_step = 1
+    steps_by_group: Dict[tuple[int, int], int] = {}
     for row in rows:
         try:
             step = int(str(row.get("Step", "") or "1"))
@@ -78,19 +82,41 @@ def aggregate_steps(
         fp_val = 1 if str(row.get("FP", "")).strip() != "0" else 0
         charged_val = 1 if str(row.get("Charged", "")).strip() == "1" else 0
         max_step = max(max_step, step)
+        steps_by_group[(fp_val, charged_val)] = max(
+            steps_by_group.get((fp_val, charged_val), 1), step
+        )
         combos[(fp_val, charged_val, step)] = str(row.get(col, "") or "0")
 
-    def series(fp: int, charged: int) -> str:
+    def series(fp: int, charged: int) -> str | None:
+        if (fp, charged) not in steps_by_group:
+            return None
         values: List[str] = []
         for step in range(1, max_step + 1):
             values.append(combos.get((fp, charged, step), "0"))
+        try:
+            if all(float(v) == 0 for v in values):
+                return None
+        except ValueError:
+            pass
         return ", ".join(values)
 
     fp1_uncharged = series(1, 0)
     fp1_charged = series(1, 1)
     fp0_uncharged = series(0, 0)
     fp0_charged = series(0, 1)
-    return f"{fp1_uncharged} | {fp1_charged} [{fp0_uncharged} | {fp0_charged}]"
+    fp1_parts = [p for p in (fp1_uncharged, fp1_charged) if p is not None]
+    fp0_parts = [p for p in (fp0_uncharged, fp0_charged) if p is not None]
+
+    fp1_text = " | ".join(fp1_parts)
+    fp0_text = " | ".join(fp0_parts)
+
+    if fp1_text and fp0_text:
+        return f"{fp1_text} [{fp0_text}]"
+    if fp1_text:
+        return fp1_text
+    if fp0_text:
+        return f"[{fp0_text}]"
+    return "-"
 
 
 def collapse_rows(
