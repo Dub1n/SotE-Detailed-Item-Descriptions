@@ -1,10 +1,12 @@
 import argparse
 import csv
+import os
 import re
+import signal
 import sys
 from collections import defaultdict
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, Iterable, List, Tuple
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -16,6 +18,34 @@ if str(HELPERS_DIR) not in sys.path:
 from helpers.output import format_path_for_console  # noqa: E402
 
 CSV_PATTERN = re.compile(r"AoW-data-(\d+)\.csv$", re.IGNORECASE)
+try:
+    signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+except (AttributeError, ValueError):
+    # Not all platforms expose SIGPIPE.
+    pass
+
+
+def safe_print(text: str) -> None:
+    try:
+        print(text)
+    except BrokenPipeError:
+        os._exit(0)
+
+
+def normalize_columns(raw: Iterable[str]) -> List[str]:
+    """
+    Normalize a list of column strings into a de-duplicated, ordered list.
+    Supports comma-separated values passed to --ignore.
+    """
+    columns: List[str] = []
+    for item in raw:
+        if not item:
+            continue
+        for part in str(item).split(","):
+            col = part.strip()
+            if col and col not in columns:
+                columns.append(col)
+    return columns
 
 
 def find_latest_csv(directory: Path) -> Path | None:
@@ -31,34 +61,53 @@ def find_latest_csv(directory: Path) -> Path | None:
     return latest[1] if latest else None
 
 
-def load_counts(path: Path) -> Dict[Tuple[str, str], int]:
-    counts: Dict[Tuple[str, str], int] = defaultdict(int)
+def load_counts(
+    path: Path, key_fields: List[str]
+) -> Tuple[Dict[Tuple[str, ...], int], Dict[Tuple[str, ...], int]]:
+    counts: Dict[Tuple[str, ...], int] = defaultdict(int)
+    first_seen: Dict[Tuple[str, ...], int] = {}
     with path.open() as f:
         reader = csv.DictReader(f)
         fieldnames = reader.fieldnames or []
-        if "Skill" not in fieldnames or "Part" not in fieldnames:
-            raise ValueError("Input CSV must contain Skill and Part columns.")
-        for row in reader:
-            skill = (row.get("Skill") or "").strip() or "-"
-            part = (row.get("Part") or "").strip() or "-"
-            counts[(skill, part)] += 1
-    return counts
+        missing = [col for col in key_fields if col not in fieldnames]
+        if missing:
+            missing_text = ", ".join(missing)
+            raise ValueError(
+                f"Input CSV must contain required columns: {missing_text}"
+            )
+        for line_no, row in enumerate(reader, start=2):
+            key: List[str] = []
+            for col in key_fields:
+                key.append((row.get(col) or "").strip() or "-")
+            counts[tuple(key)] += 1
+            if tuple(key) not in first_seen:
+                first_seen[tuple(key)] = line_no
+    return counts, first_seen
 
 
-def duplicate_groups(counts: Dict[Tuple[str, str], int]) -> List[Tuple[str, str, int]]:
-    dupes: List[Tuple[str, str, int]] = []
-    for (skill, part), count in counts.items():
+def duplicate_groups(
+    counts: Dict[Tuple[str, ...], int],
+    first_seen: Dict[Tuple[str, ...], int],
+) -> List[Tuple[Tuple[str, ...], int, int]]:
+    dupes: List[Tuple[Tuple[str, ...], int, int]] = []
+    for key, count in counts.items():
         if count > 1:
-            dupes.append((skill, part, count))
-    dupes.sort(key=lambda item: (-item[2], item[0].lower(), item[1].lower()))
+            dupes.append((key, count, first_seen.get(key, 0)))
+    dupes.sort(
+        key=lambda item: (
+            -item[1],
+            item[2] or 0,
+            tuple(part.lower() for part in item[0]),
+        )
+    )
     return dupes
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
-            "Report Skill/Part combinations that appear more than once "
-            "in the latest AoW-data CSV."
+            "Report combinations of Skill/Part (plus any --ignore columns) "
+            "that appear more than once in the latest AoW-data CSV."
         )
     )
     parser.add_argument(
@@ -68,6 +117,20 @@ def main() -> None:
             "Explicit AoW-data-*.csv to scan. "
             "Defaults to the highest stage in work/aow_pipeline."
         ),
+    )
+    parser.add_argument(
+        "--ignore",
+        action="append",
+        default=[],
+        help=(
+            "Require duplicates to also match this column. "
+            "Repeatable or comma-separated (e.g., --ignore Weapon --ignore Hand)."
+        ),
+    )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Show all match columns in the output and print match column list.",
     )
     args = parser.parse_args()
 
@@ -81,18 +144,42 @@ def main() -> None:
             print(f"No AoW-data-*.csv files found in {WORK_DIR}")
             sys.exit(1)
 
-    counts = load_counts(input_path)
-    duplicates = duplicate_groups(counts)
+    extra_fields = normalize_columns(args.ignore)
+    key_fields = ["Skill", "Part"]
+    for field in extra_fields:
+        if field not in key_fields:
+            key_fields.append(field)
+
+    counts, first_seen = load_counts(input_path, key_fields)
+    duplicates = duplicate_groups(counts, first_seen)
     path_text = format_path_for_console(input_path, ROOT)
-    print(f"Scanning {path_text}")
+    match_cols = " | ".join(key_fields)
+    if args.verbose:
+        safe_print(f"Scanning {path_text} (match columns: {match_cols})")
+    else:
+        safe_print(f"Scanning {path_text}")
 
     if not duplicates:
-        print("No duplicate Skill/Part groups found.")
+        safe_print("No duplicate groups found.")
         return
 
-    for skill, part, count in duplicates:
-        print(f"{skill} | {part}: {count}")
+    line_width = len(str(max((line for *_ , line in duplicates), default=0))) or 1
+    for key_parts, count, line_no in duplicates:
+        if args.verbose:
+            label = " | ".join(key_parts)
+        else:
+            label = " | ".join(key_parts[:2])
+        line_text = str(line_no).rjust(line_width) if line_no else " " * line_width
+        safe_print(f"{line_text} {label}: {count}")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except BrokenPipeError:
+        # Allow piping to head/grep without a noisy traceback.
+        try:
+            sys.stdout.close()
+        except Exception:
+            pass
+        os._exit(0)
