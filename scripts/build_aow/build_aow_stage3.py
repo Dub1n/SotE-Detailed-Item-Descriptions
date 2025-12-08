@@ -59,6 +59,20 @@ def format_multiplier(value: float) -> str:
     return text if text else "0"
 
 
+def load_swordarts_names() -> set[str]:
+    names: set[str] = set()
+    path = ROOT / "PARAM/SwordArtsParam.csv"
+    if not path.exists():
+        return names
+    with path.open() as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            name = (row.get("Name") or "").strip()
+            if name and name != "%null%":
+                names.add(name)
+    return names
+
+
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
     with path.open() as f:
         reader = csv.DictReader(f)
@@ -115,11 +129,27 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
 
     status_raw = (row.get("Status MV") or "").strip()
     status_val = parse_float(status_raw)
+    wep_status_raw = (row.get("Wep Status") or "").strip()
     if status_val is None:
         row["Text Wep Status"] = ""
     else:
-        buildup = format_multiplier(status_val * 0.01)
-        row["Text Wep Status"] = f"Weapon Buildup: {buildup}x"
+        is_zero_status = status_val == 0
+        if wep_status_raw == "None" or is_zero_status:
+            row["Text Wep Status"] = "-"
+        else:
+            buildup = format_multiplier(status_val * 0.01)
+            sword_names = load_swordarts_names()
+            parts = [part.strip() for part in wep_status_raw.split("|")]
+            cleaned_parts = [p for p in parts if p]
+            if not cleaned_parts:
+                row["Text Wep Status"] = "-"
+            else:
+                uses_named = any(p in sword_names for p in cleaned_parts)
+                if uses_named:
+                    labels = " | ".join(cleaned_parts)
+                    row["Text Wep Status"] = f"{labels} Buildup: {buildup}x"
+                else:
+                    row["Text Wep Status"] = f"Weapon Buildup: {buildup}x"
     return row
 
 
