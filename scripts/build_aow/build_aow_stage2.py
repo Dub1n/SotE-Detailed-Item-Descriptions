@@ -175,23 +175,16 @@ def collapse_rows(
     warnings: List[str] = []
     forced_seen: Set[str] = set()
 
+    def source_value(row: Mapping[str, str], col: str) -> Any:
+        source_col = output_source_map.get(col, col)
+        return row.get(source_col, "")
+
     forced_names = set(force_groups.keys())
     rows_by_name = {
         row.get("Name", ""): row for row in rows if row.get("Name", "")
     }
-    canonical_fields = [
-        "Name",
-        "Skill",
-        "Follow-up",
-        "Hand",
-        "Part",
-        "FP",
-        "Charged",
-        "Step",
-        "Bullet",
-        "Tick",
-    ]
     canonical_map: Dict[str, Dict[str, str]] = {}
+    warn_cols: List[str] = [col for col in output_columns if col not in numeric_columns]
     for group_id, primary in force_primary.items():
         base_row = rows_by_name.get(primary)
         if base_row is None:
@@ -207,14 +200,10 @@ def collapse_rows(
         base_row = base_row or {}
         overrides = force_overrides.get(group_id, {})
         canonical_map[group_id] = {}
-        for col in canonical_fields:
+        for col in warn_cols:
             canonical_map[group_id][col] = overrides.get(
-                col, base_row.get(col, "")
+                col, source_value(base_row, col)
             )
-
-    def source_value(row: Dict[str, str], col: str) -> Any:
-        source_col = output_source_map.get(col, col)
-        return row.get(source_col, "")
 
     def parse_super(val: Any) -> float:
         parsed = parse_float(val)
@@ -222,16 +211,27 @@ def collapse_rows(
 
     for row in rows:
         name = row.get("Name", "")
+        raw_row = dict(row)
         working_row = dict(row)
         if name in force_groups:
-            key = ("__FORCED__", force_groups[name])
-            forced_seen.add(force_groups[name])
             group_id = force_groups[name]
+            key = ("__FORCED__", group_id)
+            forced_seen.add(group_id)
             canon = canonical_map.get(group_id, {})
+            overrides = force_overrides.get(group_id, {})
             if canon:
+                for col in warn_cols:
+                    if col in overrides:
+                        continue
+                    raw_val = source_value(raw_row, col)
+                    canon_val = canon.get(col, "")
+                    if str(raw_val) != str(canon_val):
+                        warnings.append(
+                            f"Disagreement on column '{col}' for key {key}: "
+                            f"keeping '{canon_val}', saw '{raw_val}'"
+                        )
                 for col, val in canon.items():
                     working_row[col] = val
-            overrides = force_overrides.get(group_id, {})
             if overrides:
                 for col, val in overrides.items():
                     working_row[col] = val
