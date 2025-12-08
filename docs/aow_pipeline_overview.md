@@ -209,6 +209,7 @@ flowchart LR
     isAdd1["isAddBaseAtk"]
     overwrite1["Overwrite Scaling"]
     subCats1["subCategory1-4"]
+    forceRules["force_collapse_pairs.json (optional)"]
   end
 
   subgraph Stage2Outputs["AoW-data-2 columns"]
@@ -274,6 +275,22 @@ flowchart LR
   physAttr1 --> groupKeys
   isAdd1 --> groupKeys
   overwrite1 --> groupKeys
+  forceRules --> forceCanon["Canonicalize forced groups (first entry + overrides)"]
+  name1 --> forceCanon
+  skill1 --> forceCanon
+  follow1 --> forceCanon
+  hand1 --> forceCanon
+  part1 --> forceCanon
+  fp1 --> forceCanon
+  charged1 --> forceCanon
+  step1 --> forceCanon
+  bullet1 --> forceCanon
+  tick1 --> forceCanon
+  physAttr1 --> forceCanon
+  isAdd1 --> forceCanon
+  overwrite1 --> forceCanon
+  subCats1 --> forceCanon
+  forceCanon --> groupKeys
 
   groupKeys --> agg["Group + aggregate rows"]
   sumMVs --> agg
