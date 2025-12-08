@@ -1,5 +1,6 @@
 import argparse
 import csv
+import re
 import sys
 from pathlib import Path
 from typing import Dict, List, Tuple
@@ -119,6 +120,152 @@ def aggregate_steps(
     return "-"
 
 
+def fmt_number(value: float) -> str:
+    if value.is_integer():
+        return str(int(value))
+    text = f"{value:.3f}".rstrip("0").rstrip(".")
+    return text
+
+
+def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
+    """
+    Second-pass collapse: merge rows that differ only by Weapon but share
+    identical non-Weapon columns and numeric arrangement. Weapons are
+    concatenated, and numeric positions become ranges when values differ.
+    """
+    fixed_cols = [
+        "Skill",
+        "Follow-up",
+        "Hand",
+        "Part",
+        "Weapon Source",
+        "Dmg Type",
+        "Wep Status",
+        "Overwrite Scaling",
+        "subCategorySum",
+    ]
+    agg_cols = [
+        "Dmg MV",
+        "Status MV",
+        "Weapon Buff MV",
+        "Stance Dmg",
+        "AtkPhys",
+        "AtkMag",
+        "AtkFire",
+        "AtkLtng",
+        "AtkHoly",
+    ]
+
+    def tokenize(text: str) -> List[tuple[str, str]]:
+        parts = re.split(r"(-?\d+(?:\.\d+)?)", text)
+        tokens: List[tuple[str, str]] = []
+        for idx, part in enumerate(parts):
+            if part == "":
+                continue
+            if idx % 2 == 1:
+                tokens.append(("num", part))
+            else:
+                tokens.append(("sep", part))
+        return tokens
+
+    def pattern(text: str) -> Tuple[tuple[str, ...], int]:
+        tokens = tokenize(text)
+        shape: List[str] = []
+        num_count = 0
+        for kind, val in tokens:
+            if kind == "num":
+                shape.append("{n}")
+                num_count += 1
+            else:
+                shape.append(val)
+        return tuple(shape), num_count
+
+    groups: Dict[Tuple[Tuple[str, ...], Tuple[str, ...]], List[Dict[str, str]]] = {}
+    shape_cache: Dict[str, Tuple[tuple[str, ...], int]] = {}
+    for row in rows:
+        patterns: List[str] = []
+        num_counts: List[int] = []
+        for col in agg_cols:
+            val = row.get(col, "") or ""
+            shape, count = shape_cache.setdefault(val, pattern(val))
+            patterns.append("|".join(shape))
+            num_counts.append(count)
+        key = (
+            tuple(row.get(col, "") for col in fixed_cols),
+            tuple(patterns),
+            tuple(num_counts),
+        )
+        groups.setdefault(key, []).append(row)
+
+    merged: List[Dict[str, str]] = []
+    for key, rows_in_group in groups.items():
+        if len(rows_in_group) == 1:
+            merged.append(rows_in_group[0])
+            continue
+        base_tokens: Dict[str, List[tuple[str, str]]] = {}
+        for col in agg_cols:
+            base_tokens[col] = tokenize(rows_in_group[0].get(col, "") or "")
+        # Validate identical token shapes across rows.
+        compatible = True
+        for row in rows_in_group[1:]:
+            for col in agg_cols:
+                if tokenize(row.get(col, "") or "") != base_tokens[col]:
+                    compatible = False
+                    break
+            if not compatible:
+                break
+        if not compatible:
+            merged.extend(rows_in_group)
+            continue
+
+        out = dict(rows_in_group[0])
+        # Merge weapons in seen order, deduped.
+        weapons: List[str] = []
+        for row in rows_in_group:
+            for part in (row.get("Weapon", "") or "").split("|"):
+                name = part.strip()
+                if name and name not in weapons:
+                    weapons.append(name)
+        out["Weapon"] = " | ".join(weapons)
+
+        # Merge numeric positions into ranges.
+        for col in agg_cols:
+            nums_by_idx: List[List[float]] = []
+            tokens = base_tokens[col]
+            # Collect numeric positions consistently across rows.
+            tokenized_rows = [tokenize(row.get(col, "") or "") for row in rows_in_group]
+            num_positions = [i for i, (k, _) in enumerate(tokens) if k == "num"]
+            for pos_idx, token_idx in enumerate(num_positions):
+                nums: List[float] = []
+                for trow in tokenized_rows:
+                    try:
+                        num = float(trow[token_idx][1])
+                    except (IndexError, ValueError):
+                        num = 0.0
+                    nums.append(num)
+                nums_by_idx.append(nums)
+
+            ranges: List[str] = []
+            for vals in nums_by_idx:
+                mn, mx = min(vals), max(vals)
+                ranges.append(fmt_number(mn) if mn == mx else f"{fmt_number(mn)}-{fmt_number(mx)}")
+
+            # Rebuild string.
+            rebuilt_parts: List[str] = []
+            range_idx = 0
+            for kind, val in tokens:
+                if kind == "num":
+                    rebuilt_parts.append(ranges[range_idx])
+                    range_idx += 1
+                else:
+                    rebuilt_parts.append(val)
+            out[col] = "".join(rebuilt_parts)
+
+        merged.append(out)
+
+    return merged
+
+
 def collapse_rows(
     rows: List[Dict[str, str]]
 ) -> Tuple[List[Dict[str, str]], List[str]]:
@@ -181,6 +328,8 @@ def collapse_rows(
 
         output_rows.append(out)
 
+    merged_rows = collapse_weapons(output_rows)
+
     output_fields = [
         "Skill",
         "Follow-up",
@@ -202,7 +351,7 @@ def collapse_rows(
         "Overwrite Scaling",
         "subCategorySum",
     ]
-    return output_rows, output_fields
+    return merged_rows, output_fields
 
 
 def transform_rows(
