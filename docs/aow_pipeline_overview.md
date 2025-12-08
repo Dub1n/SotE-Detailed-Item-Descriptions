@@ -37,13 +37,14 @@ flowchart LR
   - `docs/weapon_categories_poise.json` (category → display name + poise).
 - `docs/skill_names_from_gem_and_behavior.txt` (canonical skill list, longest-first matching; built by `scripts/build_aow/build_aow_stage0.py` from EquipParamGem + BehaviorParam_PC + SwordArtsParam).
 - Output: `work/aow_pipeline/AoW-data-1.csv` (collated rows; no value transforms beyond lightweight labeling).
-- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `Overwrite Scaling`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`.
+- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Wep Status`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `Overwrite Scaling`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`.
 - Resolution rules:
   - `Weapon`: if `Unique Skill Weapon` is populated, use it directly; else if the row name carries a `[Weapon Type]` prefix, use only that category unless the prefix is in the ignored list (`Slow`, `Var1`, `Var2`), in which case use the category mapping; otherwise, map the skill name to `EquipParamGem` mount flags **that have a valid `mountWepTextId` (not -1)** and emit the human-readable category names (space-separated).
   - `Unique Skill Weapon` slash handling: split `/` outside brackets into `|`; when `/` appears inside parentheses, attach each option to the surrounding text (`(Nightrider / Chainlink) Flail` → `Nightrider Flail | Chainlink Flail`; `Flail (Nightrider / Chainlink)` → `Flail Nightrider | Flail Chainlink`). `Weapon Poise` resolves per variant (pipe-aligned), and `Wep Phys`/`Wep Magic`/`Wep Fire`/`Wep Ltng`/`Wep Holy` are averaged across all variant weapons.
   - `Weapon` and `Weapon Poise` are pipe-delimited (` | `) lists to keep multi-word names intact; counts stay aligned (same number of entries in both fields).
   - `Weapon Poise`: if a unique weapon is present, read its `Base` from `Poise-Damage-MVs` (with category fallback when needed); if a bracketed weapon prefix is present, look up that category’s base poise; otherwise, emit category poise values from `weapon_categories_poise.json` aligned with the `Weapon` list.
   - `Disable Gem Attr`: for `Weapon Source` == `unique`, pull `disableGemAttr` from `EquipParamWeapon`; otherwise `-`.
+  - `Wep Status`: for `Weapon Source` == `unique` **and** `Disable Gem Attr` == `1`, pull `spEffectBehaviorId0/1/2` from `EquipParamWeapon`, drop `-1`, map IDs to `SpEffectParam` names (trim text after the first `-`), dedupe, and join with ` | `. Otherwise `-`.
   - `Wep Phys`/`Wep Magic`/`Wep Fire`/`Wep Ltng`/`Wep Holy`: for `Weapon Source` == `unique`, pull `attackBasePhysics`/`attackBaseMagic`/`attackBaseFire`/`attackBaseThunder`/`attackBaseDark` from `EquipParamWeapon` by weapon name (averaging when multiple unique weapons are listed); otherwise `-`.
   - `FP`: `0` when the name contains `(Lacking FP)`, else `1`.
   - `Charged`: `1` when the name contains `Charged`, else `0`.
@@ -182,6 +183,7 @@ flowchart LR
 - Drop rows entirely when every MV/Atk column is 0 after zeroing (Phys/Magic/Fire/Ltng/Holy/Status/Weapon Buff/Poise Dmg MVs and AtkPhys/AtkMag/AtkFire/AtkLtng/AtkHoly plus summed AtkSuperArmor).
 - Rename `Weapon Poise` → `Wep Poise Range`, collapsing pipe-delimited values to a min–max string (single values stay single).
 - Rename `Poise Dmg MV` → `Stance Dmg`, computing a min–max integer range from `Wep Poise Range` × original `Poise Dmg MV` ÷ 100, then adding summed `AtkSuperArmor` (half-up rounding). `AtkSuperArmor` is removed from the output columns.
+- `Wep Status` carries through as a first-value field (non-numeric) and stays after `Status MV`.
 - Add derived columns after `Holy MV`: `Dmg Type` (`Weapon` when all five MVs are non-zero and within 2x; `!` if any non-zero is >=2x another; when zeros exist, list non-zero types and prefix `! |` if 2–4 types and the smallest is <75% of the largest; when 2–4 non-zero types exist without zeros and min <75% max, prefix `! |`; override with `PhysAtkAttribute` when it is not 252/253; `-` when all zero) and `Dmg MV` (average of non-zero Phys/Magic/Fire/Ltng/Holy MVs divided by 100, rounded to 1 decimal).
 
 ```mermaid
@@ -204,6 +206,7 @@ flowchart LR
     wepBases1["Wep Phys / Wep Magic / Wep Fire / Wep Ltng / Wep Holy"]
     elemMVs1["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
     status1["Status MV"]
+    wepStatus1["Wep Status"]
     buff1["Weapon Buff MV"]
     poiseMV1["Poise Dmg MV"]
     physAttr1["PhysAtkAttribute (dropped after grouping)"]
@@ -233,6 +236,7 @@ flowchart LR
     out2DmgType["Dmg Type"]
     out2DmgMV["Dmg MV"]
     out2Status["Status MV"]
+    out2WepStatus["Wep Status"]
     out2Buff["Weapon Buff MV"]
     out2Stance["Stance Dmg"]
     out2AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
@@ -243,6 +247,7 @@ flowchart LR
 
   elemMVs1 --> sumMVs["Sum Phys/Magic/Fire/Ltng/Holy MV per group"]
   status1 --> sumStatus["Sum Status MV per group"]
+  wepStatus1 --> carryWepStatus["Carry first Wep Status"]
   buff1 --> sumBuff["Sum Weapon Buff MV per group"]
   poiseMV1 --> sumPoiseMV["Sum Poise Dmg MV per group"]
   atkStats1 --> sumAtkStats["Sum AtkPhys/AtkMag/AtkFire/AtkLtng/AtkHoly per group"]
@@ -307,6 +312,7 @@ flowchart LR
   carryWeaponSrc --> agg
   carryDisable --> agg
   carrySkill --> agg
+  carryWepStatus --> agg
   carryFollow --> agg
   carryHand --> agg
   carryPart --> agg
@@ -364,6 +370,7 @@ flowchart LR
   dmgMeta --> out2DmgType
   dmgMeta --> out2DmgMV
   dropZero --> out2Status
+  agg --> out2WepStatus
   dropZero --> out2Buff
   dropZero --> out2AtkStats
   passMeta --> out2IsAdd
@@ -374,8 +381,8 @@ flowchart LR
 ## Stage 3 (placeholder): Final shaping for downstream
 
 - Input: `work/aow_pipeline/AoW-data-2.csv`
-- Output: `work/aow_pipeline/AoW-data-3.csv` (currently identical to Stage 2; future spot for formatting ready/JSON ingest).
-- Script: `scripts/build_aow/build_aow_stage3.py` (stub identity pass-through with a per-row hook for future transforms).
+- Output: `work/aow_pipeline/AoW-data-3.csv` (currently a pass-through of Stage 2 columns plus text helper fields; future spot for formatting ready/JSON ingest).
+- Script: `scripts/build_aow/build_aow_stage3.py` (stub pass-through with per-row hooks for text-ready fields).
 
 ```mermaid
 flowchart LR
@@ -397,6 +404,7 @@ flowchart LR
     s3DmgType["Dmg Type"]
     s3DmgMV["Dmg MV"]
     s3Status["Status MV"]
+    s3WepStatus["Wep Status"]
     s3Buff["Weapon Buff MV"]
     s3Stance["Stance Dmg"]
     s3AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
@@ -406,6 +414,7 @@ flowchart LR
   end
   subgraph Stage3Out["AoW-data-3.csv columns"]
     o3Skill["Skill"]
+    o3TextName["Text Name"]
     o3Follow["Follow-up"]
     o3Hand["Hand"]
     o3Part["Part"]
@@ -421,16 +430,24 @@ flowchart LR
     o3ElemMVs["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
     o3DmgType["Dmg Type"]
     o3DmgMV["Dmg MV"]
+    o3TextWepDmg["Text Wep Dmg"]
     o3Status["Status MV"]
+    o3WepStatus["Wep Status"]
+    o3TextWepStatus["Text Wep Status"]
     o3Buff["Weapon Buff MV"]
     o3Stance["Stance Dmg"]
+    o3TextStance["Text Stance"]
     o3AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
+    o3TextBullet["Text Bullet"]
     o3IsAdd["isAddBaseAtk"]
     o3Overwrite["Overwrite Scaling"]
+    o3TextScaling["Text Scaling"]
     o3SubCats["subCategory1-4"]
+    o3TextCategory["Text Category"]
   end
   Stage3In --> passthrough["Stage 3 (pending)<br>identity pass-through"]
   passthrough --> o3Skill
+  passthrough --> o3TextName
   passthrough --> o3Follow
   passthrough --> o3Hand
   passthrough --> o3Part
@@ -446,13 +463,20 @@ flowchart LR
   passthrough --> o3ElemMVs
   passthrough --> o3DmgType
   passthrough --> o3DmgMV
+  passthrough --> o3TextWepDmg
   passthrough --> o3Status
+  passthrough --> o3WepStatus
+  passthrough --> o3TextWepStatus
   passthrough --> o3Buff
   passthrough --> o3Stance
+  passthrough --> o3TextStance
   passthrough --> o3AtkStats
+  passthrough --> o3TextBullet
   passthrough --> o3IsAdd
   passthrough --> o3Overwrite
+  passthrough --> o3TextScaling
   passthrough --> o3SubCats
+  passthrough --> o3TextCategory
 ```
 
 ## Filesystem layout

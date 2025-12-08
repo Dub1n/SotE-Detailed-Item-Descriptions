@@ -36,7 +36,7 @@ KEY_FIELDS = [
 ANCHOR_INSERTIONS: Tuple[Tuple[str, str], ...] = (
     ("Skill", "Text Name"),
     ("Dmg MV", "Text Wep Dmg"),
-    ("Status MV", "Text Wep Status"),
+    ("Wep Status", "Text Wep Status"),
     ("Stance Dmg", "Text Stance"),
     ("AtkHoly", "Text Bullet"),
     ("Overwrite Scaling", "Text Scaling"),

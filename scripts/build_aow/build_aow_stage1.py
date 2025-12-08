@@ -22,6 +22,7 @@ ATTACK_DATA_CSV = ROOT / "docs/(1.16.1)-Ashes-of-War-Attack-Data.csv"
 POISE_MV_CSV = ROOT / "docs/(1.16.1)-Poise-Damage-MVs.csv"
 EQUIP_PARAM_GEM_CSV = ROOT / "PARAM/EquipParamGem.csv"
 EQUIP_PARAM_WEAPON_CSV = ROOT / "PARAM/EquipParamWeapon.csv"
+SP_EFFECT_PARAM_CSV = ROOT / "PARAM/SpEffectParam.csv"
 CATEGORY_POISE_JSON = ROOT / "docs/weapon_categories_poise.json"
 SKILL_LIST_TXT = ROOT / "docs/skill_names_from_gem_and_behavior.txt"
 DEFAULT_OUTPUT = ROOT / "work/aow_pipeline/AoW-data-1.csv"
@@ -55,6 +56,7 @@ OUTPUT_COLUMNS = [
     "Ltng MV",
     "Holy MV",
     "Status MV",
+    "Wep Status",
     "Weapon Buff MV",
     "Poise Dmg MV",
     "PhysAtkAttribute",
@@ -295,7 +297,22 @@ def detect_tick(name: str) -> int:
     return 1 if re.search(r"\bTick\b", name, flags=re.IGNORECASE) else 0
 
 
-def load_weapon_base_stats() -> Dict[str, Dict[str, str]]:
+def load_sp_effect_names() -> Dict[str, str]:
+    effects: Dict[str, str] = {}
+    with SP_EFFECT_PARAM_CSV.open() as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            raw_name = (row.get("Name") or "").strip()
+            if not raw_name:
+                continue
+            clean = raw_name.split("-", 1)[0].strip()
+            effects[str(row.get("ID", "")).strip()] = clean
+    return effects
+
+
+def load_weapon_base_stats(
+    sp_effect_names: Dict[str, str]
+) -> Dict[str, Dict[str, str]]:
     stats: Dict[str, Dict[str, str]] = {}
     with EQUIP_PARAM_WEAPON_CSV.open() as f:
         reader = csv.DictReader(f)
@@ -304,6 +321,14 @@ def load_weapon_base_stats() -> Dict[str, Dict[str, str]]:
             if not name:
                 continue
             key = name.lower()
+            status_effects: List[str] = []
+            for col in ("spEffectBehaviorId0", "spEffectBehaviorId1", "spEffectBehaviorId2"):
+                raw_id = (row.get(col) or "").strip()
+                if not raw_id or raw_id == "-1":
+                    continue
+                effect_name = sp_effect_names.get(raw_id, "").strip()
+                if effect_name and effect_name not in status_effects:
+                    status_effects.append(effect_name)
             stats[key] = {
                 "disable_gem_attr": row.get("disableGemAttr", "") or "0",
                 "phys": row.get("attackBasePhysics", "") or "-",
@@ -311,6 +336,7 @@ def load_weapon_base_stats() -> Dict[str, Dict[str, str]]:
                 "fire": row.get("attackBaseFire", "") or "-",
                 "ltng": row.get("attackBaseThunder", "") or "-",
                 "holy": row.get("attackBaseDark", "") or "-",
+                "status_effects": status_effects,
             }
     return stats
 
@@ -443,6 +469,7 @@ def build_rows(
             wep_disable_attr = (
                 wep_phys
             ) = wep_magic = wep_fire = wep_ltng = wep_holy = "-"
+            wep_status_effects: List[str] = []
 
             if unique_weapon:
                 weapon_source = "unique"
@@ -456,6 +483,7 @@ def build_rows(
                 fire_values: List[str] = []
                 ltng_values: List[str] = []
                 holy_values: List[str] = []
+                status_values: List[str] = []
 
                 for weapon_name in weapon_list:
                     poise_val = poise_lookup.get(weapon_name.lower())
@@ -488,6 +516,9 @@ def build_rows(
                     fire_values.append(stats.get("fire", "-"))
                     ltng_values.append(stats.get("ltng", "-"))
                     holy_values.append(stats.get("holy", "-"))
+                    for effect in stats.get("status_effects", []):
+                        if effect not in status_values:
+                            status_values.append(effect)
 
                 if disable_values:
                     wep_disable_attr = disable_values[0]
@@ -498,6 +529,7 @@ def build_rows(
                 wep_fire = avg_stat(fire_values)
                 wep_ltng = avg_stat(ltng_values)
                 wep_holy = avg_stat(holy_values)
+                wep_status_effects = status_values
             elif prefix:
                 weapon_source = "prefix"
                 weapon_list = [prefix]
@@ -531,6 +563,13 @@ def build_rows(
             poise_field = (
                 align_join(poise_list, len(weapon_list)) if weapon_list else ""
             )
+            wep_status_field = "-"
+            if (
+                weapon_source == "unique"
+                and str(wep_disable_attr).strip() == "1"
+                and wep_status_effects
+            ):
+                wep_status_field = " | ".join(wep_status_effects)
 
             out = OrderedDict()
             out["Name"] = raw_name
@@ -558,6 +597,7 @@ def build_rows(
             out["Ltng MV"] = row.get("Ltng MV", "")
             out["Holy MV"] = row.get("Holy MV", "")
             out["Status MV"] = row.get("Status MV", "")
+            out["Wep Status"] = wep_status_field
             out["Weapon Buff MV"] = row.get("Weapon Buff MV", "")
             out["Poise Dmg MV"] = row.get("Poise Dmg MV", "")
             out["PhysAtkAttribute"] = row.get("PhysAtkAttribute", "")
@@ -602,7 +642,8 @@ def main() -> None:
     flag_to_info, category_poise = load_category_flags()
     mount_map = build_gem_mount_map(flag_to_info, skill_names)
     poise_lookup = load_poise_lookup()
-    weapon_base_stats = load_weapon_base_stats()
+    sp_effect_names = load_sp_effect_names()
+    weapon_base_stats = load_weapon_base_stats(sp_effect_names)
     before_rows = load_rows_by_key(args.output, ["Name"])
     rows, warnings = build_rows(
         mount_map, category_poise, poise_lookup, skill_names, weapon_base_stats

@@ -185,7 +185,7 @@ def collapse_rows(
         for col in output_columns
         if (source := output_source_map.get(col)) in col_positions
         and col_positions.get(source, 0) >= numeric_start
-        and source != "PhysAtkAttribute"
+        and source not in {"PhysAtkAttribute", "Wep Status"}
     ]
 
     grouped: Dict[Tuple[str, ...], Dict[str, Any]] = {}
