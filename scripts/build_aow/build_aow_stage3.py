@@ -33,6 +33,16 @@ KEY_FIELDS = [
     "Overwrite Scaling",
 ]
 
+ANCHOR_INSERTIONS: Tuple[Tuple[str, str], ...] = (
+    ("Skill", "Text Name"),
+    ("Dmg MV", "Text Wep Dmg"),
+    ("Status MV", "Text Wep Status"),
+    ("Stance Dmg", "Text Stance"),
+    ("AtkHoly", "Text Bullet"),
+    ("Overwrite Scaling", "Text Scaling"),
+    ("subCategory4", "Text Category"),
+)
+
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
     with path.open() as f:
@@ -42,19 +52,38 @@ def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
     return rows, fieldnames
 
 
+def ensure_output_fields(fieldnames: List[str]) -> List[str]:
+    fields = list(fieldnames)
+    for anchor, new_col in ANCHOR_INSERTIONS:
+        if new_col in fields:
+            continue
+        if anchor in fields:
+            fields.insert(fields.index(anchor) + 1, new_col)
+        else:
+            fields.append(new_col)
+    return fields
+
+
 def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     """
     Hook for future Stage 3 transforms.
     Modify or add columns based on existing row values here.
     """
-    return dict(row)
+    row.setdefault("Text Name", "")
+    row.setdefault("Text Wep Dmg", "")
+    row.setdefault("Text Wep Status", "")
+    row.setdefault("Text Stance", "")
+    row.setdefault("Text Bullet", "")
+    row.setdefault("Text Scaling", "")
+    row.setdefault("Text Category", "")
+    return row
 
 
 def transform_rows(
     rows: List[Dict[str, str]], fieldnames: List[str]
 ) -> Tuple[List[Dict[str, str]], List[str]]:
     transformed: List[Dict[str, str]] = []
-    output_fields = list(fieldnames)
+    output_fields = ensure_output_fields(fieldnames)
 
     for row in rows:
         base_row = dict(row)
