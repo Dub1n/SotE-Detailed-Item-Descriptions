@@ -1,9 +1,16 @@
 import argparse
 import csv
+import sys
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[2]
+HELPERS_DIR = ROOT / "scripts"
+if str(HELPERS_DIR) not in sys.path:
+    sys.path.append(str(HELPERS_DIR))
+
+from helpers.output import format_path_for_console  # noqa: E402
+
+
 GEM_CSV = ROOT / "PARAM/EquipParamGem.csv"
 BEHAVIOR_CSV = ROOT / "PARAM/BehaviorParam_PC.csv"
 SWORDARTS_CSV = ROOT / "PARAM/SwordArtsParam.csv"
@@ -68,6 +75,11 @@ def main() -> None:
         default=OUTPUT,
         help="Output path for combined skill list.",
     )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Show source-only skill sets (Gem/Behavior/SwordArts).",
+    )
     args = parser.parse_args()
 
     gem_names = load_gem_names()
@@ -77,22 +89,26 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text("\n".join(combined), encoding="utf-8")
 
-    print(f"Wrote {len(combined)} skills to {args.output}")
-    only_gem = gem_names - behavior_names
-    only_behavior = behavior_names - gem_names
-    only_swordarts = swordarts_names - gem_names - behavior_names
-    if only_gem:
-        print(f"Gem-only ({len(only_gem)}): {', '.join(sorted(only_gem))}")
-    if only_behavior:
-        print(
-            f"Behavior-only ({len(only_behavior)}): "
-            f"{', '.join(sorted(only_behavior))}"
-        )
-    if only_swordarts:
-        print(
-            f"SwordArts-only ({len(only_swordarts)}): "
-            f"{', '.join(sorted(only_swordarts))}"
-        )
+    path_text = format_path_for_console(args.output, ROOT)
+    print(f"Wrote {len(combined)} skills to {path_text}")
+    if args.verbose:
+        only_gem = gem_names - behavior_names
+        only_behavior = behavior_names - gem_names
+        only_swordarts = swordarts_names - gem_names - behavior_names
+        if only_gem:
+            print(
+                f"Gem-only ({len(only_gem)}): {', '.join(sorted(only_gem))}"
+            )
+        if only_behavior:
+            print(
+                f"Behavior-only ({len(only_behavior)}): "
+                f"{', '.join(sorted(only_behavior))}"
+            )
+        if only_swordarts:
+            print(
+                f"SwordArts-only ({len(only_swordarts)}): "
+                f"{', '.join(sorted(only_swordarts))}"
+            )
 
 
 if __name__ == "__main__":

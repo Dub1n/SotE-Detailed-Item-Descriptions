@@ -2,12 +2,22 @@ import argparse
 import csv
 import json
 import re
+import sys
 from collections import OrderedDict, defaultdict
 from pathlib import Path
 from typing import Dict, Iterable, List, Tuple, Optional
 
 
 ROOT = Path(__file__).resolve().parents[2]
+HELPERS_DIR = ROOT / "scripts"
+if str(HELPERS_DIR) not in sys.path:
+    sys.path.append(str(HELPERS_DIR))
+
+from helpers.diff import (  # noqa: E402
+    load_rows_by_key,
+    report_row_deltas,
+)
+from helpers.output import format_path_for_console  # noqa: E402
 ATTACK_DATA_CSV = ROOT / "docs/(1.16.1)-Ashes-of-War-Attack-Data.csv"
 POISE_MV_CSV = ROOT / "docs/(1.16.1)-Poise-Damage-MVs.csv"
 EQUIP_PARAM_GEM_CSV = ROOT / "PARAM/EquipParamGem.csv"
@@ -510,58 +520,20 @@ def main() -> None:
     mount_map = build_gem_mount_map(flag_to_info, skill_names)
     poise_lookup = load_poise_lookup()
     weapon_base_stats = load_weapon_base_stats()
+    before_rows = load_rows_by_key(args.output, ["Name"])
     rows, warnings = build_rows(
         mount_map, category_poise, poise_lookup, skill_names, weapon_base_stats
     )
-    before: Dict[str, Dict[str, str]] = {}
-    if args.output.exists():
-        with args.output.open() as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                before[row["Name"]] = row
     write_csv(rows, args.output)
 
-    print(f"Wrote {len(rows)} rows to {args.output}")
-    added = []
-    removed = []
-    changed = []
-    if before:
-        after_map = {row["Name"]: row for row in rows}
-        for name, prev in before.items():
-            if name not in after_map:
-                removed.append(name)
-                continue
-            curr = after_map[name]
-            if any(
-                str(prev.get(col, "")) != str(curr.get(col, ""))
-                for col in OUTPUT_COLUMNS
-            ):
-                changed.append(name)
-        for name in after_map:
-            if name not in before:
-                added.append(name)
-    total_diff = len(added) + len(removed) + len(changed)
-    if total_diff:
-        print(
-            "Row deltas: added="
-            f"{len(added)}, removed={len(removed)}, changed={len(changed)}"
-        )
-        if total_diff <= 50:
-            if added:
-                print("  Added:")
-                for n in sorted(added):
-                    print(f"    - {n}")
-            if removed:
-                print("  Removed:")
-                for n in sorted(removed):
-                    print(f"    - {n}")
-            if changed:
-                print("  Changed:")
-                for n in sorted(changed):
-                    print(f"    - {n}")
-    else:
-        if before:
-            print("No row content changes detected.")
+    path_text = format_path_for_console(args.output, ROOT)
+    print(f"Wrote {len(rows)} rows to {path_text}")
+    report_row_deltas(
+        before_rows=before_rows,
+        after_rows=rows,
+        fieldnames=OUTPUT_COLUMNS,
+        key_fields=["Name"],
+    )
     if warnings:
         for kind, items in warnings.items():
             uniq = sorted(set(items))

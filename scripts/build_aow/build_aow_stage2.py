@@ -1,11 +1,21 @@
 import argparse
 import csv
+import sys
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 from typing import Dict, List, Tuple, Any
 
 
 ROOT = Path(__file__).resolve().parents[2]
+HELPERS_DIR = ROOT / "scripts"
+if str(HELPERS_DIR) not in sys.path:
+    sys.path.append(str(HELPERS_DIR))
+
+from helpers.diff import (  # noqa: E402
+    load_rows_by_key,
+    report_row_deltas,
+)
+from helpers.output import format_path_for_console  # noqa: E402
 INPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-1.csv"
 OUTPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-2.csv"
 
@@ -361,11 +371,19 @@ def main() -> None:
     )
     args = parser.parse_args()
 
+    before_rows = load_rows_by_key(args.output, GROUP_KEYS)
     rows, fieldnames = read_rows(args.input)
     output_rows, output_columns, warnings = collapse_rows(rows, fieldnames)
     write_csv(output_rows, output_columns, args.output)
 
-    print(f"Wrote {len(output_rows)} rows to {args.output}")
+    path_text = format_path_for_console(args.output, ROOT)
+    print(f"Wrote {len(output_rows)} rows to {path_text}")
+    report_row_deltas(
+        before_rows=before_rows,
+        after_rows=output_rows,
+        fieldnames=output_columns,
+        key_fields=GROUP_KEYS,
+    )
     if warnings:
         print(f"Warnings ({len(warnings)}):")
         # Show a small sample to avoid noise.
