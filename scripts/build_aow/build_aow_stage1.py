@@ -306,6 +306,9 @@ def load_sp_effect_names() -> Dict[str, str]:
             if not raw_name:
                 continue
             clean = raw_name.split("-", 1)[0].strip()
+            clean = re.sub(r"^\[[^\]]+\]\s*", "", clean)
+            if clean == "Thiollier's Hidden Needle":
+                clean = "Sleep"
             effects[str(row.get("ID", "")).strip()] = clean
     return effects
 

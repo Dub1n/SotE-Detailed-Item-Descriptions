@@ -1,6 +1,5 @@
 import argparse
 import csv
-import re
 import sys
 from pathlib import Path
 from typing import Dict, List, Tuple
@@ -58,26 +57,6 @@ def parse_float(value: str) -> float | None:
 def format_multiplier(value: float) -> str:
     text = f"{value:.3f}".rstrip("0").rstrip(".")
     return text if text else "0"
-
-
-_SWORDARTS_NAMES: set[str] | None = None
-
-
-def load_swordarts_names() -> set[str]:
-    global _SWORDARTS_NAMES
-    if _SWORDARTS_NAMES is not None:
-        return _SWORDARTS_NAMES
-    names: set[str] = set()
-    path = ROOT / "PARAM/SwordArtsParam.csv"
-    if path.exists():
-        with path.open() as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                name = (row.get("Name") or "").strip()
-                if name and name != "%null%":
-                    names.add(name)
-    _SWORDARTS_NAMES = names
-    return names
 
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
@@ -145,29 +124,13 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
             row["Text Wep Status"] = "-"
         else:
             buildup = format_multiplier(status_val * 0.01)
-            parts = [part.strip() for part in wep_status_raw.split("|")]
-            cleaned_parts: List[str] = []
-            for part in parts:
-                if not part:
-                    continue
-                # Strip leading bracketed prefixes like "[Weapon]".
-                cleaned = re.sub(r"^\[[^\]]+\]\s*", "", part).strip()
-                if cleaned == "Thiollier's Hidden Needle":
-                    cleaned = "Sleep"
-                if cleaned:
-                    cleaned_parts.append(cleaned)
-            if not cleaned_parts:
-                row["Text Wep Status"] = f"Weapon Buildup: {buildup}x"
-            elif all(p == "None" for p in cleaned_parts):
-                row["Text Wep Status"] = "-"
+            if not wep_status_raw:
+                label = "Weapon"
+            elif wep_status_raw == "-":
+                label = "Weapon"
             else:
-                sword_names = load_swordarts_names()
-                uses_named = any(p in sword_names for p in cleaned_parts)
-                label = " | ".join(cleaned_parts)
-                if uses_named or cleaned_parts:
-                    row["Text Wep Status"] = f"{label} Buildup: {buildup}x"
-                else:
-                    row["Text Wep Status"] = f"Weapon Buildup: {buildup}x"
+                label = wep_status_raw
+            row["Text Wep Status"] = f"{label} Buildup: {buildup}x"
     return row
 
 
