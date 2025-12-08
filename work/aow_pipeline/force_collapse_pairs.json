@@ -1,6 +1,19 @@
 [
-  [
-    "Prelate's Charge - Bullet (Fire Tick 1)",
-    "Prelate's Charge - Bullet (Fire Tick 2)"
-  ]
+  {
+    "names": [
+      "Prelate's Charge - Bullet (Fire Tick 1)",
+      "Prelate's Charge - Bullet (Fire Tick 2)"
+    ]
+  },
+  {
+    "names": [
+      "Bloodboon Ritual #1",
+      "Bloodboon Ritual #1 - Bullet 1",
+      "Bloodboon Ritual #1 - Bullet 2",
+      "Bloodboon Ritual #1 - Bullet 1&2 [Hit]"
+    ],
+    "overrides": {
+      "PhysAtkAttribute": "Standard"
+    }
+  }
 ]

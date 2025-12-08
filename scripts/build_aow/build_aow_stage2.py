@@ -15,7 +15,9 @@ from helpers.diff import (  # noqa: E402
     load_rows_by_key,
     report_row_deltas,
 )
-from helpers.force_collapse import load_force_collapse_map  # noqa: E402
+from helpers.force_collapse import (  # noqa: E402
+    load_force_collapse_map,
+)
 from helpers.output import format_path_for_console  # noqa: E402
 INPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-1.csv"
 OUTPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-2.csv"
@@ -126,8 +128,10 @@ def collapse_rows(
     fieldnames: List[str],
     *,
     force_groups: Mapping[str, str] | None = None,
+    force_overrides: Mapping[str, Dict[str, str]] | None = None,
 ) -> Tuple[List[Dict[str, str]], List[str], List[str], List[str]]:
     force_groups = force_groups or {}
+    force_overrides = force_overrides or {}
     if "Phys MV" not in fieldnames:
         raise ValueError("Expected 'Phys MV' column in input.")
     numeric_start = fieldnames.index("Phys MV")
@@ -179,9 +183,14 @@ def collapse_rows(
 
     for row in rows:
         name = row.get("Name", "")
+        working_row = dict(row)
         if name in force_groups:
             key = ("__FORCED__", force_groups[name])
             forced_seen.add(force_groups[name])
+            overrides = force_overrides.get(force_groups[name], {})
+            if overrides:
+                for col, val in overrides.items():
+                    working_row[col] = val
         else:
             key = tuple(row.get(col, "") for col in GROUP_KEYS)
         if key not in grouped:
@@ -189,9 +198,11 @@ def collapse_rows(
                 col: source_value(row, col) for col in output_columns
             }
             if has_phys_attr:
-                grouped[key]["_phys_attr"] = row.get("PhysAtkAttribute", "")
+                grouped[key]["_phys_attr"] = working_row.get(
+                    "PhysAtkAttribute", ""
+                )
             grouped[key]["_stance_super"] = parse_super(
-                row.get(STANCE_SUPERARMOR_COL, "")
+                working_row.get(STANCE_SUPERARMOR_COL, "")
             )
             # Normalize numeric seeds to floats when possible.
             for col in numeric_columns:
@@ -202,13 +213,13 @@ def collapse_rows(
 
         agg = grouped[key]
         if has_phys_attr and "_phys_attr" not in agg:
-            agg["_phys_attr"] = row.get("PhysAtkAttribute", "")
+            agg["_phys_attr"] = working_row.get("PhysAtkAttribute", "")
         agg["_stance_super"] = agg.get("_stance_super", 0.0) + parse_super(
-            row.get(STANCE_SUPERARMOR_COL, "")
+            working_row.get(STANCE_SUPERARMOR_COL, "")
         )
         for col in output_columns:
             if col in numeric_columns:
-                num = parse_float(source_value(row, col))
+                num = parse_float(source_value(working_row, col))
                 if num is None:
                     continue
                 current = parse_float(agg.get(col, 0))
@@ -219,7 +230,7 @@ def collapse_rows(
             else:
                 # Keep the first value; record disagreement for visibility.
                 existing = agg.get(col, "")
-                incoming = source_value(row, col)
+                incoming = source_value(working_row, col)
                 if existing == "" and incoming != "":
                     agg[col] = incoming
                 elif existing != incoming and incoming != "" and key[0] != "__FORCED__":
@@ -389,11 +400,14 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    force_groups = load_force_collapse_map(args.force_collapse)
+    force_groups, force_overrides = load_force_collapse_map(args.force_collapse)
     before_rows = load_rows_by_key(args.output, GROUP_KEYS)
     rows, fieldnames = read_rows(args.input)
     output_rows, output_columns, warnings, forced_groups = collapse_rows(
-        rows, fieldnames, force_groups=force_groups
+        rows,
+        fieldnames,
+        force_groups=force_groups,
+        force_overrides=force_overrides,
     )
     write_csv(output_rows, output_columns, args.output)
 
