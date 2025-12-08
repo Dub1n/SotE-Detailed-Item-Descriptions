@@ -152,8 +152,24 @@ def infer_part(name: str, matched_skill: Optional[str] = None) -> str:
     # Trim leading " - " if present
     base = base.split(" - ", 1)[1] if " - " in base else base
     base = base.strip(" -:\t")
-    if base.startswith("(") and base.endswith(")") and len(base) > 1:
-        base = base[1:-1].strip()
+    if "(" in base or ")" in base:
+        parts: List[str] = []
+        cursor = 0
+        for match in re.finditer(r"\([^)]*\)", base):
+            before = base[cursor:match.start()].strip(" -:\t")
+            if before:
+                parts.append(re.sub(r"\s{2,}", " ", before).strip())
+            inner = match.group(0)[1:-1].strip()
+            if inner:
+                parts.append(re.sub(r"\s{2,}", " ", inner).strip())
+            cursor = match.end()
+        trailing = base[cursor:].strip(" -:\t")
+        if trailing:
+            parts.append(re.sub(r"\s{2,}", " ", trailing).strip())
+        if parts:
+            base = ", ".join(parts)
+        elif re.fullmatch(r"[()\s:-]*", base):
+            base = ""
     base = re.sub(r"\s{2,}", " ", base).strip()
     if not base:
         return "Loop" if "Loop" in name else "Main"

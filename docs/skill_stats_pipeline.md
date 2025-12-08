@@ -26,6 +26,7 @@ Outputs:
 - Stance scaling and FP pairing are handled in `collapse_group`, `stance_factors`, and `apply_stance_scaling`; `normalize_stance_strings` performs the final rounding/formatting.
 - Variant collapsing happens in `build_line_entries` (hash pairing) and `collapse_variants`/`collapse_variant_group` (charged vs uncharged), with `merge_identical_stats` merging identical outputs across weapons.
 - Ready population is isolated in `populate_ready`; filtering for `--ready-only` uses `load_ready_names` + `make_ready_filter`.
+- `merge_identical_stats` is now conservative: it only deduplicates blocks whose entire stats list matches (no stance-range merging across dissimilar blocks). This preserves 1h/2h ordering but can leave multiple per-weapon blocks that previously merged.
 
 ## Data flow
 
@@ -37,7 +38,7 @@ Outputs:
    - Flat super armor stance values come from `AtkSuperArmor` (add directly; no scaling).
 4) Attach weapon metadata:
    - `[Weapon] ...` prefixes in the CSV or `Unique Skill Weapon` column become `weapon` labels.
-   - EquipParamGem mount categories are used to fetch poise factors per weapon type.
+   - EquipParamGem mount categories are used to fetch poise factors per weapon type. A fuzzy/token fallback is applied if the label does not exactly match the category name (helps “Throwing Blade”, etc.).
 5) Collapse variants:
    - Identical stats across weapons are merged into one entry with a `weapon` list.
 
@@ -63,6 +64,8 @@ Outputs:
 - Ranges are min/max of the scaled values per position. Lacking-FP always emits a bracket; if missing in source, it is treated as 0.
 - Bullet stance lines are treated as with-FP only; lacking values default to 0.
 - `AtkSuperArmor` is treated as extra flat stance damage on that entry. Add it to the stance line without applying weapon/category scaling (e.g., Carian Sovereignty follow-ups).
+- Category selection is strict by weapon label, then fuzzy/token fallback. If no category is found, stance falls back to base (1.0) to avoid zeroing lines.
+- Final line ordering is anchored by `follow_up_priority` (Light/Heavy before base), `hand_mode_priority` (1h before 2h), then kind/descriptor/phase. Preserve this if you add new kinds so 1h/2h lines do not swap.
 
 ## Ready-only behavior
 
@@ -73,6 +76,12 @@ Outputs:
 - Add a new column: update the column lists near the top if you need a new damage type.
 - Adjust stance wording: tweak the `label_text` construction in `build_line_entries`.
 - Change rounding: stance ranges are rounded in `normalize_stance_strings` (base uses nearest int, lacking uses `ceil` on both ends; stance buckets from categories use `ceil`).
+- If you reintroduce stance-range merging across weapon groups, be careful to keep line order stable. Current behavior dedupes only identical stats (no range recompute) to avoid 1h/2h reordering that was caused by earlier stance merging.
+
+## Debugging aids
+
+- Use `scripts/compare_skill_snapshots.py --snapshot dev/debug/skills_snapshot.json --target work/skill_stats_from_sheet.json --output dev/debug/skills_snapshot_diff.json` to see missing/extra blocks and line-level content diffs (order-insensitive).
+- Recent issues: War Cry, Barbaric Roar, Aspects of the Crucible: Wings still over-split by weapon after conservative merging; Bloody Slash base damage differs (322 expected vs current 345). Shield Strike shows extra aggregated blocks vs per-shield splits. Keep these in mind when adjusting merging logic.
 
 ## Flow diagrams
 
@@ -84,7 +93,7 @@ flowchart TD
   D --> E[Hash/phase pairing\n- FP vs lacking\n- follow-up normalization]
   E --> F[Collapse variants per attack part\n- pad steps per prefix\n- merge charged/uncharged columns]
   F --> G[Stance scaling\n- apply weapon categories/base poise\n- range min/max per prefix]
-  G --> H[Merge identical outputs\n- merge by non-stance lines\n- stance lines range-merged]
+  G --> H[Deduplicate identical outputs\n- keep stance lines per block]
   H --> I[Outputs\n- work/skill_stats_from_sheet.json\n- optional ready population]
 ```
 

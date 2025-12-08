@@ -1344,143 +1344,78 @@ def collapse_variants(group: List[Dict[str, object]]) -> List[str]:
     return [m["text"] for m in merged_lines]
 
 
-def combine_variant_group(entries: List[Dict[str, object]]) -> Dict[str, object]:
-    weapons: List[str] = []
-    merge_map: Dict[Tuple, List[Dict[str, object] | None]] = {}
-    for idx, variant in enumerate(entries):
-        w = variant.get("weapon")
-        if isinstance(w, list):
+def combine_variant_group(entries: List[Dict[str, object]]) -> List[Dict[str, object]]:
+    def freeze_value(val):
+        if isinstance(val, dict):
+            return tuple(sorted((k, freeze_value(v)) for k, v in val.items()))
+        if isinstance(val, list):
+            return tuple(freeze_value(v) for v in val)
+        if isinstance(val, tuple):
+            return tuple(freeze_value(v) for v in val)
+        return val
+
+    def variant_signature(variant: Dict[str, object]) -> Tuple:
+        lines = variant.get("lines") or []
+        lines_sorted = sorted(
+            lines,
+            key=lambda l: (
+                l.get("merge_key"),
+                l.get("label_body"),
+                l.get("kind"),
+                l.get("suffix"),
+            ),
+        )
+        sig_lines = []
+        for line in lines_sorted:
+            sig_lines.append(
+                (
+                    line.get("merge_key"),
+                    freeze_value(line.get("values")),
+                    freeze_value(line.get("lacking_values")),
+                    bool(line.get("has_lacking")),
+                    bool(line.get("is_multiplier_flag")),
+                    line.get("kind"),
+                )
+            )
+        return (
+            variant.get("is_charged"),
+            variant.get("base_key"),
+            variant.get("hand_mode"),
+            tuple(sig_lines),
+        )
+
+    buckets: Dict[Tuple, Dict[str, object]] = {}
+    base_weaponless = next((v for v in entries if not v.get("weapon")), None)
+    if base_weaponless:
+        weapons: List[str] = []
+        for variant in entries:
+            w = variant.get("weapon") or []
+            if isinstance(w, str):
+                w = [w]
             weapons.extend(w)
-        elif w:
-            weapons.append(w)
-        for line in variant["lines"]:
-            bucket = merge_map.setdefault(line["merge_key"], [None] * len(entries))
-            bucket[idx] = line
+        merged = dict(base_weaponless)
+        merged["weapon"] = sorted(set(w for w in weapons if w))
+        return [merged]
 
-    combined_lines: List[Dict[str, object]] = []
-    for bucket in merge_map.values():
-        template = next((b for b in bucket if b), None)
-        if not template:
-            continue
-        values_combined: List[object] = []
-        lacks_combined: List[object] = []
-        has_lacking = False
-        max_len = 0
-        for line in bucket:
-            if not line:
-                continue
-            max_len = max(max_len, len(line.get("values") or []))
-            if line.get("has_lacking"):
-                has_lacking = True
-                max_len = max(max_len, len(line.get("lacking_values") or []))
-            elif line.get("kind") == "stance":
-                has_lacking = True
+    for variant in entries:
+        sig = variant_signature(variant)
+        bucket = buckets.get(sig)
+        if not bucket:
+            bucket = dict(variant)
+            bucket["weapon"] = []
+            buckets[sig] = bucket
 
-        for idx in range(max_len):
-            vals_at_idx = []
-            lacks_at_idx = []
-            for line in bucket:
-                if not line:
-                    continue
-                vals = line.get("values") or []
-                if idx < len(vals):
-                    val = vals[idx]
-                    if template.get("kind") == "stance":
-                        if isinstance(val, (list, tuple)):
-                            vals_at_idx.extend(list(val))
-                        elif isinstance(val, str) and "-" in val:
-                            try:
-                                a, b = val.split("-", 1)
-                                vals_at_idx.extend([float(a), float(b)])
-                            except Exception:
-                                try:
-                                    vals_at_idx.append(float(val))
-                                except Exception:
-                                    vals_at_idx.append(val)
-                        else:
-                            vals_at_idx.append(val)
-                    else:
-                        vals_at_idx.append(val)
-                if has_lacking:
-                    lacks = line.get("lacking_values") or []
-                    if idx < len(lacks):
-                        lv = lacks[idx]
-                        if template.get("kind") == "stance":
-                            if isinstance(lv, (list, tuple)):
-                                lacks_at_idx.extend(list(lv))
-                            elif isinstance(lv, str) and "-" in lv:
-                                try:
-                                    a, b = lv.split("-", 1)
-                                    lacks_at_idx.extend([float(a), float(b)])
-                                except Exception:
-                                    try:
-                                        lacks_at_idx.append(float(lv))
-                                    except Exception:
-                                        lacks_at_idx.append(lv)
-                            else:
-                                lacks_at_idx.append(lv)
-                        else:
-                            lacks_at_idx.append(lv)
-                    elif template.get("kind") == "stance":
-                        lacks_at_idx.append(0)
-            if template.get("kind") == "stance":
+        weapons = variant.get("weapon") or []
+        if isinstance(weapons, str):
+            weapons = [weapons]
+        bucket["weapon"].extend(w for w in weapons if w)
 
-                def round_num(x):
-                    try:
-                        return int(math.ceil(float(x)))
-                    except Exception:
-                        return x
+    combined: List[Dict[str, object]] = []
+    for variant in buckets.values():
+        variant["weapon"] = sorted(set(variant.get("weapon") or []))
+        combined.append(variant)
 
-                if vals_at_idx:
-                    mn = min(vals_at_idx)
-                    mx = max(vals_at_idx)
-                    mn = round_num(mn)
-                    mx = round_num(mx)
-                    values_combined.append((mn, mx) if mn != mx else mn)
-                else:
-                    values_combined.append(0)
-                if has_lacking:
-                    if lacks_at_idx:
-                        mn = min(lacks_at_idx)
-                        mx = max(lacks_at_idx)
-                        mn = round_num(mn)
-                        mx = round_num(mx)
-                        lacks_combined.append((mn, mx) if mn != mx else mn)
-                    else:
-                        lacks_combined.append(0)
-            else:
-                if vals_at_idx:
-                    try:
-                        values_combined.append(min(vals_at_idx))
-                    except Exception:
-                        values_combined.append(vals_at_idx[0])
-                else:
-                    values_combined.append(0)
-                if has_lacking:
-                    if lacks_at_idx:
-                        try:
-                            lacks_combined.append(min(lacks_at_idx))
-                        except Exception:
-                            lacks_combined.append(lacks_at_idx[0])
-                    else:
-                        lacks_combined.append(0)
-
-        new_line = dict(template)
-        new_line["values"] = values_combined
-        if has_lacking:
-            new_line["lacking_values"] = lacks_combined
-            new_line["has_lacking"] = True
-        combined_lines.append(new_line)
-
-    return {
-        "name": entries[0]["name"],
-        "weapon": weapons,
-        "lines": combined_lines,
-        "is_charged": entries[0].get("is_charged", False),
-        "base_key": entries[0].get("base_key"),
-        "is_unique": entries[0].get("is_unique", False),
-        "hand_mode": entries[0].get("hand_mode"),
-    }
+    return combined
 
 
 def normalize_stance_strings(lines: List[str]) -> List[str]:
@@ -1622,86 +1557,26 @@ def collapse_variant_group(
 
 
 def merge_identical_stats(entries: List[Dict[str, object]]) -> List[Dict[str, object]]:
-    def split_stance_line(line: str) -> Tuple[str, str]:
-        if "stance damage" not in line.lower():
-            return line, ""
-        parts = line.split(":</font>", 1)
-        if len(parts) == 2:
-            return parts[0] + ":</font>", parts[1]
-        return line, ""
-
-    def count_numbers(text: str) -> int:
-        return len(re.findall(r"-?\\d+\\.?\\d*", text))
-
-    def merge_stance_values(lines: List[str]) -> str:
-        label, rest = split_stance_line(lines[0])
-        matches = list(re.finditer(r"-?\\d+\\.?\\d*", rest))
-        if not matches:
-            return lines[0]
-        tokens_lists = []
-        for ln in lines:
-            _, ln_rest = split_stance_line(ln)
-            toks = re.findall(r"-?\\d+\\.?\\d*", ln_rest)
-            tokens_lists.append(toks)
-        token_count = len(tokens_lists[0])
-        if any(len(toks) != token_count for toks in tokens_lists):
-            return lines[0]
-        merged_tokens = []
-        for idx in range(token_count):
-            nums = [float(toks[idx]) for toks in tokens_lists]
-            mn, mx = min(nums), max(nums)
-            mn_i = int(math.ceil(mn))
-            mx_i = int(math.ceil(mx))
-            merged_tokens.append(str(mn_i) if mn_i == mx_i else f"{mn_i}-{mx_i}")
-
-        # Rebuild the rest string using the positions from the first line.
-        pieces = []
-        last_end = 0
-        tokens_iter = iter(merged_tokens)
-        for m in matches:
-            pieces.append(rest[last_end : m.start()])
-            pieces.append(next(tokens_iter, m.group(0)))
-            last_end = m.end()
-        pieces.append(rest[last_end:])
-        merged_rest = "".join(pieces)
-        return f"{label}{merged_rest}"
-
-    grouped: Dict[
-        Tuple[str, Tuple[str, ...], Tuple[str, ...], Tuple[int, ...]], List[Dict[str, object]]
-    ] = {}
+    grouped: Dict[Tuple[str, Tuple[str, ...]], List[Dict[str, object]]] = {}
     for entry in entries:
         name = entry["name"]
-        stats = entry.get("stats") or []
-        non_stance = tuple(s for s in stats if "stance damage" not in s.lower())
-        stance_lines = [s for s in stats if "stance damage" in s.lower()]
-        stance_labels = tuple(split_stance_line(s)[0] for s in stance_lines)
-        stance_counts = tuple(count_numbers(split_stance_line(s)[1]) for s in stance_lines)
-        key = (name, non_stance, stance_labels, stance_counts)
+        stats = tuple(entry.get("stats") or [])
+        key = (name, stats)
         grouped.setdefault(key, []).append(entry)
 
     output: List[Dict[str, object]] = []
     for key, bucket in grouped.items():
-        name, non_stance, stance_labels, stance_counts = key
+        name, stats = key
         weapons: List[str] = []
-        stance_lines_per_entry = []
         for entry in bucket:
             w = entry.get("weapon") or []
             if isinstance(w, str):
                 w = [w]
             weapons.extend(w)
-            stance_lines_per_entry.append([s for s in entry.get("stats", []) if "stance damage" in s.lower()])
-
-        merged_stance: List[str] = []
-        if stance_labels:
-            for idx in range(len(stance_labels)):
-                lines_at_idx = [lines[idx] for lines in stance_lines_per_entry if len(lines) > idx]
-                merged_stance.append(merge_stance_values(lines_at_idx))
-
-        stats_out = list(non_stance) + merged_stance
         output.append(
             {
                 "name": name,
-                "stats": stats_out,
+                "stats": list(stats),
                 "weapon": sorted(set(w for w in weapons if w)),
             }
         )
@@ -1806,20 +1681,30 @@ def populate_ready(skill_path: Path, output: List[Dict[str, object]]) -> None:
 
 def load_existing_output(
     output_path: Path,
-) -> Tuple[Dict[str, Dict[str, object]], List[str]]:
+) -> Tuple[
+    Dict[Tuple[str, Tuple[str, ...]], Dict[str, object]],
+    List[Tuple[str, Tuple[str, ...]]],
+]:
     if not output_path.exists():
         return {}, []
     with output_path.open() as f:
         data = json.load(f)
 
-    mapping: Dict[str, Dict[str, object]] = {}
-    order: List[str] = []
+    def entry_key(entry: Dict[str, object]) -> Tuple[str, Tuple[str, ...]]:
+        weapons = entry.get("weapon") or []
+        if isinstance(weapons, str):
+            weapons = [weapons]
+        return (entry.get("name"), tuple(sorted(w for w in weapons if w)))
+
+    mapping: Dict[Tuple[str, Tuple[str, ...]], Dict[str, object]] = {}
+    order: List[Tuple[str, Tuple[str, ...]]] = []
     if isinstance(data, list):
         for entry in data:
             if not isinstance(entry, dict) or "name" not in entry:
                 continue
-            mapping[entry["name"]] = entry
-            order.append(entry["name"])
+            key = entry_key(entry)
+            mapping[key] = entry
+            order.append(key)
     return mapping, order
 
 
@@ -1867,29 +1752,32 @@ def merge_entry(
 
 def merge_outputs(
     new_entries: List[Dict[str, object]],
-    existing_map: Dict[str, Dict[str, object]],
-    existing_order: List[str],
+    existing_map: Dict[Tuple[str, Tuple[str, ...]], Dict[str, object]],
+    existing_order: List[Tuple[str, Tuple[str, ...]]],
     version_key: str | None,
     update_latest: bool,
     preserve_existing: bool,
 ) -> List[Dict[str, object]]:
-    merged = dict(existing_map) if preserve_existing else {}
-    order = list(existing_order) if preserve_existing else []
-
-    for entry in new_entries:
-        name = entry.get("name")
-        if not name:
-            continue
-        merged[name] = merge_entry(merged.get(name), entry, version_key, update_latest)
-        if name not in order:
-            order.append(name)
+    def entry_key(entry: Dict[str, object]) -> Tuple[str | None, Tuple[str, ...]]:
+        weapons = entry.get("weapon") or []
+        if isinstance(weapons, str):
+            weapons = [weapons]
+        return (entry.get("name"), tuple(sorted(w for w in weapons if w)))
 
     if not preserve_existing:
-        order = [entry.get("name") for entry in new_entries if entry.get("name") in merged]
-    else:
-        order = [name for name in order if name in merged]
+        return list(new_entries)
 
-    return [merged[name] for name in order]
+    merged = dict(existing_map)
+    order = list(existing_order)
+
+    for entry in new_entries:
+        key = entry_key(entry)
+        merged[key] = merge_entry(merged.get(key), entry, version_key, update_latest)
+        if key not in order:
+            order.append(key)
+
+    order = [key for key in order if key in merged]
+    return [merged[key] for key in order]
 
 
 def main() -> None:
@@ -1941,6 +1829,32 @@ def main() -> None:
                         parts = [p.strip().lower() for p in name.split("/")]
                         if label_lower == name.lower() or label_lower in parts:
                             filtered.append(cat)
+                    if not filtered:
+                        fuzzy = [
+                            cat
+                            for cat in stance_categories
+                            if label_lower in str(cat.get("name", "")).lower()
+                            or str(cat.get("name", "")).lower() in label_lower
+                        ]
+                        filtered = fuzzy
+                    if not filtered:
+                        label_tokens = {
+                            tok
+                            for tok in re.split(r"[^a-z0-9]+", label_lower)
+                            if len(tok) >= 3
+                        }
+                        if label_tokens:
+                            filtered = []
+                            for cat in stance_categories:
+                                cat_tokens = {
+                                    tok
+                                    for tok in re.split(
+                                        r"[^a-z0-9]+", str(cat.get("name", "")).lower()
+                                    )
+                                    if len(tok) >= 3
+                                }
+                                if label_tokens & cat_tokens:
+                                    filtered.append(cat)
                     if filtered:
                         stance_categories = filtered
 
@@ -2016,7 +1930,7 @@ def main() -> None:
                     variant
                 )
             for key in sorted(grouped_by_name.keys(), key=lambda k: (k[0], k[1] or "")):
-                combined_variants.append(combine_variant_group(grouped_by_name[key]))
+                combined_variants.extend(combine_variant_group(grouped_by_name[key]))
         if var_generic:
             grouped_var_by_name: Dict[
                 Tuple[str, str | None], List[Dict[str, object]]
@@ -2026,7 +1940,7 @@ def main() -> None:
                     variant
                 )
             for key in sorted(grouped_var_by_name.keys(), key=lambda k: (k[0], k[1] or "")):
-                combined_variants.append(
+                combined_variants.extend(
                     combine_variant_group(grouped_var_by_name[key])
                 )
         combined_variants.extend(unique_variants)
@@ -2046,8 +1960,8 @@ def main() -> None:
     preserve_existing = bool(
         args.append_version_key or args.only_skills or args.only_skills_file
     )
-    existing_map: Dict[str, Dict[str, object]]
-    existing_order: List[str]
+    existing_map: Dict[Tuple[str, Tuple[str, ...]], Dict[str, object]]
+    existing_order: List[Tuple[str, Tuple[str, ...]]]
     if preserve_existing:
         existing_map, existing_order = load_existing_output(output_path)
     else:

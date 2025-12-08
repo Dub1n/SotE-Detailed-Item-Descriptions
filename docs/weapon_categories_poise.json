@@ -156,7 +156,7 @@
     "poise": 5.5
   },
   "canMountWep_ThrowingWeapon": {
-    "name": "Throwing Weapon",
+    "name": "Throwing Blade",
     "poise": 2
   },
   "canMountWep_ReverseHandSword": {

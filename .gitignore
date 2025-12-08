@@ -1,24 +1,42 @@
-*.dcx
+# Personal notes
 notes.md
-*.zip
-*.log
-prompts/
-fex_cache/
-fex_cache_filtered/
 
-*/WitchyBND
-*.dll
-temp/
-real_dlc/
-package-*/
-data/
+# Editor settings
+.vscode
+
+# Python environment
 .venv/
-bk_*/
 __pycache__/
-mod/
+
+# Logs
+*.log
+
+# Archives and packages
+*.zip
+package-*/
+
+# Game binaries and assets
+*.dcx
+*.dll
 *.fmg
-tools/
+regulation.bin
 bhd/
 tae/
+*/WitchyBND
+
+# Generated data and outputs
+data/
 dump/
+mod/
+real_dlc/
+tools/
+temp/
+tmp/
+fex_cache/
+fex_cache_filtered/
 work/aow_pipeline/*
+bk_*/
+*_bk
+
+# Workflow prompts
+prompts/
