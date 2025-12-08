@@ -3,7 +3,7 @@ import csv
 import sys
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
-from typing import Dict, List, Tuple, Any, Mapping
+from typing import Dict, List, Tuple, Any, Mapping, Set
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -126,7 +126,7 @@ def collapse_rows(
     fieldnames: List[str],
     *,
     force_groups: Mapping[str, str] | None = None,
-) -> Tuple[List[Dict[str, str]], List[str], List[str]]:
+) -> Tuple[List[Dict[str, str]], List[str], List[str], List[str]]:
     force_groups = force_groups or {}
     if "Phys MV" not in fieldnames:
         raise ValueError("Expected 'Phys MV' column in input.")
@@ -167,6 +167,7 @@ def collapse_rows(
 
     grouped: Dict[Tuple[str, ...], Dict[str, Any]] = {}
     warnings: List[str] = []
+    forced_seen: Set[str] = set()
 
     def source_value(row: Dict[str, str], col: str) -> Any:
         source_col = output_source_map.get(col, col)
@@ -180,6 +181,7 @@ def collapse_rows(
         name = row.get("Name", "")
         if name in force_groups:
             key = ("__FORCED__", force_groups[name])
+            forced_seen.add(force_groups[name])
         else:
             key = tuple(row.get(col, "") for col in GROUP_KEYS)
         if key not in grouped:
@@ -220,7 +222,7 @@ def collapse_rows(
                 incoming = source_value(row, col)
                 if existing == "" and incoming != "":
                     agg[col] = incoming
-                elif existing != incoming and incoming != "":
+                elif existing != incoming and incoming != "" and key[0] != "__FORCED__":
                     warnings.append(
                         f"Disagreement on column '{col}' for key {key}: "
                         f"keeping '{existing}', saw '{incoming}'"
@@ -341,7 +343,7 @@ def collapse_rows(
             else:
                 out_row[col] = val
         output_rows.append(out_row)
-    return output_rows, output_columns, warnings
+    return output_rows, output_columns, warnings, sorted(forced_seen)
 
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
@@ -390,7 +392,7 @@ def main() -> None:
     force_groups = load_force_collapse_map(args.force_collapse)
     before_rows = load_rows_by_key(args.output, GROUP_KEYS)
     rows, fieldnames = read_rows(args.input)
-    output_rows, output_columns, warnings = collapse_rows(
+    output_rows, output_columns, warnings, forced_groups = collapse_rows(
         rows, fieldnames, force_groups=force_groups
     )
     write_csv(output_rows, output_columns, args.output)
@@ -403,6 +405,13 @@ def main() -> None:
         fieldnames=output_columns,
         key_fields=GROUP_KEYS,
     )
+    if forced_groups:
+        if len(forced_groups) <= 10:
+            print(f"Forced ({len(forced_groups)}) collapse:")
+            for label in forced_groups:
+                print(f"  - {label}")
+        else:
+            print(f"Forced ({len(forced_groups)}) collapses")
     if warnings:
         print(f"Warnings ({len(warnings)}):")
         # Show a small sample to avoid noise.
