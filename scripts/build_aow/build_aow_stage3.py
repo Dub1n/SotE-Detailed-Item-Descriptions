@@ -181,10 +181,22 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                 pattern.append(val)
         return tuple(pattern), count
 
-    # Cluster by non-weapon fields.
+    # Cluster by non-weapon fields (treat Dmg Type "-" as wild and Overwrite Scaling "null" as wild).
     clusters: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
     for row in rows:
-        key = tuple(row.get(col, "") for col in fixed_cols)
+        dtype = row.get("Dmg Type", "")
+        dtype_key = "__ANY_DMG__" if dtype == "-" else dtype
+        overw = row.get("Overwrite Scaling", "")
+        overw_key = "__NULL__" if overw == "null" else overw
+        key_parts = []
+        for col in fixed_cols:
+            if col == "Dmg Type":
+                key_parts.append(dtype_key)
+            elif col == "Overwrite Scaling":
+                key_parts.append(overw_key)
+            else:
+                key_parts.append(row.get(col, ""))
+        key = tuple(key_parts)
         clusters.setdefault(key, []).append(row)
 
     merged: List[Dict[str, str]] = []
@@ -223,6 +235,21 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             base_weapon = next(iter(weapon_rows))
             base_row = weapon_rows[base_weapon][0]
             out = dict(base_row)
+            # Resolve Dmg Type preferring non-"-".
+            dtype_candidates = [
+                r.get("Dmg Type", "") for rows_list in weapon_rows.values() for r in rows_list
+            ]
+            chosen_dtype = next(
+                (d for d in dtype_candidates if d and d != "-"), base_row.get("Dmg Type", ""))
+            out["Dmg Type"] = chosen_dtype or "-"
+            # Resolve Overwrite Scaling preferring non-"null"/non-empty.
+            ovw_candidates = [
+                r.get("Overwrite Scaling", "") for rows_list in weapon_rows.values() for r in rows_list
+            ]
+            chosen_ovw = next(
+                (o for o in ovw_candidates if o and o != "null"), None
+            )
+            out["Overwrite Scaling"] = chosen_ovw if chosen_ovw is not None else "null"
 
             # Merge weapons.
             weapons: List[str] = []
