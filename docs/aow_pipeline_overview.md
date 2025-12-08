@@ -375,6 +375,7 @@ flowchart LR
 
 - Input: `work/aow_pipeline/AoW-data-2.csv`
 - Output: `work/aow_pipeline/AoW-data-3.csv` (currently identical to Stage 2; future spot for formatting ready/JSON ingest).
+- Script: `scripts/build_aow/build_aow_stage3.py` (stub identity pass-through with a per-row hook for future transforms).
 
 ```mermaid
 flowchart LR
@@ -463,7 +464,7 @@ flowchart LR
 - `work/aow_pipeline/AoW-data-2.csv` (generated Stage 2 output).
 - `work/aow_pipeline/force_collapse_pairs.json` (forced collapse groups + overrides applied in Stage 2).
 - `work/aow_pipeline/` (workspace for outputs and scratch; add temp files as needed).
-- `scripts/build_aow/build_aow_stage0.py` (skill list), `scripts/build_aow/build_aow_stage1.py` (stage 1 collate), `scripts/build_aow/build_aow_stage2.py` (stage 2 collapse).
+- `scripts/build_aow/build_aow_stage0.py` (skill list), `scripts/build_aow/build_aow_stage1.py` (stage 1 collate), `scripts/build_aow/build_aow_stage2.py` (stage 2 collapse), `scripts/build_aow/build_aow_stage3.py` (stage 3 pass-through/stub).
 - `Makefile` (`make stage0|stage1|stage2|stages` with optional flags passed after the target).
 
 ## How to regenerate Stage 1
