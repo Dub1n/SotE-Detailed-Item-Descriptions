@@ -378,11 +378,18 @@ flowchart LR
   passMeta --> out2SubCats
 ```
 
-## Stage 3 (placeholder): Identity bridge
+## Stage 3: Collapse per skill/weapon and build FP/Charged step strings
 
 - Input: `work/aow_pipeline/AoW-data-2.csv`
-- Output: `work/aow_pipeline/AoW-data-3.csv` (currently identical to Stage 2; reserved for future shaping before text helpers).
-- Script: `scripts/build_aow/build_aow_stage3.py` (stub pass-through with a per-row hook).
+- Output: `work/aow_pipeline/AoW-data-3.csv` (collapsed rows with FP/Charged/Step strings and trimmed columns).
+- Script: `scripts/build_aow/build_aow_stage3.py` (groups, pads, and concatenates values).
+- Group keys: `Skill`, `Follow-up`, `Hand`, `Part`, `Weapon`, `Dmg Type`, `Wep Status`.
+- Removed columns: `Wep Poise Range`, `Disable Gem Attr`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `isAddBaseAtk`, `subCategory1-4`.
+- `subCategorySum`: union of all subCategory1-4 values in the group (order-preserving, deduped, pipe-joined).
+- `Overwrite Scaling`: unique values (ignoring empty/`-`) joined with `, `.
+- Aggregated columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`):
+  - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen in the group.
+  - Format per column: `fp1_uncharged_steps, … | fp1_charged_steps, … [fp0_uncharged_steps, … | fp0_charged_steps, …]` (examples: `1, 2 | 2, 3 [0, 0 | 0, 0]`).
 
 ```mermaid
 flowchart LR
@@ -391,10 +398,6 @@ flowchart LR
     s3Follow["Follow-up"]
     s3Hand["Hand"]
     s3Part["Part"]
-    s3FP["FP"]
-    s3Charged["Charged"]
-    s3Step["Step"]
-    s3Bullet["Bullet"]
     s3WeaponSrc["Weapon Source"]
     s3Weapon["Weapon"]
     s3DmgType["Dmg Type"]
@@ -404,7 +407,6 @@ flowchart LR
     s3Buff["Weapon Buff MV"]
     s3Stance["Stance Dmg"]
     s3AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
-    s3IsAdd["isAddBaseAtk"]
     s3Overwrite["Overwrite Scaling"]
     s3SubCats["subCategory1-4"]
   end
@@ -413,48 +415,34 @@ flowchart LR
     o3Follow["Follow-up"]
     o3Hand["Hand"]
     o3Part["Part"]
-    o3FP["FP"]
-    o3Charged["Charged"]
-    o3Step["Step"]
-    o3Bullet["Bullet"]
     o3WeaponSrc["Weapon Source"]
     o3Weapon["Weapon"]
     o3DmgType["Dmg Type"]
-    o3DmgMV["Dmg MV"]
-    o3Status["Status MV"]
+    o3DmgMV["Dmg MV (FP/Charged/Step string)"]
+    o3Status["Status MV (FP/Charged/Step string)"]
     o3WepStatus["Wep Status"]
-    o3Buff["Weapon Buff MV"]
-    o3Stance["Stance Dmg"]
-    o3AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
-    o3IsAdd["isAddBaseAtk"]
-    o3Overwrite["Overwrite Scaling"]
-    o3SubCats["subCategory1-4"]
+    o3Buff["Weapon Buff MV (FP/Charged/Step string)"]
+    o3Stance["Stance Dmg (FP/Charged/Step string)"]
+    o3AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly (FP/Charged/Step strings)"]
+    o3Overwrite["Overwrite Scaling (unique, joined)"]
+    o3SubCats["subCategorySum (deduped union)"]
   end
-  Stage3In --> passthrough["Stage 3 (pending)<br>identity pass-through"]
-  passthrough --> o3Skill
-  passthrough --> o3Follow
-  passthrough --> o3Hand
-  passthrough --> o3Part
-  passthrough --> o3FP
-  passthrough --> o3Charged
-  passthrough --> o3Step
-  passthrough --> o3Bullet
-  passthrough --> o3WeaponSrc
-  passthrough --> o3Weapon
-  passthrough --> o3WepPoise
-  passthrough --> o3Disable
-  passthrough --> o3WepBases
-  passthrough --> o3ElemMVs
-  passthrough --> o3DmgType
-  passthrough --> o3DmgMV
-  passthrough --> o3Status
-  passthrough --> o3WepStatus
-  passthrough --> o3Buff
-  passthrough --> o3Stance
-  passthrough --> o3AtkStats
-  passthrough --> o3IsAdd
-  passthrough --> o3Overwrite
-  passthrough --> o3SubCats
+  Stage3In --> collapse3["Stage 3 collapse<br>group + zero-pad FP/Charged/Step"]
+  collapse3 --> o3Skill
+  collapse3 --> o3Follow
+  collapse3 --> o3Hand
+  collapse3 --> o3Part
+  collapse3 --> o3WeaponSrc
+  collapse3 --> o3Weapon
+  collapse3 --> o3DmgType
+  collapse3 --> o3DmgMV
+  collapse3 --> o3Status
+  collapse3 --> o3WepStatus
+  collapse3 --> o3Buff
+  collapse3 --> o3Stance
+  collapse3 --> o3AtkStats
+  collapse3 --> o3Overwrite
+  collapse3 --> o3SubCats
 ```
 
 ## Stage 4: Text helper columns
@@ -467,26 +455,20 @@ flowchart LR
 flowchart LR
   subgraph Stage4In["AoW-data-3.csv columns"]
     s4Skill["Skill"]
-    s4TextName["Text Name (added in Stage 4)"]
     s4Follow["Follow-up"]
     s4Hand["Hand"]
     s4Part["Part"]
-    s4FP["FP"]
-    s4Charged["Charged"]
-    s4Step["Step"]
-    s4Bullet["Bullet"]
     s4WeaponSrc["Weapon Source"]
     s4Weapon["Weapon"]
     s4DmgType["Dmg Type"]
-    s4DmgMV["Dmg MV"]
-    s4Status["Status MV"]
+    s4DmgMV["Dmg MV (FP/Charged/Step string)"]
+    s4Status["Status MV (FP/Charged/Step string)"]
     s4WepStatus["Wep Status"]
-    s4Buff["Weapon Buff MV"]
-    s4Stance["Stance Dmg"]
-    s4AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
-    s4IsAdd["isAddBaseAtk"]
+    s4Buff["Weapon Buff MV (FP/Charged/Step string)"]
+    s4Stance["Stance Dmg (FP/Charged/Step string)"]
+    s4AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly (FP/Charged/Step strings)"]
     s4Overwrite["Overwrite Scaling"]
-    s4SubCats["subCategory1-4"]
+    s4SubCats["subCategorySum"]
   end
   subgraph Stage4Out["AoW-data-4.csv columns"]
     o4Skill["Skill"]
@@ -494,10 +476,6 @@ flowchart LR
     o4Follow["Follow-up"]
     o4Hand["Hand"]
     o4Part["Part"]
-    o4FP["FP"]
-    o4Charged["Charged"]
-    o4Step["Step"]
-    o4Bullet["Bullet"]
     o4WeaponSrc["Weapon Source"]
     o4Weapon["Weapon"]
     o4DmgType["Dmg Type"]
@@ -511,10 +489,9 @@ flowchart LR
     o4TextStance["Text Stance"]
     o4AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
     o4TextBullet["Text Bullet"]
-    o4IsAdd["isAddBaseAtk"]
     o4Overwrite["Overwrite Scaling"]
     o4TextScaling["Text Scaling"]
-    o4SubCats["subCategory1-4"]
+    o4SubCats["subCategorySum"]
     o4TextCategory["Text Category"]
   end
   Stage4In --> passthrough4["Stage 4: add text helpers"]
@@ -523,16 +500,8 @@ flowchart LR
   passthrough4 --> o4Follow
   passthrough4 --> o4Hand
   passthrough4 --> o4Part
-  passthrough4 --> o4FP
-  passthrough4 --> o4Charged
-  passthrough4 --> o4Step
-  passthrough4 --> o4Bullet
   passthrough4 --> o4WeaponSrc
   passthrough4 --> o4Weapon
-  passthrough4 --> o4WepPoise
-  passthrough4 --> o4Disable
-  passthrough4 --> o4WepBases
-  passthrough4 --> o4ElemMVs
   passthrough4 --> o4DmgType
   passthrough4 --> o4DmgMV
   passthrough4 --> o4TextWepDmg
@@ -544,7 +513,6 @@ flowchart LR
   passthrough4 --> o4TextStance
   passthrough4 --> o4AtkStats
   passthrough4 --> o4TextBullet
-  passthrough4 --> o4IsAdd
   passthrough4 --> o4Overwrite
   passthrough4 --> o4TextScaling
   passthrough4 --> o4SubCats
@@ -558,11 +526,11 @@ flowchart LR
 - `docs/skill_names_from_gem_and_behavior.txt` (canonical skill names derived from EquipParamGem + Behavior + SwordArts).
 - `work/aow_pipeline/AoW-data-1.csv` (generated Stage 1 output).
 - `work/aow_pipeline/AoW-data-2.csv` (generated Stage 2 output).
-- `work/aow_pipeline/AoW-data-3.csv` (generated Stage 3 pass-through output).
+- `work/aow_pipeline/AoW-data-3.csv` (generated Stage 3 collapsed output).
 - `work/aow_pipeline/AoW-data-4.csv` (generated Stage 4 text-helper output).
 - `work/aow_pipeline/force_collapse_pairs.json` (forced collapse groups + overrides applied in Stage 2).
 - `work/aow_pipeline/` (workspace for outputs and scratch; add temp files as needed).
-- `scripts/build_aow/build_aow_stage0.py` (skill list), `scripts/build_aow/build_aow_stage1.py` (stage 1 collate), `scripts/build_aow/build_aow_stage2.py` (stage 2 collapse), `scripts/build_aow/build_aow_stage3.py` (stage 3 pass-through/stub), `scripts/build_aow/build_aow_stage4.py` (stage 4 text helpers).
+- `scripts/build_aow/build_aow_stage0.py` (skill list), `scripts/build_aow/build_aow_stage1.py` (stage 1 collate), `scripts/build_aow/build_aow_stage2.py` (stage 2 collapse), `scripts/build_aow/build_aow_stage3.py` (stage 3 collapse + FP/Charged strings), `scripts/build_aow/build_aow_stage4.py` (stage 4 text helpers).
 - `Makefile` (`make stage0|stage1|stage2|stage3|stage4|stages` with optional flags passed after the target).
 
 ## How to regenerate Stage 1
@@ -584,7 +552,7 @@ python scripts/build_aow/build_aow_stage0.py
 python scripts/build_aow/build_aow_stage1.py
 # 3) Collapse duplicate rows and sum numeric columns
 python scripts/build_aow/build_aow_stage2.py
-# 4) (optional) Identity bridge for downstream steps
+# 4) Collapse to FP/Charged/Step strings
 python scripts/build_aow/build_aow_stage3.py
 # 5) Add text helper columns
 python scripts/build_aow/build_aow_stage4.py
