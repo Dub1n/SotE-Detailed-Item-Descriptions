@@ -296,7 +296,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
 def collapse_rows(
     rows: List[Dict[str, str]]
 ) -> Tuple[List[Dict[str, str]], List[str]]:
-    grouped: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
+    clusters: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
     for row in rows:
         key = tuple(
             row.get(col, "")
@@ -305,55 +305,87 @@ def collapse_rows(
                 "Follow-up",
                 "Hand",
                 "Part",
+                "Weapon Source",
                 "Weapon",
-                "Dmg Type",
                 "Wep Status",
             ]
         )
-        grouped.setdefault(key, []).append(row)
+        clusters.setdefault(key, []).append(row)
 
     output_rows: List[Dict[str, str]] = []
-    for rowset in grouped.values():
-        base = rowset[0]
-        out: Dict[str, str] = {
-            "Skill": base.get("Skill", ""),
-            "Follow-up": base.get("Follow-up", ""),
-            "Hand": base.get("Hand", ""),
-            "Part": base.get("Part", ""),
-            "Weapon Source": base.get("Weapon Source", ""),
-            "Weapon": base.get("Weapon", ""),
-            "Dmg Type": base.get("Dmg Type", ""),
-            "Wep Status": base.get("Wep Status", ""),
-        }
-        subcats: List[str] = []
-        overwrite_vals: List[str] = []
+    for rowset in clusters.values():
+        primary_dtype = next(
+            (r.get("Dmg Type", "") for r in rowset if r.get("Dmg Type", "") not in {"", "-"}),
+            "-",
+        )
+        primary_overwrite = next(
+            (
+                r.get("Overwrite Scaling", "")
+                for r in rowset
+                if r.get("Overwrite Scaling", "") not in {"", "-", "null"}
+            ),
+            "null",
+        )
+
+        subgroup_map: Dict[Tuple[str, str], List[Dict[str, str]]] = {}
         for row in rowset:
-            for col in ("subCategory1", "subCategory2", "subCategory3", "subCategory4"):
-                val = (row.get(col) or "").strip()
-                if val and val != "-" and val not in subcats:
-                    subcats.append(val)
-            ov = (row.get("Overwrite Scaling") or "").strip()
-            if ov and ov != "-" and ov not in overwrite_vals:
-                overwrite_vals.append(ov)
+            eff_dtype = (
+                row.get("Dmg Type", "")
+                if row.get("Dmg Type", "") not in {"", "-"}
+                else primary_dtype
+            )
+            eff_overwrite = (
+                row.get("Overwrite Scaling", "")
+                if row.get("Overwrite Scaling", "") not in {"", "-", "null"}
+                else primary_overwrite
+            )
+            subgroup_map.setdefault((eff_dtype, eff_overwrite), []).append(row)
 
-        out["subCategorySum"] = " | ".join(subcats)
-        out["Overwrite Scaling"] = ", ".join(overwrite_vals)
+        for (eff_dtype, eff_overwrite), subrows in subgroup_map.items():
+            base = subrows[0]
+            out: Dict[str, str] = {
+                "Skill": base.get("Skill", ""),
+                "Follow-up": base.get("Follow-up", ""),
+                "Hand": base.get("Hand", ""),
+                "Part": base.get("Part", ""),
+                "Weapon Source": base.get("Weapon Source", ""),
+                "Weapon": base.get("Weapon", ""),
+                "Dmg Type": eff_dtype or "-",
+                "Wep Status": base.get("Wep Status", ""),
+            }
+            subcats: List[str] = []
+            overwrite_vals: List[str] = []
+            for row in subrows:
+                for col in ("subCategory1", "subCategory2", "subCategory3", "subCategory4"):
+                    val = (row.get(col) or "").strip()
+                    if val and val != "-" and val not in subcats:
+                        subcats.append(val)
+                ov = (row.get("Overwrite Scaling") or "").strip()
+                if ov and ov not in {"-", "null"} and ov not in overwrite_vals:
+                    overwrite_vals.append(ov)
 
-        agg_cols = [
-            "Dmg MV",
-            "Status MV",
-            "Weapon Buff MV",
-            "Stance Dmg",
-            "AtkPhys",
-            "AtkMag",
-            "AtkFire",
-            "AtkLtng",
-            "AtkHoly",
-        ]
-        for col in agg_cols:
-            out[col] = aggregate_steps(rowset, col)
+            out["subCategorySum"] = " | ".join(subcats)
+            out["Overwrite Scaling"] = (
+                ", ".join(overwrite_vals)
+                if overwrite_vals
+                else (eff_overwrite if eff_overwrite else "null")
+            )
 
-        output_rows.append(out)
+            agg_cols = [
+                "Dmg MV",
+                "Status MV",
+                "Weapon Buff MV",
+                "Stance Dmg",
+                "AtkPhys",
+                "AtkMag",
+                "AtkFire",
+                "AtkLtng",
+                "AtkHoly",
+            ]
+            for col in agg_cols:
+                out[col] = aggregate_steps(subrows, col)
+
+            output_rows.append(out)
 
     merged_rows = collapse_weapons(output_rows)
 
