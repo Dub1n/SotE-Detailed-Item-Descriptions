@@ -44,7 +44,7 @@ flowchart LR
   - `Weapon` and `Weapon Poise` are pipe-delimited (` | `) lists to keep multi-word names intact; counts stay aligned (same number of entries in both fields).
   - `Weapon Poise`: if a unique weapon is present, read its `Base` from `Poise-Damage-MVs` (with category fallback when needed); if a bracketed weapon prefix is present, look up that category’s base poise; otherwise, emit category poise values from `weapon_categories_poise.json` aligned with the `Weapon` list.
   - `Disable Gem Attr`: for `Weapon Source` == `unique`, pull `disableGemAttr` from `EquipParamWeapon`; otherwise `-`.
-  - `Wep Status`: for `Weapon Source` == `unique` **and** `Disable Gem Attr` == `1`, pull `spEffectBehaviorId0/1/2` from `EquipParamWeapon`, drop `-1`, map IDs to `SpEffectParam` names (trim text after the first `-`), dedupe, and join with ` | `. Otherwise `-`.
+  - `Wep Status`: for `Weapon Source` == `unique` **and** `Disable Gem Attr` == `1`, pull `spEffectBehaviorId0/1/2` from `EquipParamWeapon`, drop `-1`, map IDs to `SpEffectParam` names (trim text after the first `-`), dedupe, and join with ` | `. When all three IDs are `-1`, emit `None`; otherwise `-`.
   - `Wep Phys`/`Wep Magic`/`Wep Fire`/`Wep Ltng`/`Wep Holy`: for `Weapon Source` == `unique`, pull `attackBasePhysics`/`attackBaseMagic`/`attackBaseFire`/`attackBaseThunder`/`attackBaseDark` from `EquipParamWeapon` by weapon name (averaging when multiple unique weapons are listed); otherwise `-`.
   - `FP`: `0` when the name contains `(Lacking FP)`, else `1`.
   - `Charged`: `1` when the name contains `Charged`, else `0`.

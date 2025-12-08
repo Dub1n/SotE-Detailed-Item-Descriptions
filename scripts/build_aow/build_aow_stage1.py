@@ -567,9 +567,11 @@ def build_rows(
             if (
                 weapon_source == "unique"
                 and str(wep_disable_attr).strip() == "1"
-                and wep_status_effects
             ):
-                wep_status_field = " | ".join(wep_status_effects)
+                if wep_status_effects:
+                    wep_status_field = " | ".join(wep_status_effects)
+                else:
+                    wep_status_field = "None"
 
             out = OrderedDict()
             out["Name"] = raw_name
