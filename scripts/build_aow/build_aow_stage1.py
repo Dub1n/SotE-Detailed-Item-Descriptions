@@ -219,6 +219,46 @@ def expand_weapon_names(raw: str) -> List[str]:
     return names
 
 
+def parse_unique_weapon_variants(raw: str) -> List[str]:
+    """
+    Expand slash-delimited unique weapon labels into explicit variants.
+    - "A / B" -> ["A", "B"]
+    - "(A / B) C" -> ["A C", "B C"]
+    - "C (A / B)" -> ["C A", "C B"]
+    When no slash is present, returns the cleaned name as a single entry.
+    """
+    text = raw.strip()
+    if not text:
+        return []
+
+    def clean(name: str) -> str:
+        return re.sub(r"\s{2,}", " ", name.strip())
+
+    match = re.search(r"\(([^()]*/[^()]*)\)", text)
+    if match:
+        inner = match.group(1)
+        prefix = text[: match.start()].strip()
+        suffix = text[match.end():].strip()
+        parts = [p.strip() for p in inner.split("/") if p.strip()]
+        variants = []
+        for part in parts:
+            combined = " ".join(
+                segment
+                for segment in [prefix, part, suffix]
+                if segment.strip()
+            )
+            if combined:
+                variants.append(clean(combined))
+        if variants:
+            return variants
+
+    parts = [p.strip() for p in text.split("/") if p.strip()]
+    if len(parts) > 1:
+        return [clean(p) for p in parts]
+
+    return [clean(text)]
+
+
 def detect_follow_up(name: str) -> str:
     if "R1" in name:
         return "Light"
@@ -346,6 +386,25 @@ def align_join(values: Iterable[str], count: int) -> str:
     return " | ".join(out).strip()
 
 
+def parse_float(value: str) -> Optional[float]:
+    try:
+        return float(str(value).strip())
+    except (TypeError, ValueError):
+        return None
+
+
+def avg_stat(values: List[str]) -> str:
+    nums = [parse_float(val) for val in values]
+    nums = [n for n in nums if n is not None]
+    if not nums:
+        return "-"
+    avg = sum(nums) / len(nums)
+    if avg.is_integer():
+        return str(int(avg))
+    text = f"{avg:.1f}"
+    return text.rstrip("0").rstrip(".")
+
+
 def build_rows(
     mount_map: Dict[str, List[str]],
     category_poise: Dict[str, float],
@@ -387,36 +446,58 @@ def build_rows(
 
             if unique_weapon:
                 weapon_source = "unique"
-                weapon_list = [unique_weapon]
-                poise_val = poise_lookup.get(unique_weapon.lower())
-                if poise_val is None:
-                    for candidate in expand_weapon_names(unique_weapon):
-                        poise_val = poise_lookup.get(candidate.lower())
-                        if poise_val is not None:
-                            break
-                if poise_val is None:
-                    for candidate in expand_weapon_names(unique_weapon):
-                        fallback = category_poise.get(candidate)
-                        if fallback is not None:
-                            poise_val = str(fallback)
-                            warnings["unique_poise_from_category"].append(
-                                unique_weapon
-                            )
-                            break
-                if poise_val is None:
-                    warnings["missing_poise"].append(unique_weapon)
-                    poise_list = [None]
-                else:
-                    poise_list = [poise_val]
+                weapon_list = (
+                    parse_unique_weapon_variants(unique_weapon)
+                    or [unique_weapon]
+                )
+                disable_values: List[str] = []
+                phys_values: List[str] = []
+                magic_values: List[str] = []
+                fire_values: List[str] = []
+                ltng_values: List[str] = []
+                holy_values: List[str] = []
 
-                stats = weapon_base_stats.get(unique_weapon.lower())
-                if stats:
-                    wep_disable_attr = stats.get("disable_gem_attr", "-")
-                    wep_phys = stats.get("phys", "-")
-                    wep_magic = stats.get("magic", "-")
-                    wep_fire = stats.get("fire", "-")
-                    wep_ltng = stats.get("ltng", "-")
-                    wep_holy = stats.get("holy", "-")
+                for weapon_name in weapon_list:
+                    poise_val = poise_lookup.get(weapon_name.lower())
+                    if poise_val is None:
+                        for candidate in expand_weapon_names(weapon_name):
+                            poise_val = poise_lookup.get(candidate.lower())
+                            if poise_val is not None:
+                                break
+                    if poise_val is None:
+                        for candidate in expand_weapon_names(weapon_name):
+                            fallback = category_poise.get(candidate)
+                            if fallback is not None:
+                                poise_val = str(fallback)
+                                warnings["unique_poise_from_category"].append(
+                                    weapon_name
+                                )
+                                break
+                    if poise_val is None:
+                        warnings["missing_poise"].append(weapon_name)
+                        poise_list.append(None)
+                    else:
+                        poise_list.append(poise_val)
+
+                    stats = weapon_base_stats.get(weapon_name.lower())
+                    if not stats:
+                        continue
+                    disable_values.append(stats.get("disable_gem_attr", "-"))
+                    phys_values.append(stats.get("phys", "-"))
+                    magic_values.append(stats.get("magic", "-"))
+                    fire_values.append(stats.get("fire", "-"))
+                    ltng_values.append(stats.get("ltng", "-"))
+                    holy_values.append(stats.get("holy", "-"))
+
+                if disable_values:
+                    wep_disable_attr = disable_values[0]
+                    if any(val != wep_disable_attr for val in disable_values):
+                        warnings["mixed_disable_attr"].append(unique_weapon)
+                wep_phys = avg_stat(phys_values)
+                wep_magic = avg_stat(magic_values)
+                wep_fire = avg_stat(fire_values)
+                wep_ltng = avg_stat(ltng_values)
+                wep_holy = avg_stat(holy_values)
             elif prefix:
                 weapon_source = "prefix"
                 weapon_list = [prefix]
