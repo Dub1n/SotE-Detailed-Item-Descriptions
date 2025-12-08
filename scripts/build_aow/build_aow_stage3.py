@@ -44,6 +44,21 @@ ANCHOR_INSERTIONS: Tuple[Tuple[str, str], ...] = (
 )
 
 
+def parse_float(value: str) -> float | None:
+    try:
+        text = str(value).strip()
+        if text == "":
+            return None
+        return float(text)
+    except (TypeError, ValueError):
+        return None
+
+
+def format_multiplier(value: float) -> str:
+    text = f"{value:.3f}".rstrip("0").rstrip(".")
+    return text if text else "0"
+
+
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
     with path.open() as f:
         reader = csv.DictReader(f)
@@ -70,12 +85,41 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     Modify or add columns based on existing row values here.
     """
     row.setdefault("Text Name", "")
-    row.setdefault("Text Wep Dmg", "")
-    row.setdefault("Text Wep Status", "")
     row.setdefault("Text Stance", "")
     row.setdefault("Text Bullet", "")
     row.setdefault("Text Scaling", "")
     row.setdefault("Text Category", "")
+
+    dmg_type = (row.get("Dmg Type") or "").strip()
+    dmg_mv_raw = (row.get("Dmg MV") or "").strip()
+    dmg_mv_val = parse_float(dmg_mv_raw)
+    is_zero_mv = (
+        False
+        if dmg_mv_val is None and dmg_mv_raw == ""
+        else (dmg_mv_val == 0 if dmg_mv_val is not None else dmg_mv_raw == "0")
+    )
+    if is_zero_mv:
+        row["Text Wep Dmg"] = "-"
+    elif dmg_type == "-":
+        row["Text Wep Dmg"] = "!"
+    else:
+        mv_text = (
+            dmg_mv_raw
+            if dmg_mv_raw != ""
+            else (format_multiplier(dmg_mv_val) if dmg_mv_val is not None else "")
+        )
+        label = f"{dmg_type} Damage" if dmg_type else "Damage"
+        row["Text Wep Dmg"] = (
+            f"{label}: {mv_text}x" if mv_text else ""
+        )
+
+    status_raw = (row.get("Status MV") or "").strip()
+    status_val = parse_float(status_raw)
+    if status_val is None:
+        row["Text Wep Status"] = ""
+    else:
+        buildup = format_multiplier(status_val * 0.01)
+        row["Text Wep Status"] = f"Weapon Buildup: {buildup}x"
     return row
 
 
