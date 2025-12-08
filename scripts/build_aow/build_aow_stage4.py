@@ -1,5 +1,6 @@
 import argparse
 import csv
+import re
 import sys
 from pathlib import Path
 from typing import Dict, List, Tuple
@@ -74,6 +75,13 @@ def format_multiplier(value: float) -> str:
     return text if text else "0"
 
 
+def zeros_only(text: str) -> bool:
+    nums = re.findall(r"-?\d+(?:\.\d+)?", text or "")
+    if not nums:
+        return False
+    return all(float(n) == 0 for n in nums)
+
+
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
     with path.open() as f:
         reader = csv.DictReader(f)
@@ -105,47 +113,59 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     row.setdefault("Text Scaling", "")
     row.setdefault("Text Category", "")
 
+    # Clean subCategorySum of "-" and empties.
+    subcat_raw = row.get("subCategorySum", "")
+    if subcat_raw:
+        parts = [
+            p.strip()
+            for p in subcat_raw.split("|")
+            if p.strip() and p.strip() != "-"
+        ]
+        deduped: List[str] = []
+        seen = set()
+        for p in parts:
+            if p not in seen:
+                seen.add(p)
+                deduped.append(p)
+        row["subCategorySum"] = " | ".join(deduped)
+
+    # Zero-only normalization.
+    zero_cols = [
+        "Dmg MV",
+        "Status MV",
+        "Weapon Buff MV",
+        "Stance Dmg",
+        "AtkPhys",
+        "AtkMag",
+        "AtkFire",
+        "AtkLtng",
+        "AtkHoly",
+    ]
+    for col in zero_cols:
+        val = (row.get(col) or "").strip()
+        if val and zeros_only(val):
+            row[col] = "-"
+
     dmg_type = (row.get("Dmg Type") or "").strip()
     dmg_mv_raw = (row.get("Dmg MV") or "").strip()
-    dmg_mv_val = parse_float(dmg_mv_raw)
-    is_zero_mv = (
-        False
-        if dmg_mv_val is None and dmg_mv_raw == ""
-        else (dmg_mv_val == 0 if dmg_mv_val is not None else dmg_mv_raw == "0")
-    )
-    if is_zero_mv:
+    if dmg_mv_raw in {"", "-"}:
         row["Text Wep Dmg"] = "-"
     elif dmg_type == "-":
         row["Text Wep Dmg"] = "!"
     else:
-        mv_text = (
-            dmg_mv_raw
-            if dmg_mv_raw != ""
-            else (format_multiplier(dmg_mv_val) if dmg_mv_val is not None else "")
-        )
-        label = f"{dmg_type} Damage" if dmg_type else "Damage"
-        row["Text Wep Dmg"] = (
-            f"{label}: {mv_text}x" if mv_text else ""
-        )
+        row["Text Wep Dmg"] = f"{dmg_type} Damage: {dmg_mv_raw}x"
 
     status_raw = (row.get("Status MV") or "").strip()
-    status_val = parse_float(status_raw)
+    status_val = parse_float(status_raw if status_raw not in {"", "-"} else "")
     wep_status_raw = (row.get("Wep Status") or "").strip()
-    if status_val is None:
-        row["Text Wep Status"] = ""
+    if not status_raw or status_raw == "-" or status_val is None:
+        row["Text Wep Status"] = "-"
+    elif wep_status_raw.strip() == "None" or zeros_only(status_raw):
+        row["Text Wep Status"] = "-"
     else:
-        is_zero_status = status_val == 0
-        if wep_status_raw.strip() == "None" or is_zero_status:
-            row["Text Wep Status"] = "-"
-        else:
-            buildup = format_multiplier(status_val * 0.01)
-            if not wep_status_raw:
-                label = "Weapon"
-            elif wep_status_raw == "-":
-                label = "Weapon"
-            else:
-                label = wep_status_raw
-            row["Text Wep Status"] = f"{label} Buildup: {buildup}x"
+        buildup = format_multiplier(status_val * 0.01)
+        label = "Weapon" if not wep_status_raw or wep_status_raw == "-" else wep_status_raw
+        row["Text Wep Status"] = f"{label} Buildup: {buildup}x"
     return row
 
 
