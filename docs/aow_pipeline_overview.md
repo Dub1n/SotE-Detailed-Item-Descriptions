@@ -13,7 +13,7 @@ This approach makes the skill data flow deterministic, debuggable, and repeatabl
 
 - Input: `PARAM/EquipParamGem.csv`, `PARAM/BehaviorParam_PC.csv`, `PARAM/SwordArtsParam.csv`
 - Output: `docs/skill_names_from_gem_and_behavior.txt` (longest-first sorted skill names for Stage 1 resolution)
-- Behavior: collect Gem names (strip `Ash of War:` prefix, drop test rows), collect `[AOW]` Behavior names, collect SwordArts names, union them, sort, and write to disk. Reports Gem-only, Behavior-only, and SwordArts-only names.
+- Behavior: collect Gem names (strip `Ash of War:` prefix, drop test rows), collect `[AOW]` Behavior names, collect SwordArts names, union them, sort, and write to disk. Reports Gem-only, Behavior-only, and SwordArts-only names when `--verbose` is passed (default output is just the row count + path).
 
 ```mermaid
 flowchart LR
@@ -47,6 +47,8 @@ flowchart LR
   - `FP`: `0` when the name contains `(Lacking FP)`, else `1`.
   - `Charged`: `1` when the name contains `Charged`, else `0`.
   - `Part`: inferred from name tokens without charged/hand/follow-up labels; removes `Bullet` and strips outer parentheses when the whole part is wrapped. Defaults to `Main`, with `Loop` preserved when present.
+  - `Part` cleanup: splits multiple bracketed fragments into comma-separated components (e.g., `2x (Right)` → `2x, Right`; `[Hit] (Stomp AoE)` → `[Hit], Stomp AoE`).
+  - `Part` for bullets: if `Bullet` = `1`, force `Part` to `Bullet` so bullet-only rows no longer appear as `Main`.
   - `Tick`: `1` when the name contains the token `Tick` (and it is removed from `Part` inference), else `0`.
   - `Follow-up`: `Light` when the name contains `R1`, `Heavy` when it contains `R2`, else `-`.
   - `Hand`: detects `1h`/`2h` in the name, otherwise `-`.
@@ -165,6 +167,11 @@ flowchart LR
 - Input: `work/aow_pipeline/AoW-data-1.csv`
 - Output: `work/aow_pipeline/AoW-data-2.csv`
 - Behavior:
+  - Apply optional forced collapses defined in `work/aow_pipeline/force_collapse_pairs.json`:
+    - Accepts entries as a list of names, or an object with `names` and optional `overrides`.
+    - All rows in a group are canonicalized to the first name’s derived fields (`Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`) unless a specific override for that field is provided.
+    - Overrides apply before grouping/aggregation (affecting derived fields like `Dmg Type`). Current file includes Prelate’s Charge fire ticks and Bloodboon Ritual (with `PhysAtkAttribute: Standard` and `Bullet: 1`).
+    - Forced groups are reported after the write; disagreements still surface in `Warnings`, now alongside the forced summary.
   - Group by `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Weapon`, `PhysAtkAttribute`, `isAddBaseAtk`, `Overwrite Scaling`.
   - Drop `Name`, `Tick`, `AtkId`; keep `PhysAtkAttribute` only for grouping/overrides (not in output).
   - Sum numeric columns from `Phys MV` onward (except `PhysAtkAttribute`); non-numeric fields in that range keep the first value (`subCategory*`, etc.); columns before `Phys MV` keep the first value.
@@ -426,8 +433,10 @@ flowchart LR
 - `docs/skill_names_from_gem_and_behavior.txt` (canonical skill names derived from EquipParamGem + Behavior + SwordArts).
 - `work/aow_pipeline/AoW-data-1.csv` (generated Stage 1 output).
 - `work/aow_pipeline/AoW-data-2.csv` (generated Stage 2 output).
+- `work/aow_pipeline/force_collapse_pairs.json` (forced collapse groups + overrides applied in Stage 2).
 - `work/aow_pipeline/` (workspace for outputs and scratch; add temp files as needed).
 - `scripts/build_aow/build_aow_stage0.py` (skill list), `scripts/build_aow/build_aow_stage1.py` (stage 1 collate), `scripts/build_aow/build_aow_stage2.py` (stage 2 collapse).
+- `Makefile` (`make stage0|stage1|stage2|stages` with optional flags passed after the target).
 
 ## How to regenerate Stage 1
 
@@ -448,6 +457,8 @@ python scripts/build_aow/build_aow_stage0.py
 python scripts/build_aow/build_aow_stage1.py
 # 3) Collapse duplicate rows and sum numeric columns
 python scripts/build_aow/build_aow_stage2.py
+# or via make (flags can be passed after the target):
+#   make stage2 --output /tmp/AoW-data-2.csv
 ```
 
 ## Remaining Implementation
