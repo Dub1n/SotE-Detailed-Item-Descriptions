@@ -65,9 +65,6 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
         output_columns[idx + 1 : idx + 1] = ["Dmg Type", "Dmg MV"]
     else:
         output_columns.extend(["Dmg Type", "Dmg MV"])
-    if "PhysAtkAttribute" in output_columns:
-        output_columns.remove("PhysAtkAttribute")
-
     col_positions = {col: idx for idx, col in enumerate(fieldnames)}
     numeric_columns = [
         col
@@ -159,13 +156,17 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
 
         dmg_mv = sum(val for _, val in non_zero) / len(non_zero) / 100.0
 
+        attr = (agg_row.get("PhysAtkAttribute") or "").strip()
+
         if has_zero:
             dmg_type = " | ".join(name for name, _ in non_zero)
             if len(non_zero) > 1:
                 max_val = max(val for _, val in non_zero)
                 min_val = min(val for _, val in non_zero)
                 if max_val > 0 and min_val < 0.75 * max_val:
-                    return f"! | {dmg_type}", dmg_mv
+                    dmg_type = f"! | {dmg_type}"
+            if attr and attr not in {"252", "253"}:
+                dmg_type = attr
             return dmg_type or "-", dmg_mv
 
         mn = min(val for _, val in non_zero)
@@ -183,7 +184,6 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
         else:
             dmg_type = "Weapon"
 
-        attr = (agg_row.get("PhysAtkAttribute") or "").strip()
         if attr and attr not in {"252", "253"}:
             dmg_type = attr
         return dmg_type, dmg_mv
