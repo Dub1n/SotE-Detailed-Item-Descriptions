@@ -43,6 +43,21 @@ ANCHOR_INSERTIONS: Tuple[Tuple[str, str], ...] = (
     ("subCategory4", "Text Category"),
 )
 
+DROP_COLUMNS = {
+    "Wep Poise Range",
+    "Disable Gem Attr",
+    "Wep Phys",
+    "Wep Magic",
+    "Wep Fire",
+    "Wep Ltng",
+    "Wep Holy",
+    "Phys MV",
+    "Magic MV",
+    "Fire MV",
+    "Ltng MV",
+    "Holy MV",
+}
+
 
 def parse_float(value: str) -> float | None:
     try:
@@ -138,10 +153,11 @@ def transform_rows(
     rows: List[Dict[str, str]], fieldnames: List[str]
 ) -> Tuple[List[Dict[str, str]], List[str]]:
     transformed: List[Dict[str, str]] = []
-    output_fields = ensure_output_fields(fieldnames)
+    base_fields = [col for col in fieldnames if col not in DROP_COLUMNS]
+    output_fields = ensure_output_fields(base_fields)
 
     for row in rows:
-        base_row = dict(row)
+        base_row = {k: v for k, v in row.items() if k not in DROP_COLUMNS}
         new_row = apply_row_operations(dict(base_row))
         for col, val in base_row.items():
             new_row.setdefault(col, val)

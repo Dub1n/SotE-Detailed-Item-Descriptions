@@ -33,6 +33,21 @@ KEY_FIELDS = [
     "Overwrite Scaling",
 ]
 
+DROP_COLUMNS = {
+    "Wep Poise Range",
+    "Disable Gem Attr",
+    "Wep Phys",
+    "Wep Magic",
+    "Wep Fire",
+    "Wep Ltng",
+    "Wep Holy",
+    "Phys MV",
+    "Magic MV",
+    "Fire MV",
+    "Ltng MV",
+    "Holy MV",
+}
+
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
     with path.open() as f:
@@ -54,10 +69,10 @@ def transform_rows(
     rows: List[Dict[str, str]], fieldnames: List[str]
 ) -> Tuple[List[Dict[str, str]], List[str]]:
     transformed: List[Dict[str, str]] = []
-    output_fields = list(fieldnames)
+    output_fields = [col for col in fieldnames if col not in DROP_COLUMNS]
 
     for row in rows:
-        base_row = dict(row)
+        base_row = {k: v for k, v in row.items() if k not in DROP_COLUMNS}
         new_row = apply_row_operations(dict(base_row))
         for col, val in base_row.items():
             new_row.setdefault(col, val)
