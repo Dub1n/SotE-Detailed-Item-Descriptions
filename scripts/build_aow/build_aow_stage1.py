@@ -375,6 +375,8 @@ def build_rows(
             step = detect_step(raw_name)
             bullet_flag = detect_bullet(raw_name)
             tick_flag = detect_tick(raw_name)
+            if bullet_flag and part == "Main":
+                part = "Bullet"
 
             weapon_list: List[str] = []
             poise_list: List[str] = []
