@@ -239,7 +239,7 @@ def collapse_rows(
             key = tuple(row.get(col, "") for col in GROUP_KEYS)
         if key not in grouped:
             grouped[key] = {
-                col: source_value(row, col) for col in output_columns
+                col: source_value(working_row, col) for col in output_columns
             }
             if has_phys_attr:
                 grouped[key]["_phys_attr"] = working_row.get(
