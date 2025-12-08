@@ -184,7 +184,23 @@ def collapse_rows(
         row.get("Name", ""): row for row in rows if row.get("Name", "")
     }
     canonical_map: Dict[str, Dict[str, str]] = {}
-    warn_cols: List[str] = [col for col in output_columns if col not in numeric_columns]
+    warn_cols_set = {col for col in output_columns if col not in numeric_columns}
+    warn_cols_set.update(
+        {
+            "Weapon Source",
+            "Weapon",
+            "Weapon Poise",
+            "Disable Gem Attr",
+            "PhysAtkAttribute",
+            "isAddBaseAtk",
+            "Overwrite Scaling",
+            "subCategory1",
+            "subCategory2",
+            "subCategory3",
+            "subCategory4",
+        }
+    )
+    warn_cols: List[str] = sorted(warn_cols_set)
     name_derived_cols = {
         "Name",
         "Skill",
