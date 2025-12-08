@@ -185,6 +185,18 @@ def collapse_rows(
     }
     canonical_map: Dict[str, Dict[str, str]] = {}
     warn_cols: List[str] = [col for col in output_columns if col not in numeric_columns]
+    name_derived_cols = {
+        "Name",
+        "Skill",
+        "Follow-up",
+        "Hand",
+        "Part",
+        "FP",
+        "Charged",
+        "Step",
+        "Bullet",
+        "Tick",
+    }
     for group_id, primary in force_primary.items():
         base_row = rows_by_name.get(primary)
         if base_row is None:
@@ -222,6 +234,8 @@ def collapse_rows(
             if canon:
                 for col in warn_cols:
                     if col in overrides:
+                        continue
+                    if col in name_derived_cols:
                         continue
                     raw_val = source_value(raw_row, col)
                     canon_val = canon.get(col, "")
