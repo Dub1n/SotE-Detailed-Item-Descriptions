@@ -13,7 +13,32 @@
       "Bloodboon Ritual #1 - Bullet 1&2 [Hit]"
     ],
     "overrides": {
-      "PhysAtkAttribute": "Standard"
+      "PhysAtkAttribute": "Standard",
+      "Bullet": "1"
+    }
+  },
+  {
+    "names": [
+      "Bloodboon Ritual #2",
+      "Bloodboon Ritual #2 - Bullet 1",
+      "Bloodboon Ritual #2 - Bullet 2",
+      "Bloodboon Ritual #2 - Bullet 1&2 [Hit]"
+    ],
+    "overrides": {
+      "PhysAtkAttribute": "Standard",
+      "Bullet": "1"
+    }
+  },
+  {
+    "names": [
+      "Bloodboon Ritual #2",
+      "Bloodboon Ritual #2 - Bullet 1",
+      "Bloodboon Ritual #2 - Bullet 2",
+      "Bloodboon Ritual #2 - Bullet 1&2 [Hit]"
+    ],
+    "overrides": {
+      "PhysAtkAttribute": "Standard",
+      "Bullet": "1"
     }
   }
 ]

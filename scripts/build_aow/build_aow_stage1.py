@@ -535,6 +535,7 @@ def main() -> None:
         after_rows=rows,
         fieldnames=OUTPUT_COLUMNS,
         key_fields=["Name"],
+        align_columns=True,
     )
     if warnings:
         for kind, items in warnings.items():

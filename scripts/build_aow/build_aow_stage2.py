@@ -465,6 +465,7 @@ def main() -> None:
         after_rows=output_rows,
         fieldnames=output_columns,
         key_fields=GROUP_KEYS,
+        align_columns=True,
     )
     if forced_groups:
         if len(forced_groups) <= 10:

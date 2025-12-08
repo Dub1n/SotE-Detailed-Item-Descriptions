@@ -1,6 +1,6 @@
 import csv
 from pathlib import Path
-from typing import Dict, Iterable, Mapping, Sequence, Tuple, List
+from typing import Dict, Iterable, Mapping, Sequence, Tuple, List, Optional
 
 
 def load_rows_by_key(
@@ -17,8 +17,17 @@ def load_rows_by_key(
     return rows
 
 
-def _format_key(key: Tuple[str, ...]) -> str:
-    text = " | ".join([part for part in key if part != ""]).strip()
+def _format_key(
+    key: Tuple[str, ...], widths: Optional[List[int]] = None
+) -> str:
+    parts = [part or "" for part in key]
+    if widths:
+        padded: List[str] = []
+        for idx, part in enumerate(parts):
+            width = widths[idx] if idx < len(widths) else len(part)
+            padded.append(part.ljust(width))
+        return " | ".join(padded).rstrip()
+    text = " | ".join([part for part in parts if part != ""]).strip()
     return text or "<empty>"
 
 
@@ -31,6 +40,7 @@ def report_row_deltas(
     label: str = "Row",
     max_list: int = 50,
     printer=print,
+    align_columns: bool = False,
 ) -> None:
     """
     Compare two sets of rows keyed by key_fields, printing delta summary.
@@ -58,9 +68,18 @@ def report_row_deltas(
         ):
             changed_keys.append(key)
 
-    added = [_format_key(k) for k in added_keys]
-    removed = [_format_key(k) for k in removed_keys]
-    changed = [_format_key(k) for k in changed_keys]
+    widths: Optional[List[int]] = None
+    if align_columns and (added_keys or removed_keys or changed_keys):
+        max_len = max(len(k) for k in added_keys + removed_keys + changed_keys)
+        widths = [0] * max_len
+        for key in added_keys + removed_keys + changed_keys:
+            for idx in range(max_len):
+                part = key[idx] if idx < len(key) else ""
+                widths[idx] = max(widths[idx], len(part))
+
+    added = [_format_key(k, widths) for k in added_keys]
+    removed = [_format_key(k, widths) for k in removed_keys]
+    changed = [_format_key(k, widths) for k in changed_keys]
 
     total_diff = len(added) + len(removed) + len(changed)
     if total_diff:
