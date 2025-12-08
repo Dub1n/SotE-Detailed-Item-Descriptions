@@ -385,12 +385,12 @@ flowchart LR
 - Script: `scripts/build_aow/build_aow_stage3.py` (groups, pads, and concatenates values).
 - Group keys: `Skill`, `Follow-up`, `Hand`, `Part`, `Weapon`, `Dmg Type`, `Wep Status`.
 - Removed columns: `Wep Poise Range`, `Disable Gem Attr`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `isAddBaseAtk`, `subCategory1-4`.
-- `subCategorySum`: union of all subCategory1-4 values in the group (order-preserving, deduped, pipe-joined).
+- `subCategorySum`: union of all subCategory1-4 values in the group (order-preserving, deduped, pipe-joined; skips `-`/empty).
 - `Overwrite Scaling`: unique values (ignoring empty/`-`) joined with `, `.
 - Aggregated columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`):
   - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen in the group.
   - Format per column: `fp1_uncharged_steps, … | fp1_charged_steps, … [fp0_uncharged_steps, … | fp0_charged_steps, …]` (examples: `1, 2 | 2, 3 [0, 0 | 0, 0]`).
-- Second pass: rows with identical non-Weapon columns and identical numeric arrangement are collapsed, concatenating `Weapon` with ` | ` and converting each numeric position into a range (`min-max`) when values differ (keeps single value when identical). Collapse is skipped when patterns differ (e.g., mismatched step/FP/Charged coverage).
+- Second pass: rows with identical non-Weapon columns and identical numeric arrangement are collapsed, concatenating `Weapon` with ` | ` and converting each numeric position into a range (`min-max`) when values differ (keeps single value when identical). Collapse only happens when all weapons for the skill/hand/part/dmg type/wep status share the same numeric token pattern (symmetry guard); otherwise rows stay separate.
 
 ```mermaid
 flowchart LR

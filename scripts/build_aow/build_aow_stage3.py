@@ -130,8 +130,9 @@ def fmt_number(value: float) -> str:
 def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
     """
     Second-pass collapse: merge rows that differ only by Weapon but share
-    identical non-Weapon columns and numeric arrangement. Weapons are
-    concatenated, and numeric positions become ranges when values differ.
+    identical non-Weapon columns and numeric arrangement. Merge only when
+    every Weapon in the Skill/Hand/Part/DmgType/WepStatus cluster has the
+    same set of numeric shapes (symmetry guard).
     """
     fixed_cols = [
         "Skill",
@@ -168,100 +169,99 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                 tokens.append(("sep", part))
         return tokens
 
-    def pattern(text: str) -> Tuple[tuple[str, ...], int]:
+    def shape(text: str) -> Tuple[tuple[str, ...], int]:
         tokens = tokenize(text)
-        shape: List[str] = []
-        num_count = 0
+        pattern: List[str] = []
+        count = 0
         for kind, val in tokens:
             if kind == "num":
-                shape.append("{n}")
-                num_count += 1
+                pattern.append("{n}")
+                count += 1
             else:
-                shape.append(val)
-        return tuple(shape), num_count
+                pattern.append(val)
+        return tuple(pattern), count
 
-    groups: Dict[Tuple[Tuple[str, ...], Tuple[str, ...]], List[Dict[str, str]]] = {}
-    shape_cache: Dict[str, Tuple[tuple[str, ...], int]] = {}
+    # Cluster by non-weapon fields.
+    clusters: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
     for row in rows:
-        patterns: List[str] = []
-        num_counts: List[int] = []
-        for col in agg_cols:
-            val = row.get(col, "") or ""
-            shape, count = shape_cache.setdefault(val, pattern(val))
-            patterns.append("|".join(shape))
-            num_counts.append(count)
-        key = (
-            tuple(row.get(col, "") for col in fixed_cols),
-            tuple(patterns),
-            tuple(num_counts),
-        )
-        groups.setdefault(key, []).append(row)
+        key = tuple(row.get(col, "") for col in fixed_cols)
+        clusters.setdefault(key, []).append(row)
 
     merged: List[Dict[str, str]] = []
-    for key, rows_in_group in groups.items():
-        if len(rows_in_group) == 1:
-            merged.append(rows_in_group[0])
-            continue
-        base_tokens: Dict[str, List[tuple[str, str]]] = {}
-        for col in agg_cols:
-            base_tokens[col] = tokenize(rows_in_group[0].get(col, "") or "")
-        # Validate identical token shapes across rows.
-        compatible = True
-        for row in rows_in_group[1:]:
+    for key, bucket in clusters.items():
+        # Build weapon -> set of shapes to ensure symmetry.
+        shapes_by_weapon: Dict[str, set] = {}
+        rows_by_shape_weapon: Dict[Tuple[str, ...], Dict[str, List[Dict[str, str]]]] = {}
+        for row in bucket:
+            weapon = row.get("Weapon", "").strip()
+            shape_key: Tuple[str, ...] = []
             for col in agg_cols:
-                if tokenize(row.get(col, "") or "") != base_tokens[col]:
-                    compatible = False
-                    break
-            if not compatible:
-                break
-        if not compatible:
-            merged.extend(rows_in_group)
+                pat, _ = shape(row.get(col, "") or "")
+                shape_key += pat
+            shape_key = tuple(shape_key)
+            shapes_by_weapon.setdefault(weapon, set()).add(shape_key)
+            rows_by_shape_weapon.setdefault(shape_key, {}).setdefault(weapon, []).append(row)
+
+        # Only merge if every weapon has identical shape set.
+        shape_sets = list(shapes_by_weapon.values())
+        if not shape_sets:
+            merged.extend(bucket)
+            continue
+        if any(s != shape_sets[0] for s in shape_sets[1:]):
+            merged.extend(bucket)
             continue
 
-        out = dict(rows_in_group[0])
-        # Merge weapons in seen order, deduped.
-        weapons: List[str] = []
-        for row in rows_in_group:
-            for part in (row.get("Weapon", "") or "").split("|"):
-                name = part.strip()
+        # Merge per shape key.
+        for shape_key, weapon_rows in rows_by_shape_weapon.items():
+            # All weapons should be present; otherwise skip merge for safety.
+            if len(weapon_rows) != len(shapes_by_weapon):
+                for rows_list in weapon_rows.values():
+                    merged.extend(rows_list)
+                continue
+
+            # Use first row as base.
+            base_weapon = next(iter(weapon_rows))
+            base_row = weapon_rows[base_weapon][0]
+            out = dict(base_row)
+
+            # Merge weapons.
+            weapons: List[str] = []
+            for weapon in weapon_rows:
+                name = weapon.strip()
                 if name and name not in weapons:
                     weapons.append(name)
-        out["Weapon"] = " | ".join(weapons)
+            out["Weapon"] = " | ".join(weapons)
 
-        # Merge numeric positions into ranges.
-        for col in agg_cols:
-            nums_by_idx: List[List[float]] = []
-            tokens = base_tokens[col]
-            # Collect numeric positions consistently across rows.
-            tokenized_rows = [tokenize(row.get(col, "") or "") for row in rows_in_group]
-            num_positions = [i for i, (k, _) in enumerate(tokens) if k == "num"]
-            for pos_idx, token_idx in enumerate(num_positions):
-                nums: List[float] = []
-                for trow in tokenized_rows:
-                    try:
-                        num = float(trow[token_idx][1])
-                    except (IndexError, ValueError):
-                        num = 0.0
-                    nums.append(num)
-                nums_by_idx.append(nums)
+            # Merge numeric ranges using token shape of base.
+            token_cache = {col: tokenize(out.get(col, "") or "") for col in agg_cols}
+            for col in agg_cols:
+                tokens = token_cache[col]
+                num_positions = [i for i, (k, _) in enumerate(tokens) if k == "num"]
+                all_nums_by_pos: List[List[float]] = [[] for _ in num_positions]
+                for w_rows in weapon_rows.values():
+                    row = w_rows[0]
+                    row_tokens = tokenize(row.get(col, "") or "")
+                    for idx, pos in enumerate(num_positions):
+                        try:
+                            num = float(row_tokens[pos][1])
+                        except (IndexError, ValueError):
+                            num = 0.0
+                        all_nums_by_pos[idx].append(num)
+                ranges: List[str] = []
+                for vals in all_nums_by_pos:
+                    mn, mx = min(vals), max(vals)
+                    ranges.append(fmt_number(mn) if mn == mx else f"{fmt_number(mn)}-{fmt_number(mx)}")
+                rebuilt: List[str] = []
+                r_idx = 0
+                for kind, val in tokens:
+                    if kind == "num":
+                        rebuilt.append(ranges[r_idx])
+                        r_idx += 1
+                    else:
+                        rebuilt.append(val)
+                out[col] = "".join(rebuilt)
 
-            ranges: List[str] = []
-            for vals in nums_by_idx:
-                mn, mx = min(vals), max(vals)
-                ranges.append(fmt_number(mn) if mn == mx else f"{fmt_number(mn)}-{fmt_number(mx)}")
-
-            # Rebuild string.
-            rebuilt_parts: List[str] = []
-            range_idx = 0
-            for kind, val in tokens:
-                if kind == "num":
-                    rebuilt_parts.append(ranges[range_idx])
-                    range_idx += 1
-                else:
-                    rebuilt_parts.append(val)
-            out[col] = "".join(rebuilt_parts)
-
-        merged.append(out)
+            merged.append(out)
 
     return merged
 
@@ -303,7 +303,7 @@ def collapse_rows(
         for row in rowset:
             for col in ("subCategory1", "subCategory2", "subCategory3", "subCategory4"):
                 val = (row.get(col) or "").strip()
-                if val and val not in subcats:
+                if val and val != "-" and val not in subcats:
                     subcats.append(val)
             ov = (row.get("Overwrite Scaling") or "").strip()
             if ov and ov != "-" and ov not in overwrite_vals:
