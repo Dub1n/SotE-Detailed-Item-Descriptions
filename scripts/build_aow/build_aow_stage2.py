@@ -148,41 +148,37 @@ def collapse_rows(rows: List[Dict[str, str]], fieldnames: List[str]) -> Tuple[Li
             val = parse_float(agg_row.get(col, 0))
             values.append(val if val is not None else 0.0)
 
+        attr = (agg_row.get("PhysAtkAttribute") or "").strip()
         non_zero = [(name, val) for (name, _), val in zip(dmg_fields, values) if val > 0]
         has_zero = any(val == 0 for val in values)
 
         if not non_zero:
-            return "-", 0.0
-
-        dmg_mv = sum(val for _, val in non_zero) / len(non_zero) / 100.0
-
-        attr = (agg_row.get("PhysAtkAttribute") or "").strip()
-
-        if has_zero:
-            dmg_type = " | ".join(name for name, _ in non_zero)
-            if len(non_zero) > 1:
-                max_val = max(val for _, val in non_zero)
-                min_val = min(val for _, val in non_zero)
-                if max_val > 0 and min_val < 0.75 * max_val:
-                    dmg_type = f"! | {dmg_type}"
-            if attr and attr not in {"252", "253"}:
-                dmg_type = attr
-            return dmg_type or "-", dmg_mv
-
-        mn = min(val for _, val in non_zero)
-        mx = max(val for _, val in non_zero)
-        if mn > 0 and mx >= 2 * mn:
-            dmg_type = "!"
-        elif 1 < len(non_zero) < 5:
-            max_val = max(val for _, val in non_zero)
-            threshold = max_val * 0.75
-            if any(val < threshold for _, val in non_zero if val == val):  # guard for NaN
-                types = " | ".join(name for name, _ in non_zero)
-                dmg_type = f"! | {types}"
-            else:
-                dmg_type = " | ".join(name for name, _ in non_zero)
+            dmg_type, dmg_mv = "-", 0.0
         else:
-            dmg_type = "Weapon"
+            dmg_mv = sum(val for _, val in non_zero) / len(non_zero) / 100.0
+
+            if has_zero:
+                dmg_type = " | ".join(name for name, _ in non_zero)
+                if len(non_zero) > 1:
+                    max_val = max(val for _, val in non_zero)
+                    min_val = min(val for _, val in non_zero)
+                    if max_val > 0 and min_val < 0.75 * max_val:
+                        dmg_type = f"! | {dmg_type}"
+            else:
+                mn = min(val for _, val in non_zero)
+                mx = max(val for _, val in non_zero)
+                if mn > 0 and mx >= 2 * mn:
+                    dmg_type = "!"
+                elif 1 < len(non_zero) < 5:
+                    max_val = max(val for _, val in non_zero)
+                    threshold = max_val * 0.75
+                    if any(val < threshold for _, val in non_zero if val == val):  # guard for NaN
+                        types = " | ".join(name for name, _ in non_zero)
+                        dmg_type = f"! | {types}"
+                    else:
+                        dmg_type = " | ".join(name for name, _ in non_zero)
+                else:
+                    dmg_type = "Weapon"
 
         if attr and attr not in {"252", "253"}:
             dmg_type = attr
