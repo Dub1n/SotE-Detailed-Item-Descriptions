@@ -186,7 +186,6 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         "Dmg Type",
         "Wep Status",
         "Overwrite Scaling",
-        "subCategorySum",
     ]
     def tokenize(text: str) -> List[tuple[str, str]]:
         parts = re.split(r"(-?\d+(?:\.\d+)?)", text)
@@ -289,6 +288,22 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                 if name and name not in weapons:
                     weapons.append(name)
             out["Weapon"] = " | ".join(weapons)
+
+            # Merge subCategorySum across rows even when they differ.
+            subcat_values: List[str] = []
+            seen_subcats = set()
+            for rows_list in weapon_rows.values():
+                for r in rows_list:
+                    val = (r.get("subCategorySum") or "").strip()
+                    if not val:
+                        continue
+                    if val not in seen_subcats:
+                        seen_subcats.add(val)
+                        subcat_values.append(val)
+            if subcat_values:
+                out["subCategorySum"] = " | ".join(subcat_values)
+            else:
+                out["subCategorySum"] = ""
 
             # Merge numeric ranges using token shape of base.
             token_cache = {col: tokenize(out.get(col, "") or "") for col in AGG_COLS}
@@ -423,7 +438,7 @@ def collapse_rows(
                 if ov and ov not in {"-", "null"} and ov not in overwrite_vals:
                     overwrite_vals.append(ov)
 
-            out["subCategorySum"] = " | ".join(subcats)
+            out["subCategorySum"] = ", ".join(subcats)
             out["Overwrite Scaling"] = (
                 ", ".join(overwrite_vals)
                 if overwrite_vals

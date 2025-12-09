@@ -1,5 +1,6 @@
 import argparse
 import csv
+import json
 import sys
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
@@ -22,6 +23,7 @@ from helpers.output import format_path_for_console  # noqa: E402
 INPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-1.csv"
 OUTPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-2.csv"
 FORCE_COLLAPSE_DEFAULT = ROOT / "work/aow_pipeline/force_collapse_pairs.json"
+VALUE_BLACKLIST_DEFAULT = ROOT / "work/aow_pipeline/value_blacklist.json"
 
 GROUP_KEYS = [
     "Skill",
@@ -61,6 +63,44 @@ ZERO_MV_ATK_COLUMNS = [
     "AtkLtng",
     "AtkHoly",
 ]
+
+def load_value_blacklist(path: Path) -> Dict[str, Dict[str, List[str]]]:
+    if not path.exists():
+        return {}
+    with path.open() as f:
+        try:
+            data = json.load(f)
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"Failed to parse value blacklist at {path}: {exc}") from exc
+    norm: Dict[str, Dict[str, List[str]]] = {}
+    for stage, cols in data.items():
+        stage_key = str(stage)
+        if not isinstance(cols, dict):
+            continue
+        norm[stage_key] = {}
+        for col, values in cols.items():
+            if not isinstance(values, list):
+                continue
+            norm[stage_key][col] = [str(v) for v in values]
+    return norm
+
+
+def apply_value_blacklist(
+    rows: List[Dict[str, str]],
+    blacklist: Mapping[str, Mapping[str, List[str]]],
+    *,
+    stage_key: str,
+) -> None:
+    stage_rules = blacklist.get(stage_key, {})
+    if not stage_rules:
+        return
+    for row in rows:
+        for col, banned in stage_rules.items():
+            val = row.get(col)
+            if val is None:
+                continue
+            if val.strip() in banned:
+                row[col] = ""
 
 
 def parse_float(value: Any) -> float | None:
@@ -531,13 +571,21 @@ def main() -> None:
         default=FORCE_COLLAPSE_DEFAULT,
         help="Path to JSON list of Name pairs to force-collapse.",
     )
+    parser.add_argument(
+        "--value-blacklist",
+        type=Path,
+        default=VALUE_BLACKLIST_DEFAULT,
+        help="Path to value_blacklist.json",
+    )
     args = parser.parse_args()
 
+    value_blacklist = load_value_blacklist(args.value_blacklist)
     force_groups, force_overrides, force_primary = load_force_collapse_map(
         args.force_collapse
     )
     before_rows = load_rows_by_key(args.output, GROUP_KEYS)
     rows, fieldnames = read_rows(args.input)
+    apply_value_blacklist(rows, value_blacklist, stage_key="2")
     output_rows, output_columns, warnings, forced_groups = collapse_rows(
         rows,
         fieldnames,

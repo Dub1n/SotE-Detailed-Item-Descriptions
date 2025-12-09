@@ -170,6 +170,7 @@ flowchart LR
 - Input: `work/aow_pipeline/AoW-data-1.csv`
 - Output: `work/aow_pipeline/AoW-data-2.csv`
 - Behavior:
+  - Optional value blacklist (`work/aow_pipeline/value_blacklist.json`): drop listed values per stage/column before processing (currently strips `128 - unused` from `subCategory1-4` in Stage 2).
   - Apply optional forced collapses defined in `work/aow_pipeline/force_collapse_pairs.json`:
     - Accepts entries as a list of names, or an object with `names` and optional `overrides`.
     - All rows in a group are canonicalized to the first name’s derived fields (`Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`) unless a specific override for that field is provided.
@@ -385,7 +386,7 @@ flowchart LR
 - Script: `scripts/build_aow/build_aow_stage3.py` (groups, pads, and concatenates values).
 - Group keys: `Skill`, `Follow-up`, `Hand`, `Part`, `Weapon`, `Dmg Type`, `Wep Status`.
 - Removed columns: `Wep Poise Range`, `Disable Gem Attr`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `isAddBaseAtk`, `subCategory1-4`.
-- `subCategorySum`: union of all subCategory1-4 values in the group (order-preserving, deduped, pipe-joined; skips `-`/empty).
+- `subCategorySum`: union of all subCategory1-4 values in the group (order-preserving, deduped, comma-joined; skips `-`/empty). When weapons are merged in the second pass, differing `subCategorySum` strings are allowed and concatenated with ` | `, deduping identical strings.
 - `Overwrite Scaling`: unique values (ignoring empty/`-`) joined with `, `.
 - Aggregated columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`):
   - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen across all rows sharing the same `Skill`/`Follow-up`/`Hand` (even when Parts differ); the layout is chosen once per skill-hand pair so every numeric column shares the same arrangement, padding absent combos with `0`s rather than dropping sections.
