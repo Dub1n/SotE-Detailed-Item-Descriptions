@@ -32,9 +32,9 @@ KEY_FIELDS = [
 
 ANCHOR_INSERTIONS: Tuple[Tuple[str, str], ...] = (
     ("Skill", "Text Name"),
-    ("Dmg MV", "Text Wep Dmg"),
-    ("Wep Status", "Text Wep Status"),
-    ("Stance Dmg", "Text Stance"),
+    ("Weapon", "Text Wep Dmg"),
+    ("Text Wep Dmg", "Text Wep Status"),
+    ("Weapon Buff MV", "Text Stance"),
     ("AtkHoly", "Text Bullet"),
     ("Overwrite Scaling", "Text Scaling"),
     ("subCategorySum", "Text Category"),
@@ -53,6 +53,12 @@ DROP_COLUMNS = {
     "Fire MV",
     "Ltng MV",
     "Holy MV",
+    "Dmg MV",
+    "Status MV",
+    "Wep Status",
+    "Stance Dmg",
+    "Weapon Source",
+    "Dmg Type",
 }
 
 
@@ -149,7 +155,7 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     elif dmg_type == "-":
         row["Text Wep Dmg"] = "!"
     else:
-        row["Text Wep Dmg"] = f"{dmg_type} Damage: {dmg_mv_raw}x"
+        row["Text Wep Dmg"] = f"{dmg_type} Damage: {dmg_mv_raw}"
 
     status_raw = (row.get("Status MV") or "").strip()
     status_val = parse_float(status_raw if status_raw not in {"", "-"} else "")
@@ -161,7 +167,13 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     else:
         buildup = format_multiplier(status_val * 0.01)
         label = "Weapon" if not wep_status_raw or wep_status_raw == "-" else wep_status_raw
-        row["Text Wep Status"] = f"{label} Buildup: {buildup}x"
+        row["Text Wep Status"] = f"{label} Buildup: {buildup}"
+
+    stance_raw = (row.get("Stance Dmg") or "").strip()
+    if stance_raw in {"", "-"}:
+        row["Text Stance"] = "-"
+    else:
+        row["Text Stance"] = f"Stance Damage: {stance_raw}"
     return row
 
 
@@ -173,14 +185,12 @@ def transform_rows(
     output_fields = ensure_output_fields(base_fields)
 
     for row in rows:
-        base_row = {k: v for k, v in row.items() if k not in DROP_COLUMNS}
-        new_row = apply_row_operations(dict(base_row))
-        for col, val in base_row.items():
-            new_row.setdefault(col, val)
-        for col in new_row:
+        new_row = apply_row_operations(dict(row))
+        cleaned_row = {k: v for k, v in new_row.items() if k not in DROP_COLUMNS}
+        for col in cleaned_row:
             if col not in output_fields:
                 output_fields.append(col)
-        transformed.append(new_row)
+        transformed.append(cleaned_row)
 
     normalized: List[Dict[str, str]] = []
     for row in transformed:

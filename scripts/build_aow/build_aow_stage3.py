@@ -3,7 +3,7 @@ import csv
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, NamedTuple
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -40,6 +40,25 @@ DROP_COLUMNS = {
     "Wep Holy",
 }
 
+AGG_COLS = [
+    "Dmg MV",
+    "Status MV",
+    "Weapon Buff MV",
+    "Stance Dmg",
+    "AtkPhys",
+    "AtkMag",
+    "AtkFire",
+    "AtkLtng",
+    "AtkHoly",
+]
+
+
+class StepLayout(NamedTuple):
+    max_step: int
+    has_fp1: bool
+    has_fp0: bool
+    has_charged: bool
+
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
     with path.open() as f:
@@ -61,63 +80,87 @@ def unique_join(values: List[str], sep: str = " | ") -> str:
     return sep.join(ordered)
 
 
+def zeros_only(text: str) -> bool:
+    nums = re.findall(r"-?\d+(?:\.\d+)?", text or "")
+    if not nums:
+        return False
+    return all(float(n) == 0 for n in nums)
+
+
 def aggregate_steps(
     rows: List[Dict[str, str]],
     col: str,
+    layout: StepLayout,
 ) -> str:
     """
-    Build a zero-padded FP/Charged/Step string for the given column.
-    Only include FP/Charged groups that exist in the input rows; pad Steps
-    within each present group up to the max step in the set.
+    Build a zero-padded FP/Charged/Step string for the given column using the
+    provided layout so every numeric column in the collapsed row shares the
+    same arrangement.
     Format (when present):
       fp1_uncharged[ | fp1_charged][ [fp0_uncharged[ | fp0_charged]]]
     """
-    combos: Dict[tuple[int, int, int], str] = {}
-    max_step = 1
-    steps_by_group: Dict[tuple[int, int], int] = {}
+    value_map: Dict[tuple[int, int, int], str] = {}
     for row in rows:
         try:
             step = int(str(row.get("Step", "") or "1"))
         except ValueError:
             step = 1
-        fp_val = 1 if str(row.get("FP", "")).strip() != "0" else 0
+        fp_val = 0 if str(row.get("FP", "")).strip() == "0" else 1
         charged_val = 1 if str(row.get("Charged", "")).strip() == "1" else 0
-        max_step = max(max_step, step)
-        steps_by_group[(fp_val, charged_val)] = max(
-            steps_by_group.get((fp_val, charged_val), 1), step
-        )
-        combos[(fp_val, charged_val, step)] = str(row.get(col, "") or "0")
+        value_map[(fp_val, charged_val, step)] = str(row.get(col, "") or "0").strip()
 
-    def series(fp: int, charged: int) -> str | None:
-        if (fp, charged) not in steps_by_group:
-            return None
+    def series(fp: int, charged: int) -> str:
         values: List[str] = []
-        for step in range(1, max_step + 1):
-            values.append(combos.get((fp, charged, step), "0"))
-        try:
-            if all(float(v) == 0 for v in values):
-                return None
-        except ValueError:
-            pass
+        for step in range(1, layout.max_step + 1):
+            values.append(value_map.get((fp, charged, step), "0"))
         return ", ".join(values)
 
-    fp1_uncharged = series(1, 0)
-    fp1_charged = series(1, 1)
-    fp0_uncharged = series(0, 0)
-    fp0_charged = series(0, 1)
-    fp1_parts = [p for p in (fp1_uncharged, fp1_charged) if p is not None]
-    fp0_parts = [p for p in (fp0_uncharged, fp0_charged) if p is not None]
+    def fp_block(fp: int) -> str:
+        uncharged = series(fp, 0)
+        if layout.has_charged:
+            charged = series(fp, 1)
+            return f"{uncharged} | {charged}"
+        return uncharged
 
-    fp1_text = " | ".join(fp1_parts)
-    fp0_text = " | ".join(fp0_parts)
+    parts: List[str] = []
+    if layout.has_fp1:
+        parts.append(fp_block(1))
 
-    if fp1_text and fp0_text:
-        return f"{fp1_text} [{fp0_text}]"
-    if fp1_text:
-        return fp1_text
-    if fp0_text:
-        return f"[{fp0_text}]"
+    if layout.has_fp0:
+        fp0_text = fp_block(0)
+        bracket = f"[{fp0_text}]"
+        if parts:
+            return f"{parts[0]} {bracket}"
+        return bracket
+
+    if parts:
+        return parts[0]
     return "-"
+
+
+def build_step_layout(rows: List[Dict[str, str]]) -> StepLayout:
+    max_step = 1
+    has_fp0 = False
+    has_fp1 = False
+    has_charged = False
+    for row in rows:
+        try:
+            step = int(str(row.get("Step", "") or "1"))
+        except ValueError:
+            step = 1
+        max_step = max(max_step, step)
+        fp_val = 0 if str(row.get("FP", "")).strip() == "0" else 1
+        charged_val = 1 if str(row.get("Charged", "")).strip() == "1" else 0
+        has_fp0 = has_fp0 or fp_val == 0
+        has_fp1 = has_fp1 or fp_val == 1
+        has_charged = has_charged or charged_val == 1
+
+    return StepLayout(
+        max_step=max_step,
+        has_fp1=has_fp1,
+        has_fp0=has_fp0,
+        has_charged=has_charged,
+    )
 
 
 def fmt_number(value: float) -> str:
@@ -145,18 +188,6 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         "Overwrite Scaling",
         "subCategorySum",
     ]
-    agg_cols = [
-        "Dmg MV",
-        "Status MV",
-        "Weapon Buff MV",
-        "Stance Dmg",
-        "AtkPhys",
-        "AtkMag",
-        "AtkFire",
-        "AtkLtng",
-        "AtkHoly",
-    ]
-
     def tokenize(text: str) -> List[tuple[str, str]]:
         parts = re.split(r"(-?\d+(?:\.\d+)?)", text)
         tokens: List[tuple[str, str]] = []
@@ -207,7 +238,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         for row in bucket:
             weapon = row.get("Weapon", "").strip()
             shape_key: Tuple[str, ...] = []
-            for col in agg_cols:
+            for col in AGG_COLS:
                 pat, _ = shape(row.get(col, "") or "")
                 shape_key += pat
             shape_key = tuple(shape_key)
@@ -260,8 +291,8 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             out["Weapon"] = " | ".join(weapons)
 
             # Merge numeric ranges using token shape of base.
-            token_cache = {col: tokenize(out.get(col, "") or "") for col in agg_cols}
-            for col in agg_cols:
+            token_cache = {col: tokenize(out.get(col, "") or "") for col in AGG_COLS}
+            for col in AGG_COLS:
                 tokens = token_cache[col]
                 num_positions = [i for i, (k, _) in enumerate(tokens) if k == "num"]
                 all_nums_by_pos: List[List[float]] = [[] for _ in num_positions]
@@ -288,9 +319,20 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                         rebuilt.append(val)
                 out[col] = "".join(rebuilt)
 
+            for col in AGG_COLS:
+                if zeros_only(out.get(col, "")):
+                    out[col] = "-"
+
             merged.append(out)
 
     return merged
+
+
+def mask_zero_only_cells(rows: List[Dict[str, str]]) -> None:
+    for row in rows:
+        for col in AGG_COLS:
+            if col in row and zeros_only(row.get(col, "")):
+                row[col] = "-"
 
 
 def collapse_rows(
@@ -371,23 +413,15 @@ def collapse_rows(
                 else (eff_overwrite if eff_overwrite else "null")
             )
 
-            agg_cols = [
-                "Dmg MV",
-                "Status MV",
-                "Weapon Buff MV",
-                "Stance Dmg",
-                "AtkPhys",
-                "AtkMag",
-                "AtkFire",
-                "AtkLtng",
-                "AtkHoly",
-            ]
-            for col in agg_cols:
-                out[col] = aggregate_steps(subrows, col)
+            layout = build_step_layout(subrows)
+            for col in AGG_COLS:
+                out[col] = aggregate_steps(subrows, col, layout)
 
             output_rows.append(out)
 
     merged_rows = collapse_weapons(output_rows)
+
+    mask_zero_only_cells(merged_rows)
 
     output_fields = [
         "Skill",

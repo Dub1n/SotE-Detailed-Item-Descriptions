@@ -388,7 +388,8 @@ flowchart LR
 - `subCategorySum`: union of all subCategory1-4 values in the group (order-preserving, deduped, pipe-joined; skips `-`/empty).
 - `Overwrite Scaling`: unique values (ignoring empty/`-`) joined with `, `.
 - Aggregated columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`):
-  - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen in the group.
+  - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen in the group; the layout is chosen once per collapsed group so every numeric column shares the same arrangement, padding absent combos with `0`s rather than dropping sections.
+  - After weapon-merge, any numeric cell that is entirely zeros (including ranged forms like `0-0` or padded strings like `0, 0 | 0, 0 [0]`) is replaced with `-`; cells with any non-zero are left untouched.
   - Format per column: `fp1_uncharged_steps, … | fp1_charged_steps, … [fp0_uncharged_steps, … | fp0_charged_steps, …]` (examples: `1, 2 | 2, 3 [0, 0 | 0, 0]`).
 - Dmg Type `-` and Overwrite Scaling `null` act as wildcards when grouping so empty placeholders don’t split otherwise matching rows.
 - Second pass: rows with identical non-Weapon columns and identical numeric arrangement are collapsed, concatenating `Weapon` with ` | ` and converting each numeric position into a range (`min-max`) when values differ (keeps single value when identical). Collapse only happens when all weapons for the skill/hand/part/dmg type/wep status share the same numeric token pattern (symmetry guard); otherwise rows stay separate.
@@ -452,6 +453,7 @@ flowchart LR
 - Input: `work/aow_pipeline/AoW-data-3.csv`
 - Output: `work/aow_pipeline/AoW-data-4.csv` (adds text-ready helper fields; future spot for formatting ready/JSON ingest).
 - Script: `scripts/build_aow/build_aow_stage4.py` (adds text columns with per-row logic).
+- Drops raw `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, and `Dmg Type` from the output while still using their Stage 3 values to populate text helpers (`Text Wep Dmg`, `Text Wep Status`, `Text Stance`). Damage/status text no longer append an `x`; stance text renders as `Stance Damage: {Stance Dmg}` (or `-` when absent).
 
 ```mermaid
 flowchart LR
@@ -478,16 +480,10 @@ flowchart LR
     o4Follow["Follow-up"]
     o4Hand["Hand"]
     o4Part["Part"]
-    o4WeaponSrc["Weapon Source"]
     o4Weapon["Weapon"]
-    o4DmgType["Dmg Type"]
-    o4DmgMV["Dmg MV"]
     o4TextWepDmg["Text Wep Dmg"]
-    o4Status["Status MV"]
-    o4WepStatus["Wep Status"]
     o4TextWepStatus["Text Wep Status"]
     o4Buff["Weapon Buff MV"]
-    o4Stance["Stance Dmg"]
     o4TextStance["Text Stance"]
     o4AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
     o4TextBullet["Text Bullet"]
@@ -502,16 +498,10 @@ flowchart LR
   passthrough4 --> o4Follow
   passthrough4 --> o4Hand
   passthrough4 --> o4Part
-  passthrough4 --> o4WeaponSrc
   passthrough4 --> o4Weapon
-  passthrough4 --> o4DmgType
-  passthrough4 --> o4DmgMV
   passthrough4 --> o4TextWepDmg
-  passthrough4 --> o4Status
-  passthrough4 --> o4WepStatus
   passthrough4 --> o4TextWepStatus
   passthrough4 --> o4Buff
-  passthrough4 --> o4Stance
   passthrough4 --> o4TextStance
   passthrough4 --> o4AtkStats
   passthrough4 --> o4TextBullet
