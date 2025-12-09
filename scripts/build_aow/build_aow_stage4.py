@@ -148,6 +148,9 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         if val and zeros_only(val):
             row[col] = "-"
 
+    part_raw = (row.get("Part") or "").strip()
+    part_suffix = part_raw if part_raw and part_raw != "-" else ""
+
     dmg_type = (row.get("Dmg Type") or "").strip()
     dmg_mv_raw = (row.get("Dmg MV") or "").strip()
     if dmg_mv_raw in {"", "-"}:
@@ -155,7 +158,7 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     elif dmg_type == "-":
         row["Text Wep Dmg"] = "!"
     else:
-        row["Text Wep Dmg"] = f"{dmg_type} Damage: {dmg_mv_raw}"
+        row["Text Wep Dmg"] = f"({dmg_type} Damage){part_suffix}: {dmg_mv_raw}"
 
     status_raw = (row.get("Status MV") or "").strip()
     status_val = parse_float(status_raw if status_raw not in {"", "-"} else "")
@@ -167,13 +170,13 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     else:
         buildup = format_multiplier(status_val * 0.01)
         label = "Weapon" if not wep_status_raw or wep_status_raw == "-" else wep_status_raw
-        row["Text Wep Status"] = f"{label} Buildup: {buildup}"
+        row["Text Wep Status"] = f"({label} Buildup){part_suffix}: {buildup}"
 
     stance_raw = (row.get("Stance Dmg") or "").strip()
     if stance_raw in {"", "-"}:
         row["Text Stance"] = "-"
     else:
-        row["Text Stance"] = f"Stance Damage: {stance_raw}"
+        row["Text Stance"] = f"(Stance Damage){part_suffix}: {stance_raw}"
     return row
 
 

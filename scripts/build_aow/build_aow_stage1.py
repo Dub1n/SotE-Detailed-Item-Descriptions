@@ -184,7 +184,7 @@ def infer_part(name: str, matched_skill: Optional[str] = None) -> str:
             base = ""
     base = re.sub(r"\s{2,}", " ", base).strip()
     if not base:
-        return "Loop" if "Loop" in name else "Main"
+        return "Loop" if "Loop" in name else "Hit"
     return base
 
 
@@ -463,7 +463,7 @@ def build_rows(
             step = detect_step(raw_name)
             bullet_flag = detect_bullet(raw_name)
             tick_flag = detect_tick(raw_name)
-            if bullet_flag and part == "Main":
+            if bullet_flag and part == "Hit":
                 part = "Bullet"
 
             weapon_list: List[str] = []

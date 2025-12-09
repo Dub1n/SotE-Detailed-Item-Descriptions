@@ -48,9 +48,9 @@ flowchart LR
   - `Wep Phys`/`Wep Magic`/`Wep Fire`/`Wep Ltng`/`Wep Holy`: for `Weapon Source` == `unique`, pull `attackBasePhysics`/`attackBaseMagic`/`attackBaseFire`/`attackBaseThunder`/`attackBaseDark` from `EquipParamWeapon` by weapon name (averaging when multiple unique weapons are listed); otherwise `-`.
   - `FP`: `0` when the name contains `(Lacking FP)`, else `1`.
   - `Charged`: `1` when the name contains `Charged`, else `0`.
-  - `Part`: inferred from name tokens without charged/hand/follow-up labels; removes `Bullet` and strips outer parentheses when the whole part is wrapped. Defaults to `Main`, with `Loop` preserved when present.
+  - `Part`: inferred from name tokens without charged/hand/follow-up labels; removes `Bullet` and strips outer parentheses when the whole part is wrapped. Defaults to `Hit`, with `Loop` preserved when present.
   - `Part` cleanup: splits multiple bracketed fragments into comma-separated components (e.g., `2x (Right)` → `2x, Right`; `[Hit] (Stomp AoE)` → `[Hit], Stomp AoE`).
-  - `Part` for bullets: if `Bullet` = `1`, force `Part` to `Bullet` so bullet-only rows no longer appear as `Main`.
+  - `Part` for bullets: if `Bullet` = `1`, force `Part` to `Bullet` so bullet-only rows no longer appear as `Hit`.
   - `Tick`: `1` when the name contains the token `Tick` (and it is removed from `Part` inference), else `0`.
   - `Follow-up`: `Light` when the name contains `R1`, `Heavy` when it contains `R2`, else `-`.
   - `Hand`: detects `1h`/`2h` in the name, otherwise `-`.
@@ -454,7 +454,7 @@ flowchart LR
 - Input: `work/aow_pipeline/AoW-data-3.csv`
 - Output: `work/aow_pipeline/AoW-data-4.csv` (adds text-ready helper fields; future spot for formatting ready/JSON ingest).
 - Script: `scripts/build_aow/build_aow_stage4.py` (adds text columns with per-row logic).
-- Drops raw `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, and `Dmg Type` from the output while still using their Stage 3 values to populate text helpers (`Text Wep Dmg`, `Text Wep Status`, `Text Stance`). Damage/status text no longer append an `x`; stance text renders as `Stance Damage: {Stance Dmg}` (or `-` when absent).
+- Drops raw `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, and `Dmg Type` from the output while still using their Stage 3 values to populate text helpers (`Text Wep Dmg`, `Text Wep Status`, `Text Stance`). Damage/status text no longer append an `x`; text helpers render as `(Type Damage){Part}: {Dmg MV}`, `(Stance Damage){Part}: {Stance Dmg}`, and `({Wep Status|Weapon} Buildup){Part}: {Status MV}` (or `-` when absent).
 
 ```mermaid
 flowchart LR
