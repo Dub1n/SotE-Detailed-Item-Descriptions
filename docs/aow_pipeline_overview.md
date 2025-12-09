@@ -388,7 +388,7 @@ flowchart LR
 - `subCategorySum`: union of all subCategory1-4 values in the group (order-preserving, deduped, pipe-joined; skips `-`/empty).
 - `Overwrite Scaling`: unique values (ignoring empty/`-`) joined with `, `.
 - Aggregated columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`):
-  - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen in the group; the layout is chosen once per collapsed group so every numeric column shares the same arrangement, padding absent combos with `0`s rather than dropping sections.
+  - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen across all rows sharing the same `Skill`/`Follow-up`/`Hand` (even when Parts differ); the layout is chosen once per skill-hand pair so every numeric column shares the same arrangement, padding absent combos with `0`s rather than dropping sections.
   - After weapon-merge, any numeric cell that is entirely zeros (including ranged forms like `0-0` or padded strings like `0, 0 | 0, 0 [0]`) is replaced with `-`; cells with any non-zero are left untouched.
   - Format per column: `fp1_uncharged_steps, … | fp1_charged_steps, … [fp0_uncharged_steps, … | fp0_charged_steps, …]` (examples: `1, 2 | 2, 3 [0, 0 | 0, 0]`).
 - Dmg Type `-` and Overwrite Scaling `null` act as wildcards when grouping so empty placeholders don’t split otherwise matching rows.

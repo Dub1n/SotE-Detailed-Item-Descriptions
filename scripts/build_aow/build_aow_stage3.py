@@ -335,8 +335,25 @@ def mask_zero_only_cells(rows: List[Dict[str, str]]) -> None:
                 row[col] = "-"
 
 
+def build_layout_map(rows: List[Dict[str, str]]) -> Dict[Tuple[str, str, str], StepLayout]:
+    """
+    Build shared FP/Charged/Step layouts per (Skill, Follow-up, Hand) so all
+    rows of a skill use the widest zero-padding even across different parts.
+    """
+    grouped: Dict[Tuple[str, str, str], List[Dict[str, str]]] = {}
+    for row in rows:
+        key = (
+            row.get("Skill", ""),
+            row.get("Follow-up", ""),
+            row.get("Hand", ""),
+        )
+        grouped.setdefault(key, []).append(row)
+    return {key: build_step_layout(rset) for key, rset in grouped.items()}
+
+
 def collapse_rows(
-    rows: List[Dict[str, str]]
+    rows: List[Dict[str, str]],
+    layout_map: Dict[Tuple[str, str, str], StepLayout],
 ) -> Tuple[List[Dict[str, str]], List[str]]:
     clusters: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
     for row in rows:
@@ -413,7 +430,12 @@ def collapse_rows(
                 else (eff_overwrite if eff_overwrite else "null")
             )
 
-            layout = build_step_layout(subrows)
+            layout_key = (
+                out["Skill"],
+                out["Follow-up"],
+                out["Hand"],
+            )
+            layout = layout_map.get(layout_key) or build_step_layout(subrows)
             for col in AGG_COLS:
                 out[col] = aggregate_steps(subrows, col, layout)
 
@@ -455,7 +477,8 @@ def transform_rows(
         filtered_rows.append(
             {k: v for k, v in row.items() if k not in DROP_COLUMNS}
         )
-    collapsed, output_fields = collapse_rows(filtered_rows)
+    layout_map = build_layout_map(filtered_rows)
+    collapsed, output_fields = collapse_rows(filtered_rows, layout_map)
     return collapsed, output_fields
 
 
