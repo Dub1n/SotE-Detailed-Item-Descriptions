@@ -1,8 +1,20 @@
 {
   "2": {
-    "subCategory1": ["128 - unused"],
-    "subCategory2": ["128 - unused"],
-    "subCategory3": ["128 - unused"],
-    "subCategory4": ["128 - unused"]
+    "subCategory1": [
+      "128 - unused",
+      "125 - unused"
+    ],
+    "subCategory2": [
+      "128 - unused",
+      "125 - unused"
+    ],
+    "subCategory3": [
+      "128 - unused",
+      "125 - unused"
+    ],
+    "subCategory4": [
+      "128 - unused",
+      "125 - unused"
+    ]
   }
 }
