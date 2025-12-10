@@ -173,7 +173,7 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     elif dmg_type == "-":
         row["Text Wep Dmg"] = "!"
     else:
-        row["Text Wep Dmg"] = f"({dmg_type} Damage){part_suffix}: {append_x(dmg_mv_raw)}"
+        row["Text Wep Dmg"] = f"{dmg_type} Damage: {append_x(dmg_mv_raw)}"
 
     status_raw = (row.get("Status MV") or "").strip()
     status_val = parse_float(status_raw if status_raw not in {"", "-"} else "")
@@ -191,7 +191,7 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     if stance_raw in {"", "-"}:
         row["Text Stance"] = "-"
     else:
-        row["Text Stance"] = f"(Stance Damage){part_suffix}: {stance_raw}"
+        row["Text Stance"] = f"Stance Damage: {stance_raw}"
 
     overwrite_raw = (row.get("Overwrite Scaling") or "").strip()
     scaling_label = overwrite_raw if overwrite_raw not in {"", "-"} else "Weapon Scaling"
@@ -208,7 +208,7 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         if not val_clean or val_clean == "-":
             row[col] = "-"
         else:
-            row[col] = f"({label}){part_suffix}: {val_clean} [{scaling_label}]"
+            row[col] = f"{label}: {val_clean} [{scaling_label}]"
     return row
 
 
