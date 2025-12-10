@@ -35,6 +35,11 @@ ANCHOR_INSERTIONS: Tuple[Tuple[str, str], ...] = (
     ("Weapon", "Text Wep Dmg"),
     ("Text Wep Dmg", "Text Wep Status"),
     ("Weapon Buff MV", "Text Stance"),
+    ("Text Stance", "Text Phys"),
+    ("Text Phys", "Text Mag"),
+    ("Text Mag", "Text Fire"),
+    ("Text Fire", "Text Ltng"),
+    ("Text Ltng", "Text Holy"),
     ("AtkHoly", "Text Bullet"),
     ("Overwrite Scaling", "Text Scaling"),
     ("subCategorySum", "Text Category"),
@@ -57,6 +62,11 @@ DROP_COLUMNS = {
     "Status MV",
     "Wep Status",
     "Stance Dmg",
+    "AtkPhys",
+    "AtkMag",
+    "AtkFire",
+    "AtkLtng",
+    "AtkHoly",
     "Weapon Source",
     "Dmg Type",
 }
@@ -151,6 +161,14 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     part_raw = (row.get("Part") or "").strip()
     part_suffix = part_raw if part_raw and part_raw != "-" else ""
 
+    def append_x(text: str) -> str:
+        # Add 'x' after each numeric token or numeric range.
+        def repl(match: re.Match[str]) -> str:
+            token = match.group(0)
+            return f"{token}x"
+
+        return re.sub(r"-?\d+(?:\.\d+)?(?:-?\d+(?:\.\d+)?)?", repl, text)
+
     dmg_type = (row.get("Dmg Type") or "").strip()
     dmg_mv_raw = (row.get("Dmg MV") or "").strip()
     if dmg_mv_raw in {"", "-"}:
@@ -158,7 +176,7 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     elif dmg_type == "-":
         row["Text Wep Dmg"] = "!"
     else:
-        row["Text Wep Dmg"] = f"({dmg_type} Damage){part_suffix}: {dmg_mv_raw}"
+        row["Text Wep Dmg"] = f"({dmg_type} Damage){part_suffix}: {append_x(dmg_mv_raw)}"
 
     status_raw = (row.get("Status MV") or "").strip()
     status_val = parse_float(status_raw if status_raw not in {"", "-"} else "")
@@ -177,6 +195,20 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         row["Text Stance"] = "-"
     else:
         row["Text Stance"] = f"(Stance Damage){part_suffix}: {stance_raw}"
+
+    base_cols = {
+        "Text Phys": ("Base Physical Damage", row.get("AtkPhys", "")),
+        "Text Mag": ("Base Magic Damage", row.get("AtkMag", "")),
+        "Text Fire": ("Base Fire Damage", row.get("AtkFire", "")),
+        "Text Ltng": ("Base Lightning Damage", row.get("AtkLtng", "")),
+        "Text Holy": ("Base Holy Damage", row.get("AtkHoly", "")),
+    }
+    for col, (label, value) in base_cols.items():
+        val_clean = (value or "").strip()
+        if not val_clean or val_clean == "-":
+            row[col] = "-"
+        else:
+            row[col] = f"({label}){part_suffix}: {val_clean}"
     return row
 
 
