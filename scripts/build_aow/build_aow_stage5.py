@@ -121,7 +121,6 @@ def write_markdown(rows: List[Dict[str, str]], output_path: Path) -> None:
             emit_blocks(skill_rows)
 
         lines.append("")
-        lines.append("")
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
