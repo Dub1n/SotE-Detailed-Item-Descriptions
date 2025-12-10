@@ -509,6 +509,10 @@ def collapse_rows(
             agg["Overwrite Scaling"] = "null"
         if not has_nonzero_damage_data(agg):
             continue
+        atk_zero = all(
+            (parse_float(agg.get(col, 0)) or 0) == 0
+            for col in ["AtkPhys", "AtkMag", "AtkFire", "AtkLtng", "AtkHoly"]
+        )
         poise_range_text, poise_range_bounds = summarize_range(
             agg.get("Wep Poise Range", "")
         )
@@ -531,7 +535,7 @@ def collapse_rows(
             elif col == "Dmg MV":
                 out_row[col] = fmt_number(dmg_mv)
             elif col == "Bullet Stat":
-                out_row[col] = "-" if agg.get("_has_unique") else val
+                out_row[col] = "-" if agg.get("_has_unique") or atk_zero else val
             else:
                 out_row[col] = val
         output_rows.append(out_row)
