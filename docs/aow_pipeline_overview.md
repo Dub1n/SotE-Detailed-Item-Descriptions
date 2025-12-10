@@ -517,7 +517,7 @@ flowchart LR
 - Input: `work/aow_pipeline/AoW-data-4.csv`
 - Output: `work/aow_pipeline/AoW-data-5.md` (markdown skill summary).
 - Script: `scripts/build_aow/build_aow_stage5.py` (renders Stage 4 text helpers into a human-readable markdown layout).
-- Groups rows by `Skill`; when multiple weapons are present, emits a `#### {Weapon}` section per weapon and repeats matching rows. Within each skill/weapon block, rows are rendered based on whether `Follow-up`/`Hand`/`Part` are `-`, nesting indents and headers accordingly and skipping any `Text *` lines that are `-`.
+- Groups rows by `Skill`; when multiple distinct `Weapon` field values are present, emits a `#### {Weapon}` section per value (pipe-joined lists stay together). Within each skill/weapon block, rows are rendered based on whether `Follow-up`/`Hand`/`Part` are `-`, nesting indents and headers accordingly and skipping any `Text *` lines that are `-`.
 
 ## Filesystem layout
 
@@ -556,8 +556,10 @@ python scripts/build_aow/build_aow_stage2.py
 python scripts/build_aow/build_aow_stage3.py
 # 5) Add text helper columns
 python scripts/build_aow/build_aow_stage4.py
+# 6) Render markdown helper output
+python scripts/build_aow/build_aow_stage5.py
 # or via make (flags can be passed after the target):
-#   make stage4 --output /tmp/AoW-data-4.csv
+#   make stage5 --output /tmp/AoW-data-5.md
 ```
 
 ## Remaining Implementation

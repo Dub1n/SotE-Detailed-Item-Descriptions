@@ -28,13 +28,9 @@ def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
     return rows, fieldnames
 
 
-def split_weapons(value: str) -> List[str]:
-    parts = []
-    for chunk in (value or "").split("|"):
-        name = chunk.strip()
-        if name:
-            parts.append(name)
-    return parts
+def weapon_value(row: Dict[str, str]) -> str:
+    val = (row.get("Weapon") or "-").strip()
+    return val if val else "-"
 
 
 def unique_ordered(values: List[str]) -> List[str]:
@@ -97,10 +93,8 @@ def write_markdown(rows: List[Dict[str, str]], output_path: Path) -> None:
 
     for skill in skills_in_order:
         skill_rows = [r for r in rows if r.get("Skill", "") == skill]
-        weapons: List[str] = []
-        for r in skill_rows:
-            weapons.extend(split_weapons(r.get("Weapon", "")))
-        unique_weapons = [w for w in unique_ordered(weapons) if w]
+        weapon_values = unique_ordered([weapon_value(r) for r in skill_rows])
+        weapon_values = [w for w in weapon_values if w]
 
         lines.append(f"### {skill}")
         lines.append("")
@@ -113,15 +107,15 @@ def write_markdown(rows: List[Dict[str, str]], output_path: Path) -> None:
                 if idx != len(block_rows) - 1:
                     lines.append("")
 
-        if len(unique_weapons) > 1:
-            for w_idx, weapon in enumerate(unique_weapons):
+        if len(weapon_values) > 1:
+            for w_idx, weapon in enumerate(weapon_values):
                 lines.append(f"#### {weapon}")
                 lines.append("")
                 weapon_rows = [
-                    r for r in skill_rows if weapon in split_weapons(r.get("Weapon", ""))
+                    r for r in skill_rows if weapon_value(r) == weapon
                 ]
                 emit_blocks(weapon_rows)
-                if w_idx != len(unique_weapons) - 1:
+                if w_idx != len(weapon_values) - 1:
                     lines.append("")
         else:
             emit_blocks(skill_rows)
