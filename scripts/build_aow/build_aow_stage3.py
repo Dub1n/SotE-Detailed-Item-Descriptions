@@ -266,7 +266,6 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         "Dmg Type",
         "Wep Status",
         "Overwrite Scaling",
-        "Bullet Stat",
     ]
     def tokenize(text: str) -> List[tuple[str, str]]:
         parts = re.split(r"(-?\d+(?:\.\d+)?)", text)
@@ -510,7 +509,6 @@ def collapse_rows(
                 "Weapon": base.get("Weapon", ""),
                 "Dmg Type": eff_dtype or "-",
                 "Wep Status": base.get("Wep Status", ""),
-                "Bullet Stat": base.get("Bullet Stat", ""),
             }
             subcats: List[str] = []
             overwrite_vals: List[str] = []
@@ -564,7 +562,6 @@ def collapse_rows(
         "AtkLtng",
         "AtkHoly",
         "Overwrite Scaling",
-        "Bullet Stat",
         "subCategorySum",
     ]
     return merged_rows, output_fields

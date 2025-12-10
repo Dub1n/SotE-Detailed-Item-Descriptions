@@ -25,7 +25,6 @@ EQUIP_PARAM_WEAPON_CSV = ROOT / "PARAM/EquipParamWeapon.csv"
 SP_EFFECT_PARAM_CSV = ROOT / "PARAM/SpEffectParam.csv"
 CATEGORY_POISE_JSON = ROOT / "docs/weapon_categories_poise.json"
 SKILL_LIST_TXT = ROOT / "docs/skill_names_from_gem_and_behavior.txt"
-SKILL_ATTR_SCALING_JSON = ROOT / "work/aow_pipeline/skill_attr_scaling.json"
 DEFAULT_OUTPUT = ROOT / "work/aow_pipeline/AoW-data-1.csv"
 
 IGNORED_PREFIXES = {"Slow", "Var1", "Var2"}
@@ -69,7 +68,6 @@ OUTPUT_COLUMNS = [
     "AtkSuperArmor",
     "isAddBaseAtk",
     "Overwrite Scaling",
-    "Bullet Stat",
     "subCategory1",
     "subCategory2",
     "subCategory3",
@@ -89,19 +87,6 @@ def load_category_flags() -> Tuple[
         flag_to_info[flag] = {"name": name, "poise": poise_val}
         name_to_poise[name] = poise_val
     return flag_to_info, name_to_poise
-
-
-def load_attr_scaling() -> Dict[str, str]:
-    raw = json.loads(SKILL_ATTR_SCALING_JSON.read_text())
-    scaling: Dict[str, str] = {}
-    for key, payload in raw.items():
-        stat = "-"
-        if isinstance(payload, dict):
-            value = payload.get("stat")
-            if value not in {None, ""}:
-                stat = str(value)
-        scaling[str(key)] = stat
-    return scaling
 
 
 def base_skill_name(name: str) -> str:
@@ -361,10 +346,9 @@ def load_weapon_base_stats(
 
 def build_gem_mount_map(
     flag_to_info: Dict[str, Dict[str, float]], skill_names: List[str]
-) -> Tuple[Dict[str, List[str]], Dict[str, str]]:
-    """Map canonical skill -> list of weapon category names + default attr."""
+) -> Dict[str, List[str]]:
+    """Map canonical skill -> list of weapon category names."""
     mount_map: Dict[str, List[str]] = {}
-    default_attr_map: Dict[str, str] = {}
     flag_order = [
         flag for flag in flag_to_info if flag.startswith(CATEGORY_FLAG_PREFIX)
     ]
@@ -379,12 +363,7 @@ def build_gem_mount_map(
                 clean_name = clean_name.split(":", 1)[1].strip()
             resolved = resolve_skill_from_list(clean_name, skill_names)
             canon = resolved.lower()
-            default_attr = (row.get("defaultWepAttr") or "").strip()
             mount_text_id = (row.get("mountWepTextId") or "").strip()
-            if mount_text_id not in {"-1", ""}:
-                default_attr_map[canon] = default_attr
-            elif canon not in default_attr_map:
-                default_attr_map[canon] = default_attr
             if mount_text_id == "-1" or mount_text_id == "":
                 continue
             mounts: List[str] = []
@@ -396,7 +375,7 @@ def build_gem_mount_map(
                 for m in mounts:
                     if m not in existing:
                         existing.append(m)
-    return mount_map, default_attr_map
+    return mount_map
 
 
 def load_poise_lookup() -> Dict[str, str]:
@@ -457,8 +436,6 @@ def avg_stat(values: List[str]) -> str:
 
 def build_rows(
     mount_map: Dict[str, List[str]],
-    default_attr_map: Dict[str, str],
-    attr_scaling: Dict[str, str],
     category_poise: Dict[str, float],
     poise_lookup: Dict[str, str],
     skill_names: List[str],
@@ -478,11 +455,6 @@ def build_rows(
             unique_weapon = (row.get("Unique Skill Weapon") or "").strip()
             skill = resolve_skill_from_list(raw_name, skill_names)
             canonical = skill.lower()
-            default_attr_val = default_attr_map.get(canonical, "")
-            default_attr_val = (
-                str(default_attr_val).strip() if default_attr_val is not None else ""
-            )
-            bullet_stat = attr_scaling.get(default_attr_val, "-") if default_attr_val else "-"
             fp_flag = parse_fp_flag(raw_name)
             part = infer_part(raw_name, matched_skill=skill)
             follow_up = detect_follow_up(raw_name)
@@ -657,7 +629,6 @@ def build_rows(
             out["AtkSuperArmor"] = row.get("AtkSuperArmor", "")
             out["isAddBaseAtk"] = row.get("isAddBaseAtk", "")
             out["Overwrite Scaling"] = row.get("Overwrite Scaling", "")
-            out["Bullet Stat"] = bullet_stat
             out["subCategory1"] = row.get("subCategory1", "")
             out["subCategory2"] = row.get("subCategory2", "")
             out["subCategory3"] = row.get("subCategory3", "")
@@ -688,23 +659,14 @@ def main() -> None:
     args = parser.parse_args()
 
     skill_names = load_skill_names()
-    attr_scaling = load_attr_scaling()
     flag_to_info, category_poise = load_category_flags()
-    mount_map, default_attr_map = build_gem_mount_map(
-        flag_to_info, skill_names
-    )
+    mount_map = build_gem_mount_map(flag_to_info, skill_names)
     poise_lookup = load_poise_lookup()
     sp_effect_names = load_sp_effect_names()
     weapon_base_stats = load_weapon_base_stats(sp_effect_names)
     before_rows = load_rows_by_key(args.output, ["Name"])
     rows, warnings = build_rows(
-        mount_map,
-        default_attr_map,
-        attr_scaling,
-        category_poise,
-        poise_lookup,
-        skill_names,
-        weapon_base_stats,
+        mount_map, category_poise, poise_lookup, skill_names, weapon_base_stats
     )
     write_csv(rows, args.output)
 

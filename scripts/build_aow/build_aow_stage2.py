@@ -225,7 +225,7 @@ def collapse_rows(
         for col in output_columns
         if (source := output_source_map.get(col)) in col_positions
         and col_positions.get(source, 0) >= numeric_start
-        and source not in {"PhysAtkAttribute", "Wep Status", "Bullet Stat"}
+        and source not in {"PhysAtkAttribute", "Wep Status"}
     ]
 
     grouped: Dict[Tuple[str, ...], Dict[str, Any]] = {}
@@ -339,9 +339,6 @@ def collapse_rows(
             grouped[key]["_stance_super"] = parse_super(
                 working_row.get(STANCE_SUPERARMOR_COL, "")
             )
-            grouped[key]["_has_unique"] = (
-                str(working_row.get("Weapon Source", "")).strip() == "unique"
-            )
             # Normalize numeric seeds to floats when possible.
             for col in numeric_columns:
                 num = parse_float(grouped[key].get(col, ""))
@@ -354,9 +351,6 @@ def collapse_rows(
             agg["_phys_attr"] = working_row.get("PhysAtkAttribute", "")
         agg["_stance_super"] = agg.get("_stance_super", 0.0) + parse_super(
             working_row.get(STANCE_SUPERARMOR_COL, "")
-        )
-        agg["_has_unique"] = agg.get("_has_unique", False) or (
-            str(working_row.get("Weapon Source", "")).strip() == "unique"
         )
         for col in output_columns:
             if col in numeric_columns:
@@ -509,10 +503,6 @@ def collapse_rows(
             agg["Overwrite Scaling"] = "null"
         if not has_nonzero_damage_data(agg):
             continue
-        atk_zero = all(
-            (parse_float(agg.get(col, 0)) or 0) == 0
-            for col in ["AtkPhys", "AtkMag", "AtkFire", "AtkLtng", "AtkHoly"]
-        )
         poise_range_text, poise_range_bounds = summarize_range(
             agg.get("Wep Poise Range", "")
         )
@@ -534,8 +524,6 @@ def collapse_rows(
                 out_row[col] = dmg_type
             elif col == "Dmg MV":
                 out_row[col] = fmt_number(dmg_mv)
-            elif col == "Bullet Stat":
-                out_row[col] = "-" if agg.get("_has_unique") or atk_zero else val
             else:
                 out_row[col] = val
         output_rows.append(out_row)
