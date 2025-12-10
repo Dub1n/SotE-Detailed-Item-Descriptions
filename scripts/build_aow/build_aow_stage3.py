@@ -87,6 +87,13 @@ def zeros_only(text: str) -> bool:
     return all(float(n) == 0 for n in nums)
 
 
+def normalize_overwrite(value: str) -> str:
+    text = (value or "").strip()
+    if text in {"", "-", "null"}:
+        return "-"
+    return text
+
+
 def aggregate_steps(
     rows: List[Dict[str, str]],
     col: str,
@@ -186,6 +193,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         "Dmg Type",
         "Wep Status",
         "Overwrite Scaling",
+        "Bullet Stat",
     ]
     def tokenize(text: str) -> List[tuple[str, str]]:
         parts = re.split(r"(-?\d+(?:\.\d+)?)", text)
@@ -211,19 +219,17 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                 pattern.append(val)
         return tuple(pattern), count
 
-    # Cluster by non-weapon fields (treat Dmg Type "-" as wild and Overwrite Scaling "null" as wild).
+    # Cluster by non-weapon fields.
     clusters: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
     for row in rows:
         dtype = row.get("Dmg Type", "")
         dtype_key = "__ANY_DMG__" if dtype == "-" else dtype
-        overw = row.get("Overwrite Scaling", "")
-        overw_key = "__NULL__" if overw == "null" else overw
+        overw = normalize_overwrite(row.get("Overwrite Scaling", ""))
+        row["Overwrite Scaling"] = overw
         key_parts = []
         for col in fixed_cols:
             if col == "Dmg Type":
                 key_parts.append(dtype_key)
-            elif col == "Overwrite Scaling":
-                key_parts.append(overw_key)
             else:
                 key_parts.append(row.get(col, ""))
         key = tuple(key_parts)
@@ -272,14 +278,16 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             chosen_dtype = next(
                 (d for d in dtype_candidates if d and d != "-"), base_row.get("Dmg Type", ""))
             out["Dmg Type"] = chosen_dtype or "-"
-            # Resolve Overwrite Scaling preferring non-"null"/non-empty.
+            # Resolve Overwrite Scaling preferring non-empty values.
             ovw_candidates = [
-                r.get("Overwrite Scaling", "") for rows_list in weapon_rows.values() for r in rows_list
+                normalize_overwrite(r.get("Overwrite Scaling", ""))
+                for rows_list in weapon_rows.values()
+                for r in rows_list
             ]
             chosen_ovw = next(
-                (o for o in ovw_candidates if o and o != "null"), None
+                (o for o in ovw_candidates if o and o != "-"), None
             )
-            out["Overwrite Scaling"] = chosen_ovw if chosen_ovw is not None else "null"
+            out["Overwrite Scaling"] = chosen_ovw if chosen_ovw is not None else "-"
 
             # Merge weapons.
             weapons: List[str] = []
@@ -372,6 +380,9 @@ def collapse_rows(
 ) -> Tuple[List[Dict[str, str]], List[str]]:
     clusters: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
     for row in rows:
+        row["Overwrite Scaling"] = normalize_overwrite(
+            row.get("Overwrite Scaling", "")
+        )
         key = tuple(
             row.get(col, "")
             for col in [
@@ -396,9 +407,9 @@ def collapse_rows(
             (
                 r.get("Overwrite Scaling", "")
                 for r in rowset
-                if r.get("Overwrite Scaling", "") not in {"", "-", "null"}
+                if r.get("Overwrite Scaling", "") not in {"", "-"}
             ),
-            "null",
+            "-",
         )
 
         subgroup_map: Dict[Tuple[str, str], List[Dict[str, str]]] = {}
@@ -410,7 +421,7 @@ def collapse_rows(
             )
             eff_overwrite = (
                 row.get("Overwrite Scaling", "")
-                if row.get("Overwrite Scaling", "") not in {"", "-", "null"}
+                if row.get("Overwrite Scaling", "") not in {"", "-"}
                 else primary_overwrite
             )
             subgroup_map.setdefault((eff_dtype, eff_overwrite), []).append(row)
@@ -426,6 +437,7 @@ def collapse_rows(
                 "Weapon": base.get("Weapon", ""),
                 "Dmg Type": eff_dtype or "-",
                 "Wep Status": base.get("Wep Status", ""),
+                "Bullet Stat": base.get("Bullet Stat", ""),
             }
             subcats: List[str] = []
             overwrite_vals: List[str] = []
@@ -435,14 +447,14 @@ def collapse_rows(
                     if val and val != "-" and val not in subcats:
                         subcats.append(val)
                 ov = (row.get("Overwrite Scaling") or "").strip()
-                if ov and ov not in {"-", "null"} and ov not in overwrite_vals:
+                if ov and ov != "-" and ov not in overwrite_vals:
                     overwrite_vals.append(ov)
 
             out["subCategorySum"] = ", ".join(subcats)
             out["Overwrite Scaling"] = (
                 ", ".join(overwrite_vals)
                 if overwrite_vals
-                else (eff_overwrite if eff_overwrite else "null")
+                else (eff_overwrite if eff_overwrite and eff_overwrite != "-" else "-")
             )
 
             layout_key = (
@@ -479,6 +491,7 @@ def collapse_rows(
         "AtkLtng",
         "AtkHoly",
         "Overwrite Scaling",
+        "Bullet Stat",
         "subCategorySum",
     ]
     return merged_rows, output_fields

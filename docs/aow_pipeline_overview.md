@@ -37,7 +37,7 @@ flowchart LR
   - `docs/weapon_categories_poise.json` (category → display name + poise).
 - `docs/skill_names_from_gem_and_behavior.txt` (canonical skill list, longest-first matching; built by `scripts/build_aow/build_aow_stage0.py` from EquipParamGem + BehaviorParam_PC + SwordArtsParam).
 - Output: `work/aow_pipeline/AoW-data-1.csv` (collated rows; no value transforms beyond lightweight labeling).
-- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Wep Status`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `Overwrite Scaling`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`.
+- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Wep Status`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `Overwrite Scaling`, `Bullet Stat`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`.
 - Resolution rules:
   - `Weapon`: if `Unique Skill Weapon` is populated, use it directly; else if the row name carries a `[Weapon Type]` prefix, use only that category unless the prefix is in the ignored list (`Slow`, `Var1`, `Var2`), in which case use the category mapping; otherwise, map the skill name to `EquipParamGem` mount flags **that have a valid `mountWepTextId` (not -1)** and emit the human-readable category names (space-separated).
   - `Unique Skill Weapon` slash handling: split `/` outside brackets into `|`; when `/` appears inside parentheses, attach each option to the surrounding text (`(Nightrider / Chainlink) Flail` → `Nightrider Flail | Chainlink Flail`; `Flail (Nightrider / Chainlink)` → `Flail Nightrider | Flail Chainlink`). `Weapon Poise` resolves per variant (pipe-aligned), and `Wep Phys`/`Wep Magic`/`Wep Fire`/`Wep Ltng`/`Wep Holy` are averaged across all variant weapons.
@@ -215,6 +215,7 @@ flowchart LR
     atkSA1["AtkSuperArmor (summed, removed)"]
     isAdd1["isAddBaseAtk"]
     overwrite1["Overwrite Scaling"]
+    bulletStat1["Bullet Stat"]
     subCats1["subCategory1-4"]
     forceRules["force_collapse_pairs.json (optional)"]
   end
@@ -243,6 +244,7 @@ flowchart LR
     out2AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
     out2IsAdd["isAddBaseAtk"]
     out2Overwrite["Overwrite Scaling"]
+    out2BulletStat["Bullet Stat"]
     out2SubCats["subCategory1-4"]
   end
 
@@ -387,12 +389,13 @@ flowchart LR
 - Group keys: `Skill`, `Follow-up`, `Hand`, `Part`, `Weapon`, `Dmg Type`, `Wep Status`.
 - Removed columns: `Wep Poise Range`, `Disable Gem Attr`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `isAddBaseAtk`, `subCategory1-4`.
 - `subCategorySum`: union of all subCategory1-4 values in the group (order-preserving, deduped, comma-joined; skips `-`/empty). When weapons are merged in the second pass, differing `subCategorySum` strings are allowed and concatenated with ` | `, deduping identical strings.
-- `Overwrite Scaling`: unique values (ignoring empty/`-`) joined with `, `.
+- `Overwrite Scaling`: unique values (ignoring empty/`-`) joined with `, `; missing values fall back to the first non-empty entry or `-`.
+- `Bullet Stat`: pass-through of the defaultWepAttr stat label from `skill_attr_scaling.json` (resolved via EquipParamGem).
 - Aggregated columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`):
   - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen across all rows sharing the same `Skill`/`Follow-up`/`Hand` (even when Parts differ); the layout is chosen once per skill-hand pair so every numeric column shares the same arrangement, padding absent combos with `0`s rather than dropping sections.
   - After weapon-merge, any numeric cell that is entirely zeros (including ranged forms like `0-0` or padded strings like `0, 0 | 0, 0 [0]`) is replaced with `-`; cells with any non-zero are left untouched.
   - Format per column: `fp1_uncharged_steps, … | fp1_charged_steps, … [fp0_uncharged_steps, … | fp0_charged_steps, …]` (examples: `1, 2 | 2, 3 [0, 0 | 0, 0]`).
-- Dmg Type `-` and Overwrite Scaling `null` act as wildcards when grouping so empty placeholders don’t split otherwise matching rows.
+- Dmg Type `-` acts as a wildcard when grouping so empty placeholders don’t split otherwise matching rows.
 - Second pass: rows with identical non-Weapon columns and identical numeric arrangement are collapsed, concatenating `Weapon` with ` | ` and converting each numeric position into a range (`min-max`) when values differ (keeps single value when identical). Collapse only happens when all weapons for the skill/hand/part/dmg type/wep status share the same numeric token pattern (symmetry guard); otherwise rows stay separate.
 
 ```mermaid
@@ -412,6 +415,7 @@ flowchart LR
     s3Stance["Stance Dmg"]
     s3AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
     s3Overwrite["Overwrite Scaling"]
+    s3BulletStat["Bullet Stat"]
     s3SubCats["subCategory1-4"]
   end
   subgraph Stage3Out["AoW-data-3.csv columns"]
@@ -429,6 +433,7 @@ flowchart LR
     o3Stance["Stance Dmg (FP/Charged/Step string)"]
     o3AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly (FP/Charged/Step strings)"]
     o3Overwrite["Overwrite Scaling (unique, joined)"]
+    o3BulletStat["Bullet Stat"]
     o3SubCats["subCategorySum (deduped union)"]
   end
   Stage3In --> collapse3["Stage 3 collapse<br>group + zero-pad FP/Charged/Step"]
@@ -446,6 +451,7 @@ flowchart LR
   collapse3 --> o3Stance
   collapse3 --> o3AtkStats
   collapse3 --> o3Overwrite
+  collapse3 --> o3BulletStat
   collapse3 --> o3SubCats
 ```
 
@@ -473,6 +479,7 @@ flowchart LR
     s4Stance["Stance Dmg (FP/Charged/Step string)"]
     s4AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly (FP/Charged/Step strings)"]
     s4Overwrite["Overwrite Scaling"]
+    s4BulletStat["Bullet Stat"]
     s4SubCats["subCategorySum"]
   end
   subgraph Stage4Out["AoW-data-4.csv columns"]
@@ -493,6 +500,7 @@ flowchart LR
     o4TextHoly["Text Holy"]
     o4TextBullet["Text Bullet"]
     o4Overwrite["Overwrite Scaling"]
+    o4BulletStat["Bullet Stat"]
     o4TextScaling["Text Scaling"]
     o4SubCats["subCategorySum"]
     o4TextCategory["Text Category"]
@@ -511,6 +519,7 @@ flowchart LR
   passthrough4 --> o4AtkStats
   passthrough4 --> o4TextBullet
   passthrough4 --> o4Overwrite
+  passthrough4 --> o4BulletStat
   passthrough4 --> o4TextScaling
   passthrough4 --> o4SubCats
   passthrough4 --> o4TextCategory
