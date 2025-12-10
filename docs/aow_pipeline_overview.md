@@ -185,6 +185,7 @@ flowchart LR
 - Rename `Weapon Poise` → `Wep Poise Range`, collapsing pipe-delimited values to a min–max string (single values stay single).
 - Rename `Poise Dmg MV` → `Stance Dmg`, computing a min–max integer range from `Wep Poise Range` × original `Poise Dmg MV` ÷ 100, then adding summed `AtkSuperArmor` (half-up rounding). `AtkSuperArmor` is removed from the output columns.
 - `Wep Status` carries through as a first-value field (non-numeric) and stays after `Status MV`.
+- `Bullet Stat`: copied through from Stage 1 and forced to `-` when `Weapon Source` is `unique` so weapon-specific rows never carry mount-based stat hints.
 - Add derived columns after `Holy MV`: `Dmg Type` (`Weapon` when all five MVs are non-zero and within 2x; `!` if any non-zero is >=2x another; when zeros exist, list non-zero types and prefix `! |` if 2–4 types and the smallest is <75% of the largest; when 2–4 non-zero types exist without zeros and min <75% max, prefix `! |`; override with `PhysAtkAttribute` when it is not 252/253; `-` when all zero) and `Dmg MV` (average of non-zero Phys/Magic/Fire/Ltng/Holy MVs divided by 100, rounded to 1 decimal).
 
 ```mermaid
@@ -261,6 +262,7 @@ flowchart LR
   wepBases1 --> carryWepBases["Carry first Wep Phys/Magic/Fire/Ltng/Holy"]
   weaponSrc1 --> carryWeaponSrc["Carry first Weapon Source"]
   disable1 --> carryDisable["Carry first Disable Gem Attr"]
+  bulletStat1 --> carryBulletStat["Carry Bullet Stat (dash when unique weapon)"]
   skill1 --> carrySkill["Carry first Skill"]
   follow1 --> carryFollow["Carry first Follow-up"]
   hand1 --> carryHand["Carry first Hand"]
@@ -370,6 +372,7 @@ flowchart LR
   wepRange --> out2WepPoise
   passMeta --> out2Disable
   passMeta --> out2WepBases
+  passMeta --> out2BulletStat
   dmgMeta --> out2DmgType
   dmgMeta --> out2DmgMV
   dropZero --> out2Status
