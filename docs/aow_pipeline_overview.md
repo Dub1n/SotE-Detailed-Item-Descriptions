@@ -456,7 +456,7 @@ flowchart LR
 - Input: `work/aow_pipeline/AoW-data-3.csv`
 - Output: `work/aow_pipeline/AoW-data-4.csv` (adds text-ready helper fields; future spot for formatting ready/JSON ingest).
 - Script: `scripts/build_aow/build_aow_stage4.py` (adds text columns with per-row logic).
-- Drops raw `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, and `Dmg Type` from the output while still using their Stage 3 values to populate text helpers (`Text Wep Dmg`, `Text Wep Status`, `Text Stance`). Damage text appends `x` to every numeric/range token and renders `(Type Damage){Part}: {Dmg MV}`, stance text renders `(Stance Damage){Part}: {Stance Dmg}`, and status text renders `({Wep Status|Weapon} Buildup){Part}: {Status MV}` (or `-` when absent). Base damage columns are emitted as text helpers (`Text Phys/Mag/Fire/Ltng/Holy`) with `(Base X Damage){Part}: {value}`.
+- Drops raw `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, `Dmg Type`, `Overwrite Scaling`, and raw base `Atk*` columns from the output while still using their Stage 3 values to populate text helpers (`Text Wep Dmg`, `Text Wep Status`, `Text Stance`). Damage text appends `x` to every numeric/range token and renders `(Type Damage){Part}: {Dmg MV}`, stance text renders `(Stance Damage){Part}: {Stance Dmg}`, and status text renders `({Wep Status|Weapon} Buildup){Part}: {Status MV}` (or `-` when absent). Base damage columns are emitted as text helpers (`Text Phys/Mag/Fire/Ltng/Holy`) with `(Base X Damage){Part}: {value} [{Overwrite Scaling|Weapon Scaling}]` (using `Weapon Scaling` when Overwrite Scaling is `-`).
 
 ```mermaid
 flowchart LR
@@ -493,9 +493,6 @@ flowchart LR
     o4TextFire["Text Fire"]
     o4TextLtng["Text Ltng"]
     o4TextHoly["Text Holy"]
-    o4TextBullet["Text Bullet"]
-    o4Overwrite["Overwrite Scaling"]
-    o4TextScaling["Text Scaling"]
     o4SubCats["subCategorySum"]
     o4TextCategory["Text Category"]
   end
@@ -510,10 +507,6 @@ flowchart LR
   passthrough4 --> o4TextWepStatus
   passthrough4 --> o4Buff
   passthrough4 --> o4TextStance
-  passthrough4 --> o4AtkStats
-  passthrough4 --> o4TextBullet
-  passthrough4 --> o4Overwrite
-  passthrough4 --> o4TextScaling
   passthrough4 --> o4SubCats
   passthrough4 --> o4TextCategory
 ```

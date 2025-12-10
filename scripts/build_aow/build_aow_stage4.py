@@ -40,8 +40,6 @@ ANCHOR_INSERTIONS: Tuple[Tuple[str, str], ...] = (
     ("Text Mag", "Text Fire"),
     ("Text Fire", "Text Ltng"),
     ("Text Ltng", "Text Holy"),
-    ("AtkHoly", "Text Bullet"),
-    ("Overwrite Scaling", "Text Scaling"),
     ("subCategorySum", "Text Category"),
 )
 
@@ -69,6 +67,7 @@ DROP_COLUMNS = {
     "AtkHoly",
     "Weapon Source",
     "Dmg Type",
+    "Overwrite Scaling",
 }
 
 
@@ -121,8 +120,6 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     """
     row.setdefault("Text Name", "")
     row.setdefault("Text Stance", "")
-    row.setdefault("Text Bullet", "")
-    row.setdefault("Text Scaling", "")
     row.setdefault("Text Category", "")
 
     # Clean subCategorySum of "-" and empties.
@@ -196,6 +193,9 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     else:
         row["Text Stance"] = f"(Stance Damage){part_suffix}: {stance_raw}"
 
+    overwrite_raw = (row.get("Overwrite Scaling") or "").strip()
+    scaling_label = overwrite_raw if overwrite_raw not in {"", "-"} else "Weapon Scaling"
+
     base_cols = {
         "Text Phys": ("Base Physical Damage", row.get("AtkPhys", "")),
         "Text Mag": ("Base Magic Damage", row.get("AtkMag", "")),
@@ -208,7 +208,7 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         if not val_clean or val_clean == "-":
             row[col] = "-"
         else:
-            row[col] = f"({label}){part_suffix}: {val_clean}"
+            row[col] = f"({label}){part_suffix}: {val_clean} [{scaling_label}]"
     return row
 
 
