@@ -53,13 +53,6 @@ AGG_COLS = [
 ]
 
 
-class StepLayout(NamedTuple):
-    max_step: int
-    has_fp1: bool
-    has_fp0: bool
-    has_charged: bool
-
-
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
     with path.open() as f:
         reader = csv.DictReader(f)
@@ -87,11 +80,86 @@ def zeros_only(text: str) -> bool:
     return all(float(n) == 0 for n in nums)
 
 
+def fmt_number(value: float) -> str:
+    if value.is_integer():
+        return str(int(value))
+    text = f"{value:.3f}".rstrip("0").rstrip(".")
+    return text
+
+
 def normalize_overwrite(value: str) -> str:
     text = (value or "").strip()
     if text in {"", "-", "null"}:
         return "-"
     return text
+
+
+def tokenize_numeric(text: str) -> List[tuple[str, str]]:
+    parts = re.split(r"(-?\d+(?:\.\d+)?)", text or "")
+    tokens: List[tuple[str, str]] = []
+    for idx, part in enumerate(parts):
+        if part == "":
+            continue
+        tokens.append(("num" if idx % 2 == 1 else "sep", part))
+    return tokens
+
+
+def shape(text: str) -> Tuple[tuple[str, ...], int]:
+    tokens = tokenize_numeric(text)
+    pattern: List[str] = []
+    count = 0
+    for kind, val in tokens:
+        if kind == "num":
+            pattern.append("{n}")
+            count += 1
+        else:
+            pattern.append(val)
+    return tuple(pattern), count
+
+
+def sum_numeric_strings(current: str, incoming: str) -> str:
+    """
+    Sum numeric tokens when two values occupy the same FP/Charged/Step slot.
+    Preserves the separators from the current value when shapes align; falls
+    back to simple replacement when parsing fails.
+    """
+    cur = (current or "").strip()
+    inc = (incoming or "").strip()
+    if not cur:
+        return inc
+    if not inc or inc == "-":
+        return cur
+    if cur == "-":
+        return inc
+
+    cur_tokens = tokenize_numeric(cur)
+    inc_tokens = tokenize_numeric(inc)
+    cur_nums = [float(val) for kind, val in cur_tokens if kind == "num"]
+    inc_nums = [float(val) for kind, val in inc_tokens if kind == "num"]
+
+    if cur_nums and len(cur_nums) == len(inc_nums):
+        summed = [fmt_number(a + b) for a, b in zip(cur_nums, inc_nums)]
+        rebuilt: List[str] = []
+        idx = 0
+        for kind, val in cur_tokens:
+            if kind == "num":
+                rebuilt.append(summed[idx])
+                idx += 1
+            else:
+                rebuilt.append(val)
+        return "".join(rebuilt)
+
+    try:
+        return fmt_number(float(cur) + float(inc))
+    except (TypeError, ValueError):
+        return cur
+
+
+class StepLayout(NamedTuple):
+    max_step: int
+    has_fp1: bool
+    has_fp0: bool
+    has_charged: bool
 
 
 def aggregate_steps(
@@ -114,7 +182,12 @@ def aggregate_steps(
             step = 1
         fp_val = 0 if str(row.get("FP", "")).strip() == "0" else 1
         charged_val = 1 if str(row.get("Charged", "")).strip() == "1" else 0
-        value_map[(fp_val, charged_val, step)] = str(row.get(col, "") or "0").strip()
+        key = (fp_val, charged_val, step)
+        val = str(row.get(col, "") or "0").strip()
+        if key in value_map:
+            value_map[key] = sum_numeric_strings(value_map[key], val)
+        else:
+            value_map[key] = val
 
     def series(fp: int, charged: int) -> str:
         values: List[str] = []
