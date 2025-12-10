@@ -512,6 +512,13 @@ flowchart LR
   passthrough4 --> o4TextCategory
 ```
 
+## Stage 5: Markdown render
+
+- Input: `work/aow_pipeline/AoW-data-4.csv`
+- Output: `work/aow_pipeline/AoW-data-5.md` (markdown skill summary).
+- Script: `scripts/build_aow/build_aow_stage5.py` (renders Stage 4 text helpers into a human-readable markdown layout).
+- Groups rows by `Skill`; when multiple weapons are present, emits a `#### {Weapon}` section per weapon and repeats matching rows. Within each skill/weapon block, rows are rendered based on whether `Follow-up`/`Hand`/`Part` are `-`, nesting indents and headers accordingly and skipping any `Text *` lines that are `-`.
+
 ## Filesystem layout
 
 - `docs/aow_pipeline_overview.md` (this plan).
