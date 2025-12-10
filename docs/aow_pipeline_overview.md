@@ -389,6 +389,7 @@ flowchart LR
 - `subCategorySum`: union of all subCategory1-4 values in the group (order-preserving, deduped, comma-joined; skips `-`/empty). When weapons are merged in the second pass, differing `subCategorySum` strings are allowed and concatenated with ` | `, deduping identical strings.
 - `Overwrite Scaling`: unique values (ignoring empty/`-`) joined with `, `; missing values fall back to the first non-empty entry or `-`.
 - `Bullet Stat`: pass-through of the defaultWepAttr stat label from `skill_attr_scaling.json` (resolved via EquipParamGem).
+- After all collapses, if every row sharing a `Skill`/`Follow-up`/`Hand` combo has the same `Part`, that `Part` is set to `-` to avoid redundant labels.
 - When multiple rows share the same FP/Charged/Step within a grouped cluster, numeric columns are summed before padding into the FP/Charged/Step strings.
 - Aggregated columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`):
   - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen across all rows sharing the same `Skill`/`Follow-up`/`Hand` (even when Parts differ); the layout is chosen once per skill-hand pair so every numeric column shares the same arrangement, padding absent combos with `0`s rather than dropping sections.

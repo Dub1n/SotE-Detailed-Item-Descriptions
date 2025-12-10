@@ -430,6 +430,27 @@ def mask_zero_only_cells(rows: List[Dict[str, str]]) -> None:
                 row[col] = "-"
 
 
+def normalize_parts(rows: List[Dict[str, str]]) -> None:
+    """
+    When every row for a Skill/Follow-up/Hand shares the same Part, replace
+    that Part with "-" to reduce redundant labels.
+    """
+    grouped: Dict[Tuple[str, str, str], List[int]] = {}
+    for idx, row in enumerate(rows):
+        key = (
+            row.get("Skill", ""),
+            row.get("Follow-up", ""),
+            row.get("Hand", ""),
+        )
+        grouped.setdefault(key, []).append(idx)
+
+    for idxs in grouped.values():
+        parts = {rows[i].get("Part", "") for i in idxs}
+        if len(parts) == 1:
+            for i in idxs:
+                rows[i]["Part"] = "-"
+
+
 def build_layout_map(rows: List[Dict[str, str]]) -> Dict[Tuple[str, str, str], StepLayout]:
     """
     Build shared FP/Charged/Step layouts per (Skill, Follow-up, Hand) so all
@@ -542,6 +563,7 @@ def collapse_rows(
     merged_rows = collapse_weapons(output_rows)
 
     mask_zero_only_cells(merged_rows)
+    normalize_parts(merged_rows)
 
     output_fields = [
         "Skill",
