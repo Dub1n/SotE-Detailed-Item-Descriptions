@@ -262,36 +262,14 @@
     "name": "Storm Stomp",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Storm Stomp</font>",
-    "info": "Stomp to summon a tight cyclone that hits around you, keeping foes locked in hitstun and setting up follow-up attacks with the bound armament. Cannot be parried.",
-    "stats": [
-      "\n<font color=\"#F395C4\">Standard damage:</font> 50 [10] (<font color=\"#E0B985\">Str</font>, <font color=\"#E0B985\">Dex</font>)",
-      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
-      "\n<font color=\"#C0B194\">Stance damage :</font> 6 [2-8]"
-    ],
-    "Storm Stomp": [
-      "\n<font color=\"#F395C4\">Standard damage:</font> 0 [10] (<font color=\"#E0B985\">Str</font>, <font color=\"#E0B985\">Dex</font>)",
-      "\n<font color=\"#F395C4\">Standard damage (Bullet):</font> 50 [0] (<font color=\"#E0B985\">Str</font>, <font color=\"#E0B985\">Dex</font>)",
-      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
-      "\n<font color=\"#C0B194\">Stance damage:</font> 0 [2-8]",
-      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 10 [0]"
-    ]
+    "info": "Stomp to summon a tight cyclone that hits around you, keeping foes locked in hitstun and setting up follow-up attacks with the bound armament. Cannot be parried."
   },
   {
     "id": 503,
     "name": "Kick",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Kick</font>",
-    "info": "Deliver a fast, high kick that instantly staggers guarding enemies, opening them to a guard break while you are bare-handed in either hand. Cannot be parried.\n\n<font color=\"#C0B194\">Stance damage:</font> 6",
-    "stats": [
-      "\n<font color=\"#F395C4\">Strike damage:</font> 30 [30]",
-      "\n<font color=\"#F5EB89\">Holy damage:</font> 30 [10]",
-      "\n<font color=\"#C0B194\">Stance damage:</font> 0 [1-4]"
-    ],
-    "Kick": [
-      "\n<font color=\"#F395C4\">Strike damage:</font> 30 [30]",
-      "\n<font color=\"#F5EB89\">Holy damage:</font> 30 [10]",
-      "\n<font color=\"#C0B194\">Stance damage:</font> 6 [1-4]"
-    ]
+    "info": "Deliver a fast, high kick that instantly staggers guarding enemies, opening them to a guard break while you are bare-handed in either hand. Cannot be parried.\n\n<font color=\"#C0B194\">Stance damage:</font> 6"
   },
   {
     "id": 1004,
@@ -299,14 +277,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bubble Shower</font>",
     "info": "Blow the horn to launch a slow-moving spray of bubbles that drift forward before raining down in front of you.\n\n<font color=\"#F5EB89\">Base holy damage:</font> 65\n<font color=\"#C0B194\">Stance damage:</font> 72 (92 if all bubbles hit)",
-    "note": "Param trace: Magic 4810 -> Bullet 10481004 -> AtkParam 48100 (125 base fire damage, 20 stance per bubble) and the close-range puff from Magic 4100 uses AtkParam 41004 (68 base magic, 8 stance). Use those numbers to replace the placeholder 65 holy damage line and call out that only the projectile hit is fire-aligned.",
-    "weapon": [
-      "Envoy's Long Horn"
-    ],
-    "[Envoy's Long Horn] Bubble Shower": [
-      "\n<font color=\"#F5EB89\">Holy damage (Bullet):</font> 96",
-      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 6"
-    ]
+    "note": "Param trace: Magic 4810 -> Bullet 10481004 -> AtkParam 48100 (125 base fire damage, 20 stance per bubble) and the close-range puff from Magic 4100 uses AtkParam 41004 (68 base magic, 8 stance). Use those numbers to replace the placeholder 65 holy damage line and call out that only the projectile hit is fire-aligned."
   },
   {
     "id": 1008,
@@ -314,41 +285,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moonlight Greatsword</font>",
     "info": "Raise the sword aloft to wreathe it in the dark moon's light for 60 seconds, adding 65 <font color=\"#57DBCE\">magic damage</font> and 15 <font color=\"#9DD7FB\">frostbite accumulation</font> to every attack. Heavy attacks during the buff launch chargeable moonlight projectiles which are affected by skill charge and skill damage buffs, while only the weapon hitbox benefits from attack charge buffs; the heavy swing hitbox can still be parried, and the projectiles can be parried by Golden Relatiation but not deflected by Eternel Darkness. The weapon's hit during the skill activation deals full status buildup, stance damage, and 50% damage or 65% charged. Counts as a weapon buff.\n\n<font color=\"#9DD7FB\">Frostbite:</font> Inflicts damage equal to 10% of <font color=\"#E0B985\">maximum HP</font> plus 30, then increases <font color=\"#E0B985\">all damage received</font> by 20% for 30 seconds.\n\n<font color=\"#C0B194\">Magic damage (projectile, uncharged):</font> 115\n<font color=\"#C0B194\">Magic damage (projectile, charged):</font> 145\n<font color=\"#C0B194\">Stance damage (projectile, uncharged):</font> 15\n<font color=\"#C0B194\">Stance damage (projectile, charged):</font> 24\n<font color=\"#9DD7FB\">Frostbite accumulation (projectile, uncharged):</font> 84\n<font color=\"#9DD7FB\">Frostbite accumulation (projectile, charged):</font> 105",
-    "Moonlight Greatsword 1h Charged R2": [
-      "\n<font color=\"#F395C4\">Standard damage:</font> 65, 65",
-      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x",
-      "\n<font color=\"#C0B194\">Stance damage:</font> 8.8, 8.8"
-    ],
-    "Moonlight Greatsword 1h R2": [
-      "\n<font color=\"#F395C4\">Standard damage:</font> 50, 50",
-      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x",
-      "\n<font color=\"#C0B194\">Stance damage:</font> 7.7, 7.7"
-    ],
-    "Moonlight Greatsword 2h Charged R2": [
-      "\n<font color=\"#F395C4\">Standard damage:</font> 68, 68",
-      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x",
-      "\n<font color=\"#C0B194\">Stance damage:</font> 8.8, 8.8"
-    ],
-    "Moonlight Greatsword 2h R2": [
-      "\n<font color=\"#F395C4\">Standard damage:</font> 53, 53",
-      "\n<font color=\"#E0B985\">Status buildup:</font> 1x, 1x",
-      "\n<font color=\"#C0B194\">Stance damage:</font> 7.7, 7.7"
-    ],
-    "note": "Fex cache confirms +65 magic/+15 frost for 60s with 15/24 stance waves and stamina-only projectiles; mod's +85/+100 buff values are outdated. 115/145;\nIs fine for now",
-    "weapon": [
-      "Dark Moon Greatsword"
-    ],
-    "[Dark Moon Greatsword] Moonlight Greatsword": [
-      "\n(Heavy Follow-up) <font color=\"#57DBCE\">Magic damage (Bullet):</font> 115 | 145",
-      "\n(Heavy Follow-up) <font color=\"#E0B985\">Status buildup (Bullet):</font> 1.2x | 1.5x",
-      "\n(Heavy Follow-up) <font color=\"#C0B194\">Stance damage (Bullet):</font> 15 | 24",
-      "\n(1h Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 50, 50 | 65, 65",
-      "\n(1h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 1x, 1x",
-      "\n(1h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 8, 8 | 9, 9",
-      "\n(2h Heavy Follow-up) <font color=\"#F395C4\">Standard damage:</font> 53, 53 | 68, 68",
-      "\n(2h Heavy Follow-up) <font color=\"#E0B985\">Status buildup:</font> 1x, 1x | 1x, 1x",
-      "\n(2h Heavy Follow-up) <font color=\"#C0B194\">Stance damage:</font> 8, 8 | 9, 9"
-    ]
+    "note": "Fex cache confirms +65 magic/+15 frost for 60s with 15/24 stance waves and stamina-only projectiles; mod's +85/+100 buff values are outdated. 115/145;\nIs fine for now"
   },
   {
     "id": 1011,
@@ -356,26 +293,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bear Witness!</font>",
     "info": "Drag the small dragon head along the ground into a fire-laced uppercut before launching a wide barrage of fireballs overhead, dealing pure <font color=\"#F48C25\">fire damage</font> that scales only with <font color=\"#E0B985\">faith</font>.\n\n<font color=\"#C0B194\">Stance damage:</font> 20",
-    "note": "use `./PARAM/` to find base damage values",
-    "weapon": [
-      "Grafted Dragon"
-    ],
-    "[Grafted Dragon] Bear Witness!": [
-      "\n<font color=\"#F395C4\">Strike damage:</font> 0 [120]",
-      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 240 [0]",
-      "\n<font color=\"#F48C25\">Fire damage (Explosion):</font> 610 [0]",
-      "\n<font color=\"#F48C25\">Fire damage (Lingering Fire):</font> 100 [0]",
-      "\n<font color=\"#F48C25\">Fire damage (Projectile):</font> 390 [0]",
-      "\n<font color=\"#E0B985\">Status buildup:</font> 0x [1x]",
-      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 2x [0x]",
-      "\n<font color=\"#E0B985\">Status buildup (Explosion):</font> 1x [0x]",
-      "\n<font color=\"#E0B985\">Status buildup (Lingering Fire):</font> 1x [0x]",
-      "\n<font color=\"#E0B985\">Status buildup (Projectile):</font> 3x [0x]",
-      "\n<font color=\"#C0B194\">Stance damage:</font> 0 [6]",
-      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 5 [0]",
-      "\n<font color=\"#C0B194\">Stance damage (Explosion):</font> 8 [0]",
-      "\n<font color=\"#C0B194\">Stance damage (Projectile):</font> 12 [0]"
-    ]
+    "note": "use `./PARAM/` to find base damage values"
   },
   {
     "id": 1014,
@@ -383,18 +301,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Taker's Flames</font>",
     "info": "Raise the blade to wreath it in blasphemous flame before slamming forward and sending a chain of eruptions along the ground, restoring 10% of <font color=\"#E0B985\">maximum HP</font> plus 150 with each enemy hit. The eruption wave deals pure <font color=\"#F48C25\">fire damage</font>, scales with <font color=\"#E0B985\">faith</font>, cannot be parried, and benefits from the Talisman of the Dread and Fire Scorpion Charm.\n<font color=\"#C0B194\">Stance damage:</font> 15",
-    "note": "use `./PARAM/` to find base damage values",
-    "weapon": [
-      "Blasphemous Blade"
-    ],
-    "[Blasphemous Blade] Taker's Flames": [
-      "\n<font color=\"#F395C4\">Standard damage:</font> 65 [150]",
-      "\n<font color=\"#F48C25\">Fire damage (Bullet):</font> 510 [0]",
-      "\n<font color=\"#E0B985\">Status buildup:</font> 1x [1x]",
-      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 1x [0x]",
-      "\n<font color=\"#C0B194\">Stance damage:</font> 9 [9]",
-      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 16 [0]"
-    ]
+    "note": "use `./PARAM/` to find base damage values"
   },
   {
     "id": 1024,
@@ -402,18 +309,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Spearcall Ritual</font>",
     "info": "Hoist the spear skyward to summon a cluster of spectral spears above the target that rain down after a short delay, dealing pure <font color=\"#57DBCE\">magic damage</font>. Scales with <font color=\"#E0B985\">Intelligence</font>.\n\n<font color=\"#C0B194\">Stance damage:</font> 26",
-    "note": "use `./PARAM/` to find base magic damage values",
-    "weapon": [
-      "Death Ritual Spear"
-    ],
-    "[Death Ritual Spear] Spearcall Ritual": [
-      "\n<font color=\"#F395C4\">Pierce damage:</font> 250",
-      "\n<font color=\"#57DBCE\">Magic damage (Bullet):</font> 336",
-      "\n<font color=\"#E0B985\">Status buildup:</font> 2x",
-      "\n<font color=\"#E0B985\">Status buildup (Bullet):</font> 2x",
-      "\n<font color=\"#C0B194\">Stance damage:</font> 13",
-      "\n<font color=\"#C0B194\">Stance damage (Bullet):</font> 12"
-    ]
+    "note": "use `./PARAM/` to find base magic damage values"
   },
   {
     "id": 1026,
@@ -421,20 +317,7 @@
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Thundercloud Form</font>",
     "info": "Transform into a rushing red thundercloud and fly through the air before plunging down with a lightning-charged strike; holding the skill extends the cloud's travel distance without benefiting from charge buffs. Both the passing lightning and plunge deal pure <font color=\"#FFE033\">lightning damage</font>. Cannot be parried.\n\n<font color=\"#C0B194\">Stance damage per tick (passing bolt):</font> 6\n<font color=\"#C0B194\">Stance damage (plunge, uncharged):</font> 11\n<font color=\"#C0B194\">Stance damage (plunge, charged):</font> 33",
-    "note": "",
-    "weapon": [
-      "Dragon King's Cragblade"
-    ],
-    "[Dragon King's Cragblade] Thundercloud Form": [
-      "\n<font color=\"#F395C4\">Pierce damage:</font> 190 | 256",
-      "\n<font color=\"#FFE033\">Lightning damage:</font> 20 | 20",
-      "\n<font color=\"#FFE033\">Lightning damage (Loop 6x):</font> 0 | 25",
-      "\n<font color=\"#FFE033\">Lightning damage (Uncharged/Partial Loop 1-3x):</font> 25 | 0",
-      "\n<font color=\"#E0B985\">Status buildup:</font> 1x | 1x",
-      "\n<font color=\"#C0B194\">Stance damage:</font> 11 | 33",
-      "\n<font color=\"#C0B194\">Stance damage (Loop 6x):</font> 0 | 2",
-      "\n<font color=\"#C0B194\">Stance damage (Uncharged/Partial Loop 1-3x):</font> 2 | 0"
-    ]
+    "note": ""
   },
   {
     "id": 1027,
