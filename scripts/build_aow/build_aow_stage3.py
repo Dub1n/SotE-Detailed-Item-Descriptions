@@ -104,6 +104,57 @@ def tokenize_numeric(text: str) -> List[tuple[str, str]]:
     return tokens
 
 
+RANGE_TOKEN = re.compile(r"-?\d+(?:\.\d+)?(?:-?\d+(?:\.\d+)?)?")
+
+
+def parse_range_value(value: str) -> Tuple[float, float]:
+    text = (value or "").strip()
+    m = re.fullmatch(r"(-?\d+(?:\.\d+)?)(?:-(-?\d+(?:\.\d+)?))?", text)
+    if m:
+        first = float(m.group(1))
+        second = float(m.group(2)) if m.group(2) is not None else first
+        return (first, second) if first <= second else (second, first)
+    nums = [float(n) for n in re.findall(r"-?\d+(?:\.\d+)?", text)]
+    if not nums:
+        return 0.0, 0.0
+    return (min(nums), max(nums))
+
+
+def tokenize_with_ranges(text: str) -> List[tuple[str, str]]:
+    """
+    Tokenize a string, treating number ranges (e.g., 6-18) as a single token
+    so we can compare shapes even when some weapons render ranges and others
+    render single values.
+    """
+    tokens: List[tuple[str, str]] = []
+    cursor = 0
+    src = text or ""
+    for match in RANGE_TOKEN.finditer(src):
+        start, end = match.span()
+        if start > cursor:
+            tokens.append(("sep", src[cursor:start]))
+        tokens.append(("num", match.group(0)))
+        cursor = end
+    if cursor < len(src):
+        tokens.append(("sep", src[cursor:]))
+    if not tokens:
+        tokens.append(("sep", ""))
+    return tokens
+
+
+def shape_with_ranges(text: str) -> Tuple[tuple[str, ...], int]:
+    tokens = tokenize_with_ranges(text)
+    pattern: List[str] = []
+    count = 0
+    for kind, val in tokens:
+        if kind == "num":
+            pattern.append("{n}")
+            count += 1
+        else:
+            pattern.append(val)
+    return tuple(pattern), count
+
+
 def shape(text: str) -> Tuple[tuple[str, ...], int]:
     tokens = tokenize_numeric(text)
     pattern: List[str] = []
@@ -262,35 +313,10 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         "Follow-up",
         "Hand",
         "Part",
-        "Weapon Source",
         "Dmg Type",
         "Wep Status",
         "Overwrite Scaling",
     ]
-    def tokenize(text: str) -> List[tuple[str, str]]:
-        parts = re.split(r"(-?\d+(?:\.\d+)?)", text)
-        tokens: List[tuple[str, str]] = []
-        for idx, part in enumerate(parts):
-            if part == "":
-                continue
-            if idx % 2 == 1:
-                tokens.append(("num", part))
-            else:
-                tokens.append(("sep", part))
-        return tokens
-
-    def shape(text: str) -> Tuple[tuple[str, ...], int]:
-        tokens = tokenize(text)
-        pattern: List[str] = []
-        count = 0
-        for kind, val in tokens:
-            if kind == "num":
-                pattern.append("{n}")
-                count += 1
-            else:
-                pattern.append(val)
-        return tuple(pattern), count
-
     # Cluster by non-weapon fields.
     clusters: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
     for row in rows:
@@ -312,15 +338,19 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         # Build weapon -> set of shapes to ensure symmetry.
         shapes_by_weapon: Dict[str, set] = {}
         rows_by_shape_weapon: Dict[Tuple[str, ...], Dict[str, List[Dict[str, str]]]] = {}
+        sources_by_weapon: Dict[str, List[str]] = {}
         for row in bucket:
             weapon = row.get("Weapon", "").strip()
             shape_key: Tuple[str, ...] = []
             for col in AGG_COLS:
-                pat, _ = shape(row.get(col, "") or "")
+                pat, _ = shape_with_ranges(row.get(col, "") or "")
                 shape_key += pat
             shape_key = tuple(shape_key)
             shapes_by_weapon.setdefault(weapon, set()).add(shape_key)
             rows_by_shape_weapon.setdefault(shape_key, {}).setdefault(weapon, []).append(row)
+            src = (row.get("Weapon Source") or "").strip()
+            if src:
+                sources_by_weapon.setdefault(weapon, []).append(src)
 
         # Only merge if every weapon has identical shape set.
         shape_sets = list(shapes_by_weapon.values())
@@ -343,6 +373,14 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             base_weapon = next(iter(weapon_rows))
             base_row = weapon_rows[base_weapon][0]
             out = dict(base_row)
+            # Merge Weapon Source across contributing rows.
+            src_values: List[str] = []
+            for w_rows in weapon_rows.values():
+                for r in w_rows:
+                    src = (r.get("Weapon Source") or "").strip()
+                    if src:
+                        src_values.append(src)
+            out["Weapon Source"] = unique_join(src_values) or "-"
             # Resolve Dmg Type preferring non-"-".
             dtype_candidates = [
                 r.get("Dmg Type", "") for rows_list in weapon_rows.values() for r in rows_list
@@ -364,9 +402,10 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             # Merge weapons.
             weapons: List[str] = []
             for weapon in weapon_rows:
-                name = weapon.strip()
-                if name and name not in weapons:
-                    weapons.append(name)
+                parts = [p.strip() for p in weapon.split("|")]
+                for name in parts:
+                    if name and name not in weapons:
+                        weapons.append(name)
             out["Weapon"] = " | ".join(weapons)
 
             # Merge subCategorySum across rows even when they differ.
@@ -386,23 +425,24 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                 out["subCategorySum"] = ""
 
             # Merge numeric ranges using token shape of base.
-            token_cache = {col: tokenize(out.get(col, "") or "") for col in AGG_COLS}
+            token_cache = {col: tokenize_with_ranges(out.get(col, "") or "") for col in AGG_COLS}
             for col in AGG_COLS:
                 tokens = token_cache[col]
                 num_positions = [i for i, (k, _) in enumerate(tokens) if k == "num"]
-                all_nums_by_pos: List[List[float]] = [[] for _ in num_positions]
+                all_nums_by_pos: List[List[Tuple[float, float]]] = [[] for _ in num_positions]
                 for w_rows in weapon_rows.values():
                     row = w_rows[0]
-                    row_tokens = tokenize(row.get(col, "") or "")
-                    for idx, pos in enumerate(num_positions):
-                        try:
-                            num = float(row_tokens[pos][1])
-                        except (IndexError, ValueError):
-                            num = 0.0
-                        all_nums_by_pos[idx].append(num)
+                    row_tokens = tokenize_with_ranges(row.get(col, "") or "")
+                    row_ranges = [parse_range_value(val) for kind, val in row_tokens if kind == "num"]
+                    if len(row_ranges) != len(num_positions):
+                        continue
+                    for idx, val in enumerate(row_ranges):
+                        all_nums_by_pos[idx].append(val)
                 ranges: List[str] = []
                 for vals in all_nums_by_pos:
-                    mn, mx = min(vals), max(vals)
+                    lows = [v[0] for v in vals]
+                    highs = [v[1] for v in vals]
+                    mn, mx = min(lows), max(highs)
                     ranges.append(fmt_number(mn) if mn == mx else f"{fmt_number(mn)}-{fmt_number(mx)}")
                 rebuilt: List[str] = []
                 r_idx = 0
