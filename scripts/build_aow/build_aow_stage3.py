@@ -472,7 +472,8 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                 for name in parts:
                     if name and name not in weapons:
                         weapons.append(name)
-            out["Weapon"] = " | ".join(weapons)
+            weapons_sorted = sorted(weapons, key=str.lower)
+            out["Weapon"] = " | ".join(weapons_sorted)
 
             # subCategorySum is assumed identical across merge candidates.
             out["subCategorySum"] = base_row.get("subCategorySum", "")

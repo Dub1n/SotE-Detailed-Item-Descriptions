@@ -394,6 +394,7 @@ flowchart LR
 - Weapon collapse compares numeric shapes while treating ranges as a single slot, allowing prefix/category rows with range vs single values to merge; merged weapon names are deduped across pipe-delimited lists.
 - Weapon collapse only proceeds when all non-numeric fields (excluding `Weapon`/`Weapon Source`) match across candidates for the entire Skill/Follow-up/Hand/Part/Wep Status cluster; differing metadata anywhere for a weapon prevents merging so per-weapon rows remain separate.
 - `subCategorySum` comparisons ignore the `2h Attack` token when `Hand` is `2h` to avoid blocking merges for otherwise identical two-handed rows.
+- Merged weapon lists are deduped and sorted alphabetically inside the `Weapon` field after collapse.
 - When multiple rows share the same FP/Charged/Step within a grouped cluster, numeric columns are summed before padding into the FP/Charged/Step strings.
 - Aggregated columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`):
   - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen across all rows sharing the same `Skill`/`Follow-up`/`Hand` (even when Parts differ); the layout is chosen once per skill-hand pair so every numeric column shares the same arrangement, padding absent combos with `0`s rather than dropping sections.
