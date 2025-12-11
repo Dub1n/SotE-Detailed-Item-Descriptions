@@ -308,6 +308,28 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
     every Weapon in the Skill/Hand/Part/DmgType/WepStatus cluster has the
     same set of numeric shapes (symmetry guard).
     """
+    # Precompute per-weapon signature sets across all Dmg Types for the same
+    # Skill/Follow-up/Hand/Part/Wep Status combo so we can refuse to merge
+    # when weapons have differing metadata anywhere in the cluster.
+    overall_sigs: Dict[Tuple[str, str, str, str, str, str], set] = {}
+    for row in rows:
+        key = (
+            row.get("Skill", ""),
+            row.get("Follow-up", ""),
+            row.get("Hand", ""),
+            row.get("Part", ""),
+            row.get("Wep Status", ""),
+            row.get("Weapon", "").strip(),
+        )
+        sig = tuple(
+            sorted(
+                (k, v)
+                for k, v in row.items()
+                if k not in AGG_COLS and k not in {"Weapon", "Weapon Source"}
+            )
+        )
+        overall_sigs.setdefault(key, set()).add(sig)
+
     fixed_cols = [
         "Skill",
         "Follow-up",
@@ -339,7 +361,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         shapes_by_weapon: Dict[str, set] = {}
         rows_by_shape_weapon: Dict[Tuple[str, ...], Dict[str, List[Dict[str, str]]]] = {}
         sources_by_weapon: Dict[str, List[str]] = {}
-        sig_cache: Dict[str, Tuple[Tuple[str, str], ...]] = {}
+        sig_cache: Dict[str, Tuple[Tuple[Tuple[str, str], ...], ...]] = {}
         for row in bucket:
             weapon = row.get("Weapon", "").strip()
             shape_key: Tuple[str, ...] = []
@@ -352,7 +374,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             src = (row.get("Weapon Source") or "").strip()
             if src:
                 sources_by_weapon.setdefault(weapon, []).append(src)
-            # Signature of non-numeric fields excluding Weapon/Weapon Source.
+            # Signatures of non-numeric fields excluding Weapon/Weapon Source (per row).
             sig = tuple(
                 sorted(
                     (k, v)
@@ -360,7 +382,8 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                     if k not in AGG_COLS and k not in {"Weapon", "Weapon Source"}
                 )
             )
-            sig_cache[weapon] = sig
+            sig_cache.setdefault(weapon, tuple())
+            sig_cache[weapon] = tuple(sorted(set(sig_cache[weapon] + (sig,))))
 
         # Only merge if every weapon has identical shape set.
         shape_sets = list(shapes_by_weapon.values())
@@ -371,9 +394,27 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             merged.extend(bucket)
             continue
 
-        # Guard: non-numeric fields (except Weapon/Weapon Source) must match.
+        # Guard: non-numeric fields (except Weapon/Weapon Source) must match per row set.
         sigs = list(sig_cache.values())
         if sigs and any(sig != sigs[0] for sig in sigs[1:]):
+            for rows_list in rows_by_shape_weapon.values():
+                for entries in rows_list.values():
+                    merged.extend(entries)
+            continue
+        # Guard: across the full Skill/Follow-up/Hand/Part/Wep Status cluster,
+        # every weapon must share the same set of non-numeric row signatures;
+        # otherwise leave rows separate.
+        cluster_key = (
+            bucket[0].get("Skill", ""),
+            bucket[0].get("Follow-up", ""),
+            bucket[0].get("Hand", ""),
+            bucket[0].get("Part", ""),
+            bucket[0].get("Wep Status", ""),
+        )
+        sig_sets = [
+            overall_sigs.get(cluster_key + (weapon,), set()) for weapon in shapes_by_weapon
+        ]
+        if sig_sets and any(sig != sig_sets[0] for sig in sig_sets[1:]):
             for rows_list in rows_by_shape_weapon.values():
                 for entries in rows_list.values():
                     merged.extend(entries)
