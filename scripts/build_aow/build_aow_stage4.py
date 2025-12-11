@@ -155,17 +155,6 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         if val and zeros_only(val):
             row[col] = "-"
 
-    part_raw = (row.get("Part") or "").strip()
-    part_suffix = part_raw if part_raw and part_raw != "-" else ""
-
-    def append_x(text: str) -> str:
-        # Add 'x' after each numeric token or numeric range.
-        def repl(match: re.Match[str]) -> str:
-            token = match.group(0)
-            return f"{token}x"
-
-        return re.sub(r"-?\d+(?:\.\d+)?(?:-?\d+(?:\.\d+)?)?", repl, text)
-
     dmg_type = (row.get("Dmg Type") or "").strip()
     dmg_mv_raw = (row.get("Dmg MV") or "").strip()
     if dmg_mv_raw in {"", "-"}:
@@ -173,7 +162,8 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     elif dmg_type == "-":
         row["Text Wep Dmg"] = "!"
     else:
-        row["Text Wep Dmg"] = f"{dmg_type} Damage: {append_x(dmg_mv_raw)}"
+        label = "Damage" if dmg_type == "Weapon" else dmg_type
+        row["Text Wep Dmg"] = f"{label}: {dmg_mv_raw} [AR]"
 
     status_raw = (row.get("Status MV") or "").strip()
     status_val = parse_float(status_raw if status_raw not in {"", "-"} else "")
@@ -183,25 +173,25 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     elif wep_status_raw.strip() == "None" or zeros_only(status_raw):
         row["Text Wep Status"] = "-"
     else:
-        buildup = format_multiplier(status_val * 0.01)
-        label = "Weapon" if not wep_status_raw or wep_status_raw == "-" else wep_status_raw
-        row["Text Wep Status"] = f"({label} Buildup){part_suffix}: {buildup}"
+        mv_value = format_multiplier(status_val)
+        label = "Status" if not wep_status_raw or wep_status_raw == "-" else wep_status_raw
+        row["Text Wep Status"] = f"{label}: {mv_value}%"
 
     stance_raw = (row.get("Stance Dmg") or "").strip()
     if stance_raw in {"", "-"}:
         row["Text Stance"] = "-"
     else:
-        row["Text Stance"] = f"Stance Damage: {stance_raw}"
+        row["Text Stance"] = f"Stance: {stance_raw}"
 
     overwrite_raw = (row.get("Overwrite Scaling") or "").strip()
     scaling_label = overwrite_raw if overwrite_raw not in {"", "-"} else "Weapon Scaling"
 
     base_cols = {
-        "Text Phys": ("Base Physical Damage", row.get("AtkPhys", "")),
-        "Text Mag": ("Base Magic Damage", row.get("AtkMag", "")),
-        "Text Fire": ("Base Fire Damage", row.get("AtkFire", "")),
-        "Text Ltng": ("Base Lightning Damage", row.get("AtkLtng", "")),
-        "Text Holy": ("Base Holy Damage", row.get("AtkHoly", "")),
+        "Text Phys": ("Physical", row.get("AtkPhys", "")),
+        "Text Mag": ("Magic", row.get("AtkMag", "")),
+        "Text Fire": ("Fire", row.get("AtkFire", "")),
+        "Text Ltng": ("Lightning", row.get("AtkLtng", "")),
+        "Text Holy": ("Holy", row.get("AtkHoly", "")),
     }
     for col, (label, value) in base_cols.items():
         val_clean = (value or "").strip()

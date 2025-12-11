@@ -19,6 +19,11 @@ TEXT_COLS = [
     "Text Holy",
 ]
 
+FOLLOW_DISPLAY = {
+    "Heavy": "Heavy Follow-up",
+    "Light": "Light Follow-up",
+}
+
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
     with path.open() as f:
@@ -43,8 +48,24 @@ def unique_ordered(values: List[str]) -> List[str]:
     return ordered
 
 
+def merge_blocks(blocks: List[List[str]]) -> List[List[str]]:
+    merged: List[List[str]] = []
+    index_by_key: Dict[str, int] = {}
+    for block in blocks:
+        if not block:
+            continue
+        key = block[0]
+        if key not in index_by_key:
+            index_by_key[key] = len(merged)
+            merged.append(list(block))
+        else:
+            merged[index_by_key[key]].extend(block[1:])
+    return merged
+
+
 def format_block(row: Dict[str, str]) -> List[str]:
-    follow = (row.get("Follow-up") or "").strip()
+    follow_raw = (row.get("Follow-up") or "").strip()
+    follow = FOLLOW_DISPLAY.get(follow_raw, follow_raw)
     hand = (row.get("Hand") or "").strip()
     part = (row.get("Part") or "").strip()
     subcat = (row.get("subCategorySum") or "").strip()
@@ -100,11 +121,12 @@ def write_markdown(rows: List[Dict[str, str]], output_path: Path) -> None:
         lines.append("")
 
         def emit_blocks(block_rows: List[Dict[str, str]]) -> None:
-            for idx, row in enumerate(block_rows):
-                block_lines = format_block(row)
+            blocks = [format_block(row) for row in block_rows]
+            merged_blocks = merge_blocks(blocks)
+            for idx, block_lines in enumerate(merged_blocks):
                 for line in block_lines:
                     lines.append(line)
-                if idx != len(block_rows) - 1:
+                if idx != len(merged_blocks) - 1:
                     lines.append("")
 
         if len(weapon_values) > 1:

@@ -517,7 +517,7 @@ def collapse_rows(
         if not non_zero:
             dmg_type, dmg_mv = "-", 0.0
         else:
-            dmg_mv = sum(val for _, val in non_zero) / len(non_zero) / 100.0
+            dmg_mv = sum(val for _, val in non_zero) / len(non_zero)
 
             if has_zero:
                 dmg_type = " | ".join(name for name, _ in non_zero)
