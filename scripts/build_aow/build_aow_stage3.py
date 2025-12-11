@@ -339,6 +339,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         shapes_by_weapon: Dict[str, set] = {}
         rows_by_shape_weapon: Dict[Tuple[str, ...], Dict[str, List[Dict[str, str]]]] = {}
         sources_by_weapon: Dict[str, List[str]] = {}
+        sig_cache: Dict[str, Tuple[Tuple[str, str], ...]] = {}
         for row in bucket:
             weapon = row.get("Weapon", "").strip()
             shape_key: Tuple[str, ...] = []
@@ -351,6 +352,15 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             src = (row.get("Weapon Source") or "").strip()
             if src:
                 sources_by_weapon.setdefault(weapon, []).append(src)
+            # Signature of non-numeric fields excluding Weapon/Weapon Source.
+            sig = tuple(
+                sorted(
+                    (k, v)
+                    for k, v in row.items()
+                    if k not in AGG_COLS and k not in {"Weapon", "Weapon Source"}
+                )
+            )
+            sig_cache[weapon] = sig
 
         # Only merge if every weapon has identical shape set.
         shape_sets = list(shapes_by_weapon.values())
@@ -359,6 +369,14 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             continue
         if any(s != shape_sets[0] for s in shape_sets[1:]):
             merged.extend(bucket)
+            continue
+
+        # Guard: non-numeric fields (except Weapon/Weapon Source) must match.
+        sigs = list(sig_cache.values())
+        if sigs and any(sig != sigs[0] for sig in sigs[1:]):
+            for rows_list in rows_by_shape_weapon.values():
+                for entries in rows_list.values():
+                    merged.extend(entries)
             continue
 
         # Merge per shape key.
@@ -385,19 +403,23 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             dtype_candidates = [
                 r.get("Dmg Type", "") for rows_list in weapon_rows.values() for r in rows_list
             ]
-            chosen_dtype = next(
-                (d for d in dtype_candidates if d and d != "-"), base_row.get("Dmg Type", ""))
+            chosen_dtype = base_row.get("Dmg Type", "-")
+            if dtype_candidates and any(d != chosen_dtype for d in dtype_candidates):
+                for rows_list in weapon_rows.values():
+                    merged.extend(rows_list)
+                continue
             out["Dmg Type"] = chosen_dtype or "-"
-            # Resolve Overwrite Scaling preferring non-empty values.
-            ovw_candidates = [
+            # Overwrite Scaling must match.
+            ovw_candidates = {
                 normalize_overwrite(r.get("Overwrite Scaling", ""))
                 for rows_list in weapon_rows.values()
                 for r in rows_list
-            ]
-            chosen_ovw = next(
-                (o for o in ovw_candidates if o and o != "-"), None
-            )
-            out["Overwrite Scaling"] = chosen_ovw if chosen_ovw is not None else "-"
+            }
+            if len(ovw_candidates) > 1:
+                for rows_list in weapon_rows.values():
+                    merged.extend(rows_list)
+                continue
+            out["Overwrite Scaling"] = ovw_candidates.pop() if ovw_candidates else "-"
 
             # Merge weapons.
             weapons: List[str] = []
@@ -408,21 +430,8 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                         weapons.append(name)
             out["Weapon"] = " | ".join(weapons)
 
-            # Merge subCategorySum across rows even when they differ.
-            subcat_values: List[str] = []
-            seen_subcats = set()
-            for rows_list in weapon_rows.values():
-                for r in rows_list:
-                    val = (r.get("subCategorySum") or "").strip()
-                    if not val:
-                        continue
-                    if val not in seen_subcats:
-                        seen_subcats.add(val)
-                        subcat_values.append(val)
-            if subcat_values:
-                out["subCategorySum"] = " | ".join(subcat_values)
-            else:
-                out["subCategorySum"] = ""
+            # subCategorySum is assumed identical across merge candidates.
+            out["subCategorySum"] = base_row.get("subCategorySum", "")
 
             # Merge numeric ranges using token shape of base.
             token_cache = {col: tokenize_with_ranges(out.get(col, "") or "") for col in AGG_COLS}
