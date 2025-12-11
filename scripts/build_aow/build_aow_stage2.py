@@ -24,6 +24,7 @@ INPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-1.csv"
 OUTPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-2.csv"
 FORCE_COLLAPSE_DEFAULT = ROOT / "work/aow_pipeline/force_collapse_pairs.json"
 VALUE_BLACKLIST_DEFAULT = ROOT / "work/aow_pipeline/value_blacklist.json"
+COPY_ROWS_DEFAULT = ROOT / "work/aow_pipeline/copy_rows.json"
 
 GROUP_KEYS = [
     "Skill",
@@ -101,6 +102,82 @@ def apply_value_blacklist(
                 continue
             if val.strip() in banned:
                 row[col] = ""
+
+
+def load_copy_rows(path: Path) -> List[Dict[str, Any]]:
+    if not path.exists():
+        return []
+    try:
+        data = json.loads(path.read_text())
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Failed to parse copy rows at {path}: {exc}") from exc
+    if not isinstance(data, list):
+        raise ValueError(
+            f"copy rows file must be a list, got {type(data).__name__}"
+        )
+    entries: List[Dict[str, Any]] = []
+    for entry in data:
+        if not isinstance(entry, dict):
+            continue
+        name = entry.get("name") or entry.get("Name")
+        copies_raw = entry.get("copies") or entry.get("Copies") or []
+        if not isinstance(name, str) or not name:
+            continue
+        if not isinstance(copies_raw, list):
+            continue
+        norm_copies: List[Dict[str, str]] = []
+        for copy_entry in copies_raw:
+            if not isinstance(copy_entry, dict):
+                continue
+            overrides = copy_entry.get("overrides")
+            overrides = overrides if isinstance(overrides, dict) else copy_entry
+            norm_copies.append(
+                {str(k): str(v) for k, v in overrides.items()}
+            )
+        if norm_copies:
+            entries.append({"name": name, "copies": norm_copies})
+    return entries
+
+
+def apply_row_copies(
+    rows: List[Dict[str, str]],
+    fieldnames: List[str],
+    copies: List[Dict[str, Any]],
+) -> Tuple[List[Dict[str, str]], List[str], List[str]]:
+    if not copies:
+        return rows, [], []
+    added: List[Dict[str, str]] = []
+    notes: List[str] = []
+    warnings: List[str] = []
+    unknown_warned: Set[Tuple[str, str]] = set()
+    by_name: Dict[str, List[Dict[str, str]]] = {}
+    for row in rows:
+        by_name.setdefault(row.get("Name", ""), []).append(row)
+
+    for entry in copies:
+        name = entry.get("name")
+        copy_list = entry.get("copies") or []
+        base_rows = by_name.get(name, [])
+        if not base_rows:
+            warnings.append(f"No rows found to copy for Name '{name}'")
+            continue
+        added_count = 0
+        for overrides in copy_list:
+            for base_row in base_rows:
+                new_row = dict(base_row)
+                for col, val in overrides.items():
+                    if col not in fieldnames:
+                        warn_key = (name, col)
+                        if warn_key not in unknown_warned:
+                            warnings.append(
+                                f"Unknown column '{col}' in copy for Name '{name}'"
+                            )
+                            unknown_warned.add(warn_key)
+                    new_row[col] = str(val)
+                added.append(new_row)
+                added_count += 1
+        notes.append(f"{name}: added {added_count} copied row(s)")
+    return rows + added, notes, warnings
 
 
 def parse_float(value: Any) -> float | None:
@@ -577,14 +654,24 @@ def main() -> None:
         default=VALUE_BLACKLIST_DEFAULT,
         help="Path to value_blacklist.json",
     )
+    parser.add_argument(
+        "--copy-rows",
+        type=Path,
+        default=COPY_ROWS_DEFAULT,
+        help="Path to copy_rows.json",
+    )
     args = parser.parse_args()
 
+    copy_rows = load_copy_rows(args.copy_rows)
     value_blacklist = load_value_blacklist(args.value_blacklist)
     force_groups, force_overrides, force_primary = load_force_collapse_map(
         args.force_collapse
     )
     before_rows = load_rows_by_key(args.output, GROUP_KEYS)
     rows, fieldnames = read_rows(args.input)
+    rows, copy_notes, copy_warnings = apply_row_copies(
+        rows, fieldnames, copy_rows
+    )
     apply_value_blacklist(rows, value_blacklist, stage_key="2")
     output_rows, output_columns, warnings, forced_groups = collapse_rows(
         rows,
@@ -593,6 +680,7 @@ def main() -> None:
         force_overrides=force_overrides,
         force_primary=force_primary,
     )
+    warnings = copy_warnings + warnings
     write_csv(output_rows, output_columns, args.output)
 
     path_text = format_path_for_console(args.output, ROOT)
@@ -604,6 +692,10 @@ def main() -> None:
         key_fields=GROUP_KEYS,
         align_columns=True,
     )
+    if copy_notes:
+        print(f"Copied rows ({len(copy_notes)}):")
+        for note in copy_notes:
+            print(f"  - {note}")
     if forced_groups:
         if len(forced_groups) <= 10:
             print(f"Forced ({len(forced_groups)}) collapse:")

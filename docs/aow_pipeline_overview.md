@@ -171,6 +171,7 @@ flowchart LR
 - Output: `work/aow_pipeline/AoW-data-2.csv`
 - Behavior:
   - Optional value blacklist (`work/aow_pipeline/value_blacklist.json`): drop listed values per stage/column before processing (currently strips `128 - unused` from `subCategory1-4` in Stage 2).
+- Optional row copies (`work/aow_pipeline/copy_rows.json`): duplicate specific Stage 1 `Name` rows with per-copy column overrides (keyed by the CSV headers) before processing. Entries look like `{"name": "Storm Blade - Bullet", "copies": [{"overrides": {"Step": "2"}}, ...]}` and apply overrides to every matching row.
   - Apply optional forced collapses defined in `work/aow_pipeline/force_collapse_pairs.json`:
     - Accepts entries as a list of names, or an object with `names` and optional `overrides`.
     - All rows in a group are canonicalized to the first name’s derived fields (`Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`) unless a specific override for that field is provided.
@@ -217,6 +218,7 @@ flowchart LR
     overwrite1["Overwrite Scaling"]
     subCats1["subCategory1-4"]
     forceRules["force_collapse_pairs.json (optional)"]
+    copyRules["copy_rows.json (optional)"]
   end
 
   subgraph Stage2Outputs["AoW-data-2 columns"]
@@ -284,6 +286,34 @@ flowchart LR
   physAttr1 --> groupKeys
   isAdd1 --> groupKeys
   overwrite1 --> groupKeys
+  copyRules --> copyApply["Duplicate rows + overrides"]
+  copyApply --> name1
+  copyApply --> skill1
+  copyApply --> follow1
+  copyApply --> hand1
+  copyApply --> part1
+  copyApply --> fp1
+  copyApply --> charged1
+  copyApply --> step1
+  copyApply --> bullet1
+  copyApply --> tick1
+  copyApply --> weaponSrc1
+  copyApply --> weapon1
+  copyApply --> weaponPoise1
+  copyApply --> disable1
+  copyApply --> wepBases1
+  copyApply --> elemMVs1
+  copyApply --> status1
+  copyApply --> wepStatus1
+  copyApply --> buff1
+  copyApply --> poiseMV1
+  copyApply --> physAttr1
+  copyApply --> atkStats1
+  copyApply --> atkSA1
+  copyApply --> isAdd1
+  copyApply --> overwrite1
+  copyApply --> subCats1
+
   forceRules --> forceCanon["Canonicalize forced groups (first entry + overrides)"]
   name1 --> forceCanon
   skill1 --> forceCanon

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Storm Blade - Bullet",
+    "copies": [
+      {
+        "overrides": {
+          "Step": "2"
+        }
+      },
+      {
+        "overrides": {
+          "Step": "3"
+        }
+      }
+    ]
+  }
+]
