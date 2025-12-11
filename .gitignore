@@ -38,6 +38,7 @@ work/aow_pipeline/*.csv
 !work/aow_pipeline/force_collapse_pairs.json
 bk_*/
 *_bk
+work/aow_pipeline/AoW-data-5.md
 
 # Workflow prompts
 prompts/

@@ -1,0 +1,54 @@
+{
+  "0": {
+    "affinity": "Standard",
+    "stat": "-"
+  },
+  "1": {
+    "affinity": "Heavy",
+    "stat": "Str"
+  },
+  "2": {
+    "affinity": "Keen",
+    "stat": "Dex"
+  },
+  "3": {
+    "affinity": "Quality",
+    "stat": "Str/Dex"
+  },
+  "4": {
+    "affinity": "Fire",
+    "stat": "Str"
+  },
+  "5": {
+    "affinity": "Flame Art",
+    "stat": "Fth"
+  },
+  "6": {
+    "affinity": "Lightning",
+    "stat": "Dex"
+  },
+  "7": {
+    "affinity": "Sacred",
+    "stat": "Fth"
+  },
+  "8": {
+    "affinity": "Magic",
+    "stat": "Int"
+  },
+  "9": {
+    "affinity": "Cold",
+    "stat": "Int/Dex"
+  },
+  "10": {
+    "affinity": "Poison",
+    "stat": "Arc"
+  },
+  "11": {
+    "affinity": "Blood",
+    "stat": "Arc"
+  },
+  "12": {
+    "affinity": "Occult",
+    "stat": "Arc"
+  }
+}
