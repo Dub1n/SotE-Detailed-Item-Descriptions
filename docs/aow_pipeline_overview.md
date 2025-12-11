@@ -557,6 +557,7 @@ flowchart LR
 - Script: `scripts/build_aow/build_aow_stage5.py` (renders Stage 4 text helpers into a human-readable markdown layout).
 - Groups rows by `Skill`; when multiple distinct `Weapon` field values are present, emits a `#### {Weapon}` section per value (pipe-joined lists stay together). Within each skill/weapon block, rows are rendered based on whether `Follow-up`/`Hand`/`Part` are `-`, nesting indents and headers accordingly and skipping any `Text *` lines that are `-`.
 - When any row in a skill has a `Follow-up`, rows without a follow-up label render as `Skill`. Blocks are rendered without blank separator lines, `subCategorySum` strings use comma separators instead of pipes, and ` / ` inside those strings is tightened to `/`.
+- Optional `--color` flag runs text lines through `scripts/colorize_stats.py` (same rules as JSON colourization) before writing markdown; `--color-mode` selects `all` (default) or `status` patterns.
 
 ## Filesystem layout
 

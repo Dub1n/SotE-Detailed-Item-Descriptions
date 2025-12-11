@@ -1,9 +1,19 @@
 import argparse
 import csv
+import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Sequence, Tuple
 
 ROOT = Path(__file__).resolve().parents[2]
+HELPERS_DIR = ROOT / "scripts"
+if str(HELPERS_DIR) not in sys.path:
+    sys.path.append(str(HELPERS_DIR))
+
+from colorize_stats import (  # type: ignore  # noqa: E402
+    colourize_text,
+    get_merge_rules,
+    get_tag_rules,
+)
 INPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-4.csv"
 OUTPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-5.md"
 
@@ -67,6 +77,24 @@ def has_followups(rows: List[Dict[str, str]]) -> bool:
     return any((row.get("Follow-up") or "").strip() not in {"", "-"} for row in rows)
 
 
+def colorize_line(
+    text: str,
+    enabled: bool,
+    tag_rules: Sequence,
+    merge_rules: Sequence,
+) -> str:
+    if not enabled:
+        return text
+    colored, _ = colourize_text(
+        text,
+        tag_rules,
+        merge_rules,
+        fix_only=False,
+        capitalized_only=False,
+    )
+    return colored
+
+
 def normalize_subcat(raw: str) -> str:
     cleaned = raw.strip()
     cleaned = cleaned.replace(" | ", ", ")
@@ -74,7 +102,13 @@ def normalize_subcat(raw: str) -> str:
     return cleaned
 
 
-def format_block(row: Dict[str, str], skill_has_followups: bool) -> List[str]:
+def format_block(
+    row: Dict[str, str],
+    skill_has_followups: bool,
+    colorize: bool,
+    tag_rules: Sequence,
+    merge_rules: Sequence,
+) -> List[str]:
     follow_raw = (row.get("Follow-up") or "").strip()
     follow = FOLLOW_DISPLAY.get(follow_raw, follow_raw)
     if skill_has_followups and follow in {"", "-"}:
@@ -86,11 +120,12 @@ def format_block(row: Dict[str, str], skill_has_followups: bool) -> List[str]:
     subcat_line = f"({subcat})" if subcat else ""
     subcat_suffix = f" ({subcat})" if subcat else ""
 
-    text_lines = [
-        row.get(col, "").strip()
-        for col in TEXT_COLS
-        if (row.get(col, "") or "").strip() not in {"", "-"}
-    ]
+    text_lines = []
+    for col in TEXT_COLS:
+        val = (row.get(col, "") or "").strip()
+        if val in {"", "-"}:
+            continue
+        text_lines.append(colorize_line(val, colorize, tag_rules, merge_rules))
 
     blocks: List[str] = []
     if follow == "-" and hand == "-":
@@ -121,9 +156,16 @@ def format_block(row: Dict[str, str], skill_has_followups: bool) -> List[str]:
     return blocks
 
 
-def write_markdown(rows: List[Dict[str, str]], output_path: Path) -> None:
+def write_markdown(
+    rows: List[Dict[str, str]],
+    output_path: Path,
+    colorize: bool = False,
+    color_mode: str = "all",
+) -> None:
     skills_in_order = unique_ordered([row.get("Skill", "") for row in rows])
     lines: List[str] = []
+    tag_rules = get_tag_rules(color_mode) if colorize else ()
+    merge_rules = get_merge_rules(color_mode) if colorize else ()
 
     for skill in skills_in_order:
         skill_rows = [r for r in rows if r.get("Skill", "") == skill]
@@ -136,7 +178,14 @@ def write_markdown(rows: List[Dict[str, str]], output_path: Path) -> None:
         def emit_blocks(block_rows: List[Dict[str, str]]) -> None:
             block_has_followups = has_followups(block_rows)
             blocks = [
-                format_block(row, block_has_followups) for row in block_rows
+                format_block(
+                    row,
+                    block_has_followups,
+                    colorize,
+                    tag_rules,
+                    merge_rules,
+                )
+                for row in block_rows
             ]
             merged_blocks = merge_blocks(blocks)
             for block_lines in merged_blocks:
@@ -178,10 +227,26 @@ def main() -> None:
         default=OUTPUT_DEFAULT,
         help="Path to write AoW-data-5.md",
     )
+    parser.add_argument(
+        "--color",
+        action="store_true",
+        help="Apply colour tags to text lines using scripts/colorize_stats.py rules.",
+    )
+    parser.add_argument(
+        "--color-mode",
+        choices=["all", "status"],
+        default="all",
+        help="Pattern set for colouring (default: all).",
+    )
     args = parser.parse_args()
 
     rows, _ = read_rows(args.input)
-    write_markdown(rows, args.output)
+    write_markdown(
+        rows,
+        args.output,
+        colorize=args.color,
+        color_mode=args.color_mode,
+    )
     print(f"Wrote markdown to {args.output}")
 
 
