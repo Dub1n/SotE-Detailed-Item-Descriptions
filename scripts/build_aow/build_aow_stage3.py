@@ -51,6 +51,16 @@ AGG_COLS = [
     "AtkLtng",
     "AtkHoly",
 ]
+SUPPORTING_COLS = [
+    "Status MV",
+    "Weapon Buff MV",
+    "Stance Dmg",
+    "AtkPhys",
+    "AtkMag",
+    "AtkFire",
+    "AtkLtng",
+    "AtkHoly",
+]
 
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
@@ -78,6 +88,55 @@ def zeros_only(text: str) -> bool:
     if not nums:
         return False
     return all(float(n) == 0 for n in nums)
+
+
+def rebuild_from_tokens(tokens: List[tuple[str, str]], numbers: List[str]) -> str:
+    rebuilt: List[str] = []
+    num_idx = 0
+    for kind, val in tokens:
+        if kind == "num":
+            if num_idx < len(numbers):
+                rebuilt.append(numbers[num_idx])
+            num_idx += 1
+        else:
+            rebuilt.append(val)
+    return "".join(rebuilt)
+
+
+def merge_supporting_column(base_val: str, donor_val: str) -> Tuple[str, str]:
+    """
+    Transfer non-zero numeric tokens from donor_val into base_val when both
+    share the same numeric arrangement. Tokens pulled into the base are set
+    to zero in the donor; donor is then collapsed to "-" when it is all zeros.
+    """
+    base_tokens = tokenize_with_ranges(base_val or "")
+    donor_tokens = tokenize_with_ranges(donor_val or "")
+    base_nums = [val for kind, val in base_tokens if kind == "num"]
+    donor_nums = [val for kind, val in donor_tokens if kind == "num"]
+    if len(base_nums) != len(donor_nums):
+        return base_val, donor_val
+    if shape_with_ranges(base_val or "")[0] != shape_with_ranges(donor_val or "")[0]:
+        return base_val, donor_val
+
+    new_base_nums: List[str] = []
+    new_donor_nums: List[str] = []
+    for b, d in zip(base_nums, donor_nums):
+        b_range = parse_range_value(b)
+        d_range = parse_range_value(d)
+        b_zero = b_range == (0.0, 0.0)
+        d_zero = d_range == (0.0, 0.0)
+        if b_zero and not d_zero:
+            new_base_nums.append(d)
+            new_donor_nums.append("0")
+        else:
+            new_base_nums.append(b)
+            new_donor_nums.append(d)
+
+    new_base = rebuild_from_tokens(base_tokens, new_base_nums)
+    new_donor = rebuild_from_tokens(donor_tokens, new_donor_nums)
+    if zeros_only(new_donor):
+        new_donor = "-"
+    return new_base, new_donor
 
 
 def fmt_number(value: float) -> str:
@@ -517,6 +576,43 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
     return merged
 
 
+def collapse_supporting_stats(rows: List[Dict[str, str]]) -> None:
+    """
+    Allow supporting columns to merge across rows that share the same layout
+    even when Dmg MV differs by pulling non-zero tokens forward and blanking
+    them in the donor rows.
+    """
+    group_keys = [
+        "Skill",
+        "Follow-up",
+        "Hand",
+        "Part",
+        "Weapon Source",
+        "Weapon",
+        "Wep Status",
+    ]
+    grouped: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
+    for row in rows:
+        key = tuple(row.get(k, "") for k in group_keys)
+        grouped.setdefault(key, []).append(row)
+
+    for group_rows in grouped.values():
+        if len(group_rows) < 2:
+            continue
+        base = group_rows[0]
+        base_shape = shape_with_ranges(base.get("Dmg MV", "") or "")[0]
+        for donor in group_rows[1:]:
+            donor_shape = shape_with_ranges(donor.get("Dmg MV", "") or "")[0]
+            if donor_shape != base_shape:
+                continue
+            for col in SUPPORTING_COLS:
+                merged_base, merged_donor = merge_supporting_column(
+                    base.get(col, ""), donor.get(col, "")
+                )
+                base[col] = merged_base
+                donor[col] = merged_donor
+
+
 def mask_zero_only_cells(rows: List[Dict[str, str]]) -> None:
     for row in rows:
         for col in AGG_COLS:
@@ -654,6 +750,7 @@ def collapse_rows(
 
             output_rows.append(out)
 
+    collapse_supporting_stats(output_rows)
     merged_rows = collapse_weapons(output_rows)
 
     mask_zero_only_cells(merged_rows)

@@ -190,6 +190,8 @@ flowchart LR
 
 ```mermaid
 flowchart LR
+  copyRules["copy_rows.json (optional)"]
+
   subgraph Stage2Inputs["AoW-data-1.csv columns"]
     name1["Name (dropped)"]
     skill1["Skill"]
@@ -218,7 +220,6 @@ flowchart LR
     overwrite1["Overwrite Scaling"]
     subCats1["subCategory1-4"]
     forceRules["force_collapse_pairs.json (optional)"]
-    copyRules["copy_rows.json (optional)"]
   end
 
   subgraph Stage2Outputs["AoW-data-2 columns"]
@@ -417,7 +418,7 @@ flowchart LR
 - Group keys: `Skill`, `Follow-up`, `Hand`, `Part`, `Weapon`, `Dmg Type`, `Wep Status`.
 - Removed columns: `Wep Poise Range`, `Disable Gem Attr`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `isAddBaseAtk`, `subCategory1-4`.
 - `subCategorySum`: union of all subCategory1-4 values in the group (order-preserving, deduped, comma-joined; skips `-`/empty). When weapons are merged in the second pass, differing `subCategorySum` strings are allowed and concatenated with ` | `, deduping identical strings.
-- `Overwrite Scaling`: unique values (ignoring empty/`-`) joined with `, `; missing values fall back to the first non-empty entry or `-`.
+- `Overwrite Scaling`: unique values (ignoring empty/`-`) joined with `,`; missing values fall back to the first non-empty entry or `-`.
 - `Bullet Stat`: pass-through of the defaultWepAttr stat label from `skill_attr_scaling.json` (resolved via EquipParamGem).
 - After all collapses, if every row sharing a `Skill`/`Follow-up`/`Hand` combo has the same `Part`, that `Part` is set to `-` to avoid redundant labels.
 - Weapon source is merged when weapons are collapsed (joined `|` when mixed) so identical rows from category/prefix sources merge together if shapes match.
@@ -426,6 +427,7 @@ flowchart LR
 - `subCategorySum` comparisons ignore the `2h Attack` token when `Hand` is `2h` to avoid blocking merges for otherwise identical two-handed rows.
 - Merged weapon lists are deduped and sorted alphabetically inside the `Weapon` field after collapse.
 - When multiple rows share the same FP/Charged/Step within a grouped cluster, numeric columns are summed before padding into the FP/Charged/Step strings.
+- Supporting columns (`Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`) can be pulled forward across rows that share the same layout even when `Dmg MV` differs: non-zero tokens from later rows replace zeros in the first row with matching numeric shapes, and donor cells are blanked to `-` when emptied.
 - Aggregated columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`):
   - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen across all rows sharing the same `Skill`/`Follow-up`/`Hand` (even when Parts differ); the layout is chosen once per skill-hand pair so every numeric column shares the same arrangement, padding absent combos with `0`s rather than dropping sections.
   - After weapon-merge, any numeric cell that is entirely zeros (including ranged forms like `0-0` or padded strings like `0, 0 | 0, 0 [0]`) is replaced with `-`; cells with any non-zero are left untouched.
@@ -470,21 +472,22 @@ flowchart LR
     o3SubCats["subCategorySum (deduped union)"]
   end
   Stage3In --> collapse3["Stage 3 collapse<br>group + zero-pad FP/Charged/Step"]
-  collapse3 --> o3Skill
-  collapse3 --> o3Follow
-  collapse3 --> o3Hand
-  collapse3 --> o3Part
-  collapse3 --> o3WeaponSrc
-  collapse3 --> o3Weapon
-  collapse3 --> o3DmgType
-  collapse3 --> o3DmgMV
-  collapse3 --> o3Status
-  collapse3 --> o3WepStatus
-  collapse3 --> o3Buff
-  collapse3 --> o3Stance
-  collapse3 --> o3AtkStats
-  collapse3 --> o3Overwrite
-  collapse3 --> o3SubCats
+  collapse3 --> support3["Lift supporting stats across rows with matching layouts<br>(even when Dmg MV differs)"]
+  support3 --> o3Skill
+  support3 --> o3Follow
+  support3 --> o3Hand
+  support3 --> o3Part
+  support3 --> o3WeaponSrc
+  support3 --> o3Weapon
+  support3 --> o3DmgType
+  support3 --> o3DmgMV
+  support3 --> o3Status
+  support3 --> o3WepStatus
+  support3 --> o3Buff
+  support3 --> o3Stance
+  support3 --> o3AtkStats
+  support3 --> o3Overwrite
+  support3 --> o3SubCats
 ```
 
 ## Stage 4: Text helper columns
