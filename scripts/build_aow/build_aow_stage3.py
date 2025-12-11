@@ -90,6 +90,20 @@ def zeros_only(text: str) -> bool:
     return all(float(n) == 0 for n in nums)
 
 
+def normalize_wep_status(value: str) -> str:
+    text = (value or "").strip()
+    return text if text else "-"
+
+
+def status_merge_key(value: str) -> str:
+    """
+    Collapse all non-"None" Wep Status values into a shared merge bucket so
+    weapon rows with differing statuses can be merged; keep "None" isolated.
+    """
+    normalized = normalize_wep_status(value)
+    return "None" if normalized == "None" else "__ANY_STATUS__"
+
+
 def rebuild_from_tokens(tokens: List[tuple[str, str]], numbers: List[str]) -> str:
     rebuilt: List[str] = []
     num_idx = 0
@@ -380,7 +394,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
     def row_signature(row: Dict[str, str]) -> Tuple[Tuple[str, str], ...]:
         sig_items: List[Tuple[str, str]] = []
         for k, v in row.items():
-            if k in AGG_COLS or k in {"Weapon", "Weapon Source"}:
+            if k in AGG_COLS or k in {"Weapon", "Weapon Source", "Wep Status"}:
                 continue
             if k == "subCategorySum":
                 v = normalize_subcat(v, row.get("Hand", ""))
@@ -388,12 +402,13 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         return tuple(sorted(sig_items))
 
     for row in rows:
+        status_key = status_merge_key(row.get("Wep Status", ""))
         key = (
             row.get("Skill", ""),
             row.get("Follow-up", ""),
             row.get("Hand", ""),
             row.get("Part", ""),
-            row.get("Wep Status", ""),
+            status_key,
             row.get("Weapon", "").strip(),
         )
         overall_sigs.setdefault(key, set()).add(row_signature(row))
@@ -415,9 +430,12 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         overw = normalize_overwrite(row.get("Overwrite Scaling", ""))
         row["Overwrite Scaling"] = overw
         key_parts = []
+        status_key = status_merge_key(row.get("Wep Status", ""))
         for col in fixed_cols:
             if col == "Dmg Type":
                 key_parts.append(dtype_key)
+            elif col == "Wep Status":
+                key_parts.append(status_key)
             else:
                 key_parts.append(row.get(col, ""))
         key = tuple(key_parts)
@@ -471,7 +489,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             bucket[0].get("Follow-up", ""),
             bucket[0].get("Hand", ""),
             bucket[0].get("Part", ""),
-            bucket[0].get("Wep Status", ""),
+            status_merge_key(bucket[0].get("Wep Status", "")),
         )
         sig_sets = [
             overall_sigs.get(cluster_key + (weapon,), set()) for weapon in shapes_by_weapon
@@ -533,6 +551,16 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                         weapons.append(name)
             weapons_sorted = sorted(weapons, key=str.lower)
             out["Weapon"] = " | ".join(weapons_sorted)
+
+            # Merge Wep Status; if multiple values remain, collapse to "-".
+            status_values: List[str] = []
+            for w_rows in weapon_rows.values():
+                for r in w_rows:
+                    status_values.append(normalize_wep_status(r.get("Wep Status", "")))
+            status_set = {s for s in status_values if s}
+            out["Wep Status"] = (
+                status_set.pop() if len(status_set) == 1 else "-"
+            )
 
             # subCategorySum is assumed identical across merge candidates.
             out["subCategorySum"] = base_row.get("subCategorySum", "")

@@ -166,16 +166,22 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         row["Text Wep Dmg"] = f"{label}: {dmg_mv_raw} [AR]"
 
     status_raw = (row.get("Status MV") or "").strip()
-    status_val = parse_float(status_raw if status_raw not in {"", "-"} else "")
     wep_status_raw = (row.get("Wep Status") or "").strip()
-    if not status_raw or status_raw == "-" or status_val is None:
-        row["Text Wep Status"] = "-"
-    elif wep_status_raw.strip() == "None" or zeros_only(status_raw):
+    if (
+        not status_raw
+        or status_raw == "-"
+        or wep_status_raw.strip() == "None"
+        or zeros_only(status_raw)
+    ):
         row["Text Wep Status"] = "-"
     else:
-        mv_value = format_multiplier(status_val)
         label = "Status" if not wep_status_raw or wep_status_raw == "-" else wep_status_raw
-        row["Text Wep Status"] = f"{label}: {mv_value}%"
+        num_match = re.search(r"-?\\d+(?:\\.\\d+)?", status_raw)
+        if num_match:
+            mv_value = format_multiplier(float(num_match.group(0)))
+            row["Text Wep Status"] = f"{label}: {mv_value}%"
+        else:
+            row["Text Wep Status"] = f"{label}: {status_raw}"
 
     stance_raw = (row.get("Stance Dmg") or "").strip()
     if stance_raw in {"", "-"}:
