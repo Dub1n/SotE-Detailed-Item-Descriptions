@@ -63,12 +63,25 @@ def merge_blocks(blocks: List[List[str]]) -> List[List[str]]:
     return merged
 
 
-def format_block(row: Dict[str, str]) -> List[str]:
+def has_followups(rows: List[Dict[str, str]]) -> bool:
+    return any((row.get("Follow-up") or "").strip() not in {"", "-"} for row in rows)
+
+
+def normalize_subcat(raw: str) -> str:
+    cleaned = raw.strip()
+    cleaned = cleaned.replace(" | ", ", ")
+    cleaned = cleaned.replace(" / ", "/")
+    return cleaned
+
+
+def format_block(row: Dict[str, str], skill_has_followups: bool) -> List[str]:
     follow_raw = (row.get("Follow-up") or "").strip()
     follow = FOLLOW_DISPLAY.get(follow_raw, follow_raw)
+    if skill_has_followups and follow in {"", "-"}:
+        follow = "Skill"
     hand = (row.get("Hand") or "").strip()
     part = (row.get("Part") or "").strip()
-    subcat = (row.get("subCategorySum") or "").strip()
+    subcat = normalize_subcat(row.get("subCategorySum") or "")
 
     subcat_line = f"({subcat})" if subcat else ""
     subcat_suffix = f" ({subcat})" if subcat else ""
@@ -121,13 +134,14 @@ def write_markdown(rows: List[Dict[str, str]], output_path: Path) -> None:
         lines.append("")
 
         def emit_blocks(block_rows: List[Dict[str, str]]) -> None:
-            blocks = [format_block(row) for row in block_rows]
+            block_has_followups = has_followups(block_rows)
+            blocks = [
+                format_block(row, block_has_followups) for row in block_rows
+            ]
             merged_blocks = merge_blocks(blocks)
-            for idx, block_lines in enumerate(merged_blocks):
+            for block_lines in merged_blocks:
                 for line in block_lines:
                     lines.append(line)
-                if idx != len(merged_blocks) - 1:
-                    lines.append("")
 
         if len(weapon_values) > 1:
             for w_idx, weapon in enumerate(weapon_values):
