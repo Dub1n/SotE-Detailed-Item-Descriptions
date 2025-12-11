@@ -297,12 +297,22 @@ def collapse_rows(
         output_columns.remove("PhysAtkAttribute")
         output_source_map.pop("PhysAtkAttribute", None)
     col_positions = {col: idx for idx, col in enumerate(fieldnames)}
+    non_numeric_trail_cols = {
+        "PhysAtkAttribute",
+        "Wep Status",
+        "isAddBaseAtk",
+        "Overwrite Scaling",
+        "subCategory1",
+        "subCategory2",
+        "subCategory3",
+        "subCategory4",
+    }
     numeric_columns = [
         col
         for col in output_columns
         if (source := output_source_map.get(col)) in col_positions
         and col_positions.get(source, 0) >= numeric_start
-        and source not in {"PhysAtkAttribute", "Wep Status"}
+        and source not in non_numeric_trail_cols
     ]
 
     grouped: Dict[Tuple[str, ...], Dict[str, Any]] = {}

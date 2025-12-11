@@ -187,7 +187,7 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     scaling_label = overwrite_raw if overwrite_raw not in {"", "-"} else "Weapon Scaling"
 
     base_cols = {
-        "Text Phys": ("Physical", row.get("AtkPhys", "")),
+        "Text Phys": ("Standard", row.get("AtkPhys", "")),
         "Text Mag": ("Magic", row.get("AtkMag", "")),
         "Text Fire": ("Fire", row.get("AtkFire", "")),
         "Text Ltng": ("Lightning", row.get("AtkLtng", "")),
