@@ -20,6 +20,20 @@ from helpers.output import format_path_for_console  # noqa: E402
 INPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-3.csv"
 OUTPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-4.csv"
 
+PHYSICAL_COLOR = "#F395C4"
+MAGIC_COLOR = "#57DBCE"
+FIRE_COLOR = "#F48C25"
+LIGHTNING_COLOR = "#FFE033"
+HOLY_COLOR = "#F5EB89"
+HEADER_COLOR = "#C0B194"
+POISON_COLOR = "#40BF40"
+ROT_COLOR = "#EF7676"
+BLEED_COLOR = "#C84343"
+FROST_COLOR = "#9DD7FB"
+MADNESS_COLOR = "#EEAA2B"
+SLEEP_COLOR = "#A698F4"
+DEATH_COLOR = "#A17945"
+
 KEY_FIELDS = [
     "Skill",
     "Follow-up",
@@ -93,6 +107,44 @@ def zeros_only(text: str) -> bool:
     return all(float(n) == 0 for n in nums)
 
 
+def wrap_label(label: str, color: str | None) -> str:
+    return f'<font color="{color}">{label}</font>' if color else label
+
+
+def color_for_damage_type(label: str) -> str | None:
+    l = label.lower()
+    if l in {"standard", "physical", "phys", "pierce", "slash", "strike", "blunt"}:
+        return PHYSICAL_COLOR
+    if l == "magic":
+        return MAGIC_COLOR
+    if l == "fire":
+        return FIRE_COLOR
+    if l in {"lightning", "ltng"}:
+        return LIGHTNING_COLOR
+    if l == "holy":
+        return HOLY_COLOR
+    return None
+
+
+def color_for_status(label: str) -> str | None:
+    l = label.lower()
+    if l in {"blood loss", "hemorrhage"}:
+        return BLEED_COLOR
+    if l in {"poison", "deadly poison"}:
+        return POISON_COLOR
+    if l in {"scarlet rot", "rot"}:
+        return ROT_COLOR
+    if l in {"frost", "frostbite"}:
+        return FROST_COLOR
+    if l in {"madness"}:
+        return MADNESS_COLOR
+    if l in {"sleep", "eternal sleep"}:
+        return SLEEP_COLOR
+    if l in {"death blight"}:
+        return DEATH_COLOR
+    return None
+
+
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
     with path.open() as f:
         reader = csv.DictReader(f)
@@ -163,7 +215,9 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         row["Text Wep Dmg"] = "!"
     else:
         label = "Damage" if dmg_type == "Weapon" else dmg_type
-        row["Text Wep Dmg"] = f"{label}: {dmg_mv_raw} [AR]"
+        label_color = color_for_damage_type(label)
+        label_text = wrap_label(f"{label}:", label_color)
+        row["Text Wep Dmg"] = f"{label_text} {dmg_mv_raw} [AR]"
 
     status_raw = (row.get("Status MV") or "").strip()
     wep_status_raw = (row.get("Wep Status") or "").strip()
@@ -176,18 +230,20 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         row["Text Wep Status"] = "-"
     else:
         label = "Status" if not wep_status_raw or wep_status_raw == "-" else wep_status_raw
-        num_match = re.search(r"-?\\d+(?:\\.\\d+)?", status_raw)
+        num_match = re.search(r"-?\d+(?:\.\d+)?", status_raw)
+        label_color = color_for_status(label)
+        label_text = wrap_label(f"{label}:", label_color)
         if num_match:
             mv_value = format_multiplier(float(num_match.group(0)))
-            row["Text Wep Status"] = f"{label}: {mv_value}%"
+            row["Text Wep Status"] = f"{label_text} {mv_value}%"
         else:
-            row["Text Wep Status"] = f"{label}: {status_raw}"
+            row["Text Wep Status"] = f"{label_text} {status_raw}"
 
     stance_raw = (row.get("Stance Dmg") or "").strip()
     if stance_raw in {"", "-"}:
         row["Text Stance"] = "-"
     else:
-        row["Text Stance"] = f"Stance: {stance_raw}"
+        row["Text Stance"] = f"{wrap_label('Stance:', HEADER_COLOR)} {stance_raw}"
 
     overwrite_raw = (row.get("Overwrite Scaling") or "").strip()
     scaling_label = overwrite_raw if overwrite_raw not in {"", "-"} else "Weapon Scaling"
@@ -204,7 +260,9 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         if not val_clean or val_clean == "-":
             row[col] = "-"
         else:
-            row[col] = f"{label}: {val_clean} [{scaling_label}]"
+            label_color = color_for_damage_type(label)
+            label_text = wrap_label(f"{label}:", label_color)
+            row[col] = f"{label_text} {val_clean} [{scaling_label}]"
     return row
 
 

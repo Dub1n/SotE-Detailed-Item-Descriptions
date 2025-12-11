@@ -495,7 +495,7 @@ flowchart LR
 - Input: `work/aow_pipeline/AoW-data-3.csv`
 - Output: `work/aow_pipeline/AoW-data-4.csv` (adds text-ready helper fields; future spot for formatting ready/JSON ingest).
 - Script: `scripts/build_aow/build_aow_stage4.py` (adds text columns with per-row logic).
-- Drops raw `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, `Dmg Type`, `Overwrite Scaling`, and raw base `Atk*` columns from the output while still using their Stage 3 values to populate text helpers (`Text Wep Dmg`, `Text Wep Status`, `Text Stance`). Damage text renders `{Type|Weapon} Damage: {Dmg MV} [AR]` (or `!` when Dmg Type is `-`), stance text renders `Stance: {Stance Dmg}`, and status text renders `{Wep Status|Status}: {Status MV}%` when a non-zero Status MV exists (uses the first numeric token when present, otherwise the raw string; skips when missing/zero or when Wep Status is `None`). Base damage columns are emitted as text helpers (`Text Phys/Mag/Fire/Ltng/Holy`) with `Base X Damage: {value} [{Overwrite Scaling|Weapon Scaling}]` (using `Weapon Scaling` when Overwrite Scaling is `-`).
+- Drops raw `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, `Dmg Type`, `Overwrite Scaling`, and raw base `Atk*` columns from the output while still using their Stage 3 values to populate text helpers (`Text Wep Dmg`, `Text Wep Status`, `Text Stance`). Damage text renders `{Type|Weapon} Damage: {Dmg MV} [AR]` (or `!` when Dmg Type is `-`), stance text renders `Stance: {Stance Dmg}`, and status text renders `{Wep Status|Status}: {Status MV}%` when a non-zero Status MV exists (uses the first numeric token when present, otherwise the raw string; skips when missing/zero or when Wep Status is `None`). Base damage columns are emitted as text helpers (`Text Phys/Mag/Fire/Ltng/Holy`) with `Base X Damage: {value} [{Overwrite Scaling|Weapon Scaling}]` (using `Weapon Scaling` when Overwrite Scaling is `-`). Text helper labels include inline `<font color="#...">` tags: damage labels match their element (phys/magic/fire/lightning/holy), status labels use their ailment colour (bleed/poison/rot/frost/madness/sleep/death), and stance labels use the header colour.
 
 ```mermaid
 flowchart LR
@@ -557,7 +557,6 @@ flowchart LR
 - Script: `scripts/build_aow/build_aow_stage5.py` (renders Stage 4 text helpers into a human-readable markdown layout).
 - Groups rows by `Skill`; when multiple distinct `Weapon` field values are present, emits a `#### {Weapon}` section per value (pipe-joined lists stay together). Within each skill/weapon block, rows are rendered based on whether `Follow-up`/`Hand`/`Part` are `-`, nesting indents and headers accordingly and skipping any `Text *` lines that are `-`.
 - When any row in a skill has a `Follow-up`, rows without a follow-up label render as `Skill`. Blocks are rendered without blank separator lines, `subCategorySum` strings use comma separators instead of pipes, and ` / ` inside those strings is tightened to `/`.
-- Optional `--color` flag runs text lines through `scripts/colorize_stats.py` (same rules as JSON colourization) before writing markdown; `--color-mode` selects `all` (default) or `status` patterns.
 
 ## Filesystem layout
 
