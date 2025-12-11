@@ -312,6 +312,22 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
     # Skill/Follow-up/Hand/Part/Wep Status combo so we can refuse to merge
     # when weapons have differing metadata anywhere in the cluster.
     overall_sigs: Dict[Tuple[str, str, str, str, str, str], set] = {}
+    def normalize_subcat(value: str, hand: str) -> str:
+        tokens = [t.strip() for t in (value or "").split("|") if t.strip()]
+        if hand.strip() == "2h":
+            tokens = [t for t in tokens if t != "2h Attack"]
+        return "|".join(tokens)
+
+    def row_signature(row: Dict[str, str]) -> Tuple[Tuple[str, str], ...]:
+        sig_items: List[Tuple[str, str]] = []
+        for k, v in row.items():
+            if k in AGG_COLS or k in {"Weapon", "Weapon Source"}:
+                continue
+            if k == "subCategorySum":
+                v = normalize_subcat(v, row.get("Hand", ""))
+            sig_items.append((k, v))
+        return tuple(sorted(sig_items))
+
     for row in rows:
         key = (
             row.get("Skill", ""),
@@ -321,14 +337,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             row.get("Wep Status", ""),
             row.get("Weapon", "").strip(),
         )
-        sig = tuple(
-            sorted(
-                (k, v)
-                for k, v in row.items()
-                if k not in AGG_COLS and k not in {"Weapon", "Weapon Source"}
-            )
-        )
-        overall_sigs.setdefault(key, set()).add(sig)
+        overall_sigs.setdefault(key, set()).add(row_signature(row))
 
     fixed_cols = [
         "Skill",
@@ -375,13 +384,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             if src:
                 sources_by_weapon.setdefault(weapon, []).append(src)
             # Signatures of non-numeric fields excluding Weapon/Weapon Source (per row).
-            sig = tuple(
-                sorted(
-                    (k, v)
-                    for k, v in row.items()
-                    if k not in AGG_COLS and k not in {"Weapon", "Weapon Source"}
-                )
-            )
+            sig = row_signature(row)
             sig_cache.setdefault(weapon, tuple())
             sig_cache[weapon] = tuple(sorted(set(sig_cache[weapon] + (sig,))))
 
@@ -632,7 +635,7 @@ def collapse_rows(
                 if ov and ov != "-" and ov not in overwrite_vals:
                     overwrite_vals.append(ov)
 
-            out["subCategorySum"] = ", ".join(subcats)
+            out["subCategorySum"] = "|".join(subcats)
             out["Overwrite Scaling"] = (
                 ", ".join(overwrite_vals)
                 if overwrite_vals
