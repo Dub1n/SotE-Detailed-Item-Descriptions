@@ -111,6 +111,10 @@ def wrap_label(label: str, color: str | None) -> str:
     return f'<font color="{color}">{label}</font>' if color else label
 
 
+def wrap_segment(text: str, color: str) -> str:
+    return f'<font color="{color}">{text}</font>' if text else text
+
+
 def color_for_damage_type(label: str) -> str | None:
     l = label.lower()
     if l in {"standard", "physical", "phys", "pierce", "slash", "strike", "blunt"}:
@@ -143,6 +147,50 @@ def color_for_status(label: str) -> str | None:
     if l in {"death blight"}:
         return DEATH_COLOR
     return None
+
+
+CHARGED_COLOR = "#ffd59aff"
+FP_COLOR = "#b9bec3ff"
+FP_CHARGED_COLOR = "#dabd9dff"
+DIVIDER_COLOR = "#e0ded9ff"
+FP_DIVIDER_COLOR = "#d9e0e0ff"
+
+
+def colorize_fp_block(block: str) -> str:
+    # block includes brackets
+    content = block[1:-1]
+    parts = content.split("|", 1)
+    left = wrap_segment(parts[0], FP_COLOR)
+    divider = ""
+    right = ""
+    if len(parts) == 2:
+        divider = wrap_segment("|", FP_DIVIDER_COLOR)
+        right = wrap_segment(parts[1], FP_CHARGED_COLOR)
+    return f'{wrap_segment("[", FP_COLOR)}{left}{divider}{right}{wrap_segment("]", FP_COLOR)}'
+
+
+def colorize_main_part(part: str) -> str:
+    if "|" not in part:
+        return part
+    left, right = part.split("|", 1)
+    divider = wrap_segment("|", DIVIDER_COLOR)
+    right_colored = wrap_segment(right, CHARGED_COLOR)
+    return f"{left}{divider}{right_colored}"
+
+
+def colorize_numeric_payload(payload: str) -> str:
+    if not payload:
+        return payload
+    tokens = re.split(r"(\[[^\]]*\])", payload)
+    pieces: List[str] = []
+    for tok in tokens:
+        if not tok:
+            continue
+        if tok.startswith("[") and tok.endswith("]") and re.search(r"\d", tok):
+            pieces.append(colorize_fp_block(tok))
+        else:
+            pieces.append(colorize_main_part(tok))
+    return "".join(pieces)
 
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
@@ -217,7 +265,7 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         label = "Damage" if dmg_type == "Weapon" else dmg_type
         label_color = color_for_damage_type(label)
         label_text = wrap_label(f"{label}:", label_color)
-        row["Text Wep Dmg"] = f"{label_text} {dmg_mv_raw} [AR]"
+        row["Text Wep Dmg"] = f"{label_text} {colorize_numeric_payload(dmg_mv_raw)} [AR]"
 
     status_raw = (row.get("Status MV") or "").strip()
     wep_status_raw = (row.get("Wep Status") or "").strip()
@@ -235,15 +283,15 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         label_text = wrap_label(f"{label}:", label_color)
         if num_match:
             mv_value = format_multiplier(float(num_match.group(0)))
-            row["Text Wep Status"] = f"{label_text} {mv_value}%"
+            row["Text Wep Status"] = f"{label_text} {colorize_numeric_payload(mv_value + '%')}"
         else:
-            row["Text Wep Status"] = f"{label_text} {status_raw}"
+            row["Text Wep Status"] = f"{label_text} {colorize_numeric_payload(status_raw)}"
 
     stance_raw = (row.get("Stance Dmg") or "").strip()
     if stance_raw in {"", "-"}:
         row["Text Stance"] = "-"
     else:
-        row["Text Stance"] = f"{wrap_label('Stance:', HEADER_COLOR)} {stance_raw}"
+        row["Text Stance"] = f"{wrap_label('Stance:', HEADER_COLOR)} {colorize_numeric_payload(stance_raw)}"
 
     overwrite_raw = (row.get("Overwrite Scaling") or "").strip()
     scaling_label = overwrite_raw if overwrite_raw not in {"", "-"} else "Weapon Scaling"
@@ -262,7 +310,7 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         else:
             label_color = color_for_damage_type(label)
             label_text = wrap_label(f"{label}:", label_color)
-            row[col] = f"{label_text} {val_clean} [{scaling_label}]"
+            row[col] = f"{label_text} {colorize_numeric_payload(val_clean)} [{scaling_label}]"
     return row
 
 
