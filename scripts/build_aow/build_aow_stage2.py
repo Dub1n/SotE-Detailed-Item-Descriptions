@@ -65,6 +65,13 @@ ZERO_MV_ATK_COLUMNS = [
     "AtkHoly",
 ]
 
+SUBCATEGORY_RENAMES = {
+    "Charged Weapon Skill": "Charged Skill",
+    "Charged R2": "Charged Attack",
+    "Roar Attack": "Roar",
+}
+
+
 def load_value_blacklist(path: Path) -> Dict[str, Dict[str, List[str]]]:
     if not path.exists():
         return {}
@@ -236,6 +243,22 @@ def summarize_range(raw_value: Any) -> Tuple[str, Tuple[float, float] | None]:
     return f"{fmt_number(mn)}-{fmt_number(mx)}", (mn, mx)
 
 
+def normalize_subcategory_value(value: str) -> str:
+    if value is None:
+        return value
+    text = str(value).strip()
+    return SUBCATEGORY_RENAMES.get(text, text)
+
+
+def normalize_subcategory_row(row: Mapping[str, Any]) -> Dict[str, Any]:
+    normalized = dict(row)
+    for idx in range(1, 5):
+        col = f"subCategory{idx}"
+        if col in normalized:
+            normalized[col] = normalize_subcategory_value(normalized[col])
+    return normalized
+
+
 def compute_stance_damage(
     poise_range: Tuple[float, float] | None,
     poise_mv_value: Any,
@@ -318,6 +341,9 @@ def collapse_rows(
     grouped: Dict[Tuple[str, ...], Dict[str, Any]] = {}
     warnings: List[str] = []
     forced_seen: Set[str] = set()
+
+    # Normalize subcategory labels before any grouping or force overrides.
+    rows = [normalize_subcategory_row(row) for row in rows]
 
     def source_value(row: Mapping[str, str], col: str) -> Any:
         source_col = output_source_map.get(col, col)

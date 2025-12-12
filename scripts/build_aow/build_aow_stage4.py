@@ -95,11 +95,6 @@ def parse_float(value: str) -> float | None:
         return None
 
 
-def format_multiplier(value: float) -> str:
-    text = f"{value:.3f}".rstrip("0").rstrip(".")
-    return text if text else "0"
-
-
 def zeros_only(text: str) -> bool:
     nums = re.findall(r"-?\d+(?:\.\d+)?", text or "")
     if not nums:
@@ -113,6 +108,21 @@ def wrap_label(label: str, color: str | None) -> str:
 
 def wrap_segment(text: str, color: str) -> str:
     return f'<font color="{color}">{text}</font>' if text else text
+
+
+def merge_segments(segments: List[Tuple[str | None, str]]) -> str:
+    merged: List[Tuple[str | None, str]] = []
+    for color, text in segments:
+        if not text:
+            continue
+        if merged and merged[-1][0] == color:
+            merged[-1] = (color, merged[-1][1] + text)
+        else:
+            merged.append((color, text))
+    parts: List[str] = []
+    for color, text in merged:
+        parts.append(wrap_segment(text, color) if color else text)
+    return "".join(parts)
 
 
 def color_for_damage_type(label: str) -> str | None:
@@ -159,14 +169,23 @@ FP_DIVIDER_COLOR = "#d9e0e0ff"
 def colorize_fp_block(block: str) -> str:
     # block includes brackets
     content = block[1:-1]
-    parts = content.split("|", 1)
-    left = wrap_segment(parts[0], FP_COLOR)
-    divider = ""
-    right = ""
-    if len(parts) == 2:
-        divider = wrap_segment("|", FP_DIVIDER_COLOR)
-        right = wrap_segment(parts[1], FP_CHARGED_COLOR)
-    return f'{wrap_segment("[", FP_COLOR)}{left}{divider}{right}{wrap_segment("]", FP_COLOR)}'
+    if "|" not in content:
+        # Single FP value: wrap once to avoid redundant tags on brackets.
+        return wrap_segment(block, FP_COLOR)
+    left_raw, right_raw = content.split("|", 1)
+    left_val = parse_float(left_raw.strip())
+    right_val = parse_float(right_raw.strip())
+    if left_val == 0 and right_val == 0:
+        # Charged FP-less: keep a single wrapper.
+        return wrap_segment(block, FP_COLOR)
+    segments = [
+        (FP_COLOR, "["),
+        (FP_COLOR, left_raw),
+        (FP_DIVIDER_COLOR, "|"),
+        (FP_CHARGED_COLOR, right_raw),
+        (FP_COLOR, "]"),
+    ]
+    return merge_segments(segments)
 
 
 def colorize_main_part(part: str) -> str:
@@ -278,14 +297,10 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         row["Text Wep Status"] = "-"
     else:
         label = "Status" if not wep_status_raw or wep_status_raw == "-" else wep_status_raw
-        num_match = re.search(r"-?\d+(?:\.\d+)?", status_raw)
         label_color = color_for_status(label)
-        label_text = wrap_label(f"{label}:", label_color)
-        if num_match:
-            mv_value = format_multiplier(float(num_match.group(0)))
-            row["Text Wep Status"] = f"{label_text} {colorize_numeric_payload(mv_value + '%')}"
-        else:
-            row["Text Wep Status"] = f"{label_text} {colorize_numeric_payload(status_raw)}"
+        label_with_percent = label if "(%)" in label else f"{label} (%)"
+        label_text = wrap_label(f"{label_with_percent}:", label_color)
+        row["Text Wep Status"] = f"{label_text} {colorize_numeric_payload(status_raw)}"
 
     stance_raw = (row.get("Stance Dmg") or "").strip()
     if stance_raw in {"", "-"}:
