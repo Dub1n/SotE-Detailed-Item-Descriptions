@@ -422,6 +422,7 @@ flowchart LR
   - Build a shared FP/Charged/Step layout per `Skill`/`Follow-up`/`Hand`; zero-pad missing combos to keep shapes aligned across Parts/Weapons.
   - Sum rows that share the same FP/Charged/Step slot before padding; treat `-`/empty as 0.
   - Borrow supporting stats across rows with matching layouts (fills zeros in `Status MV`/`Weapon Buff MV`/`Stance Dmg`/`Atk*` from non-zero peers, blanking donors when emptied).
+  - After weapon merges, sum supporting stats (`Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`/`AtkMag`/`AtkFire`/`AtkLtng`/`AtkHoly`) across rows that share `Skill`/`Follow-up`/`Hand`/`Part`/`Weapon` (even when `Dmg Type` differs), storing totals in the first row and blanking the donors; `Dmg MV` stays separated per `Dmg Type`.
   - Collapse Part when redundant: if every row for a `Skill`/`Follow-up`/`Hand` shares the same Part, set it to `-`.
   - Build `subCategorySum` as a deduped, order-preserving union of `subCategory1-4` (skip `-`/empty; ignore `2h Attack` when Hand is `2h`), concatenating with ` | ` when weapon-merge joins differing sets.
   - `Overwrite Scaling`: join unique non-empty values with `,` (falls back to first non-empty, then `-`).

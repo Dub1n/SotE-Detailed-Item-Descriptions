@@ -61,6 +61,16 @@ SUPPORTING_COLS = [
     "AtkLtng",
     "AtkHoly",
 ]
+SUPPORT_SUM_COLS = [
+    "Status MV",
+    "Weapon Buff MV",
+    "Stance Dmg",
+    "AtkPhys",
+    "AtkMag",
+    "AtkFire",
+    "AtkLtng",
+    "AtkHoly",
+]
 SLOT_KEY_FIELD = "_slot_keys"
 
 
@@ -278,6 +288,38 @@ def sum_numeric_strings(current: str, incoming: str) -> str:
         return fmt_number(float(cur) + float(inc))
     except (TypeError, ValueError):
         return cur
+
+
+def zero_like_shape(value: str) -> str:
+    """
+    Build a zero-valued string with the same numeric token layout as the input,
+    preserving separators so later sums can succeed.
+    """
+    tokens = tokenize_numeric(value or "")
+    if not tokens:
+        return "0"
+    rebuilt: List[str] = []
+    for kind, val in tokens:
+        rebuilt.append("0" if kind == "num" else val)
+    return "".join(rebuilt)
+
+
+def sum_support_values(current: str, incoming: str) -> str:
+    """
+    Sum supporting columns while preserving layout and treating "-" as zero.
+    When shapes mismatch, prefer the existing value to avoid data loss.
+    """
+    cur = (current or "").strip()
+    inc = (incoming or "").strip()
+    if inc in {"", "-"}:
+        return cur or "-"
+    if cur in {"", "-"} or zeros_only(cur):
+        cur = zero_like_shape(inc)
+    result = sum_numeric_strings(cur, inc)
+    # If sum failed due to shape mismatch, keep the existing value.
+    if zeros_only(result):
+        return "-"
+    return result
 
 
 class StepLayout(NamedTuple):
@@ -662,6 +704,34 @@ def collapse_supporting_stats(rows: List[Dict[str, str]]) -> None:
                 donor[col] = merged_donor
 
 
+def sum_supporting_by_weapon(rows: List[Dict[str, str]]) -> None:
+    """
+    Sum supporting stats across rows that share Skill/Follow-up/Hand/Part/Weapon
+    (but differ in Dmg Type), storing the totals in the first row and blanking
+    the donors for those columns.
+    """
+    grouped: Dict[Tuple[str, str, str, str, str], List[int]] = {}
+    for idx, row in enumerate(rows):
+        key = (
+            row.get("Skill", ""),
+            row.get("Follow-up", ""),
+            row.get("Hand", ""),
+            row.get("Part", ""),
+            row.get("Weapon", ""),
+        )
+        grouped.setdefault(key, []).append(idx)
+
+    for idxs in grouped.values():
+        if len(idxs) < 2:
+            continue
+        primary = rows[idxs[0]]
+        for donor_idx in idxs[1:]:
+            donor = rows[donor_idx]
+            for col in SUPPORT_SUM_COLS:
+                primary[col] = sum_support_values(primary.get(col, ""), donor.get(col, ""))
+                donor[col] = "-"
+
+
 def mask_zero_only_cells(rows: List[Dict[str, str]]) -> None:
     for row in rows:
         for col in AGG_COLS:
@@ -807,6 +877,7 @@ def collapse_rows(
 
     collapse_supporting_stats(output_rows)
     merged_rows = collapse_weapons(output_rows)
+    sum_supporting_by_weapon(merged_rows)
 
     for row in merged_rows:
         row.pop(SLOT_KEY_FIELD, None)
