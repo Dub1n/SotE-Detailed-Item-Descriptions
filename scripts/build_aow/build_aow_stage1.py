@@ -161,8 +161,8 @@ def infer_part(name: str, matched_skill: Optional[str] = None) -> str:
     base = re.sub(r"\bR[12]\b", "", base)
     base = re.sub(r"#\d+", "", base)
     base = re.sub(r"\[\s*\d+\s*\]", "", base)
-    # Trim leading " - " if present
-    base = base.split(" - ", 1)[1] if " - " in base else base
+    # Trim leading dash-only prefixes while preserving meaningful text before "-"
+    base = re.sub(r"^\s*-\s*", "", base)
     base = base.strip(" -:\t")
     if "(" in base or ")" in base:
         parts: List[str] = []
@@ -183,6 +183,13 @@ def infer_part(name: str, matched_skill: Optional[str] = None) -> str:
         elif re.fullmatch(r"[()\s:-]*", base):
             base = ""
     base = re.sub(r"\s{2,}", " ", base).strip()
+    if (
+        base
+        and not re.search(r"[A-Za-z0-9]", base)
+        and re.search(r"\bBullet\b", name, flags=re.IGNORECASE)
+        and "?" not in base
+    ):
+        base = ""
     if not base:
         return "Loop" if "Loop" in name else "Hit"
     return base
