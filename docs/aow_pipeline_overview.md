@@ -415,27 +415,21 @@ flowchart LR
 ## Stage 3: Collapse per skill/weapon and build FP/Charged step strings
 
 - Input: `work/aow_pipeline/AoW-data-2.csv`
-- Output: `work/aow_pipeline/AoW-data-3.csv` (collapsed rows with FP/Charged/Step strings and trimmed columns).
-- Script: `scripts/build_aow/build_aow_stage3.py` (groups, pads, and concatenates values).
-- Group keys: `Skill`, `Follow-up`, `Hand`, `Part`, `Weapon`, `Dmg Type`, `Wep Status` (weapon collapse later merges differing Wep Status values when none are `None`, keeping the shared value when unique and collapsing to `-` when mixed).
-- Removed columns: `Wep Poise Range`, `Disable Gem Attr`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `isAddBaseAtk`, `subCategory1-4`.
-- `subCategorySum`: union of all subCategory1-4 values in the group (order-preserving, deduped, comma-joined; skips `-`/empty). When weapons are merged in the second pass, differing `subCategorySum` strings are allowed and concatenated with ` | `, deduping identical strings.
-- `Overwrite Scaling`: unique values (ignoring empty/`-`) joined with `,`; missing values fall back to the first non-empty entry or `-`.
-- `Bullet Stat`: pass-through of the defaultWepAttr stat label from `skill_attr_scaling.json` (resolved via EquipParamGem).
-- After all collapses, if every row sharing a `Skill`/`Follow-up`/`Hand` combo has the same `Part`, that `Part` is set to `-` to avoid redundant labels.
-- Weapon source is merged when weapons are collapsed (joined `|` when mixed) so identical rows from category/prefix sources merge together if shapes match.
-- Weapon collapse compares numeric shapes while treating ranges as a single slot, allowing prefix/category rows with range vs single values to merge; merged weapon names are deduped across pipe-delimited lists.
-- Weapon collapse only proceeds when all non-numeric fields (excluding `Weapon`/`Weapon Source`/`Wep Status`) match across candidates for the Skill/Follow-up/Hand/Part cluster; rows with different non-`None` Wep Status values can merge and will emit `-` when multiple statuses are present.
-- `subCategorySum` comparisons ignore the `2h Attack` token when `Hand` is `2h` to avoid blocking merges for otherwise identical two-handed rows.
-- Merged weapon lists are deduped and sorted alphabetically inside the `Weapon` field after collapse.
-- When multiple rows share the same FP/Charged/Step within a grouped cluster, numeric columns are summed before padding into the FP/Charged/Step strings.
-- Supporting columns (`Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`) can be pulled forward across rows that share the same layout even when `Dmg MV` differs: non-zero tokens from later rows replace zeros in the first row with matching numeric shapes, and donor cells are blanked to `-` when emptied.
-- Aggregated columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`):
-  - Zero-pad missing combinations across Steps, Charged (0 then 1), and FP (1 then 0) up to the max Step seen across all rows sharing the same `Skill`/`Follow-up`/`Hand` (even when Parts differ); the layout is chosen once per skill-hand pair so every numeric column shares the same arrangement, padding absent combos with `0`s rather than dropping sections.
-  - After weapon-merge, any numeric cell that is entirely zeros (including ranged forms like `0-0` or padded strings like `0, 0 | 0, 0 [0]`) is replaced with `-`; cells with any non-zero are left untouched.
-  - Format per column: `fp1_uncharged_steps, … | fp1_charged_steps, … [fp0_uncharged_steps, … | fp0_charged_steps, …]` (examples: `1, 2 | 2, 3 [0, 0 | 0, 0]`).
-- Dmg Type `-` acts as a wildcard when grouping so empty placeholders don’t split otherwise matching rows.
-- Second pass: rows with identical non-Weapon columns and identical numeric arrangement are collapsed, concatenating `Weapon` with ` | ` and converting each numeric position into a range (`min-max`) when values differ (keeps single value when identical). Collapse only happens when all weapons for the skill/hand/part/dmg type/wep status share the same numeric token pattern (symmetry guard); otherwise rows stay separate.
+- Output: `work/aow_pipeline/AoW-data-3.csv` (grouped rows with FP/Charged/Step strings and trimmed metadata).
+- Script: `scripts/build_aow/build_aow_stage3.py` (pads numeric layouts, merges weapons, and concatenates per-skill stats).
+- Behavior:
+  - Drop `Wep Poise Range`, `Disable Gem Attr`, `Wep Phys/Magic/Fire/Ltng/Holy`, `isAddBaseAtk`, `subCategory1-4` after deriving aggregates.
+  - Build a shared FP/Charged/Step layout per `Skill`/`Follow-up`/`Hand`; zero-pad missing combos to keep shapes aligned across Parts/Weapons.
+  - Sum rows that share the same FP/Charged/Step slot before padding; treat `-`/empty as 0.
+  - Borrow supporting stats across rows with matching layouts (fills zeros in `Status MV`/`Weapon Buff MV`/`Stance Dmg`/`Atk*` from non-zero peers, blanking donors when emptied).
+  - Collapse Part when redundant: if every row for a `Skill`/`Follow-up`/`Hand` shares the same Part, set it to `-`.
+  - Build `subCategorySum` as a deduped, order-preserving union of `subCategory1-4` (skip `-`/empty; ignore `2h Attack` when Hand is `2h`), concatenating with ` | ` when weapon-merge joins differing sets.
+  - `Overwrite Scaling`: join unique non-empty values with `,` (falls back to first non-empty, then `-`).
+  - Two-pass weapon merge:
+    - Pass 1: group by `Skill`/`Follow-up`/`Hand`/`Part`/`Weapon`/`Dmg Type`/`Wep Status`; pad/aggregate numeric columns into FP/Charged/Step strings.
+    - Pass 2: merge rows with identical non-weapon fields and matching numeric shapes; dedupe/sort weapon names, join `Weapon Source` with `|`, collapse differing `Wep Status` to `-` (when none are `None`), and convert differing numeric positions into ranges (`min-max`; keep single when identical). Rows with incompatible shapes stay separate.
+  - After merge, replace any numeric cell that is all zeros (including ranged forms) with `-`.
+  - Output columns: `Skill`, `Follow-up`, `Hand`, `Part`, `Weapon Source`, `Weapon`, `Dmg Type`, `Dmg MV`, `Status MV`, `Wep Status`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys/AtkMag/AtkFire/AtkLtng/AtkHoly`, `Overwrite Scaling`, `subCategorySum`.
 
 ```mermaid
 flowchart LR
@@ -444,61 +438,63 @@ flowchart LR
     s3Follow["Follow-up"]
     s3Hand["Hand"]
     s3Part["Part"]
-    s3WeaponSrc["Weapon Source"]
     s3Weapon["Weapon"]
+    s3WepSrc["Weapon Source"]
     s3DmgType["Dmg Type"]
     s3DmgMV["Dmg MV"]
     s3Status["Status MV"]
     s3WepStatus["Wep Status"]
     s3Buff["Weapon Buff MV"]
     s3Stance["Stance Dmg"]
-    s3AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
+    s3Atk["AtkPhys/Mag/Fire/Ltng/Holy"]
     s3Overwrite["Overwrite Scaling"]
-    s3SubCats["subCategory1-4"]
+    s3SubCat["subCategory1-4"]
   end
+
+  layout["Build FP/Charged/Step layout per Skill/Follow-up/Hand<br>zero-pad missing combos"]
+  borrow["Borrow support stats across matching layouts<br>(fill zeros in Status/Buff/Stance/Atk*)"]
+  agg["Aggregate rows per Weapon + Part<br>sum matching slots; union subCategorySum; join Overwrite Scaling"]
+  dropParts["Drop redundant Part when shared across a skill-hand"]
+  weaponMerge["Weapon merge pass<br>merge compatible rows; range differing numbers; join Weapon/Source/Wep Status"]
+  zeroAll["Replace all-zero numeric cells with '-'"]
+
   subgraph Stage3Out["AoW-data-3.csv columns"]
     o3Skill["Skill"]
     o3Follow["Follow-up"]
     o3Hand["Hand"]
     o3Part["Part"]
-    o3WeaponSrc["Weapon Source"]
     o3Weapon["Weapon"]
+    o3WepSrc["Weapon Source"]
     o3DmgType["Dmg Type"]
-    o3DmgMV["Dmg MV (FP/Charged/Step string)"]
-    o3Status["Status MV (FP/Charged/Step string)"]
+    o3DmgMV["Dmg MV<br>FP/Charged/Step string"]
+    o3Status["Status MV<br>FP/Charged/Step string"]
     o3WepStatus["Wep Status"]
-    o3Buff["Weapon Buff MV (FP/Charged/Step string)"]
-    o3Stance["Stance Dmg (FP/Charged/Step string)"]
-    o3AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly (FP/Charged/Step strings)"]
-    o3Overwrite["Overwrite Scaling (unique, joined)"]
-    o3SubCats["subCategorySum (deduped union)"]
+    o3Buff["Weapon Buff MV<br>FP/Charged/Step string"]
+    o3Stance["Stance Dmg<br>FP/Charged/Step string"]
+    o3Atk["AtkPhys/Mag/Fire/Ltng/Holy<br>FP/Charged/Step strings"]
+    o3Overwrite["Overwrite Scaling"]
+    o3SubCat["subCategorySum"]
   end
-  Stage3In --> collapse3["Stage 3 collapse<br>group + zero-pad FP/Charged/Step"]
-  collapse3 --> support3["Lift supporting stats across rows with matching layouts<br>(even when Dmg MV differs)"]
-  support3 --> o3Skill
-  support3 --> o3Follow
-  support3 --> o3Hand
-  support3 --> o3Part
-  support3 --> o3WeaponSrc
-  support3 --> o3Weapon
-  support3 --> o3DmgType
-  support3 --> o3DmgMV
-  support3 --> o3Status
-  support3 --> o3WepStatus
-  support3 --> o3Buff
-  support3 --> o3Stance
-  support3 --> o3AtkStats
-  support3 --> o3Overwrite
-  support3 --> o3SubCats
+
+  Stage3In --> layout --> borrow --> agg --> dropParts --> weaponMerge --> zeroAll --> Stage3Out
 ```
 
 ## Stage 4: Text helper columns
 
 - Input: `work/aow_pipeline/AoW-data-3.csv`
-- Output: `work/aow_pipeline/AoW-data-4.csv` (adds text-ready helper fields; future spot for formatting ready/JSON ingest).
-- Script: `scripts/build_aow/build_aow_stage4.py` (adds text columns with per-row logic).
-- Drops raw `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, `Dmg Type`, `Overwrite Scaling`, and raw base `Atk*` columns from the output while still using their Stage 3 values to populate text helpers (`Text Wep Dmg`, `Text Wep Status`, `Text Stance`). Damage text renders `{Type|Weapon} Damage: {Dmg MV} [AR]` (or `!` when Dmg Type is `-`), stance text renders `Stance: {Stance Dmg}`, and status text renders `{Wep Status|Status} (%): {Status MV}` when a non-zero Status MV exists (uses the raw string; skips when missing/zero or when Wep Status is `None`). Base damage columns are emitted as text helpers (`Text Phys/Mag/Fire/Ltng/Holy`) with `Base X Damage: {value} [{Overwrite Scaling|Weapon Scaling}]` (using `Weapon Scaling` when Overwrite Scaling is `-`). Text helper labels include inline `<font color="#...">` tags: damage labels match their element (phys/magic/fire/lightning/holy), status labels use their ailment colour (bleed/poison/rot/frost/madness/sleep/death), stance labels use the header colour, and numeric payloads colour charged sections (`|` divider + charged values), FP-less sections (`[]` + values), FP-less charged sections, and charged FP-less (`[0|0]`) with minimal font wrapping to avoid redundant tags.
-- Supports `--no-color` to suppress all font tags (e.g., `make stage4 --no-color`).
+- Output: `work/aow_pipeline/AoW-data-4.csv` (adds text helper fields for markdown/ready ingestion).
+- Script: `scripts/build_aow/build_aow_stage4.py` (formats text helpers, colors optional).
+- Behavior:
+  - Normalize `subCategorySum`: split on `|`, strip empties/`-`, dedupe preserving order.
+  - Zero-only columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `Atk*`, etc.) become `-` when every numeric token is zero.
+  - Text helpers (skip columns that are `-`/empty):
+    - `Text Wep Dmg`: `Damage:` + colored label from `Dmg Type` (`!` when `Dmg Type` is `-`), numeric payload colorizes FP blocks (`[x|y]`) and charged dividers.
+    - `Text Wep Status`: `{Wep Status|Status} (%)` label (colored per ailment) + raw `Status MV` payload with FP/charged coloring; emits `-` when status data missing/zero/None.
+    - `Text Stance`: `Stance:` label (header color) + `Stance Dmg` payload with FP/charged coloring; `-` when empty.
+    - `Text Phys/Mag/Fire/Ltng/Holy`: `{Element}: {Atk*} [{Overwrite Scaling|Weapon Scaling}]` with element colors; `-` when empty.
+    - `Text Name`, `Text Category` placeholders are seeded empty for downstream use.
+  - Drops numeric/raw columns no longer needed: `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, `Dmg Type`, `Overwrite Scaling`, base `Atk*`, weapon base columns, poise metadata.
+  - Coloring: uses Stage 4 palette for elements/status/stance; FP-less and charged FP-less blocks collapse to single wrappers to avoid redundant tags. `--no-color` disables all font tags (plain text).
 
 ```mermaid
 flowchart LR
@@ -507,21 +503,27 @@ flowchart LR
     s4Follow["Follow-up"]
     s4Hand["Hand"]
     s4Part["Part"]
-    s4WeaponSrc["Weapon Source"]
     s4Weapon["Weapon"]
+    s4WepSrc["Weapon Source"]
     s4DmgType["Dmg Type"]
-    s4DmgMV["Dmg MV (FP/Charged/Step string)"]
-    s4Status["Status MV (FP/Charged/Step string)"]
+    s4DmgMV["Dmg MV<br>FP/Charged/Step"]
+    s4Status["Status MV<br>FP/Charged/Step"]
     s4WepStatus["Wep Status"]
-    s4Buff["Weapon Buff MV (FP/Charged/Step string)"]
-    s4Stance["Stance Dmg (FP/Charged/Step string)"]
-    s4AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly (FP/Charged/Step strings)"]
+    s4Buff["Weapon Buff MV<br>FP/Charged/Step"]
+    s4Stance["Stance Dmg<br>FP/Charged/Step"]
+    s4Atk["AtkPhys/Mag/Fire/Ltng/Holy<br>FP/Charged/Step"]
     s4Overwrite["Overwrite Scaling"]
-    s4SubCats["subCategorySum"]
+    s4SubCat["subCategorySum"]
   end
+
+  normalize4["Clean subCategorySum<br>dedupe, drop '-'"]
+  zero4["Zero-only -> '-' for MV/Buff/Stance/Atk*"]
+  textHelpers["Build text helpers<br>Damage / Status (%) / Stance / base elements<br>color FP + charged spans (optional)"]
+  drop4["Drop raw numeric/metadata columns"]
+
   subgraph Stage4Out["AoW-data-4.csv columns"]
     o4Skill["Skill"]
-    o4TextName["Text Name"]
+    o4TextName["Text Name (placeholder)"]
     o4Follow["Follow-up"]
     o4Hand["Hand"]
     o4Part["Part"]
@@ -535,32 +537,63 @@ flowchart LR
     o4TextFire["Text Fire"]
     o4TextLtng["Text Ltng"]
     o4TextHoly["Text Holy"]
-    o4SubCats["subCategorySum"]
-    o4TextCategory["Text Category"]
+    o4SubCat["subCategorySum"]
+    o4TextCategory["Text Category (placeholder)"]
   end
-  Stage4In --> passthrough4["Stage 4: add text helpers<br>(status label adds (%) and compact FP brackets)"]
-  passthrough4 --> o4Skill
-  passthrough4 --> o4TextName
-  passthrough4 --> o4Follow
-  passthrough4 --> o4Hand
-  passthrough4 --> o4Part
-  passthrough4 --> o4Weapon
-  passthrough4 --> o4TextWepDmg
-  passthrough4 --> o4TextWepStatus
-  passthrough4 --> o4Buff
-  passthrough4 --> o4TextStance
-  passthrough4 --> o4SubCats
-  passthrough4 --> o4TextCategory
+
+  Stage4In --> normalize4 --> zero4 --> textHelpers --> drop4 --> Stage4Out
 ```
 
 ## Stage 5: Markdown render
 
 - Input: `work/aow_pipeline/AoW-data-4.csv`
-- Output: `work/aow_pipeline/AoW-data-5.md` (markdown skill summary).
-- Script: `scripts/build_aow/build_aow_stage5.py` (renders Stage 4 text helpers into a human-readable markdown layout).
-- Groups rows by `Skill`; when multiple distinct `Weapon` field values are present, emits a `#### {Weapon}` section per value (pipe-joined lists stay together). Within each skill/weapon block, rows are rendered based on whether `Follow-up`/`Hand`/`Part` are `-`, nesting indents and headers accordingly and skipping any `Text *` lines that are `-`.
-- When any row in a skill has a `Follow-up`, rows without a follow-up label render as `Skill`. Blocks are rendered without blank separator lines, `subCategorySum` strings use comma separators instead of pipes, and ` / ` inside those strings is tightened to `/`.
+- Output: `work/aow_pipeline/AoW-data-5.md` (markdown skill summary; color depends on Stage 4).
+- Script: `scripts/build_aow/build_aow_stage5.py` (renders Stage 4 text helpers into nested markdown).
+- Behavior:
+  - Group by `Skill`; when multiple distinct `Weapon` values exist, emit a `#### {Weapon}` section per value (pipe-joined lists stay together).
+  - Within each skill/weapon group, render blocks based on `Follow-up`/`Hand`/`Part` presence, indenting nested parts and skipping `Text *` lines that are `-`.
+  - If any row in a skill has a `Follow-up`, rows lacking a follow-up label render as `Skill`.
+  - `subCategorySum` is reformatted with commas (instead of pipes) and tight `/`.
+  - Output stays colourised when Stage 4 used colors; pair with Stage 5 colorizer (below) when Stage 4 ran with `--no-color`.
 - Feeds Stage 6, which embeds these markdown blocks into `ready/skill.json` info fields.
+
+```mermaid
+flowchart LR
+  subgraph Stage5In["AoW-data-4.csv columns"]
+    s5Skill["Skill"]
+    s5Follow["Follow-up"]
+    s5Hand["Hand"]
+    s5Part["Part"]
+    s5Weapon["Weapon"]
+    s5TextWepDmg["Text Wep Dmg"]
+    s5TextWepStatus["Text Wep Status"]
+    s5TextStance["Text Stance"]
+    s5TextPhys["Text Phys"]
+    s5TextMag["Text Mag"]
+    s5TextFire["Text Fire"]
+    s5TextLtng["Text Ltng"]
+    s5TextHoly["Text Holy"]
+    s5SubCat["subCategorySum"]
+  end
+
+  groupSkill["Group by Skill<br>emit ### Skill"]
+  weaponSplit["Split blocks per Weapon when multiple values<br>emit #### {Weapon}"]
+  layoutLines["Render lines by Follow-up/Hand/Part<br>indent nested parts; drop '-' helpers<br>reformat subCategorySum with commas"]
+
+  subgraph Stage5Out["AoW-data-5.md"]
+    o5["Markdown skill blocks<br>(colour depends on Stage 4/no-color)"]
+  end
+
+  Stage5In --> groupSkill --> weaponSplit --> layoutLines --> o5
+```
+
+## Optional: Stage 5 colorizer (plain → coloured)
+
+- Input: `work/aow_pipeline/AoW-data-5.md` generated without colours (e.g., Stage 4 run with `--no-color`).
+- Output: `work/aow_pipeline/AoW-data-5-colored.md` (mirrors Stage 5 coloured output).
+- Script: `scripts/build_aow/build_aow_stage5_color.py` (reapplies Stage 4 colour rules to damage/status/stance and FP/charged spans).
+- Usage: `python scripts/build_aow/build_aow_stage5_color.py --input work/aow_pipeline/AoW-data-5.md --output work/aow_pipeline/AoW-data-5-colored.md` (paths optional).
+
 
 ## Stage 6: Append markdown stats into ready skill info
 
@@ -597,9 +630,11 @@ flowchart LR
 - `work/aow_pipeline/AoW-data-3.csv` (generated Stage 3 collapsed output).
 - `work/aow_pipeline/AoW-data-4.csv` (generated Stage 4 text-helper output).
 - `work/aow_pipeline/AoW-data-5.md` (Stage 5 markdown render consumed by Stage 6).
+- `work/aow_pipeline/AoW-data-5-colored.md` (optional coloured render when Stage 4 ran with `--no-color`).
 - `work/aow_pipeline/force_collapse_pairs.json` (forced collapse groups + overrides applied in Stage 2).
 - `work/aow_pipeline/` (workspace for outputs and scratch; add temp files as needed).
 - `scripts/build_aow/build_aow_stage0.py` (skill list), `scripts/build_aow/build_aow_stage1.py` (stage 1 collate), `scripts/build_aow/build_aow_stage2.py` (stage 2 collapse), `scripts/build_aow/build_aow_stage3.py` (stage 3 collapse + FP/Charged strings), `scripts/build_aow/build_aow_stage4.py` (stage 4 text helpers), `scripts/build_aow/build_aow_stage5.py` (stage 5 markdown render), `scripts/build_aow/build_aow_stage6.py` (stage 6 ready population).
+- `scripts/build_aow/build_aow_stage5_color.py` (optional Stage 5 colourizer when Stage 4 output is plain).
 - `Makefile` (`make stage0|stage1|stage2|stage3|stage4|stage5|stage6|stages` with optional flags passed after the target).
 
 ## How to regenerate Stage 1
@@ -627,7 +662,9 @@ python scripts/build_aow/build_aow_stage3.py
 python scripts/build_aow/build_aow_stage4.py
 # 6) Render markdown helper output
 python scripts/build_aow/build_aow_stage5.py
-# 7) Append markdown stats into ready/skill.json info fields
+# 7) (Optional) If Stage 4 was run with --no-color, recolor markdown
+python scripts/build_aow/build_aow_stage5_color.py
+# 8) Append markdown stats into ready/skill.json info fields
 python scripts/build_aow/build_aow_stage6.py
 # or via make (flags can be passed after the target):
 #   make stage6 --output work/responses/ready/skill.json
