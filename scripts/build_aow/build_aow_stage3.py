@@ -61,6 +61,7 @@ SUPPORTING_COLS = [
     "AtkLtng",
     "AtkHoly",
 ]
+SLOT_KEY_FIELD = "_slot_keys"
 
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
@@ -342,6 +343,19 @@ def aggregate_steps(
     return "-"
 
 
+def build_slot_coverage(rows: List[Dict[str, str]]) -> Tuple[Tuple[int, int, int], ...]:
+    slots = set()
+    for row in rows:
+        try:
+            step = int(str(row.get("Step", "") or "1"))
+        except ValueError:
+            step = 1
+        fp_val = 0 if str(row.get("FP", "")).strip() == "0" else 1
+        charged_val = 1 if str(row.get("Charged", "")).strip() == "1" else 0
+        slots.add((fp_val, charged_val, step))
+    return tuple(sorted(slots))
+
+
 def build_step_layout(rows: List[Dict[str, str]]) -> StepLayout:
     max_step = 1
     has_fp0 = False
@@ -395,6 +409,8 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         sig_items: List[Tuple[str, str]] = []
         for k, v in row.items():
             if k in AGG_COLS or k in {"Weapon", "Weapon Source", "Wep Status"}:
+                continue
+            if k == SLOT_KEY_FIELD:
                 continue
             if k == "subCategorySum":
                 v = normalize_subcat(v, row.get("Hand", ""))
@@ -454,7 +470,11 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             for col in AGG_COLS:
                 pat, _ = shape_with_ranges(row.get(col, "") or "")
                 shape_key += pat
-            shape_key = tuple(shape_key)
+            slot_keys = tuple(
+                f"slot:{fp}:{charged}:{step}"
+                for fp, charged, step in row.get(SLOT_KEY_FIELD, ())
+            )
+            shape_key = tuple(shape_key) + slot_keys
             shapes_by_weapon.setdefault(weapon, set()).add(shape_key)
             rows_by_shape_weapon.setdefault(shape_key, {}).setdefault(weapon, []).append(row)
             src = (row.get("Weapon Source") or "").strip()
@@ -465,45 +485,46 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             sig_cache.setdefault(weapon, tuple())
             sig_cache[weapon] = tuple(sorted(set(sig_cache[weapon] + (sig,))))
 
-        # Only merge if every weapon has identical shape set.
-        shape_sets = list(shapes_by_weapon.values())
-        if not shape_sets:
+        if not shapes_by_weapon:
             merged.extend(bucket)
-            continue
-        if any(s != shape_sets[0] for s in shape_sets[1:]):
-            merged.extend(bucket)
-            continue
-
-        # Guard: non-numeric fields (except Weapon/Weapon Source) must match per row set.
-        sigs = list(sig_cache.values())
-        if sigs and any(sig != sigs[0] for sig in sigs[1:]):
-            for rows_list in rows_by_shape_weapon.values():
-                for entries in rows_list.values():
-                    merged.extend(entries)
-            continue
-        # Guard: across the full Skill/Follow-up/Hand/Part/Wep Status cluster,
-        # every weapon must share the same set of non-numeric row signatures;
-        # otherwise leave rows separate.
-        cluster_key = (
-            bucket[0].get("Skill", ""),
-            bucket[0].get("Follow-up", ""),
-            bucket[0].get("Hand", ""),
-            bucket[0].get("Part", ""),
-            status_merge_key(bucket[0].get("Wep Status", "")),
-        )
-        sig_sets = [
-            overall_sigs.get(cluster_key + (weapon,), set()) for weapon in shapes_by_weapon
-        ]
-        if sig_sets and any(sig != sig_sets[0] for sig in sig_sets[1:]):
-            for rows_list in rows_by_shape_weapon.values():
-                for entries in rows_list.values():
-                    merged.extend(entries)
             continue
 
         # Merge per shape key.
         for shape_key, weapon_rows in rows_by_shape_weapon.items():
-            # All weapons should be present; otherwise skip merge for safety.
-            if len(weapon_rows) != len(shapes_by_weapon):
+            weapons_for_shape = list(weapon_rows.keys())
+
+            # Shape symmetry guard: every weapon in this shape must have the
+            # same set of shapes across the cluster (so we don't merge a weapon
+            # that also carries an extra layout elsewhere).
+            shape_sets_subset = [shapes_by_weapon[w] for w in weapons_for_shape]
+            if any(s != shape_sets_subset[0] for s in shape_sets_subset[1:]):
+                for rows_list in weapon_rows.values():
+                    merged.extend(rows_list)
+                continue
+
+            # Guard: non-numeric fields (except Weapon/Weapon Source) must
+            # match per row set for the weapons in this shape cluster.
+            sigs_subset = [sig_cache.get(w, tuple()) for w in weapons_for_shape]
+            if sigs_subset and any(sig != sigs_subset[0] for sig in sigs_subset[1:]):
+                for rows_list in weapon_rows.values():
+                    merged.extend(rows_list)
+                continue
+
+            # Guard: across the full Skill/Follow-up/Hand/Part/Wep Status
+            # cluster, every weapon participating in this merge must share the
+            # same set of non-numeric row signatures.
+            cluster_key = (
+                bucket[0].get("Skill", ""),
+                bucket[0].get("Follow-up", ""),
+                bucket[0].get("Hand", ""),
+                bucket[0].get("Part", ""),
+                status_merge_key(bucket[0].get("Wep Status", "")),
+            )
+            sig_sets_subset = [
+                overall_sigs.get(cluster_key + (weapon,), set())
+                for weapon in weapons_for_shape
+            ]
+            if sig_sets_subset and any(sig != sig_sets_subset[0] for sig in sig_sets_subset[1:]):
                 for rows_list in weapon_rows.values():
                     merged.extend(rows_list)
                 continue
@@ -669,17 +690,21 @@ def normalize_parts(rows: List[Dict[str, str]]) -> None:
                 rows[i]["Part"] = "-"
 
 
-def build_layout_map(rows: List[Dict[str, str]]) -> Dict[Tuple[str, str, str], StepLayout]:
+def build_layout_map(
+    rows: List[Dict[str, str]]
+) -> Dict[Tuple[str, str, str, str], StepLayout]:
     """
-    Build shared FP/Charged/Step layouts per (Skill, Follow-up, Hand) so all
-    rows of a skill use the widest zero-padding even across different parts.
+    Build shared FP/Charged/Step layouts per (Skill, Follow-up, Hand, Weapon)
+    so rows for the same weapon share padding without forcing other weapons
+    in the skill to adopt a wider layout.
     """
-    grouped: Dict[Tuple[str, str, str], List[Dict[str, str]]] = {}
+    grouped: Dict[Tuple[str, str, str, str], List[Dict[str, str]]] = {}
     for row in rows:
         key = (
             row.get("Skill", ""),
             row.get("Follow-up", ""),
             row.get("Hand", ""),
+            row.get("Weapon", ""),
         )
         grouped.setdefault(key, []).append(row)
     return {key: build_step_layout(rset) for key, rset in grouped.items()}
@@ -771,8 +796,10 @@ def collapse_rows(
                 out["Skill"],
                 out["Follow-up"],
                 out["Hand"],
+                out["Weapon"],
             )
             layout = layout_map.get(layout_key) or build_step_layout(subrows)
+            out[SLOT_KEY_FIELD] = build_slot_coverage(subrows)
             for col in AGG_COLS:
                 out[col] = aggregate_steps(subrows, col, layout)
 
@@ -780,6 +807,9 @@ def collapse_rows(
 
     collapse_supporting_stats(output_rows)
     merged_rows = collapse_weapons(output_rows)
+
+    for row in merged_rows:
+        row.pop(SLOT_KEY_FIELD, None)
 
     mask_zero_only_cells(merged_rows)
     normalize_parts(merged_rows)
