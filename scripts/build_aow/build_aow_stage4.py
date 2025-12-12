@@ -19,6 +19,7 @@ from helpers.output import format_path_for_console  # noqa: E402
 
 INPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-3.csv"
 OUTPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-4.csv"
+COLOR_ENABLED = True
 
 PHYSICAL_COLOR = "#F395C4"
 MAGIC_COLOR = "#57DBCE"
@@ -103,11 +104,17 @@ def zeros_only(text: str) -> bool:
 
 
 def wrap_label(label: str, color: str | None) -> str:
+    if not COLOR_ENABLED or not color:
+        return label
     return f'<font color="{color}">{label}</font>' if color else label
 
 
 def wrap_segment(text: str, color: str) -> str:
-    return f'<font color="{color}">{text}</font>' if text else text
+    if not text:
+        return text
+    if not COLOR_ENABLED:
+        return text
+    return f'<font color="{color}">{text}</font>'
 
 
 def merge_segments(segments: List[Tuple[str | None, str]]) -> str:
@@ -377,7 +384,15 @@ def main() -> None:
         default=OUTPUT_DEFAULT,
         help="Path to write AoW-data-4.csv",
     )
+    parser.add_argument(
+        "--no-color",
+        action="store_true",
+        help="Disable font color tags in generated text columns.",
+    )
     args = parser.parse_args()
+
+    global COLOR_ENABLED
+    COLOR_ENABLED = not args.no_color
 
     rows, fieldnames = read_rows(args.input)
     output_rows, output_columns = transform_rows(rows, fieldnames)
