@@ -6,9 +6,10 @@ STAGE2 := scripts/build_aow/build_aow_stage2.py
 STAGE3 := scripts/build_aow/build_aow_stage3.py
 STAGE4 := scripts/build_aow/build_aow_stage4.py
 STAGE5 := scripts/build_aow/build_aow_stage5.py
+STAGE6 := scripts/build_aow/build_aow_stage6.py
 CHECK_PARTS := scripts/build_aow/check_duplicate_skill_parts.py
 
-KNOWN_TARGETS := stage0 stage1 stage2 stage3 stage4 stage5 check-parts stages all
+KNOWN_TARGETS := stage0 stage1 stage2 stage3 stage4 stage5 stage6 check-parts stages all
 EXTRA_ARGS := $(filter-out $(KNOWN_TARGETS),$(MAKECMDGOALS))
 
 .PHONY: $(KNOWN_TARGETS)
@@ -31,10 +32,13 @@ stage4:
 stage5:
 	$(PYTHON) $(STAGE5) $(if $(filter $@,$(MAKECMDGOALS)),$(EXTRA_ARGS))
 
+stage6:
+	$(PYTHON) $(STAGE6) $(if $(filter $@,$(MAKECMDGOALS)),$(EXTRA_ARGS))
+
 check-parts:
 	$(PYTHON) $(CHECK_PARTS) $(if $(filter $@,$(MAKECMDGOALS)),$(EXTRA_ARGS))
 
-stages: stage0 stage1 stage2 stage3 stage4 stage5
+stages: stage0 stage1 stage2 stage3 stage4 stage5 stage6
 
 all: stages
 

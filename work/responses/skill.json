@@ -1,0 +1,786 @@
+[
+  {
+    "id": 103,
+    "name": "Spinning Slash",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Spinning Slash</font>",
+    "info": "Spin in place to carve every foe around you, repeating to continue the assault. When wielded on the Dragon Halberd, the follow-up strike releases ice lightning that adds <font color=\"#FFE033\">lightning damage</font>, <font color=\"#9DD7FB\">frostbite</font> buildup, and 10 extra <font color=\"#C0B194\">stance damage</font> to every hit. Cannot be parried while consuming <font color=\"#E0B985\">FP</font>."
+  },
+  {
+    "id": 118,
+    "name": "Loretta's Slash",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Loretta's Slash</font>",
+    "info": "Leap forward while cloaking the blade in glintstone, then dive into a sweeping slash as you land to catch distant foes. Each follow-up inherits any weapon buffs already on the armament, scales with the weapon's attack rating, and cannot be parried."
+  },
+  {
+    "id": 122,
+    "name": "Storm Assault",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Storm Assault</font>",
+    "info": "Wrap yourself in a cyclone, leap forward, and drive the armament into the ground to detonate another spiral of storm winds at the point of impact. The takeoff gust damages foes around you before the diving thrust lands, and the swirling winds linger briefly to pin targets in place."
+  },
+  {
+    "id": 123,
+    "name": "Stormcaller",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Stormcaller</font>",
+    "info": "Spin the armament to surround yourself with storm winds, then repeat the input up to two times to step forward and unfold wider cyclones. Cannot be parried while consuming <font color=\"#E0B985\">FP</font>."
+  },
+  {
+    "id": 200,
+    "name": "Glintblade Phalanx",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Glintblade Phalanx</font>",
+    "info": "Conjure four magic dagger projectiles overhead which hover defensively until they automatically launch at the nearest enemy that enter range, dealing magic damage that scales with Intelligence. Follow-up with a strong attack to launch into a lunging thrust, dealing damage based on Attack Rating with damage type matching the weapon's. Both the glintblades and the follow-up can be parried, while the activation can only not be parried while consuming FP."
+  },
+  {
+    "id": 214,
+    "name": "Flaming Strike",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Flaming Strike</font>",
+    "info": "Sweep your off-hand to send out a short arc of flame; follow-up with a strong attack lunging slash that cuts through the blaze and coats the armament in fire, adding 90 <font color=\"#F48C25\">fire damage</font> to the weapon for 40 seconds. The ignition wave cannot be parried but the follow-up can. Counts as a weapon buff."
+  },
+  {
+    "id": 302,
+    "name": "Parry",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Parry</font>",
+    "info": "Swing the bound armament with precise timing to deflect an incoming melee attack, breaking the enemy stance and setting up for a critical riposte with a light attack if you are close enough. Only certain melee attacks can be parried."
+  },
+  {
+    "id": 303,
+    "name": "Buckler Parry",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Buckler Parry</font>",
+    "info": "Flick out the buckler just before impact to deflect an attack, breaking the enemy stance and setting up for a critical riposte with a light attack if you are close enough. Only certain melee attacks can be parried."
+  },
+  {
+    "id": 304,
+    "name": "Parry",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Parry</font>",
+    "info": "Use precise timing to swat aside a melee attack and stagger the foe, breaking the enemy stance and setting up for a critical riposte with a light attack if you are close enough. Only certain melee attacks can be parried."
+  },
+  {
+    "id": 306,
+    "name": "Storm Wall",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Storm Wall</font>",
+    "info": "Swing the shield to raise a short wall of storm winds, deflecting small physical projectiles and parrying susceptible melee attacks to break an enemy stance."
+  },
+  {
+    "id": 309,
+    "name": "Thops's Barrier",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Thops's Barrier</font>",
+    "info": "Swing the shield through a conjured sigil to nullify an incoming deflectable sorcery or incantation, also parrying susceptible melee attacks to break an enemy stance."
+  },
+  {
+    "id": 404,
+    "name": "Enchanted Shot",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Enchanted Shot</font>",
+    "info": "Hold the bow in a steady stance to infuse the next arrow with guiding essence, causing it to fly faster than normal, curve toward its target, and reach farther. While this stance is active each shot deals 50% more damage and status buildup and costs 50% more stamina."
+  },
+  {
+    "id": 405,
+    "name": "Sky Shot",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Sky Shot</font>",
+    "info": "Crouch in a low stance to fire an arrow almost straight upward so it rains down on the spot where the target stood when released, often registering as a headshot and clearing low cover along the way."
+  },
+  {
+    "id": 406,
+    "name": "Rain of Arrows",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Rain of Arrows</font>",
+    "info": "Hold to crouch in a low archery stance, firing each shot nearly straight up so it splits into a rain that lands where the target stood."
+  },
+  {
+    "id": 502,
+    "name": "Storm Stomp",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Storm Stomp</font>",
+    "info": "Stomp to summon a tight cyclone that hits around you, keeping foes locked in hitstun and setting up follow-up attacks with the bound armament. Cannot be parried."
+  },
+  {
+    "id": 503,
+    "name": "Kick",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Kick</font>",
+    "info": "Deliver a fast, high kick that instantly staggers guarding enemies, opening them to a guard break while you are bare-handed in either hand. Cannot be parried."
+  },
+  {
+    "id": 1004,
+    "name": "Bubble Shower",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Bubble Shower</font>",
+    "info": "Blow the horn to launch a slow-moving spray of bubbles that drift forward before raining down in front of you."
+  },
+  {
+    "id": 1008,
+    "name": "Moonlight Greatsword",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Moonlight Greatsword</font>",
+    "info": "Raise the sword aloft to wreathe it in the dark moon's light for 60 seconds, adding 65 <font color=\"#57DBCE\">magic damage</font> and 15 <font color=\"#9DD7FB\">frostbite accumulation</font> to every attack. Heavy attacks during the buff launch chargeable moonlight projectiles which are affected by skill charge and skill damage buffs, while only the weapon hitbox benefits from attack charge buffs; the heavy swing hitbox can still be parried, and the projectiles can be parried by Golden Relatiation but not deflected by Eternel Darkness. The weapon's hit during the skill activation deals full status buildup, stance damage, and 50% damage or 65% charged. Counts as a weapon buff."
+  },
+  {
+    "id": 1011,
+    "name": "Bear Witness!",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Bear Witness!</font>",
+    "info": "Drag the small dragon head along the ground into a fire-laced uppercut before launching a wide barrage of fireballs overhead."
+  },
+  {
+    "id": 1014,
+    "name": "Taker's Flames",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Taker's Flames</font>",
+    "info": "Raise the blade to wreath it in blasphemous flame before slamming forward and sending a chain of eruptions along the ground, restoring 10% of <font color=\"#E0B985\">maximum HP</font> plus 150 with each enemy hit. The eruption wave deals pure <font color=\"#F48C25\">fire damage</font>, scales with <font color=\"#E0B985\">faith</font>, cannot be parried, and benefits from the Talisman of the Dread and Fire Scorpion Charm."
+  },
+  {
+    "id": 1024,
+    "name": "Spearcall Ritual",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Spearcall Ritual</font>",
+    "info": "Hoist the spear skyward to summon a cluster of spectral spears above the target that rain down after a short delay."
+  },
+  {
+    "id": 1026,
+    "name": "Thundercloud Form",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Thundercloud Form</font>",
+    "info": "Transform into a rushing red thundercloud and fly through the air before plunging down with a lightning-charged strike; holding the skill extends the cloud's travel distance. Cannot be parried."
+  },
+  {
+    "id": 1027,
+    "name": "Cursed-Blood Slice",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Cursed-Blood Slice</font>",
+    "info": "Brace, then leap into a diagonal slash that paints a cursed trail which detonates moments later; repeat with another input for a horizontal follow-up that leaves a second delayed explosion. Cannot parried while consuming FP."
+  },
+  {
+    "id": 1030,
+    "name": "I Command Thee, Kneel!",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: I Command Thee, Kneel!</font>",
+    "info": "Slam the axe into the ground twice in succession to unleash two wide shockwaves, then repeat the skill for a third, larger shockwave. Cannot be parried while consuming FP."
+  },
+  {
+    "id": 1034,
+    "name": "Bloodboon Ritual",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Bloodboon Ritual</font>",
+    "info": "Raise the sacred spear and pierce the Formless Mother up to three times, each thrust spawning an explosion of bloodflame that rains droplets around you before coating the weapon. The third thrust hits harder and recovers more slowly, while the armament stays imbued for 20 seconds with 30 added <font color=\"#F48C25\">fire damage</font> and steady <font color=\"#C84343\">blood loss accumulation</font> on every hit; damage scales with weapon upgrade level and <font color=\"#E0B985\">Arcane</font>, and each detonation deals pure <font color=\"#F48C25\">fire damage</font>."
+  },
+  {
+    "id": 1049,
+    "name": "Ancient Lightning Spear",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Ancient Lightning Spear</font>",
+    "info": "Imbue the armament with the ancient dragons' red lightning, take a short step forward, and fling it as a spear of pure <font color=\"#FFE033\">lightning damage</font> that knocks back foes when fully charged and flinches tougher enemies."
+  },
+  {
+    "id": 1053,
+    "name": "Last Rites",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Last Rites</font>",
+    "info": "Raise the epitaph to bathe yourself and nearby allies in sacred order for 60 seconds, adding 25 <font color=\"#F5EB89\">holy damage</font> to armaments, increasing <font color=\"#E0B985\">all damage inflicted</font> by 10% (5% in PvP) and against Those Who Live in Death by a further 100% while preventing them from reviving. Cannot be parried. Counts as an aura buff."
+  },
+  {
+    "id": 1169,
+    "name": "Radahn's Rain",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Radahn's Rain</font>",
+    "info": "Settle into Radahn's hunting stance, ready your bow, and fire a sudden flurry of arrows into the sky so each projectile splits overhead and pours down where the target stood, overwhelming foes with multiple hits. The barrage deals reduced damage and status buildup per projectile but is amplified when you switch to Radahn's Spears."
+  },
+  {
+    "id": 1172,
+    "name": "Magma Shower",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Magma Shower</font>",
+    "info": "Slash in a tight circle to scatter pools of magma around you, then use an additional input to spin again and carpet the area in fire; each spin leaves lingering magma pools that continue scorching foes. Cannot be parried while consuming FP."
+  },
+  {
+    "id": 1178,
+    "name": "Transient Moonlight",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Transient Moonlight</font>",
+    "info": "Sheathe the blade while moving freely, then release into a stepping horizontal slash or a short-hop vertical slash depending on the follow-up input; both slashes launch waves of light. Can be parried; projectiles can be parried or reflected. Counts as a stance skill."
+  },
+  {
+    "id": 1186,
+    "name": "Thunderstorm",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Thunderstorm</font>",
+    "info": "Imbue the armament with lightning and spin it to surround yourself with a storm, chaining up to two additional spins with further inputs. The weapon stays infused for 40 seconds, adding 120 <font color=\"#FFE033\">lightning damage</font> to every attack. Cannot be parried and does not trigger multi-hit effects."
+  },
+  {
+    "id": 1197,
+    "name": "Contagious Fury",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Contagious Fury</font>",
+    "info": "Raise the jellyfish shield to channel its rage for 30 seconds, draping yourself in red energy that increases <font color=\"#E0B985\">all damage inflicted</font> by 12.5%. The skill counts as a unique buff and ends immediately if you swap the shield."
+  },
+  {
+    "id": 2000,
+    "name": "Dryleaf Whirlwind",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Dryleaf Whirlwind</font>",
+    "info": "Leap upward in a cyclone of four rapid kicks before driving a final heel drop into the ground, extending the reach of all kicking attacks with <font color=\"#E0B985\">arcane</font> force. Triggers multi-hit effects."
+  },
+  {
+    "id": 2001,
+    "name": "Aspects of the Crucible: Wings",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Aspects of the Crucible: Wings</font>",
+    "info": "Manifest Crucible wings, take flight, and dive weapon-first into the target; twinblades replace the thrust with an eight-spin charge."
+  },
+  {
+    "id": 4000,
+    "name": "Spinning Gravity Thrust",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Spinning Gravity Thrust</font>",
+    "info": "Use gravity to hover in place, rotate, and drive forward with a piercing thrust, then input again to crash down in another spinning strike that knocks foes back. Triggers multi-hit effects"
+  },
+  {
+    "id": 4010,
+    "name": "Palm Blast",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Palm Blast</font>",
+    "info": "Imbue your palm with energy before unleashing an explosive strike that travels slightly beyond your reach, spreading the weapon's status buildup across the blast radius. Charging widens the explosion, knocks enemies back like Rejection, and grants the poise of a fully charged Endure while increasing the stance damage it deals."
+  },
+  {
+    "id": 4020,
+    "name": "Piercing Throw",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Piercing Throw</font>",
+    "info": "Hurl the armament with a powerful spin to tunnel through every foe in its path while reaching roughly double the normal range; the projectile keeps its full damage on each pierce and has no falloff, though blocking still prevents damage even as the projectile continues traveling. Using the skill without <font color=\"#E0B985\">FP</font> removes the piercing effect."
+  },
+  {
+    "id": 4030,
+    "name": "Scattershot Throw",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Scattershot Throw</font>",
+    "info": "Conjure mirrored copies of the dagger in both hands, fling a cloud of 28 projectiles that can strike large foes up to four times each, then repeat the same input for a second volley; all hits count as pierce damage for counter bonuses such as Spear Talisman, and the cast gains an extra close-range hitbox. The projectiles reach roughly 50% farther than normal throws, and using the skill without <font color=\"#E0B985\">FP</font> releases only two daggers while keeping the extended range."
+  },
+  {
+    "id": 4040,
+    "name": "Wall of Sparks",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Wall of Sparks</font>",
+    "info": "Scatter perfumed powder around you that ignites after a short delay into a wall of intense sparks whose element is determined by the perfume bottle; charging widens the wall. Cannot be parried."
+  },
+  {
+    "id": 4050,
+    "name": "Rolling Sparks",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Rolling Sparks</font>",
+    "info": "Spread perfumed powder in a rolling line that triggers successive explosions of sparks inheriting the bottle's properties; large targets can be struck multiple times along the trail, and the line stops releasing new hitboxes once it collides with terrain."
+  },
+  {
+    "id": 4060,
+    "name": "Raging Beast",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Raging Beast</font>",
+    "info": "Step with beastlike speed in any direction, leap upward, and rake the foe with an aerial slash before a strong-attack follow-up dives downward; holding a directional input while evading determines which flank you strike and the dash grants 6 invulnerability frames."
+  },
+  {
+    "id": 4070,
+    "name": "Savage Claws",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Savage Claws</font>",
+    "info": "Pounce onto the target and rake it with six alternating claw swipes in rapid succession."
+  },
+  {
+    "id": 4080,
+    "name": "Red Bear Hunt",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Red Bear Hunt</font>",
+    "info": "Slaughter prey with a wide right swipe that spawns a lingering vacuum dealing continuous Standard damage, then repeat the input to flow into a left slash and a front double-claw sweep while the vacuums persist; the three slashes total 32.6 stance damage."
+  },
+  {
+    "id": 4090,
+    "name": "Blind Spot",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Blind Spot</font>",
+    "info": "Leap into a foe's blind spot and gore them from the side; directional inputs pick which flank you dash toward, the evasion grants 6 invulnerability frames, and the resulting stab slips below their guard while dealing <font color=\"#F395C4\">pierce damage</font> that bypasses blocking."
+  },
+  {
+    "id": 4100,
+    "name": "Swift Slash",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Swift Slash</font>",
+    "info": "Step forward with a razor-quick cut that slices through foes and fires a shearing vacuum whose repeated hits rapidly build status; charging increases the strike's power and the distance of the forward step."
+  },
+  {
+    "id": 4110,
+    "name": "Overhead Stance",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Overhead Stance</font>",
+    "info": "Enter a high guard, then follow a light attack with a stepping downward slash or a strong attack with a series of plunging blows.\nCounts as a stance skill."
+  },
+  {
+    "id": 4120,
+    "name": "Wing Stance",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Wing Stance</font>",
+    "info": "Hold a poised right-sided guard; the light attack follow-up releases a rapid three-slash combo, while the heavy attack follow-up is a leaping heavy thrust; holding the Skill button after the light follow-up immediately returns the stance; the heavy follow-up does not benefit from jumping attack buffs.\nCan be parried. Counts as a stance skill."
+  },
+  {
+    "id": 4130,
+    "name": "Blinkbolt",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Blinkbolt</font>",
+    "info": "Transform into a bolt of lightning from a low stance and rush straight ahead even when locked onto a target. Deals minimal <font color=\"#FFE033\">lightning damage</font> while surging forward and, after 14 frames of startup, grants 16 invulnerability frames that let you ignore incoming attacks."
+  },
+  {
+    "id": 4140,
+    "name": "Flame Skewer",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Flame Skewer</font>",
+    "info": "Enwreathe the armament in fire, dip into a low stance, and skewer the target in one thrust before a strong-attack follow-up fans flames across the front; the opening thrust can be parried. Adds 95 <font color=\"#F48C25\">fire attack rating</font> to the armament for 15 seconds."
+  },
+  {
+    "id": 4150,
+    "name": "Savage Lion's Claw",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Savage Lion's Claw</font>",
+    "info": "Somersault forward, landing a weaker Lion's Claw slash, a regular attack during the flip, and a finishing Lion's Claw slam, with an additional input enabling the final strike; each hit inherits your weapon's damage type."
+  },
+  {
+    "id": 4160,
+    "name": "Divine Beast Frost Stomp",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Divine Beast Frost Stomp</font>",
+    "info": "Lift a leg high and stamp it down to send a ground-hugging wave of frost straight ahead that detonates into spikes and ice explosions along its path, dealing <font color=\"#57DBCE\">magic damage</font>; charging increases the wave's range and power. The wave also inflicts frostbite buildup on the spikes and each explosion."
+  },
+  {
+    "id": 4170,
+    "name": "Flame Spear",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Flame Spear</font>",
+    "info": "Ready a thrust imbued with flame, then unleash a fiery spear straight ahead; charging the attack increases damage and travel distance. The buff coats the armament in flame for 40 seconds, adding 95 <font color=\"#F48C25\">fire damage</font>, and the projectile launches the moment the thrust launches. The weapon hit can be parried while the projectile cannot."
+  },
+  {
+    "id": 4180,
+    "name": "Carian Sovereignty",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Carian Sovereignty</font>",
+    "info": "Transform the blade into a massive magical greatsword and slam it down, with an additional input producing a horizontal sweep; charge either attack for greater force. A fully charged slam releases a ground shockwave that sends two bursts in a line, each dealing roughly 40% of the slam's damage, and a single foe cannot be hit by both the slam and the bursts. The follow-up sweep matches the initial cast in raw damage."
+  },
+  {
+    "id": 4190,
+    "name": "Shriek of Sorrow",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Shriek of Sorrow</font>",
+    "info": "Unleash a harrowing scream that makes nearby foes flinch before channeling resentment into your weapon for 40 seconds based on your remaining HP. The buff locks in at the HP when cast, increases <font color=\"#F395C4\">physical damage</font> by 10% at 100% HP, 15% at 85% HP, 20% at 55% HP, and 25% at 30% HP or lower (7.5%, 10%, 15%, and 20% in PvP), and adds +5 <font color=\"#E0B985\">Strength</font> scaling to the weapon until you recast. Cannot be parried. counts as a weapon buff."
+  },
+  {
+    "id": 4200,
+    "name": "Shield Strike",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Shield Strike</font>",
+    "info": "Bash forward with the equipped shield and input repeatedly to chain up to three additional shield strikes. When assigned off-hand it gives the shield its own light attack string so you can keep the main-hand skill, effectively allowing the shield to use its light attack instead of the main-hand Skill."
+  },
+  {
+    "id": 4210,
+    "name": "Igon's Drake Hunt",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Igon's Drake Hunt</font>",
+    "info": "Draw the bow with a guttural bellow to enter a stance, then release either a light or heavy shot to fire a twisted arrow as soon as you press the corresponding attack. Holding the skill button prepares the bow so the respective arrow launches quickly. Each shot deals roughly 75% more damage than normal arrows."
+  },
+  {
+    "id": 4220,
+    "name": "Ghostflame Call",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Ghostflame Call</font>",
+    "info": "Thrust out armament to summon ghostflame. Follow up with a normal attack to set the ground ablaze with ghostflame, or a strong attack to trigger a massive explosion."
+  },
+  {
+    "id": 5000,
+    "name": "Dragonwound Slash",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Dragonwound Slash</font>",
+    "info": "Leap through the air while cloaked in jagged gravel stone, charging the attack to fire the aura as additional damage alongside the high slash. Inflicts 20% increased damage on Dragons and Ancient Dragons."
+  },
+  {
+    "id": 5010,
+    "name": "Needle Piercer",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Needle Piercer</font>",
+    "info": "Generate ten gold needles that pierce at once, purging any ailments or special effects from pierced foes. When attacking unaware enemies only the first projectile gains the surprise damage bonus. Can be parried."
+  },
+  {
+    "id": 5020,
+    "name": "Light",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Light</font>",
+    "info": "Launch the armament upward to unleash a cone of blinding light whose rays sweep through the area ahead, each ray hitting up to four times. Applies a body buff that increases holy damage by 20% for 60 seconds. Cannot be parried."
+  },
+  {
+    "id": 5030,
+    "name": "Darkness",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Darkness</font>",
+    "info": "Raise the sword and cleave with darkness to form a veil that conceals the caster while blinding foes around them; enemies tagged by the veil have their aggro reset, remain blinded for about 7 seconds, and temporarily suffer reduced <font color=\"#F5EB89\">holy damage negation</font>."
+  },
+  {
+    "id": 5040,
+    "name": "Onze's Line of Stars",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Onze's Line of Stars</font>",
+    "info": "Imbue lined glintstones with sorcerous energy to slash once, then continue through up to two follow-up attacks that each hit harder than the last. Triggers multi-hit effects"
+  },
+  {
+    "id": 5050,
+    "name": "The Poison Flower Blooms Twice",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: The Poison Flower Blooms Twice</font>",
+    "info": "Conjure a scarlet-rot-laden stinger beneath yourself to stab the enemy and kick up a shockwave on impact; the dive-kick inflicts 160 Scarlet Rot buildup while the wave only adds physical damage, and both hits scale solely with Weapon Level and gain damage from Shattered Stone Talisman. The shockwave inflicts no Scarlet Rot buildup on its own. If the dive-kick lands on a foe already afflicted with any <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">Scarlet Rot</font>, detonate it for 5% of <font color=\"#E0B985\">maximum HP</font> plus 250 damage (the same detonation as Poison Moth Flight) and purge the ailment, but only the dive-kick can trigger that detonation and it will not occur if you lack the <font color=\"#E0B985\">FP</font> to spawn the stinger and shockwave. If performed without <font color=\"#E0B985\">FP</font>, neither component materializes, so the detonation cannot trigger."
+  },
+  {
+    "id": 5080,
+    "name": "Spinning Guillotine",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Spinning Guillotine</font>",
+    "info": "Hold the putrid blade at both ends, arch backward for a powerful overhead chop, and keep inputting to spin continuously until you stop. The strong attack follow-up launches into a jumping spinning slash."
+  },
+  {
+    "id": 5090,
+    "name": "Unending Dance",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Unending Dance</font>",
+    "info": "Perform a furious succession of slashes, holding to sustain the dance while you spin."
+  },
+  {
+    "id": 5100,
+    "name": "Revenger's Blade",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Revenger's Blade</font>",
+    "info": "Dash up to an enemy with blades in each hand, holding the button to extend the dash while it deals 5 stance damage; follow with a strong attack that hacks the enemy to pieces. Can be parried."
+  },
+  {
+    "id": 5110,
+    "name": "Mists of Eternal Sleep",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Mists of Eternal Sleep</font>",
+    "info": "Release a velvety purple mist across a wide frontal area that inflicts <font color=\"#A698F4\">Eternal Sleep</font> accumulation on touch; the weapon remains imbued for 30 seconds, adding 15 <font color=\"#A698F4\">Eternal Sleep</font> accumulation per attack while it persists."
+  },
+  {
+    "id": 5120,
+    "name": "Dynastic Sickleplay",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Dynastic Sickleplay</font>",
+    "info": "Perform a finessed evasive backstep that gives directional control, then chain two additional strong attack inputs for an advancing upward slash followed by a downward bring-back strike. Grants 20 invulnerability frames."
+  },
+  {
+    "id": 5130,
+    "name": "Blinkbolt: Twinaxe",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Blinkbolt: Twinaxe</font>",
+    "info": "From a low stance, transform into a bolt of lightning and charge straight ahead at fulgurous speed; the strong attack follow-up is a lightning-charged spinning slash. Grants invulnerability frames."
+  },
+  {
+    "id": 5140,
+    "name": "Blinkbolt: Long-hafted Axe",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Blinkbolt: Long-hafted Axe</font>",
+    "info": "From a low stance, transform into a bolt of lightning and charge straight ahead at fulgurous speed; the strong attack follow-up is a lightning-charged leaping slash. Grants invulnerability frames"
+  },
+  {
+    "id": 5150,
+    "name": "Promised Consort",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Promised Consort</font>",
+    "info": "Imbue the twin greatswords with the light of Miquella, delivering a slash accompanied by columns of <font color=\"#F5EB89\">holy light</font>."
+  },
+  {
+    "id": 5160,
+    "name": "Shadow Sunflower Headbutt",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Shadow Sunflower Headbutt</font>",
+    "info": "Slam the blossom downward to send a flattening shockwave and then chain two follow-up slams through repeated inputs for a furious four-hit sequence that ends with a crashing finale."
+  },
+  {
+    "id": 5170,
+    "name": "Moon-and-Fire Stance",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Moon-and-Fire Stance</font>",
+    "info": "Assume the ready stance to imbue each sword with opposing light and fire, then chain normal attacks to launch glintstone light waves (each light attack allows up to two additional light-wave casts) before finishing with a heavy input that spins into a flaming tornado that drenches the area in <font color=\"#F48C25\">fire</font> and ends with flaming pillars. The stance still functions while another light greatsword is powerstanced in the offhand."
+  },
+  {
+    "id": 5180,
+    "name": "Devonia's Vortex",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Devonia's Vortex</font>",
+    "info": "Violently spin the hammer and slam the ground to unleash a Crucible shockwave."
+  },
+  {
+    "id": 5190,
+    "name": "Messmer's Assault",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Messmer's Assault</font>",
+    "info": "Drive a series of spear thrusts wreathed in <font color=\"#F48C25\">fire</font>, allowing up to two follow-up attacks before the final thrust slams into the ground and spawns countless spears around you."
+  },
+  {
+    "id": 5210,
+    "name": "Sleep Evermore",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Sleep Evermore</font>",
+    "info": "Pierce with a toxin-coated needle to inflict <font color=\"#A698F4\">Eternal Sleep</font>, dealing significantly more damage to foes already in slumber or eternal sleep. Can be parried."
+  },
+  {
+    "id": 5220,
+    "name": "Golden Crux",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Golden Crux</font>",
+    "info": "Leap up and skewer foes from overhead, unfolding the barbs to excruciate from within on a hit while the follow-up input spawns piercing barbs that knock enemies into the air. Consumes <font color=\"#E0B985\">FP</font> when the hit connects."
+  },
+  {
+    "id": 5230,
+    "name": "Moore's Charge",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Moore's Charge</font>",
+    "info": "Ready the shield with both hands and charge forward while guarding, ending in a verdigris shove that knocks back and down nearby foes; holding extends the length of the charge."
+  },
+  {
+    "id": 5240,
+    "name": "White Light Charge",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: White Light Charge</font>",
+    "info": "Summon white light from the meteoric ore to charge through foes, following up to detonate an immediate white light explosion around you."
+  },
+  {
+    "id": 5250,
+    "name": "Rancor Slash",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Rancor Slash</font>",
+    "info": "Spin around to slash foes while summoning five vengeful spirit skulls that chase down enemies."
+  },
+  {
+    "id": 5260,
+    "name": "Witching Hour Slash",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Witching Hour Slash</font>",
+    "info": "Hold the sword level, infuse it with Night, and unleash a series of incorporeal attacks. Cannot be blocked or parried. Triggers multi-hit effects."
+  },
+  {
+    "id": 5270,
+    "name": "Euporia Vortex",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Euporia Vortex</font>",
+    "info": "Twirl the armament through the vortex to unleash five hits directly ahead while the blade glows with restored luster; if the weapon was charged beforehand the vortex also fires a beam of light from its center and stretches to ten hits."
+  },
+  {
+    "id": 5280,
+    "name": "Smithing Art Spears",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Smithing Art Spears</font>",
+    "info": "Slam the red-hot anvil into the ground to send up countless smithing art spears."
+  },
+  {
+    "id": 5290,
+    "name": "Rancor Slash",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Rancor Slash</font>",
+    "info": "Spin around to slash foes while summoning five vengeful spirit skulls that chase enemies, and each strike plus skull explosion inflicts <font color=\"#9DD7FB\">Frostbite</font> even if the weapon whiffs, since the skulls will chase until they reach their target."
+  },
+  {
+    "id": 5300,
+    "name": "Romina's Purification",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Romina's Purification</font>",
+    "info": "Imbue the bud-blade with scarlet rot butterflies, then unleash two sweeping slashes so the butterflies erupt after a short delay; the unique skill deals physical damage. Every slash and each butterfly explosion inflicts <font color=\"#EF7676\">Scarlet Rot</font> while the butterflies vanish instantly."
+  },
+  {
+    "id": 5310,
+    "name": "Poison Spear-Hand Strike",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Poison Spear-Hand Strike</font>",
+    "info": "Shape your hand into a spear and plunge through the enemy to inject deadly poison; the unique skill applies a large dose of <font color=\"#40BF40\">Deadly Poison</font> buildup that scales with <font color=\"#E0B985\">Arcane</font>."
+  },
+  {
+    "id": 5320,
+    "name": "Madding Spear-Hand Strike",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Madding Spear-Hand Strike</font>",
+    "info": "Form your hand into a spear and stab through a foe to drive them mad, only threatening Tarnished minds."
+  },
+  {
+    "id": 5330,
+    "name": "Feeble Lord's Frenzied Flame",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Feeble Lord's Frenzied Flame</font>",
+    "info": "Raise the torch and exhale a stream of frenzied flame while moving, sustaining the spray for as long as the input is held until <font color=\"#E0B985\">FP</font> is exhausted. The cone deals rapidly builds <font color=\"#EEAA2B\">Madness</font> on everything caught in the blaze, including the user."
+  },
+  {
+    "id": 5340,
+    "name": "Repeating Fire",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Repeating Fire</font>",
+    "info": "Prime the repeating mechanism, then crank out 12 bolts: the first shot has a brief spin-up and the remaining 11 leave in a rapid stream that you can sweep manually if unlocked. Shots suffer a 67.65% damage penalty, 45% status penalty, and 50% <font color=\"#C0B194\">stance damage</font> penalty versus normal bolts, worsening to roughly 90% damage loss if fired without <font color=\"#E0B985\">FP</font>. The full resource cost is paid as soon as the first bolt launches."
+  },
+  {
+    "id": 5350,
+    "name": "Deadly Dance",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Deadly Dance</font>",
+    "info": "Spin forward with paired circular blades to shred foes, then add an input to unleash a sharp axe-kick finisher."
+  },
+  {
+    "id": 5360,
+    "name": "Fan Shot",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Fan Shot</font>",
+    "info": "Hold the bow horizontally to ready eight notched arrows, then fire them in a fan whenever you press light or heavy attack while the stance is active."
+  },
+  {
+    "id": 5370,
+    "name": "Discus Hurl",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Discus Hurl</font>",
+    "info": "Hurl the roundshield like a smithing-infused discus that hangs in the air for a heartbeat before spinning vertically to chase its target, then re-materializes in your hand. The shield keeps pursuing even as you reposition, delivering a mobile homing strike without needing to retrieve the armament manually."
+  },
+  {
+    "id": 5380,
+    "name": "Flower Dragonbolt",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Flower Dragonbolt</font>",
+    "info": "Call down red dragon lightning onto a target and hold to charge the thrust for greater effect. The lightning blast scales with <font color=\"#E0B985\">Arcane</font> and benefits from charged skill buffs. Cannot be parried."
+  },
+  {
+    "id": 5390,
+    "name": "Kowtower's Resentment",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Kowtower's Resentment</font>",
+    "info": "Force the finger weapon into a resentful bow that charges while held, then slam it down to vent the pent-up anger in successive shockwaves. Holding the input increases the resentment before impact, but the skill does not benefit from charged attack buffs and only the weapon hitbox counts toward skill buffs while the holy shockwaves never do."
+  },
+  {
+    "id": 5420,
+    "name": "Painful Strike",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Painful Strike</font>",
+    "info": "Unleash a chastening flurry of whip strikes that layers <font color=\"#40BF40\">Deadly Poison</font> onto the victim. Cannot be parried."
+  },
+  {
+    "id": 5430,
+    "name": "Solitary Moon Slash",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Solitary Moon Slash</font>",
+    "info": "Deliver a downward slash that launches a moonlit arc, then chain into a lunging horizontal sweep with the strong attack; holding strong lets you delay the follow-up to make the timing less predictable. The opener does 11 stance damage and the follow-up another 28 (39 total)."
+  },
+  {
+    "id": 5440,
+    "name": "Revenge of the Night",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Revenge of the Night</font>",
+    "info": "Launch a Night-infused bolt that deals <font color=\"#57DBCE\">Magic damage</font> scaling with <font color=\"#E0B985\">Dexterity</font>; casting it immediately after blocking absorbs the incoming blow and converts that energy into a guard-counter retaliation that roughly triples the projectile's power while delivering 15 stance damage."
+  },
+  {
+    "id": 5450,
+    "name": "Weed Cutter",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Weed Cutter</font>",
+    "info": "Scythe through foes with broad horizontal swings, chaining the motion for as long as stamina remains, letting repeated inputs keep the barrage active until those resources run out."
+  },
+  {
+    "id": 5460,
+    "name": "Blindfold of Happiness",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Blindfold of Happiness</font>",
+    "info": "Swing your head while covering your eyes to unleash a lamenting wail that veils you from sight for 15 seconds, reducing enemy detection the same way as Unseen Form; the invisibility persists even if Crepus's Vial or Black Knife Armor hide the visual effect."
+  },
+  {
+    "id": 5470,
+    "name": "Jori's Inquisition",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Jori's Inquisition</font>",
+    "info": "Thrust the greatstaff overhead to launch streams of golden barbs that deal <font color=\"#F5EB89\">Holy damage</font>, holding the button to sustain the barrage briefly while manually aiming the rapid projectiles via camera free aim."
+  },
+  {
+    "id": 5480,
+    "name": "Roaring Bash",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Roaring Bash</font>",
+    "info": "Roar from behind your guard to drive a shield bash that erupts in a wide shockwave, knocking back and staggering surrounding foes while behaving identically to Shield Bash and delivering the same area knockback."
+  },
+  {
+    "id": 5490,
+    "name": "Deadly Poison Spray",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Deadly Poison Spray</font>",
+    "info": "Swing the perfume bottle overhead to release a 7-second cloud of <font color=\"#40BF40\">Deadly Poison</font> that inflicts buildup on anyone inside—even yourself—while the lingering fumes stay hidden from enemies. The cast cannot be parried and locks you into the animation until roughly 2.5 seconds after the spray completes, forcing you to wait for the mist to fade."
+  },
+  {
+    "id": 5500,
+    "name": "Flare, O Serpent",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Flare, O Serpent</font>",
+    "info": "Ignite the serpents to add 90 <font color=\"#F48C25\">fire damage</font> to your armament for 30 seconds; heavy attacks or ground-slamming actions trigger a 12 stance damage explosion that consumes the enchantment, requiring the skill to be recast before another blast. Triggering explosions with paired Serpent Flails detonates both weapons simultaneously."
+  },
+  {
+    "id": 5510,
+    "name": "Scattershot (Claws)",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Scattershot (Claws)</font>",
+    "info": "Conjure multiple spectral claws in each hand and hurl 28 projectiles at once (6 without FP); the volley can strike large enemies and bosses up to four times at a further reach, though it otherwise mirrors Scattershot Throw with slightly less range and moderate stagger."
+  },
+  {
+    "id": 5520,
+    "name": "Hone Blade",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Hone Blade</font>",
+    "info": "Stroke the blade to apply a 40-second weapon buff that increases damage by 6% (4% in PvP), shows as an AR increase, and causes each hit to restore 1% of your <font color=\"#E0B985\">maximum HP</font>. Counts as a weapon buff."
+  },
+  {
+    "id": 5530,
+    "name": "Horn Calling",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Horn Calling</font>",
+    "info": "Shroud the weapon in tangled horns, drive it into the ground, and call up piercing spikes that erupt below the enemy."
+  },
+  {
+    "id": 5540,
+    "name": "Horn Calling: Storm",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Horn Calling: Storm</font>",
+    "info": "Infuse the horned blade with storm winds, then mow through enemies with a sweeping spin that strikes repeatedly at far greater range than Stormcaller. Triggers multi-hit effects."
+  },
+  {
+    "id": 5550,
+    "name": "Tremendous Phalanx",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Skill: Tremendous Phalanx</font>",
+    "info": "Raise your weapon to summon a defensive arch of three homing glintblades overhead, each automatically firing as nearby foes approach. The strong attack follow-up chains into a lunging thrust that propels you forward."
+  },
+  {
+    "id": 5560,
+    "name": "Bloodfiends' Bloodboon",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Bloodfiends' Bloodboon</font>",
+    "info": "Drive the spear through your target to detonate a ranged bloodflame eruption that deals <font color=\"#F48C25\">fire damage</font> and inflicts <font color=\"#C84343\">blood loss accumulation</font> around them rather than around yourself. Additional inputs chain up to three thrusts, with the third stab dealing increased damage but suffering a longer recovery."
+  },
+  {
+    "id": 5570,
+    "name": "Dragonform Flame",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Dragonform Flame</font>",
+    "info": "Transform your arm into a draconic maw to sweep a gout of fire in front of you, leaving burning ground that lingers briefly, identical to the Firebreather skill. Using the skill without <font color=\"#E0B985\">FP</font> causes a harmless sputter with no flames."
+  },
+  {
+    "id": 5580,
+    "name": "Lightspeed Slash",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Lightspeed Slash</font>",
+    "info": "Assume a luminous form to leap forward for a downward slash, then unleash radiant beams on the enemy."
+  },
+  {
+    "id": 5600,
+    "name": "Rancor Shot",
+    "category": "skill",
+    "caption": "<font color=\"#C0B194\">      Unique Skill: Rancor Shot</font>",
+    "info": "Adopt a stance to imbue your arrows with vengeful spirits, firing rapid shots that home in on foes like Barrage. Maintaining the stance slows movement until you release the aim."
+  }
+]

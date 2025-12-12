@@ -170,8 +170,9 @@ flowchart LR
 - Input: `work/aow_pipeline/AoW-data-1.csv`
 - Output: `work/aow_pipeline/AoW-data-2.csv`
 - Behavior:
+  - Normalize subCategory labels before grouping: `Charged Weapon Skill` → `Charged Skill`, `Charged R2` → `Charged Attack`, `Roar Attack` → `Roar`.
   - Optional value blacklist (`work/aow_pipeline/value_blacklist.json`): drop listed values per stage/column before processing (currently strips `128 - unused` from `subCategory1-4` in Stage 2).
-- Optional row copies (`work/aow_pipeline/copy_rows.json`): duplicate specific Stage 1 `Name` rows with per-copy column overrides (keyed by the CSV headers) before processing. Entries look like `{"name": "Storm Blade - Bullet", "copies": [{"overrides": {"Step": "2"}}, ...]}` and apply overrides to every matching row.
+  - Optional row copies (`work/aow_pipeline/copy_rows.json`): duplicate specific Stage 1 `Name` rows with per-copy column overrides (keyed by the CSV headers) before processing. Entries look like `{"name": "Storm Blade - Bullet", "copies": [{"overrides": {"Step": "2"}}, ...]}` and apply overrides to every matching row.
   - Apply optional forced collapses defined in `work/aow_pipeline/force_collapse_pairs.json`:
     - Accepts entries as a list of names, or an object with `names` and optional `overrides`.
     - All rows in a group are canonicalized to the first name’s derived fields (`Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`) unless a specific override for that field is provided.
@@ -273,7 +274,8 @@ flowchart LR
   weapon1 --> carryWeapon["Carry first Weapon"]
   isAdd1 --> carryIsAdd["Carry first isAddBaseAtk"]
   overwrite1 --> carryOverwrite["Carry first Overwrite Scaling"]
-  subCats1 --> carrySubCats["Carry first subCategory1-4"]
+  subCats1 --> subCatRename["Normalize subCategory labels"]
+  subCatRename --> carrySubCats["Carry first subCategory1-4"]
   
   skill1 --> groupKeys
   follow1 --> groupKeys
@@ -495,7 +497,7 @@ flowchart LR
 - Input: `work/aow_pipeline/AoW-data-3.csv`
 - Output: `work/aow_pipeline/AoW-data-4.csv` (adds text-ready helper fields; future spot for formatting ready/JSON ingest).
 - Script: `scripts/build_aow/build_aow_stage4.py` (adds text columns with per-row logic).
-- Drops raw `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, `Dmg Type`, `Overwrite Scaling`, and raw base `Atk*` columns from the output while still using their Stage 3 values to populate text helpers (`Text Wep Dmg`, `Text Wep Status`, `Text Stance`). Damage text renders `{Type|Weapon} Damage: {Dmg MV} [AR]` (or `!` when Dmg Type is `-`), stance text renders `Stance: {Stance Dmg}`, and status text renders `{Wep Status|Status}: {Status MV}%` when a non-zero Status MV exists (uses the first numeric token when present, otherwise the raw string; skips when missing/zero or when Wep Status is `None`). Base damage columns are emitted as text helpers (`Text Phys/Mag/Fire/Ltng/Holy`) with `Base X Damage: {value} [{Overwrite Scaling|Weapon Scaling}]` (using `Weapon Scaling` when Overwrite Scaling is `-`). Text helper labels include inline `<font color="#...">` tags: damage labels match their element (phys/magic/fire/lightning/holy), status labels use their ailment colour (bleed/poison/rot/frost/madness/sleep/death), stance labels use the header colour, and numeric payloads colour charged sections (`|` divider + charged values), FP-less sections (`[]` + values), and FP-less charged sections with distinct colours for readability.
+- Drops raw `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, `Dmg Type`, `Overwrite Scaling`, and raw base `Atk*` columns from the output while still using their Stage 3 values to populate text helpers (`Text Wep Dmg`, `Text Wep Status`, `Text Stance`). Damage text renders `{Type|Weapon} Damage: {Dmg MV} [AR]` (or `!` when Dmg Type is `-`), stance text renders `Stance: {Stance Dmg}`, and status text renders `{Wep Status|Status} (%): {Status MV}` when a non-zero Status MV exists (uses the raw string; skips when missing/zero or when Wep Status is `None`). Base damage columns are emitted as text helpers (`Text Phys/Mag/Fire/Ltng/Holy`) with `Base X Damage: {value} [{Overwrite Scaling|Weapon Scaling}]` (using `Weapon Scaling` when Overwrite Scaling is `-`). Text helper labels include inline `<font color="#...">` tags: damage labels match their element (phys/magic/fire/lightning/holy), status labels use their ailment colour (bleed/poison/rot/frost/madness/sleep/death), stance labels use the header colour, and numeric payloads colour charged sections (`|` divider + charged values), FP-less sections (`[]` + values), FP-less charged sections, and charged FP-less (`[0|0]`) with minimal font wrapping to avoid redundant tags.
 
 ```mermaid
 flowchart LR
@@ -535,7 +537,7 @@ flowchart LR
     o4SubCats["subCategorySum"]
     o4TextCategory["Text Category"]
   end
-  Stage4In --> passthrough4["Stage 4: add text helpers"]
+  Stage4In --> passthrough4["Stage 4: add text helpers<br>(status label adds (%) and compact FP brackets)"]
   passthrough4 --> o4Skill
   passthrough4 --> o4TextName
   passthrough4 --> o4Follow
@@ -557,6 +559,32 @@ flowchart LR
 - Script: `scripts/build_aow/build_aow_stage5.py` (renders Stage 4 text helpers into a human-readable markdown layout).
 - Groups rows by `Skill`; when multiple distinct `Weapon` field values are present, emits a `#### {Weapon}` section per value (pipe-joined lists stay together). Within each skill/weapon block, rows are rendered based on whether `Follow-up`/`Hand`/`Part` are `-`, nesting indents and headers accordingly and skipping any `Text *` lines that are `-`.
 - When any row in a skill has a `Follow-up`, rows without a follow-up label render as `Skill`. Blocks are rendered without blank separator lines, `subCategorySum` strings use comma separators instead of pipes, and ` / ` inside those strings is tightened to `/`.
+- Feeds Stage 6, which embeds these markdown blocks into `ready/skill.json` info fields.
+
+## Stage 6: Append markdown stats into ready skill info
+
+- Inputs:
+  - `work/aow_pipeline/AoW-data-5.md` (Stage 5 markdown output).
+  - `work/responses/skill.json` (baseline ready skill entries).
+- Output: `work/responses/ready/skill.json` (info fields appended with Stage 5 stats).
+- Script: `scripts/build_aow/build_aow_stage6.py` (parses markdown, strips `###` headers, trims blank edges, and appends the per-skill block to `info` with a `\n\n` separator; skips skills missing in the markdown).
+- Behavior:
+  - Keeps existing `info` text and appends the markdown block directly (no separate `stats` field).
+  - Escapes JSON appropriately (`ensure_ascii=False`, `indent=2`), preserves UTF-8 font tags, and leaves skills without a matching markdown block untouched.
+
+```mermaid
+flowchart LR
+  md5["AoW-data-5.md<br>(Stage 5 markdown)"]
+  readyBase["work/responses/skill.json<br>(baseline ready skill entries)"]
+  stripHeaders["Strip '### ' skill headers<br>trim leading/trailing blanks"]
+  appendInfo["Append block to info<br>(existing text + \\n\\n + stats)"]
+  readyOut["work/responses/ready/skill.json<br>(info includes stats)"]
+
+  md5 --> stripHeaders
+  stripHeaders --> appendInfo
+  readyBase --> appendInfo
+  appendInfo --> readyOut
+```
 
 ## Filesystem layout
 
@@ -567,10 +595,11 @@ flowchart LR
 - `work/aow_pipeline/AoW-data-2.csv` (generated Stage 2 output).
 - `work/aow_pipeline/AoW-data-3.csv` (generated Stage 3 collapsed output).
 - `work/aow_pipeline/AoW-data-4.csv` (generated Stage 4 text-helper output).
+- `work/aow_pipeline/AoW-data-5.md` (Stage 5 markdown render consumed by Stage 6).
 - `work/aow_pipeline/force_collapse_pairs.json` (forced collapse groups + overrides applied in Stage 2).
 - `work/aow_pipeline/` (workspace for outputs and scratch; add temp files as needed).
-- `scripts/build_aow/build_aow_stage0.py` (skill list), `scripts/build_aow/build_aow_stage1.py` (stage 1 collate), `scripts/build_aow/build_aow_stage2.py` (stage 2 collapse), `scripts/build_aow/build_aow_stage3.py` (stage 3 collapse + FP/Charged strings), `scripts/build_aow/build_aow_stage4.py` (stage 4 text helpers).
-- `Makefile` (`make stage0|stage1|stage2|stage3|stage4|stages` with optional flags passed after the target).
+- `scripts/build_aow/build_aow_stage0.py` (skill list), `scripts/build_aow/build_aow_stage1.py` (stage 1 collate), `scripts/build_aow/build_aow_stage2.py` (stage 2 collapse), `scripts/build_aow/build_aow_stage3.py` (stage 3 collapse + FP/Charged strings), `scripts/build_aow/build_aow_stage4.py` (stage 4 text helpers), `scripts/build_aow/build_aow_stage5.py` (stage 5 markdown render), `scripts/build_aow/build_aow_stage6.py` (stage 6 ready population).
+- `Makefile` (`make stage0|stage1|stage2|stage3|stage4|stage5|stage6|stages` with optional flags passed after the target).
 
 ## How to regenerate Stage 1
 
@@ -597,8 +626,10 @@ python scripts/build_aow/build_aow_stage3.py
 python scripts/build_aow/build_aow_stage4.py
 # 6) Render markdown helper output
 python scripts/build_aow/build_aow_stage5.py
+# 7) Append markdown stats into ready/skill.json info fields
+python scripts/build_aow/build_aow_stage6.py
 # or via make (flags can be passed after the target):
-#   make stage5 --output /tmp/AoW-data-5.md
+#   make stage6 --output work/responses/ready/skill.json
 ```
 
 ## Remaining Implementation

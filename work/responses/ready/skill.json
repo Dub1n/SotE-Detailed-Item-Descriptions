@@ -4,42 +4,42 @@
     "name": "Spinning Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Spinning Slash</font>",
-    "info": "Spin in place to carve every foe around you, repeating to continue the assault. When wielded on the Dragon Halberd, the follow-up strike releases ice lightning that adds <font color=\"#FFE033\">lightning damage</font>, <font color=\"#9DD7FB\">frostbite</font> buildup, and 10 extra <font color=\"#C0B194\">stance damage</font> to every hit. Cannot be parried while consuming <font color=\"#E0B985\">FP</font>."
+    "info": "Spin in place to carve every foe around you, repeating to continue the assault. When wielded on the Dragon Halberd, the follow-up strike releases ice lightning that adds <font color=\"#FFE033\">lightning damage</font>, <font color=\"#9DD7FB\">frostbite</font> buildup, and 10 extra <font color=\"#C0B194\">stance damage</font> to every hit. Cannot be parried while consuming <font color=\"#E0B985\">FP</font>.\n\n#### Axe | Backhand Blade | Curved Greatsword | Curved Sword | Dagger | Great Katana | Great Spear | Greataxe | Greatsword | Halberd | Katana | Light Greatsword | Reaper | Spear | Straight Sword | Throwing Blade | Twinblade\n\nHit (Weapon Skill)\n    Damage: 105-210, 170-340 <font color=\"#b9bec3ff\">[70-140, 125-250]</font> [AR]\n    Status (%): 65-130, 120-240 <font color=\"#b9bec3ff\">[65-130, 120-240]</font>\n    <font color=\"#C0B194\">Stance:</font> 6-25, 8-34 <font color=\"#b9bec3ff\">[2-11, 3-17]</font>\n\n#### Dragon Halberd\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 105, 170 <font color=\"#b9bec3ff\">[70, 125]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 12, 15 <font color=\"#b9bec3ff\">[5, 8]</font>\nBullet (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 0, 100 <font color=\"#b9bec3ff\">[0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 0, 15 <font color=\"#b9bec3ff\">[0, 0]</font>\n    <font color=\"#FFE033\">Lightning:</font> 0, 149 <font color=\"#b9bec3ff\">[0, 0]</font> [No Scaling]\nWater AoE (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 0, 50 <font color=\"#b9bec3ff\">[0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 0, 3 <font color=\"#b9bec3ff\">[0, 0]</font>\n    <font color=\"#FFE033\">Lightning:</font> 0, 69 <font color=\"#b9bec3ff\">[0, 0]</font> [No Scaling]"
   },
   {
     "id": 118,
     "name": "Loretta's Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Loretta's Slash</font>",
-    "info": "Leap forward while cloaking the blade in glintstone, then dive into a sweeping slash as you land to catch distant foes. Each follow-up inherits any weapon buffs already on the armament, scales with the weapon's attack rating, and cannot be parried."
+    "info": "Leap forward while cloaking the blade in glintstone, then dive into a sweeping slash as you land to catch distant foes. Each follow-up inherits any weapon buffs already on the armament, scales with the weapon's attack rating, and cannot be parried.\n\n#### Great Spear | Halberd | Reaper | Spear | Twinblade\n\n(Weapon Skill)\nDamage: 140 <font color=\"#b9bec3ff\">[140]</font> [AR]\nStatus (%): 200 <font color=\"#b9bec3ff\">[200]</font>\n<font color=\"#C0B194\">Stance:</font> 23-25 <font color=\"#b9bec3ff\">[11-12]</font>\n<font color=\"#57DBCE\">Magic:</font> 90 <font color=\"#b9bec3ff\">[0]</font> [Weapon Scaling]\n\n#### Loretta's War Sickle\n\n(Weapon Skill)\n<font color=\"#F395C4\">Slash:</font> 252 <font color=\"#b9bec3ff\">[170]</font> [AR]\n<font color=\"#C0B194\">Stance:</font> 23 <font color=\"#b9bec3ff\">[11]</font>\n<font color=\"#57DBCE\">Magic:</font> 102 <font color=\"#b9bec3ff\">[0]</font> [Weapon Scaling]"
   },
   {
     "id": 122,
     "name": "Storm Assault",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Storm Assault</font>",
-    "info": "Wrap yourself in a cyclone, leap forward, and drive the armament into the ground to detonate another spiral of storm winds at the point of impact. The takeoff gust damages foes around you before the diving thrust lands, and the swirling winds linger briefly to pin targets in place."
+    "info": "Wrap yourself in a cyclone, leap forward, and drive the armament into the ground to detonate another spiral of storm winds at the point of impact. The takeoff gust damages foes around you before the diving thrust lands, and the swirling winds linger briefly to pin targets in place.\n\nJump (Weapon Skill, Storm Attack)\n    <font color=\"#F395C4\">Standard:</font> 90 <font color=\"#b9bec3ff\">[0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 5-6 <font color=\"#b9bec3ff\">[0]</font>\nLand (Weapon Skill, Storm Attack)\n    <font color=\"#F395C4\">Standard:</font> 90 <font color=\"#b9bec3ff\">[0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 5-6 <font color=\"#b9bec3ff\">[0]</font>\nHit (Weapon Skill, Storm Attack)\n    Damage: 200 <font color=\"#b9bec3ff\">[130]</font> [AR]\n    Status (%): 100 <font color=\"#b9bec3ff\">[100]</font>\n    <font color=\"#C0B194\">Stance:</font> 20-22 <font color=\"#b9bec3ff\">[5-6]</font>"
   },
   {
     "id": 123,
     "name": "Stormcaller",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Stormcaller</font>",
-    "info": "Spin the armament to surround yourself with storm winds, then repeat the input up to two times to step forward and unfold wider cyclones. Cannot be parried while consuming <font color=\"#E0B985\">FP</font>."
+    "info": "Spin the armament to surround yourself with storm winds, then repeat the input up to two times to step forward and unfold wider cyclones. Cannot be parried while consuming <font color=\"#E0B985\">FP</font>.\n\nHit (Weapon Skill, Storm Attack)\n    Damage: 283, 198, 218 <font color=\"#b9bec3ff\">[180, 120, 140]</font> [AR]\n    Status (%): 250, 175, 175 <font color=\"#b9bec3ff\">[250, 175, 175]</font>\n    <font color=\"#C0B194\">Stance:</font> 22-31, 10-14, 10-14 <font color=\"#b9bec3ff\">[11-16, 8-11, 8-11]</font>\nBullet (Weapon Skill, Storm Attack)\n    <font color=\"#F395C4\">Standard:</font> 283, 198, 140 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 15-21, 10-14, 10-14 <font color=\"#b9bec3ff\">[0, 0, 0]</font>"
   },
   {
     "id": 200,
     "name": "Glintblade Phalanx",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Glintblade Phalanx</font>",
-    "info": "Conjure four magic dagger projectiles overhead which hover defensively until they automatically launch at the nearest enemy that enter range, dealing magic damage that scales with Intelligence. Follow-up with a strong attack to launch into a lunging thrust, dealing damage based on Attack Rating with damage type matching the weapon's. Both the glintblades and the follow-up can be parried, while the activation can only not be parried while consuming FP."
+    "info": "Conjure four magic dagger projectiles overhead which hover defensively until they automatically launch at the nearest enemy that enter range, dealing magic damage that scales with Intelligence. Follow-up with a strong attack to launch into a lunging thrust, dealing damage based on Attack Rating with damage type matching the weapon's. Both the glintblades and the follow-up can be parried, while the activation can only not be parried while consuming FP.\n\nSkill (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 5\n    <font color=\"#57DBCE\">Magic:</font> 51 [Intelligence]\nHeavy Follow-up (Weapon Skill)\n    Damage: 160 <font color=\"#b9bec3ff\">[105]</font> [AR]\n    Status (%): 100 <font color=\"#b9bec3ff\">[100]</font>\n    <font color=\"#C0B194\">Stance:</font> 8-22 <font color=\"#b9bec3ff\">[2-6]</font>"
   },
   {
     "id": 214,
     "name": "Flaming Strike",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Flaming Strike</font>",
-    "info": "Sweep your off-hand to send out a short arc of flame; follow-up with a strong attack lunging slash that cuts through the blaze and coats the armament in fire, adding 90 <font color=\"#F48C25\">fire damage</font> to the weapon for 40 seconds. The ignition wave cannot be parried but the follow-up can. Counts as a weapon buff."
+    "info": "Sweep your off-hand to send out a short arc of flame; follow-up with a strong attack lunging slash that cuts through the blaze and coats the armament in fire, adding 90 <font color=\"#F48C25\">fire damage</font> to the weapon for 40 seconds. The ignition wave cannot be parried but the follow-up can. Counts as a weapon buff.\n\nSkill\n    Bullet (Weapon Skill)\n        <font color=\"#C0B194\">Stance:</font> 10 <font color=\"#b9bec3ff\">[0]</font>\n        <font color=\"#F48C25\">Fire:</font> 138 <font color=\"#b9bec3ff\">[0]</font> [Strength]\n    Hit (Weapon Skill)\n        <font color=\"#F395C4\">Standard:</font> 0 <font color=\"#b9bec3ff\">[40]</font> [Strength]\nHeavy Follow-up (Weapon Skill)\n    Damage: 178 <font color=\"#b9bec3ff\">[100]</font> [AR]\n    Status (%): 0 <font color=\"#b9bec3ff\">[100]</font>\n    <font color=\"#C0B194\">Stance:</font> 9-21 <font color=\"#b9bec3ff\">[3-7]</font>"
   },
   {
     "id": 302,
@@ -102,63 +102,63 @@
     "name": "Storm Stomp",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Storm Stomp</font>",
-    "info": "Stomp to summon a tight cyclone that hits around you, keeping foes locked in hitstun and setting up follow-up attacks with the bound armament. Cannot be parried."
+    "info": "Stomp to summon a tight cyclone that hits around you, keeping foes locked in hitstun and setting up follow-up attacks with the bound armament. Cannot be parried.\n\nBullet (Weapon Skill, Kicking/Stomping Skill, Storm Attack)\n    <font color=\"#C0B194\">Stance:</font> 10 <font color=\"#b9bec3ff\">[0]</font>\n    <font color=\"#F395C4\">Standard:</font> 50 <font color=\"#b9bec3ff\">[0]</font> [Str/Dex]\nHit (Weapon Skill, Kicking/Stomping Skill, Storm Attack)\n    Status (%): 0 <font color=\"#b9bec3ff\">[100]</font>\n    <font color=\"#C0B194\">Stance:</font> 0 <font color=\"#b9bec3ff\">[2-8]</font>\n    <font color=\"#F395C4\">Standard:</font> 0 <font color=\"#b9bec3ff\">[10]</font> [Str/Dex]"
   },
   {
     "id": 503,
     "name": "Kick",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Kick</font>",
-    "info": "Deliver a fast, high kick that instantly staggers guarding enemies, opening them to a guard break while you are bare-handed in either hand. Cannot be parried."
+    "info": "Deliver a fast, high kick that instantly staggers guarding enemies, opening them to a guard break while you are bare-handed in either hand. Cannot be parried.\n\n(Weapon Skill, Kicking/Stomping Skill)\n<font color=\"#F395C4\">Strike:</font> 30 <font color=\"#b9bec3ff\">[10]</font> [AR]\n<font color=\"#C0B194\">Stance:</font> 6 <font color=\"#b9bec3ff\">[1-4]</font>\n<font color=\"#F395C4\">Standard:</font> 30 <font color=\"#b9bec3ff\">[30]</font> [No Scaling]"
   },
   {
     "id": 1004,
     "name": "Bubble Shower",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bubble Shower</font>",
-    "info": "Blow the horn to launch a slow-moving spray of bubbles that drift forward before raining down in front of you."
+    "info": "Blow the horn to launch a slow-moving spray of bubbles that drift forward before raining down in front of you.\n\n(Weapon Skill, Bubble Skill)\n<font color=\"#C0B194\">Stance:</font> 6\n<font color=\"#F5EB89\">Holy:</font> 96 [Weapon Scaling]"
   },
   {
     "id": 1008,
     "name": "Moonlight Greatsword",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moonlight Greatsword</font>",
-    "info": "Raise the sword aloft to wreathe it in the dark moon's light for 60 seconds, adding 65 <font color=\"#57DBCE\">magic damage</font> and 15 <font color=\"#9DD7FB\">frostbite accumulation</font> to every attack. Heavy attacks during the buff launch chargeable moonlight projectiles which are affected by skill charge and skill damage buffs, while only the weapon hitbox benefits from attack charge buffs; the heavy swing hitbox can still be parried, and the projectiles can be parried by Golden Relatiation but not deflected by Eternel Darkness. The weapon's hit during the skill activation deals full status buildup, stance damage, and 50% damage or 65% charged. Counts as a weapon buff."
+    "info": "Raise the sword aloft to wreathe it in the dark moon's light for 60 seconds, adding 65 <font color=\"#57DBCE\">magic damage</font> and 15 <font color=\"#9DD7FB\">frostbite accumulation</font> to every attack. Heavy attacks during the buff launch chargeable moonlight projectiles which are affected by skill charge and skill damage buffs, while only the weapon hitbox benefits from attack charge buffs; the heavy swing hitbox can still be parried, and the projectiles can be parried by Golden Relatiation but not deflected by Eternel Darkness. The weapon's hit during the skill activation deals full status buildup, stance damage, and 50% damage or 65% charged. Counts as a weapon buff.\n\nHeavy Follow-up (Weapon Skill, Charged Skill)\n    <font color=\"#9DD7FB\">Frostbite (%):</font> 120 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 150</font>\n    <font color=\"#C0B194\">Stance:</font> 15 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 24</font>\n    <font color=\"#57DBCE\">Magic:</font> 115 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 145</font> [Weapon Scaling]\nHeavy Follow-up 1h (Charged Attack)\n    <font color=\"#F395C4\">Standard:</font> 50, 50 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 65, 65</font> [AR]\n    <font color=\"#9DD7FB\">Frostbite (%):</font> 100, 100 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 100, 100</font>\n    <font color=\"#C0B194\">Stance:</font> 8, 8 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 9, 9</font>\nHeavy Follow-up 2h (2h Attack, Charged Attack)\n    <font color=\"#F395C4\">Standard:</font> 53, 53 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 68, 68</font> [AR]\n    <font color=\"#9DD7FB\">Frostbite (%):</font> 100, 100 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 100, 100</font>\n    <font color=\"#C0B194\">Stance:</font> 8, 8 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 9, 9</font>"
   },
   {
     "id": 1011,
     "name": "Bear Witness!",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bear Witness!</font>",
-    "info": "Drag the small dragon head along the ground into a fire-laced uppercut before launching a wide barrage of fireballs overhead."
+    "info": "Drag the small dragon head along the ground into a fire-laced uppercut before launching a wide barrage of fireballs overhead.\n\nBullet (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 240 <font color=\"#b9bec3ff\">[0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 5 <font color=\"#b9bec3ff\">[0]</font>\nExplosion (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 610 <font color=\"#b9bec3ff\">[0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 8 <font color=\"#b9bec3ff\">[0]</font>\nProjectile (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 390 <font color=\"#b9bec3ff\">[0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 12 <font color=\"#b9bec3ff\">[0]</font>\nLingering Fire (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 100 <font color=\"#b9bec3ff\">[0]</font> [AR]\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Strike:</font> 0 <font color=\"#b9bec3ff\">[120]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 0 <font color=\"#b9bec3ff\">[6]</font>"
   },
   {
     "id": 1014,
     "name": "Taker's Flames",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Taker's Flames</font>",
-    "info": "Raise the blade to wreath it in blasphemous flame before slamming forward and sending a chain of eruptions along the ground, restoring 10% of <font color=\"#E0B985\">maximum HP</font> plus 150 with each enemy hit. The eruption wave deals pure <font color=\"#F48C25\">fire damage</font>, scales with <font color=\"#E0B985\">faith</font>, cannot be parried, and benefits from the Talisman of the Dread and Fire Scorpion Charm."
+    "info": "Raise the blade to wreath it in blasphemous flame before slamming forward and sending a chain of eruptions along the ground, restoring 10% of <font color=\"#E0B985\">maximum HP</font> plus 150 with each enemy hit. The eruption wave deals pure <font color=\"#F48C25\">fire damage</font>, scales with <font color=\"#E0B985\">faith</font>, cannot be parried, and benefits from the Talisman of the Dread and Fire Scorpion Charm.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 65 <font color=\"#b9bec3ff\">[150]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 8 <font color=\"#b9bec3ff\">[8]</font>\nBullet (Weapon Skill, Magma Attack)\n    <font color=\"#F395C4\">Standard:</font> 510 <font color=\"#b9bec3ff\">[0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 16 <font color=\"#b9bec3ff\">[0]</font>"
   },
   {
     "id": 1024,
     "name": "Spearcall Ritual",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Spearcall Ritual</font>",
-    "info": "Hoist the spear skyward to summon a cluster of spectral spears above the target that rain down after a short delay."
+    "info": "Hoist the spear skyward to summon a cluster of spectral spears above the target that rain down after a short delay.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 250 [AR]\n    <font color=\"#C0B194\">Stance:</font> 13\nBullet (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 336 [AR]\n    <font color=\"#C0B194\">Stance:</font> 12"
   },
   {
     "id": 1026,
     "name": "Thundercloud Form",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Thundercloud Form</font>",
-    "info": "Transform into a rushing red thundercloud and fly through the air before plunging down with a lightning-charged strike; holding the skill extends the cloud's travel distance. Cannot be parried."
+    "info": "Transform into a rushing red thundercloud and fly through the air before plunging down with a lightning-charged strike; holding the skill extends the cloud's travel distance. Cannot be parried.\n\nUncharged/Partial Loop 1-3x (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 2 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0</font>\n    <font color=\"#FFE033\">Lightning:</font> 25 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0</font> [Weapon Scaling]\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 190 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 256</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 11 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 33</font>\n    <font color=\"#FFE033\">Lightning:</font> 20 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 20</font> [Weapon Scaling]\nLoop 6x (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 2</font>\n    <font color=\"#FFE033\">Lightning:</font> 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 25</font> [Weapon Scaling]"
   },
   {
     "id": 1027,
     "name": "Cursed-Blood Slice",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Cursed-Blood Slice</font>",
-    "info": "Brace, then leap into a diagonal slash that paints a cursed trail which detonates moments later; repeat with another input for a horizontal follow-up that leaves a second delayed explosion. Cannot parried while consuming FP."
+    "info": "Brace, then leap into a diagonal slash that paints a cursed trail which detonates moments later; repeat with another input for a horizontal follow-up that leaves a second delayed explosion. Cannot parried while consuming FP.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 100, 100 <font color=\"#b9bec3ff\">[105, 105]</font> [AR]\n    <font color=\"#C84343\">Blood Loss (%):</font> 110, 110 <font color=\"#b9bec3ff\">[100, 100]</font>\n    <font color=\"#C0B194\">Stance:</font> 10, 13 <font color=\"#b9bec3ff\">[7, 11]</font>\n    <font color=\"#F48C25\">Fire:</font> 50, 50 <font color=\"#b9bec3ff\">[0, 0]</font> [Weapon Scaling]\nBullet (Weapon Skill)\n    <font color=\"#C84343\">Blood Loss (%):</font> 70, 0 <font color=\"#b9bec3ff\">[0, 0]</font>\n    <font color=\"#C0B194\">Stance:</font> 8, 0 <font color=\"#b9bec3ff\">[0, 0]</font>\n    <font color=\"#F48C25\">Fire:</font> 80, 0 <font color=\"#b9bec3ff\">[0, 0]</font> [Weapon Scaling]"
   },
   {
     "id": 1030,
@@ -172,14 +172,14 @@
     "name": "Bloodboon Ritual",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bloodboon Ritual</font>",
-    "info": "Raise the sacred spear and pierce the Formless Mother up to three times, each thrust spawning an explosion of bloodflame that rains droplets around you before coating the weapon. The third thrust hits harder and recovers more slowly, while the armament stays imbued for 20 seconds with 30 added <font color=\"#F48C25\">fire damage</font> and steady <font color=\"#C84343\">blood loss accumulation</font> on every hit; damage scales with weapon upgrade level and <font color=\"#E0B985\">Arcane</font>, and each detonation deals pure <font color=\"#F48C25\">fire damage</font>."
+    "info": "Raise the sacred spear and pierce the Formless Mother up to three times, each thrust spawning an explosion of bloodflame that rains droplets around you before coating the weapon. The third thrust hits harder and recovers more slowly, while the armament stays imbued for 20 seconds with 30 added <font color=\"#F48C25\">fire damage</font> and steady <font color=\"#C84343\">blood loss accumulation</font> on every hit; damage scales with weapon upgrade level and <font color=\"#E0B985\">Arcane</font>, and each detonation deals pure <font color=\"#F48C25\">fire damage</font>.\n\n(Weapon Skill)\n<font color=\"#F395C4\">Pierce:</font> 0, 0, 0 <font color=\"#b9bec3ff\">[100, 100, 100]</font> [AR]\n<font color=\"#C84343\">Blood Loss (%):</font> 120, 150, 180 <font color=\"#b9bec3ff\">[100, 100, 100]</font>\n<font color=\"#C0B194\">Stance:</font> 23, 23, 23 <font color=\"#b9bec3ff\">[6, 6, 6]</font>\n<font color=\"#F48C25\">Fire:</font> 265, 265, 265 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [Weapon Scaling]"
   },
   {
     "id": 1049,
     "name": "Ancient Lightning Spear",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Ancient Lightning Spear</font>",
-    "info": "Imbue the armament with the ancient dragons' red lightning, take a short step forward, and fling it as a spear of pure <font color=\"#FFE033\">lightning damage</font> that knocks back foes when fully charged and flinches tougher enemies."
+    "info": "Imbue the armament with the ancient dragons' red lightning, take a short step forward, and fling it as a spear of pure <font color=\"#FFE033\">lightning damage</font> that knocks back foes when fully charged and flinches tougher enemies.\n\nBullet (Weapon Skill, Charged Skill)\n    <font color=\"#F395C4\">Standard:</font> 250 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 300</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 8 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 8</font>\n    <font color=\"#FFE033\">Lightning:</font> 75 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 120</font> [Weapon Scaling]\nWater AoE (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 100 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 3 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0</font>\n    <font color=\"#FFE033\">Lightning:</font> 50 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0</font> [Weapon Scaling]"
   },
   {
     "id": 1053,
@@ -200,21 +200,21 @@
     "name": "Magma Shower",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Magma Shower</font>",
-    "info": "Slash in a tight circle to scatter pools of magma around you, then use an additional input to spin again and carpet the area in fire; each spin leaves lingering magma pools that continue scorching foes. Cannot be parried while consuming FP."
+    "info": "Slash in a tight circle to scatter pools of magma around you, then use an additional input to spin again and carpet the area in fire; each spin leaves lingering magma pools that continue scorching foes. Cannot be parried while consuming FP.\n\nHit (Weapon Skill, Magma Attack)\n    <font color=\"#F395C4\">Slash:</font> 100, 185 <font color=\"#b9bec3ff\">[80, 150]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 15, 19 <font color=\"#b9bec3ff\">[4, 6]</font>\nBullet (Weapon Skill, Magma Attack)\n    <font color=\"#F48C25\">Fire:</font> 30, 0 <font color=\"#b9bec3ff\">[0, 0]</font> [Weapon Scaling]"
   },
   {
     "id": 1178,
     "name": "Transient Moonlight",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Transient Moonlight</font>",
-    "info": "Sheathe the blade while moving freely, then release into a stepping horizontal slash or a short-hop vertical slash depending on the follow-up input; both slashes launch waves of light. Can be parried; projectiles can be parried or reflected. Counts as a stance skill."
+    "info": "Sheathe the blade while moving freely, then release into a stepping horizontal slash or a short-hop vertical slash depending on the follow-up input; both slashes launch waves of light. Can be parried; projectiles can be parried or reflected. Counts as a stance skill.\n\nLight Follow-up\n    Hit (Weapon Skill)\n        <font color=\"#F395C4\">Slash:</font> 50 <font color=\"#b9bec3ff\">[115]</font> [AR]\n        <font color=\"#C84343\">Blood Loss (%):</font> 100 <font color=\"#b9bec3ff\">[100]</font>\n        <font color=\"#C0B194\">Stance:</font> 23 <font color=\"#b9bec3ff\">[5]</font>\n    Bullet (Weapon Skill)\n        <font color=\"#C0B194\">Stance:</font> 5 <font color=\"#b9bec3ff\">[0]</font>\n        <font color=\"#57DBCE\">Magic:</font> 140 <font color=\"#b9bec3ff\">[0]</font> [Weapon Scaling]\nHeavy Follow-up\n    Hit (Weapon Skill)\n        <font color=\"#F395C4\">Slash:</font> 55 <font color=\"#b9bec3ff\">[135]</font> [AR]\n        <font color=\"#C84343\">Blood Loss (%):</font> 100 <font color=\"#b9bec3ff\">[100]</font>\n        <font color=\"#C0B194\">Stance:</font> 23 <font color=\"#b9bec3ff\">[10]</font>\n    Bullet (Weapon Skill)\n        <font color=\"#C0B194\">Stance:</font> 8 <font color=\"#b9bec3ff\">[0]</font>\n        <font color=\"#57DBCE\">Magic:</font> 155 <font color=\"#b9bec3ff\">[0]</font> [Weapon Scaling]"
   },
   {
     "id": 1186,
     "name": "Thunderstorm",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Thunderstorm</font>",
-    "info": "Imbue the armament with lightning and spin it to surround yourself with a storm, chaining up to two additional spins with further inputs. The weapon stays infused for 40 seconds, adding 120 <font color=\"#FFE033\">lightning damage</font> to every attack. Cannot be parried and does not trigger multi-hit effects."
+    "info": "Imbue the armament with lightning and spin it to surround yourself with a storm, chaining up to two additional spins with further inputs. The weapon stays infused for 40 seconds, adding 120 <font color=\"#FFE033\">lightning damage</font> to every attack. Cannot be parried and does not trigger multi-hit effects.\n\nHit (Weapon Skill, Storm Attack)\n    <font color=\"#F395C4\">Standard:</font> 300, 200, 210 <font color=\"#b9bec3ff\">[195, 130, 140]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 14, 9, 9 <font color=\"#b9bec3ff\">[11, 7, 7]</font>\n    <font color=\"#FFE033\">Lightning:</font> 285, 190, 202 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [Weapon Scaling]\nBullet (Weapon Skill, Storm Attack)\n    <font color=\"#F395C4\">Standard:</font> 189, 149, 160 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 29, 19, 19 <font color=\"#b9bec3ff\">[0, 0, 0]</font>"
   },
   {
     "id": 1197,
@@ -228,161 +228,161 @@
     "name": "Dryleaf Whirlwind",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Dryleaf Whirlwind</font>",
-    "info": "Leap upward in a cyclone of four rapid kicks before driving a final heel drop into the ground, extending the reach of all kicking attacks with <font color=\"#E0B985\">arcane</font> force. Triggers multi-hit effects."
+    "info": "Leap upward in a cyclone of four rapid kicks before driving a final heel drop into the ground, extending the reach of all kicking attacks with <font color=\"#E0B985\">arcane</font> force. Triggers multi-hit effects.\n\n(Weapon Skill, Kicking/Stomping Skill)\n<font color=\"#F395C4\">Strike:</font> 442 <font color=\"#b9bec3ff\">[280]</font> [AR]\nStatus (%): 280 <font color=\"#b9bec3ff\">[400]</font>\n<font color=\"#C0B194\">Stance:</font> 28 <font color=\"#b9bec3ff\">[16]</font>"
   },
   {
     "id": 2001,
     "name": "Aspects of the Crucible: Wings",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Aspects of the Crucible: Wings</font>",
-    "info": "Manifest Crucible wings, take flight, and dive weapon-first into the target; twinblades replace the thrust with an eight-spin charge."
+    "info": "Manifest Crucible wings, take flight, and dive weapon-first into the target; twinblades replace the thrust with an eight-spin charge.\n\n(Weapon Skill, Aspects of the Crucible)\nDamage: 231-460 [AR]\nStatus (%): 100-320\n<font color=\"#C0B194\">Stance:</font> 8-24"
   },
   {
     "id": 4000,
     "name": "Spinning Gravity Thrust",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Spinning Gravity Thrust</font>",
-    "info": "Use gravity to hover in place, rotate, and drive forward with a piercing thrust, then input again to crash down in another spinning strike that knocks foes back. Triggers multi-hit effects"
+    "info": "Use gravity to hover in place, rotate, and drive forward with a piercing thrust, then input again to crash down in another spinning strike that knocks foes back. Triggers multi-hit effects\n\n(Weapon Skill)\nDamage: 247, 224 <font color=\"#b9bec3ff\">[0, 0]</font> [AR]\nStatus (%): 325, 260 <font color=\"#b9bec3ff\">[325, 260]</font>\n<font color=\"#C0B194\">Stance:</font> 21-23, 25-27 <font color=\"#b9bec3ff\">[14-15, 11-12]</font>\n<font color=\"#F395C4\">Strike:</font> 0, 0 <font color=\"#b9bec3ff\">[130, 110]</font> [AR]"
   },
   {
     "id": 4010,
     "name": "Palm Blast",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Palm Blast</font>",
-    "info": "Imbue your palm with energy before unleashing an explosive strike that travels slightly beyond your reach, spreading the weapon's status buildup across the blast radius. Charging widens the explosion, knocks enemies back like Rejection, and grants the poise of a fully charged Endure while increasing the stance damage it deals."
+    "info": "Imbue your palm with energy before unleashing an explosive strike that travels slightly beyond your reach, spreading the weapon's status buildup across the blast radius. Charging widens the explosion, knocks enemies back like Rejection, and grants the poise of a fully charged Endure while increasing the stance damage it deals.\n\n(Weapon Skill, Charged Skill)\n<font color=\"#F395C4\">Strike:</font> 220 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 460 </font><font color=\"#b9bec3ff\">[120 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 180</font><font color=\"#b9bec3ff\">]</font> [AR]\nStatus (%): 65 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 65 </font><font color=\"#b9bec3ff\">[100 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 100</font><font color=\"#b9bec3ff\">]</font>\n<font color=\"#C0B194\">Stance:</font> 20 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 36 </font><font color=\"#b9bec3ff\">[4 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 8</font><font color=\"#b9bec3ff\">]</font>"
   },
   {
     "id": 4020,
     "name": "Piercing Throw",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Piercing Throw</font>",
-    "info": "Hurl the armament with a powerful spin to tunnel through every foe in its path while reaching roughly double the normal range; the projectile keeps its full damage on each pierce and has no falloff, though blocking still prevents damage even as the projectile continues traveling. Using the skill without <font color=\"#E0B985\">FP</font> removes the piercing effect."
+    "info": "Hurl the armament with a powerful spin to tunnel through every foe in its path while reaching roughly double the normal range; the projectile keeps its full damage on each pierce and has no falloff, though blocking still prevents damage even as the projectile continues traveling. Using the skill without <font color=\"#E0B985\">FP</font> removes the piercing effect.\n\n(Weapon Skill, Weapon-Throwing Attack)\n<font color=\"#F395C4\">Pierce:</font> 175 <font color=\"#b9bec3ff\">[50]</font> [AR]\nStatus (%): 100 <font color=\"#b9bec3ff\">[50]</font>\n<font color=\"#C0B194\">Stance:</font> 3 <font color=\"#b9bec3ff\">[2]</font>"
   },
   {
     "id": 4030,
     "name": "Scattershot Throw",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Scattershot Throw</font>",
-    "info": "Conjure mirrored copies of the dagger in both hands, fling a cloud of 28 projectiles that can strike large foes up to four times each, then repeat the same input for a second volley; all hits count as pierce damage for counter bonuses such as Spear Talisman, and the cast gains an extra close-range hitbox. The projectiles reach roughly 50% farther than normal throws, and using the skill without <font color=\"#E0B985\">FP</font> releases only two daggers while keeping the extended range."
+    "info": "Conjure mirrored copies of the dagger in both hands, fling a cloud of 28 projectiles that can strike large foes up to four times each, then repeat the same input for a second volley; all hits count as pierce damage for counter bonuses such as Spear Talisman, and the cast gains an extra close-range hitbox. The projectiles reach roughly 50% farther than normal throws, and using the skill without <font color=\"#E0B985\">FP</font> releases only two daggers while keeping the extended range.\n\nHit (Weapon Skill, Weapon-Throwing Attack)\n    <font color=\"#F395C4\">Pierce:</font> 140-176, 140-176 <font color=\"#b9bec3ff\">[70, 0]</font> [AR]\n    Status (%): 140, 140 <font color=\"#b9bec3ff\">[70, 0]</font>\n    <font color=\"#C0B194\">Stance:</font> 5-6, 5-6 <font color=\"#b9bec3ff\">[1-3, 0]</font>\nFar (Weapon Skill, Weapon-Throwing Attack)\n    <font color=\"#F395C4\">Pierce:</font> 39-53, 0 <font color=\"#b9bec3ff\">[0, 0]</font> [AR]\n    Status (%): 70, 0 <font color=\"#b9bec3ff\">[0, 0]</font>\n    <font color=\"#C0B194\">Stance:</font> 1, 0 <font color=\"#b9bec3ff\">[0, 0]</font>"
   },
   {
     "id": 4040,
     "name": "Wall of Sparks",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Wall of Sparks</font>",
-    "info": "Scatter perfumed powder around you that ignites after a short delay into a wall of intense sparks whose element is determined by the perfume bottle; charging widens the wall. Cannot be parried."
+    "info": "Scatter perfumed powder around you that ignites after a short delay into a wall of intense sparks whose element is determined by the perfume bottle; charging widens the wall. Cannot be parried.\n\n(Weapon Skill, Perfume Bottle)\n<font color=\"#F395C4\">Standard:</font> 10 [AR]\nStatus (%): 20\n<font color=\"#C0B194\">Stance:</font> 3\nDamage: 95 [AR]\nStatus (%): 100"
   },
   {
     "id": 4050,
     "name": "Rolling Sparks",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Rolling Sparks</font>",
-    "info": "Spread perfumed powder in a rolling line that triggers successive explosions of sparks inheriting the bottle's properties; large targets can be struck multiple times along the trail, and the line stops releasing new hitboxes once it collides with terrain."
+    "info": "Spread perfumed powder in a rolling line that triggers successive explosions of sparks inheriting the bottle's properties; large targets can be struck multiple times along the trail, and the line stops releasing new hitboxes once it collides with terrain.\n\n(Weapon Skill, Perfume Bottle)\n<font color=\"#F395C4\">Standard:</font> 10 [AR]\nStatus (%): 10\n<font color=\"#C0B194\">Stance:</font> 3\nDamage: 82 [AR]\nStatus (%): 90"
   },
   {
     "id": 4060,
     "name": "Raging Beast",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Raging Beast</font>",
-    "info": "Step with beastlike speed in any direction, leap upward, and rake the foe with an aerial slash before a strong-attack follow-up dives downward; holding a directional input while evading determines which flank you strike and the dash grants 6 invulnerability frames."
+    "info": "Step with beastlike speed in any direction, leap upward, and rake the foe with an aerial slash before a strong-attack follow-up dives downward; holding a directional input while evading determines which flank you strike and the dash grants 6 invulnerability frames.\n\nSkill (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 145 <font color=\"#b9bec3ff\">[85]</font> [AR]\n    Status (%): 100 <font color=\"#b9bec3ff\">[100]</font>\n    <font color=\"#C0B194\">Stance:</font> 6 <font color=\"#b9bec3ff\">[4]</font>\nHeavy Follow-up (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 235 <font color=\"#b9bec3ff\">[150]</font> [AR]\n    Status (%): 150 <font color=\"#b9bec3ff\">[150]</font>\n    <font color=\"#C0B194\">Stance:</font> 10 <font color=\"#b9bec3ff\">[5]</font>"
   },
   {
     "id": 4070,
     "name": "Savage Claws",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Savage Claws</font>",
-    "info": "Pounce onto the target and rake it with six alternating claw swipes in rapid succession."
+    "info": "Pounce onto the target and rake it with six alternating claw swipes in rapid succession.\n\n(Weapon Skill)\n<font color=\"#F395C4\">Slash:</font> 485 <font color=\"#b9bec3ff\">[300]</font> [AR]\nStatus (%): 360 <font color=\"#b9bec3ff\">[600]</font>\n<font color=\"#C0B194\">Stance:</font> 22 <font color=\"#b9bec3ff\">[10]</font>"
   },
   {
     "id": 4080,
     "name": "Red Bear Hunt",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Red Bear Hunt</font>",
-    "info": "Slaughter prey with a wide right swipe that spawns a lingering vacuum dealing continuous Standard damage, then repeat the input to flow into a left slash and a front double-claw sweep while the vacuums persist; the three slashes total 32.6 stance damage."
+    "info": "Slaughter prey with a wide right swipe that spawns a lingering vacuum dealing continuous Standard damage, then repeat the input to flow into a left slash and a front double-claw sweep while the vacuums persist; the three slashes total 32.6 stance damage.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 138, 129, 172 <font color=\"#b9bec3ff\">[50, 50, 100]</font> [AR]\n    <font color=\"#C84343\">Blood Loss (%):</font> 100, 100, 200 <font color=\"#b9bec3ff\">[100, 100, 200]</font>\n    <font color=\"#C0B194\">Stance:</font> 8, 8, 9 <font color=\"#b9bec3ff\">[2, 2, 4]</font>\nBullet (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 56, 56, 49 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 2, 2, 2 <font color=\"#b9bec3ff\">[0, 0, 0]</font>"
   },
   {
     "id": 4090,
     "name": "Blind Spot",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Blind Spot</font>",
-    "info": "Leap into a foe's blind spot and gore them from the side; directional inputs pick which flank you dash toward, the evasion grants 6 invulnerability frames, and the resulting stab slips below their guard while dealing <font color=\"#F395C4\">pierce damage</font> that bypasses blocking."
+    "info": "Leap into a foe's blind spot and gore them from the side; directional inputs pick which flank you dash toward, the evasion grants 6 invulnerability frames, and the resulting stab slips below their guard while dealing <font color=\"#F395C4\">pierce damage</font> that bypasses blocking.\n\n(Weapon Skill)\nDamage: 290 <font color=\"#b9bec3ff\">[140]</font> [AR]\nStatus (%): 200 <font color=\"#b9bec3ff\">[200]</font>\n<font color=\"#C0B194\">Stance:</font> 20 <font color=\"#b9bec3ff\">[10]</font>"
   },
   {
     "id": 4100,
     "name": "Swift Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Swift Slash</font>",
-    "info": "Step forward with a razor-quick cut that slices through foes and fires a shearing vacuum whose repeated hits rapidly build status; charging increases the strike's power and the distance of the forward step."
+    "info": "Step forward with a razor-quick cut that slices through foes and fires a shearing vacuum whose repeated hits rapidly build status; charging increases the strike's power and the distance of the forward step.\n\nHit (Weapon Skill, Charged Skill)\n    Damage: 92 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 184 </font><font color=\"#b9bec3ff\">[70 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 0</font><font color=\"#b9bec3ff\">]</font> [AR]\n    Status (%): 100 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 200 </font><font color=\"#b9bec3ff\">[100 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 0</font><font color=\"#b9bec3ff\">]</font>\n    <font color=\"#C0B194\">Stance:</font> 5 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 20 </font><font color=\"#b9bec3ff\">[5 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 0</font><font color=\"#b9bec3ff\">]</font>\nBullet (Weapon Skill, Charged Skill)\n    Damage: 120 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 160 </font><font color=\"#b9bec3ff\">[0 | 0]</font> [AR]\n    Status (%): 100 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 100 </font><font color=\"#b9bec3ff\">[0 | 0]</font>\n    <font color=\"#C0B194\">Stance:</font> 5 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 5 </font><font color=\"#b9bec3ff\">[0 | 0]</font>"
   },
   {
     "id": 4110,
     "name": "Overhead Stance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Overhead Stance</font>",
-    "info": "Enter a high guard, then follow a light attack with a stepping downward slash or a strong attack with a series of plunging blows.\nCounts as a stance skill."
+    "info": "Enter a high guard, then follow a light attack with a stepping downward slash or a strong attack with a series of plunging blows.\nCounts as a stance skill.\n\nLight Follow-up (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 153.4 <font color=\"#b9bec3ff\">[50]</font> [AR]\n    Status (%): 100 <font color=\"#b9bec3ff\">[100]</font>\n    <font color=\"#C0B194\">Stance:</font> 11 <font color=\"#b9bec3ff\">[3]</font>\nHeavy Follow-up (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 293.4 <font color=\"#b9bec3ff\">[150]</font> [AR]\n    Status (%): 230 <font color=\"#b9bec3ff\">[300]</font>\n    <font color=\"#C0B194\">Stance:</font> 22 <font color=\"#b9bec3ff\">[8]</font>"
   },
   {
     "id": 4120,
     "name": "Wing Stance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Wing Stance</font>",
-    "info": "Hold a poised right-sided guard; the light attack follow-up releases a rapid three-slash combo, while the heavy attack follow-up is a leaping heavy thrust; holding the Skill button after the light follow-up immediately returns the stance; the heavy follow-up does not benefit from jumping attack buffs.\nCan be parried. Counts as a stance skill."
+    "info": "Hold a poised right-sided guard; the light attack follow-up releases a rapid three-slash combo, while the heavy attack follow-up is a leaping heavy thrust; holding the Skill button after the light follow-up immediately returns the stance; the heavy follow-up does not benefit from jumping attack buffs.\nCan be parried. Counts as a stance skill.\n\nLight Follow-up (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 254 <font color=\"#b9bec3ff\">[150]</font> [AR]\n    Status (%): 240 <font color=\"#b9bec3ff\">[300]</font>\n    <font color=\"#C0B194\">Stance:</font> 17 <font color=\"#b9bec3ff\">[17]</font>\nHeavy Follow-up (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 251 <font color=\"#b9bec3ff\">[100]</font> [AR]\n    Status (%): 100 <font color=\"#b9bec3ff\">[100]</font>\n    <font color=\"#C0B194\">Stance:</font> 30 <font color=\"#b9bec3ff\">[6]</font>"
   },
   {
     "id": 4130,
     "name": "Blinkbolt",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Blinkbolt</font>",
-    "info": "Transform into a bolt of lightning from a low stance and rush straight ahead even when locked onto a target. Deals minimal <font color=\"#FFE033\">lightning damage</font> while surging forward and, after 14 frames of startup, grants 16 invulnerability frames that let you ignore incoming attacks."
+    "info": "Transform into a bolt of lightning from a low stance and rush straight ahead even when locked onto a target. Deals minimal <font color=\"#FFE033\">lightning damage</font> while surging forward and, after 14 frames of startup, grants 16 invulnerability frames that let you ignore incoming attacks.\n\n(Weapon Skill, Dragon Cult Skill)\n<font color=\"#F395C4\">Standard:</font> 0 <font color=\"#b9bec3ff\">[40]</font> [Dexterity]\n<font color=\"#FFE033\">Lightning:</font> 50 <font color=\"#b9bec3ff\">[0]</font> [Dexterity]"
   },
   {
     "id": 4140,
     "name": "Flame Skewer",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Flame Skewer</font>",
-    "info": "Enwreathe the armament in fire, dip into a low stance, and skewer the target in one thrust before a strong-attack follow-up fans flames across the front; the opening thrust can be parried. Adds 95 <font color=\"#F48C25\">fire attack rating</font> to the armament for 15 seconds."
+    "info": "Enwreathe the armament in fire, dip into a low stance, and skewer the target in one thrust before a strong-attack follow-up fans flames across the front; the opening thrust can be parried. Adds 95 <font color=\"#F48C25\">fire attack rating</font> to the armament for 15 seconds.\n\nSkill (Weapon Skill, Fire Knight Skill)\n    <font color=\"#F395C4\">Pierce:</font> 138-151 <font color=\"#b9bec3ff\">[0]</font> [AR]\n    Status (%): 100 <font color=\"#b9bec3ff\">[100]</font>\n    <font color=\"#C0B194\">Stance:</font> 16-24 <font color=\"#b9bec3ff\">[4-6]</font>\n    Damage: 0 <font color=\"#b9bec3ff\">[105]</font> [AR]\nHeavy Follow-up\n    Bullet (Weapon Skill, Fire Knight Skill)\n        <font color=\"#C0B194\">Stance:</font> 15 <font color=\"#b9bec3ff\">[0]</font>\n        <font color=\"#F48C25\">Fire:</font> 128 <font color=\"#b9bec3ff\">[0]</font> [Faith]\n    Hit (Weapon Skill, Fire Knight Skill)\n        <font color=\"#C0B194\">Stance:</font> 0 <font color=\"#b9bec3ff\">[5]</font>\n        <font color=\"#F395C4\">Standard:</font> 0 <font color=\"#b9bec3ff\">[25]</font> [Weapon Scaling]"
   },
   {
     "id": 4150,
     "name": "Savage Lion's Claw",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Savage Lion's Claw</font>",
-    "info": "Somersault forward, landing a weaker Lion's Claw slash, a regular attack during the flip, and a finishing Lion's Claw slam, with an additional input enabling the final strike; each hit inherits your weapon's damage type."
+    "info": "Somersault forward, landing a weaker Lion's Claw slash, a regular attack during the flip, and a finishing Lion's Claw slam, with an additional input enabling the final strike; each hit inherits your weapon's damage type.\n\n(Weapon Skill, Redmane Battle Skill)\nDamage: 195, 223 <font color=\"#b9bec3ff\">[120, 240]</font> [AR]\nStatus (%): 100, 200 <font color=\"#b9bec3ff\">[100, 200]</font>\n<font color=\"#C0B194\">Stance:</font> 13-19, 30-45 <font color=\"#b9bec3ff\">[5-8, 10-15]</font>"
   },
   {
     "id": 4160,
     "name": "Divine Beast Frost Stomp",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Divine Beast Frost Stomp</font>",
-    "info": "Lift a leg high and stamp it down to send a ground-hugging wave of frost straight ahead that detonates into spikes and ice explosions along its path, dealing <font color=\"#57DBCE\">magic damage</font>; charging increases the wave's range and power. The wave also inflicts frostbite buildup on the spikes and each explosion."
+    "info": "Lift a leg high and stamp it down to send a ground-hugging wave of frost straight ahead that detonates into spikes and ice explosions along its path, dealing <font color=\"#57DBCE\">magic damage</font>; charging increases the wave's range and power. The wave also inflicts frostbite buildup on the spikes and each explosion.\n\nIce Spikes (Weapon Skill, Kicking/Stomping Skill, Charged Skill)\n    <font color=\"#C0B194\">Stance:</font> 5 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 10 </font><font color=\"#b9bec3ff\">[0 | 0]</font>\n    <font color=\"#57DBCE\">Magic:</font> 130 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 180 </font><font color=\"#b9bec3ff\">[0 | 0]</font> [Dex/Int]\nShatter (Weapon Skill, Kicking/Stomping Skill, Charged Skill)\n    <font color=\"#57DBCE\">Magic:</font> 30 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 45 </font><font color=\"#b9bec3ff\">[0 | 0]</font> [Dex/Int]\nHit (Weapon Skill, Kicking/Stomping Skill, Charged Skill)\n    Status (%): 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0 </font><font color=\"#b9bec3ff\">[100 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 100</font><font color=\"#b9bec3ff\">]</font>\n    <font color=\"#C0B194\">Stance:</font> 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0 </font><font color=\"#b9bec3ff\">[2-8 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 2-8</font><font color=\"#b9bec3ff\">]</font>\n    <font color=\"#F395C4\">Standard:</font> 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0 </font><font color=\"#b9bec3ff\">[10 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 15</font><font color=\"#b9bec3ff\">]</font> [Str/Dex]"
   },
   {
     "id": 4170,
     "name": "Flame Spear",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Flame Spear</font>",
-    "info": "Ready a thrust imbued with flame, then unleash a fiery spear straight ahead; charging the attack increases damage and travel distance. The buff coats the armament in flame for 40 seconds, adding 95 <font color=\"#F48C25\">fire damage</font>, and the projectile launches the moment the thrust launches. The weapon hit can be parried while the projectile cannot."
+    "info": "Ready a thrust imbued with flame, then unleash a fiery spear straight ahead; charging the attack increases damage and travel distance. The buff coats the armament in flame for 40 seconds, adding 95 <font color=\"#F48C25\">fire damage</font>, and the projectile launches the moment the thrust launches. The weapon hit can be parried while the projectile cannot.\n\nHit (Weapon Skill, Fire Knight Skill, Charged Skill)\n    Damage: 80 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 120 </font><font color=\"#b9bec3ff\">[80 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 110</font><font color=\"#b9bec3ff\">]</font> [AR]\n    Status (%): 100 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 100 </font><font color=\"#b9bec3ff\">[100 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 100</font><font color=\"#b9bec3ff\">]</font>\n    <font color=\"#C0B194\">Stance:</font> 7-14 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 16-32 </font><font color=\"#b9bec3ff\">[3-6 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 3-6</font><font color=\"#b9bec3ff\">]</font>\nBullet (Weapon Skill, Fire Knight Skill, Charged Skill)\n    <font color=\"#C0B194\">Stance:</font> 6 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 6 </font><font color=\"#b9bec3ff\">[0 | 0]</font>\n    <font color=\"#F48C25\">Fire:</font> 106 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 134 </font><font color=\"#b9bec3ff\">[0 | 0]</font> [Faith]"
   },
   {
     "id": 4180,
     "name": "Carian Sovereignty",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Carian Sovereignty</font>",
-    "info": "Transform the blade into a massive magical greatsword and slam it down, with an additional input producing a horizontal sweep; charge either attack for greater force. A fully charged slam releases a ground shockwave that sends two bursts in a line, each dealing roughly 40% of the slam's damage, and a single foe cannot be hit by both the slam and the bursts. The follow-up sweep matches the initial cast in raw damage."
+    "info": "Transform the blade into a massive magical greatsword and slam it down, with an additional input producing a horizontal sweep; charge either attack for greater force. A fully charged slam releases a ground shockwave that sends two bursts in a line, each dealing roughly 40% of the slam's damage, and a single foe cannot be hit by both the slam and the bursts. The follow-up sweep matches the initial cast in raw damage.\n\nHit (Weapon Skill, Charged Skill)\n    Damage: 0, 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0, 0 </font><font color=\"#b9bec3ff\">[150, 150 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 120, 0</font><font color=\"#b9bec3ff\">]</font> [AR]\n    Status (%): 0, 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0, 0 </font><font color=\"#b9bec3ff\">[100, 100 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 100, 0</font><font color=\"#b9bec3ff\">]</font>\n    <font color=\"#C0B194\">Stance:</font> 30, 30 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 37, 45 </font><font color=\"#b9bec3ff\">[4-11, 4-11 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 3-8, 0</font><font color=\"#b9bec3ff\">]</font>\n    <font color=\"#57DBCE\">Magic:</font> 315, 315 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 284, 400 </font><font color=\"#b9bec3ff\">[0, 0 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 0, 0</font><font color=\"#b9bec3ff\">]</font> [Intelligence]\nBullet (Charged Skill, Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 0, 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 11, 0 </font><font color=\"#b9bec3ff\">[0, 0 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 0, 0</font><font color=\"#b9bec3ff\">]</font>\n    <font color=\"#57DBCE\">Magic:</font> 0, 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 160, 0 </font><font color=\"#b9bec3ff\">[0, 0 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 0, 0</font><font color=\"#b9bec3ff\">]</font> [Intelligence]"
   },
   {
     "id": 4190,
     "name": "Shriek of Sorrow",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Shriek of Sorrow</font>",
-    "info": "Unleash a harrowing scream that makes nearby foes flinch before channeling resentment into your weapon for 40 seconds based on your remaining HP. The buff locks in at the HP when cast, increases <font color=\"#F395C4\">physical damage</font> by 10% at 100% HP, 15% at 85% HP, 20% at 55% HP, and 25% at 30% HP or lower (7.5%, 10%, 15%, and 20% in PvP), and adds +5 <font color=\"#E0B985\">Strength</font> scaling to the weapon until you recast. Cannot be parried. counts as a weapon buff."
+    "info": "Unleash a harrowing scream that makes nearby foes flinch before channeling resentment into your weapon for 40 seconds based on your remaining HP. The buff locks in at the HP when cast, increases <font color=\"#F395C4\">physical damage</font> by 10% at 100% HP, 15% at 85% HP, 20% at 55% HP, and 25% at 30% HP or lower (7.5%, 10%, 15%, and 20% in PvP), and adds +5 <font color=\"#E0B985\">Strength</font> scaling to the weapon until you recast. Cannot be parried. counts as a weapon buff.\n\n<font color=\"#C0B194\">Stance:</font> 6"
   },
   {
     "id": 4200,
     "name": "Shield Strike",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Shield Strike</font>",
-    "info": "Bash forward with the equipped shield and input repeatedly to chain up to three additional shield strikes. When assigned off-hand it gives the shield its own light attack string so you can keep the main-hand skill, effectively allowing the shield to use its light attack instead of the main-hand Skill."
+    "info": "Bash forward with the equipped shield and input repeatedly to chain up to three additional shield strikes. When assigned off-hand it gives the shield its own light attack string so you can keep the main-hand skill, effectively allowing the shield to use its light attack instead of the main-hand Skill.\n\n#### Greatshield | Medium Shield | Small Shield\n\n(Final Light Attack in Chain)\nDamage: 100, 101-102, 102-105, 0-105 [AR]\nStatus (%): 100, 100, 100, 0-100\n<font color=\"#C0B194\">Stance:</font> 5-12, 5-12, 5-13, 0-11\n\n#### Thrusting Shield\n\n(Final Light Attack in Chain)\n<font color=\"#F395C4\">Pierce:</font> 100, 101, 102, 110 [AR]\nStatus (%): 100, 100, 100, 100\n<font color=\"#C0B194\">Stance:</font> 10, 10, 10, 11"
   },
   {
     "id": 4210,
@@ -396,224 +396,224 @@
     "name": "Ghostflame Call",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Ghostflame Call</font>",
-    "info": "Thrust out armament to summon ghostflame. Follow up with a normal attack to set the ground ablaze with ghostflame, or a strong attack to trigger a massive explosion."
+    "info": "Thrust out armament to summon ghostflame. Follow up with a normal attack to set the ground ablaze with ghostflame, or a strong attack to trigger a massive explosion.\n\nSkill\n    Hit (Weapon Skill)\n        <font color=\"#F395C4\">Pierce:</font> 50 <font color=\"#b9bec3ff\">[75]</font> [AR]\n        Status (%): 50 <font color=\"#b9bec3ff\">[100]</font>\n        <font color=\"#C0B194\">Stance:</font> 4-6 <font color=\"#b9bec3ff\">[3-5]</font>\n    Ticks (Weapon Skill)\n        <font color=\"#57DBCE\">Magic:</font> 30 <font color=\"#b9bec3ff\">[0]</font> [Dex/Int]\n    Explosion (Weapon Skill)\n        <font color=\"#C0B194\">Stance:</font> 4 <font color=\"#b9bec3ff\">[0]</font>\n        <font color=\"#57DBCE\">Magic:</font> 50 <font color=\"#b9bec3ff\">[0]</font> [Dex/Int]\nLight Follow-up\n    Hit (Weapon Skill)\n        <font color=\"#F395C4\">Standard:</font> 75 <font color=\"#b9bec3ff\">[85]</font> [AR]\n        Status (%): 50 <font color=\"#b9bec3ff\">[100]</font>\n        <font color=\"#C0B194\">Stance:</font> 4-6 <font color=\"#b9bec3ff\">[3-5]</font>\n    Bullet (Weapon Skill)\n        <font color=\"#C0B194\">Stance:</font> 5 <font color=\"#b9bec3ff\">[0]</font>\n        <font color=\"#57DBCE\">Magic:</font> 50 <font color=\"#b9bec3ff\">[0]</font> [Dex/Int]\n    Ground Flame (Weapon Skill)\n        <font color=\"#57DBCE\">Magic:</font> 20 <font color=\"#b9bec3ff\">[0]</font> [Dex/Int]\nHeavy Follow-up\n    Hit (Weapon Skill)\n        <font color=\"#F395C4\">Standard:</font> 80 <font color=\"#b9bec3ff\">[85]</font> [AR]\n        Status (%): 50 <font color=\"#b9bec3ff\">[100]</font>\n        <font color=\"#C0B194\">Stance:</font> 4-6 <font color=\"#b9bec3ff\">[3-5]</font>\n    Bullet (Weapon Skill)\n        <font color=\"#C0B194\">Stance:</font> 11 <font color=\"#b9bec3ff\">[0]</font>\n        <font color=\"#57DBCE\">Magic:</font> 80 <font color=\"#b9bec3ff\">[0]</font> [Dex/Int]"
   },
   {
     "id": 5000,
     "name": "Dragonwound Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Dragonwound Slash</font>",
-    "info": "Leap through the air while cloaked in jagged gravel stone, charging the attack to fire the aura as additional damage alongside the high slash. Inflicts 20% increased damage on Dragons and Ancient Dragons."
+    "info": "Leap through the air while cloaked in jagged gravel stone, charging the attack to fire the aura as additional damage alongside the high slash. Inflicts 20% increased damage on Dragons and Ancient Dragons.\n\nHit (Weapon Skill, Charged Skill)\n    <font color=\"#F395C4\">Slash:</font> 169 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 65 </font><font color=\"#b9bec3ff\">[100 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 120</font><font color=\"#b9bec3ff\">]</font> [AR]\n    <font color=\"#C84343\">Blood Loss (%):</font> 100 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 100 </font><font color=\"#b9bec3ff\">[100 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 100</font><font color=\"#b9bec3ff\">]</font>\n    <font color=\"#C0B194\">Stance:</font> 22 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 17 </font><font color=\"#b9bec3ff\">[6 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 6</font><font color=\"#b9bec3ff\">]</font>\nBullet (Charged Skill)\n    <font color=\"#F395C4\">Standard:</font> 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 191 </font><font color=\"#b9bec3ff\">[0 | 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 17 </font><font color=\"#b9bec3ff\">[0 | 0]</font>"
   },
   {
     "id": 5010,
     "name": "Needle Piercer",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Needle Piercer</font>",
-    "info": "Generate ten gold needles that pierce at once, purging any ailments or special effects from pierced foes. When attacking unaware enemies only the first projectile gains the surprise damage bonus. Can be parried."
+    "info": "Generate ten gold needles that pierce at once, purging any ailments or special effects from pierced foes. When attacking unaware enemies only the first projectile gains the surprise damage bonus. Can be parried.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 78 <font color=\"#b9bec3ff\">[100]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 8 <font color=\"#b9bec3ff\">[6]</font>\n10x (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 38 <font color=\"#b9bec3ff\">[0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 1 <font color=\"#b9bec3ff\">[0]</font>"
   },
   {
     "id": 5020,
     "name": "Light",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Light</font>",
-    "info": "Launch the armament upward to unleash a cone of blinding light whose rays sweep through the area ahead, each ray hitting up to four times. Applies a body buff that increases holy damage by 20% for 60 seconds. Cannot be parried."
+    "info": "Launch the armament upward to unleash a cone of blinding light whose rays sweep through the area ahead, each ray hitting up to four times. Applies a body buff that increases holy damage by 20% for 60 seconds. Cannot be parried.\n\n(Weapon Skill)\n<font color=\"#C0B194\">Stance:</font> 5\n<font color=\"#F5EB89\">Holy:</font> 61 [Weapon Scaling]"
   },
   {
     "id": 5030,
     "name": "Darkness",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Darkness</font>",
-    "info": "Raise the sword and cleave with darkness to form a veil that conceals the caster while blinding foes around them; enemies tagged by the veil have their aggro reset, remain blinded for about 7 seconds, and temporarily suffer reduced <font color=\"#F5EB89\">holy damage negation</font>."
+    "info": "Raise the sword and cleave with darkness to form a veil that conceals the caster while blinding foes around them; enemies tagged by the veil have their aggro reset, remain blinded for about 7 seconds, and temporarily suffer reduced <font color=\"#F5EB89\">holy damage negation</font>.\n\n(Weapon Skill)\n<font color=\"#C0B194\">Stance:</font> 20\n<font color=\"#F5EB89\">Holy:</font> 310 [Weapon Scaling]"
   },
   {
     "id": 5040,
     "name": "Onze's Line of Stars",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Onze's Line of Stars</font>",
-    "info": "Imbue lined glintstones with sorcerous energy to slash once, then continue through up to two follow-up attacks that each hit harder than the last. Triggers multi-hit effects"
+    "info": "Imbue lined glintstones with sorcerous energy to slash once, then continue through up to two follow-up attacks that each hit harder than the last. Triggers multi-hit effects\n\n(Weapon Skill)\n<font color=\"#F395C4\">Slash:</font> 165, 196, 215 <font color=\"#b9bec3ff\">[80, 90, 100]</font> [AR]\n<font color=\"#C84343\">Blood Loss (%):</font> 200, 200, 200 <font color=\"#b9bec3ff\">[200, 200, 200]</font>\n<font color=\"#C0B194\">Stance:</font> 8, 8, 15 <font color=\"#b9bec3ff\">[10, 10, 10]</font>"
   },
   {
     "id": 5050,
     "name": "The Poison Flower Blooms Twice",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: The Poison Flower Blooms Twice</font>",
-    "info": "Conjure a scarlet-rot-laden stinger beneath yourself to stab the enemy and kick up a shockwave on impact; the dive-kick inflicts 160 Scarlet Rot buildup while the wave only adds physical damage, and both hits scale solely with Weapon Level and gain damage from Shattered Stone Talisman. The shockwave inflicts no Scarlet Rot buildup on its own. If the dive-kick lands on a foe already afflicted with any <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">Scarlet Rot</font>, detonate it for 5% of <font color=\"#E0B985\">maximum HP</font> plus 250 damage (the same detonation as Poison Moth Flight) and purge the ailment, but only the dive-kick can trigger that detonation and it will not occur if you lack the <font color=\"#E0B985\">FP</font> to spawn the stinger and shockwave. If performed without <font color=\"#E0B985\">FP</font>, neither component materializes, so the detonation cannot trigger."
+    "info": "Conjure a scarlet-rot-laden stinger beneath yourself to stab the enemy and kick up a shockwave on impact; the dive-kick inflicts 160 Scarlet Rot buildup while the wave only adds physical damage, and both hits scale solely with Weapon Level and gain damage from Shattered Stone Talisman. The shockwave inflicts no Scarlet Rot buildup on its own. If the dive-kick lands on a foe already afflicted with any <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">Scarlet Rot</font>, detonate it for 5% of <font color=\"#E0B985\">maximum HP</font> plus 250 damage (the same detonation as Poison Moth Flight) and purge the ailment, but only the dive-kick can trigger that detonation and it will not occur if you lack the <font color=\"#E0B985\">FP</font> to spawn the stinger and shockwave. If performed without <font color=\"#E0B985\">FP</font>, neither component materializes, so the detonation cannot trigger.\n\nHit (Weapon Skill, Kicking/Stomping Skill)\n    <font color=\"#C0B194\">Stance:</font> 11 <font color=\"#b9bec3ff\">[3]</font>\n    <font color=\"#F395C4\">Standard:</font> 150 <font color=\"#b9bec3ff\">[55]</font> [Arcane]\nBullet (Weapon Skill, Kicking/Stomping Skill)\n    <font color=\"#C0B194\">Stance:</font> 9 <font color=\"#b9bec3ff\">[0]</font>\n    <font color=\"#F395C4\">Standard:</font> 70 <font color=\"#b9bec3ff\">[0]</font> [Arcane]"
   },
   {
     "id": 5080,
     "name": "Spinning Guillotine",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Spinning Guillotine</font>",
-    "info": "Hold the putrid blade at both ends, arch backward for a powerful overhead chop, and keep inputting to spin continuously until you stop. The strong attack follow-up launches into a jumping spinning slash."
+    "info": "Hold the putrid blade at both ends, arch backward for a powerful overhead chop, and keep inputting to spin continuously until you stop. The strong attack follow-up launches into a jumping spinning slash.\n\nSkill (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 163, 239 <font color=\"#b9bec3ff\">[50, 150]</font> [AR]\n    <font color=\"#9DD7FB\">Frostbite (%):</font> 100, 300 <font color=\"#b9bec3ff\">[100, 300]</font>\n    <font color=\"#C0B194\">Stance:</font> 17, 14 <font color=\"#b9bec3ff\">[6, 17]</font>\nHeavy Follow-up (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 254 <font color=\"#b9bec3ff\">[150]</font> [AR]\n    <font color=\"#9DD7FB\">Frostbite (%):</font> 300 <font color=\"#b9bec3ff\">[300]</font>\n    <font color=\"#C0B194\">Stance:</font> 33 <font color=\"#b9bec3ff\">[17]</font>"
   },
   {
     "id": 5090,
     "name": "Unending Dance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Unending Dance</font>",
-    "info": "Perform a furious succession of slashes, holding to sustain the dance while you spin."
+    "info": "Perform a furious succession of slashes, holding to sustain the dance while you spin.\n\nHit (Weapon Skill, Dancing Attack)\n    <font color=\"#F395C4\">Slash:</font> 110 <font color=\"#b9bec3ff\">[75]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 6 <font color=\"#b9bec3ff\">[2]</font>\nLoop (Weapon Skill, Dancing Attack)\n    <font color=\"#F395C4\">Slash:</font> 1044 <font color=\"#b9bec3ff\">[692]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 27 <font color=\"#b9bec3ff\">[15]</font>"
   },
   {
     "id": 5100,
     "name": "Revenger's Blade",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Revenger's Blade</font>",
-    "info": "Dash up to an enemy with blades in each hand, holding the button to extend the dash while it deals 5 stance damage; follow with a strong attack that hacks the enemy to pieces. Can be parried."
+    "info": "Dash up to an enemy with blades in each hand, holding the button to extend the dash while it deals 5 stance damage; follow with a strong attack that hacks the enemy to pieces. Can be parried.\n\nSkill (Weapon Skill, Charged Skill)\n    <font color=\"#F395C4\">Slash:</font> 250 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 153 </font><font color=\"#b9bec3ff\">[200 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 200</font><font color=\"#b9bec3ff\">]</font> [AR]\n    <font color=\"#C84343\">Blood Loss (%):</font> 200 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 200 </font><font color=\"#b9bec3ff\">[200 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 200</font><font color=\"#b9bec3ff\">]</font>\n    <font color=\"#C0B194\">Stance:</font> 10 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 15 </font><font color=\"#b9bec3ff\">[10 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 10</font><font color=\"#b9bec3ff\">]</font>\n    <font color=\"#F395C4\">Standard:</font> 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 100 </font><font color=\"#b9bec3ff\">[0 | 0]</font> [Dexterity]\nLight Follow-up (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 536 <font color=\"#b9bec3ff\">[350]</font> [AR]\n    <font color=\"#C84343\">Blood Loss (%):</font> 700 <font color=\"#b9bec3ff\">[700]</font>\n    <font color=\"#C0B194\">Stance:</font> 25 <font color=\"#b9bec3ff\">[35]</font>"
   },
   {
     "id": 5110,
     "name": "Mists of Eternal Sleep",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Mists of Eternal Sleep</font>",
-    "info": "Release a velvety purple mist across a wide frontal area that inflicts <font color=\"#A698F4\">Eternal Sleep</font> accumulation on touch; the weapon remains imbued for 30 seconds, adding 15 <font color=\"#A698F4\">Eternal Sleep</font> accumulation per attack while it persists."
+    "info": "Release a velvety purple mist across a wide frontal area that inflicts <font color=\"#A698F4\">Eternal Sleep</font> accumulation on touch; the weapon remains imbued for 30 seconds, adding 15 <font color=\"#A698F4\">Eternal Sleep</font> accumulation per attack while it persists.\n\n(Weapon Skill)\n<font color=\"#F395C4\">Standard:</font> 160 <font color=\"#b9bec3ff\">[100]</font> [AR]\n<font color=\"#C0B194\">Stance:</font> 7 <font color=\"#b9bec3ff\">[5]</font>"
   },
   {
     "id": 5120,
     "name": "Dynastic Sickleplay",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Dynastic Sickleplay</font>",
-    "info": "Perform a finessed evasive backstep that gives directional control, then chain two additional strong attack inputs for an advancing upward slash followed by a downward bring-back strike. Grants 20 invulnerability frames."
+    "info": "Perform a finessed evasive backstep that gives directional control, then chain two additional strong attack inputs for an advancing upward slash followed by a downward bring-back strike. Grants 20 invulnerability frames.\n\nHeavy Follow-up (Weapon Skill, Blood Oath/Dynastic Skill)\n    <font color=\"#F395C4\">Slash:</font> 180, 279 <font color=\"#b9bec3ff\">[50, 150]</font> [AR]\n    <font color=\"#C84343\">Blood Loss (%):</font> 100, 300 <font color=\"#b9bec3ff\">[100, 300]</font>\n    <font color=\"#C0B194\">Stance:</font> 33, 23 <font color=\"#b9bec3ff\">[5, 15]</font>"
   },
   {
     "id": 5130,
     "name": "Blinkbolt: Twinaxe",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Blinkbolt: Twinaxe</font>",
-    "info": "From a low stance, transform into a bolt of lightning and charge straight ahead at fulgurous speed; the strong attack follow-up is a lightning-charged spinning slash. Grants invulnerability frames."
+    "info": "From a low stance, transform into a bolt of lightning and charge straight ahead at fulgurous speed; the strong attack follow-up is a lightning-charged spinning slash. Grants invulnerability frames.\n\nSkill (Weapon Skill, Dragon Cult Skill)\n    <font color=\"#F395C4\">Standard:</font> 0 <font color=\"#b9bec3ff\">[40]</font> [Dexterity]\n    <font color=\"#FFE033\">Lightning:</font> 50 <font color=\"#b9bec3ff\">[0]</font> [Dexterity]\nHeavy Follow-up (Weapon Skill, Dragon Cult Skill)\n    <font color=\"#F395C4\">Standard:</font> 325 <font color=\"#b9bec3ff\">[300]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 30 <font color=\"#b9bec3ff\">[30]</font>"
   },
   {
     "id": 5140,
     "name": "Blinkbolt: Long-hafted Axe",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Blinkbolt: Long-hafted Axe</font>",
-    "info": "From a low stance, transform into a bolt of lightning and charge straight ahead at fulgurous speed; the strong attack follow-up is a lightning-charged leaping slash. Grants invulnerability frames"
+    "info": "From a low stance, transform into a bolt of lightning and charge straight ahead at fulgurous speed; the strong attack follow-up is a lightning-charged leaping slash. Grants invulnerability frames\n\nSkill (Weapon Skill, Dragon Cult Skill)\n    <font color=\"#F395C4\">Standard:</font> 0 <font color=\"#b9bec3ff\">[10]</font> [Dexterity]\n    <font color=\"#FFE033\">Lightning:</font> 50 <font color=\"#b9bec3ff\">[0]</font> [Dexterity]\nHeavy Follow-up\n    Hit (Weapon Skill, Dragon Cult Skill)\n        <font color=\"#F395C4\">Standard:</font> 180 <font color=\"#b9bec3ff\">[100]</font> [AR]\n        <font color=\"#C0B194\">Stance:</font> 22 <font color=\"#b9bec3ff\">[6]</font>\n    Bullet (Weapon Skill, Dragon Cult Skill)\n        <font color=\"#C0B194\">Stance:</font> 10 <font color=\"#b9bec3ff\">[0]</font>\n        <font color=\"#FFE033\">Lightning:</font> 90 <font color=\"#b9bec3ff\">[0]</font> [Dexterity]"
   },
   {
     "id": 5150,
     "name": "Promised Consort",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Promised Consort</font>",
-    "info": "Imbue the twin greatswords with the light of Miquella, delivering a slash accompanied by columns of <font color=\"#F5EB89\">holy light</font>."
+    "info": "Imbue the twin greatswords with the light of Miquella, delivering a slash accompanied by columns of <font color=\"#F5EB89\">holy light</font>.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 164, 164, 179 <font color=\"#b9bec3ff\">[92, 94, 154]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 15, 15, 15 <font color=\"#b9bec3ff\">[5, 5, 8]</font>\n    <font color=\"#F5EB89\">Holy:</font> 40, 40, 60 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [Weapon Scaling]\nBullet (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 0, 0, 10 <font color=\"#b9bec3ff\">[0, 0, 0]</font>\n    <font color=\"#F5EB89\">Holy:</font> 62, 62, 166 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [Intelligence]"
   },
   {
     "id": 5160,
     "name": "Shadow Sunflower Headbutt",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Shadow Sunflower Headbutt</font>",
-    "info": "Slam the blossom downward to send a flattening shockwave and then chain two follow-up slams through repeated inputs for a furious four-hit sequence that ends with a crashing finale."
+    "info": "Slam the blossom downward to send a flattening shockwave and then chain two follow-up slams through repeated inputs for a furious four-hit sequence that ends with a crashing finale.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Strike:</font> 201, 182, 210 <font color=\"#b9bec3ff\">[50, 100, 50]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 21, 15, 30 <font color=\"#b9bec3ff\">[8, 15, 8]</font>\nAoE (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 201, 182, 210 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 21, 15, 30 <font color=\"#b9bec3ff\">[0, 0, 0]</font>"
   },
   {
     "id": 5170,
     "name": "Moon-and-Fire Stance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moon-and-Fire Stance</font>",
-    "info": "Assume the ready stance to imbue each sword with opposing light and fire, then chain normal attacks to launch glintstone light waves (each light attack allows up to two additional light-wave casts) before finishing with a heavy input that spins into a flaming tornado that drenches the area in <font color=\"#F48C25\">fire</font> and ends with flaming pillars. The stance still functions while another light greatsword is powerstanced in the offhand."
+    "info": "Assume the ready stance to imbue each sword with opposing light and fire, then chain normal attacks to launch glintstone light waves (each light attack allows up to two additional light-wave casts) before finishing with a heavy input that spins into a flaming tornado that drenches the area in <font color=\"#F48C25\">fire</font> and ends with flaming pillars. The stance still functions while another light greatsword is powerstanced in the offhand.\n\nLight Follow-up\n    Hit (Weapon Skill)\n        <font color=\"#F395C4\">Standard:</font> 101, 105, 55 <font color=\"#b9bec3ff\">[201, 205, 110]</font> [AR]\n        <font color=\"#C0B194\">Stance:</font> 6, 6, 3 <font color=\"#b9bec3ff\">[11, 11, 11]</font>\n    Bullet (Weapon Skill)\n        <font color=\"#F395C4\">Standard:</font> 400, 400, 300 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [AR]\n        <font color=\"#C0B194\">Stance:</font> 11, 11, 8 <font color=\"#b9bec3ff\">[0, 0, 0]</font>\nHeavy Follow-up\n    Hit (Weapon Skill)\n        <font color=\"#F395C4\">Standard:</font> 75 <font color=\"#b9bec3ff\">[165]</font> [AR]\n        <font color=\"#C0B194\">Stance:</font> 8 <font color=\"#b9bec3ff\">[17]</font>\n    Bullet (Weapon Skill)\n        <font color=\"#F395C4\">Standard:</font> 696 <font color=\"#b9bec3ff\">[0]</font> [AR]\n        <font color=\"#C0B194\">Stance:</font> 28 <font color=\"#b9bec3ff\">[0]</font>\n    Fire Pillars (Weapon Skill)\n        <font color=\"#F395C4\">Standard:</font> 120 <font color=\"#b9bec3ff\">[0]</font> [AR]\n        <font color=\"#C0B194\">Stance:</font> 6 <font color=\"#b9bec3ff\">[0]</font>"
   },
   {
     "id": 5180,
     "name": "Devonia's Vortex",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Devonia's Vortex</font>",
-    "info": "Violently spin the hammer and slam the ground to unleash a Crucible shockwave."
+    "info": "Violently spin the hammer and slam the ground to unleash a Crucible shockwave.\n\nHit (Weapon Skill, Aspects of the Crucible, Charged Skill)\n    <font color=\"#F395C4\">Strike:</font> 50 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 65 </font><font color=\"#b9bec3ff\">[90 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 120</font><font color=\"#b9bec3ff\">]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 8 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 8 </font><font color=\"#b9bec3ff\">[8 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 8</font><font color=\"#b9bec3ff\">]</font>\nBullet (Weapon Skill, Aspects of the Crucible)\n    <font color=\"#F395C4\">Standard:</font> 50 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0 </font><font color=\"#b9bec3ff\">[0 | 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 8 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0 </font><font color=\"#b9bec3ff\">[0 | 0]</font>\n2x (Weapon Skill, Aspects of the Crucible, Charged Skill)\n    <font color=\"#F395C4\">Standard:</font> 160 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 265 </font><font color=\"#b9bec3ff\">[0 | 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 23 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 38 </font><font color=\"#b9bec3ff\">[0 | 0]</font>"
   },
   {
     "id": 5190,
     "name": "Messmer's Assault",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Messmer's Assault</font>",
-    "info": "Drive a series of spear thrusts wreathed in <font color=\"#F48C25\">fire</font>, allowing up to two follow-up attacks before the final thrust slams into the ground and spawns countless spears around you."
+    "info": "Drive a series of spear thrusts wreathed in <font color=\"#F48C25\">fire</font>, allowing up to two follow-up attacks before the final thrust slams into the ground and spawns countless spears around you.\n\nHit (Weapon Skill, Fire Knight Skill)\n    <font color=\"#F395C4\">Standard:</font> 62, 0, 0 <font color=\"#b9bec3ff\">[150, 0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 8, 11, 6 <font color=\"#b9bec3ff\">[8, 12, 4]</font>\n    <font color=\"#F395C4\">Pierce:</font> 0, 229, 74 <font color=\"#b9bec3ff\">[0, 168, 100]</font> [AR]\nBullet (Weapon Skill, Fire Knight Skill)\n    <font color=\"#F395C4\">Standard:</font> 0, 0, 105 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 7, 0, 6 <font color=\"#b9bec3ff\">[0, 0, 0]</font>\n    <font color=\"#F48C25\">Fire:</font> 160, 0, 0 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [Weapon Scaling]\n    <font color=\"#F395C4\">Pierce:</font> 0, 0, 140 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 0, 0, 6 <font color=\"#b9bec3ff\">[0, 0, 0]</font>"
   },
   {
     "id": 5210,
     "name": "Sleep Evermore",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Sleep Evermore</font>",
-    "info": "Pierce with a toxin-coated needle to inflict <font color=\"#A698F4\">Eternal Sleep</font>, dealing significantly more damage to foes already in slumber or eternal sleep. Can be parried."
+    "info": "Pierce with a toxin-coated needle to inflict <font color=\"#A698F4\">Eternal Sleep</font>, dealing significantly more damage to foes already in slumber or eternal sleep. Can be parried.\n\n(Weapon Skill)\n<font color=\"#F395C4\">Pierce:</font> 150 <font color=\"#b9bec3ff\">[100]</font> [AR]\n<font color=\"#A698F4\">Sleep (%):</font> 100 <font color=\"#b9bec3ff\">[100]</font>\n<font color=\"#C0B194\">Stance:</font> 15 <font color=\"#b9bec3ff\">[5]</font>"
   },
   {
     "id": 5220,
     "name": "Golden Crux",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Golden Crux</font>",
-    "info": "Leap up and skewer foes from overhead, unfolding the barbs to excruciate from within on a hit while the follow-up input spawns piercing barbs that knock enemies into the air. Consumes <font color=\"#E0B985\">FP</font> when the hit connects."
+    "info": "Leap up and skewer foes from overhead, unfolding the barbs to excruciate from within on a hit while the follow-up input spawns piercing barbs that knock enemies into the air. Consumes <font color=\"#E0B985\">FP</font> when the hit connects.\n\nGrab Confirm (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 290, 0 <font color=\"#b9bec3ff\">[0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 6, 0 <font color=\"#b9bec3ff\">[0, 0]</font>\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 150, 0 <font color=\"#b9bec3ff\">[120, 50]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 17, 0 <font color=\"#b9bec3ff\">[6, 6]</font>\nBullet (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 0, 180 <font color=\"#b9bec3ff\">[0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 0, 17 <font color=\"#b9bec3ff\">[0, 0]</font>"
   },
   {
     "id": 5230,
     "name": "Moore's Charge",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Moore's Charge</font>",
-    "info": "Ready the shield with both hands and charge forward while guarding, ending in a verdigris shove that knocks back and down nearby foes; holding extends the length of the charge."
+    "info": "Ready the shield with both hands and charge forward while guarding, ending in a verdigris shove that knocks back and down nearby foes; holding extends the length of the charge.\n\nHit (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 26 <font color=\"#b9bec3ff\">[18]</font>\nBullet (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 9 <font color=\"#b9bec3ff\">[0]</font>\nEarly Release (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 8 <font color=\"#b9bec3ff\">[6]</font>"
   },
   {
     "id": 5240,
     "name": "White Light Charge",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: White Light Charge</font>",
-    "info": "Summon white light from the meteoric ore to charge through foes, following up to detonate an immediate white light explosion around you."
+    "info": "Summon white light from the meteoric ore to charge through foes, following up to detonate an immediate white light explosion around you.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 85, 0 <font color=\"#b9bec3ff\">[70, 70]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 12, 0 <font color=\"#b9bec3ff\">[6, 6]</font>\nBullet (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 0, 185 <font color=\"#b9bec3ff\">[0, 0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 0, 24 <font color=\"#b9bec3ff\">[0, 0]</font>"
   },
   {
     "id": 5250,
     "name": "Rancor Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Rancor Slash</font>",
-    "info": "Spin around to slash foes while summoning five vengeful spirit skulls that chase down enemies."
+    "info": "Spin around to slash foes while summoning five vengeful spirit skulls that chase down enemies.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 160, 100 <font color=\"#b9bec3ff\">[140, 100]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 9-15, 6-9 <font color=\"#b9bec3ff\">[7-13, 5-7]</font>\nBullet\n    <font color=\"#C0B194\">Stance:</font> 1, 0 <font color=\"#b9bec3ff\">[0, 0]</font>\n    <font color=\"#57DBCE\">Magic:</font> 46, 0 <font color=\"#b9bec3ff\">[0, 0]</font> [Intelligence]"
   },
   {
     "id": 5260,
     "name": "Witching Hour Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Witching Hour Slash</font>",
-    "info": "Hold the sword level, infuse it with Night, and unleash a series of incorporeal attacks. Cannot be blocked or parried. Triggers multi-hit effects."
+    "info": "Hold the sword level, infuse it with Night, and unleash a series of incorporeal attacks. Cannot be blocked or parried. Triggers multi-hit effects.\n\n(Weapon Skill, Charged Skill)\n<font color=\"#F395C4\">Slash:</font> 261 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 311 </font><font color=\"#b9bec3ff\">[160 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 190</font><font color=\"#b9bec3ff\">]</font> [AR]\n<font color=\"#C84343\">Blood Loss (%):</font> 300 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 300 </font><font color=\"#b9bec3ff\">[300 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 300</font><font color=\"#b9bec3ff\">]</font>\n<font color=\"#C0B194\">Stance:</font> 14 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 27 </font><font color=\"#b9bec3ff\">[14 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 14</font><font color=\"#b9bec3ff\">]</font>"
   },
   {
     "id": 5270,
     "name": "Euporia Vortex",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Euporia Vortex</font>",
-    "info": "Twirl the armament through the vortex to unleash five hits directly ahead while the blade glows with restored luster; if the weapon was charged beforehand the vortex also fires a beam of light from its center and stretches to ten hits."
+    "info": "Twirl the armament through the vortex to unleash five hits directly ahead while the blade glows with restored luster; if the weapon was charged beforehand the vortex also fires a beam of light from its center and stretches to ten hits.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 860 <font color=\"#b9bec3ff\">[175]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 26 <font color=\"#b9bec3ff\">[6]</font>\nBullet (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 62 <font color=\"#b9bec3ff\">[0]</font>\n    <font color=\"#F5EB89\">Holy:</font> 1377 <font color=\"#b9bec3ff\">[0]</font> [Weapon Scaling]"
   },
   {
     "id": 5280,
     "name": "Smithing Art Spears",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Smithing Art Spears</font>",
-    "info": "Slam the red-hot anvil into the ground to send up countless smithing art spears."
+    "info": "Slam the red-hot anvil into the ground to send up countless smithing art spears.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Strike:</font> 90 <font color=\"#b9bec3ff\">[50]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 15 <font color=\"#b9bec3ff\">[8]</font>\nBullet (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 178 <font color=\"#b9bec3ff\">[0]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 30 <font color=\"#b9bec3ff\">[0]</font>"
   },
   {
     "id": 5290,
     "name": "Rancor Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Rancor Slash</font>",
-    "info": "Spin around to slash foes while summoning five vengeful spirit skulls that chase enemies, and each strike plus skull explosion inflicts <font color=\"#9DD7FB\">Frostbite</font> even if the weapon whiffs, since the skulls will chase until they reach their target."
+    "info": "Spin around to slash foes while summoning five vengeful spirit skulls that chase enemies, and each strike plus skull explosion inflicts <font color=\"#9DD7FB\">Frostbite</font> even if the weapon whiffs, since the skulls will chase until they reach their target.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 160, 100 <font color=\"#b9bec3ff\">[140, 100]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 9-15, 6-9 <font color=\"#b9bec3ff\">[7-13, 5-7]</font>\nBullet\n    <font color=\"#C0B194\">Stance:</font> 1, 0 <font color=\"#b9bec3ff\">[0, 0]</font>\n    <font color=\"#57DBCE\">Magic:</font> 46, 0 <font color=\"#b9bec3ff\">[0, 0]</font> [Intelligence]"
   },
   {
     "id": 5300,
     "name": "Romina's Purification",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Romina's Purification</font>",
-    "info": "Imbue the bud-blade with scarlet rot butterflies, then unleash two sweeping slashes so the butterflies erupt after a short delay; the unique skill deals physical damage. Every slash and each butterfly explosion inflicts <font color=\"#EF7676\">Scarlet Rot</font> while the butterflies vanish instantly."
+    "info": "Imbue the bud-blade with scarlet rot butterflies, then unleash two sweeping slashes so the butterflies erupt after a short delay; the unique skill deals physical damage. Every slash and each butterfly explosion inflicts <font color=\"#EF7676\">Scarlet Rot</font> while the butterflies vanish instantly.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 217 <font color=\"#b9bec3ff\">[140]</font> [AR]\n    <font color=\"#EF7676\">Scarlet Rot (%):</font> 200 <font color=\"#b9bec3ff\">[200]</font>\n    <font color=\"#C0B194\">Stance:</font> 20 <font color=\"#b9bec3ff\">[10]</font>\nBullet (Weapon Skill)\n    <font color=\"#F395C4\">Standard:</font> 25 <font color=\"#b9bec3ff\">[0]</font> [AR]\n    <font color=\"#EF7676\">Scarlet Rot (%):</font> 40 <font color=\"#b9bec3ff\">[0]</font>\n    <font color=\"#C0B194\">Stance:</font> 2 <font color=\"#b9bec3ff\">[0]</font>"
   },
   {
     "id": 5310,
     "name": "Poison Spear-Hand Strike",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Poison Spear-Hand Strike</font>",
-    "info": "Shape your hand into a spear and plunge through the enemy to inject deadly poison; the unique skill applies a large dose of <font color=\"#40BF40\">Deadly Poison</font> buildup that scales with <font color=\"#E0B985\">Arcane</font>."
+    "info": "Shape your hand into a spear and plunge through the enemy to inject deadly poison; the unique skill applies a large dose of <font color=\"#40BF40\">Deadly Poison</font> buildup that scales with <font color=\"#E0B985\">Arcane</font>.\n\n(Weapon Skill)\n<font color=\"#F395C4\">Strike:</font> 150 <font color=\"#b9bec3ff\">[100]</font> [AR]\n<font color=\"#40BF40\">Poison (%):</font> 100 <font color=\"#b9bec3ff\">[100]</font>\n<font color=\"#C0B194\">Stance:</font> 15 <font color=\"#b9bec3ff\">[5]</font>"
   },
   {
     "id": 5320,
     "name": "Madding Spear-Hand Strike",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Madding Spear-Hand Strike</font>",
-    "info": "Form your hand into a spear and stab through a foe to drive them mad, only threatening Tarnished minds."
+    "info": "Form your hand into a spear and stab through a foe to drive them mad, only threatening Tarnished minds.\n\n(Weapon Skill)\n<font color=\"#F395C4\">Strike:</font> 150 <font color=\"#b9bec3ff\">[100]</font> [AR]\n<font color=\"#EEAA2B\">Madness (%):</font> 100 <font color=\"#b9bec3ff\">[100]</font>\n<font color=\"#C0B194\">Stance:</font> 15 <font color=\"#b9bec3ff\">[5]</font>"
   },
   {
     "id": 5330,
     "name": "Feeble Lord's Frenzied Flame",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Feeble Lord's Frenzied Flame</font>",
-    "info": "Raise the torch and exhale a stream of frenzied flame while moving, sustaining the spray for as long as the input is held until <font color=\"#E0B985\">FP</font> is exhausted. The cone deals rapidly builds <font color=\"#EEAA2B\">Madness</font> on everything caught in the blaze, including the user."
+    "info": "Raise the torch and exhale a stream of frenzied flame while moving, sustaining the spray for as long as the input is held until <font color=\"#E0B985\">FP</font> is exhausted. The cone deals rapidly builds <font color=\"#EEAA2B\">Madness</font> on everything caught in the blaze, including the user.\n\n(Weapon Skill)\n<font color=\"#EEAA2B\">Madness (%):</font> 100\n<font color=\"#C0B194\">Stance:</font> 1\n<font color=\"#F48C25\">Fire:</font> 21 [Weapon Scaling]"
   },
   {
     "id": 5340,
@@ -627,7 +627,7 @@
     "name": "Deadly Dance",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Deadly Dance</font>",
-    "info": "Spin forward with paired circular blades to shred foes, then add an input to unleash a sharp axe-kick finisher."
+    "info": "Spin forward with paired circular blades to shred foes, then add an input to unleash a sharp axe-kick finisher.\n\n(Weapon Skill, Dancing Attack)\n<font color=\"#F395C4\">Slash:</font> 300, 0 <font color=\"#b9bec3ff\">[152, 0]</font> [AR]\n<font color=\"#C84343\">Blood Loss (%):</font> 100, 0 <font color=\"#b9bec3ff\">[100, 0]</font>\n<font color=\"#C0B194\">Stance:</font> 16, 20 <font color=\"#b9bec3ff\">[12, 5]</font>\n(Weapon Skill, Kicking/Stomping Skill, Dancing Attack)\n<font color=\"#F395C4\">Strike:</font> 0, 148 <font color=\"#b9bec3ff\">[0, 50]</font> [AR]"
   },
   {
     "id": 5360,
@@ -641,49 +641,49 @@
     "name": "Discus Hurl",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Discus Hurl</font>",
-    "info": "Hurl the roundshield like a smithing-infused discus that hangs in the air for a heartbeat before spinning vertically to chase its target, then re-materializes in your hand. The shield keeps pursuing even as you reposition, delivering a mobile homing strike without needing to retrieve the armament manually."
+    "info": "Hurl the roundshield like a smithing-infused discus that hangs in the air for a heartbeat before spinning vertically to chase its target, then re-materializes in your hand. The shield keeps pursuing even as you reposition, delivering a mobile homing strike without needing to retrieve the armament manually.\n\n(Weapon Skill, Weapon-Throwing Attack)\n<font color=\"#F395C4\">Strike:</font> 330 <font color=\"#b9bec3ff\">[50]</font> [AR]\n<font color=\"#C0B194\">Stance:</font> 10 <font color=\"#b9bec3ff\">[3]</font>"
   },
   {
     "id": 5380,
     "name": "Flower Dragonbolt",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Flower Dragonbolt</font>",
-    "info": "Call down red dragon lightning onto a target and hold to charge the thrust for greater effect. The lightning blast scales with <font color=\"#E0B985\">Arcane</font> and benefits from charged skill buffs. Cannot be parried."
+    "info": "Call down red dragon lightning onto a target and hold to charge the thrust for greater effect. The lightning blast scales with <font color=\"#E0B985\">Arcane</font> and benefits from charged skill buffs. Cannot be parried.\n\nBullet (Weapon Skill, Charged Skill)\n    <font color=\"#C0B194\">Stance:</font> 5 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 5 </font><font color=\"#b9bec3ff\">[0 | 0]</font>\n    <font color=\"#FFE033\">Lightning:</font> 104 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 137 </font><font color=\"#b9bec3ff\">[0 | 0]</font> [Arcane]\nWater AoE (Weapon Skill)\n    <font color=\"#FFE033\">Lightning:</font> 40 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0 </font><font color=\"#b9bec3ff\">[0 | 0]</font> [Arcane]\nHit\n    <font color=\"#F395C4\">Pierce:</font> 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0 </font><font color=\"#b9bec3ff\">[100 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 100</font><font color=\"#b9bec3ff\">]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 0 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 0 </font><font color=\"#b9bec3ff\">[7 </font><font color=\"#d9e0e0ff\">|</font><font color=\"#dabd9dff\"> 7</font><font color=\"#b9bec3ff\">]</font>"
   },
   {
     "id": 5390,
     "name": "Kowtower's Resentment",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Kowtower's Resentment</font>",
-    "info": "Force the finger weapon into a resentful bow that charges while held, then slam it down to vent the pent-up anger in successive shockwaves. Holding the input increases the resentment before impact, but the skill does not benefit from charged attack buffs and only the weapon hitbox counts toward skill buffs while the holy shockwaves never do."
+    "info": "Force the finger weapon into a resentful bow that charges while held, then slam it down to vent the pent-up anger in successive shockwaves. Holding the input increases the resentment before impact, but the skill does not benefit from charged attack buffs and only the weapon hitbox counts toward skill buffs while the holy shockwaves never do.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Strike:</font> 167 <font color=\"#b9bec3ff\">[120]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 15 <font color=\"#b9bec3ff\">[15]</font>\nBullet (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 15 <font color=\"#b9bec3ff\">[0]</font>\n    <font color=\"#F5EB89\">Holy:</font> 540 <font color=\"#b9bec3ff\">[0]</font> [Weapon Scaling]\nEarly Release (Weapon Skill)\n    <font color=\"#F395C4\">Strike:</font> 66 <font color=\"#b9bec3ff\">[55]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 8 <font color=\"#b9bec3ff\">[8]</font>"
   },
   {
     "id": 5420,
     "name": "Painful Strike",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Painful Strike</font>",
-    "info": "Unleash a chastening flurry of whip strikes that layers <font color=\"#40BF40\">Deadly Poison</font> onto the victim. Cannot be parried."
+    "info": "Unleash a chastening flurry of whip strikes that layers <font color=\"#40BF40\">Deadly Poison</font> onto the victim. Cannot be parried.\n\n(Weapon Skill)\n<font color=\"#F395C4\">Strike:</font> 270 <font color=\"#b9bec3ff\">[180]</font> [AR]\n<font color=\"#40BF40\">Poison (%):</font> 200 <font color=\"#b9bec3ff\">[200]</font>\n<font color=\"#C0B194\">Stance:</font> 14 <font color=\"#b9bec3ff\">[7]</font>"
   },
   {
     "id": 5430,
     "name": "Solitary Moon Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Solitary Moon Slash</font>",
-    "info": "Deliver a downward slash that launches a moonlit arc, then chain into a lunging horizontal sweep with the strong attack; holding strong lets you delay the follow-up to make the timing less predictable. The opener does 11 stance damage and the follow-up another 28 (39 total)."
+    "info": "Deliver a downward slash that launches a moonlit arc, then chain into a lunging horizontal sweep with the strong attack; holding strong lets you delay the follow-up to make the timing less predictable. The opener does 11 stance damage and the follow-up another 28 (39 total).\n\nSkill\n    Hit (Weapon Skill)\n        <font color=\"#F395C4\">Standard:</font> 50 <font color=\"#b9bec3ff\">[110]</font> [AR]\n        <font color=\"#C0B194\">Stance:</font> 6 <font color=\"#b9bec3ff\">[17]</font>\n    Bullet (Weapon Skill)\n        <font color=\"#F395C4\">Standard:</font> 130 <font color=\"#b9bec3ff\">[0]</font> [AR]\n        <font color=\"#C0B194\">Stance:</font> 11 <font color=\"#b9bec3ff\">[0]</font>\nHeavy Follow-up\n    Startup Stagger (Weapon Skill)\n        <font color=\"#C0B194\">Stance:</font> 6 <font color=\"#b9bec3ff\">[11]</font>\n    Hit (Weapon Skill)\n        <font color=\"#F395C4\">Standard:</font> 170 <font color=\"#b9bec3ff\">[105]</font> [AR]\n        <font color=\"#C0B194\">Stance:</font> 28 <font color=\"#b9bec3ff\">[6]</font>"
   },
   {
     "id": 5440,
     "name": "Revenge of the Night",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Revenge of the Night</font>",
-    "info": "Launch a Night-infused bolt that deals <font color=\"#57DBCE\">Magic damage</font> scaling with <font color=\"#E0B985\">Dexterity</font>; casting it immediately after blocking absorbs the incoming blow and converts that energy into a guard-counter retaliation that roughly triples the projectile's power while delivering 15 stance damage."
+    "info": "Launch a Night-infused bolt that deals <font color=\"#57DBCE\">Magic damage</font> scaling with <font color=\"#E0B985\">Dexterity</font>; casting it immediately after blocking absorbs the incoming blow and converts that energy into a guard-counter retaliation that roughly triples the projectile's power while delivering 15 stance damage.\n\nBullet (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 18 <font color=\"#b9bec3ff\">[0]</font>\n    <font color=\"#57DBCE\">Magic:</font> 127 <font color=\"#b9bec3ff\">[0]</font> [Dexterity]\nHit\n    <font color=\"#F395C4\">Strike:</font> 0 <font color=\"#b9bec3ff\">[80]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 0 <font color=\"#b9bec3ff\">[5]</font>\nGuard Counter\n    <font color=\"#F395C4\">Strike:</font> 0 <font color=\"#b9bec3ff\">[80]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 0 <font color=\"#b9bec3ff\">[5]</font>"
   },
   {
     "id": 5450,
     "name": "Weed Cutter",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Weed Cutter</font>",
-    "info": "Scythe through foes with broad horizontal swings, chaining the motion for as long as stamina remains, letting repeated inputs keep the barrage active until those resources run out."
+    "info": "Scythe through foes with broad horizontal swings, chaining the motion for as long as stamina remains, letting repeated inputs keep the barrage active until those resources run out.\n\n(Weapon Skill)\n<font color=\"#F395C4\">Slash:</font> 204, 204, 204 <font color=\"#b9bec3ff\">[152, 152, 152]</font> [AR]\n<font color=\"#C84343\">Blood Loss (%):</font> 200, 200, 200 <font color=\"#b9bec3ff\">[150, 150, 150]</font>\n<font color=\"#C0B194\">Stance:</font> 11, 11, 11 <font color=\"#b9bec3ff\">[8, 8, 8]</font>"
   },
   {
     "id": 5460,
@@ -697,14 +697,14 @@
     "name": "Jori's Inquisition",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Jori's Inquisition</font>",
-    "info": "Thrust the greatstaff overhead to launch streams of golden barbs that deal <font color=\"#F5EB89\">Holy damage</font>, holding the button to sustain the barrage briefly while manually aiming the rapid projectiles via camera free aim."
+    "info": "Thrust the greatstaff overhead to launch streams of golden barbs that deal <font color=\"#F5EB89\">Holy damage</font>, holding the button to sustain the barrage briefly while manually aiming the rapid projectiles via camera free aim.\n\nBullet (Weapon Skill)\n    <font color=\"#C84343\">Blood Loss (%):</font> 50\n    <font color=\"#C0B194\">Stance:</font> 3\n    <font color=\"#F5EB89\">Holy:</font> 59 [Weapon Scaling]\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Strike:</font> 50 [AR]\n    <font color=\"#C84343\">Blood Loss (%):</font> 100\n    <font color=\"#C0B194\">Stance:</font> 6"
   },
   {
     "id": 5480,
     "name": "Roaring Bash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Roaring Bash</font>",
-    "info": "Roar from behind your guard to drive a shield bash that erupts in a wide shockwave, knocking back and staggering surrounding foes while behaving identically to Shield Bash and delivering the same area knockback."
+    "info": "Roar from behind your guard to drive a shield bash that erupts in a wide shockwave, knocking back and staggering surrounding foes while behaving identically to Shield Bash and delivering the same area knockback.\n\nHit (Weapon Skill, Redmane Battle Skill)\n    <font color=\"#F395C4\">Strike:</font> 275 <font color=\"#b9bec3ff\">[90]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 14 <font color=\"#b9bec3ff\">[5]</font>\nLeft (Weapon Skill, Redmane Battle Skill)\n    <font color=\"#F395C4\">Strike:</font> 275 <font color=\"#b9bec3ff\">[90]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 14 <font color=\"#b9bec3ff\">[5]</font>"
   },
   {
     "id": 5490,
@@ -718,7 +718,7 @@
     "name": "Flare, O Serpent",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Flare, O Serpent</font>",
-    "info": "Ignite the serpents to add 90 <font color=\"#F48C25\">fire damage</font> to your armament for 30 seconds; heavy attacks or ground-slamming actions trigger a 12 stance damage explosion that consumes the enchantment, requiring the skill to be recast before another blast. Triggering explosions with paired Serpent Flails detonates both weapons simultaneously."
+    "info": "Ignite the serpents to add 90 <font color=\"#F48C25\">fire damage</font> to your armament for 30 seconds; heavy attacks or ground-slamming actions trigger a 12 stance damage explosion that consumes the enchantment, requiring the skill to be recast before another blast. Triggering explosions with paired Serpent Flails detonates both weapons simultaneously.\n\nHeavy Follow-up (Weapon Skill, Fire Knight Skill)\n    <font color=\"#C0B194\">Stance:</font> 7 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 12</font>\n    <font color=\"#F48C25\">Fire:</font> 75 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 117</font> [Weapon Scaling]"
   },
   {
     "id": 5510,
@@ -739,42 +739,42 @@
     "name": "Horn Calling",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Horn Calling</font>",
-    "info": "Shroud the weapon in tangled horns, drive it into the ground, and call up piercing spikes that erupt below the enemy."
+    "info": "Shroud the weapon in tangled horns, drive it into the ground, and call up piercing spikes that erupt below the enemy.\n\nHit (Weapon Skill)\n    <font color=\"#F395C4\">Slash:</font> 100 <font color=\"#b9bec3ff\">[100]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 5 <font color=\"#b9bec3ff\">[5]</font>\nBullet (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 12 <font color=\"#b9bec3ff\">[0]</font>\n    <font color=\"#F5EB89\">Holy:</font> 215 <font color=\"#b9bec3ff\">[0]</font> [Faith]"
   },
   {
     "id": 5540,
     "name": "Horn Calling: Storm",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Horn Calling: Storm</font>",
-    "info": "Infuse the horned blade with storm winds, then mow through enemies with a sweeping spin that strikes repeatedly at far greater range than Stormcaller. Triggers multi-hit effects."
+    "info": "Infuse the horned blade with storm winds, then mow through enemies with a sweeping spin that strikes repeatedly at far greater range than Stormcaller. Triggers multi-hit effects.\n\nHit (Weapon Skill, Storm Attack)\n    <font color=\"#F395C4\">Standard:</font> 199, 203, 207 <font color=\"#b9bec3ff\">[100, 100, 100]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 19, 11, 11 <font color=\"#b9bec3ff\">[8, 8, 8]</font>\n    <font color=\"#F5EB89\">Holy:</font> 70, 70, 70 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [Weapon Scaling]\nBullet (Weapon Skill, Storm Attack)\n    <font color=\"#C0B194\">Stance:</font> 6, 6, 6 <font color=\"#b9bec3ff\">[0, 0, 0]</font>\n    <font color=\"#F395C4\">Standard:</font> 70, 70, 70 <font color=\"#b9bec3ff\">[0, 0, 0]</font> [Str/Dex]"
   },
   {
     "id": 5550,
     "name": "Tremendous Phalanx",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Tremendous Phalanx</font>",
-    "info": "Raise your weapon to summon a defensive arch of three homing glintblades overhead, each automatically firing as nearby foes approach. The strong attack follow-up chains into a lunging thrust that propels you forward."
+    "info": "Raise your weapon to summon a defensive arch of three homing glintblades overhead, each automatically firing as nearby foes approach. The strong attack follow-up chains into a lunging thrust that propels you forward.\n\nSkill (Weapon Skill)\n    <font color=\"#C0B194\">Stance:</font> 8\n    <font color=\"#57DBCE\">Magic:</font> 75 [Intelligence]\nHeavy Follow-up (Weapon Skill)\n    <font color=\"#F395C4\">Pierce:</font> 150 <font color=\"#b9bec3ff\">[105]</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 15 <font color=\"#b9bec3ff\">[6]</font>"
   },
   {
     "id": 5560,
     "name": "Bloodfiends' Bloodboon",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Bloodfiends' Bloodboon</font>",
-    "info": "Drive the spear through your target to detonate a ranged bloodflame eruption that deals <font color=\"#F48C25\">fire damage</font> and inflicts <font color=\"#C84343\">blood loss accumulation</font> around them rather than around yourself. Additional inputs chain up to three thrusts, with the third stab dealing increased damage but suffering a longer recovery."
+    "info": "Drive the spear through your target to detonate a ranged bloodflame eruption that deals <font color=\"#F48C25\">fire damage</font> and inflicts <font color=\"#C84343\">blood loss accumulation</font> around them rather than around yourself. Additional inputs chain up to three thrusts, with the third stab dealing increased damage but suffering a longer recovery.\n\n(Weapon Skill)\n<font color=\"#C84343\">Blood Loss (%):</font> 55, 55, 55\n<font color=\"#C0B194\">Stance:</font> 3, 3, 3\n<font color=\"#F48C25\">Fire:</font> 65, 65, 65 [Weapon Scaling]"
   },
   {
     "id": 5570,
     "name": "Dragonform Flame",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Dragonform Flame</font>",
-    "info": "Transform your arm into a draconic maw to sweep a gout of fire in front of you, leaving burning ground that lingers briefly, identical to the Firebreather skill. Using the skill without <font color=\"#E0B985\">FP</font> causes a harmless sputter with no flames."
+    "info": "Transform your arm into a draconic maw to sweep a gout of fire in front of you, leaving burning ground that lingers briefly, identical to the Firebreather skill. Using the skill without <font color=\"#E0B985\">FP</font> causes a harmless sputter with no flames.\n\nBullet (Weapon Skill)\n    <font color=\"#F48C25\">Fire:</font> 90 [Weapon Scaling]\nGround Fire (Weapon Skill)\n    <font color=\"#F48C25\">Fire:</font> 40 [Weapon Scaling]"
   },
   {
     "id": 5580,
     "name": "Lightspeed Slash",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Unique Skill: Lightspeed Slash</font>",
-    "info": "Assume a luminous form to leap forward for a downward slash, then unleash radiant beams on the enemy."
+    "info": "Assume a luminous form to leap forward for a downward slash, then unleash radiant beams on the enemy.\n\nHit (Weapon Skill, Charged Skill)\n    <font color=\"#F395C4\">Standard:</font> 99 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 132</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 15 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 27</font>\n    <font color=\"#F5EB89\">Holy:</font> 20 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 20</font> [Weapon Scaling]\nBullet (Weapon Skill, Charged Skill)\n    <font color=\"#F395C4\">Standard:</font> 52 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 57</font> [AR]\n    <font color=\"#C0B194\">Stance:</font> 1 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 1</font>\n    <font color=\"#F5EB89\">Holy:</font> 11 <font color=\"#e0ded9ff\">|</font><font color=\"#ffd59aff\"> 11</font> [Weapon Scaling]"
   },
   {
     "id": 5600,
