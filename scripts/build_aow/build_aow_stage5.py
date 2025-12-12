@@ -48,6 +48,11 @@ def unique_ordered(values: List[str]) -> List[str]:
     return ordered
 
 
+def indent_lines(lines: List[str], spaces: int) -> List[str]:
+    prefix = " " * spaces
+    return [f"{prefix}{line}" if line else "" for line in lines]
+
+
 def merge_blocks(blocks: List[List[str]]) -> List[List[str]]:
     merged: List[List[str]] = []
     index_by_key: Dict[str, int] = {}
@@ -136,26 +141,40 @@ def write_markdown(rows: List[Dict[str, str]], output_path: Path) -> None:
         lines.append(f"### {skill}")
         lines.append("")
 
-        def emit_blocks(block_rows: List[Dict[str, str]]) -> None:
+        def emit_blocks(
+            block_rows: List[Dict[str, str]], weapon_label: str | None = None
+        ) -> None:
             block_has_followups = has_followups(block_rows)
             blocks = [
                 format_block(row, block_has_followups) for row in block_rows
             ]
             merged_blocks = merge_blocks(blocks)
+            if weapon_label:
+                if not merged_blocks:
+                    lines.append(weapon_label)
+                    return
+                if (
+                    len(merged_blocks) == 1
+                    and merged_blocks[0]
+                    and merged_blocks[0][0].startswith("(")
+                ):
+                    lines.append(f"{weapon_label} {merged_blocks[0][0]}")
+                    lines.extend(indent_lines(merged_blocks[0][1:], 4))
+                else:
+                    lines.append(weapon_label)
+                    for block_lines in merged_blocks:
+                        lines.extend(indent_lines(block_lines, 4))
+                return
+
             for block_lines in merged_blocks:
-                for line in block_lines:
-                    lines.append(line)
+                lines.extend(block_lines)
 
         if len(weapon_values) > 1:
-            for w_idx, weapon in enumerate(weapon_values):
-                lines.append(f"#### {weapon}")
-                lines.append("")
+            for weapon in weapon_values:
                 weapon_rows = [
                     r for r in skill_rows if weapon_value(r) == weapon
                 ]
-                emit_blocks(weapon_rows)
-                if w_idx != len(weapon_values) - 1:
-                    lines.append("")
+                emit_blocks(weapon_rows, weapon)
         else:
             emit_blocks(skill_rows)
 
