@@ -56,11 +56,25 @@ def indent_lines(lines: List[str], spaces: int) -> List[str]:
 
 def merge_blocks(blocks: List[List[str]]) -> List[List[str]]:
     """
-    Merge blocks that share the same header and part/subheader line.
-    This collapses duplicate parts so their text lines combine under one heading.
+    Merge blocks by header, collapsing duplicate part/subheader lines under one header.
+    Ensures a single header per group while combining repeated parts.
     """
     merged: List[List[str]] = []
-    index_by_key: Dict[Tuple[str, str | None], int] = {}
+    header_order: List[str] = []
+    subheader_order: Dict[str, List[str | None]] = {}
+    grouped: Dict[str, Dict[str | None, List[str]]] = {}
+
+    def ensure_header(header: str) -> None:
+        if header not in grouped:
+            grouped[header] = {}
+            header_order.append(header)
+            subheader_order[header] = []
+
+    def ensure_sub(header: str, sub: str | None) -> None:
+        subs = subheader_order[header]
+        if sub not in subs:
+            subs.append(sub)
+        grouped[header].setdefault(sub, [])
 
     for block in blocks:
         if not block:
@@ -73,13 +87,17 @@ def merge_blocks(blocks: List[List[str]]) -> List[List[str]]:
             subheader = block[1].strip()
             start_idx = 2
 
-        key = (header, subheader)
-        if key not in index_by_key:
-            index_by_key[key] = len(merged)
-            merged.append(list(block))
-        else:
-            target = merged[index_by_key[key]]
-            target.extend(block[start_idx:])
+        ensure_header(header)
+        ensure_sub(header, subheader)
+        grouped[header][subheader].extend(block[start_idx:])
+
+    for header in header_order:
+        block_lines: List[str] = [header]
+        for sub in subheader_order[header]:
+            if sub is not None:
+                block_lines.append(f"    {sub}")
+            block_lines.extend(grouped[header][sub])
+        merged.append(block_lines)
 
     return merged
 

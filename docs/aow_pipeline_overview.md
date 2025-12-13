@@ -552,7 +552,7 @@ flowchart LR
 - Script: `scripts/build_aow/build_aow_stage5.py` (renders Stage 4 text helpers into nested markdown).
 - Behavior:
   - Group by `Skill`; when multiple distinct `Weapon` values exist, emit a `#### {Weapon}` section per value (pipe-joined lists stay together).
-  - Within each skill/weapon group, render blocks based on `Follow-up`/`Hand`/`Part` presence, indenting nested parts and skipping `Text *` lines that are `-`.
+  - Within each skill/weapon group, render blocks based on `Follow-up`/`Hand`/`Part` presence, indenting nested parts and skipping `Text *` lines that are `-`. Parts under the same header are merged so a single header owns multiple parts instead of repeating the label.
   - Add `### [ ] Skill` headers by default; preserve existing `[x]` headers (skip regenerating those sections) unless `--force` is passed, which converts them to `[<]` and rewrites the section.
   - If any row in a skill has a `Follow-up`, rows lacking a follow-up label render as `Skill`.
   - Collapse duplicate parts under the same heading/subheading so their detail lines merge into a single block; emit stance lines after other stat lines.
@@ -595,6 +595,8 @@ flowchart LR
 - Input: `work/aow_pipeline/AoW-data-5.md` generated without colours (e.g., Stage 4 run with `--no-color`).
 - Output: `work/aow_pipeline/AoW-data-5-colored.md` (mirrors Stage 5 coloured output).
 - Script: `scripts/build_aow/build_aow_stage5_color.py` (reapplies Stage 4 colour rules to damage/status/stance and FP/charged spans).
+- Behavior highlights:
+  - Supports multiple charged tiers: first charged values use `#eed5b1ff` (main) / `#cdc2b6ff` (FP-less), last charged values use `#ffd59aff` / `#dabd9dff`, and intermediates interpolate between them; charged dividers use `#d9e0e0ff`.
 - Usage: `python scripts/build_aow/build_aow_stage5_color.py --input work/aow_pipeline/AoW-data-5.md --output work/aow_pipeline/AoW-data-5-colored.md` (paths optional).
 
 ## Stage 6: Append markdown stats into ready skill info

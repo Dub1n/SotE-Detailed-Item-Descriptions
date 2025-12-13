@@ -21,8 +21,10 @@ DEATH_COLOR = "#A17945"
 FP_COLOR = "#b9bec3ff"
 FP_CHARGED_COLOR = "#dabd9dff"
 CHARGED_COLOR = "#ffd59aff"
-DIVIDER_COLOR = "#e0ded9ff"
+CHARGED_FIRST_COLOR = "#eed5b1ff"
+DIVIDER_COLOR = "#d9e0e0ff"
 FP_DIVIDER_COLOR = "#d9e0e0ff"
+FP_FIRST_CHARGED_COLOR = "#cdc2b6ff"
 
 
 def wrap_segment(text: str, color: str | None) -> str:
@@ -44,6 +46,37 @@ def merge_segments(segments: List[Tuple[str | None, str]]) -> str:
     for color, text in merged:
         parts.append(wrap_segment(text, color) if color else text)
     return "".join(parts)
+
+
+def hex_to_rgba(color: str) -> Tuple[int, int, int, int]:
+    col = color.lstrip("#")
+    if len(col) == 6:
+        col += "ff"
+    if len(col) != 8:
+        raise ValueError(f"Unsupported color format: {color}")
+    return tuple(int(col[i : i + 2], 16) for i in range(0, 8, 2))  # type: ignore[misc]
+
+
+def rgba_to_hex(rgba: Tuple[int, int, int, int]) -> str:
+    return "#" + "".join(f"{c:02x}" for c in rgba)
+
+
+def interpolate_color(start: str, end: str, t: float) -> str:
+    s = hex_to_rgba(start)
+    e = hex_to_rgba(end)
+    mixed = tuple(round(s[i] + (e[i] - s[i]) * t) for i in range(4))
+    return rgba_to_hex(mixed)
+
+
+def charged_colors(count: int, first_color: str, last_color: str) -> List[str]:
+    if count <= 0:
+        return []
+    if count == 1:
+        return [last_color]
+    return [
+        interpolate_color(first_color, last_color, i / (count - 1))
+        for i in range(count)
+    ]
 
 
 def color_for_damage_type(label: str) -> str | None:
@@ -85,28 +118,45 @@ def colorize_fp_block(block: str) -> str:
     content = block[1:-1]
     if "|" not in content:
         return wrap_segment(block, FP_COLOR)
-    left_raw, right_raw = content.split("|", 1)
-    left = left_raw.strip()
-    right = right_raw.strip()
-    if left == "0" and right == "0":
-        return wrap_segment(block, FP_COLOR)
-    segments = [
-        (FP_COLOR, "["),
-        (FP_COLOR, left_raw),
-        (FP_DIVIDER_COLOR, "|"),
-        (FP_CHARGED_COLOR, right_raw),
-        (FP_COLOR, "]"),
-    ]
+
+    parts = re.split(r"(\s*\|\s*)", content)
+    values = parts[::2]
+    dividers = parts[1::2]
+    if values and values[-1] == "":
+        values = values[:-1]
+    charge_count = max(len(values) - 1, 0)
+    charge_palette = charged_colors(
+        charge_count, FP_FIRST_CHARGED_COLOR, FP_CHARGED_COLOR
+    )
+
+    segments: List[Tuple[str | None, str]] = [(FP_COLOR, "[")]
+    for idx, val in enumerate(values):
+        color = FP_COLOR if idx == 0 else charge_palette[idx - 1]
+        segments.append((color, val))
+        if idx < len(dividers):
+            segments.append((FP_DIVIDER_COLOR, dividers[idx]))
+    segments.append((FP_COLOR, "]"))
     return merge_segments(segments)
 
 
 def colorize_main_part(part: str) -> str:
     if "|" not in part:
         return part
-    left, right = part.split("|", 1)
-    divider = wrap_segment("|", DIVIDER_COLOR)
-    right_colored = wrap_segment(right, CHARGED_COLOR)
-    return f"{left}{divider}{right_colored}"
+    parts = re.split(r"(\s*\|\s*)", part)
+    values = parts[::2]
+    dividers = parts[1::2]
+    if values and values[-1] == "":
+        values = values[:-1]
+    charge_count = max(len(values) - 1, 0)
+    charge_palette = charged_colors(charge_count, CHARGED_FIRST_COLOR, CHARGED_COLOR)
+
+    segments: List[Tuple[str | None, str]] = []
+    for idx, val in enumerate(values):
+        color = None if idx == 0 else charge_palette[idx - 1]
+        segments.append((color, val))
+        if idx < len(dividers):
+            segments.append((DIVIDER_COLOR, dividers[idx]))
+    return merge_segments(segments)
 
 
 def colorize_numeric_payload(payload: str) -> str:
