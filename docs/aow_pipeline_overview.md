@@ -553,7 +553,9 @@ flowchart LR
 - Behavior:
   - Group by `Skill`; when multiple distinct `Weapon` values exist, emit a `#### {Weapon}` section per value (pipe-joined lists stay together).
   - Within each skill/weapon group, render blocks based on `Follow-up`/`Hand`/`Part` presence, indenting nested parts and skipping `Text *` lines that are `-`.
+  - Add `### [ ] Skill` headers by default; preserve existing `[x]` headers (skip regenerating those sections) unless `--force` is passed, which converts them to `[<]` and rewrites the section.
   - If any row in a skill has a `Follow-up`, rows lacking a follow-up label render as `Skill`.
+  - Collapse duplicate parts under the same heading/subheading so their detail lines merge into a single block; emit stance lines after other stat lines.
   - `subCategorySum` is reformatted with commas (instead of pipes) and tight `/`.
   - Output stays colourised when Stage 4 used colors; pair with Stage 5 colorizer (below) when Stage 4 ran with `--no-color`.
 - Feeds Stage 6, which embeds these markdown blocks into `ready/skill.json` info fields.
@@ -594,7 +596,6 @@ flowchart LR
 - Output: `work/aow_pipeline/AoW-data-5-colored.md` (mirrors Stage 5 coloured output).
 - Script: `scripts/build_aow/build_aow_stage5_color.py` (reapplies Stage 4 colour rules to damage/status/stance and FP/charged spans).
 - Usage: `python scripts/build_aow/build_aow_stage5_color.py --input work/aow_pipeline/AoW-data-5.md --output work/aow_pipeline/AoW-data-5-colored.md` (paths optional).
-
 
 ## Stage 6: Append markdown stats into ready skill info
 

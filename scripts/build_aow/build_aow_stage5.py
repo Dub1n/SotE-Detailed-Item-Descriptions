@@ -2,6 +2,7 @@ import argparse
 import csv
 from pathlib import Path
 from typing import Dict, List, Tuple
+import re
 
 ROOT = Path(__file__).resolve().parents[2]
 INPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-4.csv"
@@ -11,12 +12,12 @@ OUTPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-5.md"
 TEXT_COLS = [
     "Text Wep Dmg",
     "Text Wep Status",
-    "Text Stance",
     "Text Phys",
     "Text Mag",
     "Text Fire",
     "Text Ltng",
     "Text Holy",
+    "Text Stance",
 ]
 
 FOLLOW_DISPLAY = {
@@ -54,17 +55,32 @@ def indent_lines(lines: List[str], spaces: int) -> List[str]:
 
 
 def merge_blocks(blocks: List[List[str]]) -> List[List[str]]:
+    """
+    Merge blocks that share the same header and part/subheader line.
+    This collapses duplicate parts so their text lines combine under one heading.
+    """
     merged: List[List[str]] = []
-    index_by_key: Dict[str, int] = {}
+    index_by_key: Dict[Tuple[str, str | None], int] = {}
+
     for block in blocks:
         if not block:
             continue
-        key = block[0]
+        header = block[0]
+        subheader: str | None = None
+        start_idx = 1
+
+        if len(block) >= 2 and block[1].startswith("    "):
+            subheader = block[1].strip()
+            start_idx = 2
+
+        key = (header, subheader)
         if key not in index_by_key:
             index_by_key[key] = len(merged)
             merged.append(list(block))
         else:
-            merged[index_by_key[key]].extend(block[1:])
+            target = merged[index_by_key[key]]
+            target.extend(block[start_idx:])
+
     return merged
 
 
@@ -129,16 +145,98 @@ def format_block(
     return blocks
 
 
-def write_markdown(rows: List[Dict[str, str]], output_path: Path) -> None:
+def parse_existing(output_path: Path) -> Tuple[List[str], Dict[str, List[str]], Dict[str, str]]:
+    """
+    Return preamble lines, existing sections keyed by skill, and heading markers.
+    Preserves `[x]` markers unless overridden; recognizes `[<]` and `[ ]`.
+    """
+    if not output_path.exists():
+        return [], {}, {}
+
+    heading_re = re.compile(r"^###\s*(\[[xX< ]\])?\s*(.+)$")
+    preamble: List[str] = []
+    sections: Dict[str, List[str]] = {}
+    markers: Dict[str, str] = {}
+
+    current_skill: str | None = None
+    current_lines: List[str] = []
+
+    for line in output_path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("###"):
+            if current_skill is not None:
+                sections[current_skill] = current_lines
+            match = heading_re.match(line)
+            if not match:
+                current_skill = None
+                current_lines = []
+                continue
+            marker_raw, skill = match.groups()
+            skill = skill.strip()
+            if not skill:
+                current_skill = None
+                current_lines = []
+                continue
+            marker = "[ ]"
+            if marker_raw:
+                tag = marker_raw.lower()
+                if tag == "[x]":
+                    marker = "[x]"
+                elif tag == "[<]":
+                    marker = "[<]"
+            markers[skill] = marker
+            current_skill = skill
+            current_lines = [line]
+        else:
+            if current_skill is None:
+                preamble.append(line)
+            else:
+                current_lines.append(line)
+
+    if current_skill is not None:
+        sections[current_skill] = current_lines
+
+    return preamble, sections, markers
+
+
+def write_markdown(
+    rows: List[Dict[str, str]],
+    output_path: Path,
+    existing_preamble: List[str],
+    existing_sections: Dict[str, List[str]],
+    existing_markers: Dict[str, str],
+    force: bool,
+) -> None:
     skills_in_order = unique_ordered([row.get("Skill", "") for row in rows])
     lines: List[str] = []
+
+    if existing_preamble:
+        lines.extend(existing_preamble)
+        if existing_preamble[-1] != "":
+            lines.append("")
 
     for skill in skills_in_order:
         skill_rows = [r for r in rows if r.get("Skill", "") == skill]
         weapon_values = unique_ordered([weapon_value(r) for r in skill_rows])
         weapon_values = [w for w in weapon_values if w]
 
-        lines.append(f"### {skill}")
+        existing_marker = existing_markers.get(skill, "[ ]")
+        existing_section = existing_sections.get(skill)
+
+        if existing_marker == "[x]" and existing_section and not force:
+            # Preserve user-marked sections verbatim unless force is specified.
+            lines.extend(existing_section)
+            if existing_section[-1] != "":
+                lines.append("")
+            continue
+
+        marker = existing_marker
+        if force and marker == "[x]":
+            marker = "[<]"
+        heading_parts = ["###"]
+        if marker:
+            heading_parts.append(marker)
+        heading_parts.append(skill)
+        lines.append(" ".join(heading_parts))
         lines.append("")
 
         def emit_blocks(
@@ -200,10 +298,19 @@ def main() -> None:
         default=OUTPUT_DEFAULT,
         help="Path to write AoW-data-5.md",
     )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Force overwrite checked sections, replacing [x] with [<]",
+    )
     args = parser.parse_args()
 
     rows, _ = read_rows(args.input)
-    write_markdown(rows, args.output)
+    preamble, sections, markers = parse_existing(args.output)
+    if preamble and sections:
+        # Avoid carrying over corrupted or unexpected leading content.
+        preamble = []
+    write_markdown(rows, args.output, preamble, sections, markers, args.force)
     print(f"Wrote markdown to {args.output}")
 
 
