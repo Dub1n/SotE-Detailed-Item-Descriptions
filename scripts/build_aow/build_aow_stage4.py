@@ -41,7 +41,6 @@ KEY_FIELDS = [
     "Hand",
     "Part",
     "Weapon",
-    "Dmg Type",
     "Wep Status",
 ]
 
@@ -81,9 +80,46 @@ DROP_COLUMNS = {
     "AtkLtng",
     "AtkHoly",
     "Weapon Source",
-    "Dmg Type",
     "Overwrite Scaling",
 }
+
+ATK_COLUMNS = {
+    "Text Phys": "AtkPhys",
+    "Text Mag": "AtkMag",
+    "Text Fire": "AtkFire",
+    "Text Ltng": "AtkLtng",
+    "Text Holy": "AtkHoly",
+}
+
+FALLBACK_LABEL = {
+    "Text Phys": "Physical",
+    "Text Mag": "Magic",
+    "Text Fire": "Fire",
+    "Text Ltng": "Lightning",
+    "Text Holy": "Holy",
+}
+
+
+def find_damage_pairs(fieldnames: List[str]) -> List[Tuple[str, str]]:
+    mv_pattern = re.compile(r"^Dmg MV(?: (\d+))?$")
+    suffixes: List[str] = []
+    for col in fieldnames:
+        m = mv_pattern.match(col)
+        if m:
+            suffixes.append(m.group(1) or "")
+
+    def sort_key(suffix: str) -> Tuple[int, int]:
+        return (0 if suffix == "" else 1, int(suffix or "0"))
+
+    pairs: List[Tuple[str, str]] = []
+    for suffix in sorted(set(suffixes), key=sort_key):
+        type_col = f"Dmg Type {suffix}".strip()
+        mv_col = f"Dmg MV {suffix}".strip()
+        if type_col in fieldnames and mv_col in fieldnames:
+            pairs.append((type_col, mv_col))
+    if not pairs and "Dmg Type" in fieldnames and "Dmg MV" in fieldnames:
+        pairs.append(("Dmg Type", "Dmg MV"))
+    return pairs
 
 
 def parse_float(value: str) -> float | None:
@@ -133,18 +169,44 @@ def merge_segments(segments: List[Tuple[str | None, str]]) -> str:
 
 
 def color_for_damage_type(label: str) -> str | None:
-    l = label.lower()
-    if l in {"standard", "physical", "phys", "pierce", "slash", "strike", "blunt"}:
+    l_raw = (label or "").strip().lower()
+    if l_raw.startswith("weapon (") and l_raw.endswith(")"):
+        l_raw = l_raw[len("weapon ("):-1].strip()
+    if l_raw.endswith("physical"):
+        l_raw = l_raw[: -len("physical")].strip()
+    l = l_raw
+    if l in {"standard", "physical", "phys", "pierce", "slash", "strike", "blunt", "weapon"} or "physical" in l:
         return PHYSICAL_COLOR
-    if l == "magic":
+    if "magic" in l:
         return MAGIC_COLOR
-    if l == "fire":
+    if "fire" in l:
         return FIRE_COLOR
-    if l in {"lightning", "ltng"}:
+    if "lightning" in l or "ltng" in l:
         return LIGHTNING_COLOR
-    if l == "holy":
+    if "holy" in l:
         return HOLY_COLOR
     return None
+
+
+def target_column_for_type(dtype: str) -> str:
+    text = (dtype or "").strip().lower()
+    if not text or text == "weapon":
+        return "Text Phys"
+    if text.startswith("weapon (") and text.endswith(")"):
+        text = text[len("weapon ("):-1].strip()
+    if text.endswith("physical"):
+        text = text[: -len("physical")].strip()
+    if text in {"standard", "physical", "phys", "slash", "strike", "pierce", "weapon"}:
+        return "Text Phys"
+    if "magic" in text:
+        return "Text Mag"
+    if "fire" in text:
+        return "Text Fire"
+    if "lightning" in text or "ltng" in text:
+        return "Text Ltng"
+    if "holy" in text:
+        return "Text Holy"
+    return "Text Phys"
 
 
 def color_for_status(label: str) -> str | None:
@@ -239,7 +301,96 @@ def ensure_output_fields(fieldnames: List[str]) -> List[str]:
     return fields
 
 
-def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
+RANGE_TOKEN = re.compile(r"-?\d+(?:\.\d+)?(?:-?\d+(?:\.\d+)?)?")
+
+
+def tokenize_with_ranges(text: str) -> List[tuple[str, str]]:
+    tokens: List[tuple[str, str]] = []
+    cursor = 0
+    src = text or ""
+    for match in RANGE_TOKEN.finditer(src):
+        start, end = match.span()
+        if start > cursor:
+            tokens.append(("sep", src[cursor:start]))
+        tokens.append(("num", match.group(0)))
+        cursor = end
+    if cursor < len(src):
+        tokens.append(("sep", src[cursor:]))
+    if not tokens:
+        tokens.append(("sep", ""))
+    return tokens
+
+
+def shape_with_ranges(text: str) -> Tuple[tuple[str, ...], int]:
+    tokens = tokenize_with_ranges(text)
+    pattern: List[str] = []
+    count = 0
+    for kind, _ in tokens:
+        if kind == "num":
+            pattern.append("{n}")
+            count += 1
+        else:
+            pattern.append("sep")
+    return tuple(pattern), count
+
+
+def parse_range_value(value: str) -> Tuple[float, float]:
+    text = (value or "").strip()
+    m = re.fullmatch(r"(-?\d+(?:\.\d+)?)(?:-(-?\d+(?:\.\d+)?))?", text)
+    if m:
+        first = float(m.group(1))
+        second = float(m.group(2)) if m.group(2) is not None else first
+        return (first, second) if first <= second else (second, first)
+    nums = [float(n) for n in re.findall(r"-?\d+(?:\.\d+)?", text)]
+    if not nums:
+        return 0.0, 0.0
+    return (min(nums), max(nums))
+
+
+def fmt_number(value: float) -> str:
+    if value.is_integer():
+        return str(int(value))
+    text = f"{value:.3f}".rstrip("0").rstrip(".")
+    return text
+
+
+def sum_numeric_strings_with_ranges(current: str, incoming: str) -> str | None:
+    cur = (current or "").strip()
+    inc = (incoming or "").strip()
+    if not cur:
+        return inc or None
+    if not inc:
+        return cur
+
+    cur_tokens = tokenize_with_ranges(cur)
+    inc_tokens = tokenize_with_ranges(inc)
+    cur_shape, cur_count = shape_with_ranges(cur)
+    inc_shape, inc_count = shape_with_ranges(inc)
+    if cur_count != inc_count or cur_shape != inc_shape:
+        return None
+
+    cur_ranges = [parse_range_value(val) for kind, val in cur_tokens if kind == "num"]
+    inc_ranges = [parse_range_value(val) for kind, val in inc_tokens if kind == "num"]
+    summed: List[str] = []
+    for (c_low, c_high), (i_low, i_high) in zip(cur_ranges, inc_ranges):
+        low = c_low + i_low
+        high = c_high + i_high
+        summed.append(fmt_number(low) if low == high else f"{fmt_number(low)}-{fmt_number(high)}")
+
+    rebuilt: List[str] = []
+    idx = 0
+    for kind, val in cur_tokens:
+        if kind == "num":
+            rebuilt.append(summed[idx])
+            idx += 1
+        else:
+            rebuilt.append(val)
+    return "".join(rebuilt)
+
+
+def apply_row_operations(
+    row: Dict[str, str], dmg_pairs: List[Tuple[str, str]]
+) -> Dict[str, str]:
     """
     Hook for future Stage 3 transforms.
     Modify or add columns based on existing row values here.
@@ -262,9 +413,8 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
                 deduped.append(p)
         row["subCategorySum"] = " | ".join(deduped)
 
-    # Zero-only normalization.
+    # Zero-only normalization (exclude Dmg MV columns so we can display them).
     zero_cols = [
-        "Dmg MV",
         "Status MV",
         "Weapon Buff MV",
         "Stance Dmg",
@@ -279,19 +429,74 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         if val and zeros_only(val):
             row[col] = "-"
 
-    dmg_type = (row.get("Dmg Type") or "").strip()
-    dmg_mv_raw = (row.get("Dmg MV") or "").strip()
-    if dmg_mv_raw in {"", "-"}:
-        row["Text Wep Dmg"] = "-"
-    elif dmg_type == "-":
-        row["Text Wep Dmg"] = "!"
-    else:
-        label = "Damage" if dmg_type == "Weapon" else dmg_type
-        label_color = color_for_damage_type(label)
-        label_text = wrap_label(f"{label}:", label_color)
-        row["Text Wep Dmg"] = (
-            f"{label_text} {colorize_numeric_payload(dmg_mv_raw)} [AR]"
+    row["Text Wep Dmg"] = "-"
+    for col in ["Text Phys", "Text Mag", "Text Fire", "Text Ltng", "Text Holy"]:
+        row[col] = "-"
+
+    dmg_by_target: Dict[str, Dict[str, str | None]] = {
+        tgt: {"label": None, "mv": None, "atk": None} for tgt in ATK_COLUMNS
+    }
+
+    for type_col, mv_col in dmg_pairs:
+        dtype = (row.get(type_col) or "").strip()
+        dmv = (row.get(mv_col) or "").strip()
+        if not dmv or dmv == "-":
+            continue
+        label = dtype if dtype else "Weapon"
+        target = target_column_for_type(label)
+        entry = dmg_by_target.setdefault(target, {"label": None, "mv": None, "atk": None})
+        if not entry["label"]:
+            entry["label"] = label
+        entry["mv"] = (
+            dmv
+            if entry["mv"] is None
+            else sum_numeric_strings_with_ranges(str(entry["mv"]), dmv) or entry["mv"]
         )
+
+    for target, atk_col in ATK_COLUMNS.items():
+        atk_val = (row.get(atk_col) or "").strip()
+        if not atk_val or atk_val == "-" or zeros_only(atk_val):
+            continue
+        entry = dmg_by_target.setdefault(target, {"label": None, "mv": None, "atk": None})
+        entry["atk"] = atk_val
+
+    overwrite_val = (row.get("Overwrite Scaling") or "").strip()
+    for target, entry in dmg_by_target.items():
+        dmg_val = entry.get("mv") or ""
+        atk_val = entry.get("atk") or ""
+        has_dmg = bool(dmg_val) and dmg_val != "-"
+        has_atk = bool(atk_val) and atk_val != "-"
+        if not has_dmg and not has_atk:
+            continue
+
+        label_raw = entry.get("label") or FALLBACK_LABEL.get(target, "Physical")
+        label_color = color_for_damage_type(label_raw)
+        label_text = wrap_label(f"{label_raw}:", label_color)
+
+        combined = ""
+        suffixes: List[str] = []
+        if has_dmg and has_atk:
+            combined = sum_numeric_strings_with_ranges(str(dmg_val), str(atk_val)) or str(dmg_val)
+            suffixes.append("[AR]")
+            if overwrite_val and overwrite_val != "-":
+                suffixes.append(f"[{overwrite_val}]")
+        elif has_dmg:
+            combined = str(dmg_val)
+            suffixes.append("[AR]")
+        elif has_atk:
+            combined = str(atk_val)
+            if overwrite_val and overwrite_val != "-":
+                suffixes.append(f"[{overwrite_val}]")
+
+        payload = f"{label_text} {colorize_numeric_payload(combined)}"
+        if suffixes:
+            payload = f"{payload} {' '.join(suffixes)}"
+
+        existing = row.get(target, "-")
+        if not existing or existing == "-":
+            row[target] = payload
+        else:
+            row[target] = f"{existing} | {payload}"
 
     status_raw = (row.get("Status MV") or "").strip()
     wep_status_raw = (row.get("Wep Status") or "").strip()
@@ -319,41 +524,23 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
             f"{wrap_label('Stance:', HEADER_COLOR)} {colorize_numeric_payload(stance_raw)}"
         )
 
-    overwrite_raw = (row.get("Overwrite Scaling") or "").strip()
-    scaling_label = (
-        overwrite_raw if overwrite_raw not in {"", "-"} else "Weapon Scaling"
-    )
-
-    base_cols = {
-        "Text Phys": ("Standard", row.get("AtkPhys", "")),
-        "Text Mag": ("Magic", row.get("AtkMag", "")),
-        "Text Fire": ("Fire", row.get("AtkFire", "")),
-        "Text Ltng": ("Lightning", row.get("AtkLtng", "")),
-        "Text Holy": ("Holy", row.get("AtkHoly", "")),
-    }
-    for col, (label, value) in base_cols.items():
-        val_clean = (value or "").strip()
-        if not val_clean or val_clean == "-":
-            row[col] = "-"
-        else:
-            label_color = color_for_damage_type(label)
-            label_text = wrap_label(f"{label}:", label_color)
-            row[col] = (
-                f"{label_text} {colorize_numeric_payload(val_clean)} [{scaling_label}]"
-            )
     return row
 
 
 def transform_rows(
     rows: List[Dict[str, str]], fieldnames: List[str]
 ) -> Tuple[List[Dict[str, str]], List[str]]:
-    transformed: List[Dict[str, str]] = []
-    base_fields = [col for col in fieldnames if col not in DROP_COLUMNS]
+    dmg_pairs = find_damage_pairs(fieldnames)
+    drop_cols = set(DROP_COLUMNS)
+    for type_col, mv_col in dmg_pairs:
+        drop_cols.update({type_col, mv_col})
+    base_fields = [col for col in fieldnames if col not in drop_cols]
     output_fields = ensure_output_fields(base_fields)
+    transformed: List[Dict[str, str]] = []
 
     for row in rows:
-        new_row = apply_row_operations(dict(row))
-        cleaned_row = {k: v for k, v in new_row.items() if k not in DROP_COLUMNS}
+        new_row = apply_row_operations(dict(row), dmg_pairs)
+        cleaned_row = {k: v for k, v in new_row.items() if k not in drop_cols}
         for col in cleaned_row:
             if col not in output_fields:
                 output_fields.append(col)
@@ -392,15 +579,21 @@ def main() -> None:
         default=OUTPUT_DEFAULT,
         help="Path to write AoW-data-4.csv",
     )
-    parser.add_argument(
+    color_group = parser.add_mutually_exclusive_group()
+    color_group.add_argument(
+        "--color",
+        action="store_true",
+        help="Enable font color tags in generated text columns (default: off).",
+    )
+    color_group.add_argument(
         "--no-color",
         action="store_true",
-        help="Disable font color tags in generated text columns.",
+        help="Disable font color tags (default).",
     )
     args = parser.parse_args()
 
     global COLOR_ENABLED
-    COLOR_ENABLED = not args.no_color
+    COLOR_ENABLED = bool(args.color)
 
     rows, fieldnames = read_rows(args.input)
     output_rows, output_columns = transform_rows(rows, fieldnames)

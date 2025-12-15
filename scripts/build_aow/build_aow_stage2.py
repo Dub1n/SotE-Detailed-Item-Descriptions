@@ -71,6 +71,16 @@ SUBCATEGORY_RENAMES = {
     "Roar Attack": "Roar",
 }
 
+DAMAGE_ELEMENTS: List[Tuple[str, str, str]] = [
+    ("Phys", "Phys MV", "Wep Phys"),
+    ("Magic", "Magic MV", "Wep Magic"),
+    ("Fire", "Fire MV", "Wep Fire"),
+    ("Ltng", "Ltng MV", "Wep Ltng"),
+    ("Holy", "Holy MV", "Wep Holy"),
+]
+MAX_DAMAGE_TYPES = 5
+NEAR_EQUAL_THRESHOLD = 0.75
+
 
 def load_value_blacklist(path: Path) -> Dict[str, Dict[str, List[str]]]:
     if not path.exists():
@@ -309,13 +319,6 @@ def collapse_rows(
         output_columns.remove("Bullet")
         step_idx = output_columns.index("Step")
         output_columns.insert(step_idx + 1, "Bullet")
-    if "Holy MV" in output_columns:
-        idx = output_columns.index("Holy MV")
-        output_columns[idx + 1: idx + 1] = ["Dmg Type", "Dmg MV"]
-    else:
-        output_columns.extend(["Dmg Type", "Dmg MV"])
-    output_source_map["Dmg Type"] = None
-    output_source_map["Dmg MV"] = None
     if "PhysAtkAttribute" in output_columns:
         output_columns.remove("PhysAtkAttribute")
         output_source_map.pop("PhysAtkAttribute", None)
@@ -526,66 +529,90 @@ def collapse_rows(
             if wep_val is not None and wep_val == 0:
                 agg_row[mv_col] = 0
 
-    def compute_damage_meta(agg_row: Dict[str, Any]) -> Tuple[str, float]:
+    def compute_damage_entries(agg_row: Dict[str, Any]) -> List[Tuple[str, float]]:
         zero_for_disabled(agg_row)
-        dmg_fields = [
-            ("Phys", "Phys MV"),
-            ("Magic", "Magic MV"),
-            ("Fire", "Fire MV"),
-            ("Ltng", "Ltng MV"),
-            ("Holy", "Holy MV"),
-        ]
-        values = []
-        for _, col in dmg_fields:
-            val = parse_float(agg_row.get(col, 0))
-            values.append(val if val is not None else 0.0)
-
-        attr = (
+        attr_raw = (
             agg_row.get("_phys_attr") or agg_row.get("PhysAtkAttribute") or ""
-        ).strip()
-        non_zero = [
-            (name, val)
-            for (name, _), val in zip(dmg_fields, values)
-            if val > 0
+        )
+        attr_text = str(attr_raw).strip()
+        attr_lower = attr_text.lower()
+        attr_is_weapon = attr_lower in {"252", "253", "weapon"}
+
+        entries_raw: List[Tuple[str, float, float | None]] = []
+        for key, mv_col, wep_col in DAMAGE_ELEMENTS:
+            mv_val = parse_float(agg_row.get(mv_col, 0))
+            if mv_val is None or mv_val <= 0:
+                continue
+            wep_val = parse_float(agg_row.get(wep_col, 0))
+            entries_raw.append((key, mv_val, wep_val))
+
+        if not entries_raw:
+            return []
+
+        wep_non_zero = [
+            wep for _, _, wep in entries_raw if wep is not None and wep > 0
         ]
-        has_zero = any(val == 0 for val in values)
+        avg_wep = (
+            sum(wep_non_zero) / len(wep_non_zero) if wep_non_zero else None
+        )
 
-        if not non_zero:
-            dmg_type, dmg_mv = "-", 0.0
-        else:
-            dmg_mv = sum(val for _, val in non_zero) / len(non_zero)
+        def scaled_mv(mv: float, wep: float | None) -> float:
+            if avg_wep and wep is not None:
+                return mv * (wep / avg_wep)
+            return mv
 
-            if has_zero:
-                dmg_type = " | ".join(name for name, _ in non_zero)
-                if len(non_zero) > 1:
-                    max_val = max(val for _, val in non_zero)
-                    min_val = min(val for _, val in non_zero)
-                    if max_val > 0 and min_val < 0.75 * max_val:
-                        dmg_type = f"! | {dmg_type}"
+        def phys_label(count: int) -> str:
+            if 2 <= count <= 4:
+                return attr_text if attr_text and not attr_is_weapon else "Weapon"
+            if near_equal:
+                if attr_is_weapon or not attr_text:
+                    return "Weapon"
+                return f"Weapon ({attr_text} Physical)"
+            if attr_is_weapon or not attr_text:
+                return "Weapon"
+            return attr_text
+
+        type_labels = {
+            "Magic": "Magic",
+            "Fire": "Fire",
+            "Ltng": "Lightning",
+            "Holy": "Holy",
+        }
+
+        # Special-case: when multiple elemental MVs share the same value,
+        # collapse to a single "Damage" entry (optionally with phys suffix).
+        distinct_mv_values = {mv for _, mv, _ in entries_raw}
+        if len(entries_raw) >= 2 and len(distinct_mv_values) == 1:
+            phys_mv_present = any(key == "Phys" for key, _, _ in entries_raw)
+            base_label = "Damage"
+            if phys_mv_present and not attr_is_weapon and attr_text:
+                base_label = f"{base_label} ({attr_text} Physical)"
+            first_mv, first_wep = entries_raw[0][1], entries_raw[0][2]
+            return [(base_label, scaled_mv(first_mv, first_wep))]
+
+        mv_values = [mv for _, mv, _ in entries_raw]
+        min_mv, max_mv = min(mv_values), max(mv_values)
+        near_equal = (
+            len(entries_raw) >= 2
+            and max_mv > 0
+            and min_mv >= NEAR_EQUAL_THRESHOLD * max_mv
+        )
+
+        # Special-case: all five elemental MVs are present -> single Weapon average.
+        if len(entries_raw) == 5:
+            scaled = [scaled_mv(mv, wep) for _, mv, wep in entries_raw]
+            avg_val = sum(scaled) / len(scaled) if scaled else 0.0
+            return [("Weapon", avg_val)]
+
+        entries: List[Tuple[str, float]] = []
+        for key, mv_val, wep_val in entries_raw:
+            if key == "Phys":
+                label = phys_label(len(entries_raw))
             else:
-                mn = min(val for _, val in non_zero)
-                mx = max(val for _, val in non_zero)
-                if mn > 0 and mx >= 2 * mn:
-                    dmg_type = "!"
-                elif 1 < len(non_zero) < 5:
-                    max_val = max(val for _, val in non_zero)
-                    threshold = max_val * 0.75
-                    if any(
-                        val < threshold for _, val in non_zero if val == val
-                    ):  # guard for NaN
-                        types = " | ".join(name for name, _ in non_zero)
-                        dmg_type = f"! | {types}"
-                    else:
-                        dmg_type = " | ".join(name for name, _ in non_zero)
-                else:
-                    dmg_type = "Weapon"
+                label = type_labels.get(key, key)
+            entries.append((label, scaled_mv(mv_val, wep_val)))
 
-        if attr and attr not in {"252", "253"}:
-            dmg_type = attr
-        # Force Dmg Type to "-" when aggregate MV is 0.
-        if dmg_mv == 0:
-            dmg_type = "-"
-        return dmg_type, dmg_mv
+        return entries[:MAX_DAMAGE_TYPES]
 
     def has_nonzero_damage_data(agg_row: Mapping[str, Any]) -> bool:
         for col in ZERO_MV_ATK_COLUMNS:
@@ -601,21 +628,22 @@ def collapse_rows(
         return super_val != 0
 
     # Finalize output rows with numeric formatting.
-    output_rows: List[Dict[str, str]] = []
+    pending_rows: List[Tuple[Dict[str, Any], List[Tuple[str, float]]]] = []
+    max_damage_slots = 0
     for agg in grouped.values():
-        dmg_type, dmg_mv = compute_damage_meta(agg)
-        # Overwrite Scaling -> "null" when all relevant damage fields are 0.
-        if (
-            parse_float(agg.get("Dmg MV", 0)) == 0
-            and parse_float(agg.get("Weapon Buff MV", 0)) == 0
-            and all(
-                parse_float(agg.get(col, 0)) == 0
-                for col in ["AtkPhys", "AtkMag", "AtkFire", "AtkLtng", "AtkHoly"]
-            )
-        ):
-            agg["Overwrite Scaling"] = "null"
+        entries = compute_damage_entries(agg)
         if not has_nonzero_damage_data(agg):
             continue
+        if not entries:
+            entries = [("Weapon", 0.0)]
+        max_damage_slots = max(max_damage_slots, len(entries))
+
+        if parse_float(agg.get("Weapon Buff MV", 0)) == 0 and all(
+            parse_float(agg.get(col, 0)) == 0
+            for col in ["AtkPhys", "AtkMag", "AtkFire", "AtkLtng", "AtkHoly"]
+        ):
+            agg["Overwrite Scaling"] = "null"
+
         poise_range_text, poise_range_bounds = summarize_range(
             agg.get("Wep Poise Range", "")
         )
@@ -624,23 +652,55 @@ def collapse_rows(
             agg.get("Stance Dmg", ""),
             agg.get("_stance_super", 0.0),
         )
-        out_row: Dict[str, str] = {}
+        base_row: Dict[str, Any] = {}
         for col in output_columns:
             val = agg.get(col, "")
             if col == "Wep Poise Range":
-                out_row[col] = poise_range_text
+                base_row[col] = poise_range_text
             elif col == "Stance Dmg":
-                out_row[col] = stance_dmg
-            elif col in numeric_columns:
+                base_row[col] = stance_dmg
+            else:
+                base_row[col] = val
+        pending_rows.append((base_row, entries))
+
+    # Ensure we always emit at least one Dmg Type/MV column.
+    pair_count = max(1, min(max_damage_slots or 1, MAX_DAMAGE_TYPES))
+    mv_indices = [
+        output_columns.index(col)
+        for col in ["Holy MV", "Ltng MV", "Fire MV", "Magic MV", "Phys MV"]
+        if col in output_columns
+    ]
+    insert_idx = max(mv_indices) if mv_indices else len(output_columns) - 1
+    dmg_pair_columns: List[str] = []
+    for idx in range(1, pair_count + 1):
+        dmg_pair_columns.extend([f"Dmg Type {idx}", f"Dmg MV {idx}"])
+    final_output_columns = list(output_columns)
+    final_output_columns[insert_idx + 1: insert_idx + 1] = dmg_pair_columns
+
+    numeric_set = set(numeric_columns)
+    output_rows: List[Dict[str, str]] = []
+    for base_row, entries in pending_rows:
+        out_row: Dict[str, str] = {}
+        for col in final_output_columns:
+            if col.startswith("Dmg Type "):
+                idx = int(col.split()[-1]) - 1
+                out_row[col] = entries[idx][0] if idx < len(entries) else ""
+                continue
+            if col.startswith("Dmg MV "):
+                idx = int(col.split()[-1]) - 1
+                mv_val = entries[idx][1] if idx < len(entries) else ""
+                out_row[col] = fmt_number(mv_val) if mv_val != "" else ""
+                continue
+            val = base_row.get(col, "")
+            if col == "Wep Poise Range" or col == "Stance Dmg":
+                out_row[col] = val
+            elif col in numeric_set:
                 out_row[col] = fmt_number(val)
-            elif col == "Dmg Type":
-                out_row[col] = dmg_type
-            elif col == "Dmg MV":
-                out_row[col] = fmt_number(dmg_mv)
             else:
                 out_row[col] = val
         output_rows.append(out_row)
-    return output_rows, output_columns, warnings, sorted(forced_seen)
+
+    return output_rows, final_output_columns, warnings, sorted(forced_seen)
 
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:

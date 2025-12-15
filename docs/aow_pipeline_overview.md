@@ -187,7 +187,7 @@ flowchart LR
 - Rename `Weapon Poise` → `Wep Poise Range`, collapsing pipe-delimited values to a min–max string (single values stay single).
 - Rename `Poise Dmg MV` → `Stance Dmg`, computing a min–max integer range from `Wep Poise Range` × original `Poise Dmg MV` ÷ 100, then adding summed `AtkSuperArmor` (half-up rounding). `AtkSuperArmor` is removed from the output columns.
 - `Wep Status` carries through as a first-value field (non-numeric) and stays after `Status MV`.
-- Add derived columns after `Holy MV`: `Dmg Type` (`Weapon` when all five MVs are non-zero and within 2x; `!` if any non-zero is >=2x another; when zeros exist, list non-zero types and prefix `! |` if 2–4 types and the smallest is <75% of the largest; when 2–4 non-zero types exist without zeros and min <75% max, prefix `! |`; override with `PhysAtkAttribute` when it is not 252/253; `-` when all zero) and `Dmg MV` (average of non-zero Phys/Magic/Fire/Ltng/Holy MVs divided by 100, rounded to 1 decimal).
+- Add derived columns after `Holy MV`: `Dmg Type n`/`Dmg MV n` pairs (up to five). When two or more elemental MVs are identical, Stage 2 collapses them into a single `Damage` entry (with `({PhysAtkAttribute} Physical)` suffix when Phys MV is present and PhysAtkAttribute is not 252/253). Phys rows stay weapon-type when only phys exists; when 2–4 elements exist and Phys MV is present we emit `{PhysAtkAttribute}` (or `Weapon` for 252/253) as `Dmg Type 1`. When all five MVs are non-zero, Stage 2 collapses them into a single `Weapon` entry whose `Dmg MV 1` is the per-element average. Non-phys types (Magic/Fire/Ltng/Holy) inherit the column header name for their `Dmg Type n`. MV payloads are scaled by the ratio of that weapon’s base element to the average of the non-zero bases so mixed element rows weight correctly.
 
 ```mermaid
 flowchart LR
@@ -238,8 +238,8 @@ flowchart LR
     out2Disable["Disable Gem Attr"]
     out2WepBases["Wep Phys / Wep Magic / Wep Fire / Wep Ltng / Wep Holy"]
     out2ElemMVs["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
-    out2DmgType["Dmg Type"]
-    out2DmgMV["Dmg MV"]
+    out2DmgType["Dmg Type 1..5"]
+    out2DmgMV["Dmg MV 1..5"]
     out2Status["Status MV"]
     out2WepStatus["Wep Status"]
     out2Buff["Weapon Buff MV"]
@@ -374,7 +374,7 @@ flowchart LR
   passAtkStats --> dropZero
   stanceBase --> dropZero
 
-  dropZero --> dmgMeta["Dmg Type + Dmg MV derived from MVs"]
+  dropZero --> dmgMeta["Dmg Type + Dmg MV derived from MVs<br>(equal MVs -> single 'Damage' entry)"]
   physAttr1 --> dmgMeta
   dropZero --> out2ElemMVs
 
@@ -422,7 +422,9 @@ flowchart LR
   - Build a shared FP/Charged/Step layout per `Skill`/`Follow-up`/`Hand`; zero-pad missing combos to keep shapes aligned across Parts/Weapons.
   - Sum rows that share the same FP/Charged/Step slot before padding; treat `-`/empty as 0.
   - Borrow supporting stats across rows with matching layouts (fills zeros in `Status MV`/`Weapon Buff MV`/`Stance Dmg`/`Atk*` from non-zero peers, blanking donors when emptied).
-  - After weapon merges, sum supporting stats (`Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`/`AtkMag`/`AtkFire`/`AtkLtng`/`AtkHoly`) across rows that share `Skill`/`Follow-up`/`Hand`/`Part`/`Weapon` (even when `Dmg Type` differs), storing totals in the first row and blanking the donors; `Dmg MV` stays separated per `Dmg Type`.
+  - Carry the numbered `Dmg Type`/`Dmg MV` columns through aggregation so every collapsed row retains up to five parallel damage entries; layouts apply to each MV column independently.
+  - During weapon merge, compare the FP/Charged layouts for every `Dmg MV n` column; when compatible, collapse differing numeric positions into min–max ranges so weapon-derived variance is preserved inside a single row rather than duplicating rows. Dmg Type cells treat `-`/empty as wildcards but block merges when typed entries conflict, and all numbered `Dmg MV` columns are range-collapsed together.
+  - After weapon merges, sum supporting stats (`Status MV`, `Weapon Buff MV`, `Stance Dmg`, `AtkPhys`/`AtkMag`/`AtkFire`/`AtkLtng`/`AtkHoly`) across rows that share `Skill`/`Follow-up`/`Hand`/`Part`/`Weapon`, storing totals in the first row and blanking the donors; the `Dmg Type n`/`Dmg MV n` columns stay per-row but their numeric payloads collapse into min–max ranges when weapons disagree.
   - Collapse Part when redundant: if every row for a `Skill`/`Follow-up`/`Hand` shares the same Part, set it to `-`.
   - Build `subCategorySum` as a deduped, order-preserving union of `subCategory1-4` (skip `-`/empty; ignore `2h Attack` when Hand is `2h`), concatenating with ` | ` when weapon-merge joins differing sets.
   - `Overwrite Scaling`: join unique non-empty values with `,` (falls back to first non-empty, then `-`).
@@ -441,8 +443,8 @@ flowchart LR
     s3Part["Part"]
     s3Weapon["Weapon"]
     s3WepSrc["Weapon Source"]
-    s3DmgType["Dmg Type"]
-    s3DmgMV["Dmg MV"]
+    s3DmgType["Dmg Type 1..5"]
+    s3DmgMV["Dmg MV 1..5"]
     s3Status["Status MV"]
     s3WepStatus["Wep Status"]
     s3Buff["Weapon Buff MV"]
@@ -456,7 +458,7 @@ flowchart LR
   borrow["Borrow support stats across matching layouts<br>(fill zeros in Status/Buff/Stance/Atk*)"]
   agg["Aggregate rows per Weapon + Part<br>sum matching slots; union subCategorySum; join Overwrite Scaling"]
   dropParts["Drop redundant Part when shared across a skill-hand"]
-  weaponMerge["Weapon merge pass<br>merge compatible rows; range differing numbers; join Weapon/Source/Wep Status"]
+  weaponMerge["Weapon merge pass<br>merge compatible rows; range differing numbers per Dmg MV n; join Weapon/Source/Wep Status"]
   zeroAll["Replace all-zero numeric cells with '-'"]
 
   subgraph Stage3Out["AoW-data-3.csv columns"]
@@ -466,8 +468,8 @@ flowchart LR
     o3Part["Part"]
     o3Weapon["Weapon"]
     o3WepSrc["Weapon Source"]
-    o3DmgType["Dmg Type"]
-    o3DmgMV["Dmg MV<br>FP/Charged/Step string"]
+    o3DmgType["Dmg Type 1..5"]
+    o3DmgMV["Dmg MV 1..5<br>FP/Charged/Step strings"]
     o3Status["Status MV<br>FP/Charged/Step string"]
     o3WepStatus["Wep Status"]
     o3Buff["Weapon Buff MV<br>FP/Charged/Step string"]
@@ -484,18 +486,18 @@ flowchart LR
 
 - Input: `work/aow_pipeline/AoW-data-3.csv`
 - Output: `work/aow_pipeline/AoW-data-4.csv` (adds text helper fields for markdown/ready ingestion).
-- Script: `scripts/build_aow/build_aow_stage4.py` (formats text helpers, colors optional).
+- Script: `scripts/build_aow/build_aow_stage4.py` (formats text helpers; colors are disabled by default and enabled with `--color`).
 - Behavior:
   - Normalize `subCategorySum`: split on `|`, strip empties/`-`, dedupe preserving order.
-  - Zero-only columns (`Dmg MV`, `Status MV`, `Weapon Buff MV`, `Stance Dmg`, `Atk*`, etc.) become `-` when every numeric token is zero.
+  - Zero-only columns (`Status MV`, `Weapon Buff MV`, `Stance Dmg`, `Atk*`, etc.) become `-` when every numeric token is zero. `Dmg MV n` columns are left intact so they can render even when zero.
   - Text helpers (skip columns that are `-`/empty):
-    - `Text Wep Dmg`: `Damage:` + colored label from `Dmg Type` (`!` when `Dmg Type` is `-`), numeric payload colorizes FP blocks (`[x|y]`) and charged dividers.
-    - `Text Wep Status`: `{Wep Status|Status} (%)` label (colored per ailment) + raw `Status MV` payload with FP/charged coloring; emits `-` when status data missing/zero/None.
-    - `Text Stance`: `Stance:` label (header color) + `Stance Dmg` payload with FP/charged coloring; `-` when empty.
-    - `Text Phys/Mag/Fire/Ltng/Holy`: `{Element}: {Atk*} [{Overwrite Scaling|Weapon Scaling}]` with element colors; `-` when empty.
+    - `Text Wep Dmg`: now always `-`; individual damage lines move into the elemental helpers.
+    - `Text Wep Status`: `{Wep Status|Status} (%)` label (colored per ailment when `--color` is set) + raw `Status MV` payload with FP/charged coloring; emits `-` when status data missing/zero/None.
+    - `Text Stance`: `Stance:` label (header color when `--color` is set) + `Stance Dmg` payload with FP/charged coloring; `-` when empty.
+    - `Text Phys/Mag/Fire/Ltng/Holy`: built from the numbered `Dmg Type`/`Dmg MV` pairs and merged with the matching `Atk*` columns when present (range-aware sums). `[AR]` is appended only when a Dmg MV contributes; `[{Overwrite Scaling}]` is appended only when an `Atk*` contribution exists for that element.
     - `Text Name`, `Text Category` placeholders are seeded empty for downstream use.
-  - Drops numeric/raw columns no longer needed: `Dmg MV`, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, `Dmg Type`, `Overwrite Scaling`, base `Atk*`, weapon base columns, poise metadata.
-  - Coloring: uses Stage 4 palette for elements/status/stance; FP-less and charged FP-less blocks collapse to single wrappers to avoid redundant tags. `--no-color` disables all font tags (plain text).
+  - Drops numeric/raw columns no longer needed: the numbered `Dmg Type n`/`Dmg MV n` pairs, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, `Overwrite Scaling`, base `Atk*`, weapon base columns, poise metadata.
+  - Coloring (opt-in via `--color`): uses Stage 4 palette for elements/status/stance; FP-less and charged FP-less blocks collapse to single wrappers to avoid redundant tags. `--no-color`/default disables all font tags (plain text).
 
 ```mermaid
 flowchart LR
@@ -506,8 +508,8 @@ flowchart LR
     s4Part["Part"]
     s4Weapon["Weapon"]
     s4WepSrc["Weapon Source"]
-    s4DmgType["Dmg Type"]
-    s4DmgMV["Dmg MV<br>FP/Charged/Step"]
+    s4DmgType["Dmg Type 1..5"]
+    s4DmgMV["Dmg MV 1..5<br>FP/Charged/Step"]
     s4Status["Status MV<br>FP/Charged/Step"]
     s4WepStatus["Wep Status"]
     s4Buff["Weapon Buff MV<br>FP/Charged/Step"]
@@ -519,7 +521,7 @@ flowchart LR
 
   normalize4["Clean subCategorySum<br>dedupe, drop '-'"]
   zero4["Zero-only -> '-' for MV/Buff/Stance/Atk*"]
-  textHelpers["Build text helpers<br>Damage / Status (%) / Stance / base elements<br>color FP + charged spans (optional)"]
+  textHelpers["Build text helpers<br>Merge Dmg MV n + Atk* per element; add Status/Stance<br>color FP + charged spans when --color"]
   drop4["Drop raw numeric/metadata columns"]
 
   subgraph Stage4Out["AoW-data-4.csv columns"]
@@ -557,7 +559,7 @@ flowchart LR
   - Add `### [ ] Skill` headers by default; preserve existing `[x]` headers (skip regenerating those sections) unless `--force` is passed, which converts them to `[<]` and rewrites the section.
   - If any row in a skill has a `Follow-up`, rows lacking a follow-up label render as `Skill`.
   - When follow-ups are present, `subCategorySum` is applied to the follow-up/Skill header (not to individual parts) so shared tags appear once per header.
-  - Collapse duplicate parts under the same heading/subheading so their detail lines merge into a single block; damage/status lines are ordered Standard → Strike → Slash → Pierce → Magic → Fire → Lightning → Holy → Poison → Deadly Poison → Scarlet Rot → Blood Loss → Frostbite → Sleep → Eternal Sleep → Madness → Death Blight → Status (%) → Stance.
+  - Collapse duplicate parts under the same heading/subheading so their detail lines merge into a single block; normalize labels (`Damage` → `Weapon`, physical aliases → Standard/Slash/Pierce/Strike) before sorting. Damage/status lines are ordered Standard → Strike → Slash → Pierce → Magic → Fire → Lightning → Holy → Poison → Deadly Poison → Scarlet Rot → Blood Loss → Frostbite → Sleep → Eternal Sleep → Madness → Death Blight → Status (%) → Stance (ensures Stance always follows damage/status lines).
   - `subCategorySum` is reformatted with commas (instead of pipes) and tight `/`.
   - Output stays colourised when Stage 4 used colors; pair with Stage 5 colorizer (below) when Stage 4 ran with `--no-color`.
   - Console output reports how many sections changed; when <=5, it prints before/after blocks for each changed section.
@@ -572,7 +574,7 @@ flowchart LR
     s5Hand["Hand"]
     s5Part["Part"]
     s5Weapon["Weapon"]
-    s5TextWepDmg["Text Wep Dmg"]
+    s5TextWepDmg["Text Wep Dmg (unused placeholder)"]
     s5TextWepStatus["Text Wep Status"]
     s5TextStance["Text Stance"]
     s5TextPhys["Text Phys"]
@@ -585,7 +587,7 @@ flowchart LR
 
   groupSkill["Group by Skill<br>emit ### Skill"]
   weaponSplit["Split blocks per Weapon when multiple values<br>emit #### {Weapon}"]
-  layoutLines["Render lines by Follow-up/Hand/Part<br>indent nested parts; drop '-' helpers<br>reformat subCategorySum with commas"]
+  layoutLines["Render lines by Follow-up/Hand/Part<br>indent nested parts; drop '-' helpers<br>normalize labels + sort lines (damage before Stance)"]
 
   subgraph Stage5Out["AoW-data-5.md"]
     o5["Markdown skill blocks<br>(colour depends on Stage 4/no-color)"]

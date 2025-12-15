@@ -26,7 +26,6 @@ KEY_FIELDS = [
     "Hand",
     "Part",
     "Weapon",
-    "Dmg Type",
     "Wep Status",
 ]
 
@@ -40,8 +39,7 @@ DROP_COLUMNS = {
     "Wep Holy",
 }
 
-AGG_COLS = [
-    "Dmg MV",
+AGG_COLS_BASE = [
     "Status MV",
     "Weapon Buff MV",
     "Stance Dmg",
@@ -51,27 +49,32 @@ AGG_COLS = [
     "AtkLtng",
     "AtkHoly",
 ]
-SUPPORTING_COLS = [
-    "Status MV",
-    "Weapon Buff MV",
-    "Stance Dmg",
-    "AtkPhys",
-    "AtkMag",
-    "AtkFire",
-    "AtkLtng",
-    "AtkHoly",
-]
-SUPPORT_SUM_COLS = [
-    "Status MV",
-    "Weapon Buff MV",
-    "Stance Dmg",
-    "AtkPhys",
-    "AtkMag",
-    "AtkFire",
-    "AtkLtng",
-    "AtkHoly",
-]
+AGG_COLS = list(AGG_COLS_BASE)
+SUPPORTING_COLS = list(AGG_COLS_BASE)
+SUPPORT_SUM_COLS = list(AGG_COLS_BASE)
 SLOT_KEY_FIELD = "_slot_keys"
+
+
+def find_damage_pairs(fieldnames: List[str]) -> List[Tuple[str, str]]:
+    mv_pattern = re.compile(r"^Dmg MV(?: (\d+))?$")
+    suffixes: List[str] = []
+    for col in fieldnames:
+        m = mv_pattern.match(col)
+        if m:
+            suffixes.append(m.group(1) or "")
+    # Preserve natural numeric order; base column (no suffix) comes first.
+    def sort_key(suffix: str) -> Tuple[int, str]:
+        return (0 if suffix == "" else 1, int(suffix or "0"))
+
+    pairs: List[Tuple[str, str]] = []
+    for suffix in sorted(set(suffixes), key=sort_key):
+        type_col = f"Dmg Type {suffix}".strip()
+        mv_col = f"Dmg MV {suffix}".strip()
+        if type_col in fieldnames and mv_col in fieldnames:
+            pairs.append((type_col, mv_col))
+    if not pairs and "Dmg Type" in fieldnames and "Dmg MV" in fieldnames:
+        pairs.append(("Dmg Type", "Dmg MV"))
+    return pairs
 
 
 def read_rows(path: Path) -> Tuple[List[Dict[str, str]], List[str]]:
@@ -430,17 +433,30 @@ def fmt_number(value: float) -> str:
     return text
 
 
-def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
+def collapse_weapons(
+    rows: List[Dict[str, str]],
+    agg_cols: List[str],
+    dmg_pairs: List[Tuple[str, str]],
+) -> List[Dict[str, str]]:
     """
     Second-pass collapse: merge rows that differ only by Weapon but share
     identical non-Weapon columns and numeric arrangement. Merge only when
     every Weapon in the Skill/Hand/Part/DmgType/WepStatus cluster has the
     same set of numeric shapes (symmetry guard).
     """
-    # Precompute per-weapon signature sets across all Dmg Types for the same
-    # Skill/Follow-up/Hand/Part/Wep Status combo so we can refuse to merge
-    # when weapons have differing metadata anywhere in the cluster.
+    # Precompute per-weapon signature sets across all rows in the cluster so
+    # we can refuse to merge when weapons have differing metadata anywhere in
+    # the cluster.
     overall_sigs: Dict[Tuple[str, str, str, str, str, str], set] = {}
+    dtype_cols = [type_col for type_col, _ in dmg_pairs] or ["Dmg Type"]
+
+    def dtype_key_values(row: Dict[str, str]) -> Tuple[str, ...]:
+        keys: List[str] = []
+        for col in dtype_cols:
+            val = (row.get(col, "") or "").strip()
+            keys.append("__ANY_DMG__" if val in {"", "-"} else val)
+        return tuple(keys)
+
     def normalize_subcat(value: str, hand: str) -> str:
         tokens = [t.strip() for t in (value or "").split("|") if t.strip()]
         if hand.strip() == "2h":
@@ -476,40 +492,36 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
         "Follow-up",
         "Hand",
         "Part",
-        "Dmg Type",
         "Wep Status",
         "Overwrite Scaling",
     ]
     # Cluster by non-weapon fields.
     clusters: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
     for row in rows:
-        dtype = row.get("Dmg Type", "")
-        dtype_key = "__ANY_DMG__" if dtype == "-" else dtype
         overw = normalize_overwrite(row.get("Overwrite Scaling", ""))
         row["Overwrite Scaling"] = overw
         key_parts = []
         status_key = status_merge_key(row.get("Wep Status", ""))
         for col in fixed_cols:
-            if col == "Dmg Type":
-                key_parts.append(dtype_key)
-            elif col == "Wep Status":
+            if col == "Wep Status":
                 key_parts.append(status_key)
             else:
                 key_parts.append(row.get(col, ""))
+        key_parts.extend(dtype_key_values(row))
         key = tuple(key_parts)
         clusters.setdefault(key, []).append(row)
 
     merged: List[Dict[str, str]] = []
     for key, bucket in clusters.items():
         # Build weapon -> set of shapes to ensure symmetry.
-        shapes_by_weapon: Dict[str, set] = {}
         rows_by_shape_weapon: Dict[Tuple[str, ...], Dict[str, List[Dict[str, str]]]] = {}
         sources_by_weapon: Dict[str, List[str]] = {}
         sig_cache: Dict[str, Tuple[Tuple[Tuple[str, str], ...], ...]] = {}
+        local_shape_map: Dict[str, set] = {}
         for row in bucket:
             weapon = row.get("Weapon", "").strip()
             shape_key: Tuple[str, ...] = []
-            for col in AGG_COLS:
+            for col in agg_cols:
                 pat, _ = shape_with_ranges(row.get(col, "") or "")
                 shape_key += pat
             slot_keys = tuple(
@@ -517,8 +529,8 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                 for fp, charged, step in row.get(SLOT_KEY_FIELD, ())
             )
             shape_key = tuple(shape_key) + slot_keys
-            shapes_by_weapon.setdefault(weapon, set()).add(shape_key)
             rows_by_shape_weapon.setdefault(shape_key, {}).setdefault(weapon, []).append(row)
+            local_shape_map.setdefault(weapon, set()).add(shape_key)
             src = (row.get("Weapon Source") or "").strip()
             if src:
                 sources_by_weapon.setdefault(weapon, []).append(src)
@@ -527,7 +539,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             sig_cache.setdefault(weapon, tuple())
             sig_cache[weapon] = tuple(sorted(set(sig_cache[weapon] + (sig,))))
 
-        if not shapes_by_weapon:
+        if not rows_by_shape_weapon:
             merged.extend(bucket)
             continue
 
@@ -538,7 +550,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             # Shape symmetry guard: every weapon in this shape must have the
             # same set of shapes across the cluster (so we don't merge a weapon
             # that also carries an extra layout elsewhere).
-            shape_sets_subset = [shapes_by_weapon[w] for w in weapons_for_shape]
+            shape_sets_subset = [local_shape_map.get(w, set()) for w in weapons_for_shape]
             if any(s != shape_sets_subset[0] for s in shape_sets_subset[1:]):
                 for rows_list in weapon_rows.values():
                     merged.extend(rows_list)
@@ -585,14 +597,25 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             out["Weapon Source"] = unique_join(src_values) or "-"
             # Resolve Dmg Type preferring non-"-".
             dtype_candidates = [
-                r.get("Dmg Type", "") for rows_list in weapon_rows.values() for r in rows_list
+                dtype_key_values(r) for rows_list in weapon_rows.values() for r in rows_list
             ]
-            chosen_dtype = base_row.get("Dmg Type", "-")
-            if dtype_candidates and any(d != chosen_dtype for d in dtype_candidates):
+            resolved_dtype: List[str] = []
+            conflict = False
+            for idx in range(len(dtype_cols)):
+                vals = {
+                    d[idx] for d in dtype_candidates if d[idx] != "__ANY_DMG__"
+                }
+                if len(vals) > 1:
+                    conflict = True
+                    break
+                resolved_dtype.append(vals.pop() if vals else "__ANY_DMG__")
+            if conflict:
                 for rows_list in weapon_rows.values():
                     merged.extend(rows_list)
                 continue
-            out["Dmg Type"] = chosen_dtype or "-"
+            for idx, col in enumerate(dtype_cols):
+                val = resolved_dtype[idx] if idx < len(resolved_dtype) else "__ANY_DMG__"
+                out[col] = "-" if val == "__ANY_DMG__" else val
             # Overwrite Scaling must match.
             ovw_candidates = {
                 normalize_overwrite(r.get("Overwrite Scaling", ""))
@@ -629,8 +652,8 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
             out["subCategorySum"] = base_row.get("subCategorySum", "")
 
             # Merge numeric ranges using token shape of base.
-            token_cache = {col: tokenize_with_ranges(out.get(col, "") or "") for col in AGG_COLS}
-            for col in AGG_COLS:
+            token_cache = {col: tokenize_with_ranges(out.get(col, "") or "") for col in agg_cols}
+            for col in agg_cols:
                 tokens = token_cache[col]
                 num_positions = [i for i, (k, _) in enumerate(tokens) if k == "num"]
                 all_nums_by_pos: List[List[Tuple[float, float]]] = [[] for _ in num_positions]
@@ -658,7 +681,7 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
                         rebuilt.append(val)
                 out[col] = "".join(rebuilt)
 
-            for col in AGG_COLS:
+            for col in agg_cols:
                 if zeros_only(out.get(col, "")):
                     out[col] = "-"
 
@@ -667,12 +690,16 @@ def collapse_weapons(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
     return merged
 
 
-def collapse_supporting_stats(rows: List[Dict[str, str]]) -> None:
+def collapse_supporting_stats(
+    rows: List[Dict[str, str]], primary_mv_col: str
+) -> None:
     """
     Allow supporting columns to merge across rows that share the same layout
     even when Dmg MV differs by pulling non-zero tokens forward and blanking
     them in the donor rows.
     """
+    if not primary_mv_col:
+        return
     group_keys = [
         "Skill",
         "Follow-up",
@@ -691,9 +718,9 @@ def collapse_supporting_stats(rows: List[Dict[str, str]]) -> None:
         if len(group_rows) < 2:
             continue
         base = group_rows[0]
-        base_shape = shape_with_ranges(base.get("Dmg MV", "") or "")[0]
+        base_shape = shape_with_ranges(base.get(primary_mv_col, "") or "")[0]
         for donor in group_rows[1:]:
-            donor_shape = shape_with_ranges(donor.get("Dmg MV", "") or "")[0]
+            donor_shape = shape_with_ranges(donor.get(primary_mv_col, "") or "")[0]
             if donor_shape != base_shape:
                 continue
             for col in SUPPORTING_COLS:
@@ -732,9 +759,9 @@ def sum_supporting_by_weapon(rows: List[Dict[str, str]]) -> None:
                 donor[col] = "-"
 
 
-def mask_zero_only_cells(rows: List[Dict[str, str]]) -> None:
+def mask_zero_only_cells(rows: List[Dict[str, str]], agg_cols: List[str]) -> None:
     for row in rows:
-        for col in AGG_COLS:
+        for col in agg_cols:
             if col in row and zeros_only(row.get(col, "")):
                 row[col] = "-"
 
@@ -783,7 +810,11 @@ def build_layout_map(
 def collapse_rows(
     rows: List[Dict[str, str]],
     layout_map: Dict[Tuple[str, str, str], StepLayout],
+    dmg_pairs: List[Tuple[str, str]],
 ) -> Tuple[List[Dict[str, str]], List[str]]:
+    agg_cols = list(AGG_COLS_BASE) + [mv for _, mv in dmg_pairs]
+    global AGG_COLS
+    AGG_COLS = agg_cols
     clusters: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
     for row in rows:
         row["Overwrite Scaling"] = normalize_overwrite(
@@ -805,10 +836,6 @@ def collapse_rows(
 
     output_rows: List[Dict[str, str]] = []
     for rowset in clusters.values():
-        primary_dtype = next(
-            (r.get("Dmg Type", "") for r in rowset if r.get("Dmg Type", "") not in {"", "-"}),
-            "-",
-        )
         primary_overwrite = next(
             (
                 r.get("Overwrite Scaling", "")
@@ -817,72 +844,63 @@ def collapse_rows(
             ),
             "-",
         )
-
-        subgroup_map: Dict[Tuple[str, str], List[Dict[str, str]]] = {}
+        base = rowset[0]
+        out: Dict[str, str] = {
+            "Skill": base.get("Skill", ""),
+            "Follow-up": base.get("Follow-up", ""),
+            "Hand": base.get("Hand", ""),
+            "Part": base.get("Part", ""),
+            "Weapon Source": base.get("Weapon Source", ""),
+            "Weapon": base.get("Weapon", ""),
+            "Wep Status": base.get("Wep Status", ""),
+        }
+        subcats: List[str] = []
+        overwrite_vals: List[str] = []
         for row in rowset:
-            eff_dtype = (
-                row.get("Dmg Type", "")
-                if row.get("Dmg Type", "") not in {"", "-"}
-                else primary_dtype
+            for col in ("subCategory1", "subCategory2", "subCategory3", "subCategory4"):
+                val = (row.get(col) or "").strip()
+                if val and val != "-" and val not in subcats:
+                    subcats.append(val)
+            ov = (row.get("Overwrite Scaling") or "").strip()
+            if ov and ov != "-" and ov not in overwrite_vals:
+                overwrite_vals.append(ov)
+
+        out["subCategorySum"] = "|".join(subcats)
+        out["Overwrite Scaling"] = (
+            ", ".join(overwrite_vals)
+            if overwrite_vals
+            else (primary_overwrite if primary_overwrite and primary_overwrite != "-" else "-")
+        )
+
+        layout_key = (
+            out["Skill"],
+            out["Follow-up"],
+            out["Hand"],
+            out["Weapon"],
+        )
+        layout = layout_map.get(layout_key) or build_step_layout(rowset)
+        out[SLOT_KEY_FIELD] = build_slot_coverage(rowset)
+
+        for type_col, _ in dmg_pairs:
+            value = next(
+                (row.get(type_col, "") for row in rowset if (row.get(type_col, "") or "").strip()),
+                "",
             )
-            eff_overwrite = (
-                row.get("Overwrite Scaling", "")
-                if row.get("Overwrite Scaling", "") not in {"", "-"}
-                else primary_overwrite
-            )
-            subgroup_map.setdefault((eff_dtype, eff_overwrite), []).append(row)
+            out[type_col] = value
+        for col in agg_cols:
+            out[col] = aggregate_steps(rowset, col, layout)
 
-        for (eff_dtype, eff_overwrite), subrows in subgroup_map.items():
-            base = subrows[0]
-            out: Dict[str, str] = {
-                "Skill": base.get("Skill", ""),
-                "Follow-up": base.get("Follow-up", ""),
-                "Hand": base.get("Hand", ""),
-                "Part": base.get("Part", ""),
-                "Weapon Source": base.get("Weapon Source", ""),
-                "Weapon": base.get("Weapon", ""),
-                "Dmg Type": eff_dtype or "-",
-                "Wep Status": base.get("Wep Status", ""),
-            }
-            subcats: List[str] = []
-            overwrite_vals: List[str] = []
-            for row in subrows:
-                for col in ("subCategory1", "subCategory2", "subCategory3", "subCategory4"):
-                    val = (row.get(col) or "").strip()
-                    if val and val != "-" and val not in subcats:
-                        subcats.append(val)
-                ov = (row.get("Overwrite Scaling") or "").strip()
-                if ov and ov != "-" and ov not in overwrite_vals:
-                    overwrite_vals.append(ov)
+        output_rows.append(out)
 
-            out["subCategorySum"] = "|".join(subcats)
-            out["Overwrite Scaling"] = (
-                ", ".join(overwrite_vals)
-                if overwrite_vals
-                else (eff_overwrite if eff_overwrite and eff_overwrite != "-" else "-")
-            )
-
-            layout_key = (
-                out["Skill"],
-                out["Follow-up"],
-                out["Hand"],
-                out["Weapon"],
-            )
-            layout = layout_map.get(layout_key) or build_step_layout(subrows)
-            out[SLOT_KEY_FIELD] = build_slot_coverage(subrows)
-            for col in AGG_COLS:
-                out[col] = aggregate_steps(subrows, col, layout)
-
-            output_rows.append(out)
-
-    collapse_supporting_stats(output_rows)
-    merged_rows = collapse_weapons(output_rows)
+    primary_mv_col = dmg_pairs[0][1] if dmg_pairs else ""
+    collapse_supporting_stats(output_rows, primary_mv_col)
+    merged_rows = collapse_weapons(output_rows, agg_cols, dmg_pairs)
     sum_supporting_by_weapon(merged_rows)
 
     for row in merged_rows:
         row.pop(SLOT_KEY_FIELD, None)
 
-    mask_zero_only_cells(merged_rows)
+    mask_zero_only_cells(merged_rows, agg_cols)
     normalize_parts(merged_rows)
 
     output_fields = [
@@ -892,33 +910,41 @@ def collapse_rows(
         "Part",
         "Weapon Source",
         "Weapon",
-        "Dmg Type",
-        "Dmg MV",
-        "Status MV",
-        "Wep Status",
-        "Weapon Buff MV",
-        "Stance Dmg",
-        "AtkPhys",
-        "AtkMag",
-        "AtkFire",
-        "AtkLtng",
-        "AtkHoly",
-        "Overwrite Scaling",
-        "subCategorySum",
     ]
+    for type_col, _ in dmg_pairs:
+        output_fields.append(type_col)
+    for _, mv_col in dmg_pairs:
+        output_fields.append(mv_col)
+    output_fields.extend(
+        [
+            "Status MV",
+            "Wep Status",
+            "Weapon Buff MV",
+            "Stance Dmg",
+            "AtkPhys",
+            "AtkMag",
+            "AtkFire",
+            "AtkLtng",
+            "AtkHoly",
+            "Overwrite Scaling",
+            "subCategorySum",
+        ]
+    )
     return merged_rows, output_fields
 
 
 def transform_rows(
     rows: List[Dict[str, str]], fieldnames: List[str]
 ) -> Tuple[List[Dict[str, str]], List[str]]:
+    dmg_pairs = find_damage_pairs(fieldnames)
+    drop_cols = set(DROP_COLUMNS)
     filtered_rows: List[Dict[str, str]] = []
     for row in rows:
         filtered_rows.append(
-            {k: v for k, v in row.items() if k not in DROP_COLUMNS}
+            {k: v for k, v in row.items() if k not in drop_cols}
         )
     layout_map = build_layout_map(filtered_rows)
-    collapsed, output_fields = collapse_rows(filtered_rows, layout_map)
+    collapsed, output_fields = collapse_rows(filtered_rows, layout_map, dmg_pairs)
     return collapsed, output_fields
 
 

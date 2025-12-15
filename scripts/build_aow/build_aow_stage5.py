@@ -135,12 +135,45 @@ def normalize_subcat(raw: str) -> str:
     return cleaned
 
 
+def strip_tags(text: str) -> str:
+    return re.sub(r"<[^>]+>", "", text or "")
+
+
+def normalize_label_text(line: str) -> str:
+    label_raw = strip_tags(line.split(":", 1)[0]).strip()
+    lower = label_raw.lower()
+    if lower == "damage":
+        label_raw = "Weapon"
+        lower = "weapon"
+    if lower.startswith("damage"):
+        label_raw = "Weapon"
+        lower = "weapon"
+    if "physical" in lower:
+        # Treat any plain physical label as the base physical bucket.
+        if "slash" in lower:
+            return "Slash"
+        if "pierce" in lower:
+            return "Pierce"
+        if "strike" in lower or "blunt" in lower:
+            return "Strike"
+        return "Standard"
+    if lower.startswith("weapon (") and label_raw.endswith(")"):
+        inner = label_raw[len("Weapon ("):-1].strip()
+        if inner.lower().endswith("physical"):
+            inner = inner[: -len("physical")].rstrip()
+        label_raw = inner or "Weapon"
+        lower = label_raw.lower()
+    if lower == "weapon":
+        return "Standard"
+    return label_raw
+
+
 def sort_text_lines(lines: List[str]) -> List[str]:
     order = {label: idx for idx, label in enumerate(TEXT_LABEL_ORDER)}
 
     def sort_key(entry: Tuple[int, str]) -> Tuple[int, int]:
         idx, line = entry
-        label = line.split(":", 1)[0].strip()
+        label = normalize_label_text(line)
         priority = order.get(label, len(order))
         return priority, idx
 
