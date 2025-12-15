@@ -524,6 +524,18 @@ def apply_row_operations(
             f"{wrap_label('Stance:', HEADER_COLOR)} {colorize_numeric_payload(stance_raw)}"
         )
 
+    skill_attr = (row.get("Skill Attr") or "").strip()
+    overwrite_val = (row.get("Overwrite Scaling") or "").strip()
+    if overwrite_val == "-" and skill_attr and skill_attr != "-":
+        suffix = f" [Weapon {skill_attr} Scaling]"
+        for target in ATK_COLUMNS:
+            val = (row.get(target) or "").strip()
+            if not val or val == "-":
+                continue
+            if val.rstrip().endswith("[AR]") or " [AR]" in val:
+                continue
+            row[target] = f"{val}{'' if val.endswith(' ') else ' '}{suffix}"
+
     return row
 
 

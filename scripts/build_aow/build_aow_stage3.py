@@ -495,6 +495,7 @@ def collapse_weapons(
         "Part",
         "Wep Status",
         "Overwrite Scaling",
+        "Skill Attr",
     ]
     # Cluster by non-weapon fields.
     clusters: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
@@ -933,6 +934,7 @@ def collapse_rows(
             "AtkLtng",
             "AtkHoly",
             "Overwrite Scaling",
+            "Skill Attr",
             "subCategorySum",
         ]
     )

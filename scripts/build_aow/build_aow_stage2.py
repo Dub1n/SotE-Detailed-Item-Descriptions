@@ -389,6 +389,7 @@ def collapse_rows(
             "Weapon",
             "Weapon Poise",
             "Disable Gem Attr",
+            "Skill Attr",
             "atkAttribute",
             "atkAttribute2",
             "PhysAtkAttribute",

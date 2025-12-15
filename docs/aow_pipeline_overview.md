@@ -37,7 +37,7 @@ flowchart LR
   - `docs/weapon_categories_poise.json` (category → display name + poise).
 - `docs/skill_names_from_gem_and_behavior.txt` (canonical skill list, longest-first matching; built by `scripts/build_aow/build_aow_stage0.py` from EquipParamGem + BehaviorParam_PC + SwordArtsParam).
 - Output: `work/aow_pipeline/AoW-data-1.csv` (collated rows; no value transforms beyond lightweight labeling).
-- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `Disable Gem Attr`, `atkAttribute`, `atkAttribute2`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Wep Status`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `Overwrite Scaling`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`.
+- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `Disable Gem Attr`, `atkAttribute`, `atkAttribute2`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Wep Status`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `Overwrite Scaling`, `Skill Attr`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`.
 - Resolution rules:
   - `Weapon`: if `Unique Skill Weapon` is populated, use it directly; else if the row name carries a `[Weapon Type]` prefix, use only that category unless the prefix is in the ignored list (`Slow`, `Var1`, `Var2`), in which case use the category mapping; otherwise, map the skill name to `EquipParamGem` mount flags **that have a valid `mountWepTextId` (not -1)** and emit the human-readable category names (space-separated).
   - `Unique Skill Weapon` slash handling: split `/` outside brackets into `|`; when `/` appears inside parentheses, attach each option to the surrounding text (`(Nightrider / Chainlink) Flail` → `Nightrider Flail | Chainlink Flail`; `Flail (Nightrider / Chainlink)` → `Flail Nightrider | Flail Chainlink`). `Weapon Poise` resolves per variant (pipe-aligned), and `Wep Phys`/`Wep Magic`/`Wep Fire`/`Wep Ltng`/`Wep Holy` are averaged across all variant weapons.
@@ -45,6 +45,7 @@ flowchart LR
   - `Weapon Poise`: if a unique weapon is present, read its `Base` from `Poise-Damage-MVs` (with category fallback when needed); if a bracketed weapon prefix is present, look up that category’s base poise; otherwise, emit category poise values from `weapon_categories_poise.json` aligned with the `Weapon` list.
   - `Disable Gem Attr`: for `Weapon Source` == `unique`, pull `disableGemAttr` from `EquipParamWeapon`; when multiple unique variants are listed, align per-weapon values (pipe-joined) and keep a single value only when all variants match; otherwise `-`.
   - `atkAttribute` / `atkAttribute2`: for `Weapon Source` == `unique`, pull the weapon fields from `EquipParamWeapon`; when multiple unique variants are listed, align per-weapon values (pipe-joined) and keep a single value only when all variants match; otherwise `-`. Non-unique rows emit `-`.
+  - `Skill Attr`: map the skill’s `defaultWepAttr` from `EquipParamGem` through `work/aow_pipeline/skill_attr_scaling.json` (`stat` field), per canonical skill; defaults to `-` when missing.
   - `Wep Status`: for `Weapon Source` == `unique`, resolve per-weapon `spEffectBehaviorId0/1/2` from `EquipParamWeapon` when that weapon’s `Disable Gem Attr` == `1`; drop `-1`, map IDs to `SpEffectParam` names (trim text after the first `-`, strip leading bracketed tags like `[Weapon]`, special-case `Thiollier's Hidden Needle` → `Sleep`), dedupe per weapon, and pipe-join per-weapon results to mirror the `Weapon` field (even when identical). If a weapon has no non-`-1` entries, emit `None` for that slot. When every slot is `None`, emit `None`; when all are `-`, emit `-`; otherwise pipe-join the per-weapon strings. Non-unique rows emit `-`.
   - `Wep Phys`/`Wep Magic`/`Wep Fire`/`Wep Ltng`/`Wep Holy`: for `Weapon Source` == `unique`, pull `attackBasePhysics`/`attackBaseMagic`/`attackBaseFire`/`attackBaseThunder`/`attackBaseDark` from `EquipParamWeapon` by weapon name (averaging when multiple unique weapons are listed); otherwise `-`.
   - `FP`: `0` when the name contains `(Lacking FP)`, else `1`.
@@ -254,6 +255,7 @@ flowchart LR
     out2AtkStats["AtkPhys / AtkMag / AtkFire / AtkLtng / AtkHoly"]
     out2IsAdd["isAddBaseAtk"]
     out2Overwrite["Overwrite Scaling"]
+    out2SkillAttr["Skill Attr"]
     out2SubCats["subCategory1-4"]
   end
 
@@ -458,6 +460,7 @@ flowchart LR
     s3Stance["Stance Dmg"]
     s3Atk["AtkPhys/Mag/Fire/Ltng/Holy"]
     s3Overwrite["Overwrite Scaling"]
+    s3SkillAttr["Skill Attr"]
     s3SubCat["subCategory1-4"]
   end
 
@@ -483,6 +486,7 @@ flowchart LR
     o3Stance["Stance Dmg<br>FP/Charged/Step string"]
     o3Atk["AtkPhys/Mag/Fire/Ltng/Holy<br>FP/Charged/Step strings"]
     o3Overwrite["Overwrite Scaling"]
+    o3SkillAttr["Skill Attr"]
     o3SubCat["subCategorySum"]
   end
 
@@ -502,6 +506,7 @@ flowchart LR
     - `Text Wep Status`: `{Wep Status|Status} (%)` label (colored per ailment when `--color` is set) + raw `Status MV` payload with FP/charged coloring; emits `-` when status data missing/zero/None.
     - `Text Stance`: `Stance:` label (header color when `--color` is set) + `Stance Dmg` payload with FP/charged coloring; `-` when empty.
     - `Text Phys/Mag/Fire/Ltng/Holy`: built from the numbered `Dmg Type`/`Dmg MV` pairs and merged with the matching `Atk*` columns when present (range-aware sums). `[AR]` is appended only when a Dmg MV contributes; `[{Overwrite Scaling}]` is appended only when an `Atk*` contribution exists for that element.
+    - When `Overwrite Scaling` = `-` and an elemental helper line lacks `[AR]`, append ` [Weapon {Skill Attr} Scaling]` using the Stage 1 `Skill Attr` value (e.g., `Glintstone Pebble` → `Weapon Int Scaling`).
     - `Text Name`, `Text Category` placeholders are seeded empty for downstream use.
   - Drops numeric/raw columns no longer needed: the numbered `Dmg Type n`/`Dmg MV n` pairs, `Status MV`, `Wep Status`, `Stance Dmg`, `Weapon Source`, `Overwrite Scaling`, base `Atk*`, weapon base columns, poise metadata.
   - Coloring (opt-in via `--color`): uses Stage 4 palette for elements/status/stance; FP-less and charged FP-less blocks collapse to single wrappers to avoid redundant tags. `--no-color`/default disables all font tags (plain text).
