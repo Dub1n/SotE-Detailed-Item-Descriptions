@@ -171,6 +171,8 @@ def strip_tags(text: str) -> str:
 
 def normalize_label_text(line: str) -> str:
     label_raw = strip_tags(line.split(":", 1)[0]).strip()
+    if label_raw.endswith("(%)"):
+        label_raw = label_raw[: -3].rstrip()
     lower = label_raw.lower()
     if lower.startswith("damage (") and label_raw.endswith(")"):
         inner = label_raw[len("Damage ("):-1].strip()
