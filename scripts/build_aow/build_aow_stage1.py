@@ -380,12 +380,12 @@ def build_gem_mount_map(
                 clean_name = clean_name.split(":", 1)[1].strip()
             resolved = resolve_skill_from_list(clean_name, skill_names)
             canon = resolved.lower()
-            mount_text_id = (row.get("mountWepTextId") or "").strip()
-            if mount_text_id == "-1" or mount_text_id == "":
-                continue
             attr_val = (row.get("defaultWepAttr") or "").strip()
             if attr_val:
                 skill_attr_map.setdefault(canon, attr_val)
+            mount_text_id = (row.get("mountWepTextId") or "").strip()
+            if mount_text_id == "-1" or mount_text_id == "":
+                continue
             mounts: List[str] = []
             for flag in flag_order:
                 if row.get(flag, "").strip() == "1":
