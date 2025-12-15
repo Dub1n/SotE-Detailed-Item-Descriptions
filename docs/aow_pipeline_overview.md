@@ -37,13 +37,14 @@ flowchart LR
   - `docs/weapon_categories_poise.json` (category → display name + poise).
 - `docs/skill_names_from_gem_and_behavior.txt` (canonical skill list, longest-first matching; built by `scripts/build_aow/build_aow_stage0.py` from EquipParamGem + BehaviorParam_PC + SwordArtsParam).
 - Output: `work/aow_pipeline/AoW-data-1.csv` (collated rows; no value transforms beyond lightweight labeling).
-- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Wep Status`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `Overwrite Scaling`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`.
+- Column shape (initial): `Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`, `Weapon Source`, `Weapon`, `Weapon Poise`, `Disable Gem Attr`, `atkAttribute`, `atkAttribute2`, `Wep Phys`, `Wep Magic`, `Wep Fire`, `Wep Ltng`, `Wep Holy`, `Phys MV`, `Magic MV`, `Fire MV`, `Ltng MV`, `Holy MV`, `Status MV`, `Wep Status`, `Weapon Buff MV`, `Poise Dmg MV`, `PhysAtkAttribute`, `AtkPhys`, `AtkMag`, `AtkFire`, `AtkLtng`, `AtkHoly`, `AtkSuperArmor`, `isAddBaseAtk`, `Overwrite Scaling`, `subCategory1`, `subCategory2`, `subCategory3`, `subCategory4`.
 - Resolution rules:
   - `Weapon`: if `Unique Skill Weapon` is populated, use it directly; else if the row name carries a `[Weapon Type]` prefix, use only that category unless the prefix is in the ignored list (`Slow`, `Var1`, `Var2`), in which case use the category mapping; otherwise, map the skill name to `EquipParamGem` mount flags **that have a valid `mountWepTextId` (not -1)** and emit the human-readable category names (space-separated).
   - `Unique Skill Weapon` slash handling: split `/` outside brackets into `|`; when `/` appears inside parentheses, attach each option to the surrounding text (`(Nightrider / Chainlink) Flail` → `Nightrider Flail | Chainlink Flail`; `Flail (Nightrider / Chainlink)` → `Flail Nightrider | Flail Chainlink`). `Weapon Poise` resolves per variant (pipe-aligned), and `Wep Phys`/`Wep Magic`/`Wep Fire`/`Wep Ltng`/`Wep Holy` are averaged across all variant weapons.
   - `Weapon` and `Weapon Poise` are pipe-delimited (` | `) lists to keep multi-word names intact; counts stay aligned (same number of entries in both fields).
   - `Weapon Poise`: if a unique weapon is present, read its `Base` from `Poise-Damage-MVs` (with category fallback when needed); if a bracketed weapon prefix is present, look up that category’s base poise; otherwise, emit category poise values from `weapon_categories_poise.json` aligned with the `Weapon` list.
   - `Disable Gem Attr`: for `Weapon Source` == `unique`, pull `disableGemAttr` from `EquipParamWeapon`; when multiple unique variants are listed, align per-weapon values (pipe-joined) and keep a single value only when all variants match; otherwise `-`.
+  - `atkAttribute` / `atkAttribute2`: for `Weapon Source` == `unique`, pull the weapon fields from `EquipParamWeapon`; when multiple unique variants are listed, align per-weapon values (pipe-joined) and keep a single value only when all variants match; otherwise `-`. Non-unique rows emit `-`.
   - `Wep Status`: for `Weapon Source` == `unique`, resolve per-weapon `spEffectBehaviorId0/1/2` from `EquipParamWeapon` when that weapon’s `Disable Gem Attr` == `1`; drop `-1`, map IDs to `SpEffectParam` names (trim text after the first `-`, strip leading bracketed tags like `[Weapon]`, special-case `Thiollier's Hidden Needle` → `Sleep`), dedupe per weapon, and pipe-join per-weapon results to mirror the `Weapon` field (even when identical). If a weapon has no non-`-1` entries, emit `None` for that slot. When every slot is `None`, emit `None`; when all are `-`, emit `-`; otherwise pipe-join the per-weapon strings. Non-unique rows emit `-`.
   - `Wep Phys`/`Wep Magic`/`Wep Fire`/`Wep Ltng`/`Wep Holy`: for `Weapon Source` == `unique`, pull `attackBasePhysics`/`attackBaseMagic`/`attackBaseFire`/`attackBaseThunder`/`attackBaseDark` from `EquipParamWeapon` by weapon name (averaging when multiple unique weapons are listed); otherwise `-`.
   - `FP`: `0` when the name contains `(Lacking FP)`, else `1`.
@@ -95,6 +96,8 @@ flowchart LR
     o1Weapon["Weapon"]
     o1WeaponPoise["Weapon Poise"]
     o1Disable["Disable Gem Attr"]
+    o1AtkAttr["atkAttribute"]
+    o1AtkAttr2["atkAttribute2"]
     o1WepBases["Wep Phys / Wep Magic / Wep Fire / Wep Ltng / Wep Holy"]
     o1ElemMVs["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
     o1Status["Status MV"]
@@ -177,7 +180,7 @@ flowchart LR
     - Accepts entries as a list of names, or an object with `names` and optional `overrides`.
     - All rows in a group are canonicalized to the first name’s derived fields (`Name`, `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Tick`) unless a specific override for that field is provided.
     - Overrides apply before grouping/aggregation (affecting derived fields like `Dmg Type`). Current file includes Prelate’s Charge fire ticks and Bloodboon Ritual groups (with `PhysAtkAttribute: Standard` and `Bullet: 1`), plus a Loretta’s Slash pairing.
-    - Warnings are still emitted for non-overridden, non-numeric fields (including Weapon Source/Weapon/Weapon Poise/Disable Gem Attr/PhysAtkAttribute/isAddBaseAtk/Overwrite Scaling/subCategory*) when values disagree inside a forced group; name-derived fields are suppressed from warnings because they are explicitly canonicalized.
+    - Warnings are still emitted for non-overridden, non-numeric fields (including Weapon Source/Weapon/Weapon Poise/Disable Gem Attr/atkAttribute/atkAttribute2/PhysAtkAttribute/isAddBaseAtk/Overwrite Scaling/subCategory*) when values disagree inside a forced group; name-derived fields are suppressed from warnings because they are explicitly canonicalized.
     - Forced groups are reported after the write; disagreements still surface in `Warnings`, now alongside the forced summary.
 - Group by `Skill`, `Follow-up`, `Hand`, `Part`, `FP`, `Charged`, `Step`, `Bullet`, `Weapon`, `PhysAtkAttribute`, `isAddBaseAtk`, `Overwrite Scaling`.
 - Drop `Name`, `Tick`, `AtkId`; keep `PhysAtkAttribute` only for grouping/overrides (not in output).
@@ -187,7 +190,7 @@ flowchart LR
 - Rename `Weapon Poise` → `Wep Poise Range`, collapsing pipe-delimited values to a min–max string (single values stay single).
 - Rename `Poise Dmg MV` → `Stance Dmg`, computing a min–max integer range from `Wep Poise Range` × original `Poise Dmg MV` ÷ 100, then adding summed `AtkSuperArmor` (half-up rounding). `AtkSuperArmor` is removed from the output columns.
 - `Wep Status` carries through as a first-value field (non-numeric) and stays after `Status MV`.
-- Add derived columns after `Holy MV`: `Dmg Type n`/`Dmg MV n` pairs (up to five). When two or more elemental MVs are identical, Stage 2 collapses them into a single `Damage` entry (with `({PhysAtkAttribute} Physical)` suffix when Phys MV is present and PhysAtkAttribute is not 252/253) using the raw MV value. Phys rows stay weapon-type when only phys exists; when 2–4 elements exist and Phys MV is present we emit `{PhysAtkAttribute}` (or `Weapon` for 252/253) as `Dmg Type 1`. When all five MVs are non-zero, Stage 2 collapses them into a single `Weapon` entry whose `Dmg MV 1` is the per-element average. Non-phys types (Magic/Fire/Ltng/Holy) inherit the column header name for their `Dmg Type n`. MV payloads are scaled by the ratio of that weapon’s base element to the average of the non-zero bases so mixed element rows weight correctly.
+- Add derived columns after `Holy MV`: `Dmg Type n`/`Dmg MV n` pairs (up to five). When two or more elemental MVs are identical, Stage 2 collapses them into a single `Damage` entry (with `({PhysAtkAttribute} Physical)` suffix when Phys MV is present and PhysAtkAttribute is not 252/253; the suffix is omitted when both `atkAttribute` and `atkAttribute2` match the phys attr) using the raw MV value. Phys rows stay weapon-type when only phys exists; when 2–4 elements exist and Phys MV is present we emit `{PhysAtkAttribute}` (or `Weapon` for 252/253) as `Dmg Type 1`. When all five MVs are non-zero, Stage 2 collapses them into a single `Weapon` entry whose `Dmg MV 1` is the per-element average. Non-phys types (Magic/Fire/Ltng/Holy) inherit the column header name for their `Dmg Type n`. MV payloads are scaled by the ratio of that weapon’s base element to the average of the non-zero bases so mixed element rows weight correctly.
 
 ```mermaid
 flowchart LR
@@ -208,6 +211,8 @@ flowchart LR
     weapon1["Weapon"]
     weaponPoise1["Weapon Poise"]
     disable1["Disable Gem Attr"]
+    atkAttr1["atkAttribute"]
+    atkAttr21["atkAttribute2"]
     wepBases1["Wep Phys / Wep Magic / Wep Fire / Wep Ltng / Wep Holy"]
     elemMVs1["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
     status1["Status MV"]
@@ -236,6 +241,8 @@ flowchart LR
     out2Weapon["Weapon"]
     out2WepPoise["Wep Poise Range"]
     out2Disable["Disable Gem Attr"]
+    out2AtkAttr["atkAttribute"]
+    out2AtkAttr2["atkAttribute2"]
     out2WepBases["Wep Phys / Wep Magic / Wep Fire / Wep Ltng / Wep Holy"]
     out2ElemMVs["Phys MV / Magic MV / Fire MV / Ltng MV / Holy MV"]
     out2DmgType["Dmg Type 1..5"]
@@ -366,7 +373,7 @@ flowchart LR
   agg --> passStatus["Pass summed Status MV"]
   agg --> passBuff["Pass summed Weapon Buff MV"]
   agg --> passAtkStats["Pass summed AtkPhys/AtkMag/AtkFire/AtkLtng/AtkHoly"]
-  agg --> passMeta["Pass first-value columns (Skill, Follow-up, Hand, Part, FP, Charged, Step, Bullet, Weapon Source, Weapon, Disable Gem Attr, Wep Phys/Magic/Fire/Ltng/Holy, isAddBaseAtk, Overwrite Scaling, subCategory1-4)"]
+  agg --> passMeta["Pass first-value columns (Skill, Follow-up, Hand, Part, FP, Charged, Step, Bullet, Weapon Source, Weapon, Disable Gem Attr, atkAttribute, atkAttribute2, Wep Phys/Magic/Fire/Ltng/Holy, isAddBaseAtk, Overwrite Scaling, subCategory1-4)"]
 
   zeroing --> dropZero["Drop rows when all MV/Atk values (incl AtkSuperArmor) sum to 0"]
   passStatus --> dropZero
@@ -560,6 +567,7 @@ flowchart LR
   - If any row in a skill has a `Follow-up`, rows lacking a follow-up label render as `Skill`.
   - When follow-ups are present, `subCategorySum` is applied to the follow-up/Skill header (not to individual parts) so shared tags appear once per header.
   - Collapse duplicate parts under the same heading/subheading so their detail lines merge into a single block; normalize labels (`Damage` → `Weapon`, physical aliases → Standard/Slash/Pierce/Strike) before sorting. Data lines (including when merged blocks contribute multiple entries under one heading) are re-sorted per label priority so Stance always trails damage/status. Damage/status lines are ordered Standard → Strike → Slash → Pierce → Magic → Fire → Lightning → Holy → Poison → Deadly Poison → Scarlet Rot → Blood Loss → Frostbite → Sleep → Eternal Sleep → Madness → Death Blight → Status (%) → Stance.
+  - Skip any row that would render no text helper lines, avoiding empty duplicate headings when follow-up/hand combos carry no payload.
   - `subCategorySum` is reformatted with commas (instead of pipes) and tight `/`.
   - Output stays colourised when Stage 4 used colors; pair with Stage 5 colorizer (below) when Stage 4 ran with `--no-color`.
   - Console output reports how many sections changed; when <=5, it prints before/after blocks for each changed section.

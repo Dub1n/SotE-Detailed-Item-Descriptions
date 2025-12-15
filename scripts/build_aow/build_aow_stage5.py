@@ -239,6 +239,8 @@ def format_block(
         if (row.get(col, "") or "").strip() not in {"", "-"}
     ]
     text_lines = sort_text_lines(text_lines)
+    if not text_lines:
+        return []
 
     blocks: List[str] = []
     if follow == "-" and hand == "-":

@@ -80,6 +80,12 @@ DAMAGE_ELEMENTS: List[Tuple[str, str, str]] = [
 ]
 MAX_DAMAGE_TYPES = 5
 NEAR_EQUAL_THRESHOLD = 0.75
+ATK_ATTRIBUTE_MAP = {
+    "0": "Slash",
+    "1": "Strike",
+    "2": "Pierce",
+    "3": "Standard",
+}
 
 
 def load_value_blacklist(path: Path) -> Dict[str, Dict[str, List[str]]]:
@@ -228,6 +234,25 @@ def round_half_up(value: float) -> int:
     return int(quantized)
 
 
+def normalize_phys_attr_value(value: Any) -> str:
+    text = str(value or "").strip()
+    mapped = ATK_ATTRIBUTE_MAP.get(text, text)
+    return mapped.lower()
+
+
+def parse_weapon_attr_field(value: Any) -> Set[str]:
+    text = str(value or "").strip()
+    if not text:
+        return set()
+    labels: Set[str] = set()
+    for part in text.split("|"):
+        piece = part.strip()
+        if not piece or piece == "-":
+            continue
+        labels.add(normalize_phys_attr_value(piece))
+    return labels
+
+
 def summarize_range(raw_value: Any) -> Tuple[str, Tuple[float, float] | None]:
     """
     Collapse a pipe-delimited range like '5.5 | 5' to a min-max string.
@@ -364,6 +389,8 @@ def collapse_rows(
             "Weapon",
             "Weapon Poise",
             "Disable Gem Attr",
+            "atkAttribute",
+            "atkAttribute2",
             "PhysAtkAttribute",
             "isAddBaseAtk",
             "Overwrite Scaling",
@@ -534,9 +561,20 @@ def collapse_rows(
         attr_raw = (
             agg_row.get("_phys_attr") or agg_row.get("PhysAtkAttribute") or ""
         )
-        attr_text = str(attr_raw).strip()
+        attr_text_raw = str(attr_raw).strip()
+        attr_text = ATK_ATTRIBUTE_MAP.get(attr_text_raw, attr_text_raw)
         attr_lower = attr_text.lower()
         attr_is_weapon = attr_lower in {"252", "253", "weapon"}
+        weapon_attr1 = parse_weapon_attr_field(agg_row.get("atkAttribute"))
+        weapon_attr2 = parse_weapon_attr_field(agg_row.get("atkAttribute2"))
+        attr_match_label = normalize_phys_attr_value(attr_text)
+        weapon_attrs_match_phys = (
+            attr_match_label
+            and weapon_attr1
+            and weapon_attr2
+            and weapon_attr1 == {attr_match_label}
+            and weapon_attr2 == {attr_match_label}
+        )
 
         entries_raw: List[Tuple[str, float, float | None]] = []
         for key, mv_col, wep_col in DAMAGE_ELEMENTS:
@@ -565,7 +603,7 @@ def collapse_rows(
             if 2 <= count <= 4:
                 return attr_text if attr_text and not attr_is_weapon else "Weapon"
             if near_equal:
-                if attr_is_weapon or not attr_text:
+                if attr_is_weapon or not attr_text or weapon_attrs_match_phys:
                     return "Weapon"
                 return f"Weapon ({attr_text} Physical)"
             if attr_is_weapon or not attr_text:
@@ -585,7 +623,12 @@ def collapse_rows(
         if len(entries_raw) >= 2 and len(distinct_mv_values) == 1:
             phys_mv_present = any(key == "Phys" for key, _, _ in entries_raw)
             base_label = "Damage"
-            if phys_mv_present and not attr_is_weapon and attr_text:
+            if (
+                phys_mv_present
+                and not attr_is_weapon
+                and attr_text
+                and not weapon_attrs_match_phys
+            ):
                 base_label = f"{base_label} ({attr_text} Physical)"
             first_mv = entries_raw[0][1]
             return [(base_label, first_mv)]

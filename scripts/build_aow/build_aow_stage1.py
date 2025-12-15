@@ -45,6 +45,8 @@ OUTPUT_COLUMNS = [
     "Weapon",
     "Weapon Poise",
     "Disable Gem Attr",
+    "atkAttribute",
+    "atkAttribute2",
     "Wep Phys",
     "Wep Magic",
     "Wep Fire",
@@ -341,6 +343,8 @@ def load_weapon_base_stats(
                     status_effects.append(effect_name)
             stats[key] = {
                 "disable_gem_attr": row.get("disableGemAttr", "") or "0",
+                "atk_attribute": row.get("atkAttribute", "") or "-",
+                "atk_attribute_2": row.get("atkAttribute2", "") or "-",
                 "phys": row.get("attackBasePhysics", "") or "-",
                 "magic": row.get("attackBaseMagic", "") or "-",
                 "fire": row.get("attackBaseFire", "") or "-",
@@ -479,6 +483,7 @@ def build_rows(
             wep_disable_attr = (
                 wep_phys
             ) = wep_magic = wep_fire = wep_ltng = wep_holy = "-"
+            wep_atk_attr = wep_atk_attr2 = "-"
             status_by_weapon: List[str] = []
 
             if unique_weapon:
@@ -494,6 +499,8 @@ def build_rows(
                 ltng_values: List[str] = []
                 holy_values: List[str] = []
                 status_values: List[str] = []
+                atk_attr_values: List[str] = []
+                atk_attr2_values: List[str] = []
 
                 for weapon_name in weapon_list:
                     poise_val = poise_lookup.get(weapon_name.lower())
@@ -522,6 +529,8 @@ def build_rows(
                         status_by_weapon.append("-")
                         continue
                     disable_flag = stats.get("disable_gem_attr", "-")
+                    atk_attr_values.append(stats.get("atk_attribute", "-"))
+                    atk_attr2_values.append(stats.get("atk_attribute_2", "-"))
                     disable_values.append(disable_flag)
                     phys_values.append(stats.get("phys", "-"))
                     magic_values.append(stats.get("magic", "-"))
@@ -549,6 +558,16 @@ def build_rows(
                     else:
                         wep_disable_attr = " | ".join(disable_values)
                         warnings["mixed_disable_attr"].append(unique_weapon)
+                if atk_attr_values:
+                    if len(set(atk_attr_values)) == 1:
+                        wep_atk_attr = atk_attr_values[0]
+                    else:
+                        wep_atk_attr = " | ".join(atk_attr_values)
+                if atk_attr2_values:
+                    if len(set(atk_attr2_values)) == 1:
+                        wep_atk_attr2 = atk_attr2_values[0]
+                    else:
+                        wep_atk_attr2 = " | ".join(atk_attr2_values)
                 wep_phys = avg_stat(phys_values)
                 wep_magic = avg_stat(magic_values)
                 wep_fire = avg_stat(fire_values)
@@ -613,6 +632,8 @@ def build_rows(
             out["Weapon"] = weapon_field
             out["Weapon Poise"] = poise_field
             out["Disable Gem Attr"] = wep_disable_attr
+            out["atkAttribute"] = wep_atk_attr
+            out["atkAttribute2"] = wep_atk_attr2
             out["Wep Phys"] = wep_phys
             out["Wep Magic"] = wep_magic
             out["Wep Fire"] = wep_fire
