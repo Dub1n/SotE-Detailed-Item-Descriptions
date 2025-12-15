@@ -351,15 +351,31 @@ def main() -> None:
     lines, new_sections = build_markdown(
         rows, args.output, preamble, sections, markers, args.force
     )
-    output_text = "\n".join(lines).rstrip() + "\n"
+
+    # Ensure consistent EOF: trailing blank line + marker for stable diffs.
+    if lines and lines[-1] != "":
+        lines.append("")
+    lines.append("---")
+    lines.append("")
+
+    output_text = "\n".join(lines)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(output_text, encoding="utf-8")
 
-    changed_skills = [
-        skill
-        for skill, new_block in new_sections.items()
-        if old_sections.get(skill) != new_block
-    ]
+    def normalize_block(block: List[str] | None) -> List[str]:
+        if not block:
+            return []
+        trimmed = list(block)
+        while trimmed and trimmed[-1] == "":
+            trimmed.pop()
+        return trimmed
+
+    changed_skills = []
+    for skill, new_block in new_sections.items():
+        before = normalize_block(old_sections.get(skill))
+        after = normalize_block(new_block)
+        if before != after:
+            changed_skills.append(skill)
     removed_skills = [s for s in old_sections if s not in new_sections]
     total_changes = len(set(changed_skills) | set(removed_skills))
 
