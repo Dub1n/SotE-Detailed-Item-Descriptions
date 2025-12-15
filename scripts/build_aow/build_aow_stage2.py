@@ -457,6 +457,8 @@ def collapse_rows(
                         continue
                     if col in name_derived_cols:
                         continue
+                    if col.startswith("subCategory"):
+                        continue
                     raw_val = source_value(raw_row, col)
                     canon_val = canon.get(col, "")
                     if str(raw_val) != str(canon_val):
@@ -513,6 +515,8 @@ def collapse_rows(
                     agg[col] = incoming
                 elif existing != incoming and incoming != "":
                     skip_warn = False
+                    if col.startswith("subCategory"):
+                        skip_warn = True
                     if col == "Dmg Type" and (
                         existing == "-" or incoming == "-"
                     ):
