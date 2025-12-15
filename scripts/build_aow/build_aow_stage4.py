@@ -19,7 +19,7 @@ from helpers.output import format_path_for_console  # noqa: E402
 
 INPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-3.csv"
 OUTPUT_DEFAULT = ROOT / "work/aow_pipeline/AoW-data-4.csv"
-COLOR_ENABLED = True
+COLOR_ENABLED = False
 
 PHYSICAL_COLOR = "#F395C4"
 MAGIC_COLOR = "#57DBCE"
@@ -252,9 +252,7 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     subcat_raw = row.get("subCategorySum", "")
     if subcat_raw:
         parts = [
-            p.strip()
-            for p in subcat_raw.split("|")
-            if p.strip() and p.strip() != "-"
+            p.strip() for p in subcat_raw.split("|") if p.strip() and p.strip() != "-"
         ]
         deduped: List[str] = []
         seen = set()
@@ -291,7 +289,9 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         label = "Damage" if dmg_type == "Weapon" else dmg_type
         label_color = color_for_damage_type(label)
         label_text = wrap_label(f"{label}:", label_color)
-        row["Text Wep Dmg"] = f"{label_text} {colorize_numeric_payload(dmg_mv_raw)} [AR]"
+        row["Text Wep Dmg"] = (
+            f"{label_text} {colorize_numeric_payload(dmg_mv_raw)} [AR]"
+        )
 
     status_raw = (row.get("Status MV") or "").strip()
     wep_status_raw = (row.get("Wep Status") or "").strip()
@@ -303,7 +303,9 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     ):
         row["Text Wep Status"] = "-"
     else:
-        label = "Status" if not wep_status_raw or wep_status_raw == "-" else wep_status_raw
+        label = (
+            "Status" if not wep_status_raw or wep_status_raw == "-" else wep_status_raw
+        )
         label_color = color_for_status(label)
         label_with_percent = label if "(%)" in label else f"{label} (%)"
         label_text = wrap_label(f"{label_with_percent}:", label_color)
@@ -313,10 +315,14 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
     if stance_raw in {"", "-"}:
         row["Text Stance"] = "-"
     else:
-        row["Text Stance"] = f"{wrap_label('Stance:', HEADER_COLOR)} {colorize_numeric_payload(stance_raw)}"
+        row["Text Stance"] = (
+            f"{wrap_label('Stance:', HEADER_COLOR)} {colorize_numeric_payload(stance_raw)}"
+        )
 
     overwrite_raw = (row.get("Overwrite Scaling") or "").strip()
-    scaling_label = overwrite_raw if overwrite_raw not in {"", "-"} else "Weapon Scaling"
+    scaling_label = (
+        overwrite_raw if overwrite_raw not in {"", "-"} else "Weapon Scaling"
+    )
 
     base_cols = {
         "Text Phys": ("Standard", row.get("AtkPhys", "")),
@@ -332,7 +338,9 @@ def apply_row_operations(row: Dict[str, str]) -> Dict[str, str]:
         else:
             label_color = color_for_damage_type(label)
             label_text = wrap_label(f"{label}:", label_color)
-            row[col] = f"{label_text} {colorize_numeric_payload(val_clean)} [{scaling_label}]"
+            row[col] = (
+                f"{label_text} {colorize_numeric_payload(val_clean)} [{scaling_label}]"
+            )
     return row
 
 

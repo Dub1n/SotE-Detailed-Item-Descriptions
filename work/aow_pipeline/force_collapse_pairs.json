@@ -62,5 +62,34 @@
     "overrides": {
       "PhysAtkAttribute": "Strike"
     }
+  },
+  {
+    "names": [
+      "Moore's Charge [5]",
+      "Moore's Charge [5] - Bullet"
+    ],
+    "overrides": {
+      "Part": "Hit",
+      "Bullet": "0"
+    }
+  },
+  {
+    "names": [
+      "Moore's Charge Early Release",
+      "Moore's Charge Early Release - Bullet"
+    ],
+    "overrides": {
+      "Part": "Early Release",
+      "Bullet": "0"
+    }
+  },
+  {
+    "names": [
+      "Prelate's Charge - Bullet (Fire Tick 1)",
+      "Prelate's Charge - Bullet (Fire Tick 2)"
+    ],
+    "overrides": {
+      "Part": "Fire"
+    }
   }
 ]

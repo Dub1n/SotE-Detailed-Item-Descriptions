@@ -21,17 +21,38 @@
     "info": "Enhances watchful and vengeful spirits summoned by Horned Bairn by 15%.\nBoosts the damage of the Watchful Spirit incantation by 15%."
   },
   {
+    "id": "[TODO]",
+    "name": "Dancer's Hood",
+    "category": "armor",
+    "caption": "Bright-red hood of the Ranah dancers.\n\nThe dance of Ranah is one of burning passion, and the most passionate dancers never allow their fiery dance to end, losing even their names as they dance on. To see the passion fade is to see the dancer's flame extinguished.",
+    "info": "Enhances the power of dancing attacks by 2.5%."
+  },
+  {
+    "id": "[TODO]",
+    "name": "Dancer's Dress",
+    "category": "armor",
+    "caption": "Bright-red dress of the Ranah dancers.\n\nThe dance of Ranah is one of burning passion, and the most passionate dancers never allow their fiery dance to end, losing even their names as they dance on. To see the passion fade is to see the dancer's flame extinguished.",
+    "info": "Enhances the power of dancing attacks by 2.5%."
+  },
+  {
+    "id": "[TODO]",
+    "name": "Dancer's Bracer",
+    "category": "armor",
+    "caption": "Metal bracer of the Ranah dancers. Designed to protect the sword-wielding hand.",
+    "info": "Enhances the power of dancing attacks by 2.5%."
+  },
+  {
     "id": 5080300,
     "name": "Dancer's Trousers",
     "category": "armor",
-    "caption": "Long, black trousers worn underneath the deep crimson dress of the Ranah dancers.",
+    "caption": "Long, black trousers worn underneath the bright-red dress of the Ranah dancers.",
     "info": "Enhances the power of dancing attacks by 2.5%."
   },
   {
     "id": 5110000,
     "name": "Wise Man's Mask",
     "category": "armor",
-    "caption": "The iron mask of Sir Ansbach, giving the appearance of a quiet, wise, old bearded man.\n\nBut an old fear lurks beneath, together with the cold, unflinching discipline that once honed his blade.",
+    "caption": "The iron mask of Sir Ansbach, giving the appearance of a quiet, wise, old bearded man.\n\nBut an old fear lurks beneath, together with the cold, unflinching discipline that once honed his blade, now employed to enhance Blood Oath and dynastic skills.",
     "info": "Increases the power of Blood Oath and dynastic skills by 4%, stacking multiplicatively. Wearing the full Ansbach's set increases this bonus to 14%."
   },
   {

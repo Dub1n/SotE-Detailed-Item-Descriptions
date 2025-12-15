@@ -382,7 +382,7 @@
     "name": "Shield Strike",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: Shield Strike</font>",
-    "info": "Bash forward with the equipped shield and input repeatedly to chain up to three additional shield strikes. When assigned off-hand it gives the shield its own light attack string so you can keep the main-hand skill, effectively allowing the shield to use its light attack instead of the main-hand Skill."
+    "info": "Bash forward with the equipped shield and input repeatedly to chain up to three additional shield strikes. When assigned off-hand it gives the shield its own light attack string so you can keep the main-hand skill, effectively allowing the shield to use its light attack instead of the main-hand Skill. Small, Medium, and Thrusting Shields have four attacks in the chain while Greatshields have three. Small, Medium, and Greatshields deal the weapon's damage type while Thrusting Shields deal Pierce damage"
   },
   {
     "id": 4210,
@@ -438,7 +438,7 @@
     "name": "The Poison Flower Blooms Twice",
     "category": "skill",
     "caption": "<font color=\"#C0B194\">      Skill: The Poison Flower Blooms Twice</font>",
-    "info": "Conjure a scarlet-rot-laden stinger beneath yourself to stab the enemy and kick up a shockwave on impact; the dive-kick inflicts 160 Scarlet Rot buildup while the wave only adds physical damage, and both hits scale solely with Weapon Level and gain damage from Shattered Stone Talisman. The shockwave inflicts no Scarlet Rot buildup on its own. If the dive-kick lands on a foe already afflicted with any <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">Scarlet Rot</font>, detonate it for 5% of <font color=\"#E0B985\">maximum HP</font> plus 250 damage (the same detonation as Poison Moth Flight) and purge the ailment, but only the dive-kick can trigger that detonation and it will not occur if you lack the <font color=\"#E0B985\">FP</font> to spawn the stinger and shockwave. If performed without <font color=\"#E0B985\">FP</font>, neither component materializes, so the detonation cannot trigger."
+    "info": "Conjure a stinger beneath yourself to stab the enemy and kick up a shockwave on impact; the dive-kick inflicts 160 Scarlet Rot buildup while the wave only adds physical damage, and both hits scale solely with Weapon Level and gain damage from Shattered Stone Talisman. The shockwave inflicts no Scarlet Rot buildup on its own. If the dive-kick lands on a foe already afflicted with any <font color=\"#40BF40\">poison</font> or <font color=\"#EF7676\">Scarlet Rot</font>, detonate it for 5% of <font color=\"#E0B985\">maximum HP</font> plus 250 damage (the same detonation as Poison Moth Flight) and purge the ailment, but only the dive-kick can trigger that detonation and it will not occur if you lack the <font color=\"#E0B985\">FP</font> to spawn the stinger and shockwave. If performed without <font color=\"#E0B985\">FP</font>, neither component materializes, so the detonation cannot trigger.\n\n"
   },
   {
     "id": 5080,
