@@ -20,6 +20,28 @@ TEXT_COLS = [
     "Text Stance",
 ]
 
+TEXT_LABEL_ORDER: Tuple[str, ...] = (
+    "Standard",
+    "Strike",
+    "Slash",
+    "Pierce",
+    "Magic",
+    "Fire",
+    "Lightning",
+    "Holy",
+    "Poison",
+    "Deadly Poison",
+    "Scarlet Rot",
+    "Blood Loss",
+    "Frostbite",
+    "Sleep",
+    "Eternal Sleep",
+    "Madness",
+    "Death Blight",
+    "Status (%)",
+    "Stance",
+)
+
 FOLLOW_DISPLAY = {
     "Heavy": "Heavy Follow-up",
     "Light": "Light Follow-up",
@@ -113,6 +135,18 @@ def normalize_subcat(raw: str) -> str:
     return cleaned
 
 
+def sort_text_lines(lines: List[str]) -> List[str]:
+    order = {label: idx for idx, label in enumerate(TEXT_LABEL_ORDER)}
+
+    def sort_key(entry: Tuple[int, str]) -> Tuple[int, int]:
+        idx, line = entry
+        label = line.split(":", 1)[0].strip()
+        priority = order.get(label, len(order))
+        return priority, idx
+
+    return [line for _, line in sorted(enumerate(lines), key=sort_key)]
+
+
 def format_block(
     row: Dict[str, str],
     skill_has_followups: bool,
@@ -133,6 +167,7 @@ def format_block(
         for col in TEXT_COLS
         if (row.get(col, "") or "").strip() not in {"", "-"}
     ]
+    text_lines = sort_text_lines(text_lines)
 
     blocks: List[str] = []
     if follow == "-" and hand == "-":
