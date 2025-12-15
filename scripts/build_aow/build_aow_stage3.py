@@ -654,6 +654,7 @@ def collapse_weapons(
 
             # subCategorySum is assumed identical across merge candidates.
             out["subCategorySum"] = base_row.get("subCategorySum", "")
+            out["Skill Attr"] = base_row.get("Skill Attr", out.get("Skill Attr", ""))
 
             # Merge numeric ranges using token shape of base.
             token_cache = {col: tokenize_with_ranges(out.get(col, "") or "") for col in agg_cols}
@@ -860,6 +861,7 @@ def collapse_rows(
             "Weapon Source": base.get("Weapon Source", ""),
             "Weapon": base.get("Weapon", ""),
             "Wep Status": base.get("Wep Status", ""),
+            "Skill Attr": base.get("Skill Attr", ""),
         }
         subcats: List[str] = []
         overwrite_vals: List[str] = []

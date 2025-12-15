@@ -382,7 +382,10 @@ def build_gem_mount_map(
             canon = resolved.lower()
             attr_val = (row.get("defaultWepAttr") or "").strip()
             if attr_val:
-                skill_attr_map.setdefault(canon, attr_val)
+                existing_attr = skill_attr_map.get(canon, "")
+                # Prefer non-zero/non-empty attrs over zeros/defaults.
+                if not existing_attr or existing_attr == "0":
+                    skill_attr_map[canon] = attr_val
             mount_text_id = (row.get("mountWepTextId") or "").strip()
             if mount_text_id == "-1" or mount_text_id == "":
                 continue
