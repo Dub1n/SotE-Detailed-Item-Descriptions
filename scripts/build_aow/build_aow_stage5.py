@@ -220,16 +220,17 @@ def parse_existing(output_path: Path) -> Tuple[List[str], Dict[str, List[str]], 
     return preamble, sections, markers
 
 
-def write_markdown(
+def build_markdown(
     rows: List[Dict[str, str]],
     output_path: Path,
     existing_preamble: List[str],
     existing_sections: Dict[str, List[str]],
     existing_markers: Dict[str, str],
     force: bool,
-) -> None:
+) -> Tuple[List[str], Dict[str, List[str]]]:
     skills_in_order = unique_ordered([row.get("Skill", "") for row in rows])
     lines: List[str] = []
+    new_sections: Dict[str, List[str]] = {}
 
     if existing_preamble:
         lines.extend(existing_preamble)
@@ -249,8 +250,10 @@ def write_markdown(
             lines.extend(existing_section)
             if existing_section[-1] != "":
                 lines.append("")
+            new_sections[skill] = list(existing_section)
             continue
 
+        section_lines: List[str] = []
         marker = existing_marker
         if force and marker == "[x]":
             marker = "[<]"
@@ -258,8 +261,13 @@ def write_markdown(
         if marker:
             heading_parts.append(marker)
         heading_parts.append(skill)
-        lines.append(" ".join(heading_parts))
-        lines.append("")
+        section_lines.append(" ".join(heading_parts))
+        section_lines.append("")
+
+        multi_weapon_labels = [w for w in weapon_values if "|" in w]
+        alias_labels: Dict[str, str] = {}
+        if len(multi_weapon_labels) == 1:
+            alias_labels[multi_weapon_labels[0]] = "All Weapons"
 
         def emit_blocks(
             block_rows: List[Dict[str, str]], weapon_label: str | None = None
@@ -270,24 +278,29 @@ def write_markdown(
             ]
             merged_blocks = merge_blocks(blocks)
             if weapon_label:
+                display_label = alias_labels.get(weapon_label, weapon_label)
                 if not merged_blocks:
-                    lines.append(weapon_label)
+                    section_lines.append(display_label)
                     return
                 if (
                     len(merged_blocks) == 1
                     and merged_blocks[0]
                     and merged_blocks[0][0].startswith("(")
                 ):
-                    lines.append(f"{weapon_label} {merged_blocks[0][0]}")
-                    lines.extend(indent_lines(merged_blocks[0][1:], 4))
+                    section_lines.append(
+                        f"{display_label} {merged_blocks[0][0]}"
+                    )
+                    section_lines.extend(
+                        indent_lines(merged_blocks[0][1:], 4)
+                    )
                 else:
-                    lines.append(weapon_label)
+                    section_lines.append(display_label)
                     for block_lines in merged_blocks:
-                        lines.extend(indent_lines(block_lines, 4))
+                        section_lines.extend(indent_lines(block_lines, 4))
                 return
 
             for block_lines in merged_blocks:
-                lines.extend(block_lines)
+                section_lines.extend(block_lines)
 
         if len(weapon_values) > 1:
             for weapon in weapon_values:
@@ -298,10 +311,11 @@ def write_markdown(
         else:
             emit_blocks(skill_rows)
 
-        lines.append("")
+        section_lines.append("")
+        lines.extend(section_lines)
+        new_sections[skill] = section_lines
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+    return lines, new_sections
 
 
 def main() -> None:
@@ -332,8 +346,35 @@ def main() -> None:
     if preamble and sections:
         # Avoid carrying over corrupted or unexpected leading content.
         preamble = []
-    write_markdown(rows, args.output, preamble, sections, markers, args.force)
-    print(f"Wrote markdown to {args.output}")
+    old_sections = {k: v for k, v in sections.items()}
+
+    lines, new_sections = build_markdown(
+        rows, args.output, preamble, sections, markers, args.force
+    )
+    output_text = "\n".join(lines).rstrip() + "\n"
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(output_text, encoding="utf-8")
+
+    changed_skills = [
+        skill
+        for skill, new_block in new_sections.items()
+        if old_sections.get(skill) != new_block
+    ]
+    removed_skills = [s for s in old_sections if s not in new_sections]
+    total_changes = len(set(changed_skills) | set(removed_skills))
+
+    if total_changes == 0:
+        print(f"No markdown changes. Wrote {args.output}")
+        return
+
+    print(f"Wrote markdown to {args.output} ({total_changes} section changes)")
+    if total_changes <= 5:
+        details = changed_skills + [s for s in removed_skills if s not in changed_skills]
+        for skill in details[:5]:
+            before = "\n".join(old_sections.get(skill, ["<missing>"]))
+            after = "\n".join(new_sections.get(skill, ["<missing>"]))
+            print(f"\n--- {skill} (before) ---\n{before}")
+            print(f"+++ {skill} (after)  ---\n{after}")
 
 
 if __name__ == "__main__":

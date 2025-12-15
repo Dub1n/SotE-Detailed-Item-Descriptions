@@ -552,6 +552,7 @@ flowchart LR
 - Script: `scripts/build_aow/build_aow_stage5.py` (renders Stage 4 text helpers into nested markdown).
 - Behavior:
   - Group by `Skill`; when multiple distinct `Weapon` values exist, emit a `#### {Weapon}` section per value (pipe-joined lists stay together).
+  - If exactly one weapon heading contains multiple weapons (pipe-joined) and others are single-weapon headings, label the multi-weapon heading as `All Weapons`.
   - Within each skill/weapon group, render blocks based on `Follow-up`/`Hand`/`Part` presence, indenting nested parts and skipping `Text *` lines that are `-`. Parts under the same header are merged so a single header owns multiple parts instead of repeating the label.
   - Add `### [ ] Skill` headers by default; preserve existing `[x]` headers (skip regenerating those sections) unless `--force` is passed, which converts them to `[<]` and rewrites the section.
   - If any row in a skill has a `Follow-up`, rows lacking a follow-up label render as `Skill`.
@@ -559,6 +560,7 @@ flowchart LR
   - Collapse duplicate parts under the same heading/subheading so their detail lines merge into a single block; emit stance lines after other stat lines.
   - `subCategorySum` is reformatted with commas (instead of pipes) and tight `/`.
   - Output stays colourised when Stage 4 used colors; pair with Stage 5 colorizer (below) when Stage 4 ran with `--no-color`.
+  - Console output reports how many sections changed; when <=5, it prints before/after blocks for each changed section.
 - Feeds Stage 6, which embeds these markdown blocks into `ready/skill.json` info fields.
 
 ```mermaid
