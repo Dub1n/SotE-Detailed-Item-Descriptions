@@ -105,7 +105,7 @@ def merge_blocks(blocks: List[List[str]]) -> List[List[str]]:
         subheader: str | None = None
         start_idx = 1
 
-        if len(block) >= 2 and block[1].startswith("    "):
+        if len(block) >= 2 and block[1].startswith("    ") and ":" not in block[1].strip():
             subheader = block[1].strip()
             start_idx = 2
 
@@ -113,12 +113,42 @@ def merge_blocks(blocks: List[List[str]]) -> List[List[str]]:
         ensure_sub(header, subheader)
         grouped[header][subheader].extend(block[start_idx:])
 
-    for header in header_order:
+    def header_sort_key(item: Tuple[str, int]) -> Tuple[int, int, int]:
+        header, idx = item
+        label = None
+        if ":" in header:
+            label = normalize_label_text(header)
+        order_map = {label: i for i, label in enumerate(TEXT_LABEL_ORDER)}
+        if label is None:
+            return (0, idx, 0)
+        # Text-line headers get sorted by label priority after non-label headers.
+        priority = order_map.get(label, len(order_map))
+        return (1, priority, idx)
+
+    for header, _idx in sorted(
+        [(h, i) for i, h in enumerate(header_order)], key=header_sort_key
+    ):
         block_lines: List[str] = [header]
         for sub in subheader_order[header]:
             if sub is not None:
                 block_lines.append(f"    {sub}")
-            block_lines.extend(grouped[header][sub])
+            lines = grouped[header][sub]
+            data_lines = [
+                (i, ln) for i, ln in enumerate(lines) if ":" in ln.strip()
+            ]
+            if data_lines:
+                order = {label: idx for idx, label in enumerate(TEXT_LABEL_ORDER)}
+
+                def sort_key(item: Tuple[int, str]) -> Tuple[int, int]:
+                    idx, ln = item
+                    label = normalize_label_text(ln)
+                    return (order.get(label, len(order)), idx)
+
+                sorted_data = [ln for _, ln in sorted(data_lines, key=sort_key)]
+                # Preserve non-data lines in original relative order.
+                other_lines = [ln for ln in lines if ":" not in ln.strip()]
+                lines = sorted_data + other_lines
+            block_lines.extend(lines)
         merged.append(block_lines)
 
     return merged
@@ -142,10 +172,16 @@ def strip_tags(text: str) -> str:
 def normalize_label_text(line: str) -> str:
     label_raw = strip_tags(line.split(":", 1)[0]).strip()
     lower = label_raw.lower()
-    if lower == "damage":
+    if lower.startswith("damage (") and label_raw.endswith(")"):
+        inner = label_raw[len("Damage ("):-1].strip()
+        if inner.lower().endswith("physical"):
+            inner = inner[: -len("physical")].rstrip()
+        label_raw = inner or "Weapon"
+        lower = label_raw.lower()
+    elif lower == "damage":
         label_raw = "Weapon"
         lower = "weapon"
-    if lower.startswith("damage"):
+    elif lower.startswith("damage"):
         label_raw = "Weapon"
         lower = "weapon"
     if "physical" in lower:

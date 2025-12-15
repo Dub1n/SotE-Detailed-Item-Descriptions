@@ -557,7 +557,7 @@ def collapse_rows(
         )
 
         def scaled_mv(mv: float, wep: float | None) -> float:
-            if avg_wep and wep is not None:
+            if avg_wep and wep is not None and len(entries_raw) > 1:
                 return mv * (wep / avg_wep)
             return mv
 
@@ -587,8 +587,8 @@ def collapse_rows(
             base_label = "Damage"
             if phys_mv_present and not attr_is_weapon and attr_text:
                 base_label = f"{base_label} ({attr_text} Physical)"
-            first_mv, first_wep = entries_raw[0][1], entries_raw[0][2]
-            return [(base_label, scaled_mv(first_mv, first_wep))]
+            first_mv = entries_raw[0][1]
+            return [(base_label, first_mv)]
 
         mv_values = [mv for _, mv, _ in entries_raw]
         min_mv, max_mv = min(mv_values), max(mv_values)
@@ -635,7 +635,7 @@ def collapse_rows(
         if not has_nonzero_damage_data(agg):
             continue
         if not entries:
-            entries = [("Weapon", 0.0)]
+            entries = [("", "")]
         max_damage_slots = max(max_damage_slots, len(entries))
 
         if parse_float(agg.get("Weapon Buff MV", 0)) == 0 and all(

@@ -55,6 +55,14 @@ SUPPORT_SUM_COLS = list(AGG_COLS_BASE)
 SLOT_KEY_FIELD = "_slot_keys"
 
 
+def dtype_key_values(row: Dict[str, str], dtype_cols: List[str]) -> Tuple[str, ...]:
+    keys: List[str] = []
+    for col in dtype_cols:
+        val = (row.get(col, "") or "").strip()
+        keys.append("__ANY_DMG__" if val in {"", "-"} else val)
+    return tuple(keys)
+
+
 def find_damage_pairs(fieldnames: List[str]) -> List[Tuple[str, str]]:
     mv_pattern = re.compile(r"^Dmg MV(?: (\d+))?$")
     suffixes: List[str] = []
@@ -450,13 +458,6 @@ def collapse_weapons(
     overall_sigs: Dict[Tuple[str, str, str, str, str, str], set] = {}
     dtype_cols = [type_col for type_col, _ in dmg_pairs] or ["Dmg Type"]
 
-    def dtype_key_values(row: Dict[str, str]) -> Tuple[str, ...]:
-        keys: List[str] = []
-        for col in dtype_cols:
-            val = (row.get(col, "") or "").strip()
-            keys.append("__ANY_DMG__" if val in {"", "-"} else val)
-        return tuple(keys)
-
     def normalize_subcat(value: str, hand: str) -> str:
         tokens = [t.strip() for t in (value or "").split("|") if t.strip()]
         if hand.strip() == "2h":
@@ -507,7 +508,7 @@ def collapse_weapons(
                 key_parts.append(status_key)
             else:
                 key_parts.append(row.get(col, ""))
-        key_parts.extend(dtype_key_values(row))
+        key_parts.extend(dtype_key_values(row, dtype_cols))
         key = tuple(key_parts)
         clusters.setdefault(key, []).append(row)
 
@@ -597,7 +598,9 @@ def collapse_weapons(
             out["Weapon Source"] = unique_join(src_values) or "-"
             # Resolve Dmg Type preferring non-"-".
             dtype_candidates = [
-                dtype_key_values(r) for rows_list in weapon_rows.values() for r in rows_list
+                dtype_key_values(r, dtype_cols)
+                for rows_list in weapon_rows.values()
+                for r in rows_list
             ]
             resolved_dtype: List[str] = []
             conflict = False
@@ -816,11 +819,12 @@ def collapse_rows(
     global AGG_COLS
     AGG_COLS = agg_cols
     clusters: Dict[Tuple[str, ...], List[Dict[str, str]]] = {}
+    dtype_cols = [type_col for type_col, _ in dmg_pairs] or ["Dmg Type"]
     for row in rows:
         row["Overwrite Scaling"] = normalize_overwrite(
             row.get("Overwrite Scaling", "")
         )
-        key = tuple(
+        key_parts = [
             row.get(col, "")
             for col in [
                 "Skill",
@@ -831,7 +835,9 @@ def collapse_rows(
                 "Weapon",
                 "Wep Status",
             ]
-        )
+        ]
+        key_parts.extend(dtype_key_values(row, dtype_cols))
+        key = tuple(key_parts)
         clusters.setdefault(key, []).append(row)
 
     output_rows: List[Dict[str, str]] = []
