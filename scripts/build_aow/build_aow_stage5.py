@@ -173,6 +173,9 @@ def normalize_label_text(line: str) -> str:
     label_raw = strip_tags(line.split(":", 1)[0]).strip()
     if label_raw.endswith("(%)"):
         label_raw = label_raw[: -3].rstrip()
+        # Preserve canonical status label for ordering.
+        if label_raw.lower() == "status":
+            label_raw = "Status (%)"
     lower = label_raw.lower()
     if lower.startswith("damage (") and label_raw.endswith(")"):
         inner = label_raw[len("Damage ("):-1].strip()
