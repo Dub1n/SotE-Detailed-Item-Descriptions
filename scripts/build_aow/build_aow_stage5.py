@@ -151,13 +151,17 @@ def format_block(
         if hand != "-":
             label_parts.append(hand)
         label = " ".join(label_parts).strip() or "-"
+        apply_subcat_to_label = skill_has_followups and bool(subcat_suffix)
+        label_suffix = subcat_suffix if apply_subcat_to_label else ""
+        part_suffix = "" if apply_subcat_to_label else subcat_suffix
+
         if part == "-":
-            heading = f"{label}{subcat_suffix}".strip()
+            heading = f"{label}{label_suffix}".strip()
             blocks.append(heading)
             blocks.extend([f"    {line}" for line in text_lines])
         else:
-            blocks.append(label)
-            blocks.append(f"    {part}{subcat_suffix}")
+            blocks.append(f"{label}{label_suffix}".strip())
+            blocks.append(f"    {part}{part_suffix}")
             blocks.extend([f"        {line}" for line in text_lines])
 
     return blocks

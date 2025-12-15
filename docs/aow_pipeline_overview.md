@@ -555,6 +555,7 @@ flowchart LR
   - Within each skill/weapon group, render blocks based on `Follow-up`/`Hand`/`Part` presence, indenting nested parts and skipping `Text *` lines that are `-`. Parts under the same header are merged so a single header owns multiple parts instead of repeating the label.
   - Add `### [ ] Skill` headers by default; preserve existing `[x]` headers (skip regenerating those sections) unless `--force` is passed, which converts them to `[<]` and rewrites the section.
   - If any row in a skill has a `Follow-up`, rows lacking a follow-up label render as `Skill`.
+  - When follow-ups are present, `subCategorySum` is applied to the follow-up/Skill header (not to individual parts) so shared tags appear once per header.
   - Collapse duplicate parts under the same heading/subheading so their detail lines merge into a single block; emit stance lines after other stat lines.
   - `subCategorySum` is reformatted with commas (instead of pipes) and tight `/`.
   - Output stays colourised when Stage 4 used colors; pair with Stage 5 colorizer (below) when Stage 4 ran with `--no-color`.
