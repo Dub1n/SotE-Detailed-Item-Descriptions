@@ -219,6 +219,13 @@ def parse_existing(output_path: Path) -> Tuple[List[str], Dict[str, List[str]], 
     current_lines: List[str] = []
 
     for line in output_path.read_text(encoding="utf-8").splitlines():
+        if line.strip() == "---":
+            # Treat EOF marker as section terminator but not part of data.
+            if current_skill is not None:
+                sections[current_skill] = current_lines
+                current_skill = None
+                current_lines = []
+            continue
         if line.startswith("###"):
             if current_skill is not None:
                 sections[current_skill] = current_lines

@@ -561,7 +561,7 @@ flowchart LR
   - `subCategorySum` is reformatted with commas (instead of pipes) and tight `/`.
   - Output stays colourised when Stage 4 used colors; pair with Stage 5 colorizer (below) when Stage 4 ran with `--no-color`.
   - Console output reports how many sections changed; when <=5, it prints before/after blocks for each changed section.
-  - Output ends with a trailing blank line and `---` marker for stable diffs/EOF linting.
+  - Output ends with a trailing blank line and `---` marker for stable diffs/EOF linting; the marker is ignored when re-parsing so section diffs stay clean.
 - Feeds Stage 6, which embeds these markdown blocks into `ready/skill.json` info fields.
 
 ```mermaid
